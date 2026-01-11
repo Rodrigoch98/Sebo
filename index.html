@@ -1,1 +1,1933 @@
-<!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"> <meta name="description" content="Acervo Literário - Livros usados com qualidade de colecionador. Entrega na empresa."> <meta name="robots" content="noindex, nofollow"> <meta name="googlebot" content="noindex, nofollow"> <meta name="theme-color" content="#1e3a5f"> <meta name="apple-mobile-web-app-capable" content="yes"> <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> <meta name="format-detection" content="telephone=no"> <title>Acervo Literário | Livros de Qualidade Direto para Você</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link rel="preconnect" href="https://cdnjs.cloudflare.com"> <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231e3a5f' rx='12' width='100' height='100'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Georgia'>📚</text></svg>"> <script src="https://cdn.tailwindcss.com"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"> <style> :root { --color-primary: #1e3a5f; --color-primary-light: #2d4a6f; --color-accent: #c9a227; --color-accent-hover: #b8922a; --color-success: #16a34a; --color-sold: #dc2626; --color-surface: #ffffff; --color-surface-elevated: #f5f0e8; --color-surface-warm: #faf7f2; --color-text: #2c2c2c; --color-text-muted: #5c5c5c; --color-border: #e0d9cf; --font-display: 'Crimson Pro', Georgia, serif; --font-body: 'DM Sans', system-ui, sans-serif; --shadow-sm: 0 1px 2px rgba(0,0,0,0.05); --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1); --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1); --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1); --radius-sm: 0.5rem; --radius-md: 0.75rem; --radius-lg: 1rem; --transition-fast: 150ms ease; --transition-normal: 300ms ease; } [data-theme="dark"] { --color-primary: #f0e6d3; --color-primary-light: #e0d6c3; --color-surface: #1a1a1a; --color-surface-elevated: #252525; --color-surface-warm: #1f1f1f; --color-text: #e8e8e8; --color-text-muted: #a0a0a0; --color-border: #3a3a3a; } *, *::before, *::after { box-sizing: border-box; -webkit-tap-highlight-color: transparent; } html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; } body { font-family: var(--font-body); background: var(--color-surface-warm); color: var(--color-text); line-height: 1.6; min-height: 100vh; min-height: 100dvh; overflow-x: hidden; width: 100%; max-width: 100vw; margin: 0; padding: 0; } body.modal-open { overflow: hidden; position: fixed; width: 100%; height: 100%; } .font-display { font-family: var(--font-display); } :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; } @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } } @keyframes shimmer { 0% { background-position: -400px 0; } 100% { background-position: 400px 0; } } @keyframes slideInRight { from { opacity: 0; transform: translateX(100%); } to { opacity: 1; transform: translateX(0); } } /* NAVBAR */ .navbar { position: sticky; top: 0; z-index: 40; background: var(--color-primary); color: white; width: 100%; } .navbar.scrolled { box-shadow: var(--shadow-lg); } .navbar-container { display: flex; justify-content: space-between; align-items: center; height: 3.5rem; padding: 0 0.75rem; max-width: 80rem; margin: 0 auto; width: 100%; } .navbar-brand { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: white; flex-shrink: 1; min-width: 0; overflow: hidden; } .navbar-brand-icon { height: 2rem; width: 2rem; min-width: 2rem; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 0.375rem; font-size: 1.25rem; flex-shrink: 0; } .navbar-brand-text { display: flex; flex-direction: column; min-width: 0; overflow: hidden; } .navbar-brand-title { font-weight: 700; font-size: 0.875rem; line-height: 1.2; white-space: nowrap; } .navbar-brand-subtitle { font-size: 0.625rem; opacity: 0.7; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .navbar-actions { display: flex; align-items: center; gap: 0.375rem; flex-shrink: 0; } .desktop-nav { display: none; } .theme-toggle, .mobile-menu-btn { width: 2.25rem; height: 2.25rem; border-radius: 0.375rem; border: 1px solid rgba(255,255,255,0.3); background: transparent; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; } .mobile-menu { display: none; background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); } .mobile-menu.open { display: block; } .mobile-menu-content { padding: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; } .mobile-menu-item { width: 100%; text-align: left; padding: 0.75rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.75rem; color: white; background: transparent; border: none; cursor: pointer; font-size: 0.875rem; } .mobile-menu-cta { width: 100%; padding: 0.75rem; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: #25d366; color: white; font-weight: 500; text-decoration: none; font-size: 0.875rem; } /* HERO */ .hero { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 50%, #2a5080 100%); color: white; padding: 2rem 1rem; position: relative; overflow: hidden; } .hero-content { max-width: 80rem; margin: 0 auto; text-align: center; position: relative; z-index: 1; } .hero-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.2; } .hero-subtitle { font-size: 0.875rem; opacity: 0.9; margin-bottom: 1rem; line-height: 1.5; } .hero-checks { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.75rem; } .hero-check { display: flex; align-items: center; gap: 0.375rem; } .hero-check i { color: var(--color-accent); } /* MAIN CONTENT */ .main-content { max-width: 80rem; margin: 0 auto; padding: 1rem; } .main-header { margin-bottom: 1rem; } .main-header-row { display: flex; flex-direction: column; gap: 0.75rem; } .main-header-actions { display: flex; align-items: center; gap: 0.5rem; } .sort-select-wrapper { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; border-radius: 0.5rem; border: 1px solid var(--color-border); background: var(--color-surface); flex: 1; } .sort-select-wrapper select { background: transparent; font-size: 0.8125rem; font-weight: 500; outline: none; cursor: pointer; color: var(--color-text); border: none; width: 100%; -webkit-appearance: none; } /* SEARCH */ .search-container { position: relative; margin-bottom: 1rem; } .search-container input { width: 100%; padding: 0.875rem 2.75rem 0.875rem 2.75rem; font-size: 16px; border: 2px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); color: var(--color-text); -webkit-appearance: none; } .search-container input:focus { border-color: var(--color-accent); box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.15); } .search-container .search-icon { position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); pointer-events: none; } .search-container .clear-btn { position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); width: 1.75rem; height: 1.75rem; border-radius: 50%; border: none; background: var(--color-border); color: var(--color-text-muted); cursor: pointer; display: none; align-items: center; justify-content: center; } .search-container .clear-btn.visible { display: flex; } /* FILTERS */ .filters-wrapper { position: relative; margin: 0 -1rem 1.5rem; padding: 0 1rem; } .filters-scroll { display: flex; gap: 0.5rem; padding: 0.25rem 0; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; } .filters-scroll::-webkit-scrollbar { display: none; } .filter-chip { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.5rem 0.875rem; font-size: 0.8125rem; font-weight: 500; border-radius: 9999px; background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text-muted); cursor: pointer; white-space: nowrap; flex-shrink: 0; -webkit-appearance: none; } .filter-chip:active { transform: scale(0.95); } .filter-chip.active { background: var(--color-primary); border-color: var(--color-primary); color: white; } .filter-chip .count { font-size: 0.6875rem; padding: 0.125rem 0.375rem; border-radius: 9999px; background: rgba(0,0,0,0.1); } .filter-chip.active .count { background: rgba(255,255,255,0.2); } .filter-nav-btn { display: none; } /* BOOK GRID */ .book-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; } /* BOOK CARD */ .book-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; opacity: 0; transform: translateY(20px); position: relative; display: flex; flex-direction: column; } .book-card.visible { opacity: 1; transform: translateY(0); } .book-card:active:not(.sold) { transform: scale(0.98); } .book-card.sold { opacity: 0.7; pointer-events: none; } .sold-badge { position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 20; } .sold-badge span { background: var(--color-sold); color: white; padding: 0.5rem 1.5rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; transform: rotate(-15deg); } .book-cover { position: relative; height: 10rem; overflow: hidden; background: linear-gradient(135deg, var(--color-border) 0%, var(--color-surface-elevated) 100%); flex-shrink: 0; } .book-cover img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.5s ease; } .book-cover img.loaded { opacity: 1; } .skeleton { background: linear-gradient(90deg, var(--color-border) 0%, var(--color-surface-elevated) 50%, var(--color-border) 100%); background-size: 800px 100%; animation: shimmer 1.5s infinite linear; } .cover-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(145deg, #e8e0d5 0%, #d4ccc0 100%); padding: 0.75rem; text-align: center; } .cover-placeholder i { font-size: 2rem; color: var(--color-primary); margin-bottom: 0.25rem; } .cover-placeholder span { font-size: 0.625rem; color: var(--color-text-muted); line-height: 1.2; } .genre-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; } .genre-tag { display: inline-flex; font-size: 0.5625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; padding: 0.125rem 0.375rem; border-radius: 0.25rem; background: var(--color-surface-elevated); color: var(--color-text-muted); border: 1px solid var(--color-border); white-space: nowrap; } .favorite-btn { position: absolute; top: 0.5rem; right: 0.5rem; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--color-surface); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 1; transform: scale(1); box-shadow: var(--shadow-md); z-index: 10; } .favorite-btn i { font-size: 1rem; color: var(--color-text-muted); } .favorite-btn.active i { color: #ef4444; } .book-card-content { padding: 0.75rem; flex: 1; display: flex; flex-direction: column; } .book-card-title { font-family: var(--font-display); font-weight: 700; font-size: 0.8125rem; line-height: 1.3; margin-top: 0.375rem; margin-bottom: 0.5rem; color: var(--color-primary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; } .book-card-footer { margin-top: auto; padding-top: 0.5rem; border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; } .book-card-price { font-weight: 700; font-size: 0.9375rem; color: var(--color-accent); } .book-card-arrow { height: 1.5rem; width: 1.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--color-surface-elevated); } .book-card-arrow i { font-size: 0.625rem; color: var(--color-text-muted); } /* MODALS */ .modal-backdrop { position: fixed; inset: 0; background: rgba(30, 58, 95, 0.8); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 50; opacity: 0; visibility: hidden; transition: all var(--transition-normal); } .modal-backdrop.open { opacity: 1; visibility: visible; } .modal-content { position: fixed; z-index: 51; background: var(--color-surface); box-shadow: var(--shadow-xl); overflow: hidden; opacity: 0; visibility: hidden; transition: all var(--transition-normal); bottom: 0; left: 0; right: 0; transform: translateY(100%); max-width: 100%; width: 100%; max-height: 90vh; max-height: 90dvh; border-radius: var(--radius-lg) var(--radius-lg) 0 0; } .modal-backdrop.open + .modal-content, .modal-content.open { opacity: 1; visibility: visible; transform: translateY(0); } .modal-handle { display: flex; width: 100%; padding: 0.75rem; justify-content: center; background: var(--color-surface); position: sticky; top: 0; z-index: 5; } .modal-handle-bar { width: 2.5rem; height: 0.25rem; background: var(--color-border); border-radius: 9999px; } .modal-close { position: absolute; top: 0.5rem; right: 0.5rem; width: 2.25rem; height: 2.25rem; border-radius: 50%; border: none; background: var(--color-surface); color: var(--color-text); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); z-index: 10; } .modal-inner { display: flex; flex-direction: column; max-height: calc(90vh - 3rem); max-height: calc(90dvh - 3rem); overflow: hidden; } .modal-image-section { position: relative; height: 11rem; flex-shrink: 0; background: var(--color-surface-elevated); } .modal-image-section img { width: 100%; height: 100%; object-fit: cover; } .modal-body { padding: 1rem; overflow-y: auto; flex: 1; display: flex; flex-direction: column; } .modal-body-content { flex: 1; } .modal-body-footer { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); } .book-description { font-size: 0.875rem; line-height: 1.7; color: var(--color-text); } .book-description .highlight { background: linear-gradient(180deg, transparent 60%, rgba(201, 162, 39, 0.3) 60%); font-weight: 600; } .book-description .section { margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px dashed var(--color-border); } .book-description .section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; } .book-description .label { display: inline-block; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: 0.375rem; } .price-tag { font-size: 1.5rem; font-weight: 700; color: var(--color-accent); } .price-tag small { font-size: 0.875rem; font-weight: 500; color: var(--color-text-muted); } .whatsapp-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.875rem 1.25rem; font-size: 0.9375rem; font-weight: 600; color: white; background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); border: none; border-radius: var(--radius-md); cursor: pointer; text-decoration: none; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3); } /* PAYMENT & HOW IT WORKS MODALS */ .info-modal-content { padding: 1.25rem; overflow-y: auto; max-height: calc(90vh - 3rem); max-height: calc(90dvh - 3rem); } .info-modal-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; text-align: center; color: var(--color-primary); } .payment-method { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem; background: var(--color-surface-elevated); border-radius: var(--radius-md); margin-bottom: 0.625rem; } .payment-method i { font-size: 1.25rem; color: var(--color-accent); flex-shrink: 0; } .payment-method h4 { font-weight: 600; color: var(--color-primary); margin-bottom: 0.125rem; font-size: 0.9375rem; } .payment-method p { font-size: 0.8125rem; color: var(--color-text-muted); line-height: 1.4; } .info-modal-btn { width: 100%; margin-top: 1.25rem; padding: 0.75rem; border-radius: 0.5rem; font-weight: 500; background: var(--color-primary); color: white; border: none; cursor: pointer; font-size: 0.9375rem; } /* TOAST */ .toast-container { position: fixed; bottom: 1rem; left: 1rem; right: 1rem; z-index: 100; display: flex; flex-direction: column; gap: 0.75rem; pointer-events: none; } .toast { display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1rem; background: var(--color-primary); color: white; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); animation: slideInRight 0.3s ease-out; pointer-events: auto; width: 100%; font-size: 0.875rem; } .toast.success { background: var(--color-success); } /* SCROLL TO TOP */ .scroll-to-top { position: fixed; bottom: 4rem; left: 1rem; width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--color-primary); color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transform: translateY(1rem); transition: all var(--transition-normal); box-shadow: var(--shadow-lg); z-index: 40; } .scroll-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); } /* EMPTY STATE */ .empty-state { text-align: center; padding: 3rem 1.5rem; } .empty-state i { font-size: 3rem; color: var(--color-border); margin-bottom: 1rem; display: block; } .empty-state h2 { font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-primary); } .empty-state p { color: var(--color-text-muted); font-size: 0.875rem; } .empty-state button { margin-top: 1rem; padding: 0.5rem 1.25rem; border-radius: 0.5rem; font-weight: 500; background: var(--color-accent); color: white; border: none; cursor: pointer; } /* FOOTER */ .footer { padding: 1.5rem 1rem; margin-top: 2rem; border-top: 1px solid var(--color-border); background: var(--color-surface); text-align: center; } .footer p { font-size: 0.8125rem; color: var(--color-text-muted); } .footer p:last-child { font-size: 0.6875rem; margin-top: 0.375rem; } .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; } .hidden { display: none !important; } /* TABLET & DESKTOP */ @media (min-width: 640px) { .navbar-container { height: 4rem; padding: 0 1rem; } .navbar-brand-icon { height: 2.5rem; width: 2.5rem; min-width: 2.5rem; font-size: 1.5rem; } .navbar-brand-title { font-size: 1rem; } .navbar-brand-subtitle { font-size: 0.6875rem; } .hero { padding: 2.5rem 1rem; } .hero-title { font-size: 2rem; } .hero-subtitle { font-size: 1rem; } .hero-checks { font-size: 0.875rem; } .main-content { padding: 1.5rem 1rem; } .book-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; } .book-cover { height: 12rem; } .book-card-content { padding: 1rem; } .book-card-title { font-size: 0.9375rem; } .book-card-price { font-size: 1rem; } .genre-tag { font-size: 0.625rem; } } @media (min-width: 768px) { .navbar-actions.mobile { display: none; } .desktop-nav { display: flex; align-items: center; gap: 0.5rem; } .desktop-nav-btn { font-size: 0.8125rem; font-weight: 500; padding: 0.5rem 0.875rem; border-radius: 0.5rem; color: rgba(255,255,255,0.8); background: transparent; border: none; cursor: pointer; white-space: nowrap; } .desktop-nav-btn:hover { color: white; background: rgba(255,255,255,0.1); } .desktop-nav-cta { background: rgba(255,255,255,0.2); color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.8125rem; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; white-space: nowrap; } .modal-content { top: 50%; left: 50%; bottom: auto; transform: translate(-50%, -50%) scale(0.95); max-width: 42rem; width: calc(100% - 2rem); max-height: calc(100vh - 2rem); border-radius: var(--radius-lg); } .modal-backdrop.open + .modal-content, .modal-content.open { transform: translate(-50%, -50%) scale(1); } .modal-handle { display: none; } .modal-inner { flex-direction: row; max-height: 85vh; } .modal-image-section { width: 42%; height: auto; min-height: 100%; } .modal-body { width: 58%; padding: 1.5rem; } .book-description { font-size: 0.9375rem; } .price-tag { font-size: 1.75rem; } } @media (min-width: 1024px) { .book-grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; } .book-cover { height: 14rem; } } @media (min-width: 1280px) { .book-grid { grid-template-columns: repeat(5, 1fr); } .book-cover { height: 15rem; } } @media print { .navbar, .scroll-to-top, .toast-container, .favorite-btn { display: none !important; } .book-card { break-inside: avoid; } } </style> </head> <body> <a href="#main-content" class="sr-only focus:not-sr-only">Pular para o conteúdo</a> <!-- NAVBAR --> <nav class="navbar" role="navigation"> <div class="navbar-container"> <a href="#" class="navbar-brand"> <div class="navbar-brand-icon">📚</div> <div class="navbar-brand-text"> <p class="navbar-brand-title">Acervo Literário</p> <p class="navbar-brand-subtitle">Coleções de qualidade</p> </div> </a> <div class="desktop-nav"> <button onclick="openHowItWorks()" class="desktop-nav-btn"> <i class="fas fa-info-circle" style="margin-right:0.375rem"></i>Como Comprar </button> <button onclick="openPaymentInfo()" class="desktop-nav-btn"> <i class="fas fa-credit-card" style="margin-right:0.375rem"></i>Pagamento </button> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema"> <i class="fas fa-moon" id="themeIcon"></i> </button> <a href="https://wa.me/5547991438831" target="_blank" rel="noopener noreferrer" class="desktop-nav-cta"> <i class="fab fa-whatsapp"></i> Falar Comigo </a> </div> <div class="navbar-actions mobile"> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema"> <i class="fas fa-moon" id="themeIconMobile"></i> </button> <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu"> <i class="fas fa-bars" id="mobileMenuIcon"></i> </button> </div> </div> <div id="mobileMenu" class="mobile-menu"> <div class="mobile-menu-content"> <button onclick="openHowItWorks(); toggleMobileMenu();" class="mobile-menu-item"> <i class="fas fa-info-circle" style="opacity:0.7"></i> Como Comprar </button> <button onclick="openPaymentInfo(); toggleMobileMenu();" class="mobile-menu-item"> <i class="fas fa-credit-card" style="opacity:0.7"></i> Pagamento </button> <a href="https://wa.me/5547991438831" target="_blank" rel="noopener noreferrer" class="mobile-menu-cta"> <i class="fab fa-whatsapp"></i> Falar Comigo </a> </div> </div> </nav> <!-- HERO --> <div class="hero"> <div class="hero-content"> <h1 class="hero-title"> Sua Próxima Grande <span style="color: var(--color-accent);">Aventura</span> Começa Aqui </h1> <p class="hero-subtitle"> Livros cuidadosamente selecionados, com qualidade de colecionador.<br> <strong>Entrega personalizada</strong> na sua mesa em até 24h. </p> <div class="hero-checks"> <div class="hero-check"><i class="fas fa-check-circle"></i><span>Estado Impecável</span></div> <div class="hero-check"><i class="fas fa-check-circle"></i><span>Preços Justos</span></div> <div class="hero-check"><i class="fas fa-check-circle"></i><span>Entrega Rápida</span></div> </div> </div> </div> <!-- MAIN --> <main id="main-content" class="main-content"> <header class="main-header"> <div class="main-header-row"> <p id="counter" style="font-size:0.8125rem;font-weight:500;color:var(--color-text-muted)" aria-live="polite">Carregando...</p> <div class="main-header-actions"> <button id="favoritesFilter" onclick="toggleFavoritesFilter()" class="filter-chip" aria-pressed="false"> <i class="fas fa-heart" style="color:#ef4444"></i> <span>Favoritos</span> <span class="count" id="favoritesCount">0</span> </button> <div class="sort-select-wrapper"> <i class="fas fa-sort" style="color:var(--color-text-muted);font-size:0.6875rem"></i> <select id="sortSelect" onchange="renderBooks()"> <option value="default">Relevância</option> <option value="price-asc">Menor Preço</option> <option value="price-desc">Maior Preço</option> <option value="alpha">A - Z</option> </select> </div> </div> </div> </header> <div class="search-container"> <input type="search" id="searchInput" placeholder="Pesquise por título, gênero ou autor..." autocomplete="off"> <i class="fas fa-search search-icon"></i> <button class="clear-btn" id="clearSearch" onclick="clearSearch()" aria-label="Limpar"> <i class="fas fa-times" style="font-size:0.6875rem"></i> </button> </div> <div class="filters-wrapper"> <div id="genreFilters" class="filters-scroll"></div> </div> <div id="bookGrid" class="book-grid" role="list"></div> <div id="emptyState" class="empty-state hidden"> <i class="fas fa-search"></i> <h2>Nenhum livro encontrado</h2> <p>Tente ajustar os filtros ou buscar por outros termos.</p> <button onclick="clearAllFilters()">Limpar filtros</button> </div> </main> <!-- FOOTER --> <footer class="footer"> <p><i class="fas fa-book-reader" style="margin-right:0.375rem"></i>Acervo Literário © <span id="currentYear"></span> — Rodrigo Hang — Gaspar, SC</p> <p>Livros usados com qualidade • Entrega na empresa</p> </footer> <!-- MODAL: BOOK DETAILS --> <div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()"></div> <div id="modal" class="modal-content" role="dialog" aria-modal="true"> <div class="modal-handle"><div class="modal-handle-bar"></div></div> <button class="modal-close" onclick="closeModal()" aria-label="Fechar"><i class="fas fa-times"></i></button> <div class="modal-inner"> <div class="modal-image-section"> <img id="modalImg" alt=""> <button id="modalFavoriteBtn" class="favorite-btn" style="opacity:1;transform:scale(1)"><i class="far fa-heart"></i></button> </div> <div class="modal-body"> <div class="modal-body-content"> <div id="modalGenreTags" class="genre-tags" style="margin-bottom:0.5rem"></div> <h2 id="modalTitle" class="font-display" style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--color-primary);line-height:1.3"></h2> <div class="price-tag" style="margin-bottom:1rem"><small>R$</small> <span id="modalPrice"></span></div> <div class="book-description" id="modalDesc"></div> </div> <div class="modal-body-footer"> <a id="modalWhatsapp" href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-btn"> <i class="fab fa-whatsapp"></i><span>Quero Comprar</span> </a> </div> </div> </div> </div> <!-- MODAL: PAYMENT --> <div id="paymentBackdrop" class="modal-backdrop" onclick="closePaymentInfo()"></div> <div id="paymentModal" class="modal-content" style="max-width:26rem" role="dialog" aria-modal="true"> <div class="modal-handle"><div class="modal-handle-bar"></div></div> <div class="info-modal-content"> <h2 class="info-modal-title"><i class="fas fa-wallet" style="margin-right:0.5rem;color:var(--color-accent)"></i>Formas de Pagamento</h2> <div class="payment-method"> <i class="fas fa-qrcode"></i> <div> <h4>Pix</h4> <p>Transferência instantânea. Envie o comprovante pelo WhatsApp.</p> <button onclick="copyPix()" style="margin-top:0.375rem;font-size:0.8125rem;font-weight:600;display:flex;align-items:center;gap:0.375rem;color:var(--color-accent);background:none;border:none;cursor:pointer"> <i class="fas fa-copy"></i> Copiar: 58242143000190 </button> </div> </div> <div class="payment-method"> <i class="fas fa-money-bill-wave"></i> <div><h4>Dinheiro</h4><p>Pagamento no momento da entrega.</p></div> </div> <div class="payment-method"> <i class="fas fa-credit-card"></i> <div><h4>Cartão</h4><p><strong>Avise com antecedência</strong> para eu levar a maquininha.</p></div> </div> <div style="margin-top:1rem;padding:0.75rem;border-radius:0.5rem;text-align:center;font-size:0.8125rem;background:rgba(201,162,39,0.1);color:var(--color-text)"> <i class="fas fa-lightbulb" style="margin-right:0.375rem;color:var(--color-accent)"></i>O pagamento confirma sua reserva! </div> <button onclick="closePaymentInfo()" class="info-modal-btn">Entendi</button> </div> </div> <!-- MODAL: HOW IT WORKS --> <div id="howItWorksBackdrop" class="modal-backdrop" onclick="closeHowItWorks()"></div> <div id="howItWorksModal" class="modal-content" style="max-width:26rem" role="dialog" aria-modal="true"> <div class="modal-handle"><div class="modal-handle-bar"></div></div> <div class="info-modal-content"> <h2 class="info-modal-title"><i class="fas fa-shopping-bag" style="margin-right:0.5rem;color:var(--color-accent)"></i>Como Comprar</h2> <ol style="display:flex;flex-direction:column;gap:1.25rem;position:relative;list-style:none;padding:0;margin:0"> <div style="position:absolute;left:0.875rem;top:1.5rem;bottom:1.5rem;width:2px;background:var(--color-border)"></div> <li style="display:flex;gap:0.75rem;position:relative"> <div style="height:1.75rem;width:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;flex-shrink:0;z-index:1;color:white;background:var(--color-accent)">1</div> <div><h3 style="font-weight:700;color:var(--color-primary);font-size:0.9375rem">Escolha o livro</h3><p style="font-size:0.8125rem;margin-top:0.125rem;color:var(--color-text-muted)">Clique em "Quero Comprar" para me chamar no WhatsApp.</p></div> </li> <li style="display:flex;gap:0.75rem;position:relative"> <div style="height:1.75rem;width:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;flex-shrink:0;z-index:1;color:white;background:var(--color-success)">2</div> <div><h3 style="font-weight:700;color:var(--color-primary);font-size:0.9375rem">Combine o pagamento</h3><p style="font-size:0.8125rem;margin-top:0.125rem;color:var(--color-text-muted)">Pix, dinheiro ou cartão. O pagamento garante sua reserva.</p></div> </li> <li style="display:flex;gap:0.75rem;position:relative"> <div style="height:1.75rem;width:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;flex-shrink:0;z-index:1;color:white;background:var(--color-primary)">3</div> <div><h3 style="font-weight:700;color:var(--color-primary);font-size:0.9375rem">Receba na sua mesa</h3><p style="font-size:0.8125rem;margin-top:0.125rem;color:var(--color-text-muted)">Entrego no dia útil seguinte ao pagamento.</p></div> </li> </ol> <button onclick="closeHowItWorks()" class="info-modal-btn">Vamos lá!</button> </div> </div> <!-- TOAST --> <div id="toastContainer" class="toast-container" aria-live="polite"></div> <!-- SCROLL TO TOP --> <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button> <script> const books = [ { t: "Box Machado de Assis - Coleção Completa", g: ["Clássicos", "Literatura Brasileira"], p: "145,00", v: 145, q: "box machado de assis obra completa capa dura", d: "Oportunidade para sua biblioteca pessoal!\n\nVendo Box Premium do mestre Machado de Assis, contendo 11 obras clássicas em edições luxuosas com capa dura.\n\nOs livros estão impecáveis, praticamente intocados, sem marcas de uso, dobras ou grifos — ideais para quem busca qualidade de colecionador.\n\n📚 Conteúdo do Box:\n• Dom Casmurro\n• Memórias Póstumas de Brás Cubas\n• Quincas Borba\n• Helena\n• Iaiá Garcia\n• Ressurreição\n• A Mão e a Luva\n• Esaú e Jacó\n• Memorial de Aires\n• Papéis Avulsos\n• Várias Histórias\n\n✨ Bônus: Biografia detalhada do autor.\n\n📸 Posso encaminhar fotos reais e tirar qualquer dúvida por chat.", img: "https://images.tcdn.com.br/img/img_prod/1323385/box_machado_de_assis_11_livros_capa_dura_biografia_do_autor_17958_2_01d68758960ec216bd68b4445a9ed3ff.jpg" }, { t: "Box Trilogia Tempest - Julie Cross", g: ["Sci-Fi", "Viagem no Tempo"], p: "65,00", v: 65, q: "tempest julie cross box trilogia", d: "Para fãs de ficção científica, viagem no tempo e aventura!\n\nVendo o box completo da trilogia Tempest, escrita por Julie Cross.\n\n📚 Volumes inclusos:\n• Tempest\n• Vortex\n• Timestorm\n\n📖 Estado de conservação:\nOs livros estão impecáveis, praticamente intocados, sem marcas de uso, orelhas ou grifos.\n\n⚠️ Observação:\nA embalagem externa (box) é de papel cartão e possui pequenos rasgos nos cantos, mas cumpre perfeitamente o papel de proteger e organizar as obras.\n\n📸 Posso encaminhar fotos reais (inclusive dos detalhes no box) e tirar qualquer dúvida por chat.", img: "https://m.media-amazon.com/images/I/71cQQxenhoL._SY342_.jpg" }, { t: "Trilogia das Almas (Série Completa)", g: ["Fantasia", "Romance"], p: "110,00", v: 110, q: "trilogia das almas deborah harkness descoberta bruxas", d: "Para quem ama fantasia, história e romance épico!\n\nVendo a coleção completa da Trilogia das Almas, escrita por Deborah Harkness — a saga que inspirou a série de sucesso \"A Discovery of Witches\".\n\n✨ Diferencial:\nA autora é uma historiadora renomada, trazendo riqueza de detalhes históricos e fundamentação fantástica para a trama. É uma leitura imersiva que mistura ciência, magia e uma jornada através dos séculos.\n\n📚 Volumes inclusos:\n• A Descoberta das Bruxas\n• Sombra da Noite\n• O Livro da Vida\n\n📖 Estado:\nExemplares impecáveis, com capas preservadas e páginas brancas (praticamente intocados).\n\n📸 Posso encaminhar fotos reais de cada volume.", img: "https://m.media-amazon.com/images/I/71SDDJPBZdL._SY342_.jpg" }, { t: "Saga A Rainha Vermelha (5 Livros)", g: ["Distopia", "Fantasia"], p: "175,00", v: 175, q: "a rainha vermelha victoria aveyard box", d: "Para quem ama distopias, reviravoltas políticas e poderes elementares!\n\nVendo a coleção completa da série A Rainha Vermelha.\n\n📚 Volumes inclusos:\n• A Rainha Vermelha\n• Espada de Vidro\n• A Prisão do Rei\n• Tempestade de Guerra\n• Trono Destruído\n\n📖 Estado:\nExemplares da Editora Seguinte, impecáveis, praticamente intocados, sem marcas de uso.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/516uvyklSoL._SY342_.jpg" }, { t: "Saga Robert Langdon (5 Livros)", g: ["Suspense", "Mistério"], p: "115,00", v: 115, q: "dan brown robert langdon colecao codigo da vinci", d: "Do Código Da Vinci ao Origem!\n\nPara quem ama mistérios, simbologia e conspirações históricas.\n\n📚 Volumes inclusos:\n• Anjos e Demônios\n• O Código Da Vinci\n• O Símbolo Perdido\n• Inferno\n• Origem\n\n📖 Estado:\nLivros muito bem cuidados com capas íntegras.\n\n📸 Posso encaminhar fotos reais de cada livro.", img: "https://http2.mlstatic.com/D_NQ_NP_2X_864037-MLB98413019944_112025-F.webp" }, { t: "Combo Suspense e Tecnologia (Dan Brown)", g: ["Suspense", "Tecnologia"], p: "45,00", v: 45, q: "fortaleza digital dan brown ponto impacto", d: "Fortaleza Digital + Ponto de Impacto\n\nLeitura obrigatória para quem gosta de criptografia e conspirações!\n\n📚 Sobre os livros:\n• Fortaleza Digital — Essencial para quem trabalha com TI!\n• Ponto de Impacto — Descoberta da NASA no Ártico.\n\n📖 Estado:\nLivros impecáveis, praticamente intocados.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/816X46l6aWL._AC_UF1000,1000_QL80_.jpg" }, { t: "Trilogia O Oráculo - Catherine Fisher", g: ["Fantasia", "Mitologia"], p: "85,00", v: 85, q: "trilogia oraculo catherine fisher escaravelho", d: "Fantasia e Mitologia!\n\nUma jornada épica por terras de deuses e profecias.\n\n📚 Volumes inclusos:\n• O Escaravelho\n• O Oráculo\n• O Arconte\n\n📖 Estado:\nLivros muito bem preservados.\n\n📸 Posso encaminhar fotos reais.", img: "https://img.travessa.com.br/livro/GR/9c/9c65e654-16a8-477e-8a45-48960cbc6b39.jpg" }, { t: "Trilogia A Sina do Sete - Nora Roberts", g: ["Sobrenatural", "Romance"], p: "95,00", v: 95, q: "sina do sete nora roberts irmaos sangue trilogia", d: "Estado de Novo!\n\nPara quem ama suspense, romance e uma pitada de sobrenatural.\n\n📚 Volumes inclusos:\n• Irmãos de Sangue\n• A Maldição de Hollow\n• A Pedra Pagã\n\n📖 Estado:\nExemplares extremamente bem preservados.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/51HyGspvKIL._SY342_.jpg" }, { t: "Saga Maze Runner (6 Livros)", g: ["Distopia", "Sci-Fi"], p: "165,00", v: 165, q: "maze runner james dashner correr ou morrer box", d: "James Dashner | Ed. Plataforma 21\n\nColeção completa da saga que inspirou os filmes de sucesso.\n\n📚 Volumes inclusos (6 livros):\n• Correr ou Morrer\n• Prova de Fogo\n• A Cura Mortal\n• Ordem de Extermínio\n• O Código da Febre\n• Arquivos\n\n📖 Estado:\nExemplares muito bem cuidados.\n\n📸 Posso encaminhar fotos reais.", img: "https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/colecao-da-serie-maze-runner-6-livros/studiochihiro/6171177510/d9e300096c47b610dd74556b771e3629.jpeg" }, { t: "Saga Divergente (4 Livros)", g: ["Distopia"], p: "100,00", v: 100, q: "divergente veronica roth box colecao", d: "Veronica Roth | Editora Rocco\n\nColeção completa de Divergente.\n\n📚 Volumes inclusos:\n• Divergente\n• Insurgente\n• Convergente\n• Quatro\n\n📖 Estado:\nExemplares muito bem cuidados.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/61idoE9JcNL._AC_UF1000,1000_QL80_.jpg" }, { t: "Psicose - Ed. Luxo DarkSide", g: ["Terror", "Clássico"], p: "45,00", v: 45, q: "psicose robert bloch darkside books capa dura", d: "Robert Bloch | Edição de Luxo Hardcover (DarkSide Books)\n\nO clássico que redefiniu o suspense em uma edição de colecionador!\n\n📖 Estado:\nExemplar em estado de novo.\n\n📸 Posso encaminhar fotos reais.", img: "https://darkside.vtexassets.com/arquivos/ids/174500/8-psicose-limited-edition-1.png?v=637606711394330000" }, { t: "Box Trilogia Os Tons de Magia", g: ["Fantasia"], p: "115,00", v: 115, q: "tons de magia v.e. schwab box trilogia", d: "V.E. Schwab | 3 Livros | Estado de Novo\n\nEmbarque em uma jornada épica pelas quatro Londres paralelas!\n\n📚 Volumes inclusos:\n• Um Tom Mais Escuro de Magia\n• Um Encontro de Sombras\n• Uma Conjuração de Luz\n\n📖 Estado:\nBox e livros impecáveis.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/81MNf2G13JL._SY342_.jpg" }, { t: "Saga ACOTAR (Box + Livro 5)", g: ["Fantasia", "Romance"], p: "190,00", v: 190, q: "acotar sarah j maas corte espinhos rosas box", d: "Saga Corte de Espinhos e Rosas (ACOTAR) | Coleção Completa\n\n📚 Conteúdo (5 livros no total)\n\n📖 Estado:\nBox e todos os cinco livros em estado impecável.\n\n📸 Posso encaminhar fotos reais de cada detalhe.", img: "https://cdn.culturagenial.com/imagens/acotar-a-ordem-certa-de-leitura-da-serie-og.jpg" }, { t: "Combo Justin Cronin (A Passagem)", g: ["Terror", "Pós-Apocalíptico"], p: "80,00", v: 80, q: "justin cronin os doze cidade espelhos passagem", d: "Combo Justin Cronin (Livros 2 e 3 da Trilogia A Passagem)\n\n📚 Volumes inclusos:\n• Os Doze\n• A Cidade dos Espelhos\n\n📖 Estado:\nExemplares muito bem preservados.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/91Na482X6bL._AC_UF1000,1000_QL80_.jpg" }, { t: "Trilogia Halo - Alexandra Adornetto", g: ["Romance", "Anjos"], p: "85,00", v: 85, q: "halo alexandra adornetto trilogia anjos", d: "Trilogia Halo (Completa) | 3 Livros | Estado de Novo\n\n📚 Volumes inclusos:\n• Halo\n• Hades\n• Heaven\n\n📖 Estado:\nLivros impecáveis.\n\n📸 Posso encaminhar fotos reais.", img: "https://worldfabibooks.wordpress.com/wp-content/uploads/2015/11/sc3a9rie-halo.png" }, { t: "Trilogia Alien (Canônicos)", g: ["Sci-Fi", "Terror"], p: "120,00", v: 120, q: "alien trilogia surgido sombras editora leya", d: "Trilogia Alien (Completa) | Editora Leya\n\n📚 Volumes inclusos:\n• Surgido das Sombras\n• Mar de Angústia\n• Rio de Sofrimento\n\n📖 Estado:\nExemplares extremamente bem preservados.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/61g34iPFtjL._SX445_.jpg" }, { t: "Trilogia Fronteiras do Universo", g: ["Fantasia"], p: "105,00", v: 105, q: "fronteiras universo philip pullman bussola ouro", d: "Trilogia Fronteiras do Universo (Completa) | Philip Pullman | Ed. Suma | Estado de Novo\n\n📚 Volumes inclusos:\n• A Bússola de Ouro\n• A Faca Sutil\n• A Luneta Âmbar\n\n📖 Estado:\nExemplares impecáveis.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.magazineluiza.com.br/a-static/420x420/trilogia-fronteiras-do-universo/megalivros-oficial/9000000255579/f635e1860e70f36397f652171f685fa0.jpeg" }, { t: "Trilogia Silo - Hugh Howey", g: ["Sci-Fi", "Distopia"], p: "110,00", v: 110, q: "silo hugh howey trilogia intrinseca", d: "Trilogia Silo (Completa) | Hugh Howey | Edição Intrínseca | Estado de Novo\n\n📚 Volumes inclusos:\n• Silo\n• Ordem\n• Legado\n\n📖 Estado:\nExemplares extremamente bem preservados.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/A1L+4AZ7uyL._CLa%7C3263,2560%7CA1oj4G3MGSL.jpg,A1IC8Xt2E4L.jpg%7C0,0,1483,2560+1780,0,1483,2560+741,0,1780,2560_._SY300_.jpg" }, { t: "Kit 4 Livros C.J. Tudor", g: ["Thriller", "Suspense"], p: "145,00", v: 145, q: "cj tudor homem giz kit livros intrinseca", d: "Kit 4 Livros C.J. Tudor | Editora Intrínseca | Estado de Novo\n\n📚 Livros inclusos:\n• O Homem de Giz\n• O Que Aconteceu com Annie\n• As Outras Pessoas\n• Garotas em Chamas\n\n📖 Estado:\nLivros impecáveis.\n\n📸 Posso encaminhar fotos reais.", img: "https://http2.mlstatic.com/D_NQ_NP_2X_953591-MLB46108256958_052021-F.webp" }, { t: "Bird Box (Luxo) + Malorie", g: ["Thriller", "Terror"], p: "95,00", v: 95, q: "bird box malorie josh malerman edicao luxo", d: "Combo Bird Box (Ed. Especial de Luxo) + Malorie | Josh Malerman\n\n📚 Conteúdo:\n• Bird Box — Edição especial luxuosa\n• Malorie — Sequência direta\n\n📖 Estado:\nAmbos impecáveis.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/91x7oEAnSOL._SY342_.jpg" }, { t: "Drácula - First Edition", g: ["Terror", "Clássico"], p: "55,00", v: 55, q: "dracula bram stoker darkside first edition", d: "Drácula | Bram Stoker | Edição de Luxo First Edition (DarkSide Books) | Capa Dura\n\n📖 Estado:\nExemplar muito bem cuidado.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/61gfnGu9cTL._SY342_.jpg" }, { t: "Box Trilogia Princesa das Cinzas", g: ["Fantasia"], p: "90,00", v: 90, q: "princesa das cinzas laura sebastian box trilogia", d: "Box Trilogia Princesa das Cinzas (Completo) | Laura Sebastian | Estado de Novo\n\n📚 Volumes inclusos:\n• Princesa das Cinzas\n• Dama da Névoa\n• Rainha das Chamas\n\n📖 Estado:\nBox e três volumes em estado impecável.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/41oeGyDYhXS._SX342_SY445_PQ99_.jpg" }, { t: "Box Trilogia Sombra e Ossos", g: ["Fantasia"], p: "100,00", v: 100, q: "sombra e ossos leigh bardugo grishaverso box", d: "Box Trilogia Sombra e Ossos (Completo) | Leigh Bardugo | Grishaverso | Estado de Novo\n\n📚 Volumes inclusos:\n• Sombra e Ossos\n• Sol e Tormenta\n• Ruína e Ascensão\n\n📖 Estado:\nBox e três volumes em estado impecável.\n\n📸 Posso encaminhar fotos reais.", img: "https://americanas.vtexassets.com/arquivos/ids/478565-1280-auto/3636586991_3SZ.webp?v=638750827352770000&quality=9" }, { t: "Box A Saga dos Corvos", g: ["Fantasia", "Mistério"], p: "110,00", v: 110, q: "saga dos corvos maggie stiefvater box completo", d: "Box A Saga dos Corvos (Completo - 4 Livros) | Maggie Stiefvater | Estado de Novo\n\n📚 Volumes inclusos:\n• Os Garotos Corvos\n• Ladrões de Sonhos\n• Lírio Azul Azul Lírio\n• O Rei Corvo\n\n📖 Estado:\nBox e quatro volumes impecáveis.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/91E+AI-cdOS._SY342_.jpg" }, { t: "Box Crônicas de Artur", g: ["Ficção Histórica"], p: "130,00", v: 130, q: "cronicas artur bernard cornwell box rei inverno", d: "Box As Crônicas de Artur (Trilogia Completa) | Bernard Cornwell | Edição de Colecionador\n\n📚 Volumes inclusos:\n• O Rei do Inverno\n• O Inimigo de Deus\n• Excalibur\n\n📖 Estado:\nBox e três volumes em excelente estado.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/A1BfXWSusFL._AC_UF1000,1000_QL80_.jpg" }, { t: "Coleção Clássicos Brasileiros", g: ["Clássicos", "Literatura Brasileira"], p: "180,00", v: 180, q: "colecao classicos literatura brasileira capa dura", d: "Coleção Clássicos da Literatura Brasileira | 12 Livros | Edição Integral | Capa Dura\n\n📖 Estado:\nLivros em estado impecável com acabamento premium.\n\n💰 Valor: Lote completo (12 livros) por R$ 180,00", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-GnN_PI-dO0EkXtt49V42Eb-kfzMxq1lgmw&s" }, { t: "Mega Combo O Povo do Ar", g: ["Fantasia", "Fadas"], p: "210,00", v: 210, q: "povo do ar holly black principe cruel box", d: "Mega Combo O Povo do Ar (Box + Livro Extra de Luxo) | Holly Black\n\n📚 Conteúdo (5 livros no total)\n\n📖 Estado:\nLivros absolutamente impecáveis.\n\n📸 Posso enviar fotos reais.", img: "https://static.estantevirtual.com.br/book/00/IFW-9588-000/IFW-9588-000_detail1.jpg?ts=1746457625635?ims=fit-in/300x400/filters:fill(ffffff)" }, { t: "Combo Senhores de Castelo", g: ["Sci-Fi", "Nacional"], p: "75,00", v: 75, q: "cronicas senhores castelo brasman norris", d: "Combo Crônicas dos Senhores de Castelo (4 Livros) | Ficção Científica Nacional\n\n📚 Volumes inclusos:\n• O Poder Verdadeiro\n• Efeito Manticore\n• Maré Vermelha\n• Renúncia\n\n📖 Estado:\nLivros fisicamente muito bem preservados.\n\n📸 Posso enviar fotos detalhadas.", img: "https://m.media-amazon.com/images/I/81SC-iX2YCL._SY342_.jpg" }, { t: "Saga O Lado Mais Sombrio", g: ["Fantasia", "Gótico"], p: "80,00", v: 80, q: "lado mais sombrio ag howard alice fantasia", d: "Saga O Lado Mais Sombrio (Coleção Completa - 4 Livros) | A.G. Howard\n\n📚 Volumes inclusos:\n• O Lado Mais Sombrio\n• Atrás do Espelho\n• Qualquer Outro Lugar\n• Sussurros do País das Maravilhas\n\n📖 Estado:\nMuito bem conservados.", img: "https://m.media-amazon.com/images/I/31ARYMDKRLL.jpg" }, { t: "Trilogia Legado Ranger", g: ["Fantasia", "Nacional"], p: "90,00", v: 90, q: "legado ranger raphael draccon dragoes cemiterios", d: "Trilogia Legado Ranger (Completa) | Raphael Draccon | Fantasia Épica Brasileira\n\n📚 Volumes inclusos:\n• Cemitérios de Dragões\n• Cidades de Dragões\n• Mundos de Dragões\n\n📖 Estado:\nExemplares muito bem cuidados.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/91BJWnVew7L._CLa%7C3246,2560%7C81i5AjCBISL.jpg,91iGzvw52sL.jpg%7C0,0,1475,2560+1771,0,1475,2560+737,0,1771,2560_._SY300_.jpg" }, { t: "Mega Coleção Crepúsculo", g: ["Romance", "Vampiros"], p: "195,00", v: 195, q: "crepusculo stephenie meyer colecao completa box", d: "Mega Coleção Saga Crepúsculo (8 Itens) | Stephenie Meyer\n\n📚 Conteúdo completo (8 itens)\n\n📖 Estado:\nLivros muito bem preservados.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/61CSYLhEICS._SL1500_.jpg" }, { t: "Saga Legend + Rebel", g: ["Distopia", "Ação"], p: "130,00", v: 130, q: "legend marie lu box trilogia rebel", d: "Saga Legend (Box Trilogia Completa + Livro Final Rebel) | Marie Lu | Estado de Novo\n\n📚 Conteúdo (4 livros)\n\n📖 Estado:\nBox e livros absolutamente impecáveis.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/51NbL1Rq6aL._SY342_.jpg" }, { t: "Saga Trono de Vidro (8 Livros)", g: ["Fantasia"], p: "240,00", v: 240, q: "trono de vidro sarah j maas colecao completa", d: "Saga Trono de Vidro (Coleção Completa - 8 Livros) | Sarah J. Maas | Galera Record\n\n📖 Estado:\nExemplares impecáveis.\n\n📸 Posso enviar fotos reais de cada volume.", img: "https://images-americanas.b2w.io/produtos/5413039229/imagens/colecao-da-serie-trono-de-vidro-8-livros-sarah-j-maas/5413039237_1_large.jpg" }, { t: "Trilogia Neve e Cinzas", g: ["Fantasia"], p: "90,00", v: 90, q: "neve e cinzas sara raasch trilogia harpercollins", d: "Trilogia Neve e Cinzas (Completa) | Sara Raasch | HarperCollins\n\n📚 Volumes inclusos:\n• Neve e Cinzas\n• Gelo e Fogo\n• Geada e Noite\n\n📖 Estado:\nLivros muito bem preservados.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/71Hw206fF-L._SY342_.jpg" }, { t: "Trilogia A 5ª Onda", g: ["Sci-Fi", "Ação"], p: "60,00", v: 60, q: "quinta onda rick yancey trilogia completa", d: "Trilogia A 5ª Onda (Completa) | Rick Yancey\n\n📚 Volumes inclusos:\n• A 5ª Onda\n• O Mar Infinito\n• A Última Estrela\n\n📖 Estado:\nCapas e lombadas muito bem preservadas.", img: "https://m.media-amazon.com/images/I/813mSc2QPqL._SY342_.jpg" }, { t: "Trilogia Mago Negro", g: ["Fantasia", "Magia"], p: "75,00", v: 75, q: "trilogia mago negro trudi canavan cla magos", d: "Trilogia do Mago Negro (Completa) | Trudi Canavan | Fantasia Épica\n\n📚 Volumes inclusos:\n• O Clã dos Magos\n• A Aprendiz\n• O Lorde Supremo\n\n📖 Estado:\nCapas e lombadas muito bem preservadas.\n\n📸 Posso enviar fotos reais.", img: "https://efutura.futurasistemas.com.br/temas/vistagenerico3/image/cache/data/livros/colecao/112926537SZ-580x580.jpg?version=20180131113520" }, { t: "Box Magisterium", g: ["Fantasia", "Infantojuvenil"], p: "135,00", v: 135, q: "magisterium holly black cassandra clare box", d: "Box Magisterium (Completo - 5 Livros) | Holly Black e Cassandra Clare | Edição Especial\n\n📖 Estado:\nBox e volumes em estado impecável.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/51Uzf4EMt5L._SX342_SY445_PQ99_.jpg" }, { t: "Box Sherlock Holmes", g: ["Mistério", "Clássico"], p: "95,00", v: 95, q: "sherlock holmes box obra completa harpercollins", d: "Box Sherlock Holmes - Obra Completa (4 Volumes) | HarperCollins | Capa Dura\n\n📖 Estado:\nBox rígido firme e quatro volumes em capa dura em excelente estado.\n\n📸 Posso enviar fotos reais.", img: "https://m.media-amazon.com/images/I/71kaG9KFfhL._SY342_.jpg" }, { t: "Box Tetralogia Angélica", g: ["Fantasia", "Nacional"], p: "125,00", v: 125, q: "tetralogia angelica eduardo spohr box apocalipse", d: "Box Tetralogia Angélica (Completo - 4 Livros) | Eduardo Spohr | Edição Especial 10 Anos\n\n📖 Estado:\nBox e volumes em estado impecável.\n\n📸 Posso encaminhar fotos reais.", img: "https://static.skeelo.com/remote/320/480/100/https://skoob.s3.amazonaws.com/livros/790957/BOX_TETRALOGIA_ANGELICA_1530626840790957SK1530626840B.jpg" }, { t: "Box Jules Verne", g: ["Sci-Fi", "Clássico"], p: "80,00", v: 80, q: "jules verne box viagens extraordinarias zahar", d: "Box Jules Verne - 4 Viagens Extraordinárias (Capa Dura) | Clássicos Zahar | Estado de Novo\n\n📖 Estado:\nBox e volumes em estado de banca.\n\n📸 Posso enviar fotos reais.", img: "https://m.media-amazon.com/images/I/515c-kwvF1L._SY445_SX342_PQ99_.jpg" }, { t: "Mitos Gregos", g: ["Mitologia"], p: "12,00", v: 12, q: "mitos gregos nathaniel hawthorne principis", d: "Mitos Gregos para Jovens Leitores | Nathaniel Hawthorne | Editora Principis\n\n📖 Estado:\nExemplar em perfeito estado.\n\n📸 Posso enviar fotos.", img: "https://m.media-amazon.com/images/I/71bpljCX9+L._SY342_.jpg" }, { t: "Combo Stranger Things", g: ["Suspense", "Ficção"], p: "65,00", v: 65, q: "stranger things livros raizes mal cidade trevas", d: "Combo Stranger Things (2 Livros Oficiais)\n\n📚 Livros inclusos:\n• Raízes do Mal\n• Cidade nas Trevas\n\n📖 Estado:\nMuito bem cuidados.", img: "https://m.media-amazon.com/images/I/81KszOKZwqL._SY342_.jpg" }, { t: "Os Legados de Lorien", g: ["Sci-Fi", "Ação"], p: "170,00", v: 170, q: "legados lorien pittacus lore numero quatro colecao", d: "Saga Os Legados de Lorien (Coleção Completa - 7 Livros) | Pittacus Lore | Intrínseca\n\n📖 Estado:\nOs 7 volumes estão muito bem cuidados.\n\n📸 Posso enviar fotos reais.", img: "https://universosdepapellivros.wordpress.com/wp-content/uploads/2017/06/legados-de-lorien-livros.jpg" }, { t: "A Guerra dos Mundos (Luxo)", g: ["Sci-Fi", "Clássico"], p: "25,00", v: 25, q: "guerra dos mundos hg wells capa dura luxo", d: "A Guerra dos Mundos | H.G. Wells | Edição Especial Capa Dura (Martin Claret)\n\n📖 Estado:\nExemplar em estado de novo.\n\n📸 Posso enviar fotos.", img: "https://m.media-amazon.com/images/I/81zsdG62TGL._SY342_.jpg" }, { t: "Trilogia Saga Encantadas", g: ["Fantasia", "Dark"], p: "60,00", v: 60, q: "saga encantadas sarah pinborough veneno feitico", d: "Trilogia Saga Encantadas (Completa) | Sarah Pinborough | Releituras Sombrias\n\n📚 Volumes inclusos:\n• Veneno\n• Feitiço\n• Poder\n\n📖 Estado:\nLivros fisicamente inteiros.", img: "https://http2.mlstatic.com/D_Q_NP_693176-MLB88809334482_082025-F.webp" }, { t: "Box Segunda Guerra Mundial", g: ["História"], p: "45,00", v: 45, q: "box segunda guerra mundial editora hb completo", d: "Box Essencial Segunda Guerra Mundial (Completo - 3 Livros) | Editora HB\n\n📚 Volumes inclusos:\n• Grandes Líderes\n• Grandes Batalhas\n• Holocausto\n\n📖 Estado:\nBox e três volumes em excelente estado.\n\n📸 Posso enviar fotos.", img: "https://m.media-amazon.com/images/I/71v9lgMZOTL._SY342_.jpg" }, { t: "Kit Um de Nós (2 Livros)", g: ["Suspense", "Jovem"], p: "60,00", v: 60, q: "um de nos esta mentindo karen mcmanus kit", d: "Kit Um de Nós (2 Livros) | Karen M. McManus\n\n📚 Livros inclusos:\n• Um de Nós Está Mentindo\n• Um de Nós é o Próximo\n\n📖 Estado:\nExemplares em excelente estado.\n\n📸 Posso enviar fotos reais.", img: "https://m.media-amazon.com/images/I/811+cSVUW-S._SY342_.jpg" }, { t: "Box HP Guia Cinema", g: ["Cinema", "Arte"], p: "70,00", v: 70, q: "harry potter guia cinematografico box rocco", d: "Box Harry Potter: Guia Cinematográfico (Coleção Completa) | 4 Livros em Capa Dura\n\n📖 Estado:\nOs 4 volumes em capa dura estão absolutamente novos e impecáveis.\n\n📸 Posso enviar fotos reais.", img: "https://static.estantevirtual.com.br/book/00/NIV-9786-000/NIV-9786-000_detail1.png?ts=1763812855171&ims=fit-in/600x800/filters:fill(fff):quality(100)" }, { t: "A Filha das Profundezas", g: ["Aventura"], p: "35,00", v: 35, q: "filha das profundezas rick riordan nautilus", d: "A Filha das Profundezas | Rick Riordan | Releitura de Júlio Verne | Estado de Novo\n\n📖 Estado:\nExemplar em estado de livraria.\n\n📸 Posso enviar fotos reais.", img: "https://m.media-amazon.com/images/I/5156fUHVVAL._SY342_.jpg" }, { t: "O Espadachim de Carvão", g: ["Fantasia", "Nacional"], p: "15,00", v: 15, q: "espadachim de carvao affonso solano fantasia", d: "O Espadachim de Carvão | Affonso Solano | Fantasia Nacional | Ed. Casa da Palavra\n\n📖 Estado:\nExemplar estruturalmente perfeito.\n\n📸 Posso enviar fotos reais.", img: "https://m.media-amazon.com/images/I/71e4y62I94L._SY342_.jpg" }, { t: "Box Dragões de Éter", g: ["Fantasia", "Nacional"], p: "105,00", v: 105, q: "dragoes de eter raphael draccon box completo", d: "Box Dragões de Éter (Coleção Integral - 4 Livros) + Pôster | Raphael Draccon\n\n📚 Volumes inclusos:\n• Caçadores de Bruxas\n• Corações de Neve\n• Círculos de Chuva\n• Estandartes de Névoa\n\n🎁 Bônus: Pôster do Mapa de Nova Ether\n\n📖 Estado:\nBox e todos os quatro volumes em excelente estado.\n\n📸 Posso enviar fotos reais.", img: "https://http2.mlstatic.com/D_NQ_NP_2X_660400-MLU53788897434_022023-F.webp" }, { t: "Trilogia Casa de Segredos", g: ["Aventura", "Fantasia"], p: "65,00", v: 65, q: "casa de segredos chris columbus trilogia completa", d: "Trilogia Casa de Segredos (Coleção Completa) | Chris Columbus e Ned Vizzini\n\n📚 Volumes inclusos:\n• Casa de Segredos\n• A Batalha das Bestas\n• A Colisão dos Mundos\n\n📖 Estado:\nLivros estruturalmente impecáveis.\n\n📸 Posso enviar fotos reais.", img: "https://cdn.record.com.br/wp-content/uploads/2019/07/25225256/1939-768x1115.png" }, { t: "Quinteto Uma Dobra no Tempo", g: ["Sci-Fi", "Clássico"], p: "130,00", v: 130, q: "uma dobra no tempo quinteto harpercollins capa dura", d: "Quinteto Uma Dobra no Tempo (Coleção Completa - 5 Livros) | Capa Dura | HarperCollins\n\n📖 Estado:\nOs 5 volumes estão em estado de novo e impecáveis.\n\n📸 Posso enviar fotos reais.", img: "https://m.media-amazon.com/images/I/81fxkCYMPEL._SY342_.jpg" }, { t: "As Crônicas de Nárnia", g: ["Fantasia", "Clássico"], p: "95,00", v: 95, q: "cronicas de narnia cs lewis colecao martins fontes", d: "As Crônicas de Nárnia - Coleção Completa (7 Livros) | C.S. Lewis | Editora WMF Martins Fontes\n\n📖 Estado:\nLivros em excelente estado.\n\n📸 Posso enviar fotos reais.", img: "https://acdn-us.mitiendanube.com/stores/001/291/785/products/as-cronicas-de-narnia1-6eabf8b7ebe34efea216294046023545-1024-1024.webp" } ]; let favorites = JSON.parse(localStorage.getItem('seboFavorites') || '[]'); let activeGenres = []; let showOnlyFavorites = false; let currentTheme = localStorage.getItem('seboTheme') || 'light'; let bodyScrollPos = 0; const grid = document.getElementById('bookGrid'); const counter = document.getElementById('counter'); const searchInput = document.getElementById('searchInput'); const clearSearchBtn = document.getElementById('clearSearch'); const emptyState = document.getElementById('emptyState'); const scrollToTopBtn = document.getElementById('scrollToTop'); const genreFiltersContainer = document.getElementById('genreFilters'); document.addEventListener('DOMContentLoaded', () => { document.getElementById('currentYear').textContent = new Date().getFullYear(); applyTheme(currentTheme); renderGenreFilters(); renderBooks(); updateFavoritesCount(); setupEventListeners(); }); function setupEventListeners() { let searchTimeout; searchInput.addEventListener('input', () => { clearTimeout(searchTimeout); clearSearchBtn.classList.toggle('visible', searchInput.value.length > 0); searchTimeout = setTimeout(renderBooks, 150); }); window.addEventListener('scroll', () => { const navbar = document.querySelector('.navbar'); navbar.classList.toggle('scrolled', window.scrollY > 10); scrollToTopBtn.classList.toggle('visible', window.scrollY > 400); }, { passive: true }); document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); closePaymentInfo(); closeHowItWorks(); } }); } function toggleTheme() { currentTheme = currentTheme === 'light' ? 'dark' : 'light'; applyTheme(currentTheme); localStorage.setItem('seboTheme', currentTheme); } function applyTheme(theme) { document.documentElement.setAttribute('data-theme', theme); const icon = theme === 'dark' ? 'fa-sun' : 'fa-moon'; document.getElementById('themeIcon').className = 'fas ' + icon; const mobileIcon = document.getElementById('themeIconMobile'); if (mobileIcon) mobileIcon.className = 'fas ' + icon; } function normalizeText(text) { return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); } function getGenres() { const genreCount = {}; books.filter(b => !b.s).forEach(book => { book.g.forEach(genre => { genreCount[genre] = (genreCount[genre] || 0) + 1; }); }); return Object.entries(genreCount).sort((a, b) => b[1] - a[1]); } function renderGenreFilters() { const genres = getGenres(); const availableBooks = books.filter(b => !b.s); genreFiltersContainer.innerHTML = '<button class="filter-chip ' + (activeGenres.length === 0 ? 'active' : '') + '" onclick="setGenreFilter(null)"><i class="fas fa-layer-group"></i><span>Todos</span><span class="count">' + availableBooks.length + '</span></button>' + genres.map(([genre, count]) => '<button class="filter-chip ' + (activeGenres.includes(genre) ? 'active' : '') + '" onclick="setGenreFilter(\'' + genre.replace(/'/g, "\\'") + '\')"><span>' + genre + '</span><span class="count">' + count + '</span></button>').join(''); } function setGenreFilter(genre) { if (genre === null) { activeGenres = []; } else { const idx = activeGenres.indexOf(genre); if (idx > -1) { activeGenres.splice(idx, 1); } else { activeGenres.push(genre); } } renderGenreFilters(); renderBooks(); } function toggleFavorite(index, event) { if (event) { event.stopPropagation(); event.preventDefault(); } const idx = favorites.indexOf(index); if (idx > -1) { favorites.splice(idx, 1); showToast('Removido dos favoritos'); } else { favorites.push(index); showToast('Adicionado aos favoritos', 'success'); } localStorage.setItem('seboFavorites', JSON.stringify(favorites)); updateFavoritesCount(); const btn = document.querySelector('[data-favorite-index="' + index + '"]'); if (btn) { btn.classList.toggle('active', favorites.includes(index)); btn.querySelector('i').className = favorites.includes(index) ? 'fas fa-heart' : 'far fa-heart'; } if (showOnlyFavorites) renderBooks(); } function updateFavoritesCount() { document.getElementById('favoritesCount').textContent = favorites.length; } function toggleFavoritesFilter() { showOnlyFavorites = !showOnlyFavorites; document.getElementById('favoritesFilter').classList.toggle('active', showOnlyFavorites); document.getElementById('favoritesFilter').setAttribute('aria-pressed', showOnlyFavorites); renderBooks(); } const coverCache = new Map(); async function fetchCover(query, imgElement, bookTitle) { if (imgElement.dataset.customImg) { applyImage(imgElement, imgElement.dataset.customImg); return; } if (coverCache.has(query)) { applyImage(imgElement, coverCache.get(query)); return; } try { const res = await fetch('https://www.googleapis.com/books/v1/volumes?q=' + encodeURIComponent(query) + '&maxResults=3&langRestrict=pt'); const data = await res.json(); if (data.items && data.items.length > 0) { let bestMatch = data.items[0]; const normalizedTitle = normalizeText(bookTitle); for (const item of data.items) { const itemTitle = normalizeText(item.volumeInfo.title || ''); if (itemTitle.includes(normalizedTitle.split(' ')[0])) { bestMatch = item; break; } } if (bestMatch.volumeInfo.imageLinks) { let url = bestMatch.volumeInfo.imageLinks.thumbnail || bestMatch.volumeInfo.imageLinks.smallThumbnail; url = url.replace('http:', 'https:').replace('&zoom=1', '&zoom=0').replace('&edge=curl', ''); coverCache.set(query, url); applyImage(imgElement, url); return; } } throw new Error('No image'); } catch (e) { showPlaceholder(imgElement, bookTitle); } } function applyImage(imgElement, url) { if (!imgElement) return; imgElement.src = url; imgElement.onload = () => { imgElement.classList.add('loaded'); imgElement.parentElement?.classList.remove('skeleton'); }; imgElement.onerror = () => showPlaceholder(imgElement, imgElement.alt); } function showPlaceholder(imgElement, bookTitle) { if (!imgElement) return; const container = imgElement.parentElement; if (container) { container.classList.remove('skeleton'); const shortTitle = bookTitle.length > 40 ? bookTitle.substring(0, 40) + '...' : bookTitle; container.innerHTML = '<div class="cover-placeholder"><i class="fas fa-book"></i><span>' + shortTitle + '</span></div>'; } } const imageObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { const img = entry.target; const query = img.dataset.query; const title = img.dataset.title; if (query) { fetchCover(query, img, title); imageObserver.unobserve(img); } } }); }, { rootMargin: '100px' }); function formatDescription(text) { const sections = text.split('\n\n'); let html = ''; sections.forEach(section => { if (!section.trim()) return; let processed = section.replace(/📚|✨|📖|⚠️|💰|🎁/g, '').trim(); if (processed.match(/^(Sobre|Conteúdo|Volumes|Estado|Observação|Para quem|Diferencial|Bônus|Livros|Valor)/i)) { const parts = processed.split(':'); if (parts.length > 1) { const label = parts[0].trim(); const content = parts.slice(1).join(':').trim(); html += '<div class="section"><span class="label">' + label + '</span><br>' + formatContent(content) + '</div>'; } else { html += '<div class="section">' + formatContent(processed) + '</div>'; } } else { html += '<div class="section">' + formatContent(processed) + '</div>'; } }); return html; } function formatContent(text) { return text.replace(/•/g, '<br>•').replace(/\n/g, '<br>').replace(/"([^"]+)"/g, '<span class="highlight">"$1"</span>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>'); } function renderBooks() { grid.innerHTML = ""; const searchTerm = normalizeText(searchInput.value); const sortMode = document.getElementById('sortSelect').value; let filtered = books.map((book, index) => ({ ...book, originalIndex: index })); const soldBooks = filtered.filter(b => b.s); let availableBooks = filtered.filter(b => !b.s); if (showOnlyFavorites) availableBooks = availableBooks.filter(b => favorites.includes(b.originalIndex)); if (activeGenres.length > 0) availableBooks = availableBooks.filter(b => activeGenres.some(genre => b.g.includes(genre))); if (searchTerm) availableBooks = availableBooks.filter(b => normalizeText(b.t).includes(searchTerm) || normalizeText(b.d).includes(searchTerm) || b.g.some(genre => normalizeText(genre).includes(searchTerm))); if (sortMode === 'price-asc') availableBooks.sort((a, b) => a.v - b.v); if (sortMode === 'price-desc') availableBooks.sort((a, b) => b.v - a.v); if (sortMode === 'alpha') availableBooks.sort((a, b) => a.t.localeCompare(b.t)); const total = availableBooks.length; counter.textContent = total + ' ' + (total === 1 ? 'livro disponível' : 'livros disponíveis'); emptyState.classList.toggle('hidden', total > 0 || soldBooks.length > 0); grid.classList.toggle('hidden', total === 0 && soldBooks.length === 0); availableBooks.forEach((book, idx) => renderCard(book, idx, false)); if (!searchTerm && activeGenres.length === 0 && !showOnlyFavorites) soldBooks.forEach((book, idx) => renderCard(book, availableBooks.length + idx, true)); } function renderCard(book, idx, isSold) { const isFavorite = favorites.includes(book.originalIndex); const card = document.createElement('article'); card.className = 'book-card ' + (isSold ? 'sold' : ''); card.style.animationDelay = (idx * 50) + 'ms'; card.innerHTML = (isSold ? '<div class="sold-badge"><span>Vendido</span></div>' : '') + '<div class="book-cover skeleton"><img data-query="' + book.q + '" data-title="' + book.t + '" ' + (book.img ? 'data-custom-img="' + book.img + '"' : '') + ' alt="Capa: ' + book.t + '" loading="lazy">' + (!isSold ? '<button class="favorite-btn ' + (isFavorite ? 'active' : '') + '" data-favorite-index="' + book.originalIndex + '" onclick="toggleFavorite(' + book.originalIndex + ', event)" aria-label="' + (isFavorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos') + '"><i class="' + (isFavorite ? 'fas' : 'far') + ' fa-heart"></i></button>' : '') + '</div><div class="book-card-content"><div class="genre-tags">' + book.g.map(genre => '<span class="genre-tag">' + genre + '</span>').join('') + '</div><h2 class="book-card-title">' + book.t + '</h2><div class="book-card-footer"><span class="book-card-price" style="' + (isSold ? 'color:var(--color-text-muted);text-decoration:line-through;' : '') + '">R$ ' + book.p + '</span>' + (!isSold ? '<div class="book-card-arrow"><i class="fas fa-arrow-right"></i></div>' : '') + '</div></div>'; if (!isSold) { card.addEventListener('click', () => openModal(book)); card.style.cursor = 'pointer'; } grid.appendChild(card); const img = card.querySelector('img'); if (img) imageObserver.observe(img); requestAnimationFrame(() => { setTimeout(() => card.classList.add('visible'), idx * 50); }); } function lockBodyScroll() { bodyScrollPos = window.scrollY; document.body.classList.add('modal-open'); document.body.style.top = '-' + bodyScrollPos + 'px'; } function unlockBodyScroll() { document.body.classList.remove('modal-open'); document.body.style.top = ''; window.scrollTo(0, bodyScrollPos); } function openModal(book) { const isFavorite = favorites.includes(book.originalIndex); closeModal(); setTimeout(() => { document.getElementById('modalTitle').textContent = book.t; document.getElementById('modalPrice').textContent = book.p; document.getElementById('modalDesc').innerHTML = formatDescription(book.d); document.getElementById('modalGenreTags').innerHTML = book.g.map(genre => '<span class="genre-tag">' + genre + '</span>').join(''); const modalImg = document.getElementById('modalImg'); modalImg.alt = 'Capa: ' + book.t; if (book.img) { modalImg.src = book.img; } else if (coverCache.has(book.q)) { modalImg.src = coverCache.get(book.q); } else { modalImg.src = ''; fetchCover(book.q, modalImg, book.t); } const modalFavBtn = document.getElementById('modalFavoriteBtn'); modalFavBtn.classList.toggle('active', isFavorite); modalFavBtn.querySelector('i').className = isFavorite ? 'fas fa-heart' : 'far fa-heart'; modalFavBtn.onclick = (e) => { toggleFavorite(book.originalIndex, e); modalFavBtn.classList.toggle('active', favorites.includes(book.originalIndex)); modalFavBtn.querySelector('i').className = favorites.includes(book.originalIndex) ? 'fas fa-heart' : 'far fa-heart'; }; const msg = encodeURIComponent('Olá Rodrigo! 📚\n\nTenho interesse no livro:\n*' + book.t + '*\nValor: R$ ' + book.p + '\n\nAinda está disponível?'); document.getElementById('modalWhatsapp').href = 'https://wa.me/5547991438831?text=' + msg; document.getElementById('modalBackdrop').classList.add('open'); document.getElementById('modal').classList.add('open'); lockBodyScroll(); }, 50); } function closeModal() { document.getElementById('modalBackdrop').classList.remove('open'); document.getElementById('modal').classList.remove('open'); unlockBodyScroll(); } function openHowItWorks() { document.getElementById('howItWorksBackdrop').classList.add('open'); document.getElementById('howItWorksModal').classList.add('open'); lockBodyScroll(); } function closeHowItWorks() { document.getElementById('howItWorksBackdrop').classList.remove('open'); document.getElementById('howItWorksModal').classList.remove('open'); unlockBodyScroll(); } function openPaymentInfo() { document.getElementById('paymentBackdrop').classList.add('open'); document.getElementById('paymentModal').classList.add('open'); lockBodyScroll(); } function closePaymentInfo() { document.getElementById('paymentBackdrop').classList.remove('open'); document.getElementById('paymentModal').classList.remove('open'); unlockBodyScroll(); } function copyPix() { navigator.clipboard.writeText("58242143000190").then(() => { showToast('Chave Pix copiada!', 'success'); }).catch(() => { const textarea = document.createElement('textarea'); textarea.value = '58242143000190'; document.body.appendChild(textarea); textarea.select(); document.execCommand('copy'); document.body.removeChild(textarea); showToast('Chave Pix copiada!', 'success'); }); } function clearSearch() { searchInput.value = ''; clearSearchBtn.classList.remove('visible'); renderBooks(); searchInput.focus(); } function clearAllFilters() { searchInput.value = ''; clearSearchBtn.classList.remove('visible'); activeGenres = []; showOnlyFavorites = false; document.getElementById('favoritesFilter').classList.remove('active'); document.getElementById('favoritesFilter').setAttribute('aria-pressed', 'false'); renderGenreFilters(); renderBooks(); } function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); } function toggleMobileMenu() { const menu = document.getElementById('mobileMenu'); const icon = document.getElementById('mobileMenuIcon'); const isOpen = menu.classList.contains('open'); menu.classList.toggle('open'); icon.className = isOpen ? 'fas fa-bars' : 'fas fa-times'; } function showToast(message, type) { type = type || 'default'; const container = document.getElementById('toastContainer'); const toast = document.createElement('div'); toast.className = 'toast ' + type; toast.innerHTML = '<i class="fas ' + (type === 'success' ? 'fa-check-circle' : 'fa-info-circle') + '"></i><span>' + message + '</span>'; container.appendChild(toast); setTimeout(() => { toast.style.opacity = '0'; toast.style.transform = 'translateX(100%)'; setTimeout(() => toast.remove(), 300); }, 3000); } </script> </body> </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="description" content="Acervo Literário - Livros usados com qualidade de colecionador. Entrega na empresa.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="theme-color" content="#1e3a5f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Acervo Literário | Livros de Qualidade Direto para Você</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231e3a5f' rx='12' width='100' height='100'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Georgia'>📚</text></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-primary: #1e3a5f;
+            --color-primary-light: #2d4a6f;
+            --color-accent: #c9a227;
+            --color-accent-hover: #b8922a;
+            --color-success: #16a34a;
+            --color-sold: #dc2626;
+            --color-surface: #ffffff;
+            --color-surface-elevated: #f5f0e8;
+            --color-surface-warm: #faf7f2;
+            --color-text: #2c2c2c;
+            --color-text-muted: #5c5c5c;
+            --color-border: #e0d9cf;
+            --font-display: 'Crimson Pro', Georgia, serif;
+            --font-body: 'DM Sans', system-ui, sans-serif;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --radius-sm: 0.5rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --transition-fast: 150ms ease;
+            --transition-normal: 300ms ease;
+        }
+
+        [data-theme="dark"] {
+            --color-primary: #f0e6d3;
+            --color-primary-light: #e0d6c3;
+            --color-surface: #1a1a1a;
+            --color-surface-elevated: #252525;
+            --color-surface-warm: #1f1f1f;
+            --color-text: #e8e8e8;
+            --color-text-muted: #a0a0a0;
+            --color-border: #3a3a3a;
+        }
+
+        *, *::before, *::after { 
+            box-sizing: border-box; 
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        html { 
+            scroll-behavior: smooth; 
+            -webkit-text-size-adjust: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-surface-warm);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            min-height: 100dvh;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            margin: 0;
+            padding: 0;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+
+        .font-display { font-family: var(--font-display); }
+        :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -400px 0; }
+            100% { background-position: 400px 0; }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: var(--color-primary);
+            color: white;
+            width: 100%;
+        }
+
+        .navbar.scrolled { box-shadow: var(--shadow-lg); }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 3.5rem;
+            padding: 0 0.75rem;
+            max-width: 80rem;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: white;
+            flex-shrink: 1;
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        .navbar-brand-icon {
+            height: 2rem;
+            width: 2rem;
+            min-width: 2rem;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.375rem;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .navbar-brand-text {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        .navbar-brand-title {
+            font-weight: 700;
+            font-size: 0.875rem;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .navbar-brand-subtitle {
+            font-size: 0.625rem;
+            opacity: 0.7;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .navbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            flex-shrink: 0;
+        }
+
+        .desktop-nav { display: none; }
+
+        .theme-toggle, .mobile-menu-btn {
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 0.375rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .mobile-menu.open { display: block; }
+
+        .mobile-menu-content {
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .mobile-menu-item {
+            width: 100%;
+            text-align: left;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        .mobile-menu-cta {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: #25d366;
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 50%, #2a5080 100%);
+            color: white;
+            padding: 2rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 80rem;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .hero-checks {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            font-size: 0.75rem;
+        }
+
+        .hero-check {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .hero-check i { color: var(--color-accent); }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .main-header { margin-bottom: 1rem; }
+
+        .main-header-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .main-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sort-select-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--color-border);
+            background: var(--color-surface);
+            flex: 1;
+        }
+
+        .sort-select-wrapper select {
+            background: transparent;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            outline: none;
+            cursor: pointer;
+            color: var(--color-text);
+            border: none;
+            width: 100%;
+            -webkit-appearance: none;
+        }
+
+        /* SEARCH */
+        .search-container { position: relative; margin-bottom: 1rem; }
+
+        .search-container input {
+            width: 100%;
+            padding: 0.875rem 2.75rem 0.875rem 2.75rem;
+            font-size: 16px;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: var(--color-surface);
+            color: var(--color-text);
+            -webkit-appearance: none;
+        }
+
+        .search-container input:focus { 
+            border-color: var(--color-accent); 
+            box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.15); 
+        }
+
+        .search-container .search-icon { 
+            position: absolute; 
+            left: 0.875rem; 
+            top: 50%; 
+            transform: translateY(-50%); 
+            color: var(--color-text-muted);
+            pointer-events: none;
+        }
+
+        .search-container .clear-btn {
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 50%;
+            border: none;
+            background: var(--color-border);
+            color: var(--color-text-muted);
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-container .clear-btn.visible { display: flex; }
+
+        /* FILTERS */
+        .filters-wrapper {
+            position: relative;
+            margin: 0 -1rem 1.5rem;
+            padding: 0 1rem;
+        }
+
+        .filters-scroll {
+            display: flex;
+            gap: 0.5rem;
+            padding: 0.25rem 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .filters-scroll::-webkit-scrollbar { display: none; }
+
+        .filter-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.5rem 0.875rem;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+            -webkit-appearance: none;
+        }
+
+        .filter-chip:active { transform: scale(0.95); }
+        
+        .filter-chip.active { 
+            background: var(--color-primary); 
+            border-color: var(--color-primary); 
+            color: white;
+        }
+
+        .filter-chip .count { 
+            font-size: 0.6875rem; 
+            padding: 0.125rem 0.375rem; 
+            border-radius: 9999px; 
+            background: rgba(0,0,0,0.1); 
+        }
+
+        .filter-chip.active .count { background: rgba(255,255,255,0.2); }
+
+        .filter-nav-btn { display: none; }
+
+        /* BOOK GRID */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        /* BOOK CARD */
+        .book-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-card.visible { opacity: 1; transform: translateY(0); }
+        .book-card:active:not(.sold) { transform: scale(0.98); }
+        .book-card.sold { opacity: 0.7; pointer-events: none; }
+
+        .sold-badge {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+        }
+
+        .sold-badge span {
+            background: var(--color-sold);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transform: rotate(-15deg);
+        }
+
+        .book-cover {
+            position: relative;
+            height: 10rem;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color-border) 0%, var(--color-surface-elevated) 100%);
+            flex-shrink: 0;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .book-cover img.loaded { opacity: 1; }
+
+        .skeleton {
+            background: linear-gradient(90deg, var(--color-border) 0%, var(--color-surface-elevated) 50%, var(--color-border) 100%);
+            background-size: 800px 100%;
+            animation: shimmer 1.5s infinite linear;
+        }
+
+        .cover-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #e8e0d5 0%, #d4ccc0 100%);
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        .cover-placeholder i { font-size: 2rem; color: var(--color-primary); margin-bottom: 0.25rem; }
+        .cover-placeholder span { font-size: 0.625rem; color: var(--color-text-muted); line-height: 1.2; }
+
+        .genre-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+        }
+
+        .genre-tag {
+            display: inline-flex;
+            font-size: 0.5625rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+            background: var(--color-surface-elevated);
+            color: var(--color-text-muted);
+            border: 1px solid var(--color-border);
+            white-space: nowrap;
+        }
+
+        .favorite-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            background: var(--color-surface);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: var(--shadow-md);
+            z-index: 10;
+        }
+
+        .favorite-btn i { font-size: 1rem; color: var(--color-text-muted); }
+        .favorite-btn.active i { color: #ef4444; }
+
+        .book-card-content {
+            padding: 0.75rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-card-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.8125rem;
+            line-height: 1.3;
+            margin-top: 0.375rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .book-card-footer {
+            margin-top: auto;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .book-card-price {
+            font-weight: 700;
+            font-size: 0.9375rem;
+            color: var(--color-accent);
+        }
+
+        .book-card-arrow {
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-surface-elevated);
+        }
+
+        .book-card-arrow i {
+            font-size: 0.625rem;
+            color: var(--color-text-muted);
+        }
+
+        /* MODALS */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(30, 58, 95, 0.8);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 50;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+        }
+
+        .modal-backdrop.open { opacity: 1; visibility: visible; }
+
+        .modal-content {
+            position: fixed;
+            z-index: 51;
+            background: var(--color-surface);
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transform: translateY(100%);
+            max-width: 100%;
+            width: 100%;
+            max-height: 90vh;
+            max-height: 90dvh;
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+
+        .modal-backdrop.open + .modal-content, .modal-content.open { 
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0); 
+        }
+
+        .modal-handle {
+            display: flex;
+            width: 100%;
+            padding: 0.75rem;
+            justify-content: center;
+            background: var(--color-surface);
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+
+        .modal-handle-bar {
+            width: 2.5rem;
+            height: 0.25rem;
+            background: var(--color-border);
+            border-radius: 9999px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            border: none;
+            background: var(--color-surface);
+            color: var(--color-text);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+            z-index: 10;
+        }
+
+        .modal-inner {
+            display: flex;
+            flex-direction: column;
+            max-height: calc(90vh - 3rem);
+            max-height: calc(90dvh - 3rem);
+            overflow: hidden;
+        }
+
+        .modal-image-section {
+            position: relative;
+            height: 11rem;
+            flex-shrink: 0;
+            background: var(--color-surface-elevated);
+        }
+
+        .modal-image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            padding: 1rem;
+            overflow-y: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-body-content { flex: 1; }
+
+        .modal-body-footer {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .book-description {
+            font-size: 0.875rem;
+            line-height: 1.7;
+            color: var(--color-text);
+        }
+
+        .book-description .highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(201, 162, 39, 0.3) 60%);
+            font-weight: 600;
+        }
+
+        .book-description .section {
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed var(--color-border);
+        }
+
+        .book-description .section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+        .book-description .label {
+            display: inline-block;
+            font-size: 0.625rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-accent);
+            margin-bottom: 0.375rem;
+        }
+
+        .price-tag { font-size: 1.5rem; font-weight: 700; color: var(--color-accent); }
+        .price-tag small { font-size: 0.875rem; font-weight: 500; color: var(--color-text-muted); }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.875rem 1.25rem;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        }
+
+        /* PAYMENT & HOW IT WORKS MODALS */
+        .info-modal-content {
+            padding: 1.25rem;
+            overflow-y: auto;
+            max-height: calc(90vh - 3rem);
+            max-height: calc(90dvh - 3rem);
+        }
+
+        .info-modal-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            text-align: center;
+            color: var(--color-primary);
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.875rem;
+            background: var(--color-surface-elevated);
+            border-radius: var(--radius-md);
+            margin-bottom: 0.625rem;
+        }
+
+        .payment-method i { font-size: 1.25rem; color: var(--color-accent); flex-shrink: 0; }
+        .payment-method h4 { font-weight: 600; color: var(--color-primary); margin-bottom: 0.125rem; font-size: 0.9375rem; }
+        .payment-method p { font-size: 0.8125rem; color: var(--color-text-muted); line-height: 1.4; }
+
+        .info-modal-btn {
+            width: 100%;
+            margin-top: 1.25rem;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9375rem;
+        }
+
+        /* TOAST */
+        .toast-container {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            pointer-events: none;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            animation: slideInRight 0.3s ease-out;
+            pointer-events: auto;
+            width: 100%;
+            font-size: 0.875rem;
+        }
+
+        .toast.success { background: var(--color-success); }
+
+        /* SCROLL TO TOP */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 4rem;
+            left: 1rem;
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 50%;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(1rem);
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-lg);
+            z-index: 40;
+        }
+
+        .scroll-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        /* EMPTY STATE */
+        .empty-state { text-align: center; padding: 3rem 1.5rem; }
+        .empty-state i { font-size: 3rem; color: var(--color-border); margin-bottom: 1rem; display: block; }
+        .empty-state h2 { font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-primary); }
+        .empty-state p { color: var(--color-text-muted); font-size: 0.875rem; }
+        .empty-state button { margin-top: 1rem; padding: 0.5rem 1.25rem; border-radius: 0.5rem; font-weight: 500; background: var(--color-accent); color: white; border: none; cursor: pointer; }
+
+        /* FOOTER */
+        .footer {
+            padding: 1.5rem 1rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            background: var(--color-surface);
+            text-align: center;
+        }
+
+        .footer p { font-size: 0.8125rem; color: var(--color-text-muted); }
+        .footer p:last-child { font-size: 0.6875rem; margin-top: 0.375rem; }
+
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+        .hidden { display: none !important; }
+
+        /* TABLET & DESKTOP */
+        @media (min-width: 640px) {
+            .navbar-container { height: 4rem; padding: 0 1rem; }
+            .navbar-brand-icon { height: 2.5rem; width: 2.5rem; min-width: 2.5rem; font-size: 1.5rem; }
+            .navbar-brand-title { font-size: 1rem; }
+            .navbar-brand-subtitle { font-size: 0.6875rem; }
+            .hero { padding: 2.5rem 1rem; }
+            .hero-title { font-size: 2rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .hero-checks { font-size: 0.875rem; }
+            .main-content { padding: 1.5rem 1rem; }
+            .book-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+            .book-cover { height: 12rem; }
+            .book-card-content { padding: 1rem; }
+            .book-card-title { font-size: 0.9375rem; }
+            .book-card-price { font-size: 1rem; }
+            .genre-tag { font-size: 0.625rem; }
+        }
+
+        @media (min-width: 768px) {
+            .navbar-actions.mobile { display: none; }
+            .desktop-nav {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .desktop-nav-btn {
+                font-size: 0.8125rem;
+                font-weight: 500;
+                padding: 0.5rem 0.875rem;
+                border-radius: 0.5rem;
+                color: rgba(255,255,255,0.8);
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                white-space: nowrap;
+            }
+            .desktop-nav-btn:hover { color: white; background: rgba(255,255,255,0.1); }
+            .desktop-nav-cta {
+                background: rgba(255,255,255,0.2);
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                font-size: 0.8125rem;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                text-decoration: none;
+                white-space: nowrap;
+            }
+            .modal-content {
+                top: 50%;
+                left: 50%;
+                bottom: auto;
+                transform: translate(-50%, -50%) scale(0.95);
+                max-width: 42rem;
+                width: calc(100% - 2rem);
+                max-height: calc(100vh - 2rem);
+                border-radius: var(--radius-lg);
+            }
+            .modal-backdrop.open + .modal-content, .modal-content.open {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            .modal-handle { display: none; }
+            .modal-inner {
+                flex-direction: row;
+                max-height: 85vh;
+            }
+            .modal-image-section {
+                width: 42%;
+                height: auto;
+                min-height: 100%;
+            }
+            .modal-body {
+                width: 58%;
+                padding: 1.5rem;
+            }
+            .book-description { font-size: 0.9375rem; }
+            .price-tag { font-size: 1.75rem; }
+        }
+
+        @media (min-width: 1024px) {
+            .book-grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+            .book-cover { height: 14rem; }
+        }
+
+        @media (min-width: 1280px) {
+            .book-grid { grid-template-columns: repeat(5, 1fr); }
+            .book-cover { height: 15rem; }
+        }
+
+        @media print {
+            .navbar, .scroll-to-top, .toast-container, .favorite-btn { display: none !important; }
+            .book-card { break-inside: avoid; }
+        }
+/* Preço: "novo" riscado + desconto + preço atual em verde */
+.price-stack { display: flex; flex-direction: column; gap: 0.125rem; min-width: 0; }
+.price-old-row { display: flex; align-items: baseline; gap: 0.375rem; flex-wrap: wrap; }
+.price-old { font-size: 0.6875rem; color: var(--color-text-muted); text-decoration: line-through; }
+.discount-badge {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: var(--color-success);
+  background: rgba(22,163,74,0.12);
+  border: 1px solid rgba(22,163,74,0.25);
+  padding: 0.125rem 0.375rem;
+  border-radius: 9999px;
+  line-height: 1;
+}
+.price-current { font-weight: 800; font-size: 0.9375rem; color: var(--color-success); }
+@media (min-width: 640px) { .price-current { font-size: 1rem; } }
+
+/* Modal: linha do preço antigo + desconto */
+.modal-price-old { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.25rem; }
+.modal-price-current { font-size: 1.5rem; font-weight: 800; color: var(--color-success); }
+@media (min-width: 768px) { .modal-price-current { font-size: 1.75rem; } }
+
+/* Mobile: afastar Favoritar do Fechar no modal */
+@media (max-width: 767px) {
+  #modalFavoriteBtn { left: 0.75rem !important; right: auto !important; top: 0.75rem !important; }
+  .modal-close { top: 0.75rem; right: 0.75rem; }
+}
+
+/* Hovers/feedback visual (desktop) */
+@media (hover:hover) {
+  .theme-toggle:hover, .mobile-menu-btn:hover, .modal-close:hover, .favorite-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+  }
+  .desktop-nav-btn:hover { background: rgba(255,255,255,0.14); color: #fff; }
+  .mobile-menu-item:hover { background: rgba(255,255,255,0.10); }
+  .filter-chip:hover { border-color: var(--color-accent); color: var(--color-text); }
+  .whatsapp-btn:hover { filter: brightness(1.03); transform: translateY(-1px); }
+  .info-modal-btn:hover { filter: brightness(1.03); }
+}
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="sr-only focus:not-sr-only">Pular para o conteúdo</a>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" role="navigation">
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">
+                <div class="navbar-brand-icon">📚</div>
+                <div class="navbar-brand-text">
+                    <p class="navbar-brand-title">Acervo Literário</p>
+                    <p class="navbar-brand-subtitle">Coleções de qualidade</p>
+                </div>
+            </a>
+
+            <div class="desktop-nav">
+                <button onclick="openHowItWorks()" class="desktop-nav-btn">
+                    <i class="fas fa-info-circle" style="margin-right:0.375rem"></i>Como Comprar
+                </button>
+                <button onclick="openPaymentInfo()" class="desktop-nav-btn">
+                    <i class="fas fa-credit-card" style="margin-right:0.375rem"></i>Pagamento
+                </button>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <a href="https://wa.me/5547991438831" target="_blank" rel="noopener noreferrer" class="desktop-nav-cta">
+                    <i class="fab fa-whatsapp"></i> Falar Comigo
+                </a>
+            </div>
+
+            <div class="navbar-actions mobile">
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">
+                    <i class="fas fa-moon" id="themeIconMobile"></i>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <i class="fas fa-bars" id="mobileMenuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="mobile-menu">
+            <div class="mobile-menu-content">
+                <button onclick="openHowItWorks(); toggleMobileMenu();" class="mobile-menu-item">
+                    <i class="fas fa-info-circle" style="opacity:0.7"></i> Como Comprar
+                </button>
+                <button onclick="openPaymentInfo(); toggleMobileMenu();" class="mobile-menu-item">
+                    <i class="fas fa-credit-card" style="opacity:0.7"></i> Pagamento
+                </button>
+                <a href="https://wa.me/5547991438831" target="_blank" rel="noopener noreferrer" class="mobile-menu-cta">
+                    <i class="fab fa-whatsapp"></i> Falar Comigo
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Sua Próxima Grande <span style="color: var(--color-accent);">Aventura</span> Começa Aqui
+            </h1>
+            <p class="hero-subtitle">
+                Livros cuidadosamente selecionados, com qualidade de colecionador.<br>
+                <strong>Entrega personalizada</strong> na sua mesa em até 24h.
+            </p>
+            <div class="hero-checks">
+                <div class="hero-check"><i class="fas fa-check-circle"></i><span>Estado Impecável</span></div>
+                <div class="hero-check"><i class="fas fa-check-circle"></i><span>Preços Justos</span></div>
+                <div class="hero-check"><i class="fas fa-check-circle"></i><span>Entrega Rápida</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <main id="main-content" class="main-content">
+        <header class="main-header">
+            <div class="main-header-row">
+                <p id="counter" style="font-size:0.8125rem;font-weight:500;color:var(--color-text-muted)" aria-live="polite">Carregando...</p>
+                <div class="main-header-actions">
+                    <button id="favoritesFilter" onclick="toggleFavoritesFilter()" class="filter-chip" aria-pressed="false">
+                        <i class="fas fa-heart" style="color:#ef4444"></i>
+                        <span>Favoritos</span>
+                        <span class="count" id="favoritesCount">0</span>
+                    </button>
+                    <div class="sort-select-wrapper">
+                        <i class="fas fa-sort" style="color:var(--color-text-muted);font-size:0.6875rem"></i>
+                        <select id="sortSelect" onchange="renderBooks()">
+                            <option value="default">Relevância</option>
+                            <option value="price-asc">Menor Preço</option>
+                            <option value="price-desc">Maior Preço</option>
+                            <option value="alpha">A - Z</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <input type="search" id="searchInput" placeholder="Pesquise por título, gênero ou autor..." autocomplete="off">
+            <i class="fas fa-search search-icon"></i>
+            <button class="clear-btn" id="clearSearch" onclick="clearSearch()" aria-label="Limpar">
+                <i class="fas fa-times" style="font-size:0.6875rem"></i>
+            </button>
+        </div>
+
+        <div class="filters-wrapper">
+            <div id="genreFilters" class="filters-scroll"></div>
+        </div>
+
+        <div id="bookGrid" class="book-grid" role="list"></div>
+
+        <div id="emptyState" class="empty-state hidden">
+            <i class="fas fa-search"></i>
+            <h2>Nenhum livro encontrado</h2>
+            <p>Tente ajustar os filtros ou buscar por outros termos.</p>
+            <button onclick="clearAllFilters()">Limpar filtros</button>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p><i class="fas fa-book-reader" style="margin-right:0.375rem"></i>Acervo Literário © <span id="currentYear"></span> — Rodrigo Hang — Gaspar, SC</p>
+        <p>Livros usados com qualidade • Entrega na empresa</p>
+    </footer>
+
+    <!-- MODAL: BOOK DETAILS -->
+    <div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()"></div>
+    <div id="modal" class="modal-content" role="dialog" aria-modal="true">
+        <div class="modal-handle"><div class="modal-handle-bar"></div></div>
+        <button class="modal-close" onclick="closeModal()" aria-label="Fechar"><i class="fas fa-times"></i></button>
+        <div class="modal-inner">
+            <div class="modal-image-section">
+                <img id="modalImg" alt="">
+                <button id="modalFavoriteBtn" class="favorite-btn" style="opacity:1;transform:scale(1)"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-content">
+                    <div id="modalGenreTags" class="genre-tags" style="margin-bottom:0.5rem"></div>
+                    <h2 id="modalTitle" class="font-display" style="font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--color-primary);line-height:1.3"></h2>
+                    <div class="price-tag" style="margin-bottom:1rem">
+  <div class="modal-price-old">
+    <span class="price-old" id="modalOldPrice"></span>
+    <span class="discount-badge" id="modalDiscount"></span>
+  </div>
+  <div class="modal-price-current"><small>R$</small> <span id="modalPrice"></span></div>
+</div>
+                    <div class="book-description" id="modalDesc"></div>
+                </div>
+                <div class="modal-body-footer">
+                    <a id="modalWhatsapp" href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i><span>Quero Comprar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: PAYMENT -->
+    <div id="paymentBackdrop" class="modal-backdrop" onclick="closePaymentInfo()"></div>
+    <div id="paymentModal" class="modal-content" style="max-width:26rem" role="dialog" aria-modal="true">
+        <div class="modal-handle"><div class="modal-handle-bar"></div></div>
+        <div class="info-modal-content">
+            <h2 class="info-modal-title"><i class="fas fa-wallet" style="margin-right:0.5rem;color:var(--color-accent)"></i>Formas de Pagamento</h2>
+            <div class="payment-method">
+                <i class="fas fa-qrcode"></i>
+                <div>
+                    <h4>Pix</h4>
+                    <p>Transferência instantânea. Envie o comprovante pelo WhatsApp.</p>
+                    <button onclick="copyPix()" style="margin-top:0.375rem;font-size:0.8125rem;font-weight:600;display:flex;align-items:center;gap:0.375rem;color:var(--color-accent);background:none;border:none;cursor:pointer">
+                        <i class="fas fa-copy"></i> Copiar: 58242143000190
+                    </button>
+                </div>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-money-bill-wave"></i>
+                <div><h4>Dinheiro</h4><p>Pagamento no momento da entrega.</p></div>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-credit-card"></i>
+                <div><h4>Cartão</h4><p><strong>Avise com antecedência</strong> para eu levar a maquininha.</p></div>
+            </div>
+            <div style="margin-top:1rem;padding:0.75rem;border-radius:0.5rem;text-align:center;font-size:0.8125rem;background:rgba(201,162,39,0.1);color:var(--color-text)">
+                <i class="fas fa-lightbulb" style="margin-right:0.375rem;color:var(--color-accent)"></i>O pagamento confirma sua reserva!
+            </div>
+            <button onclick="closePaymentInfo()" class="info-modal-btn">Entendi</button>
+        </div>
+    </div>
+
+    <!-- MODAL: HOW IT WORKS -->
+    <div id="howItWorksBackdrop" class="modal-backdrop" onclick="closeHowItWorks()"></div>
+    <div id="howItWorksModal" class="modal-content" style="max-width:26rem" role="dialog" aria-modal="true">
+        <div class="modal-handle"><div class="modal-handle-bar"></div></div>
+        <div class="info-modal-content">
+            <h2 class="info-modal-title"><i class="fas fa-shopping-bag" style="margin-right:0.5rem;color:var(--color-accent)"></i>Como Comprar</h2>
+            <ol style="display:flex;flex-direction:column;gap:1.25rem;position:relative;list-style:none;padding:0;margin:0">
+                <div style="position:absolute;left:0.875rem;top:1.5rem;bottom:1.5rem;width:2px;background:var(--color-border)"></div>
+                <li style="display:flex;gap:0.75rem;position:relative">
+                    <div style="height:1.75rem;width:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;flex-shrink:0;z-index:1;color:white;background:var(--color-accent)">1</div>
+                    <div><h3 style="font-weight:700;color:var(--color-primary);font-size:0.9375rem">Escolha o livro</h3><p style="font-size:0.8125rem;margin-top:0.125rem;color:var(--color-text-muted)">Clique em "Quero Comprar" para me chamar no WhatsApp.</p></div>
+                </li>
+                <li style="display:flex;gap:0.75rem;position:relative">
+                    <div style="height:1.75rem;width:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;flex-shrink:0;z-index:1;color:white;background:var(--color-success)">2</div>
+                    <div><h3 style="font-weight:700;color:var(--color-primary);font-size:0.9375rem">Combine o pagamento</h3><p style="font-size:0.8125rem;margin-top:0.125rem;color:var(--color-text-muted)">Pix, dinheiro ou cartão. O pagamento garante sua reserva.</p></div>
+                </li>
+                <li style="display:flex;gap:0.75rem;position:relative">
+                    <div style="height:1.75rem;width:1.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;flex-shrink:0;z-index:1;color:white;background:var(--color-primary)">3</div>
+                    <div><h3 style="font-weight:700;color:var(--color-primary);font-size:0.9375rem">Receba na sua mesa</h3><p style="font-size:0.8125rem;margin-top:0.125rem;color:var(--color-text-muted)">Entrego no dia útil seguinte ao pagamento.</p></div>
+                </li>
+            </ol>
+            <button onclick="closeHowItWorks()" class="info-modal-btn">Vamos lá!</button>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        const books = [
+            { t: "Box Machado de Assis - Coleção Completa", g: ["Clássicos", "Literatura Brasileira"], p: "145,00", v: 145, q: "box machado de assis obra completa capa dura", d: "Oportunidade para sua biblioteca pessoal!\n\nVendo Box Premium do mestre Machado de Assis, contendo 11 obras clássicas em edições luxuosas com capa dura.\n\nOs livros estão impecáveis, praticamente intocados, sem marcas de uso, dobras ou grifos — ideais para quem busca qualidade de colecionador.\n\n📚 Conteúdo do Box:\n• Dom Casmurro\n• Memórias Póstumas de Brás Cubas\n• Quincas Borba\n• Helena\n• Iaiá Garcia\n• Ressurreição\n• A Mão e a Luva\n• Esaú e Jacó\n• Memorial de Aires\n• Papéis Avulsos\n• Várias Histórias\n\n✨ Bônus: Biografia detalhada do autor.\n\n📸 Posso encaminhar fotos reais e tirar qualquer dúvida por chat.", img: "https://images.tcdn.com.br/img/img_prod/1323385/box_machado_de_assis_11_livros_capa_dura_biografia_do_autor_17958_2_01d68758960ec216bd68b4445a9ed3ff.jpg" },
+            { t: "Box Trilogia Tempest - Julie Cross", g: ["Sci-Fi", "Viagem no Tempo"], p: "65,00", v: 65, q: "tempest julie cross box trilogia", d: "Para fãs de ficção científica, viagem no tempo e aventura!\n\nVendo o box completo da trilogia Tempest, escrita por Julie Cross.\n\n📚 Volumes inclusos:\n• Tempest\n• Vortex\n• Timestorm\n\n📖 Estado de conservação:\nOs livros estão impecáveis, praticamente intocados, sem marcas de uso, orelhas ou grifos.\n\n⚠️ Observação:\nA embalagem externa (box) é de papel cartão e possui pequenos rasgos nos cantos, mas cumpre perfeitamente o papel de proteger e organizar as obras.\n\n📸 Posso encaminhar fotos reais (inclusive dos detalhes no box) e tirar qualquer dúvida por chat.", img: "https://m.media-amazon.com/images/I/71cQQxenhoL._SY342_.jpg" },
+            { t: "Trilogia das Almas (Série Completa)", g: ["Fantasia", "Romance"], p: "110,00", v: 110, q: "trilogia das almas deborah harkness descoberta bruxas", d: "Para quem ama fantasia, história e romance épico!\n\nVendo a coleção completa da Trilogia das Almas, escrita por Deborah Harkness — a saga que inspirou a série de sucesso \"A Discovery of Witches\".\n\n✨ Diferencial:\nA autora é uma historiadora renomada, trazendo riqueza de detalhes históricos e fundamentação fantástica para a trama. É uma leitura imersiva que mistura ciência, magia e uma jornada através dos séculos.\n\n📚 Volumes inclusos:\n• A Descoberta das Bruxas\n• Sombra da Noite\n• O Livro da Vida\n\n📖 Estado:\nExemplares impecáveis, com capas preservadas e páginas brancas (praticamente intocados).\n\n📸 Posso encaminhar fotos reais de cada volume.", img: "https://m.media-amazon.com/images/I/71SDDJPBZdL._SY342_.jpg" },
+            { t: "Saga A Rainha Vermelha (5 Livros)", g: ["Distopia", "Fantasia"], p: "175,00", v: 175, q: "a rainha vermelha victoria aveyard box", d: "Para quem ama distopias, reviravoltas políticas e poderes elementares!\n\nVendo a coleção completa da série A Rainha Vermelha, fenômeno da literatura jovem que acompanha Mare Barrow em um mundo onde o sangue define o destino.\n\n✨ Por que ler:\nPerfeita para quem gostou de Jogos Vorazes ou Divergente, mas busca um sistema de magia mais complexo e trama política intensa.\n\n📚 Volumes inclusos:\n• A Rainha Vermelha\n• Espada de Vidro\n• A Prisão do Rei\n• Tempestade de Guerra\n• Trono Destruído (contos extras e desfecho)\n\n📖 Estado:\nExemplares da Editora Seguinte, impecáveis, praticamente intocados, sem marcas de uso.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/516uvyklSoL._SY342_.jpg" },
+            { t: "Saga Robert Langdon (5 Livros)", g: ["Suspense", "Mistério"], p: "115,00", v: 115, q: "dan brown robert langdon colecao codigo da vinci", d: "Do Código Da Vinci ao Origem!\n\nPara quem ama mistérios, simbologia e conspirações históricas. Vendo a coleção completa das aventuras do professor Robert Langdon em histórias frenéticas que misturam arte, religião e ciência.\n\n📚 Volumes inclusos:\n• Anjos e Demônios\n• O Código Da Vinci\n• O Símbolo Perdido\n• Inferno\n• Origem\n\n📖 Estado:\nLivros muito bem cuidados com capas íntegras.\n\n⚠️ Observação:\nO livro Origem apresenta amarelamento mais intenso nas bordas devido à ação do tempo, mas nada que comprometa a leitura. Os demais estão em excelente estado.\n\n📸 Posso encaminhar fotos reais de cada livro.", img: "https://http2.mlstatic.com/D_NQ_NP_2X_864037-MLB98413019944_112025-F.webp" },
+            { t: "Combo Suspense e Tecnologia (Dan Brown)", g: ["Suspense", "Tecnologia"], p: "45,00", v: 45, q: "fortaleza digital dan brown ponto impacto", d: "Fortaleza Digital + Ponto de Impacto\n\nLeitura obrigatória para quem gosta de criptografia, agências de inteligência e conspirações científicas!\n\n📚 Sobre os livros:\n• Fortaleza Digital — Um supercomputador da NSA e uma cifra inquebrável. Essencial para quem trabalha com TI!\n• Ponto de Impacto — Uma descoberta da NASA no Ártico com política e sobrevivência.\n\n📖 Estado:\nLivros impecáveis, praticamente intocados, sem marcas de uso ou dobras.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/816X46l6aWL._AC_UF1000,1000_QL80_.jpg" },
+            { t: "Trilogia O Oráculo - Catherine Fisher", g: ["Fantasia", "Mitologia"], p: "85,00", v: 85, q: "trilogia oraculo catherine fisher escaravelho", d: "Fantasia e Mitologia!\n\nUma jornada épica por terras de deuses e profecias. Ideal para quem gosta de mistério, arqueologia e tramas inspiradas em civilizações antigas.\n\n📚 Volumes inclusos:\n• O Escaravelho\n• O Oráculo\n• O Arconte\n\n📖 Estado:\nLivros muito bem preservados, com o charme natural do tempo — laterais em tom amarelado e algumas pintinhas de oxidação, conferindo ar de item de biblioteca clássica.\n\n⚠️ Detalhe técnico:\nO volume \"O Arconte\" possui vinco suave em dez páginas na parte superior, marca que foi suavizada e não interfere no manuseio.\n\n📸 Posso encaminhar fotos reais das laterais e do detalhe.", img: "https://img.travessa.com.br/livro/GR/9c/9c65e654-16a8-477e-8a45-48960cbc6b39.jpg" },
+            { t: "Trilogia A Sina do Sete - Nora Roberts", g: ["Sobrenatural", "Romance"], p: "95,00", v: 95, q: "sina do sete nora roberts irmaos sangue trilogia", d: "Estado de Novo!\n\nPara quem ama suspense, romance e uma pitada de sobrenatural. Trilogia completa da best-seller Nora Roberts sobre três amigos que precisam combater um mal antigo que assombra sua cidade natal.\n\n✨ Por que ler:\nSérie famosa pelo ritmo acelerado e personagens cativantes — perfeita para fãs de page-turners.\n\n📚 Volumes inclusos:\n• Irmãos de Sangue\n• A Maldição de Hollow\n• A Pedra Pagã\n\n📖 Estado:\nExemplares extremamente bem preservados, impecáveis, com capas e lombadas íntegras.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/51HyGspvKIL._SY342_.jpg" },
+            { t: "Saga Maze Runner (6 Livros)", g: ["Distopia", "Sci-Fi"], p: "165,00", v: 165, q: "maze runner james dashner correr ou morrer box", d: "James Dashner | Ed. Plataforma 21\n\nVocê pode sobreviver ao Labirinto? Coleção completa da saga que inspirou os filmes de sucesso — leitura obrigatória para quem gosta de distopias intensas e conspirações tecnológicas.\n\n📚 Volumes inclusos (6 livros):\n• Correr ou Morrer\n• Prova de Fogo\n• A Cura Mortal\n• Ordem de Extermínio\n• O Código da Febre\n• Arquivos (guia com segredos da CRUEL)\n\n📖 Estado:\nExemplares muito bem cuidados.\n\n⚠️ Observação estética:\nOs volumes A Cura Mortal, Ordem de Extermínio, O Código da Febre e Arquivos apresentam amarelamento mais intenso e pequenas manchas de oxidação — detalhe puramente estético que não afeta a leitura.\n\n📸 Posso encaminhar fotos reais.", img: "https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/colecao-da-serie-maze-runner-6-livros/studiochihiro/6171177510/d9e300096c47b610dd74556b771e3629.jpeg" },
+            { t: "Saga Divergente (4 Livros)", g: ["Distopia"], p: "100,00", v: 100, q: "divergente veronica roth box colecao", d: "Veronica Roth | Editora Rocco\n\nUma escolha pode te transformar! Coleção completa de Divergente, um dos maiores sucessos da literatura distópica.\n\n✨ Sobre a série:\nAcompanhe a jornada de Tris Prior em um futuro onde a sociedade é dividida em facções. Perfeita para quem gosta de autodescoberta e rebelião em cenários pós-apocalípticos.\n\n📚 Volumes inclusos:\n• Divergente\n• Insurgente\n• Convergente\n• Quatro (perspectiva do protagonista masculino)\n\n📖 Estado:\nExemplares muito bem cuidados, com amarelamento natural e pequenas pintinhas de oxidação nas bordas, sem interferir na leitura.\n\n📸 Posso encaminhar fotos reais das bordas e detalhes.", img: "https://m.media-amazon.com/images/I/61idoE9JcNL._AC_UF1000,1000_QL80_.jpg" },
+            { t: "Psicose - Ed. Luxo DarkSide", g: ["Terror", "Clássico"], p: "45,00", v: 45, q: "psicose robert bloch darkside books capa dura", d: "Robert Bloch | Edição de Luxo Hardcover (DarkSide Books)\n\nO clássico que redefiniu o suspense em uma edição de colecionador!\n\n✨ Por que ter:\nSe você conhece o filme de Alfred Hitchcock, precisa ler a obra original de Norman Bates. Esta edição DarkSide é um espetáculo à parte — capa dura e acabamento gráfico impecável que se destaca na estante.\n\n📖 Estado:\nExemplar em estado de novo, com capa dura íntegra e páginas perfeitas (praticamente intocado).\n\n📸 Posso encaminhar fotos reais da capa e do interior.", img: "https://darkside.vtexassets.com/arquivos/ids/174500/8-psicose-limited-edition-1.png?v=637606711394330000" },
+            { t: "Box Trilogia Os Tons de Magia", g: ["Fantasia"], p: "115,00", v: 115, q: "tons de magia v.e. schwab box trilogia", d: "V.E. Schwab | 3 Livros | Estado de Novo\n\nEmbarque em uma jornada épica pelas quatro Londres paralelas!\n\n✨ Por que ler:\nUma das séries de fantasia mais originais, com sistema de magia único e personagens inesquecíveis. V.E. Schwab é considerada voz potente da literatura contemporânea — escolha perfeita para quem busca leitura madura e ritmo cinematográfico.\n\n📚 Volumes inclusos:\n• Um Tom Mais Escuro de Magia\n• Um Encontro de Sombras\n• Uma Conjuração de Luz\n\n📖 Estado:\nBox e livros impecáveis, extremamente bem preservados (estado de livraria).\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/81MNf2G13JL._SY342_.jpg" },
+            { t: "Saga ACOTAR (Box + Livro 5)", g: ["Fantasia", "Romance"], p: "190,00", v: 190, q: "acotar sarah j maas corte espinhos rosas box", d: "Saga Corte de Espinhos e Rosas (ACOTAR) | Coleção Completa Sarah J. Maas\n\nEntre no mundo de Prythian com a série que conquistou o mundo!\n\n📚 Conteúdo (5 livros no total):\nBox Especial com 4 volumes:\n• Corte de Espinhos e Rosas\n• Névoa e Fúria\n• Asas e Ruína\n• Gelo e Estrelas (novela)\n\nLivro adicional:\n• Corte de Chamas Prateadas\n\n✨ Por que ter:\nPerfeita para quem busca fantasia épica com tramas políticas e romance arrebatador. Se você gosta de histórias com fadas e protagonistas fortes, esta coleção é obrigatória.\n\n📖 Estado:\nBox e todos os cinco livros em estado impecável, sem amarelamento ou marcas nas lombadas.\n\n📸 Posso encaminhar fotos reais de cada detalhe.", img: "https://cdn.culturagenial.com/imagens/acotar-a-ordem-certa-de-leitura-da-serie-og.jpg" },
+            { t: "Combo Justin Cronin (A Passagem)", g: ["Terror", "Pós-Apocalíptico"], p: "80,00", v: 80, q: "justin cronin os doze cidade espelhos passagem", d: "Combo Justin Cronin (Livros 2 e 3 da Trilogia A Passagem)\n\nPara quem busca uma jornada épica de suspense e sobrevivência!\n\n📚 Volumes inclusos:\n• Os Doze\n• A Cidade dos Espelhos\n\n✨ Sobre a trilogia:\nObra monumental que mistura thriller pós-apocalíptico com narrativa emocional. Recomendada por Stephen King e inspirou série de TV.\n\n📖 Estado:\nExemplares muito bem preservados fisicamente.\n\n⚠️ Observação estética:\nAmbos os livros apresentam pequenas pintinhas de amarelamento na lateral direita devido ao tempo, sem impactar a leitura.\n\n📸 Posso encaminhar fotos reais incluindo os detalhes.", img: "https://m.media-amazon.com/images/I/91Na482X6bL._AC_UF1000,1000_QL80_.jpg" },
+            { t: "Trilogia Halo - Alexandra Adornetto", g: ["Romance", "Anjos"], p: "85,00", v: 85, q: "halo alexandra adornetto trilogia anjos", d: "Trilogia Halo (Completa) | 3 Livros | Estado de Novo\n\nPara quem ama romances épicos com embate entre Céu e Inferno!\n\n✨ Sobre a série:\nTrilogia de Alexandra Adornetto sobre Bethany, um anjo enviado à Terra que se apaixona por um mortal. A autora começou a escrever aos 17 anos, trazendo voz autêntica e jovem para a protagonista.\n\n📚 Volumes inclusos:\n• Halo\n• Hades\n• Heaven\n\n📖 Estado:\nLivros impecáveis, extremamente bem preservados, com capas e lombadas íntegras (cara de saídos da livraria).\n\n📸 Posso encaminhar fotos reais de cada volume.", img: "https://worldfabibooks.wordpress.com/wp-content/uploads/2015/11/sc3a9rie-halo.png" },
+            { t: "Trilogia Alien (Canônicos)", g: ["Sci-Fi", "Terror"], p: "120,00", v: 120, q: "alien trilogia surgido sombras editora leya", d: "Trilogia Alien (Completa) | Editora Leya\n\nNo espaço, ninguém ouvirá você gritar!\n\nTrilogia completa que expande o universo de uma das maiores franquias do cinema com histórias inéditas e canônicas envolvendo Xenomorfos e a corporação Weyland-Yutani.\n\n✨ Por que ler:\nObrigatória para fãs dos filmes! Os eventos ocorrem entre o primeiro e o segundo longa da Ripley, com imersão em survival horror.\n\n📚 Volumes inclusos:\n• Surgido das Sombras\n• Mar de Angústia\n• Rio de Sofrimento\n\n📖 Estado:\nExemplares extremamente bem preservados, com capas e lombadas íntegras (praticamente intocados).\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/61g34iPFtjL._SX445_.jpg" },
+            { t: "Trilogia Fronteiras do Universo", g: ["Fantasia"], p: "105,00", v: 105, q: "fronteiras universo philip pullman bussola ouro", d: "Trilogia Fronteiras do Universo (Completa) | Philip Pullman | Ed. Suma | Estado de Novo\n\nUma das maiores obras de fantasia de todos os tempos na sua estante!\n\n📚 Volumes inclusos:\n• A Bússola de Ouro\n• A Faca Sutil\n• A Luneta Âmbar\n\n✨ Por que ler:\nAcompanhe a jornada de Lyra Belacqua por mundos paralelos em história que mistura aventura, filosofia e ciência. Esta série serviu de base para \"His Dark Materials\" da HBO — leitura essencial pelo conceito dos daemons.\n\n📖 Estado:\nExemplares impecáveis, com capas mantendo brilho e detalhes metalizados originais, páginas perfeitas.\n\n📸 Posso encaminhar fotos reais de cada volume.", img: "https://m.magazineluiza.com.br/a-static/420x420/trilogia-fronteiras-do-universo/megalivros-oficial/9000000255579/f635e1860e70f36397f652171f685fa0.jpeg" },
+            { t: "Trilogia Silo - Hugh Howey", g: ["Sci-Fi", "Distopia"], p: "110,00", v: 110, q: "silo hugh howey trilogia intrinseca", d: "Trilogia Silo (Completa) | Hugh Howey | Edição Intrínseca | Estado de Novo\n\nUma jornada claustrofóbica pelas profundezas da sobrevivência humana!\n\n✨ Sobre a série:\nA humanidade vive em um gigantesco silo subterrâneo para se proteger de um mundo exterior tóxico. Suspense psicológico e político de tirar o fôlego com world-building detalhado e lógico.\n\n📚 Volumes inclusos:\n• Silo\n• Ordem\n• Legado\n\n✨ Para quem:\nLeitura obrigatória para fãs de ficção científica bem estruturada ou de séries como Fallout.\n\n📖 Estado:\nExemplares extremamente bem preservados, impecáveis (estado de livraria).\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/A1L+4AZ7uyL._CLa%7C3263,2560%7CA1oj4G3MGSL.jpg,A1IC8Xt2E4L.jpg%7C0,0,1483,2560+1780,0,1483,2560+741,0,1780,2560_._SY300_.jpg" },
+            { t: "Kit 4 Livros C.J. Tudor", g: ["Thriller", "Suspense"], p: "145,00", v: 145, q: "cj tudor homem giz kit livros intrinseca", d: "Kit 4 Livros C.J. Tudor (Mestra do Suspense) | Editora Intrínseca | Estado de Novo\n\nPara quem ama thrillers perturbadores e reviravoltas!\n\n📚 Livros inclusos:\n• O Homem de Giz\n• O Que Aconteceu com Annie\n• As Outras Pessoas\n• Garotas em Chamas\n\n✨ Sobre a autora:\nSuas histórias criam atmosferas que lembram Stranger Things e obras clássicas de Stephen King.\n\n📖 Estado:\nLivros impecáveis, praticamente intocados, sem marcas de leitura ou dobras.\n\n📸 Posso encaminhar fotos reais de cada capa e das páginas.", img: "https://http2.mlstatic.com/D_NQ_NP_2X_953591-MLB46108256958_052021-F.webp" },
+            { t: "Bird Box (Luxo) + Malorie", g: ["Thriller", "Terror"], p: "95,00", v: 95, q: "bird box malorie josh malerman edicao luxo", d: "Combo Bird Box (Ed. Especial de Luxo) + Malorie | Josh Malerman\n\nO suspense que parou o mundo em uma edição de colecionador!\n\n📚 Conteúdo:\n• Bird Box — Edição especial luxuosa da Intrínseca com capa dura, acabamento metalizado e pintura lateral azul\n• Malorie — Sequência direta em formato brochura\n\n✨ Sobre os livros:\nTensão psicológica profunda focada no terror do invisível.\n\n📖 Estado:\nAmbos impecáveis, sem marcas de uso ou sinais de manuseio.\n\n📸 Posso encaminhar fotos reais mostrando o acabamento metalizado e o detalhe das páginas azuis.", img: "https://m.media-amazon.com/images/I/91x7oEAnSOL._SY342_.jpg" },
+            { t: "Drácula - First Edition", g: ["Terror", "Clássico"], p: "55,00", v: 55, q: "dracula bram stoker darkside first edition", d: "Drácula | Bram Stoker | Edição de Luxo First Edition (DarkSide Books) | Capa Dura\n\nO pai de todos os vampiros na edição definitiva da DarkSide!\n\n✨ Sobre esta edição:\nCobiçada edição First Edition com acabamento de luxo em capa dura que remete a couro, morcego gravado em dourado, projeto gráfico primoroso, trabalho artístico interno e fitilho marcador.\n\n✨ Para quem:\nIdeal para fãs de clássicos do horror e cinema gótico.\n\n📖 Estado:\nExemplar muito bem cuidado, com dourado mantendo brilho original e estrutura firme.\n\n📸 Posso encaminhar fotos reais da capa, lombada e interior.", img: "https://m.media-amazon.com/images/I/61gfnGu9cTL._SY342_.jpg" },
+            { t: "Box Trilogia Princesa das Cinzas", g: ["Fantasia"], p: "90,00", v: 90, q: "princesa das cinzas laura sebastian box trilogia", d: "Box Trilogia Princesa das Cinzas (Completo) | Laura Sebastian | Estado de Novo\n\nPara quem ama tramas de rebelião, estratégia e fantasia épica!\n\n✨ Sobre a série:\nAcompanhe Theodosia, herdeira de Astrea, em uma jornada de resistência e reconquista. Narrativa ágil que mantém a tensão alta até o último livro.\n\n📚 Volumes inclusos:\n• Princesa das Cinzas\n• Dama da Névoa\n• Rainha das Chamas\n\n📖 Estado:\nBox e três volumes em estado impecável, com luva protetora firme e livros como novos.\n\n📸 Posso encaminhar fotos reais de cada ângulo do box.", img: "https://m.media-amazon.com/images/I/41oeGyDYhXS._SX342_SY445_PQ99_.jpg" },
+            { t: "Box Trilogia Sombra e Ossos", g: ["Fantasia"], p: "100,00", v: 100, q: "sombra e ossos leigh bardugo grishaverso box", d: "Box Trilogia Sombra e Ossos (Completo) | Leigh Bardugo | Grishaverso | Estado de Novo\n\nEntre na Dobra das Sombras e descubra o poder da Conjuradora do Sol!\n\n✨ Sobre a série:\nBox completo que deu origem ao Grishaverso com sistema de magia fascinante e o vilão Darkling. World-building estruturado baseado na Pequena Ciência — ponto de partida ideal para outras séries da autora.\n\n📚 Volumes inclusos:\n• Sombra e Ossos\n• Sol e Tormenta\n• Ruína e Ascensão\n\n📖 Estado:\nBox e três volumes em estado impecável, com luva protetora perfeita e livros como novos.\n\n📸 Posso encaminhar fotos reais.", img: "https://americanas.vtexassets.com/arquivos/ids/478565-1280-auto/3636586991_3SZ.webp?v=638750827352770000&quality=9" },
+            { t: "Box A Saga dos Corvos", g: ["Fantasia", "Mistério"], p: "110,00", v: 110, q: "saga dos corvos maggie stiefvater box completo", d: "Box A Saga dos Corvos (Completo - 4 Livros) | Maggie Stiefvater | Estado de Novo\n\nUma jornada mágica sobre amizade, reis perdidos e linhas de ley!\n\n✨ Sobre a série:\nSérie aclamada, rica em mistério e misticismo. Maggie Stiefvater tem estilo de escrita único que transporta o leitor diretamente para Cabeswater — história que fica na memória.\n\n📚 Volumes inclusos:\n• Os Garotos Corvos\n• Ladrões de Sonhos\n• Lírio Azul Azul Lírio\n• O Rei Corvo\n\n📖 Estado:\nBox e quatro volumes impecáveis, com luva protetora perfeita e detalhes metalizados preservados. Livros absolutamente intocados.\n\n📸 Posso encaminhar fotos reais de cada ângulo.", img: "https://m.media-amazon.com/images/I/91E+AI-cdOS._SY342_.jpg" },
+            { t: "Box Crônicas de Artur", g: ["Ficção Histórica"], p: "130,00", v: 130, q: "cronicas artur bernard cornwell box rei inverno", d: "Box As Crônicas de Artur (Trilogia Completa) | Bernard Cornwell | Edição de Colecionador\n\nA versão definitiva e mais realista da lenda do Rei Artur!\n\n✨ Sobre a série:\nDo mestre da ficção histórica — jornada de Artur através dos olhos de seu guerreiro mais fiel. Leitura densa e viciante com táticas militares e personagens profundamente humanos.\n\n📚 Volumes inclusos:\n• O Rei do Inverno\n• O Inimigo de Deus\n• Excalibur\n\n📖 Estado:\nBox e três volumes em excelente estado, impecáveis (como novos), sem marcas de uso.\n\n📸 Posso encaminhar fotos reais do box e do interior.", img: "https://m.media-amazon.com/images/I/A1BfXWSusFL._AC_UF1000,1000_QL80_.jpg" },
+            { t: "Coleção Clássicos Brasileiros", g: ["Clássicos", "Literatura Brasileira"], p: "180,00", v: 180, q: "colecao classicos literatura brasileira capa dura", d: "Coleção Clássicos da Literatura Brasileira | 12 Livros | Edição Integral | Capa Dura\n\nColeção ideal para montar uma biblioteca de respeito em casa ou no escritório!\n\n✨ Sobre a coleção:\nConjunto integral com 12 livros dos maiores mestres como Machado de Assis, Euclides da Cunha, Mário de Andrade e Camões. Edições com texto integral e projeto gráfico moderno.\n\n✨ Para quem:\nQuem busca melhorar vocabulário e repertório cultural. Excelente incentivo para jovens leitores ou estudantes de Enem.\n\n📖 Estado:\nLivros em estado impecável com acabamento premium.\n\n💰 Valor: Lote completo (12 livros) por R$ 180,00", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-GnN_PI-dO0EkXtt49V42Eb-kfzMxq1lgmw&s" },
+            { t: "Mega Combo O Povo do Ar", g: ["Fantasia", "Fadas"], p: "210,00", v: 210, q: "povo do ar holly black principe cruel box", d: "Mega Combo O Povo do Ar (Box + Livro Extra de Luxo) | Holly Black\n\nA coleção completa para você dominar o Reino de Elfhame!\n\n📚 Conteúdo (5 livros no total):\nBox Especial com 4 livros:\n• O Príncipe Cruel\n• O Rei Perverso\n• A Rainha do Nada\n• As Irmãs Perdidas (novela)\n\nLivro Adicional de Luxo:\n• Como o Rei de Elfhame Aprendeu a Odiar Histórias (capa dura com detalhes metalizados e ilustrada)\n\n✨ Sobre a série:\nSérie fenômeno mundial que acompanha Jude Duarte em um mundo de fadas cruel. Trama de estratégia e romance enemies to lovers.\n\n📖 Estado:\nLivros absolutamente impecáveis em estado de livraria, sem marcas ou amarelamento.\n\n📸 Posso enviar fotos reais do box e ilustrações.", img: "https://static.estantevirtual.com.br/book/00/IFW-9588-000/IFW-9588-000_detail1.jpg?ts=1746457625635?ims=fit-in/300x400/filters:fill(ffffff)" },
+            { t: "Combo Senhores de Castelo", g: ["Sci-Fi", "Nacional"], p: "75,00", v: 75, q: "cronicas senhores castelo brasman norris", d: "Combo Crônicas dos Senhores de Castelo (4 Livros) | Ficção Científica Nacional\n\nUma jornada épica pelo espaço escrita por talentos brasileiros!\n\n📚 Volumes inclusos:\n• O Poder Verdadeiro\n• Efeito Manticore\n• Maré Vermelha\n• Renúncia\n\n✨ Para quem:\nRecomendado para fãs de Duna ou Star Wars pela profundidade do universo criado por G. Brasman e G. Norris.\n\n📖 Estado:\nLivros fisicamente muito bem preservados, com capas e lombadas inteiras.\n\n⚠️ Observação estética:\nAs laterais das páginas apresentam tom amarelado e algumas pintinhas de oxidação devido ao tempo, sem prejudicar leitura ou estrutura.\n\n📸 Posso enviar fotos detalhadas das laterais.", img: "https://m.media-amazon.com/images/I/81SC-iX2YCL._SY342_.jpg" },
+            { t: "Saga O Lado Mais Sombrio", g: ["Fantasia", "Gótico"], p: "80,00", v: 80, q: "lado mais sombrio ag howard alice fantasia", d: "Saga O Lado Mais Sombrio (Coleção Completa - 4 Livros) | A.G. Howard\n\nEsqueça tudo o que você sabe sobre o País das Maravilhas!\n\n✨ Sobre a série:\nColeção completa que reinventa o clássico em uma fantasia gótica e surrealista acompanhando Alyssa Gardner. Perfeito para quem gosta de versões dark de contos de fadas com ambientações ricas. As capas da Novo Conceito são obras de arte!\n\n📚 Volumes inclusos:\n• O Lado Mais Sombrio\n• Atrás do Espelho\n• Qualquer Outro Lugar\n• Sussurros do País das Maravilhas\n\n📖 Estado:\n\"O Lado Mais Sombrio\" e \"Sussurros\" estão impecáveis. \"Atrás do Espelho\" e \"Qualquer Outro Lugar\" têm laterais mais amareladas e pintinhas de oxidação, mas continuam inteiros fisicamente.", img: "https://m.media-amazon.com/images/I/31ARYMDKRLL.jpg" },
+            { t: "Trilogia Legado Ranger", g: ["Fantasia", "Nacional"], p: "90,00", v: 90, q: "legado ranger raphael draccon dragoes cemiterios", d: "Trilogia Legado Ranger (Completa) | Raphael Draccon | Fantasia Épica Brasileira\n\nE se os heróis da sua infância fossem transportados para um mundo de guerra e dragões?\n\n✨ Sobre a série:\nTrilogia de grande nome da fantasia nacional, onde cinco soldados precisam salvar uma dimensão mágica. História com armaduras místicas, artes marciais e sistema de magia único em tom sério.\n\n📚 Volumes inclusos:\n• Cemitérios de Dragões\n• Cidades de Dragões\n• Mundos de Dragões\n\n📖 Estado:\nExemplares muito bem cuidados com capas e lombadas íntegras mantendo brilho metalizado original (estado excelente).\n\n📸 Posso encaminhar fotos reais de cada volume.", img: "https://m.media-amazon.com/images/I/91BJWnVew7L._CLa%7C3246,2560%7C81i5AjCBISL.jpg,91iGzvw52sL.jpg%7C0,0,1475,2560+1771,0,1475,2560+737,0,1771,2560_._SY300_.jpg" },
+            { t: "Mega Coleção Crepúsculo", g: ["Romance", "Vampiros"], p: "195,00", v: 195, q: "crepusculo stephenie meyer colecao completa box", d: "Mega Coleção Saga Crepúsculo (8 Itens) | Stephenie Meyer\n\nReviva a história de amor que parou o mundo!\n\n📚 Conteúdo completo (8 itens):\n• Crepúsculo (Capa Original)\n• Crepúsculo (Edição 10 anos)\n• Lua Nova\n• Eclipse\n• Amanhecer\n• Sol da Meia-Noite\n• Bree Tanner\n• Guia Oficial Ilustrado (bastidores)\n\n✨ Diferencial:\nTer o guia e a edição especial torna este kit muito valioso para fãs.\n\n📖 Estado:\nLivros muito bem preservados, com capas íntegras e material físico em excelente estado.\n\n📸 Posso encaminhar fotos reais de qualquer volume.", img: "https://m.media-amazon.com/images/I/61CSYLhEICS._SL1500_.jpg" },
+            { t: "Saga Legend + Rebel", g: ["Distopia", "Ação"], p: "130,00", v: 130, q: "legend marie lu box trilogia rebel", d: "Saga Legend (Box Trilogia Completa + Livro Final Rebel) | Marie Lu | Estado de Novo\n\nPara quem ama distopias estratégicas com ritmo de ação cinematográfica!\n\n✨ Sobre a série:\nAcompanhe o encontro entre uma prodígio militar e o criminoso mais procurado da República em trama de conspiração e sobrevivência. Ideal para fãs de Jogos Vorazes com world-building militarista crível.\n\n📚 Conteúdo (4 livros):\nBox Legend (trilogia principal):\n• Legend\n• Prodigy\n• Champion\n\nVolume final:\n• Rebel\n\n📖 Estado:\nBox e livros absolutamente impecáveis, sem amarelamentos ou marcas de uso (estado de livraria).\n\n📸 Posso encaminhar fotos reais de cada volume e do box.", img: "https://m.media-amazon.com/images/I/51NbL1Rq6aL._SY342_.jpg" },
+            { t: "Saga Trono de Vidro (8 Livros)", g: ["Fantasia"], p: "240,00", v: 240, q: "trono de vidro sarah j maas colecao completa", d: "Saga Trono de Vidro (Coleção Completa - 8 Livros) | Sarah J. Maas | Galera Record\n\nA jornada épica da maior assassina de Adarlan completa na sua estante!\n\n✨ Sobre a série:\nAcompanhe Celaena Sardothien das Minas de Sal até a rebelião central. Série obrigatória para fãs de world-building detalhado e sistemas de magia ancestrais — aula de planejamento narrativo.\n\n📚 Todos os 8 volumes:\n• A Lâmina da Assassina\n• Trono de Vidro\n• Coroa da Meia-Noite\n• Herdeira do Fogo\n• Rainha das Sombras\n• Império de Tempestades\n• Torre do Alvorecer\n• Reino de Cinzas\n\n📖 Estado:\nExemplares impecáveis, lidos e guardados com extremo cuidado, sem amarelamentos ou marcas (como novos).\n\n📸 Posso enviar fotos reais de cada volume.", img: "https://images-americanas.b2w.io/produtos/5413039229/imagens/colecao-da-serie-trono-de-vidro-8-livros-sarah-j-maas/5413039237_1_large.jpg" },
+            { t: "Trilogia Neve e Cinzas", g: ["Fantasia"], p: "90,00", v: 90, q: "neve e cinzas sara raasch trilogia harpercollins", d: "Trilogia Neve e Cinzas (Completa) | Sara Raasch | HarperCollins\n\nRecupere a magia e liberte um reino congelado pelo tempo!\n\n✨ Sobre a série:\nAcompanhe Meira para recuperar amuleto mágico que pode devolver a liberdade ao seu povo. História repleta de ação e intrigas com world-building de reinos sazonais e rítmicos.\n\n✨ Para quem:\nRecomendado para fãs de Trono de Vidro pela ligação entre magia e política.\n\n📚 Volumes inclusos:\n• Neve e Cinzas\n• Gelo e Fogo\n• Geada e Noite\n\n📖 Estado:\nLivros muito bem preservados com capas e lombadas íntegras, mantendo excelente aspecto visual.\n\n📸 Posso encaminhar fotos reais.", img: "https://m.media-amazon.com/images/I/71Hw206fF-L._SY342_.jpg" },
+            { t: "Trilogia A 5ª Onda", g: ["Sci-Fi", "Ação"], p: "60,00", v: 60, q: "quinta onda rick yancey trilogia completa", d: "Trilogia A 5ª Onda (Completa) | Rick Yancey\n\nEles estão chegando e as quatro primeiras ondas foram apenas o começo!\n\n✨ Sobre a série:\nTrilogia sobre a jornada de Cassie Sullivan em mundo devastado por invasão alienígena onde a primeira regra é não confiar em ninguém. Mistura de ação e suspense com narrativa ágil e cinematográfica.\n\n📚 Volumes inclusos:\n• A 5ª Onda\n• O Mar Infinito\n• A Última Estrela\n\n📖 Estado:\nCapas e lombadas muito bem preservadas.\n\n⚠️ Observação estética:\nOs três livros apresentam amarelamento e pintinhas de oxidação nas laterais devido ao papel da editora reagir ao tempo, mas a estrutura física está perfeita.", img: "https://m.media-amazon.com/images/I/813mSc2QPqL._SY342_.jpg" },
+            { t: "Trilogia Mago Negro", g: ["Fantasia", "Magia"], p: "75,00", v: 75, q: "trilogia mago negro trudi canavan cla magos", d: "Trilogia do Mago Negro (Completa) | Trudi Canavan | Fantasia Épica\n\nOnde o poder é um privilégio, uma garota das favelas pode mudar tudo!\n\n✨ Sobre a série:\nAcompanhe Sonea em jornada sobre aprendizado e perigo sombrio que ameaça o reino. Ideal para fãs de escola de magia com tom maduro focado em intrigas políticas e divisões sociais.\n\n📚 Volumes inclusos:\n• O Clã dos Magos\n• A Aprendiz\n• O Lorde Supremo\n\n📖 Estado:\nCapas e lombadas muito bem preservadas para estante. As laterais das páginas podem apresentar leve amarelamento natural, mas estão íntegros e sem riscos ou rasgos.\n\n📸 Posso enviar fotos reais das laterais e interior.", img: "https://efutura.futurasistemas.com.br/temas/vistagenerico3/image/cache/data/livros/colecao/112926537SZ-580x580.jpg?version=20180131113520" },
+            { t: "Box Magisterium", g: ["Fantasia", "Infantojuvenil"], p: "135,00", v: 135, q: "magisterium holly black cassandra clare box", d: "Box Magisterium (Completo - 5 Livros) | Holly Black e Cassandra Clare | Edição Especial\n\nE se tudo o que lhe ensinaram sobre magia fosse uma mentira?\n\n✨ Sobre a série:\nSérie aclamada com sistema de magia baseado nos elementos e reviravoltas impressionantes. Ideal para fãs de Harry Potter que buscam tom irônico e complexo.\n\n✨ Sobre o box:\nCaixa rígida em preto com detalhes em dourado — item de luxo.\n\n📚 Volumes (5 livros):\n• O Desafio de Ferro\n• A Luva de Cobre\n• A Chave de Bronze\n• A Máscara de Prata\n• A Torre de Ouro\n\n📖 Estado:\nBox e volumes em estado impecável, com caixa rígida preservada e livros como novos (absolutamente intocados).\n\n📸 Posso encaminhar fotos reais do box e livros.", img: "https://m.media-amazon.com/images/I/51Uzf4EMt5L._SX342_SY445_PQ99_.jpg" },
+            { t: "Box Sherlock Holmes", g: ["Mistério", "Clássico"], p: "95,00", v: 95, q: "sherlock holmes box obra completa harpercollins", d: "Box Sherlock Holmes - Obra Completa (4 Volumes) | HarperCollins | Capa Dura\n\nElementar, meu caro colega: a coleção definitiva do maior detetive do mundo!\n\n✨ Sobre esta edição:\nBox completo com a obra integral em edição da HarperCollins elogiada pela tradução primorosa e acabamento de luxo. Inclui todos os romances e contos divididos em 4 volumes.\n\n📚 Conteúdo:\n• Volume 1: Um Estudo em Vermelho e outros romances\n• Volume 2: As Aventuras de Sherlock Holmes (contos)\n• Volume 3: Memórias de Sherlock Holmes (contos)\n• Volume 4: O Retorno de Sherlock Holmes e outros (contos finais)\n\n✨ Para quem:\nIndispensável para quem gosta de exercitar dedução e lógica — pura inspiração para resolução de problemas profissionais.\n\n📖 Estado:\nBox rígido firme e quatro volumes em capa dura em excelente estado, manuseados com extremo cuidado, sem marcas ou dobras.\n\n📸 Posso enviar fotos reais das capas e da caixa.", img: "https://m.media-amazon.com/images/I/71kaG9KFfhL._SY342_.jpg" },
+            { t: "Box Tetralogia Angélica", g: ["Fantasia", "Nacional"], p: "125,00", v: 125, q: "tetralogia angelica eduardo spohr box apocalipse", d: "Box Tetralogia Angélica (Completo - 4 Livros) | Eduardo Spohr | Edição Especial 10 Anos\n\nA maior saga épica da fantasia brasileira em uma edição definitiva!\n\n✨ Sobre a série:\nJornada milenar da guerra civil entre anjos, arcanjos e forças que moldaram a humanidade. Eduardo Spohr criou mundo mitológico com profundidade bíblica e toque de modernidade.\n\n📚 Conteúdo (4 livros):\n• A Batalha do Apocalipse\n• Filhos do Éden: Herdeiros de Atlântida\n• Filhos do Éden: Anjos da Morte\n• Filhos do Éden: Paraíso Perdido\n\n✨ Sobre o box:\nCaixa rígida muito resistente.\n\n📖 Estado:\nBox e volumes em estado impecável, com luva protetora perfeita e livros como novos sem marcas de manuseio ou danos.\n\n📸 Posso encaminhar fotos reais do selo de 10 anos.", img: "https://static.skeelo.com/remote/320/480/100/https://skoob.s3.amazonaws.com/livros/790957/BOX_TETRALOGIA_ANGELICA_1530626840790957SK1530626840B.jpg" },
+            { t: "Box Jules Verne", g: ["Sci-Fi", "Clássico"], p: "80,00", v: 80, q: "jules verne box viagens extraordinarias zahar", d: "Box Jules Verne - 4 Viagens Extraordinárias (Capa Dura) | Clássicos Zahar | Estado de Novo\n\nEmbarque nas aventuras que criaram a ficção científica moderna!\n\n✨ Sobre esta edição:\nObras icônicas em edições da Zahar famosas pelo acabamento impecável em capa dura, formato de bolso e ilustrações originais. Itens de decoração duráveis e perfeitos para leitura em qualquer lugar.\n\n📚 Volumes inclusos:\n• Viagem ao Centro da Terra\n• Vinte Mil Léguas Submarinas\n• A Volta ao Mundo em 80 Dias\n• Da Terra à Lua\n\n📖 Estado:\nBox e volumes em estado de banca, com luva protetora perfeita e livros impecáveis.\n\n📸 Posso enviar fotos reais do interior ilustrado.", img: "https://m.media-amazon.com/images/I/515c-kwvF1L._SY445_SX342_PQ99_.jpg" },
+            { t: "Mitos Gregos", g: ["Mitologia"], p: "12,00", v: 12, q: "mitos gregos nathaniel hawthorne principis", d: "Mitos Gregos para Jovens Leitores | Nathaniel Hawthorne | Editora Principis\n\nDescubra as lendas que moldaram a imaginação do mundo ocidental!\n\n✨ Sobre o livro:\nReconta aventuras de heróis e deuses gregos de forma leve e fascinante para todas as idades. Capa inspirada na arte de vasos gregos antigos.\n\n✨ Para quem:\nExcelente incentivo à leitura que amplia repertório cultural de forma divertida.\n\n📖 Estado:\nExemplar em perfeito estado, com capa íntegra e páginas limpas e preservadas (sem marcas de uso).\n\n📸 Posso enviar fotos da contracapa e sumário.", img: "https://m.media-amazon.com/images/I/71bpljCX9+L._SY342_.jpg" },
+            { t: "Combo Stranger Things", g: ["Suspense", "Ficção"], p: "65,00", v: 65, q: "stranger things livros raizes mal cidade trevas", d: "Combo Stranger Things (2 Livros Oficiais)\n\nAprofunde-se nos mistérios de Hawkins antes dos eventos da série!\n\n📚 Livros inclusos:\n• Raízes do Mal — Revela segredos do passado como o experimento MKULTRA\n• Cidade nas Trevas — O passado de Hopper como detetive em NY\n\n✨ Para quem:\nEssencial para fãs que querem entender as motivações dos personagens com clima de suspense anos 70 e 80.\n\n📖 Estado:\n• Raízes do Mal: estado impecável\n• Cidade nas Trevas: muito bem cuidado com três detalhes mínimos — amassado quase imperceptível no canto, vinco discreto corrigido na primeira página e pequeno ponto branco superficial de tinta na lombada\n\n📸 Tenho fotos aproximadas dos detalhes para conferência.", img: "https://m.media-amazon.com/images/I/81KszOKZwqL._SY342_.jpg" },
+            { t: "Os Legados de Lorien", g: ["Sci-Fi", "Ação"], p: "170,00", v: 170, q: "legados lorien pittacus lore numero quatro colecao", d: "Saga Os Legados de Lorien (Coleção Completa - 7 Livros) | Pittacus Lore | Intrínseca\n\n\"Nove de nós viemos para cá. Três estão mortos. Eu sou o Número Quatro.\"\n\n✨ Sobre a série:\nSérie completa acompanhando nove alienígenas que desenvolvem superpoderes enquanto são caçados na Terra. Ideal para fãs de superpoderes e conspirações com narrativa fluida.\n\n📚 Volumes (7 livros):\n• Eu Sou o Número Quatro\n• O Poder de Seis\n• A Ascensão de Nove\n• A Queda de Cinco\n• A Vingança de Sete\n• O Destino de Dez\n• Unidos Somos Um\n\n📖 Estado:\nOs 7 volumes estão muito bem cuidados, com capas íntegras e estrutura física excelente para leitura.\n\n📸 Posso enviar fotos reais de cada volume e laterais.", img: "https://universosdepapellivros.wordpress.com/wp-content/uploads/2017/06/legados-de-lorien-livros.jpg" },
+            { t: "A Guerra dos Mundos (Luxo)", g: ["Sci-Fi", "Clássico"], p: "25,00", v: 25, q: "guerra dos mundos hg wells capa dura luxo", d: "A Guerra dos Mundos | H.G. Wells | Edição Especial Capa Dura (Martin Claret)\n\nO clássico absoluto que deu origem ao gênero de invasão alienígena!\n\n✨ Sobre esta edição:\nEdição premium em capa dura com trabalho de cores incrível em roxo e amarelo neon para se destacar na estante. Texto integral com tradução cuidadosa em formato confortável e durável de colecionador.\n\n✨ Sobre o livro:\nObra-prima que há mais de um século fascina leitores. Discute temas como imperialismo de forma atual e tensa.\n\n📖 Estado:\nExemplar em estado de novo, com capa dura sem amassados e páginas brancas impecáveis.\n\n📸 Posso enviar fotos da lombada e verso.", img: "https://m.media-amazon.com/images/I/81zsdG62TGL._SY342_.jpg" },
+            { t: "Trilogia Saga Encantadas", g: ["Fantasia", "Dark"], p: "60,00", v: 60, q: "saga encantadas sarah pinborough veneno feitico", d: "Trilogia Saga Encantadas (Completa) | Sarah Pinborough | Releituras Sombrias\n\nRepense seus vilões e esqueça tudo o que você sabe sobre \"felizes para sempre\"!\n\n✨ Sobre a série:\nReleituras de Branca de Neve, Cinderela e A Bela Adormecida em versões com mistério e reviravoltas adultas. Histórias interligadas com perspectiva realista e projeto gráfico elegante com capas que se complementam.\n\n📚 Volumes inclusos:\n• Veneno\n• Feitiço\n• Poder\n\n📖 Estado:\nLivros fisicamente inteiros, com capas e lombadas muito bem preservadas.\n\n⚠️ Observação:\nDevido aos anos, as laterais e primeiras/últimas páginas apresentam amarelamento e pontinhos de oxidação naturais, sem prejudicar a leitura.\n\n📸 Posso enviar fotos reais das laterais e páginas internas.", img: "https://http2.mlstatic.com/D_Q_NP_693176-MLB88809334482_082025-F.webp" },
+            { t: "Box Segunda Guerra Mundial", g: ["História"], p: "45,00", v: 45, q: "box segunda guerra mundial editora hb completo", d: "Box Essencial Segunda Guerra Mundial (Completo - 3 Livros) | Editora HB\n\nUma visão completa e necessária sobre o conflito que mudou o mundo!\n\n📚 Volumes inclusos:\n• Grandes Líderes\n• Grandes Batalhas\n• Holocausto\n\n✨ Sobre o box:\nExplora os pilares do conflito geopolítico em três volumes. Oferece panorama denso de fácil manuseio para consultas rápidas. A caixa verde traz ar de coleção de arquivo para estante.\n\n📖 Estado:\nBox e três volumes em excelente estado, com luva protetora firme e livros impecáveis (sem marcas de uso).\n\n📸 Posso enviar fotos das capas e sumário.", img: "https://m.media-amazon.com/images/I/71v9lgMZOTL._SY342_.jpg" },
+            { t: "Kit Um de Nós (2 Livros)", g: ["Suspense", "Jovem"], p: "60,00", v: 60, q: "um de nos esta mentindo karen mcmanus kit", d: "Kit Um de Nós (2 Livros) | Karen M. McManus\n\n\"Cinco alunos entram em detenção... mas apenas quatro saem com vida!\"\n\n✨ Sobre a série:\nDois best-sellers para fãs de mistérios \"quem matou\" com muitas reviravoltas ao estilo Pretty Little Liars. A narrativa alterna pontos de vista tornando a leitura viciante e impossível de largar.\n\n📚 Livros inclusos:\n• Um de Nós Está Mentindo\n• Um de Nós é o Próximo\n\n📖 Estado:\nExemplares em excelente estado, lidos apenas uma vez e guardados com cuidado. Capas inteiras e páginas bem preservadas.\n\n📸 Posso enviar fotos reais dos livros e laterais.", img: "https://m.media-amazon.com/images/I/811+cSVUW-S._SY342_.jpg" },
+            { t: "Box HP Guia Cinema", g: ["Cinema", "Arte"], p: "70,00", v: 70, q: "harry potter guia cinematografico box rocco", d: "Box Harry Potter: Guia Cinematográfico (Coleção Completa) | 4 Livros em Capa Dura\n\nA magia do cinema em uma edição de luxo para a sua estante!\n\n📚 Conteúdo:\n4 livros resistentes focados em:\n• Harry Potter (personagem principal)\n• Hermione Granger (detalhes e fotos)\n• Rony Weasley (bastidores)\n• Alvo Dumbledore (magia e sabedoria)\n\nTodos com fotos coloridas e curiosidades incríveis.\n\n✨ Sobre a edição:\nMaterial premium da Rocco para explorar bastidores dos filmes com detalhes técnicos e visuais. Referência incrível de projeto gráfico.\n\n📖 Estado:\nOs 4 volumes em capa dura estão absolutamente novos e impecáveis.\n\n⚠️ Observação:\nA caixa protetora (luva) possui um pequeno rasgo na parte inferior que não afeta a integridade dos livros.\n\n📸 Posso enviar fotos reais da textura da capa e detalhe no box.", img: "https://static.estantevirtual.com.br/book/00/NIV-9786-000/NIV-9786-000_detail1.png?ts=1763812855171&ims=fit-in/600x800/filters:fill(fff):quality(100)" },
+            { t: "A Filha das Profundezas", g: ["Aventura"], p: "35,00", v: 35, q: "filha das profundezas rick riordan nautilus", d: "A Filha das Profundezas | Rick Riordan | Releitura de Júlio Verne | Estado de Novo\n\nEmbarque numa aventura submarina tecnológica e cheia de mistérios!\n\n✨ Sobre o livro:\nO livro mais recente do autor que mistura ciência e ação acompanhando Ana Dakkar, única capaz de controlar o lendário Nautilus.\n\n✨ Para quem:\nVolume único que serve como excelente porta de entrada para o estilo viciante de Riordan sem comprometer com longas sagas.\n\n📖 Estado:\nExemplar em estado de livraria, com capa impecável sem amassados e páginas brancas perfeitas.\n\n📸 Posso enviar fotos reais da capa e contracapa.", img: "https://m.media-amazon.com/images/I/5156fUHVVAL._SY342_.jpg" },
+            { t: "O Espadachim de Carvão", g: ["Fantasia", "Nacional"], p: "15,00", v: 15, q: "espadachim de carvao affonso solano fantasia", d: "O Espadachim de Carvão | Affonso Solano | Fantasia Nacional | Ed. Casa da Palavra\n\nUma das mitologias mais criativas já criadas por um autor brasileiro!\n\n✨ Sobre o livro:\nObra de estreia que acompanha a jornada de Adapak em mistura de aventura e autodescoberta com narrativa visual que prende do início ao fim. Excelente porta de entrada para fantasia nacional de alta qualidade.\n\n📖 Estado:\nExemplar estruturalmente perfeito, sem rasgos ou orelhas na capa.\n\n⚠️ Observação estética:\nPor ser edição que reage à luz, as laterais estão bem amareladas e existem pintinhas de oxidação na primeira e última página, mas o interior e texto estão em ótimo estado.\n\n📸 Posso enviar fotos reais do tom amarelado.", img: "https://m.media-amazon.com/images/I/71e4y62I94L._SY342_.jpg" },
+            { t: "Box Dragões de Éter", g: ["Fantasia", "Nacional"], p: "105,00", v: 105, q: "dragoes de eter raphael draccon box completo", d: "Box Dragões de Éter (Coleção Integral - 4 Livros) + Pôster | Raphael Draccon\n\nA jornada definitiva por Nova Ether agora completa na sua estante!\n\n✨ Sobre a série:\nBox oficial que reinventa contos de fadas com escala épica e batalhas de tirar o fôlego em linguagem moderna e visual.\n\n📚 Volumes inclusos:\n• Caçadores de Bruxas\n• Corações de Neve\n• Círculos de Chuva\n• Estandartes de Névoa\n\n🎁 Bônus:\nPôster do Mapa de Nova Ether (item de colecionador)\n\n📖 Estado:\nBox e todos os quatro volumes em excelente estado, mantendo o brilho original da edição em coleção pessoal muito bem preservada.\n\n📸 Posso enviar fotos reais das lombadas e mapa aberto.", img: "https://http2.mlstatic.com/D_NQ_NP_2X_660400-MLU53788897434_022023-F.webp" },
+            { t: "Trilogia Casa de Segredos", g: ["Aventura", "Fantasia"], p: "65,00", v: 65, q: "casa de segredos chris columbus trilogia completa", d: "Trilogia Casa de Segredos (Coleção Completa) | Chris Columbus e Ned Vizzini\n\nEntre na mansão onde os livros ganham vida e os segredos são mortais!\n\n✨ Sobre a série:\nTrilogia elogiada por J.K. Rowling em jornada épica com piratas, gigantes e bruxas através de mundos de fantasia. Ritmo cinematográfico que prende do início ao fim.\n\n📚 Volumes inclusos:\n• Casa de Segredos\n• A Batalha das Bestas\n• A Colisão dos Mundos\n\n📖 Estado:\nLivros estruturalmente impecáveis, sem rasgos ou danos nas capas.\n\n⚠️ Observação:\nAs laterais estão bem amareladas e a primeira/última folha apresentam manchas de oxidação, mas leitura e texto estão totalmente preservados.\n\n📸 Posso enviar fotos reais das páginas internas.", img: "https://cdn.record.com.br/wp-content/uploads/2019/07/25225256/1939-768x1115.png" },
+            { t: "Quinteto Uma Dobra no Tempo", g: ["Sci-Fi", "Clássico"], p: "130,00", v: 130, q: "uma dobra no tempo quinteto harpercollins capa dura", d: "Quinteto Uma Dobra no Tempo (Coleção Completa - 5 Livros) | Capa Dura | HarperCollins\n\nViaje pelo tempo e espaço com um dos maiores clássicos da literatura mundial!\n\n✨ Sobre a série:\nColeção completa que inspirou gerações misturando ciência e física quântica em luta profunda entre bem e mal. Projeto gráfico espetáculo com capas duras resistentes e gramatura excelente.\n\n📚 Volumes inclusos:\n• Uma Dobra no Tempo\n• Um Vento à Porta\n• Um Planeta em seu Giro Veloz\n• Muitas Águas\n• Um Tempo Aceitável\n\n📖 Estado:\nOs 5 volumes estão em estado de novo e impecáveis, sem marcas, grifos ou amassados.\n\n📸 Posso enviar fotos reais das capas e lombadas.", img: "https://m.media-amazon.com/images/I/81fxkCYMPEL._SY342_.jpg" },
+            { t: "As Crônicas de Nárnia", g: ["Fantasia", "Clássico"], p: "95,00", v: 95, q: "cronicas de narnia cs lewis colecao martins fontes", d: "As Crônicas de Nárnia - Coleção Completa (7 Livros) | C.S. Lewis | Editora WMF Martins Fontes\n\nAbra o guarda-roupa e entre em um mundo de magia, coragem e aventura!\n\n✨ Sobre a série:\nUm dos maiores pilares da literatura fantástica sobre Aslam e as crianças em jornada de esperança. Esta edição clássica traz as ilustrações icônicas de Pauline Baynes nas capas.\n\n📚 Volumes inclusos (7 livros):\n• O Sobrinho do Mago\n• O Leão, a Feiticeira e o Guarda-Roupa\n• O Cavalo e seu Menino\n• Príncipe Caspian\n• A Viagem do Peregrino da Alvorada\n• A Cadeira de Prata\n• A Última Batalha\n\n📖 Estado:\nLivros em excelente estado, com capas preservadas e estrutura física firme para leitura confortável.\n\n📸 Posso enviar fotos reais das capas e orelhas.", img: "https://acdn-us.mitiendanube.com/stores/001/291/785/products/as-cronicas-de-narnia1-6eabf8b7ebe34efea216294046023545-1024-1024.webp" }
+        ];
+
+  /* =========================
+     2) ESTADO / STORAGE
+     ========================= */
+  const STORAGE = {
+    favorites: "acervoFavorites_v1",
+    theme: "acervoTheme_v1"
+  };
+
+  const state = {
+    favorites: new Set(),
+    favoritesOnly: false,
+    activeGenre: "Todos",
+    search: "",
+    sort: "default",
+    openId: null,
+    scrollY: 0
+  };
+
+  const $ = (id) => document.getElementById(id);
+
+  const els = {
+    bookGrid: $("bookGrid"),
+    genreFilters: $("genreFilters"),
+    searchInput: $("searchInput"),
+    clearSearch: $("clearSearch"),
+    counter: $("counter"),
+    emptyState: $("emptyState"),
+    favoritesFilter: $("favoritesFilter"),
+    favoritesCount: $("favoritesCount"),
+    sortSelect: $("sortSelect"),
+
+    modalBackdrop: $("modalBackdrop"),
+    modal: $("modal"),
+    modalImg: $("modalImg"),
+    modalGenreTags: $("modalGenreTags"),
+    modalTitle: $("modalTitle"),
+    modalPrice: $("modalPrice"),
+    modalOldPrice: $("modalOldPrice"),
+    modalDiscount: $("modalDiscount"),
+    modalDesc: $("modalDesc"),
+    modalWhatsapp: $("modalWhatsapp"),
+    modalFavoriteBtn: $("modalFavoriteBtn"),
+
+    paymentBackdrop: $("paymentBackdrop"),
+    paymentModal: $("paymentModal"),
+    howItWorksBackdrop: $("howItWorksBackdrop"),
+    howItWorksModal: $("howItWorksModal"),
+
+    toastContainer: $("toastContainer"),
+    scrollToTop: $("scrollToTop"),
+    currentYear: $("currentYear")
+  };
+
+  /* =========================
+     3) UTILITÁRIOS
+     ========================= */
+  function parseBRL(value) {
+    if (typeof value === "number") return value;
+    if (!value) return 0;
+    const s = String(value).replace(/[^\d,.-]/g, "").replace(/\./g, "").replace(",", ".");
+    const n = Number(s);
+    return Number.isFinite(n) ? n : 0;
+  }
+
+  function formatBRL(n) {
+    const num = Number(n);
+    if (!Number.isFinite(num)) return "0,00";
+    return num.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function normalizeText(s) {
+    return String(s || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "");
+  }
+
+  function escapeHTML(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function calcDiscountPercent(current, original) {
+    const v = Number(current);
+    const op = Number(original);
+    if (!Number.isFinite(v) || !Number.isFinite(op) || op <= 0 || v <= 0 || op <= v) return null;
+    return Math.round((1 - (v / op)) * 100);
+  }
+
+  function ensureBookNumbers(b, idx) {
+    const v = Number.isFinite(b.v) ? b.v : parseBRL(b.p);
+    let op = (b.op !== undefined && b.op !== null) ? parseBRL(b.op) : null;
+
+    // Fallback: se não vier op, estimar um preço "novo" coerente para permitir a exibição do desconto
+    if (!op || !Number.isFinite(op) || op <= v) {
+      op = null;
+    }
+
+    return {
+      ...b,
+      id: (b.id !== undefined && b.id !== null) ? b.id : idx,
+      v,
+      op,
+      p: b.p ? b.p : formatBRL(v)
+    };
+  }
+
+  function showToast(message, type = "") {
+    const toast = document.createElement("div");
+    toast.className = "toast" + (type ? " " + type : "");
+    toast.innerHTML = `<i class="fas fa-check-circle" style="opacity:0.9"></i><span>${escapeHTML(message)}</span>`;
+    els.toastContainer.appendChild(toast);
+
+    setTimeout(() => {
+      toast.style.opacity = "0";
+      toast.style.transform = "translateX(20px)";
+      setTimeout(() => toast.remove(), 250);
+    }, 2200);
+  }
+
+  function setBodyModalLock(isLocked) {
+    if (isLocked) {
+      state.scrollY = window.scrollY || 0;
+      document.body.classList.add("modal-open");
+      document.body.style.top = `-${state.scrollY}px`;
+    } else {
+      document.body.classList.remove("modal-open");
+      const top = document.body.style.top;
+      document.body.style.top = "";
+      const y = top ? Math.abs(parseInt(top, 10)) : state.scrollY;
+      window.scrollTo(0, y || 0);
+    }
+  }
+
+  /* =========================
+     4) FAVORITOS / TEMA
+     ========================= */
+  function loadFavorites() {
+    try {
+      const raw = localStorage.getItem(STORAGE.favorites);
+      const arr = raw ? JSON.parse(raw) : [];
+      state.favorites = new Set(Array.isArray(arr) ? arr : []);
+    } catch {
+      state.favorites = new Set();
+    }
+    updateFavoritesCount();
+  }
+
+  function saveFavorites() {
+    localStorage.setItem(STORAGE.favorites, JSON.stringify(Array.from(state.favorites)));
+    updateFavoritesCount();
+  }
+
+  function updateFavoritesCount() {
+    els.favoritesCount.textContent = String(state.favorites.size);
+    els.favoritesFilter.setAttribute("aria-pressed", state.favoritesOnly ? "true" : "false");
+    els.favoritesFilter.classList.toggle("active", state.favoritesOnly);
+  }
+
+  function isFavorite(bookId) {
+    return state.favorites.has(String(bookId));
+  }
+
+  function toggleFavorite(bookId) {
+    const key = String(bookId);
+    if (state.favorites.has(key)) {
+      state.favorites.delete(key);
+      showToast("Removido dos favoritos");
+    } else {
+      state.favorites.add(key);
+      showToast("Adicionado aos favoritos", "success");
+    }
+    saveFavorites();
+    syncFavoriteIcons(bookId);
+    renderBooks();
+  }
+
+  function syncFavoriteIcons(bookId) {
+    // Cards
+    document.querySelectorAll(`[data-fav-btn="${CSS.escape(String(bookId))}"] i`).forEach((icon) => {
+      const active = isFavorite(bookId);
+      icon.className = active ? "fas fa-heart" : "far fa-heart";
+      icon.closest("button")?.classList.toggle("active", active);
+    });
+
+    // Modal
+    if (state.openId !== null && String(state.openId) === String(bookId)) {
+      const active = isFavorite(bookId);
+      els.modalFavoriteBtn.classList.toggle("active", active);
+      els.modalFavoriteBtn.querySelector("i").className = active ? "fas fa-heart" : "far fa-heart";
+    }
+  }
+
+  function loadTheme() {
+    const saved = localStorage.getItem(STORAGE.theme);
+    if (saved === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    else document.documentElement.removeAttribute("data-theme");
+    syncThemeIcons();
+  }
+
+  function syncThemeIcons() {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    const icon = isDark ? "fa-sun" : "fa-moon";
+    const el1 = document.getElementById("themeIcon");
+    const el2 = document.getElementById("themeIconMobile");
+    if (el1) el1.className = `fas ${icon}`;
+    if (el2) el2.className = `fas ${icon}`;
+  }
+
+  window.toggleTheme = function toggleTheme() {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    if (isDark) {
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem(STORAGE.theme, "light");
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem(STORAGE.theme, "dark");
+    }
+    syncThemeIcons();
+  };
+
+  /* =========================
+     5) FILTROS / BUSCA / ORDENAÇÃO
+     ========================= */
+  function getAllGenres(bookList) {
+    const counts = new Map();
+    for (const b of bookList) {
+      const gs = Array.isArray(b.g) ? b.g : [];
+      for (const g of gs) counts.set(g, (counts.get(g) || 0) + 1);
+    }
+    return Array.from(counts.entries())
+      .sort((a, b) => a[0].localeCompare(b[0], "pt-BR"))
+      .map(([name, count]) => ({ name, count }));
+  }
+
+  function clearAllFilters() {
+    state.activeGenre = "Todos";
+    state.search = "";
+    state.favoritesOnly = false;
+    els.searchInput.value = "";
+    els.clearSearch.classList.remove("visible");
+    els.sortSelect.value = "default";
+    state.sort = "default";
+    renderFilters();
+    renderBooks();
+    scrollToTop();
+  }
+  window.clearAllFilters = clearAllFilters;
+
+  function applyFilters(bookList) {
+    const q = normalizeText(state.search);
+    return bookList.filter((b) => {
+      if (state.favoritesOnly && !isFavorite(b.id)) return false;
+
+      if (state.activeGenre !== "Todos") {
+        const gs = Array.isArray(b.g) ? b.g : [];
+        if (!gs.includes(state.activeGenre)) return false;
+      }
+
+      if (q) {
+        const hay = normalizeText(`${b.t} ${Array.isArray(b.g) ? b.g.join(" ") : ""} ${b.q || ""} ${b.d || ""}`);
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+  }
+
+  function applySort(list) {
+    const s = state.sort;
+    const arr = [...list];
+    if (s === "price-asc") arr.sort((a, b) => a.v - b.v);
+    else if (s === "price-desc") arr.sort((a, b) => b.v - a.v);
+    else if (s === "alpha") arr.sort((a, b) => String(a.t).localeCompare(String(b.t), "pt-BR"));
+    return arr;
+  }
+
+  function renderFilters() {
+    const bookList = books.map(ensureBookNumbers);
+    const genres = getAllGenres(bookList);
+
+    const hasAnyFilter = (state.activeGenre !== "Todos") || !!state.search || state.favoritesOnly;
+
+    const chips = [];
+    chips.push({ label: "Todos", icon: "fa-layer-group", count: bookList.length, isClear: false });
+
+    if (hasAnyFilter) {
+      chips.push({ label: "Limpar filtros", icon: "fa-rotate-left", count: null, isClear: true });
+    }
+
+    for (const g of genres) {
+      chips.push({ label: g.name, icon: "fa-tag", count: g.count, isClear: false });
+    }
+
+    els.genreFilters.innerHTML = chips.map((c) => {
+      const active = (!c.isClear && c.label === state.activeGenre);
+      return `
+        <button class="filter-chip ${active ? "active" : ""}" data-genre="${escapeHTML(c.label)}" data-clear="${c.isClear ? "1" : "0"}" aria-pressed="${active ? "true" : "false"}">
+          <i class="fas ${c.icon}" style="font-size:0.6875rem;opacity:0.85"></i>
+          <span>${escapeHTML(c.label)}</span>
+          ${c.count !== null ? `<span class="count">${c.count}</span>` : ""}
+        </button>
+      `;
+    }).join("");
+
+    els.genreFilters.querySelectorAll("button.filter-chip").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const isClear = btn.getAttribute("data-clear") === "1";
+        if (isClear) return clearAllFilters();
+
+        const genre = btn.getAttribute("data-genre");
+
+        // Toggle: clicou no mesmo filtro = desativa
+        if (state.activeGenre === genre) state.activeGenre = "Todos";
+        else state.activeGenre = genre;
+
+        renderFilters();
+        renderBooks();
+        scrollToTop();
+      });
+    });
+  }
+
+  /* =========================
+     6) RENDER / MODAL
+     ========================= */
+  function buildPriceHTML(b) {
+    const discount = (b.op ? calcDiscountPercent(b.v, b.op) : null);
+    const oldLine = (b.op && discount !== null)
+      ? `<div class="price-old-row">
+           <span class="price-old">R$ ${formatBRL(b.op)}</span>
+           <span class="discount-badge">${discount}% OFF</span>
+         </div>`
+      : "";
+
+    return `
+      <div class="price-stack">
+        ${oldLine}
+        <div class="price-current">R$ ${formatBRL(b.v)}</div>
+      </div>
+    `;
+  }
+
+  function renderBooks() {
+    const normalized = books.map(ensureBookNumbers);
+    const filtered = applyFilters(normalized);
+    const sorted = applySort(filtered);
+
+    // Counter
+    const total = normalized.length;
+    const shown = sorted.length;
+    els.counter.textContent = `${shown} de ${total} item(ns) exibido(s)`;
+
+    // Empty state
+    if (!sorted.length) {
+      els.bookGrid.innerHTML = "";
+      els.emptyState.classList.remove("hidden");
+      return;
+    }
+    els.emptyState.classList.add("hidden");
+
+    els.bookGrid.innerHTML = sorted.map((b) => {
+      const tags = (Array.isArray(b.g) ? b.g : []).slice(0, 3)
+        .map((t) => `<span class="genre-tag">${escapeHTML(t)}</span>`).join("");
+
+      const favActive = isFavorite(b.id);
+      return `
+        <article class="book-card visible" role="listitem" data-card="${escapeHTML(String(b.id))}">
+          <div class="book-cover skeleton">
+            ${b.img ? `<img loading="lazy" data-src="${escapeHTML(b.img)}" alt="${escapeHTML(b.t)}">` : `
+              <div class="cover-placeholder">
+                <i class="fas fa-book"></i><span>Sem imagem</span>
+              </div>
+            `}
+            <button class="favorite-btn ${favActive ? "active" : ""}" data-fav-btn="${escapeHTML(String(b.id))}" aria-label="Favoritar">
+              <i class="${favActive ? "fas" : "far"} fa-heart"></i>
+            </button>
+          </div>
+          <div class="book-card-content">
+            <div class="genre-tags">${tags}</div>
+            <h3 class="book-card-title">${escapeHTML(b.t)}</h3>
+            <div class="book-card-footer">
+              ${buildPriceHTML(b)}
+              <div class="book-card-arrow"><i class="fas fa-chevron-right"></i></div>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join("");
+
+    // Lazy load imagens + skeleton
+    els.bookGrid.querySelectorAll("img[data-src]").forEach((img) => {
+      const src = img.getAttribute("data-src");
+      const cover = img.closest(".book-cover");
+      const pre = new Image();
+      pre.onload = () => {
+        img.src = src;
+        img.classList.add("loaded");
+        cover?.classList.remove("skeleton");
+      };
+      pre.onerror = () => {
+        cover?.classList.remove("skeleton");
+      };
+      pre.src = src;
+      img.removeAttribute("data-src");
+    });
+
+    // Eventos: abrir modal (sem travar no segundo clique)
+    els.bookGrid.querySelectorAll("[data-card]").forEach((card) => {
+      card.addEventListener("click", (e) => {
+        const id = card.getAttribute("data-card");
+        openModalById(id);
+      });
+    });
+
+    // Eventos: favoritar (sem abrir modal)
+    els.bookGrid.querySelectorAll("[data-fav-btn]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const id = btn.getAttribute("data-fav-btn");
+        toggleFavorite(id);
+      });
+    });
+  }
+
+  function openModalById(bookId) {
+    const normalized = books.map(ensureBookNumbers);
+    const b = normalized.find((x) => String(x.id) === String(bookId));
+    if (!b) return;
+
+    state.openId = b.id;
+
+    // Imagem
+    els.modalImg.src = b.img || "";
+    els.modalImg.alt = b.t || "";
+
+    // Tags
+    els.modalGenreTags.innerHTML = (Array.isArray(b.g) ? b.g : [])
+      .map((t) => `<span class="genre-tag">${escapeHTML(t)}</span>`).join("");
+
+    // Título
+    els.modalTitle.textContent = b.t || "";
+
+    // Preços no modal
+    const discount = (b.op ? calcDiscountPercent(b.v, b.op) : null);
+
+    if (b.op && discount !== null) {
+      els.modalOldPrice.textContent = `R$ ${formatBRL(b.op)}`;
+      els.modalDiscount.textContent = `${discount}% OFF`;
+      els.modalOldPrice.style.display = "";
+      els.modalDiscount.style.display = "";
+    } else {
+      els.modalOldPrice.textContent = "";
+      els.modalDiscount.textContent = "";
+      els.modalOldPrice.style.display = "none";
+      els.modalDiscount.style.display = "none";
+    }
+    els.modalPrice.textContent = formatBRL(b.v);
+
+    // Descrição completa (preserva quebras de linha)
+    const descHTML = escapeHTML(b.d || "").replace(/\n/g, "<br>");
+    els.modalDesc.innerHTML = `<div class="section">${descHTML}</div>`;
+
+    // WhatsApp
+    const msg = `Olá! Tenho interesse em: ${b.t} (R$ ${formatBRL(b.v)}). Está disponível?`;
+    els.modalWhatsapp.href = `https://wa.me/5547991438831?text=${encodeURIComponent(msg)}`;
+
+    // Favorito no modal
+    const favActive = isFavorite(b.id);
+    els.modalFavoriteBtn.classList.toggle("active", favActive);
+    els.modalFavoriteBtn.querySelector("i").className = favActive ? "fas fa-heart" : "far fa-heart";
+    els.modalFavoriteBtn.onclick = (ev) => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      toggleFavorite(b.id);
+    };
+
+    // Abrir modal (sem “travamento”)
+    els.modalBackdrop.classList.add("open");
+    els.modal.classList.add("open");
+    setBodyModalLock(true);
+  }
+
+  window.closeModal = function closeModal() {
+    els.modalBackdrop.classList.remove("open");
+    els.modal.classList.remove("open");
+    setBodyModalLock(false);
+    state.openId = null;
+  };
+
+  /* =========================
+     7) MODAIS INFO / MENU
+     ========================= */
+  window.openPaymentInfo = function openPaymentInfo() {
+    els.paymentBackdrop.classList.add("open");
+    els.paymentModal.classList.add("open");
+    setBodyModalLock(true);
+  };
+
+  window.closePaymentInfo = function closePaymentInfo() {
+    els.paymentBackdrop.classList.remove("open");
+    els.paymentModal.classList.remove("open");
+    setBodyModalLock(false);
+  };
+
+  window.openHowItWorks = function openHowItWorks() {
+    els.howItWorksBackdrop.classList.add("open");
+    els.howItWorksModal.classList.add("open");
+    setBodyModalLock(true);
+  };
+
+  window.closeHowItWorks = function closeHowItWorks() {
+    els.howItWorksBackdrop.classList.remove("open");
+    els.howItWorksModal.classList.remove("open");
+    setBodyModalLock(false);
+  };
+
+  window.toggleMobileMenu = function toggleMobileMenu() {
+    const menu = document.getElementById("mobileMenu");
+    const icon = document.getElementById("mobileMenuIcon");
+    const isOpen = menu.classList.toggle("open");
+    if (icon) icon.className = isOpen ? "fas fa-times" : "fas fa-bars";
+  };
+
+  window.copyPix = async function copyPix() {
+    const key = "58242143000190";
+    try {
+      await navigator.clipboard.writeText(key);
+      showToast("Chave Pix copiada!", "success");
+    } catch {
+      showToast("Não foi possível copiar automaticamente.");
+    }
+  };
+
+  window.toggleFavoritesFilter = function toggleFavoritesFilter() {
+    state.favoritesOnly = !state.favoritesOnly;
+    updateFavoritesCount();
+    renderBooks();
+    scrollToTop();
+    renderFilters();
+  };
+
+  window.clearSearch = function clearSearch() {
+    state.search = "";
+    els.searchInput.value = "";
+    els.clearSearch.classList.remove("visible");
+    renderBooks();
+    renderFilters();
+  };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  window.scrollToTop = scrollToTop;
+
+  /* =========================
+     8) EVENTOS GERAIS
+     ========================= */
+  function onScroll() {
+    const nav = document.querySelector(".navbar");
+    if (nav) nav.classList.toggle("scrolled", window.scrollY > 10);
+
+    if (els.scrollToTop) {
+      els.scrollToTop.classList.toggle("visible", window.scrollY > 350);
+    }
+  }
+
+  function init() {
+    // Ano
+    if (els.currentYear) els.currentYear.textContent = String(new Date().getFullYear());
+
+    loadTheme();
+    loadFavorites();
+
+    // Search
+    els.searchInput.addEventListener("input", () => {
+      state.search = els.searchInput.value || "";
+      els.clearSearch.classList.toggle("visible", !!state.search);
+      renderBooks();
+      renderFilters();
+    });
+
+    // Sort
+    els.sortSelect.addEventListener("change", () => {
+      state.sort = els.sortSelect.value || "default";
+      renderBooks();
+    });
+
+    // ESC fecha o modal aberto
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        if (els.modal.classList.contains("open")) return window.closeModal();
+        if (els.paymentModal.classList.contains("open")) return window.closePaymentInfo();
+        if (els.howItWorksModal.classList.contains("open")) return window.closeHowItWorks();
+      }
+    });
+
+    // Scroll
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // Render inicial
+    renderFilters();
+    renderBooks();
+  }
+
+  init();
+</script>
+</body>
+</html>
