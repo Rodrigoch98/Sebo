@@ -78,7 +78,6 @@
             min-height: 100%;
             transition: background-color var(--transition-normal), color var(--transition-normal);
             overflow-x: hidden;
-            /* Previne o bounce effect excessivo no iOS */
             overscroll-behavior-y: none;
         }
 
@@ -123,7 +122,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            height: 100%; /* Garante altura igual no grid */
+            height: 100%;
         }
 
         .book-card.visible { opacity: 1; transform: translateY(0); }
@@ -271,7 +270,7 @@
             transition: transform var(--transition-normal);
             padding: 0.25rem 0;
             overflow-x: auto;
-            -webkit-overflow-scrolling: touch; /* Suavidade no iOS */
+            -webkit-overflow-scrolling: touch;
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
@@ -340,7 +339,7 @@
         .search-container input {
             width: 100%;
             padding: 1rem 1rem 1rem 3rem;
-            font-size: 1rem; /* Importante para não dar zoom no iPhone */
+            font-size: 1rem;
             border: 2px solid var(--color-border);
             border-radius: var(--radius-lg);
             background: var(--color-surface);
@@ -538,8 +537,10 @@
             color: white;
             transition: all var(--transition-normal);
             width: 100%;
-            /* Respeitar a área segura do topo no iPhone (Notch) */
+            /* Correção para não cortar conteúdo no topo */
             padding-top: env(safe-area-inset-top);
+            /* Garante que não ultrapasse a tela */
+            max-width: 100vw;
         }
 
         .navbar.scrolled { box-shadow: var(--shadow-lg); }
@@ -562,7 +563,7 @@
             text-decoration: none;
             transition: all var(--transition-fast);
             box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-            flex-shrink: 0; /* Impede que o botão encolha */
+            flex-shrink: 0;
         }
 
         .whatsapp-btn:hover { 
@@ -570,13 +571,49 @@
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); 
         }
 
-        /* ===== PRICE TAG ===== */
-        .price-tag { font-size: 1.75rem; font-weight: 700; color: var(--color-accent); }
-        .price-tag small { font-size: 1rem; font-weight: 500; color: var(--color-text-muted); }
+        /* ===== PRICE TAG (CORRIGIDO) ===== */
+        .price-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.25rem;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .price-tag { font-size: 1.5rem; font-weight: 700; color: var(--color-accent); line-height: 1.2; }
         
-        .price-original { font-size: 0.85rem; color: var(--color-text-muted); text-decoration: line-through; display: block; line-height: 1.2; }
-        .discount-badge { background-color: rgba(22, 163, 74, 0.1); color: var(--color-success); font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 9999px; font-weight: 700; margin-left: 0.3rem; vertical-align: middle; }
-        .current-price-green { color: var(--color-success); font-weight: 700; }
+        /* Preço Antigo (Riscado) */
+        .price-original { 
+            font-size: 0.8rem; 
+            color: var(--color-text-muted); 
+            text-decoration: line-through; 
+            opacity: 0.8;
+            margin-bottom: -0.1rem;
+        }
+        
+        /* Preço Atual (Verde) */
+        .current-price-green { 
+            color: var(--color-success); 
+            font-weight: 800; 
+        }
+        
+        /* Badge de Desconto */
+        .discount-badge { 
+            background-color: rgba(22, 163, 74, 0.15); 
+            color: var(--color-success); 
+            font-size: 0.7rem; 
+            padding: 0.15rem 0.5rem; 
+            border-radius: 9999px; 
+            font-weight: 700; 
+            display: inline-block;
+            border: 1px solid rgba(22, 163, 74, 0.2);
+        }
 
         /* ===== THEME TOGGLE ===== */
         .theme-toggle {
@@ -645,11 +682,13 @@
 
         .mobile-menu-btn:hover { background: rgba(255,255,255,0.1); }
 
-        /* AJUSTES CRÍTICOS PARA MOBILE */
         @media (max-width: 768px) {
             /* Mobile - Navbar */
             .mobile-menu-btn { display: flex; }
             .desktop-nav { display: none; }
+            
+            /* Navbar mais espaçosa */
+            .navbar .h-16 { height: auto; min-height: 4rem; }
             
             /* Mobile - Hero Banner */
             .hero-title { font-size: 1.75rem !important; line-height: 1.2 !important; }
@@ -657,21 +696,21 @@
             .hero-checks { font-size: 0.75rem !important; gap: 0.75rem !important; }
             
             /* Mobile - Cards */
-            .book-cover { height: 11rem; } /* Altura reduzida para equilibrar */
+            .book-cover { height: 11rem; }
             .book-card { min-height: auto; }
-            .book-card .p-4 { padding: 0.75rem !important; } /* Padding reduzido para ganhar espaço */
+            .book-card .p-4 { padding: 0.75rem !important; }
             .book-card h2 { font-size: 0.95rem; line-height: 1.3; margin-bottom: 0.5rem; }
             
             /* Mobile - Gêneros no card */
             .genre-tag { font-size: 0.5625rem; padding: 0.1875rem 0.375rem; }
             
-            /* Mobile - Botão favorito maior (Touch target) */
+            /* Mobile - Botão favorito */
             .favorite-btn { 
                 width: 2.5rem;
                 height: 2.5rem;
                 top: 0.5rem;
                 right: 0.5rem;
-                opacity: 1; /* Sempre visível no mobile */
+                opacity: 1;
                 transform: scale(1);
             }
             .favorite-btn i { font-size: 1rem; }
@@ -686,7 +725,7 @@
             /* Mobile - Search */
             .search-container input {
                 padding: 1rem 1rem 1rem 3rem;
-                font-size: 16px; /* Evita zoom no iOS */
+                font-size: 16px;
             }
             
             /* Mobile - Modal (Bottom Sheet Style) */
@@ -698,32 +737,27 @@
                 transform: translateY(100%);
                 max-width: 100%;
                 width: 100%;
-                /* Altura máxima dinâmica com fallback */
                 max-height: 85vh;
                 max-height: 85dvh; 
                 border-radius: var(--radius-lg) var(--radius-lg) 0 0;
                 display: flex;
                 flex-direction: column;
-                /* Área segura inferior para iPhone X+ */
                 padding-bottom: env(safe-area-inset-bottom);
             }
             
             .modal-backdrop.open + .modal-content, .modal-content.open { transform: translateY(0); }
             
-            /* Imagem do modal menor no mobile */
             .modal-content .md\:w-5\/12 {
-                height: 12rem; /* Altura fixa para imagem não ocupar a tela toda */
+                height: 12rem;
                 flex-shrink: 0;
             }
 
-            /* Scroll apenas na área de conteúdo do modal */
             .modal-content .md\:w-7\/12 {
                 overflow-y: auto;
-                overscroll-behavior: contain; /* Impede scroll da página atrás */
+                overscroll-behavior: contain;
                 padding: 1.25rem;
             }
             
-            /* Botão de fechar do modal no lado ESQUERDO */
             .modal-close {
                 width: 2.5rem;
                 height: 2.5rem;
@@ -735,20 +769,18 @@
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             }
             
-            /* Mobile - Descrição do modal */
             .book-description { font-size: 0.9375rem; line-height: 1.6; }
             .book-description .label { font-size: 0.6875rem; margin-top: 0.5rem; }
             
-            /* Mobile - Grid mais justo */
             #bookGrid { gap: 0.75rem; }
 
-            /* Mobile - Preços ajustados */
+            /* Mobile - Preços Ajustados */
+            .price-tag { font-size: 1.1rem; }
             .current-price-green { font-size: 1rem; }
             .price-original { font-size: 0.75rem; }
             .discount-badge { font-size: 0.65rem; padding: 0.1rem 0.3rem; }
         }
 
-        /* Mobile Small (iPhone SE, Fold, etc) */
         @media (max-width: 380px) {
             .hero-title { font-size: 1.5rem !important; }
             .book-cover { height: 9.5rem; }
@@ -769,9 +801,9 @@
     <a href="#main-content" class="sr-only focus:not-sr-only">Pular para o conteúdo</a>
 
     <nav class="navbar" role="navigation">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16 sm:h-20">
-                <a href="#" class="flex items-center gap-3">
+        <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center min-h-[4rem] sm:min-h-[5rem] py-2">
+                <a href="#" class="flex items-center gap-3 shrink-0">
                     <div class="h-11 w-11 bg-white/10 backdrop-blur text-white flex items-center justify-center rounded-lg text-2xl shrink-0">
                         📚
                     </div>
@@ -941,7 +973,7 @@
                 <div id="modalGenreTags" class="genre-tags mb-3"></div>
                 <h2 id="modalTitle" class="font-display text-xl sm:text-3xl font-bold mb-4 leading-tight" style="color: var(--color-primary);"></h2>
                 
-                <div class="price-tag mb-6" id="modalPriceContainer"></div>
+                <div class="mb-6" id="modalPriceContainer"></div>
                 
                 <div class="book-description mb-6 flex-grow" id="modalDesc"></div>
                 
@@ -1128,7 +1160,6 @@
         const genreFiltersContainer = document.getElementById('genreFilters');
 
         // ===== INICIALIZAÇÃO =====
-        // Script para calcular VH correto no mobile
         function setVh() {
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -1375,7 +1406,6 @@
             }
         }
 
-        // ===== INTERSECTION OBSERVER =====
         const imageObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1427,7 +1457,7 @@
                 .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
         }
 
-        // ===== RENDERIZAÇÃO =====
+        // ===== RENDERIZAÇÃO CORRIGIDA PARA PREÇOS =====
         function renderBooks() {
             grid.innerHTML = "";
             const searchTerm = normalizeText(searchInput.value);
@@ -1475,21 +1505,26 @@
         function renderCard(book, idx, isSold) {
             const isFavorite = favorites.includes(book.originalIndex);
             
-            // Calculo de desconto
+            // Lógica de Preço Revisada e Robusta
             let priceHtml = '';
-            if (book.op && !isSold) {
+            
+            if (isSold) {
+                priceHtml = `<span class="font-bold text-lg" style="color: var(--color-text-muted); text-decoration: line-through;">R$ ${book.p}</span>`;
+            } else if (book.op && book.op > book.v) {
+                // Tem preço original e é maior que o valor atual
                 const discount = Math.round(((book.op - book.v) / book.op) * 100);
                 priceHtml = `
-                    <div class="flex flex-col items-start w-full">
+                    <div class="flex flex-col items-start w-full leading-none">
                         <span class="price-original text-xs">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
-                        <div class="flex items-center flex-wrap gap-1">
+                        <div class="flex items-center gap-1.5 mt-0.5">
                             <span class="font-bold text-lg current-price-green">R$ ${book.p}</span>
-                            <span class="discount-badge text-[10px]">-${discount}%</span>
+                            <span class="discount-badge text-[0.65rem]">-${discount}%</span>
                         </div>
                     </div>
                 `;
             } else {
-                priceHtml = `<span class="font-bold text-lg" style="color: ${isSold ? 'var(--color-text-muted)' : 'var(--color-accent)'}; ${isSold ? 'text-decoration: line-through;' : ''}">R$ ${book.p}</span>`;
+                // Preço normal sem desconto
+                priceHtml = `<span class="font-bold text-lg" style="color: var(--color-accent);">R$ ${book.p}</span>`;
             }
 
             const card = document.createElement('article');
@@ -1518,7 +1553,7 @@
                     </div>
                     <h2 class="font-display font-bold text-base sm:text-lg leading-tight mt-2 mb-3 line-clamp-2" style="color: var(--color-primary);">${book.t}</h2>
                     
-                    <div class="mt-auto pt-3 border-t flex justify-between items-center" style="border-color: var(--color-border);">
+                    <div class="mt-auto pt-3 border-t flex justify-between items-center min-h-[3rem]" style="border-color: var(--color-border);">
                         ${priceHtml}
                         ${!isSold ? `
                             <div class="h-8 w-8 rounded-full flex items-center justify-center transition shrink-0 ml-2" style="background: var(--color-surface-elevated);">
@@ -1544,28 +1579,31 @@
             });
         }
 
-        // ===== MODAIS =====
+        // ===== MODAL CORRIGIDO =====
         function openModal(book) {
             const isFavorite = favorites.includes(book.originalIndex);
             
             document.getElementById('modalTitle').textContent = book.t;
             
-            // Preços no Modal
+            // Lógica de Preço do Modal Revisada
             const priceContainer = document.getElementById('modalPriceContainer');
-            if (book.op) {
+            if (book.op && book.op > book.v) {
                 const discount = Math.round(((book.op - book.v) / book.op) * 100);
                 priceContainer.innerHTML = `
-                        <span class="price-original" style="display:inline-block; margin-right: 8px;">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
-                        <span class="current-price-green text-2xl font-bold">R$ ${book.p}</span>
-                        <span class="discount-badge text-sm ml-2">-${discount}% OFF</span>
+                    <div class="price-container">
+                        <span class="price-original">De: R$ ${book.op.toFixed(2).replace('.', ',')}</span>
+                        <div class="price-row">
+                            <span class="current-price-green text-3xl">R$ ${book.p}</span>
+                            <span class="discount-badge text-sm">-${discount}% OFF</span>
+                        </div>
+                    </div>
                 `;
             } else {
-                priceContainer.innerHTML = `<span class="current-price-green text-2xl font-bold">R$ ${book.p}</span>`;
+                priceContainer.innerHTML = `<span class="current-price-green text-3xl font-bold">R$ ${book.p}</span>`;
             }
 
             document.getElementById('modalDesc').innerHTML = formatDescription(book.d);
             
-            // Gêneros no modal
             document.getElementById('modalGenreTags').innerHTML = book.g.map(genre => 
                 `<span class="genre-tag">${genre}</span>`
             ).join('');
