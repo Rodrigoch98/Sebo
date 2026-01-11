@@ -694,13 +694,12 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script>
+    // Ajuste aqui o canal de contato (WhatsApp / Instagram / e-mail).
+    // Exemplos:
+    // const CONTACT_URL = "https://wa.me/55DDDNUMERO?text=";  (WhatsApp)
+    // const CONTACT_URL = "mailto:seuemail@dominio.com?subject=Interesse%20em%20livro&body=";
                 const msg = encodeURIComponent(`Olá Rodrigo! 📚\n\nTenho interesse no livro:\n*${book.t}*\nValor: R$ ${book.p}\n\nAinda está disponível?`);
                 document.getElementById('modalWhatsapp').href = `https://wa.me/5547991438831?text=${msg}`;
-                
-                document.getElementById('modalBackdrop').classList.add('open');
-                document.getElementById('modal').classList.add('open');
-                document.body.style.overflow = 'hidden';
-            }, 50);
 
     const PAGE_SIZE = 9;
 
