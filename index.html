@@ -1426,8 +1426,9 @@
                     <div class="flex flex-col items-end">
                         <span class="price-original text-xs">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
                         <div class="flex items-center">
-                            <span class="discount-badge text-[10px] mr-1">-${discount}%</span>
                             <span class="font-bold text-lg current-price-green">R$ ${book.p}</span>
+                            
+                            <span class="discount-badge text-[10px] ml-2">-${discount}%</span>
                         </div>
                     </div>
                 `;
@@ -1637,3 +1638,4 @@
     </script>
 </body>
 </html>
+
