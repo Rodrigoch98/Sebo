@@ -698,8 +698,7 @@
     // Exemplos:
     // const CONTACT_URL = "https://wa.me/55DDDNUMERO?text=";  (WhatsApp)
     // const CONTACT_URL = "mailto:seuemail@dominio.com?subject=Interesse%20em%20livro&body=";
-                const msg = encodeURIComponent(`Olá Rodrigo! 📚\n\nTenho interesse no livro:\n*${book.t}*\nValor: R$ ${book.p}\n\nAinda está disponível?`);
-                document.getElementById('modalWhatsapp').href = `https://wa.me/5547991438831?text=${msg}`;
+    const CONTACT_URL = ""; // deixe vazio se não quiser redirecionamento; o botão ainda copia mensagem.
 
     const PAGE_SIZE = 9;
 
