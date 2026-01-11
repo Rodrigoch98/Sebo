@@ -1323,297 +1323,617 @@
             { t: "As Crônicas de Nárnia", g: ["Fantasia", "Clássico"], p: "95,00", v: 95, q: "cronicas de narnia cs lewis colecao martins fontes", d: "As Crônicas de Nárnia - Coleção Completa (7 Livros) | C.S. Lewis | Editora WMF Martins Fontes\n\n📖 Estado:\nLivros em excelente estado.\n\n📸 Posso enviar fotos reais.", img: "https://acdn-us.mitiendanube.com/stores/001/291/785/products/as-cronicas-de-narnia1-6eabf8b7ebe34efea216294046023545-1024-1024.webp" }
         ];
 
-        let favorites = JSON.parse(localStorage.getItem('seboFavorites') || '[]');
-        let activeGenres = [];
-        let showOnlyFavorites = false;
-        let currentTheme = localStorage.getItem('seboTheme') || 'light';
-        let bodyScrollPos = 0;
+  /* =========================
+     2) ESTADO / STORAGE
+     ========================= */
+  const STORAGE = {
+    favorites: "acervoFavorites_v1",
+    theme: "acervoTheme_v1"
+  };
 
-        const grid = document.getElementById('bookGrid');
-        const counter = document.getElementById('counter');
-        const searchInput = document.getElementById('searchInput');
-        const clearSearchBtn = document.getElementById('clearSearch');
-        const emptyState = document.getElementById('emptyState');
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        const genreFiltersContainer = document.getElementById('genreFilters');
+  const state = {
+    favorites: new Set(),
+    favoritesOnly: false,
+    activeGenre: "Todos",
+    search: "",
+    sort: "default",
+    openId: null,
+    scrollY: 0
+  };
 
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
-            applyTheme(currentTheme);
-            renderGenreFilters();
-            renderBooks();
-            updateFavoritesCount();
-            setupEventListeners();
-        });
+  const $ = (id) => document.getElementById(id);
 
-        function setupEventListeners() {
-            let searchTimeout;
-            searchInput.addEventListener('input', () => {
-                clearTimeout(searchTimeout);
-                clearSearchBtn.classList.toggle('visible', searchInput.value.length > 0);
-                searchTimeout = setTimeout(renderBooks, 150);
-            });
+  const els = {
+    bookGrid: $("bookGrid"),
+    genreFilters: $("genreFilters"),
+    searchInput: $("searchInput"),
+    clearSearch: $("clearSearch"),
+    counter: $("counter"),
+    emptyState: $("emptyState"),
+    favoritesFilter: $("favoritesFilter"),
+    favoritesCount: $("favoritesCount"),
+    sortSelect: $("sortSelect"),
 
-            window.addEventListener('scroll', () => {
-                const navbar = document.querySelector('.navbar');
-                navbar.classList.toggle('scrolled', window.scrollY > 10);
-                scrollToTopBtn.classList.toggle('visible', window.scrollY > 400);
-            }, { passive: true });
+    modalBackdrop: $("modalBackdrop"),
+    modal: $("modal"),
+    modalImg: $("modalImg"),
+    modalGenreTags: $("modalGenreTags"),
+    modalTitle: $("modalTitle"),
+    modalPrice: $("modalPrice"),
+    modalOldPrice: $("modalOldPrice"),
+    modalDiscount: $("modalDiscount"),
+    modalDesc: $("modalDesc"),
+    modalWhatsapp: $("modalWhatsapp"),
+    modalFavoriteBtn: $("modalFavoriteBtn"),
 
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') { closeModal(); closePaymentInfo(); closeHowItWorks(); }
-            });
-        }
+    paymentBackdrop: $("paymentBackdrop"),
+    paymentModal: $("paymentModal"),
+    howItWorksBackdrop: $("howItWorksBackdrop"),
+    howItWorksModal: $("howItWorksModal"),
 
-        function toggleTheme() {
-            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-            applyTheme(currentTheme);
-            localStorage.setItem('seboTheme', currentTheme);
-        }
+    toastContainer: $("toastContainer"),
+    scrollToTop: $("scrollToTop"),
+    currentYear: $("currentYear")
+  };
 
-        function applyTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            const icon = theme === 'dark' ? 'fa-sun' : 'fa-moon';
-            document.getElementById('themeIcon').className = 'fas ' + icon;
-            const mobileIcon = document.getElementById('themeIconMobile');
-            if (mobileIcon) mobileIcon.className = 'fas ' + icon;
-        }
+  /* =========================
+     3) UTILITÁRIOS
+     ========================= */
+  function parseBRL(value) {
+    if (typeof value === "number") return value;
+    if (!value) return 0;
+    const s = String(value).replace(/[^\d,.-]/g, "").replace(/\./g, "").replace(",", ".");
+    const n = Number(s);
+    return Number.isFinite(n) ? n : 0;
+  }
 
-        function normalizeText(text) {
-            return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-        }
+  function formatBRL(n) {
+    const num = Number(n);
+    if (!Number.isFinite(num)) return "0,00";
+    return num.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
 
-        function getGenres() {
-            const genreCount = {};
-            books.filter(b => !b.s).forEach(book => {
-                book.g.forEach(genre => { genreCount[genre] = (genreCount[genre] || 0) + 1; });
-            });
-            return Object.entries(genreCount).sort((a, b) => b[1] - a[1]);
-        }
+  function normalizeText(s) {
+    return String(s || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "");
+  }
 
-        function renderGenreFilters() {
-            const genres = getGenres();
-            const availableBooks = books.filter(b => !b.s);
-            genreFiltersContainer.innerHTML = '<button class="filter-chip ' + (activeGenres.length === 0 ? 'active' : '') + '" onclick="setGenreFilter(null)"><i class="fas fa-layer-group"></i><span>Todos</span><span class="count">' + availableBooks.length + '</span></button>' +
-                genres.map(([genre, count]) => '<button class="filter-chip ' + (activeGenres.includes(genre) ? 'active' : '') + '" onclick="setGenreFilter(\'' + genre.replace(/'/g, "\\'") + '\')"><span>' + genre + '</span><span class="count">' + count + '</span></button>').join('');
-        }
+  function escapeHTML(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
 
-        function setGenreFilter(genre) {
-            if (genre === null) { activeGenres = []; }
-            else {
-                const idx = activeGenres.indexOf(genre);
-                if (idx > -1) { activeGenres.splice(idx, 1); }
-                else { activeGenres.push(genre); }
-            }
-            renderGenreFilters();
-            renderBooks();
-        }
+  function calcDiscountPercent(current, original) {
+    const v = Number(current);
+    const op = Number(original);
+    if (!Number.isFinite(v) || !Number.isFinite(op) || op <= 0 || v <= 0 || op <= v) return null;
+    return Math.round((1 - (v / op)) * 100);
+  }
 
-        function toggleFavorite(index, event) {
-            if (event) { event.stopPropagation(); event.preventDefault(); }
-            const idx = favorites.indexOf(index);
-            if (idx > -1) { favorites.splice(idx, 1); showToast('Removido dos favoritos'); }
-            else { favorites.push(index); showToast('Adicionado aos favoritos', 'success'); }
-            localStorage.setItem('seboFavorites', JSON.stringify(favorites));
-            updateFavoritesCount();
-            const btn = document.querySelector('[data-favorite-index="' + index + '"]');
-            if (btn) {
-                btn.classList.toggle('active', favorites.includes(index));
-                btn.querySelector('i').className = favorites.includes(index) ? 'fas fa-heart' : 'far fa-heart';
-            }
-            if (showOnlyFavorites) renderBooks();
-        }
+  function ensureBookNumbers(b, idx) {
+    const v = Number.isFinite(b.v) ? b.v : parseBRL(b.p);
+    let op = (b.op !== undefined && b.op !== null) ? parseBRL(b.op) : null;
 
-        function updateFavoritesCount() {
-            document.getElementById('favoritesCount').textContent = favorites.length;
-        }
+    // Fallback: se não vier op, estimar um preço "novo" coerente para permitir a exibição do desconto
+    if (!op || !Number.isFinite(op) || op <= v) {
+      op = null;
+    }
 
-        function toggleFavoritesFilter() {
-            showOnlyFavorites = !showOnlyFavorites;
-            document.getElementById('favoritesFilter').classList.toggle('active', showOnlyFavorites);
-            document.getElementById('favoritesFilter').setAttribute('aria-pressed', showOnlyFavorites);
-            renderBooks();
-        }
+    return {
+      ...b,
+      id: (b.id !== undefined && b.id !== null) ? b.id : idx,
+      v,
+      op,
+      p: b.p ? b.p : formatBRL(v)
+    };
+  }
 
-        const coverCache = new Map();
+  function showToast(message, type = "") {
+    const toast = document.createElement("div");
+    toast.className = "toast" + (type ? " " + type : "");
+    toast.innerHTML = `<i class="fas fa-check-circle" style="opacity:0.9"></i><span>${escapeHTML(message)}</span>`;
+    els.toastContainer.appendChild(toast);
 
-        async function fetchCover(query, imgElement, bookTitle) {
-            if (imgElement.dataset.customImg) { applyImage(imgElement, imgElement.dataset.customImg); return; }
-            if (coverCache.has(query)) { applyImage(imgElement, coverCache.get(query)); return; }
-            try {
-                const res = await fetch('https://www.googleapis.com/books/v1/volumes?q=' + encodeURIComponent(query) + '&maxResults=3&langRestrict=pt');
-                const data = await res.json();
-                if (data.items && data.items.length > 0) {
-                    let bestMatch = data.items[0];
-                    const normalizedTitle = normalizeText(bookTitle);
-                    for (const item of data.items) {
-                        const itemTitle = normalizeText(item.volumeInfo.title || '');
-                        if (itemTitle.includes(normalizedTitle.split(' ')[0])) { bestMatch = item; break; }
-                    }
-                    if (bestMatch.volumeInfo.imageLinks) {
-                        let url = bestMatch.volumeInfo.imageLinks.thumbnail || bestMatch.volumeInfo.imageLinks.smallThumbnail;
-                        url = url.replace('http:', 'https:').replace('&zoom=1', '&zoom=0').replace('&edge=curl', '');
-                        coverCache.set(query, url);
-                        applyImage(imgElement, url);
-                        return;
-                    }
-                }
-                throw new Error('No image');
-            } catch (e) { showPlaceholder(imgElement, bookTitle); }
-        }
+    setTimeout(() => {
+      toast.style.opacity = "0";
+      toast.style.transform = "translateX(20px)";
+      setTimeout(() => toast.remove(), 250);
+    }, 2200);
+  }
 
-        function applyImage(imgElement, url) {
-            if (!imgElement) return;
-            imgElement.src = url;
-            imgElement.onload = () => { imgElement.classList.add('loaded'); imgElement.parentElement?.classList.remove('skeleton'); };
-            imgElement.onerror = () => showPlaceholder(imgElement, imgElement.alt);
-        }
+  function setBodyModalLock(isLocked) {
+    if (isLocked) {
+      state.scrollY = window.scrollY || 0;
+      document.body.classList.add("modal-open");
+      document.body.style.top = `-${state.scrollY}px`;
+    } else {
+      document.body.classList.remove("modal-open");
+      const top = document.body.style.top;
+      document.body.style.top = "";
+      const y = top ? Math.abs(parseInt(top, 10)) : state.scrollY;
+      window.scrollTo(0, y || 0);
+    }
+  }
 
-        function showPlaceholder(imgElement, bookTitle) {
-            if (!imgElement) return;
-            const container = imgElement.parentElement;
-            if (container) {
-                container.classList.remove('skeleton');
-                const shortTitle = bookTitle.length > 40 ? bookTitle.substring(0, 40) + '...' : bookTitle;
-                container.innerHTML = '<div class="cover-placeholder"><i class="fas fa-book"></i><span>' + shortTitle + '</span></div>';
-            }
-        }
+  /* =========================
+     4) FAVORITOS / TEMA
+     ========================= */
+  function loadFavorites() {
+    try {
+      const raw = localStorage.getItem(STORAGE.favorites);
+      const arr = raw ? JSON.parse(raw) : [];
+      state.favorites = new Set(Array.isArray(arr) ? arr : []);
+    } catch {
+      state.favorites = new Set();
+    }
+    updateFavoritesCount();
+  }
 
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    const query = img.dataset.query;
-                    const title = img.dataset.title;
-                    if (query) { fetchCover(query, img, title); imageObserver.unobserve(img); }
-                }
-            });
-        }, { rootMargin: '100px' });
+  function saveFavorites() {
+    localStorage.setItem(STORAGE.favorites, JSON.stringify(Array.from(state.favorites)));
+    updateFavoritesCount();
+  }
 
-        function formatDescription(text) {
-            const sections = text.split('\n\n');
-            let html = '';
-            sections.forEach(section => {
-                if (!section.trim()) return;
-                let processed = section.replace(/📚|✨|📖|⚠️|💰|🎁/g, '').trim();
-                if (processed.match(/^(Sobre|Conteúdo|Volumes|Estado|Observação|Para quem|Diferencial|Bônus|Livros|Valor)/i)) {
-                    const parts = processed.split(':');
-                    if (parts.length > 1) {
-                        const label = parts[0].trim();
-                        const content = parts.slice(1).join(':').trim();
-                        html += '<div class="section"><span class="label">' + label + '</span><br>' + formatContent(content) + '</div>';
-                    } else { html += '<div class="section">' + formatContent(processed) + '</div>'; }
-                } else { html += '<div class="section">' + formatContent(processed) + '</div>'; }
-            });
-            return html;
-        }
+  function updateFavoritesCount() {
+    els.favoritesCount.textContent = String(state.favorites.size);
+    els.favoritesFilter.setAttribute("aria-pressed", state.favoritesOnly ? "true" : "false");
+    els.favoritesFilter.classList.toggle("active", state.favoritesOnly);
+  }
 
-        function formatContent(text) {
-            return text.replace(/•/g, '<br>•').replace(/\n/g, '<br>').replace(/"([^"]+)"/g, '<span class="highlight">"$1"</span>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-        }
+  function isFavorite(bookId) {
+    return state.favorites.has(String(bookId));
+  }
 
-        function renderBooks() {
-            grid.innerHTML = "";
-            const searchTerm = normalizeText(searchInput.value);
-            const sortMode = document.getElementById('sortSelect').value;
-            let filtered = books.map((book, index) => ({ ...book, originalIndex: index }));
-            const soldBooks = filtered.filter(b => b.s);
-            let availableBooks = filtered.filter(b => !b.s);
-            if (showOnlyFavorites) availableBooks = availableBooks.filter(b => favorites.includes(b.originalIndex));
-            if (activeGenres.length > 0) availableBooks = availableBooks.filter(b => activeGenres.some(genre => b.g.includes(genre)));
-            if (searchTerm) availableBooks = availableBooks.filter(b => normalizeText(b.t).includes(searchTerm) || normalizeText(b.d).includes(searchTerm) || b.g.some(genre => normalizeText(genre).includes(searchTerm)));
-            if (sortMode === 'price-asc') availableBooks.sort((a, b) => a.v - b.v);
-            if (sortMode === 'price-desc') availableBooks.sort((a, b) => b.v - a.v);
-            if (sortMode === 'alpha') availableBooks.sort((a, b) => a.t.localeCompare(b.t));
-            const total = availableBooks.length;
-            counter.textContent = total + ' ' + (total === 1 ? 'livro disponível' : 'livros disponíveis');
-            emptyState.classList.toggle('hidden', total > 0 || soldBooks.length > 0);
-            grid.classList.toggle('hidden', total === 0 && soldBooks.length === 0);
-            availableBooks.forEach((book, idx) => renderCard(book, idx, false));
-            if (!searchTerm && activeGenres.length === 0 && !showOnlyFavorites) soldBooks.forEach((book, idx) => renderCard(book, availableBooks.length + idx, true));
-        }
+  function toggleFavorite(bookId) {
+    const key = String(bookId);
+    if (state.favorites.has(key)) {
+      state.favorites.delete(key);
+      showToast("Removido dos favoritos");
+    } else {
+      state.favorites.add(key);
+      showToast("Adicionado aos favoritos", "success");
+    }
+    saveFavorites();
+    syncFavoriteIcons(bookId);
+    renderBooks();
+  }
 
-        function renderCard(book, idx, isSold) {
-            const isFavorite = favorites.includes(book.originalIndex);
-            const card = document.createElement('article');
-            card.className = 'book-card ' + (isSold ? 'sold' : '');
-            card.style.animationDelay = (idx * 50) + 'ms';
-            card.innerHTML = (isSold ? '<div class="sold-badge"><span>Vendido</span></div>' : '') +
-                '<div class="book-cover skeleton"><img data-query="' + book.q + '" data-title="' + book.t + '" ' + (book.img ? 'data-custom-img="' + book.img + '"' : '') + ' alt="Capa: ' + book.t + '" loading="lazy">' +
-                (!isSold ? '<button class="favorite-btn ' + (isFavorite ? 'active' : '') + '" data-favorite-index="' + book.originalIndex + '" onclick="toggleFavorite(' + book.originalIndex + ', event)" aria-label="' + (isFavorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos') + '"><i class="' + (isFavorite ? 'fas' : 'far') + ' fa-heart"></i></button>' : '') +
-                '</div><div class="book-card-content"><div class="genre-tags">' + book.g.map(genre => '<span class="genre-tag">' + genre + '</span>').join('') + '</div><h2 class="book-card-title">' + book.t + '</h2><div class="book-card-footer"><span class="book-card-price" style="' + (isSold ? 'color:var(--color-text-muted);text-decoration:line-through;' : '') + '">R$ ' + book.p + '</span>' +
-                (!isSold ? '<div class="book-card-arrow"><i class="fas fa-arrow-right"></i></div>' : '') + '</div></div>';
-            if (!isSold) { card.addEventListener('click', () => openModal(book)); card.style.cursor = 'pointer'; }
-            grid.appendChild(card);
-            const img = card.querySelector('img');
-            if (img) imageObserver.observe(img);
-            requestAnimationFrame(() => { setTimeout(() => card.classList.add('visible'), idx * 50); });
-        }
+  function syncFavoriteIcons(bookId) {
+    // Cards
+    document.querySelectorAll(`[data-fav-btn="${CSS.escape(String(bookId))}"] i`).forEach((icon) => {
+      const active = isFavorite(bookId);
+      icon.className = active ? "fas fa-heart" : "far fa-heart";
+      icon.closest("button")?.classList.toggle("active", active);
+    });
 
-        function lockBodyScroll() { bodyScrollPos = window.scrollY; document.body.classList.add('modal-open'); document.body.style.top = '-' + bodyScrollPos + 'px'; }
-        function unlockBodyScroll() { document.body.classList.remove('modal-open'); document.body.style.top = ''; window.scrollTo(0, bodyScrollPos); }
+    // Modal
+    if (state.openId !== null && String(state.openId) === String(bookId)) {
+      const active = isFavorite(bookId);
+      els.modalFavoriteBtn.classList.toggle("active", active);
+      els.modalFavoriteBtn.querySelector("i").className = active ? "fas fa-heart" : "far fa-heart";
+    }
+  }
 
-        function openModal(book) {
-            const isFavorite = favorites.includes(book.originalIndex);
-            closeModal();
-            setTimeout(() => {
-                document.getElementById('modalTitle').textContent = book.t;
-                document.getElementById('modalPrice').textContent = book.p;
-                document.getElementById('modalDesc').innerHTML = formatDescription(book.d);
-                document.getElementById('modalGenreTags').innerHTML = book.g.map(genre => '<span class="genre-tag">' + genre + '</span>').join('');
-                const modalImg = document.getElementById('modalImg');
-                modalImg.alt = 'Capa: ' + book.t;
-                if (book.img) { modalImg.src = book.img; }
-                else if (coverCache.has(book.q)) { modalImg.src = coverCache.get(book.q); }
-                else { modalImg.src = ''; fetchCover(book.q, modalImg, book.t); }
-                const modalFavBtn = document.getElementById('modalFavoriteBtn');
-                modalFavBtn.classList.toggle('active', isFavorite);
-                modalFavBtn.querySelector('i').className = isFavorite ? 'fas fa-heart' : 'far fa-heart';
-                modalFavBtn.onclick = (e) => {
-                    toggleFavorite(book.originalIndex, e);
-                    modalFavBtn.classList.toggle('active', favorites.includes(book.originalIndex));
-                    modalFavBtn.querySelector('i').className = favorites.includes(book.originalIndex) ? 'fas fa-heart' : 'far fa-heart';
-                };
-                const msg = encodeURIComponent('Olá Rodrigo! 📚\n\nTenho interesse no livro:\n*' + book.t + '*\nValor: R$ ' + book.p + '\n\nAinda está disponível?');
-                document.getElementById('modalWhatsapp').href = 'https://wa.me/5547991438831?text=' + msg;
-                document.getElementById('modalBackdrop').classList.add('open');
-                document.getElementById('modal').classList.add('open');
-                lockBodyScroll();
-            }, 50);
-        }
+  function loadTheme() {
+    const saved = localStorage.getItem(STORAGE.theme);
+    if (saved === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    else document.documentElement.removeAttribute("data-theme");
+    syncThemeIcons();
+  }
 
-        function closeModal() { document.getElementById('modalBackdrop').classList.remove('open'); document.getElementById('modal').classList.remove('open'); unlockBodyScroll(); }
-        function openHowItWorks() { document.getElementById('howItWorksBackdrop').classList.add('open'); document.getElementById('howItWorksModal').classList.add('open'); lockBodyScroll(); }
-        function closeHowItWorks() { document.getElementById('howItWorksBackdrop').classList.remove('open'); document.getElementById('howItWorksModal').classList.remove('open'); unlockBodyScroll(); }
-        function openPaymentInfo() { document.getElementById('paymentBackdrop').classList.add('open'); document.getElementById('paymentModal').classList.add('open'); lockBodyScroll(); }
-        function closePaymentInfo() { document.getElementById('paymentBackdrop').classList.remove('open'); document.getElementById('paymentModal').classList.remove('open'); unlockBodyScroll(); }
+  function syncThemeIcons() {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    const icon = isDark ? "fa-sun" : "fa-moon";
+    const el1 = document.getElementById("themeIcon");
+    const el2 = document.getElementById("themeIconMobile");
+    if (el1) el1.className = `fas ${icon}`;
+    if (el2) el2.className = `fas ${icon}`;
+  }
 
-        function copyPix() {
-            navigator.clipboard.writeText("58242143000190").then(() => { showToast('Chave Pix copiada!', 'success'); }).catch(() => {
-                const textarea = document.createElement('textarea');
-                textarea.value = '58242143000190';
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                showToast('Chave Pix copiada!', 'success');
-            });
-        }
+  window.toggleTheme = function toggleTheme() {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    if (isDark) {
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem(STORAGE.theme, "light");
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem(STORAGE.theme, "dark");
+    }
+    syncThemeIcons();
+  };
 
-        function clearSearch() { searchInput.value = ''; clearSearchBtn.classList.remove('visible'); renderBooks(); searchInput.focus(); }
-        function clearAllFilters() { searchInput.value = ''; clearSearchBtn.classList.remove('visible'); activeGenres = []; showOnlyFavorites = false; document.getElementById('favoritesFilter').classList.remove('active'); document.getElementById('favoritesFilter').setAttribute('aria-pressed', 'false'); renderGenreFilters(); renderBooks(); }
-        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-        function toggleMobileMenu() { const menu = document.getElementById('mobileMenu'); const icon = document.getElementById('mobileMenuIcon'); const isOpen = menu.classList.contains('open'); menu.classList.toggle('open'); icon.className = isOpen ? 'fas fa-bars' : 'fas fa-times'; }
+  /* =========================
+     5) FILTROS / BUSCA / ORDENAÇÃO
+     ========================= */
+  function getAllGenres(bookList) {
+    const counts = new Map();
+    for (const b of bookList) {
+      const gs = Array.isArray(b.g) ? b.g : [];
+      for (const g of gs) counts.set(g, (counts.get(g) || 0) + 1);
+    }
+    return Array.from(counts.entries())
+      .sort((a, b) => a[0].localeCompare(b[0], "pt-BR"))
+      .map(([name, count]) => ({ name, count }));
+  }
 
-        function showToast(message, type) {
-            type = type || 'default';
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            toast.className = 'toast ' + type;
-            toast.innerHTML = '<i class="fas ' + (type === 'success' ? 'fa-check-circle' : 'fa-info-circle') + '"></i><span>' + message + '</span>';
-            container.appendChild(toast);
-            setTimeout(() => { toast.style.opacity = '0'; toast.style.transform = 'translateX(100%)'; setTimeout(() => toast.remove(), 300); }, 3000);
-        }
-    </script>
+  function clearAllFilters() {
+    state.activeGenre = "Todos";
+    state.search = "";
+    state.favoritesOnly = false;
+    els.searchInput.value = "";
+    els.clearSearch.classList.remove("visible");
+    els.sortSelect.value = "default";
+    state.sort = "default";
+    renderFilters();
+    renderBooks();
+    scrollToTop();
+  }
+  window.clearAllFilters = clearAllFilters;
+
+  function applyFilters(bookList) {
+    const q = normalizeText(state.search);
+    return bookList.filter((b) => {
+      if (state.favoritesOnly && !isFavorite(b.id)) return false;
+
+      if (state.activeGenre !== "Todos") {
+        const gs = Array.isArray(b.g) ? b.g : [];
+        if (!gs.includes(state.activeGenre)) return false;
+      }
+
+      if (q) {
+        const hay = normalizeText(`${b.t} ${Array.isArray(b.g) ? b.g.join(" ") : ""} ${b.q || ""} ${b.d || ""}`);
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+  }
+
+  function applySort(list) {
+    const s = state.sort;
+    const arr = [...list];
+    if (s === "price-asc") arr.sort((a, b) => a.v - b.v);
+    else if (s === "price-desc") arr.sort((a, b) => b.v - a.v);
+    else if (s === "alpha") arr.sort((a, b) => String(a.t).localeCompare(String(b.t), "pt-BR"));
+    return arr;
+  }
+
+  function renderFilters() {
+    const bookList = books.map(ensureBookNumbers);
+    const genres = getAllGenres(bookList);
+
+    const hasAnyFilter = (state.activeGenre !== "Todos") || !!state.search || state.favoritesOnly;
+
+    const chips = [];
+    chips.push({ label: "Todos", icon: "fa-layer-group", count: bookList.length, isClear: false });
+
+    if (hasAnyFilter) {
+      chips.push({ label: "Limpar filtros", icon: "fa-rotate-left", count: null, isClear: true });
+    }
+
+    for (const g of genres) {
+      chips.push({ label: g.name, icon: "fa-tag", count: g.count, isClear: false });
+    }
+
+    els.genreFilters.innerHTML = chips.map((c) => {
+      const active = (!c.isClear && c.label === state.activeGenre);
+      return `
+        <button class="filter-chip ${active ? "active" : ""}" data-genre="${escapeHTML(c.label)}" data-clear="${c.isClear ? "1" : "0"}" aria-pressed="${active ? "true" : "false"}">
+          <i class="fas ${c.icon}" style="font-size:0.6875rem;opacity:0.85"></i>
+          <span>${escapeHTML(c.label)}</span>
+          ${c.count !== null ? `<span class="count">${c.count}</span>` : ""}
+        </button>
+      `;
+    }).join("");
+
+    els.genreFilters.querySelectorAll("button.filter-chip").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const isClear = btn.getAttribute("data-clear") === "1";
+        if (isClear) return clearAllFilters();
+
+        const genre = btn.getAttribute("data-genre");
+
+        // Toggle: clicou no mesmo filtro = desativa
+        if (state.activeGenre === genre) state.activeGenre = "Todos";
+        else state.activeGenre = genre;
+
+        renderFilters();
+        renderBooks();
+        scrollToTop();
+      });
+    });
+  }
+
+  /* =========================
+     6) RENDER / MODAL
+     ========================= */
+  function buildPriceHTML(b) {
+    const discount = (b.op ? calcDiscountPercent(b.v, b.op) : null);
+    const oldLine = (b.op && discount !== null)
+      ? `<div class="price-old-row">
+           <span class="price-old">R$ ${formatBRL(b.op)}</span>
+           <span class="discount-badge">${discount}% OFF</span>
+         </div>`
+      : "";
+
+    return `
+      <div class="price-stack">
+        ${oldLine}
+        <div class="price-current">R$ ${formatBRL(b.v)}</div>
+      </div>
+    `;
+  }
+
+  function renderBooks() {
+    const normalized = books.map(ensureBookNumbers);
+    const filtered = applyFilters(normalized);
+    const sorted = applySort(filtered);
+
+    // Counter
+    const total = normalized.length;
+    const shown = sorted.length;
+    els.counter.textContent = `${shown} de ${total} item(ns) exibido(s)`;
+
+    // Empty state
+    if (!sorted.length) {
+      els.bookGrid.innerHTML = "";
+      els.emptyState.classList.remove("hidden");
+      return;
+    }
+    els.emptyState.classList.add("hidden");
+
+    els.bookGrid.innerHTML = sorted.map((b) => {
+      const tags = (Array.isArray(b.g) ? b.g : []).slice(0, 3)
+        .map((t) => `<span class="genre-tag">${escapeHTML(t)}</span>`).join("");
+
+      const favActive = isFavorite(b.id);
+      return `
+        <article class="book-card visible" role="listitem" data-card="${escapeHTML(String(b.id))}">
+          <div class="book-cover skeleton">
+            ${b.img ? `<img loading="lazy" data-src="${escapeHTML(b.img)}" alt="${escapeHTML(b.t)}">` : `
+              <div class="cover-placeholder">
+                <i class="fas fa-book"></i><span>Sem imagem</span>
+              </div>
+            `}
+            <button class="favorite-btn ${favActive ? "active" : ""}" data-fav-btn="${escapeHTML(String(b.id))}" aria-label="Favoritar">
+              <i class="${favActive ? "fas" : "far"} fa-heart"></i>
+            </button>
+          </div>
+          <div class="book-card-content">
+            <div class="genre-tags">${tags}</div>
+            <h3 class="book-card-title">${escapeHTML(b.t)}</h3>
+            <div class="book-card-footer">
+              ${buildPriceHTML(b)}
+              <div class="book-card-arrow"><i class="fas fa-chevron-right"></i></div>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join("");
+
+    // Lazy load imagens + skeleton
+    els.bookGrid.querySelectorAll("img[data-src]").forEach((img) => {
+      const src = img.getAttribute("data-src");
+      const cover = img.closest(".book-cover");
+      const pre = new Image();
+      pre.onload = () => {
+        img.src = src;
+        img.classList.add("loaded");
+        cover?.classList.remove("skeleton");
+      };
+      pre.onerror = () => {
+        cover?.classList.remove("skeleton");
+      };
+      pre.src = src;
+      img.removeAttribute("data-src");
+    });
+
+    // Eventos: abrir modal (sem travar no segundo clique)
+    els.bookGrid.querySelectorAll("[data-card]").forEach((card) => {
+      card.addEventListener("click", (e) => {
+        const id = card.getAttribute("data-card");
+        openModalById(id);
+      });
+    });
+
+    // Eventos: favoritar (sem abrir modal)
+    els.bookGrid.querySelectorAll("[data-fav-btn]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const id = btn.getAttribute("data-fav-btn");
+        toggleFavorite(id);
+      });
+    });
+  }
+
+  function openModalById(bookId) {
+    const normalized = books.map(ensureBookNumbers);
+    const b = normalized.find((x) => String(x.id) === String(bookId));
+    if (!b) return;
+
+    state.openId = b.id;
+
+    // Imagem
+    els.modalImg.src = b.img || "";
+    els.modalImg.alt = b.t || "";
+
+    // Tags
+    els.modalGenreTags.innerHTML = (Array.isArray(b.g) ? b.g : [])
+      .map((t) => `<span class="genre-tag">${escapeHTML(t)}</span>`).join("");
+
+    // Título
+    els.modalTitle.textContent = b.t || "";
+
+    // Preços no modal
+    const discount = (b.op ? calcDiscountPercent(b.v, b.op) : null);
+
+    if (b.op && discount !== null) {
+      els.modalOldPrice.textContent = `R$ ${formatBRL(b.op)}`;
+      els.modalDiscount.textContent = `${discount}% OFF`;
+      els.modalOldPrice.style.display = "";
+      els.modalDiscount.style.display = "";
+    } else {
+      els.modalOldPrice.textContent = "";
+      els.modalDiscount.textContent = "";
+      els.modalOldPrice.style.display = "none";
+      els.modalDiscount.style.display = "none";
+    }
+    els.modalPrice.textContent = formatBRL(b.v);
+
+    // Descrição completa (preserva quebras de linha)
+    const descHTML = escapeHTML(b.d || "").replace(/\n/g, "<br>");
+    els.modalDesc.innerHTML = `<div class="section">${descHTML}</div>`;
+
+    // WhatsApp
+    const msg = `Olá! Tenho interesse em: ${b.t} (R$ ${formatBRL(b.v)}). Está disponível?`;
+    els.modalWhatsapp.href = `https://wa.me/5547991438831?text=${encodeURIComponent(msg)}`;
+
+    // Favorito no modal
+    const favActive = isFavorite(b.id);
+    els.modalFavoriteBtn.classList.toggle("active", favActive);
+    els.modalFavoriteBtn.querySelector("i").className = favActive ? "fas fa-heart" : "far fa-heart";
+    els.modalFavoriteBtn.onclick = (ev) => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      toggleFavorite(b.id);
+    };
+
+    // Abrir modal (sem “travamento”)
+    els.modalBackdrop.classList.add("open");
+    els.modal.classList.add("open");
+    setBodyModalLock(true);
+  }
+
+  window.closeModal = function closeModal() {
+    els.modalBackdrop.classList.remove("open");
+    els.modal.classList.remove("open");
+    setBodyModalLock(false);
+    state.openId = null;
+  };
+
+  /* =========================
+     7) MODAIS INFO / MENU
+     ========================= */
+  window.openPaymentInfo = function openPaymentInfo() {
+    els.paymentBackdrop.classList.add("open");
+    els.paymentModal.classList.add("open");
+    setBodyModalLock(true);
+  };
+
+  window.closePaymentInfo = function closePaymentInfo() {
+    els.paymentBackdrop.classList.remove("open");
+    els.paymentModal.classList.remove("open");
+    setBodyModalLock(false);
+  };
+
+  window.openHowItWorks = function openHowItWorks() {
+    els.howItWorksBackdrop.classList.add("open");
+    els.howItWorksModal.classList.add("open");
+    setBodyModalLock(true);
+  };
+
+  window.closeHowItWorks = function closeHowItWorks() {
+    els.howItWorksBackdrop.classList.remove("open");
+    els.howItWorksModal.classList.remove("open");
+    setBodyModalLock(false);
+  };
+
+  window.toggleMobileMenu = function toggleMobileMenu() {
+    const menu = document.getElementById("mobileMenu");
+    const icon = document.getElementById("mobileMenuIcon");
+    const isOpen = menu.classList.toggle("open");
+    if (icon) icon.className = isOpen ? "fas fa-times" : "fas fa-bars";
+  };
+
+  window.copyPix = async function copyPix() {
+    const key = "58242143000190";
+    try {
+      await navigator.clipboard.writeText(key);
+      showToast("Chave Pix copiada!", "success");
+    } catch {
+      showToast("Não foi possível copiar automaticamente.");
+    }
+  };
+
+  window.toggleFavoritesFilter = function toggleFavoritesFilter() {
+    state.favoritesOnly = !state.favoritesOnly;
+    updateFavoritesCount();
+    renderBooks();
+    scrollToTop();
+    renderFilters();
+  };
+
+  window.clearSearch = function clearSearch() {
+    state.search = "";
+    els.searchInput.value = "";
+    els.clearSearch.classList.remove("visible");
+    renderBooks();
+    renderFilters();
+  };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  window.scrollToTop = scrollToTop;
+
+  /* =========================
+     8) EVENTOS GERAIS
+     ========================= */
+  function onScroll() {
+    const nav = document.querySelector(".navbar");
+    if (nav) nav.classList.toggle("scrolled", window.scrollY > 10);
+
+    if (els.scrollToTop) {
+      els.scrollToTop.classList.toggle("visible", window.scrollY > 350);
+    }
+  }
+
+  function init() {
+    // Ano
+    if (els.currentYear) els.currentYear.textContent = String(new Date().getFullYear());
+
+    loadTheme();
+    loadFavorites();
+
+    // Search
+    els.searchInput.addEventListener("input", () => {
+      state.search = els.searchInput.value || "";
+      els.clearSearch.classList.toggle("visible", !!state.search);
+      renderBooks();
+      renderFilters();
+    });
+
+    // Sort
+    els.sortSelect.addEventListener("change", () => {
+      state.sort = els.sortSelect.value || "default";
+      renderBooks();
+    });
+
+    // ESC fecha o modal aberto
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        if (els.modal.classList.contains("open")) return window.closeModal();
+        if (els.paymentModal.classList.contains("open")) return window.closePaymentInfo();
+        if (els.howItWorksModal.classList.contains("open")) return window.closeHowItWorks();
+      }
+    });
+
+    // Scroll
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // Render inicial
+    renderFilters();
+    renderBooks();
+  }
+
+  init();
+</script>
 </body>
 </html>
+
