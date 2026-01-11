@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
     <meta name="description" content="Acervo Literário - Livros usados com qualidade de colecionador. Entrega na empresa.">
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
@@ -45,9 +45,6 @@
             --radius-lg: 1rem;
             --transition-fast: 150ms ease;
             --transition-normal: 300ms ease;
-            
-            /* Variáveis de Altura Dinâmica para Mobile */
-            --vh: 1vh;
         }
 
         [data-theme="dark"] {
@@ -64,10 +61,9 @@
         * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         
         html { 
-            scroll-behavior: smooth; 
+            scroll-behavior: smooth;
             -webkit-tap-highlight-color: transparent; 
             font-size: 16px; 
-            height: 100%;
         }
 
         body {
@@ -75,24 +71,20 @@
             background: var(--color-surface-warm);
             color: var(--color-text);
             line-height: 1.6;
-            min-height: 100%;
+            min-height: 100vh;
             transition: background-color var(--transition-normal), color var(--transition-normal);
             overflow-x: hidden;
-            overscroll-behavior-y: none;
-        }
-
-        /* Prevenir zoom em inputs no iOS */
-        input, select, textarea {
-            font-size: 16px !important;
+            /* Garante que o conteúdo respeite as áreas seguras do iPhone (notch/home bar) */
+            padding-bottom: env(safe-area-inset-bottom);
         }
 
         .font-display { font-family: var(--font-display); }
 
         :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: var(--color-text-muted); border-radius: 4px; opacity: 0.5; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--color-surface-elevated); }
+        ::-webkit-scrollbar-thumb { background: var(--color-text-muted); border-radius: 4px; }
 
         /* ===== ANIMAÇÕES ===== */
         @keyframes fadeInUp {
@@ -122,7 +114,8 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            /* Altura mínima ajustada para evitar colapso no mobile */
+            min-height: 100%; 
         }
 
         .book-card.visible { opacity: 1; transform: translateY(0); }
@@ -248,7 +241,7 @@
         .favorite-btn:hover { transform: scale(1.1); background: var(--color-accent); }
         .favorite-btn:hover i { color: white; transform: scale(1.1); }
 
-        /* ===== FILTROS ===== */
+        /* ===== FILTROS COM NAVEGAÇÃO ===== */
         .filters-wrapper {
             position: relative;
             margin: 0 -1rem;
@@ -270,9 +263,10 @@
             transition: transform var(--transition-normal);
             padding: 0.25rem 0;
             overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
             -ms-overflow-style: none;
             scrollbar-width: none;
+            /* Melhora o scroll horizontal em mobile */
+            touch-action: pan-x;
         }
         
         .filters-scroll::-webkit-scrollbar { display: none; }
@@ -316,6 +310,8 @@
             transition: all var(--transition-fast);
             white-space: nowrap;
             flex-shrink: 0;
+            /* Previne toque duplo zoom */
+            touch-action: manipulation;
         }
 
         .filter-chip:hover { 
@@ -330,7 +326,12 @@
             color: white;
             transform: translateY(-2px);
         }
-        .filter-chip .count { font-size: 0.6875rem; padding: 0.125rem 0.375rem; border-radius: 9999px; background: rgba(0,0,0,0.1); }
+        .filter-chip .count { 
+            font-size: 0.6875rem;
+            padding: 0.125rem 0.375rem; 
+            border-radius: 9999px; 
+            background: rgba(0,0,0,0.1); 
+        }
         .filter-chip.active .count { background: rgba(255,255,255,0.2); }
 
         /* ===== SEARCH ===== */
@@ -349,9 +350,18 @@
             -webkit-appearance: none;
         }
 
-        .search-container input:focus { border-color: var(--color-accent); box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.15); }
+        .search-container input:focus { 
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.15); 
+        }
         .search-container input::placeholder { color: var(--color-text-muted); }
-        .search-container .search-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); }
+        .search-container .search-icon { 
+            position: absolute; 
+            left: 1rem; 
+            top: 50%; 
+            transform: translateY(-50%);
+            color: var(--color-text-muted); 
+        }
         .search-container input:focus + .search-icon { color: var(--color-accent); }
 
         .search-container .clear-btn {
@@ -396,7 +406,7 @@
             transform: translate(-50%, -50%) scale(0.95);
             max-width: 42rem;
             width: calc(100% - 2rem);
-            max-height: calc(100vh - 4rem);
+            max-height: calc(100vh - 2rem);
             background: var(--color-surface);
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-xl);
@@ -405,8 +415,6 @@
             opacity: 0;
             visibility: hidden;
             transition: all var(--transition-normal);
-            display: flex;
-            flex-direction: column;
         }
 
         .modal-backdrop.open + .modal-content, .modal-content.open {
@@ -431,7 +439,7 @@
             justify-content: center;
             box-shadow: var(--shadow-md);
             transition: all var(--transition-fast);
-            z-index: 20;
+            z-index: 10;
         }
 
         .modal-close:hover { 
@@ -458,7 +466,11 @@
             border-bottom: 1px dashed var(--color-border);
         }
 
-        .book-description .section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .book-description .section:last-child { 
+            border-bottom: none;
+            margin-bottom: 0; 
+            padding-bottom: 0; 
+        }
 
         .book-description .label {
             display: inline-block;
@@ -480,7 +492,6 @@
             flex-direction: column;
             gap: 0.75rem;
             pointer-events: none;
-            padding-bottom: env(safe-area-inset-bottom);
         }
 
         .toast {
@@ -519,7 +530,6 @@
             transition: all var(--transition-normal);
             box-shadow: var(--shadow-lg);
             z-index: 40;
-            margin-bottom: env(safe-area-inset-bottom);
         }
 
         .scroll-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
@@ -537,10 +547,6 @@
             color: white;
             transition: all var(--transition-normal);
             width: 100%;
-            /* Correção para não cortar conteúdo no topo */
-            padding-top: env(safe-area-inset-top);
-            /* Garante que não ultrapasse a tela */
-            max-width: 100vw;
         }
 
         .navbar.scrolled { box-shadow: var(--shadow-lg); }
@@ -563,7 +569,6 @@
             text-decoration: none;
             transition: all var(--transition-fast);
             box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-            flex-shrink: 0;
         }
 
         .whatsapp-btn:hover { 
@@ -571,49 +576,29 @@
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); 
         }
 
-        /* ===== PRICE TAG (CORRIGIDO) ===== */
-        .price-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.25rem;
-        }
-
-        .price-row {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .price-tag { font-size: 1.5rem; font-weight: 700; color: var(--color-accent); line-height: 1.2; }
+        /* ===== PRICE TAG ===== */
+        .price-tag { font-size: 1.75rem; font-weight: 700; color: var(--color-accent); }
+        .price-tag small { font-size: 1rem; font-weight: 500; color: var(--color-text-muted); }
         
-        /* Preço Antigo (Riscado) */
+        /* Preço Antigo / Comparativo */
         .price-original { 
-            font-size: 0.8rem; 
+            font-size: 0.85rem;
             color: var(--color-text-muted); 
             text-decoration: line-through; 
-            opacity: 0.8;
-            margin-bottom: -0.1rem;
+            display: block; 
+            line-height: 1.2; 
         }
-        
-        /* Preço Atual (Verde) */
-        .current-price-green { 
-            color: var(--color-success); 
-            font-weight: 800; 
-        }
-        
-        /* Badge de Desconto */
         .discount-badge { 
-            background-color: rgba(22, 163, 74, 0.15); 
+            background-color: rgba(22, 163, 74, 0.1);
             color: var(--color-success); 
             font-size: 0.7rem; 
-            padding: 0.15rem 0.5rem; 
+            padding: 0.1rem 0.4rem; 
             border-radius: 9999px; 
             font-weight: 700; 
-            display: inline-block;
-            border: 1px solid rgba(22, 163, 74, 0.2);
+            margin-left: 0.3rem; 
+            vertical-align: middle;
         }
+        .current-price-green { color: var(--color-success); font-weight: 700; }
 
         /* ===== THEME TOGGLE ===== */
         .theme-toggle {
@@ -633,8 +618,16 @@
         .theme-toggle:hover { background: rgba(255,255,255,0.1); transform: scale(1.1); }
 
         /* ===== EMPTY STATE ===== */
-        .empty-state { text-align: center; padding: 4rem 2rem; animation: fadeInUp 0.5s ease-out; }
-        .empty-state i { font-size: 4rem; color: var(--color-border); margin-bottom: 1.5rem; }
+        .empty-state { 
+            text-align: center;
+            padding: 4rem 2rem; 
+            animation: fadeInUp 0.5s ease-out; 
+        }
+        .empty-state i { 
+            font-size: 4rem;
+            color: var(--color-border); 
+            margin-bottom: 1.5rem; 
+        }
 
         /* ===== PAYMENT INFO ===== */
         .payment-method {
@@ -652,13 +645,8 @@
         .payment-method p { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.5; }
 
         /* ===== BOTÕES COM HOVER ===== */
-        button, .btn {
-            transition: all var(--transition-fast);
-        }
-
-        button:hover:not(:disabled), .btn:hover {
-            transform: translateY(-2px);
-        }
+        button, .btn { transition: all var(--transition-fast); }
+        button:hover:not(:disabled), .btn:hover { transform: translateY(-2px); }
 
         .modal-content button:not(.modal-close):not(.favorite-btn):hover {
             font-weight: 600;
@@ -687,48 +675,49 @@
             .mobile-menu-btn { display: flex; }
             .desktop-nav { display: none; }
             
-            /* Navbar mais espaçosa */
-            .navbar .h-16 { height: auto; min-height: 4rem; }
-            
             /* Mobile - Hero Banner */
             .hero-title { font-size: 1.75rem !important; line-height: 1.2 !important; }
             .hero-subtitle { font-size: 0.9375rem !important; }
             .hero-checks { font-size: 0.75rem !important; gap: 0.75rem !important; }
             
             /* Mobile - Cards */
-            .book-cover { height: 11rem; }
+            .book-cover { height: 13rem; }
             .book-card { min-height: auto; }
-            .book-card .p-4 { padding: 0.75rem !important; }
-            .book-card h2 { font-size: 0.95rem; line-height: 1.3; margin-bottom: 0.5rem; }
             
             /* Mobile - Gêneros no card */
             .genre-tag { font-size: 0.5625rem; padding: 0.1875rem 0.375rem; }
             
-            /* Mobile - Botão favorito */
+            /* Mobile - Botão favorito maior */
             .favorite-btn { 
                 width: 2.5rem;
                 height: 2.5rem;
                 top: 0.5rem;
                 right: 0.5rem;
-                opacity: 1;
+                opacity: 1; /* Always visible on mobile */
                 transform: scale(1);
             }
             .favorite-btn i { font-size: 1rem; }
             
-            /* Mobile - Filtros */
+            /* Mobile - Filtros com mais espaço */
             .filter-chip { 
                 padding: 0.625rem 1rem;
                 font-size: 0.875rem;
                 min-height: 2.5rem;
             }
+            .filter-chip .count { font-size: 0.75rem; }
             
-            /* Mobile - Search */
+            /* Mobile - Search maior */
             .search-container input {
-                padding: 1rem 1rem 1rem 3rem;
-                font-size: 16px;
+                padding: 1.125rem 1rem 1.125rem 3.25rem;
+                font-size: 1rem;
             }
+            .search-container .search-icon { font-size: 1.125rem; left: 1.125rem; }
+            .search-container .clear-btn { width: 1.75rem; height: 1.75rem; }
             
-            /* Mobile - Modal (Bottom Sheet Style) */
+            /* Mobile - Botões de ação maiores */
+            .whatsapp-btn { padding: 1.125rem 1.5rem; font-size: 1.0625rem; }
+            
+            /* Mobile - Modal (Correção de corte) */
             .modal-content {
                 top: auto;
                 bottom: 0;
@@ -737,59 +726,69 @@
                 transform: translateY(100%);
                 max-width: 100%;
                 width: 100%;
-                max-height: 85vh;
-                max-height: 85dvh; 
+                /* Usa dvh para evitar corte por barras do navegador */
+                max-height: 90dvh; 
+                height: auto;
                 border-radius: var(--radius-lg) var(--radius-lg) 0 0;
                 display: flex;
                 flex-direction: column;
+                /* Área segura para iPhones sem botão home */
                 padding-bottom: env(safe-area-inset-bottom);
             }
             
             .modal-backdrop.open + .modal-content, .modal-content.open { transform: translateY(0); }
             
-            .modal-content .md\:w-5\/12 {
-                height: 12rem;
-                flex-shrink: 0;
-            }
-
-            .modal-content .md\:w-7\/12 {
-                overflow-y: auto;
-                overscroll-behavior: contain;
-                padding: 1.25rem;
-            }
-            
+            /* MUDANÇA: Botão de fechar do modal no lado ESQUERDO */
             .modal-close {
                 width: 2.5rem;
                 height: 2.5rem;
                 top: 0.75rem;
                 left: 0.75rem;
                 right: auto;
-                background: rgba(255,255,255,0.95);
+                background: rgba(255,255,255,0.9);
                 color: #000;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             }
             
-            .book-description { font-size: 0.9375rem; line-height: 1.6; }
-            .book-description .label { font-size: 0.6875rem; margin-top: 0.5rem; }
+            /* Mobile - Descrição do modal */
+            .book-description { font-size: 0.9375rem; line-height: 1.7; }
+            .book-description .label { font-size: 0.6875rem; }
             
-            #bookGrid { gap: 0.75rem; }
-
-            /* Mobile - Preços Ajustados */
-            .price-tag { font-size: 1.1rem; }
-            .current-price-green { font-size: 1rem; }
-            .price-original { font-size: 0.75rem; }
-            .discount-badge { font-size: 0.65rem; padding: 0.1rem 0.3rem; }
+            /* Mobile - Toast */
+            .toast-container { left: 1rem; right: 1rem; bottom: 5rem; }
+            .toast { width: 100%; font-size: 0.9375rem; }
+            
+            /* Mobile - Scroll to top */
+            .scroll-to-top { 
+                bottom: 5rem;
+                width: 3rem;
+                height: 3rem;
+                /* Ajusta posição com safe area */
+                margin-bottom: env(safe-area-inset-bottom);
+            }
+            .scroll-to-top i { font-size: 1.125rem; }
+            
+            /* Mobile - Espaçamentos gerais */
+            .py-12 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+            .py-16 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+            
+            /* Mobile - Grid mais espaçado */
+            #bookGrid { gap: 1rem; }
         }
 
-        @media (max-width: 380px) {
+        /* Mobile Small (iPhone SE, Galaxy Fold) - Ajustes Finos */
+        @media (max-width: 375px) {
             .hero-title { font-size: 1.5rem !important; }
-            .book-cover { height: 9.5rem; }
-            .book-card h2 { font-size: 0.85rem; }
-            .filter-chip { padding: 0.5rem 0.75rem; font-size: 0.8rem; }
+            .book-cover { height: 11rem; }
+            .filter-chip { padding: 0.5rem 0.875rem; font-size: 0.8125rem; }
+            /* Garante que o grid não quebre em telas muito estreitas */
+            #bookGrid { grid-template-columns: 1fr; }
         }
 
         .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+        .sr-only { 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; 
+        }
 
         @media print {
             .navbar, .scroll-to-top, .toast-container, .favorite-btn { display: none !important; }
@@ -801,9 +800,9 @@
     <a href="#main-content" class="sr-only focus:not-sr-only">Pular para o conteúdo</a>
 
     <nav class="navbar" role="navigation">
-        <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center min-h-[4rem] sm:min-h-[5rem] py-2">
-                <a href="#" class="flex items-center gap-3 shrink-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <a href="#" class="flex items-center gap-3">
                     <div class="h-11 w-11 bg-white/10 backdrop-blur text-white flex items-center justify-center rounded-lg text-2xl shrink-0">
                         📚
                     </div>
@@ -839,7 +838,7 @@
             </div>
         </div>
 
-        <div id="mobileMenu" class="hidden md:hidden bg-white/10 backdrop-blur border-t border-white/10">
+        <div id="mobileMenu" class="hidden md:hidden bg-white/10 backdrop-blur">
             <div class="px-4 py-4 space-y-2">
                 <button onclick="openHowItWorks(); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 text-white hover:bg-white/10">
                     <i class="fas fa-info-circle text-white/70"></i> Como Comprar
@@ -931,7 +930,7 @@
             </button>
         </div>
 
-        <div id="bookGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6" role="list"></div>
+        <div id="bookGrid" class="grid grid-cols-1 min-[375px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6" role="list"></div>
 
         <div id="emptyState" class="empty-state hidden">
             <i class="fas fa-search"></i>
@@ -943,7 +942,7 @@
         </div>
     </main>
 
-    <footer class="py-8 mt-12 border-t" style="border-color: var(--color-border); background: var(--color-surface); padding-bottom: calc(2rem + env(safe-area-inset-bottom));">
+    <footer class="py-8 mt-12 border-t" style="border-color: var(--color-border); background: var(--color-surface);">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p class="text-sm" style="color: var(--color-text-muted);">
                 <i class="fas fa-book-reader mr-2"></i>
@@ -961,19 +960,19 @@
             <i class="fas fa-times"></i>
         </button>
         
-        <div class="flex flex-col md:flex-row h-full overflow-hidden">
-            <div class="md:w-5/12 h-48 md:h-auto shrink-0 relative" style="background: var(--color-surface-elevated);">
+        <div class="flex flex-col md:flex-row h-full md:max-h-[85vh] overflow-hidden">
+            <div class="md:w-5/12 h-64 md:h-auto shrink-0 relative" style="background: var(--color-surface-elevated);">
                 <img id="modalImg" class="w-full h-full object-cover" alt="">
                 <button id="modalFavoriteBtn" class="favorite-btn" style="opacity: 1; transform: scale(1);">
                     <i class="far fa-heart"></i>
                 </button>
             </div>
             
-            <div class="md:w-7/12 p-5 sm:p-8 flex flex-col flex-grow overflow-y-auto">
+            <div class="md:w-7/12 p-6 sm:p-8 flex flex-col overflow-y-auto">
                 <div id="modalGenreTags" class="genre-tags mb-3"></div>
-                <h2 id="modalTitle" class="font-display text-xl sm:text-3xl font-bold mb-4 leading-tight" style="color: var(--color-primary);"></h2>
+                <h2 id="modalTitle" class="font-display text-2xl sm:text-3xl font-bold mb-4" style="color: var(--color-primary);"></h2>
                 
-                <div class="mb-6" id="modalPriceContainer"></div>
+                <div class="price-tag mb-6" id="modalPriceContainer"></div>
                 
                 <div class="book-description mb-6 flex-grow" id="modalDesc"></div>
                 
@@ -986,11 +985,8 @@
     </div>
 
     <div id="paymentBackdrop" class="modal-backdrop" onclick="closePaymentInfo()"></div>
-    <div id="paymentModal" class="modal-content" style="max-width: 28rem; height: auto;" role="dialog" aria-modal="true">
-        <button class="modal-close md:hidden" onclick="closePaymentInfo()" aria-label="Fechar">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="p-6 sm:p-8 overflow-y-auto">
+    <div id="paymentModal" class="modal-content" style="max-width: 28rem; max-height: auto; overflow-y: auto;" role="dialog" aria-modal="true">
+        <div class="p-6 sm:p-8">
             <h2 class="font-display text-2xl font-bold mb-6 text-center" style="color: var(--color-primary);">
                 <i class="fas fa-wallet mr-2" style="color: var(--color-accent);"></i>
                 Formas de Pagamento
@@ -1035,11 +1031,8 @@
     </div>
 
     <div id="howItWorksBackdrop" class="modal-backdrop" onclick="closeHowItWorks()"></div>
-    <div id="howItWorksModal" class="modal-content" style="max-width: 28rem; height: auto;" role="dialog" aria-modal="true">
-        <button class="modal-close md:hidden" onclick="closeHowItWorks()" aria-label="Fechar">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="p-6 sm:p-8 overflow-y-auto">
+    <div id="howItWorksModal" class="modal-content" style="max-width: 28rem; max-height: auto; overflow-y: auto;" role="dialog" aria-modal="true">
+        <div class="p-6 sm:p-8">
             <h2 class="font-display text-2xl font-bold mb-8 text-center" style="color: var(--color-primary);">
                 <i class="fas fa-shopping-bag mr-2" style="color: var(--color-accent);"></i>
                 Como Comprar
@@ -1160,15 +1153,7 @@
         const genreFiltersContainer = document.getElementById('genreFilters');
 
         // ===== INICIALIZAÇÃO =====
-        function setVh() {
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
-            setVh();
-            window.addEventListener('resize', setVh);
-            
             document.getElementById('currentYear').textContent = new Date().getFullYear();
             applyTheme(currentTheme);
             renderGenreFilters();
@@ -1185,11 +1170,13 @@
                 clearSearchBtn.classList.toggle('visible', searchInput.value.length > 0);
                 searchTimeout = setTimeout(renderBooks, 150);
             });
+
             window.addEventListener('scroll', () => {
                 const navbar = document.querySelector('.navbar');
                 navbar.classList.toggle('scrolled', window.scrollY > 10);
                 scrollToTopBtn.classList.toggle('visible', window.scrollY > 400);
             }, { passive: true });
+
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     closeModal();
@@ -1235,6 +1222,7 @@
         function renderGenreFilters() {
             const genres = getGenres();
             const availableBooks = books.filter(b => !b.s);
+            
             genreFiltersContainer.innerHTML = `
                 <button class="filter-chip ${activeGenres.length === 0 ? 'active' : ''}" onclick="setGenreFilter(null)">
                     <i class="fas fa-layer-group"></i>
@@ -1274,6 +1262,7 @@
             const nextBtn = document.getElementById('filterNext');
             
             if (!container || !scroll) return;
+            
             const scrollWidth = scroll.scrollWidth;
             const containerWidth = container.offsetWidth;
             const maxScroll = scrollWidth - containerWidth;
@@ -1406,6 +1395,7 @@
             }
         }
 
+        // ===== INTERSECTION OBSERVER =====
         const imageObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1457,7 +1447,7 @@
                 .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
         }
 
-        // ===== RENDERIZAÇÃO CORRIGIDA PARA PREÇOS =====
+        // ===== RENDERIZAÇÃO =====
         function renderBooks() {
             grid.innerHTML = "";
             const searchTerm = normalizeText(searchInput.value);
@@ -1492,9 +1482,10 @@
 
             const total = availableBooks.length;
             counter.textContent = `${total} ${total === 1 ? 'livro disponível' : 'livros disponíveis'}`;
+            
             emptyState.classList.toggle('hidden', total > 0 || soldBooks.length > 0);
             grid.classList.toggle('hidden', total === 0 && soldBooks.length === 0);
-
+            
             availableBooks.forEach((book, idx) => renderCard(book, idx, false));
             
             if (!searchTerm && activeGenres.length === 0 && !showOnlyFavorites) {
@@ -1505,31 +1496,27 @@
         function renderCard(book, idx, isSold) {
             const isFavorite = favorites.includes(book.originalIndex);
             
-            // Lógica de Preço Revisada e Robusta
+            // Calculo de desconto (Atualizado)
             let priceHtml = '';
-            
-            if (isSold) {
-                priceHtml = `<span class="font-bold text-lg" style="color: var(--color-text-muted); text-decoration: line-through;">R$ ${book.p}</span>`;
-            } else if (book.op && book.op > book.v) {
-                // Tem preço original e é maior que o valor atual
+            if (book.op && !isSold) {
                 const discount = Math.round(((book.op - book.v) / book.op) * 100);
                 priceHtml = `
-                    <div class="flex flex-col items-start w-full leading-none">
+                    <div class="flex flex-col items-start">
                         <span class="price-original text-xs">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
-                        <div class="flex items-center gap-1.5 mt-0.5">
+                        <div class="flex items-center">
                             <span class="font-bold text-lg current-price-green">R$ ${book.p}</span>
-                            <span class="discount-badge text-[0.65rem]">-${discount}%</span>
+                            <span class="discount-badge text-[10px] ml-2">-${discount}%</span>
                         </div>
                     </div>
                 `;
             } else {
-                // Preço normal sem desconto
-                priceHtml = `<span class="font-bold text-lg" style="color: var(--color-accent);">R$ ${book.p}</span>`;
+                priceHtml = `<span class="font-bold text-lg" style="color: ${isSold ? 'var(--color-text-muted)' : 'var(--color-accent)'}; ${isSold ? 'text-decoration: line-through;' : ''}">R$ ${book.p}</span>`;
             }
 
             const card = document.createElement('article');
             card.className = `book-card ${isSold ? 'sold' : ''}`;
             card.style.animationDelay = `${idx * 50}ms`;
+            
             card.innerHTML = `
                 ${isSold ? '<div class="sold-badge"><span>Vendido</span></div>' : ''}
                 <div class="book-cover skeleton">
@@ -1549,14 +1536,14 @@
                 </div>
                 <div class="p-4 sm:p-5 flex-1 flex flex-col">
                     <div class="genre-tags mb-2">
-                        ${book.g.slice(0, 2).map(genre => `<span class="genre-tag">${genre}</span>`).join('')}
+                        ${book.g.map(genre => `<span class="genre-tag">${genre}</span>`).join('')}
                     </div>
                     <h2 class="font-display font-bold text-base sm:text-lg leading-tight mt-2 mb-3 line-clamp-2" style="color: var(--color-primary);">${book.t}</h2>
                     
-                    <div class="mt-auto pt-3 border-t flex justify-between items-center min-h-[3rem]" style="border-color: var(--color-border);">
+                    <div class="mt-auto pt-3 border-t flex justify-between items-center" style="border-color: var(--color-border);">
                         ${priceHtml}
                         ${!isSold ? `
-                            <div class="h-8 w-8 rounded-full flex items-center justify-center transition shrink-0 ml-2" style="background: var(--color-surface-elevated);">
+                            <div class="h-8 w-8 rounded-full flex items-center justify-center transition" style="background: var(--color-surface-elevated);">
                                 <i class="fas fa-arrow-right text-xs" style="color: var(--color-text-muted);"></i>
                             </div>
                         ` : ''}
@@ -1570,7 +1557,7 @@
             }
             
             grid.appendChild(card);
-
+            
             const img = card.querySelector('img');
             if (img) imageObserver.observe(img);
 
@@ -1579,62 +1566,64 @@
             });
         }
 
-        // ===== MODAL CORRIGIDO =====
+        // ===== MODAIS =====
         function openModal(book) {
             const isFavorite = favorites.includes(book.originalIndex);
             
-            document.getElementById('modalTitle').textContent = book.t;
+            closeModal();
             
-            // Lógica de Preço do Modal Revisada
-            const priceContainer = document.getElementById('modalPriceContainer');
-            if (book.op && book.op > book.v) {
-                const discount = Math.round(((book.op - book.v) / book.op) * 100);
-                priceContainer.innerHTML = `
-                    <div class="price-container">
-                        <span class="price-original">De: R$ ${book.op.toFixed(2).replace('.', ',')}</span>
-                        <div class="price-row">
-                            <span class="current-price-green text-3xl">R$ ${book.p}</span>
-                            <span class="discount-badge text-sm">-${discount}% OFF</span>
-                        </div>
-                    </div>
-                `;
-            } else {
-                priceContainer.innerHTML = `<span class="current-price-green text-3xl font-bold">R$ ${book.p}</span>`;
-            }
+            setTimeout(() => {
+                document.getElementById('modalTitle').textContent = book.t;
+                
+                // Preços no Modal
+                const priceContainer = document.getElementById('modalPriceContainer');
+                if (book.op) {
+                    const discount = Math.round(((book.op - book.v) / book.op) * 100);
+                    priceContainer.innerHTML = `
+                         <span class="price-original" style="display:inline-block; margin-right: 8px;">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
+                         <span class="current-price-green text-2xl font-bold">R$ ${book.p}</span>
+                         <span class="discount-badge text-sm ml-2">-${discount}% OFF</span>
+                    `;
+                } else {
+                    priceContainer.innerHTML = `<span class="current-price-green text-2xl font-bold">R$ ${book.p}</span>`;
+                }
 
-            document.getElementById('modalDesc').innerHTML = formatDescription(book.d);
-            
-            document.getElementById('modalGenreTags').innerHTML = book.g.map(genre => 
-                `<span class="genre-tag">${genre}</span>`
-            ).join('');
-            
-            const modalImg = document.getElementById('modalImg');
-            modalImg.alt = `Capa: ${book.t}`;
-            
-            if (book.img) {
-                modalImg.src = book.img;
-            } else if (coverCache.has(book.q)) {
-                modalImg.src = coverCache.get(book.q);
-            } else {
-                modalImg.src = '';
-                fetchCover(book.q, modalImg, book.t);
-            }
+                document.getElementById('modalDesc').innerHTML = formatDescription(book.d);
+                
+                // Gêneros no modal
+                document.getElementById('modalGenreTags').innerHTML = book.g.map(genre => 
+                    `<span class="genre-tag">${genre}</span>`
+                ).join('');
 
-            const modalFavBtn = document.getElementById('modalFavoriteBtn');
-            modalFavBtn.classList.toggle('active', isFavorite);
-            modalFavBtn.querySelector('i').className = isFavorite ? 'fas fa-heart' : 'far fa-heart';
-            modalFavBtn.onclick = (e) => {
-                toggleFavorite(book.originalIndex, e);
-                modalFavBtn.classList.toggle('active', favorites.includes(book.originalIndex));
-                modalFavBtn.querySelector('i').className = favorites.includes(book.originalIndex) ? 'fas fa-heart' : 'far fa-heart';
-            };
-            
-            const msg = encodeURIComponent(`Olá Rodrigo! 📚\n\nTenho interesse no livro:\n*${book.t}*\nValor: R$ ${book.p}\n\nAinda está disponível?`);
-            document.getElementById('modalWhatsapp').href = `https://wa.me/5547991438831?text=${msg}`;
-            
-            document.getElementById('modalBackdrop').classList.add('open');
-            document.getElementById('modal').classList.add('open');
-            document.body.style.overflow = 'hidden';
+                const modalImg = document.getElementById('modalImg');
+                modalImg.alt = `Capa: ${book.t}`;
+                
+                if (book.img) {
+                    modalImg.src = book.img;
+                } else if (coverCache.has(book.q)) {
+                    modalImg.src = coverCache.get(book.q);
+                } else {
+                    modalImg.src = '';
+                    fetchCover(book.q, modalImg, book.t);
+                }
+
+                const modalFavBtn = document.getElementById('modalFavoriteBtn');
+                modalFavBtn.classList.toggle('active', isFavorite);
+                modalFavBtn.querySelector('i').className = isFavorite ? 'fas fa-heart' : 'far fa-heart';
+                
+                modalFavBtn.onclick = (e) => {
+                    toggleFavorite(book.originalIndex, e);
+                    modalFavBtn.classList.toggle('active', favorites.includes(book.originalIndex));
+                    modalFavBtn.querySelector('i').className = favorites.includes(book.originalIndex) ? 'fas fa-heart' : 'far fa-heart';
+                };
+
+                const msg = encodeURIComponent(`Olá Rodrigo! 📚\n\nTenho interesse no livro:\n*${book.t}*\nValor: R$ ${book.p}\n\nAinda está disponível?`);
+                document.getElementById('modalWhatsapp').href = `https://wa.me/5547991438831?text=${msg}`;
+                
+                document.getElementById('modalBackdrop').classList.add('open');
+                document.getElementById('modal').classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }, 50);
         }
 
         function closeModal() {
