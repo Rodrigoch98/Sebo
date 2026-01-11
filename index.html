@@ -425,7 +425,7 @@
             transform: translate(-50%, -50%) scale(1);
         }
 
-        /* CORREÇÃO DO BOTÃO FECHAR E FAVORITAR (Interação Mobile) */
+        /* CORREÇÃO DO BOTÃO FECHAR E FAVORITAR */
         .modal-close, #modalFavoriteBtn {
             cursor: pointer;
             transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
@@ -679,25 +679,25 @@
             align-items: center;
             justify-content: center;
             transition: all var(--transition-fast);
-            z-index: 50; /* Garante que o botão esteja clicável */
+            z-index: 50; 
         }
 
         .mobile-menu-btn:active, .mobile-menu-btn:hover { background: rgba(255,255,255,0.1); }
 
-        /* REGRA ESPECÍFICA PARA O MENU MOBILE (Sem depender de Tailwind) */
+        /* REGRA ESPECÍFICA PARA O MENU MOBILE */
         #mobileMenu {
             display: none;
-            /* Escondido por padrão */
         }
         
         #mobileMenu.menu-open {
             display: block !important;
-            /* Força a exibição quando a classe existir */
         }
 
-        @media (max-width: 768px) {
+        /* MEDIA QUERIES APRIMORADAS PARA EVITAR CORTE */
+        @media (max-width: 1024px) {
             .mobile-menu-btn { display: flex; }
-            .desktop-nav { display: none; }
+            /* Esconde explicitamente o desktop nav se não foi tratado pelas classes do Tailwind */
+            .desktop-nav-force-hidden { display: none !important; }
             
             /* Ajustes Hero e Cards */
             .hero-title { font-size: 1.75rem !important; line-height: 1.2 !important; }
@@ -798,7 +798,7 @@
                     </div>
                 </a>
 
-                <div class="desktop-nav flex items-center gap-3">
+                <div class="desktop-nav-force-hidden hidden lg:flex items-center gap-3">
                     <button onclick="openHowItWorks()" class="text-sm font-medium px-4 py-2 rounded-lg transition text-white/80 hover:text-white hover:bg-white/10 hover:font-semibold">
                         <i class="fas fa-info-circle mr-2"></i>Como Comprar
                     </button>
@@ -813,9 +813,9 @@
                     </a>
                 </div>
 
-                <div class="flex items-center gap-2 md:hidden">
-                    <button onclick="openHowItWorks()" class="bg-white/10 hover:bg-white/20 text-white px-2 py-1.5 rounded-lg transition flex items-center gap-1.5 text-xs font-medium leading-none whitespace-nowrap">
-                        <i class="fas fa-info-circle text-xs"></i>
+                <div class="flex lg:hidden items-center gap-2">
+                    <button onclick="openHowItWorks()" class="bg-white/10 hover:bg-white/20 text-white px-2 py-1.5 rounded-lg transition flex items-center gap-1.5 text-[10px] sm:text-xs font-medium leading-none whitespace-nowrap">
+                        <i class="fas fa-info-circle text-[10px] sm:text-xs"></i>
                         <span>Como Comprar</span>
                     </button>
                     
@@ -1487,8 +1487,7 @@
             let priceHtml = '';
             if (book.op && !isSold) {
                 const discount = Math.round(((book.op - book.v) / book.op) * 100);
-                // AQUI ESTÁ A CORREÇÃO DE PREÇO SOLICITADA PARA MOBILE:
-                // Adicionado 'flex-nowrap' e 'whitespace-nowrap' para forçar linha única
+                // CORREÇÃO DE PREÇO: 'whitespace-nowrap' garante que o preço e desconto fiquem na mesma linha
                 priceHtml = `
                     <div class="flex flex-col items-start w-full">
                         <span class="price-original text-xs mb-0.5">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
