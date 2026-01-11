@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0">
     <meta name="description" content="Acervo Literário - Livros usados com qualidade de colecionador. Entrega na empresa.">
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
@@ -58,9 +58,9 @@
             --color-border: #3a3a3a;
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         
-        html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; font-size: 16px; }
 
         body {
             font-family: var(--font-body);
@@ -69,6 +69,7 @@
             line-height: 1.6;
             min-height: 100vh;
             transition: background-color var(--transition-normal), color var(--transition-normal);
+            overflow-x: hidden; /* Previne rolagem horizontal */
         }
 
         .font-display { font-family: var(--font-display); }
@@ -105,6 +106,8 @@
             opacity: 0;
             transform: translateY(20px);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .book-card.visible { opacity: 1; transform: translateY(0); }
@@ -120,10 +123,7 @@
         /* ===== TARJA VENDIDO ===== */
         .sold-badge {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             background: rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
@@ -149,6 +149,7 @@
             height: 15rem;
             overflow: hidden;
             background: linear-gradient(135deg, var(--color-border) 0%, var(--color-surface-elevated) 100%);
+            flex-shrink: 0;
         }
 
         .book-cover img {
@@ -242,14 +243,24 @@
         .filters-container {
             overflow: hidden;
             position: relative;
+            /* Hide scrollbar */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
+        
+        .filters-container::-webkit-scrollbar { display: none; }
 
         .filters-scroll {
             display: flex;
             gap: 0.5rem;
             transition: transform var(--transition-normal);
             padding: 0.25rem 0;
+            overflow-x: auto; /* Fallback */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
+        
+        .filters-scroll::-webkit-scrollbar { display: none; }
 
         .filter-nav-btn {
             position: absolute;
@@ -319,6 +330,8 @@
             background: var(--color-surface);
             color: var(--color-text);
             transition: all var(--transition-fast);
+            appearance: none;
+            -webkit-appearance: none;
         }
 
         .search-container input:focus { border-color: var(--color-accent); box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.15); }
@@ -504,6 +517,7 @@
             background: var(--color-primary);
             color: white;
             transition: all var(--transition-normal);
+            width: 100%;
         }
 
         .navbar.scrolled { box-shadow: var(--shadow-lg); }
@@ -592,7 +606,7 @@
             background: var(--color-accent-hover) !important;
         }
 
-        /* ===== MOBILE ===== */
+        /* ===== MOBILE SPECIFIC ===== */
         .mobile-menu-btn {
             display: none;
             width: 2.5rem;
@@ -615,25 +629,27 @@
             .desktop-nav { display: none; }
             
             /* Mobile - Hero Banner */
-            .hero-title { font-size: 1.875rem !important; line-height: 1.2 !important; }
+            .hero-title { font-size: 1.75rem !important; line-height: 1.2 !important; }
             .hero-subtitle { font-size: 0.9375rem !important; }
-            .hero-checks { font-size: 0.8125rem !important; }
+            .hero-checks { font-size: 0.75rem !important; gap: 0.75rem !important; }
             
             /* Mobile - Cards */
-            .book-cover { height: 14rem; }
-            .book-card { min-height: 320px; }
+            .book-cover { height: 13rem; }
+            .book-card { min-height: auto; }
             
             /* Mobile - Gêneros no card */
             .genre-tag { font-size: 0.5625rem; padding: 0.1875rem 0.375rem; }
             
             /* Mobile - Botão favorito maior */
             .favorite-btn { 
-                width: 2.75rem;
-                height: 2.75rem;
+                width: 2.5rem;
+                height: 2.5rem;
                 top: 0.5rem;
                 right: 0.5rem;
+                opacity: 1; /* Always visible on mobile */
+                transform: scale(1);
             }
-            .favorite-btn i { font-size: 1.125rem; }
+            .favorite-btn i { font-size: 1rem; }
             
             /* Mobile - Filtros com mais espaço */
             .filter-chip { 
@@ -663,19 +679,23 @@
                 transform: translateY(100%);
                 max-width: 100%;
                 width: 100%;
-                max-height: 92vh;
+                max-height: 85vh; /* Evita corte em telas pequenas */
                 border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+                display: flex;
+                flex-direction: column;
             }
             
             .modal-backdrop.open + .modal-content, .modal-content.open { transform: translateY(0); }
             
             /* MUDANÇA: Botão de fechar do modal no lado ESQUERDO para não conflitar com Favoritos */
             .modal-close {
-                width: 2.75rem;
-                height: 2.75rem;
+                width: 2.5rem;
+                height: 2.5rem;
                 top: 0.75rem;
                 left: 0.75rem;
                 right: auto;
+                background: rgba(255,255,255,0.9);
+                color: #000;
             }
             
             /* Mobile - Descrição do modal */
@@ -688,24 +708,24 @@
             
             /* Mobile - Scroll to top */
             .scroll-to-top { 
-                bottom: 5.5rem;
-                width: 3.25rem;
-                height: 3.25rem;
+                bottom: 5rem;
+                width: 3rem;
+                height: 3rem;
             }
             .scroll-to-top i { font-size: 1.125rem; }
             
             /* Mobile - Espaçamentos gerais */
-            .py-12 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
-            .py-16 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+            .py-12 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+            .py-16 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
             
             /* Mobile - Grid mais espaçado */
-            #bookGrid { gap: 1.25rem; }
+            #bookGrid { gap: 1rem; }
         }
 
         /* Mobile Small (iPhone SE, etc) */
         @media (max-width: 375px) {
-            .hero-title { font-size: 1.625rem !important; }
-            .book-cover { height: 12rem; }
+            .hero-title { font-size: 1.5rem !important; }
+            .book-cover { height: 11rem; }
             .filter-chip { padding: 0.5rem 0.875rem; font-size: 0.8125rem; }
         }
 
@@ -725,12 +745,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 sm:h-20">
                 <a href="#" class="flex items-center gap-3">
-                    <div class="h-11 w-11 bg-white/10 backdrop-blur text-white flex items-center justify-center rounded-lg text-2xl">
+                    <div class="h-11 w-11 bg-white/10 backdrop-blur text-white flex items-center justify-center rounded-lg text-2xl shrink-0">
                         📚
                     </div>
                     <div>
                         <p class="font-bold text-lg leading-none text-white">Acervo Literário</p>
-                        <p class="text-xs text-white/70 mt-0.5">Coleções de qualidade para sua estante</p>
+                        <p class="text-xs text-white/70 mt-0.5">Coleções de qualidade</p>
                     </div>
                 </a>
 
@@ -852,7 +872,7 @@
             </button>
         </div>
 
-        <div id="bookGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6" role="list"></div>
+        <div id="bookGrid" class="grid grid-cols-2 min-[480px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6" role="list"></div>
 
         <div id="emptyState" class="empty-state hidden">
             <i class="fas fa-search"></i>
@@ -882,8 +902,8 @@
             <i class="fas fa-times"></i>
         </button>
         
-        <div class="flex flex-col md:flex-row max-h-[85vh] overflow-hidden">
-            <div class="md:w-5/12 h-56 md:h-auto shrink-0 relative" style="background: var(--color-surface-elevated);">
+        <div class="flex flex-col md:flex-row h-full md:max-h-[85vh] overflow-hidden">
+            <div class="md:w-5/12 h-64 md:h-auto shrink-0 relative" style="background: var(--color-surface-elevated);">
                 <img id="modalImg" class="w-full h-full object-cover" alt="">
                 <button id="modalFavoriteBtn" class="favorite-btn" style="opacity: 1; transform: scale(1);">
                     <i class="far fa-heart"></i>
@@ -894,11 +914,8 @@
                 <div id="modalGenreTags" class="genre-tags mb-3"></div>
                 <h2 id="modalTitle" class="font-display text-2xl sm:text-3xl font-bold mb-4" style="color: var(--color-primary);"></h2>
                 
-                <div class="price-tag mb-6">
-                    <span id="modalOriginalPrice" class="price-original"></span>
-                    <small>R$</small> <span id="modalPrice" class="current-price-green"></span>
-                    <span id="modalDiscount" class="discount-badge"></span>
-                </div>
+                <div class="price-tag mb-6" id="modalPriceContainer">
+                    </div>
                 
                 <div class="book-description mb-6 flex-grow" id="modalDesc"></div>
                 
@@ -911,7 +928,7 @@
     </div>
 
     <div id="paymentBackdrop" class="modal-backdrop" onclick="closePaymentInfo()"></div>
-    <div id="paymentModal" class="modal-content" style="max-width: 28rem;" role="dialog" aria-modal="true">
+    <div id="paymentModal" class="modal-content" style="max-width: 28rem; max-height: auto; overflow-y: auto;" role="dialog" aria-modal="true">
         <div class="p-6 sm:p-8">
             <h2 class="font-display text-2xl font-bold mb-6 text-center" style="color: var(--color-primary);">
                 <i class="fas fa-wallet mr-2" style="color: var(--color-accent);"></i>
@@ -957,7 +974,7 @@
     </div>
 
     <div id="howItWorksBackdrop" class="modal-backdrop" onclick="closeHowItWorks()"></div>
-    <div id="howItWorksModal" class="modal-content" style="max-width: 28rem;" role="dialog" aria-modal="true">
+    <div id="howItWorksModal" class="modal-content" style="max-width: 28rem; max-height: auto; overflow-y: auto;" role="dialog" aria-modal="true">
         <div class="p-6 sm:p-8">
             <h2 class="font-display text-2xl font-bold mb-8 text-center" style="color: var(--color-primary);">
                 <i class="fas fa-shopping-bag mr-2" style="color: var(--color-accent);"></i>
@@ -1005,7 +1022,6 @@
     </button>
 
     <script>
-        // AGORA COM GÊNEROS SEPARADOS (ARRAY) E PREÇO ORIGINAL (op) PARA CALCULAR DESCONTO
         const books = [
             { t: "Box Machado de Assis - Coleção Completa", g: ["Clássicos", "Literatura Brasileira"], p: "145,00", v: 145, op: 289.00, q: "box machado de assis obra completa capa dura", d: "Oportunidade para sua biblioteca pessoal!\n\nVendo Box Premium do mestre Machado de Assis, contendo 11 obras clássicas em edições luxuosas com capa dura.\n\nOs livros estão impecáveis, praticamente intocados, sem marcas de uso, dobras ou grifos — ideais para quem busca qualidade de colecionador.\n\n📚 Conteúdo do Box:\n• Dom Casmurro\n• Memórias Póstumas de Brás Cubas\n• Quincas Borba\n• Helena\n• Iaiá Garcia\n• Ressurreição\n• A Mão e a Luva\n• Esaú e Jacó\n• Memorial de Aires\n• Papéis Avulsos\n• Várias Histórias\n\n✨ Bônus: Biografia detalhada do autor.\n\n📸 Posso encaminhar fotos reais e tirar qualquer dúvida por chat.", img: "https://images.tcdn.com.br/img/img_prod/1323385/box_machado_de_assis_11_livros_capa_dura_biografia_do_autor_17958_2_01d68758960ec216bd68b4445a9ed3ff.jpg" },
             { t: "Box Trilogia Tempest - Julie Cross", g: ["Sci-Fi", "Viagem no Tempo"], p: "65,00", v: 65, op: 139.00, q: "tempest julie cross box trilogia", d: "Para fãs de ficção científica, viagem no tempo e aventura!\n\nVendo o box completo da trilogia Tempest, escrita por Julie Cross.\n\n📚 Volumes inclusos:\n• Tempest\n• Vortex\n• Timestorm\n\n📖 Estado de conservação:\nOs livros estão impecáveis, praticamente intocados, sem marcas de uso, orelhas ou grifos.\n\n⚠️ Observação:\nA embalagem externa (box) é de papel cartão e possui pequenos rasgos nos cantos, mas cumpre perfeitamente o papel de proteger e organizar as obras.\n\n📸 Posso encaminhar fotos reais (inclusive dos detalhes no box) e tirar qualquer dúvida por chat.", img: "https://m.media-amazon.com/images/I/71cQQxenhoL._SY342_.jpg" },
@@ -1065,7 +1081,7 @@
 
         // ===== ESTADO =====
         let favorites = JSON.parse(localStorage.getItem('seboFavorites') || '[]');
-        let activeGenres = [];  // Agora pode ter múltiplos gêneros ativos
+        let activeGenres = [];
         let showOnlyFavorites = false;
         let currentTheme = localStorage.getItem('seboTheme') || 'light';
         let filterScrollPos = 0;
@@ -1133,7 +1149,7 @@
             return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
         }
 
-        // ===== GÊNEROS (AGORA SEPARADOS) =====
+        // ===== GÊNEROS =====
         function getGenres() {
             const genreCount = {};
             books.filter(b => !b.s).forEach(book => {
@@ -1418,12 +1434,13 @@
         function renderCard(book, idx, isSold) {
             const isFavorite = favorites.includes(book.originalIndex);
             
-            // Calculo de desconto
+            // Calculo de desconto (Atualizado)
             let priceHtml = '';
             if (book.op && !isSold) {
                 const discount = Math.round(((book.op - book.v) / book.op) * 100);
                 priceHtml = `
-                    <div class="flex flex-col items-start"> <span class="price-original text-xs">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
+                    <div class="flex flex-col items-start">
+                        <span class="price-original text-xs">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
                         <div class="flex items-center">
                             <span class="font-bold text-lg current-price-green">R$ ${book.p}</span>
                             <span class="discount-badge text-[10px] ml-2">-${discount}%</span>
@@ -1495,22 +1512,21 @@
                 document.getElementById('modalTitle').textContent = book.t;
                 
                 // Preços no Modal
+                const priceContainer = document.getElementById('modalPriceContainer');
                 if (book.op) {
                     const discount = Math.round(((book.op - book.v) / book.op) * 100);
-                    document.getElementById('modalOriginalPrice').textContent = `R$ ${book.op.toFixed(2).replace('.', ',')}`;
-                    document.getElementById('modalPrice').textContent = book.p;
-                    document.getElementById('modalDiscount').textContent = `-${discount}% OFF`;
-                    document.getElementById('modalOriginalPrice').style.display = 'inline-block';
-                    document.getElementById('modalDiscount').style.display = 'inline-block';
+                    priceContainer.innerHTML = `
+                         <span class="price-original" style="display:inline-block; margin-right: 8px;">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
+                         <span class="current-price-green text-2xl font-bold">R$ ${book.p}</span>
+                         <span class="discount-badge text-sm ml-2">-${discount}% OFF</span>
+                    `;
                 } else {
-                    document.getElementById('modalOriginalPrice').style.display = 'none';
-                    document.getElementById('modalDiscount').style.display = 'none';
-                    document.getElementById('modalPrice').textContent = book.p;
+                    priceContainer.innerHTML = `<span class="current-price-green text-2xl font-bold">R$ ${book.p}</span>`;
                 }
 
                 document.getElementById('modalDesc').innerHTML = formatDescription(book.d);
                 
-                // Gêneros no modal (múltiplos)
+                // Gêneros no modal
                 document.getElementById('modalGenreTags').innerHTML = book.g.map(genre => 
                     `<span class="genre-tag">${genre}</span>`
                 ).join('');
@@ -1636,5 +1652,3 @@
     </script>
 </body>
 </html>
-
-
