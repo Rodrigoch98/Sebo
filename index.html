@@ -60,7 +60,6 @@
 
         * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         
-        /* CORREÇÃO GLOBAL DE OVERFLOW */
         html, body { 
             overflow-x: hidden; 
             width: 100%;
@@ -219,7 +218,7 @@
             border: 1px solid var(--color-border);
         }
 
-        /* ===== FAVORITOS ===== */
+        /* ===== FAVORITOS (CARD) ===== */
         .favorite-btn {
             position: absolute;
             top: 0.75rem;
@@ -249,7 +248,6 @@
         /* ===== FILTROS COM NAVEGAÇÃO ===== */
         .filters-wrapper {
             position: relative;
-            /* REMOVIDO: margin negativa que causava overflow */
             margin: 0;
             width: 100%;
         }
@@ -427,6 +425,12 @@
             transform: translate(-50%, -50%) scale(1);
         }
 
+        /* CORREÇÃO DO BOTÃO FECHAR E FAVORITAR (Interação Mobile) */
+        .modal-close, #modalFavoriteBtn {
+            cursor: pointer;
+            transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease;
+        }
+
         .modal-close {
             position: absolute;
             top: 1rem;
@@ -437,19 +441,26 @@
             border: none;
             background: var(--color-surface);
             color: var(--color-text);
-            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: var(--shadow-md);
-            transition: all var(--transition-fast);
-            z-index: 52; /* Maior Z-Index para ficar acima da imagem */
+            z-index: 52;
         }
 
-        .modal-close:hover { 
-            background: var(--color-sold);
-            color: white;
+        /* Estado HOVER (Desktop) e ACTIVE (Mobile/Toque) */
+        .modal-close:hover, .modal-close:active { 
+            background: var(--color-sold) !important;
+            color: white !important;
             transform: rotate(90deg) scale(1.1); 
+        }
+
+        #modalFavoriteBtn:hover, #modalFavoriteBtn:active {
+            background: var(--color-accent) !important;
+            transform: scale(1.1);
+        }
+        #modalFavoriteBtn:hover i, #modalFavoriteBtn:active i {
+            color: white !important;
         }
 
         /* ===== DESCRIÇÃO ESTILIZADA ===== */
@@ -671,7 +682,7 @@
             transition: all var(--transition-fast);
         }
 
-        .mobile-menu-btn:hover { background: rgba(255,255,255,0.1); }
+        .mobile-menu-btn:active, .mobile-menu-btn:hover { background: rgba(255,255,255,0.1); }
 
         @media (max-width: 768px) {
             /* Mobile - Navbar */
@@ -720,7 +731,7 @@
             /* Mobile - Botões de ação maiores */
             .whatsapp-btn { padding: 1.125rem 1.5rem; font-size: 1.0625rem; }
             
-            /* Mobile - Modal (CORRIGIDO ZOOM E POSIÇÕES) */
+            /* Mobile - Modal */
             .modal-content {
                 top: auto;
                 bottom: 0;
@@ -729,7 +740,6 @@
                 transform: translateY(100%);
                 max-width: 100%;
                 width: 100%;
-                /* Usa altura fixa mas com scroll interno para evitar que o modal ocupe 100% e pareça zoom */
                 max-height: 85vh; 
                 height: auto;
                 border-radius: var(--radius-lg) var(--radius-lg) 0 0;
@@ -740,28 +750,28 @@
             
             .modal-backdrop.open + .modal-content, .modal-content.open { transform: translateY(0); }
             
-            /* MUDANÇA: Imagem do modal menor no mobile para ver o conteúdo */
+            /* Mobile - Imagem modal */
             .modal-content .md\:w-5\/12 {
-                height: 12rem !important; /* Reduz altura da imagem */
+                height: 12rem !important;
                 flex-shrink: 0;
             }
             
-            /* MUDANÇA: Botão Fechar (X) na DIREITA */
+            /* Mobile - Botão Fechar (Direita) */
             .modal-close {
                 width: 2.5rem;
                 height: 2.5rem;
                 top: 0.75rem;
-                right: 0.75rem; /* Direita */
+                right: 0.75rem;
                 left: auto;
                 background: rgba(255,255,255,0.9);
                 color: #000;
                 z-index: 60;
             }
             
-            /* MUDANÇA: Botão Favoritar no modal na ESQUERDA */
+            /* Mobile - Botão Favoritar (Esquerda) */
             #modalFavoriteBtn {
                 top: 0.75rem;
-                left: 0.75rem; /* Esquerda */
+                left: 0.75rem;
                 right: auto;
                 z-index: 60;
                 background: rgba(255,255,255,0.9);
@@ -844,8 +854,9 @@
                 </div>
 
                 <div class="flex items-center gap-2 md:hidden">
-                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">
-                        <i class="fas fa-moon" id="themeIconMobile"></i>
+                    <button onclick="openHowItWorks()" class="text-white/90 hover:text-white hover:bg-white/10 p-2 rounded-lg transition flex items-center gap-2 text-sm font-medium">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="hidden min-[360px]:inline">Como Funciona</span>
                     </button>
                     <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
                         <i class="fas fa-bars"></i>
@@ -854,15 +865,17 @@
             </div>
         </div>
 
-        <div id="mobileMenu" class="hidden md:hidden bg-white/10 backdrop-blur">
+        <div id="mobileMenu" class="hidden md:hidden bg-[#162d4b] border-t border-white/10">
             <div class="px-4 py-4 space-y-2">
-                <button onclick="openHowItWorks(); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 text-white hover:bg-white/10">
-                    <i class="fas fa-info-circle text-white/70"></i> Como Comprar
-                </button>
-                <button onclick="openPaymentInfo(); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 text-white hover:bg-white/10">
+                <button onclick="openPaymentInfo(); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 text-white hover:bg-white/10 transition">
                     <i class="fas fa-credit-card text-white/70"></i> Pagamento
                 </button>
-                <a href="https://wa.me/5547991438831" target="_blank" rel="noopener noreferrer" class="w-full px-4 py-3 rounded-lg flex items-center justify-center gap-2 bg-green-600 text-white font-medium hover:bg-green-700">
+                
+                <button onclick="toggleTheme(); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 text-white hover:bg-white/10 transition">
+                    <i class="fas fa-moon" id="themeIconMobile"></i> Alternar Tema
+                </button>
+                
+                <a href="https://wa.me/5547991438831" target="_blank" rel="noopener noreferrer" class="w-full px-4 py-3 rounded-lg flex items-center justify-center gap-2 bg-green-600 text-white font-medium hover:bg-green-700 transition mt-2">
                     <i class="fab fa-whatsapp"></i> Falar Comigo
                 </a>
             </div>
