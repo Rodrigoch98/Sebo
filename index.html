@@ -428,7 +428,7 @@
         /* CORREÇÃO DO BOTÃO FECHAR E FAVORITAR (Interação Mobile) */
         .modal-close, #modalFavoriteBtn {
             cursor: pointer;
-            transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease;
+            transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
         }
 
         .modal-close {
@@ -448,7 +448,7 @@
             z-index: 52;
         }
 
-        /* Estado HOVER (Desktop) e ACTIVE (Mobile/Toque) */
+        /* Estado HOVER (Desktop) e ACTIVE (Mobile/Toque) para feedback imediato */
         .modal-close:hover, .modal-close:active { 
             background: var(--color-sold) !important;
             color: white !important;
@@ -687,6 +687,7 @@
         @media (max-width: 768px) {
             /* Mobile - Navbar */
             .mobile-menu-btn { display: flex; }
+            /* Desktop Nav é OCULTO no mobile */
             .desktop-nav { display: none; }
             
             /* Mobile - Hero Banner */
@@ -854,12 +855,13 @@
                 </div>
 
                 <div class="flex items-center gap-2 md:hidden">
-                    <button onclick="openHowItWorks()" class="text-white/90 hover:text-white hover:bg-white/10 p-2 rounded-lg transition flex items-center gap-2 text-sm font-medium">
+                    <button onclick="openHowItWorks()" class="text-white/90 hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg transition flex items-center gap-2 text-sm font-medium">
                         <i class="fas fa-info-circle"></i>
-                        <span class="hidden min-[360px]:inline">Como Funciona</span>
+                        <span class="hidden min-[380px]:inline">Como Comprar</span>
                     </button>
+                    
                     <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
-                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
