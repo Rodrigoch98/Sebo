@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Acervo Literário - Livros usados com qualidade de colecionador. Entrega na empresa.">
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
@@ -45,7 +45,6 @@
             --radius-lg: 1rem;
             --transition-fast: 150ms ease;
             --transition-normal: 300ms ease;
-            --vh: 1vh;
         }
 
         [data-theme="dark"] {
@@ -61,7 +60,19 @@
 
         * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         
-        html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; font-size: 16px; }
+        /* CORREÇÃO GLOBAL DE OVERFLOW */
+        html, body { 
+            overflow-x: hidden; 
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        html { 
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent; 
+            font-size: 16px; 
+        }
 
         body {
             font-family: var(--font-body);
@@ -70,10 +81,8 @@
             line-height: 1.6;
             min-height: 100vh;
             transition: background-color var(--transition-normal), color var(--transition-normal);
-            overflow-x: hidden; /* Previne rolagem horizontal */
+            padding-bottom: env(safe-area-inset-bottom);
         }
-
-        input, select, textarea { font-size: 16px; }
 
         .font-display { font-family: var(--font-display); }
 
@@ -111,6 +120,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            min-height: 100%; 
         }
 
         .book-card.visible { opacity: 1; transform: translateY(0); }
@@ -228,7 +238,6 @@
             transition: all var(--transition-fast);
             box-shadow: var(--shadow-md);
             z-index: 10;
-            touch-action: manipulation;
         }
 
         .book-card:hover .favorite-btn, .favorite-btn:focus, .favorite-btn.active { opacity: 1; transform: scale(1); }
@@ -240,14 +249,14 @@
         /* ===== FILTROS COM NAVEGAÇÃO ===== */
         .filters-wrapper {
             position: relative;
-            margin: 0 -1rem;
-            padding: 0 1rem;
+            /* REMOVIDO: margin negativa que causava overflow */
+            margin: 0;
+            width: 100%;
         }
 
         .filters-container {
             overflow: hidden;
             position: relative;
-            /* Hide scrollbar */
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
@@ -259,9 +268,10 @@
             gap: 0.5rem;
             transition: transform var(--transition-normal);
             padding: 0.25rem 0;
-            overflow-x: auto; /* Fallback */
+            overflow-x: auto;
             -ms-overflow-style: none;
             scrollbar-width: none;
+            touch-action: pan-x;
         }
         
         .filters-scroll::-webkit-scrollbar { display: none; }
@@ -305,6 +315,7 @@
             transition: all var(--transition-fast);
             white-space: nowrap;
             flex-shrink: 0;
+            touch-action: manipulation;
         }
 
         .filter-chip:hover { 
@@ -319,7 +330,12 @@
             color: white;
             transform: translateY(-2px);
         }
-        .filter-chip .count { font-size: 0.6875rem; padding: 0.125rem 0.375rem; border-radius: 9999px; background: rgba(0,0,0,0.1); }
+        .filter-chip .count { 
+            font-size: 0.6875rem;
+            padding: 0.125rem 0.375rem; 
+            border-radius: 9999px; 
+            background: rgba(0,0,0,0.1); 
+        }
         .filter-chip.active .count { background: rgba(255,255,255,0.2); }
 
         /* ===== SEARCH ===== */
@@ -338,9 +354,18 @@
             -webkit-appearance: none;
         }
 
-        .search-container input:focus { border-color: var(--color-accent); box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.15); }
+        .search-container input:focus { 
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.15); 
+        }
         .search-container input::placeholder { color: var(--color-text-muted); }
-        .search-container .search-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); }
+        .search-container .search-icon { 
+            position: absolute; 
+            left: 1rem; 
+            top: 50%; 
+            transform: translateY(-50%);
+            color: var(--color-text-muted); 
+        }
         .search-container input:focus + .search-icon { color: var(--color-accent); }
 
         .search-container .clear-btn {
@@ -418,8 +443,7 @@
             justify-content: center;
             box-shadow: var(--shadow-md);
             transition: all var(--transition-fast);
-            z-index: 10;
-            touch-action: manipulation;
+            z-index: 52; /* Maior Z-Index para ficar acima da imagem */
         }
 
         .modal-close:hover { 
@@ -446,7 +470,11 @@
             border-bottom: 1px dashed var(--color-border);
         }
 
-        .book-description .section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .book-description .section:last-child { 
+            border-bottom: none;
+            margin-bottom: 0; 
+            padding-bottom: 0; 
+        }
 
         .book-description .label {
             display: inline-block;
@@ -556,9 +584,23 @@
         .price-tag { font-size: 1.75rem; font-weight: 700; color: var(--color-accent); }
         .price-tag small { font-size: 1rem; font-weight: 500; color: var(--color-text-muted); }
         
-        /* Preço Antigo / Comparativo */
-        .price-original { font-size: 0.85rem; color: var(--color-text-muted); text-decoration: line-through; display: block; line-height: 1.2; }
-        .discount-badge { background-color: rgba(22, 163, 74, 0.1); color: var(--color-success); font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 9999px; font-weight: 700; margin-left: 0.3rem; vertical-align: middle; }
+        .price-original { 
+            font-size: 0.85rem;
+            color: var(--color-text-muted); 
+            text-decoration: line-through; 
+            display: block; 
+            line-height: 1.2; 
+        }
+        .discount-badge { 
+            background-color: rgba(22, 163, 74, 0.1);
+            color: var(--color-success); 
+            font-size: 0.7rem; 
+            padding: 0.1rem 0.4rem; 
+            border-radius: 9999px; 
+            font-weight: 700; 
+            margin-left: 0.3rem; 
+            vertical-align: middle;
+        }
         .current-price-green { color: var(--color-success); font-weight: 700; }
 
         /* ===== THEME TOGGLE ===== */
@@ -579,8 +621,16 @@
         .theme-toggle:hover { background: rgba(255,255,255,0.1); transform: scale(1.1); }
 
         /* ===== EMPTY STATE ===== */
-        .empty-state { text-align: center; padding: 4rem 2rem; animation: fadeInUp 0.5s ease-out; }
-        .empty-state i { font-size: 4rem; color: var(--color-border); margin-bottom: 1.5rem; }
+        .empty-state { 
+            text-align: center;
+            padding: 4rem 2rem; 
+            animation: fadeInUp 0.5s ease-out; 
+        }
+        .empty-state i { 
+            font-size: 4rem;
+            color: var(--color-border); 
+            margin-bottom: 1.5rem; 
+        }
 
         /* ===== PAYMENT INFO ===== */
         .payment-method {
@@ -598,13 +648,8 @@
         .payment-method p { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.5; }
 
         /* ===== BOTÕES COM HOVER ===== */
-        button, .btn {
-            transition: all var(--transition-fast);
-        }
-
-        button:hover:not(:disabled), .btn:hover {
-            transform: translateY(-2px);
-        }
+        button, .btn { transition: all var(--transition-fast); }
+        button:hover:not(:disabled), .btn:hover { transform: translateY(-2px); }
 
         .modal-content button:not(.modal-close):not(.favorite-btn):hover {
             font-weight: 600;
@@ -675,7 +720,7 @@
             /* Mobile - Botões de ação maiores */
             .whatsapp-btn { padding: 1.125rem 1.5rem; font-size: 1.0625rem; }
             
-            /* Mobile - Modal */
+            /* Mobile - Modal (CORRIGIDO ZOOM E POSIÇÕES) */
             .modal-content {
                 top: auto;
                 bottom: 0;
@@ -684,25 +729,42 @@
                 transform: translateY(100%);
                 max-width: 100%;
                 width: 100%;
-                max-height: calc(var(--vh) * 100 - env(safe-area-inset-bottom)); /* Evita corte em telas pequenas */
-                overflow-y: auto;
-                overscroll-behavior: contain;
+                /* Usa altura fixa mas com scroll interno para evitar que o modal ocupe 100% e pareça zoom */
+                max-height: 85vh; 
+                height: auto;
                 border-radius: var(--radius-lg) var(--radius-lg) 0 0;
                 display: flex;
                 flex-direction: column;
+                padding-bottom: env(safe-area-inset-bottom);
             }
             
             .modal-backdrop.open + .modal-content, .modal-content.open { transform: translateY(0); }
             
-            /* MUDANÇA: Botão de fechar do modal no lado ESQUERDO para não conflitar com Favoritos */
+            /* MUDANÇA: Imagem do modal menor no mobile para ver o conteúdo */
+            .modal-content .md\:w-5\/12 {
+                height: 12rem !important; /* Reduz altura da imagem */
+                flex-shrink: 0;
+            }
+            
+            /* MUDANÇA: Botão Fechar (X) na DIREITA */
             .modal-close {
                 width: 2.5rem;
                 height: 2.5rem;
                 top: 0.75rem;
-                left: 0.75rem;
-                right: auto;
+                right: 0.75rem; /* Direita */
+                left: auto;
                 background: rgba(255,255,255,0.9);
                 color: #000;
+                z-index: 60;
+            }
+            
+            /* MUDANÇA: Botão Favoritar no modal na ESQUERDA */
+            #modalFavoriteBtn {
+                top: 0.75rem;
+                left: 0.75rem; /* Esquerda */
+                right: auto;
+                z-index: 60;
+                background: rgba(255,255,255,0.9);
             }
             
             /* Mobile - Descrição do modal */
@@ -710,7 +772,7 @@
             .book-description .label { font-size: 0.6875rem; }
             
             /* Mobile - Toast */
-            .toast-container { left: 1rem; right: 1rem; bottom: 1rem; }
+            .toast-container { left: 1rem; right: 1rem; bottom: 5rem; }
             .toast { width: 100%; font-size: 0.9375rem; }
             
             /* Mobile - Scroll to top */
@@ -718,6 +780,7 @@
                 bottom: 5rem;
                 width: 3rem;
                 height: 3rem;
+                margin-bottom: env(safe-area-inset-bottom);
             }
             .scroll-to-top i { font-size: 1.125rem; }
             
@@ -729,23 +792,18 @@
             #bookGrid { gap: 1rem; }
         }
 
-        /* Mobile Small (iPhone SE, etc) */
+        /* Mobile Small */
         @media (max-width: 375px) {
             .hero-title { font-size: 1.5rem !important; }
             .book-cover { height: 11rem; }
             .filter-chip { padding: 0.5rem 0.875rem; font-size: 0.8125rem; }
+            #bookGrid { grid-template-columns: 1fr; }
         }
 
         .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-
-        @supports (padding: env(safe-area-inset-bottom)) {
-            body { padding-bottom: env(safe-area-inset-bottom); }
-            .modal-content { padding-bottom: env(safe-area-inset-bottom); }
-            .scroll-to-top { bottom: calc(1.5rem + env(safe-area-inset-bottom)); }
-            @media (max-width: 768px) {
-                .scroll-to-top { bottom: calc(5rem + env(safe-area-inset-bottom)); }
-            }
+        .sr-only { 
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; 
         }
 
         @media print {
@@ -888,7 +946,7 @@
             </button>
         </div>
 
-        <div id="bookGrid" class="grid grid-cols-2 min-[480px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6" role="list"></div>
+        <div id="bookGrid" class="grid grid-cols-1 min-[375px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6" role="list"></div>
 
         <div id="emptyState" class="empty-state hidden">
             <i class="fas fa-search"></i>
@@ -930,8 +988,7 @@
                 <div id="modalGenreTags" class="genre-tags mb-3"></div>
                 <h2 id="modalTitle" class="font-display text-2xl sm:text-3xl font-bold mb-4" style="color: var(--color-primary);"></h2>
                 
-                <div class="price-tag mb-6" id="modalPriceContainer">
-                    </div>
+                <div class="price-tag mb-6" id="modalPriceContainer"></div>
                 
                 <div class="book-description mb-6 flex-grow" id="modalDesc"></div>
                 
@@ -1095,11 +1152,6 @@
             { t: "As Crônicas de Nárnia", g: ["Fantasia", "Clássico"], p: "95,00", v: 95, op: 160.00, q: "cronicas de narnia cs lewis colecao martins fontes", d: "As Crônicas de Nárnia - Coleção Completa (7 Livros) | C.S. Lewis | Editora WMF Martins Fontes\n\nAbra o guarda-roupa e entre em um mundo de magia, coragem e aventura!\n\n✨ Sobre a série:\nUm dos maiores pilares da literatura fantástica sobre Aslam e as crianças em jornada de esperança. Esta edição clássica traz as ilustrações icônicas de Pauline Baynes nas capas.\n\n📚 Volumes inclusos (7 livros):\n• O Sobrinho do Mago\n• O Leão, a Feiticeira e o Guarda-Roupa\n• O Cavalo e seu Menino\n• Príncipe Caspian\n• A Viagem do Peregrino da Alvorada\n• A Cadeira de Prata\n• A Última Batalha\n\n📖 Estado:\nLivros em excelente estado, com capas preservadas e estrutura física firme para leitura confortável.\n\n📸 Posso enviar fotos reais das capas e orelhas.", img: "https://acdn-us.mitiendanube.com/stores/001/291/785/products/as-cronicas-de-narnia1-6eabf8b7ebe34efea216294046023545-1024-1024.webp" }
         ];
 
-        // ===== VIEWPORT FIX (MOBILE) =====
-        function setVH() {
-            document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-        }
-
         // ===== ESTADO =====
         let favorites = JSON.parse(localStorage.getItem('seboFavorites') || '[]');
         let activeGenres = [];
@@ -1119,7 +1171,6 @@
         // ===== INICIALIZAÇÃO =====
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('currentYear').textContent = new Date().getFullYear();
-            setVH();
             applyTheme(currentTheme);
             renderGenreFilters();
             renderBooks();
@@ -1135,11 +1186,13 @@
                 clearSearchBtn.classList.toggle('visible', searchInput.value.length > 0);
                 searchTimeout = setTimeout(renderBooks, 150);
             });
+
             window.addEventListener('scroll', () => {
                 const navbar = document.querySelector('.navbar');
                 navbar.classList.toggle('scrolled', window.scrollY > 10);
                 scrollToTopBtn.classList.toggle('visible', window.scrollY > 400);
             }, { passive: true });
+
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     closeModal();
@@ -1148,10 +1201,7 @@
                 }
             });
 
-            window.addEventListener('resize', () => {
-                setVH();
-                updateFilterNavigation();
-            });
+            window.addEventListener('resize', updateFilterNavigation);
         }
 
         // ===== TEMA =====
@@ -1188,6 +1238,7 @@
         function renderGenreFilters() {
             const genres = getGenres();
             const availableBooks = books.filter(b => !b.s);
+            
             genreFiltersContainer.innerHTML = `
                 <button class="filter-chip ${activeGenres.length === 0 ? 'active' : ''}" onclick="setGenreFilter(null)">
                     <i class="fas fa-layer-group"></i>
@@ -1227,6 +1278,7 @@
             const nextBtn = document.getElementById('filterNext');
             
             if (!container || !scroll) return;
+            
             const scrollWidth = scroll.scrollWidth;
             const containerWidth = container.offsetWidth;
             const maxScroll = scrollWidth - containerWidth;
@@ -1446,9 +1498,10 @@
 
             const total = availableBooks.length;
             counter.textContent = `${total} ${total === 1 ? 'livro disponível' : 'livros disponíveis'}`;
+            
             emptyState.classList.toggle('hidden', total > 0 || soldBooks.length > 0);
             grid.classList.toggle('hidden', total === 0 && soldBooks.length === 0);
-
+            
             availableBooks.forEach((book, idx) => renderCard(book, idx, false));
             
             if (!searchTerm && activeGenres.length === 0 && !showOnlyFavorites) {
@@ -1459,7 +1512,6 @@
         function renderCard(book, idx, isSold) {
             const isFavorite = favorites.includes(book.originalIndex);
             
-            // Calculo de desconto (Atualizado)
             let priceHtml = '';
             if (book.op && !isSold) {
                 const discount = Math.round(((book.op - book.v) / book.op) * 100);
@@ -1479,6 +1531,7 @@
             const card = document.createElement('article');
             card.className = `book-card ${isSold ? 'sold' : ''}`;
             card.style.animationDelay = `${idx * 50}ms`;
+            
             card.innerHTML = `
                 ${isSold ? '<div class="sold-badge"><span>Vendido</span></div>' : ''}
                 <div class="book-cover skeleton">
@@ -1519,7 +1572,7 @@
             }
             
             grid.appendChild(card);
-
+            
             const img = card.querySelector('img');
             if (img) imageObserver.observe(img);
 
@@ -1531,12 +1584,12 @@
         // ===== MODAIS =====
         function openModal(book) {
             const isFavorite = favorites.includes(book.originalIndex);
+            
             closeModal();
             
             setTimeout(() => {
                 document.getElementById('modalTitle').textContent = book.t;
                 
-                // Preços no Modal
                 const priceContainer = document.getElementById('modalPriceContainer');
                 if (book.op) {
                     const discount = Math.round(((book.op - book.v) / book.op) * 100);
@@ -1551,11 +1604,10 @@
 
                 document.getElementById('modalDesc').innerHTML = formatDescription(book.d);
                 
-                // Gêneros no modal
                 document.getElementById('modalGenreTags').innerHTML = book.g.map(genre => 
                     `<span class="genre-tag">${genre}</span>`
                 ).join('');
-                
+
                 const modalImg = document.getElementById('modalImg');
                 modalImg.alt = `Capa: ${book.t}`;
                 
@@ -1571,12 +1623,13 @@
                 const modalFavBtn = document.getElementById('modalFavoriteBtn');
                 modalFavBtn.classList.toggle('active', isFavorite);
                 modalFavBtn.querySelector('i').className = isFavorite ? 'fas fa-heart' : 'far fa-heart';
+                
                 modalFavBtn.onclick = (e) => {
                     toggleFavorite(book.originalIndex, e);
                     modalFavBtn.classList.toggle('active', favorites.includes(book.originalIndex));
                     modalFavBtn.querySelector('i').className = favorites.includes(book.originalIndex) ? 'fas fa-heart' : 'far fa-heart';
                 };
-                
+
                 const msg = encodeURIComponent(`Olá Rodrigo! 📚\n\nTenho interesse no livro:\n*${book.t}*\nValor: R$ ${book.p}\n\nAinda está disponível?`);
                 document.getElementById('modalWhatsapp').href = `https://wa.me/5547991438831?text=${msg}`;
                 
