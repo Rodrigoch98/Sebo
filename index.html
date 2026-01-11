@@ -10,6 +10,9 @@
     
     <title>Acervo Literário | Livros de Qualidade Direto para Você</title>
     
+    <!-- CRITICAL: DO NOT REMOVE/MODIFY THIS COMMENT OR THE SCRIPT BELOW -->
+    <script src="https://blink.new/auto-engineer.js?projectId=responsive-header-portal-kswxgdl4" type="module"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -36,16 +39,13 @@
             --color-border: #e0d9cf;
             --font-display: 'Crimson Pro', Georgia, serif;
             --font-body: 'DM Sans', system-ui, sans-serif;
-            
             --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
             --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
             --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
             --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
-            
             --radius-sm: 0.5rem;
             --radius-md: 0.75rem;
             --radius-lg: 1rem;
-            
             --transition-fast: 150ms ease;
             --transition-normal: 300ms ease;
         }
@@ -120,8 +120,7 @@
             opacity: 0;
             transform: translateY(20px);
             position: relative;
-            display: flex;
-            flex-direction: column;
+            display: flex; flex-direction: column;
             min-height: 100%; 
         }
 
@@ -632,42 +631,6 @@
 
         .theme-toggle:hover { background: rgba(255,255,255,0.1); transform: scale(1.1); }
 
-        /* ===== EMPTY STATE ===== */
-        .empty-state { 
-            text-align: center;
-            padding: 4rem 2rem; 
-            animation: fadeInUp 0.5s ease-out; 
-        }
-        .empty-state i { 
-            font-size: 4rem;
-            color: var(--color-border); 
-            margin-bottom: 1.5rem; 
-        }
-
-        /* ===== PAYMENT INFO ===== */
-        .payment-method {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1rem;
-            background: var(--color-surface-elevated);
-            border-radius: var(--radius-md);
-            margin-bottom: 0.75rem;
-        }
-
-        .payment-method i { font-size: 1.5rem; color: var(--color-accent); margin-top: 0.25rem; }
-        .payment-method h4 { font-weight: 600; color: var(--color-primary); margin-bottom: 0.25rem; }
-        .payment-method p { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.5; }
-
-        /* ===== BOTÕES COM HOVER ===== */
-        button, .btn { transition: all var(--transition-fast); }
-        button:hover:not(:disabled), .btn:hover { transform: translateY(-2px); }
-
-        .modal-content button:not(.modal-close):not(.favorite-btn):hover {
-            font-weight: 600;
-            background: var(--color-accent-hover) !important;
-        }
-
         /* ===== MOBILE MENU & NAVBAR CORRECTIONS ===== */
         .mobile-menu-btn {
             display: none;
@@ -686,10 +649,6 @@
 
         .mobile-menu-btn:active, .mobile-menu-btn:hover { background: rgba(255,255,255,0.1); }
 
-        #mobileMenu {
-            display: none;
-        }
-        
         #mobileMenu.menu-open {
             display: block !important;
         }
@@ -698,7 +657,6 @@
             .mobile-menu-btn { display: flex; }
             .desktop-nav { display: none; }
             
-            /* Ajustes Hero e Cards */
             .hero-title { font-size: 1.75rem !important; line-height: 1.2 !important; }
             .hero-subtitle { font-size: 0.9375rem !important; }
             .hero-checks { font-size: 0.75rem !important; gap: 0.75rem !important; }
@@ -720,7 +678,6 @@
             
             .whatsapp-btn { padding: 1.125rem 1.5rem; font-size: 1.0625rem; }
             
-            /* Modal Fixes */
             .modal-content {
                 top: auto; bottom: 0; left: 0; right: 0;
                 transform: translateY(100%);
@@ -782,17 +739,18 @@
     <nav class="navbar" role="navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 sm:h-20">
-                <a href="#" class="flex items-center gap-3 min-w-0">
-                    <div class="h-11 w-11 bg-white/10 backdrop-blur text-white flex items-center justify-center rounded-lg text-2xl shrink-0">
+                <a href="#" class="flex items-center gap-2 sm:gap-3">
+                    <div class="h-10 w-10 sm:h-11 sm:w-11 bg-white/10 backdrop-blur text-white flex items-center justify-center rounded-lg text-xl sm:text-2xl shrink-0">
                         📚
                     </div>
-                    <div class="truncate">
-                        <p class="font-bold text-lg leading-none text-white truncate">Acervo Literário</p>
-                        <p class="text-xs text-white/70 mt-0.5 truncate">Coleções de qualidade</p>
+                    <div>
+                        <p class="font-bold text-base sm:text-lg leading-none text-white">Acervo Literário</p>
+                        <p class="text-[10px] sm:text-xs text-white/70 mt-0.5 hidden sm:block">Coleções de qualidade</p>
                     </div>
                 </a>
 
-                <div class="desktop-nav flex items-center gap-3">
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-3">
                     <button onclick="openHowItWorks()" class="text-sm font-medium px-4 py-2 rounded-lg transition text-white/80 hover:text-white hover:bg-white/10 hover:font-semibold">
                         <i class="fas fa-info-circle mr-2"></i>Como Comprar
                     </button>
@@ -807,31 +765,36 @@
                     </a>
                 </div>
 
-                <div class="flex items-center gap-2 md:hidden shrink-0">
-                    <button onclick="openHowItWorks()" class="bg-white/10 hover:bg-white/20 text-white px-2 py-1.5 rounded-md transition flex items-center gap-1.5 text-[10px] font-medium leading-none whitespace-nowrap">
+                <!-- Mobile Navigation -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="openHowItWorks()" class="bg-white/15 hover:bg-white/25 text-white px-2.5 py-1.5 rounded-md transition flex items-center gap-1.5 text-[10px] font-bold leading-none uppercase tracking-wide border border-white/10">
                         <i class="fas fa-info-circle text-[10px]"></i>
                         <span>Como Comprar</span>
                     </button>
                     
-                    <button class="mobile-menu-btn ml-1" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="mobileMenu" class="bg-[#162d4b] border-t border-white/10">
-            <div class="px-4 py-4 space-y-2">
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden bg-[#162d4b] border-t border-white/10 shadow-xl overflow-hidden">
+            <div class="px-4 py-4 space-y-1">
                 <button onclick="openPaymentInfo(); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 text-white hover:bg-white/10 transition">
-                    <i class="fas fa-credit-card text-white/70"></i> Pagamento
+                    <i class="fas fa-credit-card text-white/70 w-5 text-center"></i> 
+                    <span class="font-medium">Pagamento</span>
                 </button>
                 
                 <button onclick="toggleTheme(); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 text-white hover:bg-white/10 transition">
-                    <i class="fas fa-moon" id="themeIconMobile"></i> Alternar Tema
+                    <i class="fas fa-moon text-white/70 w-5 text-center" id="themeIconMobile"></i> 
+                    <span class="font-medium">Alternar Tema</span>
                 </button>
                 
-                <a href="https://wa.me/5547991438831" target="_blank" rel="noopener noreferrer" class="w-full px-4 py-3 rounded-lg flex items-center justify-center gap-2 bg-green-600 text-white font-medium hover:bg-green-700 transition mt-2">
-                    <i class="fab fa-whatsapp"></i> Falar Comigo
+                <a href="https://wa.me/5547991438831" target="_blank" rel="noopener noreferrer" class="w-full px-4 py-3 rounded-lg flex items-center justify-center gap-2 bg-green-600/90 text-white font-semibold hover:bg-green-700 transition mt-4 shadow-lg active:scale-95">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    Falar Comigo
                 </a>
             </div>
         </div>
@@ -1120,14 +1083,12 @@
             { t: "As Crônicas de Nárnia", g: ["Fantasia", "Clássico"], p: "95,00", v: 95, op: 160.00, q: "cronicas de narnia cs lewis colecao martins fontes", d: "As Crônicas de Nárnia - Coleção Completa (7 Livros) | C.S. Lewis | Editora WMF Martins Fontes\n\nAbra o guarda-roupa e entre em um mundo de magia, coragem e aventura!\n\n✨ Sobre a série:\nUm dos maiores pilares da literatura fantástica sobre Aslam e as crianças em jornada de esperança. Esta edição clássica traz as ilustrações icônicas de Pauline Baynes nas capas.\n\n📚 Volumes inclusos (7 livros):\n• O Sobrinho do Mago\n• O Leão, a Feiticeira e o Guarda-Roupa\n• O Cavalo e seu Menino\n• Príncipe Caspian\n• A Viagem do Peregrino da Alvorada\n• A Cadeira de Prata\n• A Última Batalha\n\n📖 Estado:\nLivros em excelente estado, com capas preservadas e estrutura física firme para leitura confortável.\n\n📸 Posso enviar fotos reais das capas e orelhas.", img: "https://acdn-us.mitiendanube.com/stores/001/291/785/products/as-cronicas-de-narnia1-6eabf8b7ebe34efea216294046023545-1024-1024.webp" }
         ];
 
-        // ===== ESTADO =====
         let favorites = JSON.parse(localStorage.getItem('seboFavorites') || '[]');
         let activeGenres = [];
         let showOnlyFavorites = false;
         let currentTheme = localStorage.getItem('seboTheme') || 'light';
         let filterScrollPos = 0;
 
-        // ===== ELEMENTOS =====
         const grid = document.getElementById('bookGrid');
         const counter = document.getElementById('counter');
         const searchInput = document.getElementById('searchInput');
@@ -1136,7 +1097,6 @@
         const scrollToTopBtn = document.getElementById('scrollToTop');
         const genreFiltersContainer = document.getElementById('genreFilters');
 
-        // ===== INICIALIZAÇÃO =====
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('currentYear').textContent = new Date().getFullYear();
             applyTheme(currentTheme);
@@ -1146,7 +1106,6 @@
             setupEventListeners();
         });
 
-        // ===== EVENT LISTENERS =====
         function setupEventListeners() {
             let searchTimeout;
             searchInput.addEventListener('input', () => {
@@ -1167,14 +1126,13 @@
                     closePaymentInfo();
                     closeHowItWorks();
                     const menu = document.getElementById('mobileMenu');
-                    if (menu) menu.classList.remove('menu-open');
+                    if (menu) menu.classList.add('hidden');
                 }
             });
 
             window.addEventListener('resize', updateFilterNavigation);
         }
 
-        // ===== TEMA =====
         function toggleTheme() {
             currentTheme = currentTheme === 'light' ? 'dark' : 'light';
             applyTheme(currentTheme);
@@ -1189,12 +1147,10 @@
             if (mobileIcon) mobileIcon.className = `fas ${icon}`;
         }
 
-        // ===== NORMALIZAÇÃO =====
         function normalizeText(text) {
             return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
         }
 
-        // ===== GÊNEROS =====
         function getGenres() {
             const genreCount = {};
             books.filter(b => !b.s).forEach(book => {
@@ -1240,7 +1196,6 @@
             renderBooks();
         }
 
-        // ===== NAVEGAÇÃO DOS FILTROS =====
         function updateFilterNavigation() {
             const container = document.querySelector('.filters-container');
             const scroll = document.querySelector('.filters-scroll');
@@ -1273,7 +1228,6 @@
             updateFilterNavigation();
         }
 
-        // ===== FAVORITOS =====
         function toggleFavorite(index, event) {
             if (event) {
                 event.stopPropagation();
@@ -1312,7 +1266,6 @@
             renderBooks();
         }
 
-        // ===== BUSCA DE CAPAS =====
         const coverCache = new Map();
         async function fetchCover(query, imgElement, bookTitle) {
             if (imgElement.dataset.customImg) {
@@ -1381,7 +1334,6 @@
             }
         }
 
-        // ===== INTERSECTION OBSERVER =====
         const imageObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1396,7 +1348,6 @@
             });
         }, { rootMargin: '100px' });
 
-        // ===== FORMATAÇÃO DA DESCRIÇÃO =====
         function formatDescription(text) {
             const sections = text.split('\n\n');
             let html = '';
@@ -1433,7 +1384,6 @@
                 .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
         }
 
-        // ===== RENDERIZAÇÃO =====
         function renderBooks() {
             grid.innerHTML = "";
             const searchTerm = normalizeText(searchInput.value);
@@ -1488,9 +1438,9 @@
                 priceHtml = `
                     <div class="flex flex-col items-start w-full">
                         <span class="price-original text-xs mb-0.5">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
-                        <div class="flex flex-row items-center flex-nowrap w-full">
-                            <span class="font-bold text-lg current-price-green whitespace-nowrap">R$ ${book.p}</span>
-                            <span class="discount-badge text-[10px] ml-2 whitespace-nowrap">-${discount}%</span>
+                        <div class="flex items-center flex-nowrap whitespace-nowrap gap-1.5">
+                            <span class="font-bold text-lg current-price-green">R$ ${book.p}</span>
+                            <span class="discount-badge text-[10px]">-${discount}%</span>
                         </div>
                     </div>
                 `;
@@ -1551,7 +1501,6 @@
             });
         }
 
-        // ===== MODAIS =====
         function openModal(book) {
             const isFavorite = favorites.includes(book.originalIndex);
             
@@ -1564,12 +1513,12 @@
                 if (book.op) {
                     const discount = Math.round(((book.op - book.v) / book.op) * 100);
                     priceContainer.innerHTML = `
-                         <div class="flex flex-col items-start">
-                             <span class="price-original text-sm mb-1">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
-                             <div class="flex items-center flex-nowrap">
-                                 <span class="current-price-green text-2xl font-bold whitespace-nowrap">R$ ${book.p}</span>
-                                 <span class="discount-badge text-sm ml-2 whitespace-nowrap">-${discount}% OFF</span>
-                             </div>
+                         <div class="flex flex-col">
+                            <span class="price-original mb-1">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
+                            <div class="flex items-center flex-nowrap whitespace-nowrap gap-2">
+                                <span class="current-price-green text-2xl font-bold">R$ ${book.p}</span>
+                                <span class="discount-badge text-sm">-${discount}% OFF</span>
+                            </div>
                          </div>
                     `;
                 } else {
@@ -1643,7 +1592,6 @@
             document.body.style.overflow = '';
         }
 
-        // ===== UTILITÁRIOS =====
         function copyPix() {
             navigator.clipboard.writeText("58242143000190").then(() => {
                 showToast('Chave Pix copiada!', 'success');
@@ -1682,7 +1630,7 @@
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('menu-open');
+            menu.classList.toggle('hidden');
         }
 
         function showToast(message, type = 'default') {
