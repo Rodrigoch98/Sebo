@@ -61,7 +61,7 @@
         * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         
         html, body { 
-            overflow-x: hidden; 
+            overflow-x: hidden;
             width: 100%;
             max-width: 100%;
             position: relative;
@@ -245,7 +245,7 @@
         .favorite-btn:hover { transform: scale(1.1); background: var(--color-accent); }
         .favorite-btn:hover i { color: white; transform: scale(1.1); }
 
-        /* ===== FILTROS COM NAVEGAÇÃO ===== */
+        /* ===== FILTROS COM NAVEGAÇÃO (CORRIGIDO) ===== */
         .filters-wrapper {
             position: relative;
             margin: 0;
@@ -253,24 +253,19 @@
         }
 
         .filters-container {
-        overflow: hidden;
-        position: relative;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        padding: 0 3rem;
+            overflow: hidden;
+            position: relative;
+            padding: 0 4px; /* Espaço lateral para sombras não cortarem */
         }
-        
-        .filters-container::-webkit-scrollbar { display: none; }
 
         .filters-scroll {
             display: flex;
             gap: 0.5rem;
-            transition: transform var(--transition-normal);
-            padding: 0.25rem 0;
+            padding: 0.5rem 0.25rem; /* Padding vertical aumentado para hover */
             overflow-x: auto;
+            scroll-behavior: smooth;
             -ms-overflow-style: none;
             scrollbar-width: none;
-            touch-action: pan-x;
         }
         
         .filters-scroll::-webkit-scrollbar { display: none; }
@@ -296,8 +291,8 @@
 
         .filter-nav-btn:hover { background: var(--color-accent); color: white; border-color: var(--color-accent); transform: translateY(-50%) scale(1.1); }
         .filter-nav-btn.visible { display: flex; }
-        .filter-nav-btn.prev { left: 0.25rem; }
-        .filter-nav-btn.next { right: 0.25rem; }
+        .filter-nav-btn.prev { left: 0; }
+        .filter-nav-btn.next { right: 0; }
 
         .filter-chip {
             display: inline-flex;
@@ -359,7 +354,7 @@
         }
         .search-container input::placeholder { color: var(--color-text-muted); }
         .search-container .search-icon { 
-            position: absolute; 
+            position: absolute;
             left: 1rem; 
             top: 50%; 
             transform: translateY(-50%);
@@ -680,21 +675,19 @@
             align-items: center;
             justify-content: center;
             transition: all var(--transition-fast);
-            z-index: 50; /* Garante que o botão esteja clicável */
+            z-index: 50; 
         }
 
         .mobile-menu-btn:active, .mobile-menu-btn:hover { background: rgba(255,255,255,0.1); }
 
-        /* REGRA ESPECÍFICA PARA O MENU MOBILE (Sem depender de Tailwind) */
         #mobileMenu {
-            display: none; /* Escondido por padrão */
+            display: none;
         }
         
         #mobileMenu.menu-open {
-            display: block !important; /* Força a exibição quando a classe existir */
+            display: block !important;
         }
 
-        /* Garante que o menu mobile nunca apareça em telas grandes, mesmo se estiver 'menu-open' */
         @media (min-width: 1024px) {
             #mobileMenu {
                 display: none !important;
@@ -704,11 +697,7 @@
         @media (max-width: 768px) {
             .mobile-menu-btn { display: flex; }
             .desktop-nav { display: none; }
-            .filters-container {
-            padding: 0 2.5rem;
-        }
             
-            /* Ajustes Hero e Cards */
             .hero-title { font-size: 1.75rem !important; line-height: 1.2 !important; }
             .hero-subtitle { font-size: 0.9375rem !important; }
             .hero-checks { font-size: 0.75rem !important; gap: 0.75rem !important; }
@@ -717,7 +706,8 @@
             .genre-tag { font-size: 0.5625rem; padding: 0.1875rem 0.375rem; }
             
             .favorite-btn { 
-                width: 2.5rem; height: 2.5rem; top: 0.5rem; right: 0.5rem; opacity: 1; transform: scale(1);
+                width: 2.5rem;
+                height: 2.5rem; top: 0.5rem; right: 0.5rem; opacity: 1; transform: scale(1);
             }
             .favorite-btn i { font-size: 1rem; }
             
@@ -732,7 +722,8 @@
             
             /* Modal Fixes */
             .modal-content {
-                top: auto; bottom: 0; left: 0; right: 0;
+                top: auto;
+                bottom: 0; left: 0; right: 0;
                 transform: translateY(100%);
                 max-width: 100%; width: 100%; max-height: 85vh; height: auto;
                 border-radius: var(--radius-lg) var(--radius-lg) 0 0;
@@ -744,12 +735,14 @@
             .modal-content .md\:w-5\/12 { height: 12rem !important; flex-shrink: 0; }
             
             .modal-close {
-                width: 2.5rem; height: 2.5rem; top: 0.75rem; right: 0.75rem; left: auto;
+                width: 2.5rem;
+                height: 2.5rem; top: 0.75rem; right: 0.75rem; left: auto;
                 background: rgba(255,255,255,0.9); color: #000; z-index: 60;
             }
             
             #modalFavoriteBtn {
-                top: 0.75rem; left: 0.75rem; right: auto; z-index: 60;
+                top: 0.75rem;
+                left: 0.75rem; right: auto; z-index: 60;
                 background: rgba(255,255,255,0.9);
             }
             
@@ -772,14 +765,13 @@
             .book-cover { height: 11rem; }
             .filter-chip { padding: 0.5rem 0.875rem; font-size: 0.8125rem; }
             #bookGrid { grid-template-columns: 1fr; }
-           .filters-container {
-            padding: 0 2rem;
         }
 
         .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .sr-only { 
-            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
-            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; 
+            position: absolute;
+            width: 1px; height: 1px; padding: 0; margin: -1px; 
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
         }
 
         @media print {
@@ -820,7 +812,6 @@
                 </div>
 
                 <div class="flex items-center gap-2 lg:hidden">
-                    <!-- BOTÃO COMO COMPRAR AJUSTADO (MENOR) -->
                     <button onclick="openHowItWorks()" class="bg-white/10 hover:bg-white/20 text-white px-2 py-1 rounded-md transition flex items-center gap-1.5 text-[10px] font-medium leading-none whitespace-nowrap shrink-0">
                         <i class="fas fa-info-circle text-[10px]"></i>
                         <span>Como Comprar</span>
@@ -956,7 +947,7 @@
         <button class="modal-close" onclick="closeModal()" aria-label="Fechar">
             <i class="fas fa-times"></i>
         </button>
-        
+    
         <div class="flex flex-col md:flex-row h-full md:max-h-[85vh] overflow-hidden">
             <div class="md:w-5/12 h-64 md:h-auto shrink-0 relative" style="background: var(--color-surface-elevated);">
                 <img id="modalImg" class="w-full h-full object-cover" alt="">
@@ -1076,6 +1067,8 @@
     </button>
 
     <script>
+        // ===== LISTA DE LIVROS =====
+        // COLE SUA LISTA DE LIVROS AQUI DENTRO DOS COLCHETES
         const books = [
             { t: "Box Machado de Assis - Coleção Completa", g: ["Clássicos", "Literatura Brasileira"], p: "145,00", v: 145, op: 289.00, q: "box machado de assis obra completa capa dura", d: "Oportunidade para sua biblioteca pessoal!\n\nVendo Box Premium do mestre Machado de Assis, contendo 11 obras clássicas em edições luxuosas com capa dura.\n\nOs livros estão impecáveis, praticamente intocados, sem marcas de uso, dobras ou grifos — ideais para quem busca qualidade de colecionador.\n\n📚 Conteúdo do Box:\n• Dom Casmurro\n• Memórias Póstumas de Brás Cubas\n• Quincas Borba\n• Helena\n• Iaiá Garcia\n• Ressurreição\n• A Mão e a Luva\n• Esaú e Jacó\n• Memorial de Aires\n• Papéis Avulsos\n• Várias Histórias\n\n✨ Bônus: Biografia detalhada do autor.\n\n📸 Posso encaminhar fotos reais e tirar qualquer dúvida por chat.", img: "https://images.tcdn.com.br/img/img_prod/1323385/box_machado_de_assis_11_livros_capa_dura_biografia_do_autor_17958_2_01d68758960ec216bd68b4445a9ed3ff.jpg" },
             { t: "Box Trilogia Tempest - Julie Cross", g: ["Sci-Fi", "Viagem no Tempo"], p: "65,00", v: 65, op: 139.00, q: "tempest julie cross box trilogia", d: "Para fãs de ficção científica, viagem no tempo e aventura!\n\nVendo o box completo da trilogia Tempest, escrita por Julie Cross.\n\n📚 Volumes inclusos:\n• Tempest\n• Vortex\n• Timestorm\n\n📖 Estado de conservação:\nOs livros estão impecáveis, praticamente intocados, sem marcas de uso, orelhas ou grifos.\n\n⚠️ Observação:\nA embalagem externa (box) é de papel cartão e possui pequenos rasgos nos cantos, mas cumpre perfeitamente o papel de proteger e organizar as obras.\n\n📸 Posso encaminhar fotos reais (inclusive dos detalhes no box) e tirar qualquer dúvida por chat.", img: "https://m.media-amazon.com/images/I/71cQQxenhoL._SY342_.jpg" },
@@ -1163,7 +1156,6 @@
         let activeGenres = [];
         let showOnlyFavorites = false;
         let currentTheme = localStorage.getItem('seboTheme') || 'light';
-        let filterScrollPos = 0;
 
         // ===== ELEMENTOS =====
         const grid = document.getElementById('bookGrid');
@@ -1192,13 +1184,11 @@
                 clearSearchBtn.classList.toggle('visible', searchInput.value.length > 0);
                 searchTimeout = setTimeout(renderBooks, 150);
             });
-
             window.addEventListener('scroll', () => {
                 const navbar = document.querySelector('.navbar');
                 navbar.classList.toggle('scrolled', window.scrollY > 10);
                 scrollToTopBtn.classList.toggle('visible', window.scrollY > 400);
             }, { passive: true });
-
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     closeModal();
@@ -1208,8 +1198,15 @@
                     if (menu) menu.classList.remove('menu-open');
                 }
             });
-
             window.addEventListener('resize', updateFilterNavigation);
+            
+            // Adiciona listener para scroll manual na lista de filtros
+            const genreFilters = document.getElementById('genreFilters');
+            if(genreFilters){
+                genreFilters.addEventListener('scroll', () => {
+                    window.requestAnimationFrame(updateFilterNavigation);
+                });
+            }
         }
 
         // ===== TEMA =====
@@ -1278,37 +1275,38 @@
             renderBooks();
         }
 
-        // ===== NAVEGAÇÃO DOS FILTROS =====
+        // ===== NAVEGAÇÃO DOS FILTROS (CORRIGIDO) =====
         function updateFilterNavigation() {
-            const container = document.querySelector('.filters-container');
-            const scroll = document.querySelector('.filters-scroll');
+            const scrollElement = document.getElementById('genreFilters');
             const prevBtn = document.getElementById('filterPrev');
             const nextBtn = document.getElementById('filterNext');
             
-            if (!container || !scroll) return;
+            if (!scrollElement) return;
+
+            // Margem de erro para densidade de pixels
+            const maxScroll = scrollElement.scrollWidth - scrollElement.clientWidth - 1;
             
-            const scrollWidth = scroll.scrollWidth;
-            const containerWidth = container.offsetWidth;
-            const maxScroll = scrollWidth - containerWidth;
-            
-            prevBtn.classList.toggle('visible', filterScrollPos > 0);
-            nextBtn.classList.toggle('visible', filterScrollPos < maxScroll - 10);
+            // Se cabe tudo na tela, esconde as setas
+            if (scrollElement.scrollWidth <= scrollElement.clientWidth) {
+                prevBtn.classList.remove('visible');
+                nextBtn.classList.remove('visible');
+                return;
+            }
+
+            prevBtn.classList.toggle('visible', scrollElement.scrollLeft > 1);
+            nextBtn.classList.toggle('visible', scrollElement.scrollLeft < maxScroll);
         }
 
         function scrollFilters(direction) {
-            const container = document.querySelector('.filters-container');
-            const scroll = document.querySelector('.filters-scroll');
+            const scrollElement = document.getElementById('genreFilters');
+            const scrollAmount = 300;
             
-            const scrollAmount = 200;
-            const scrollWidth = scroll.scrollWidth;
-            const containerWidth = container.offsetWidth;
-            const maxScroll = scrollWidth - containerWidth;
+            scrollElement.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
             
-            filterScrollPos += direction * scrollAmount;
-            filterScrollPos = Math.max(0, Math.min(filterScrollPos, maxScroll));
-            
-            scroll.style.transform = `translateX(-${filterScrollPos}px)`;
-            updateFilterNavigation();
+            setTimeout(updateFilterNavigation, 350);
         }
 
         // ===== FAVORITOS =====
@@ -1506,10 +1504,9 @@
 
             const total = availableBooks.length;
             counter.textContent = `${total} ${total === 1 ? 'livro disponível' : 'livros disponíveis'}`;
-            
             emptyState.classList.toggle('hidden', total > 0 || soldBooks.length > 0);
             grid.classList.toggle('hidden', total === 0 && soldBooks.length === 0);
-            
+
             availableBooks.forEach((book, idx) => renderCard(book, idx, false));
             
             if (!searchTerm && activeGenres.length === 0 && !showOnlyFavorites) {
@@ -1519,13 +1516,9 @@
 
         function renderCard(book, idx, isSold) {
             const isFavorite = favorites.includes(book.originalIndex);
-            
             let priceHtml = '';
             if (book.op && !isSold) {
                 const discount = Math.round(((book.op - book.v) / book.op) * 100);
-                // AQUI ESTÁ A CORREÇÃO DE PREÇO:
-                // Usamos 'flex-col' para o container geral (preço original em cima)
-                // E 'flex whitespace-nowrap' para o preço verde + desconto ficarem na mesma linha
                 priceHtml = `
                     <div class="flex flex-col items-start w-full">
                         <span class="price-original text-xs mb-0.5">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
@@ -1542,7 +1535,7 @@
             const card = document.createElement('article');
             card.className = `book-card ${isSold ? 'sold' : ''}`;
             card.style.animationDelay = `${idx * 50}ms`;
-            
+
             card.innerHTML = `
                 ${isSold ? '<div class="sold-badge"><span>Vendido</span></div>' : ''}
                 <div class="book-cover skeleton">
@@ -1576,14 +1569,14 @@
                     </div>
                 </div>
             `;
-            
+
             if (!isSold) {
                 card.addEventListener('click', () => openModal(book));
                 card.style.cursor = 'pointer';
             }
             
             grid.appendChild(card);
-            
+
             const img = card.querySelector('img');
             if (img) imageObserver.observe(img);
 
@@ -1595,7 +1588,6 @@
         // ===== MODAIS =====
         function openModal(book) {
             const isFavorite = favorites.includes(book.originalIndex);
-            
             closeModal();
             
             setTimeout(() => {
@@ -1618,7 +1610,6 @@
                 }
 
                 document.getElementById('modalDesc').innerHTML = formatDescription(book.d);
-                
                 document.getElementById('modalGenreTags').innerHTML = book.g.map(genre => 
                     `<span class="genre-tag">${genre}</span>`
                 ).join('');
@@ -1638,7 +1629,6 @@
                 const modalFavBtn = document.getElementById('modalFavoriteBtn');
                 modalFavBtn.classList.toggle('active', isFavorite);
                 modalFavBtn.querySelector('i').className = isFavorite ? 'fas fa-heart' : 'far fa-heart';
-                
                 modalFavBtn.onclick = (e) => {
                     toggleFavorite(book.originalIndex, e);
                     modalFavBtn.classList.toggle('active', favorites.includes(book.originalIndex));
@@ -1745,5 +1735,3 @@
     </script>
 </body>
 </html>
-
-
