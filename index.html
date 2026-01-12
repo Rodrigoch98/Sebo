@@ -253,10 +253,11 @@
         }
 
         .filters-container {
-            overflow: hidden;
-            position: relative;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+        overflow: hidden;
+        position: relative;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        padding: 0 3rem;
         }
         
         .filters-container::-webkit-scrollbar { display: none; }
@@ -295,8 +296,8 @@
 
         .filter-nav-btn:hover { background: var(--color-accent); color: white; border-color: var(--color-accent); transform: translateY(-50%) scale(1.1); }
         .filter-nav-btn.visible { display: flex; }
-        .filter-nav-btn.prev { left: 0; }
-        .filter-nav-btn.next { right: 0; }
+        .filter-nav-btn.prev { left: 0.25rem; }
+        .filter-nav-btn.next { right: 0.25rem; }
 
         .filter-chip {
             display: inline-flex;
@@ -703,6 +704,9 @@
         @media (max-width: 768px) {
             .mobile-menu-btn { display: flex; }
             .desktop-nav { display: none; }
+            .filters-container {
+            padding: 0 2.5rem;
+        }
             
             /* Ajustes Hero e Cards */
             .hero-title { font-size: 1.75rem !important; line-height: 1.2 !important; }
@@ -768,6 +772,8 @@
             .book-cover { height: 11rem; }
             .filter-chip { padding: 0.5rem 0.875rem; font-size: 0.8125rem; }
             #bookGrid { grid-template-columns: 1fr; }
+           .filters-container {
+            padding: 0 2rem;
         }
 
         .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -1739,4 +1745,5 @@
     </script>
 </body>
 </html>
+
 
