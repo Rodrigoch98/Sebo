@@ -3,1072 +3,834 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Acervo Literário - Livros usados com qualidade de colecionador. Entrega na empresa.">
+    <meta name="description" content="Acervo Literário — Livros usados com qualidade de colecionador. Entrega na empresa.">
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
-    <meta name="theme-color" content="#1e3a5f">
-    
+    <meta name="theme-color" content="#0f1923">
     <title>Acervo Literário | Livros de Qualidade Direto para Você</title>
-    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230f1923' rx='16' width='100' height='100'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%23d4a853'>📚</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231e3a5f' rx='12' width='100' height='100'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Georgia'>📚</text></svg>">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <style>
+        /* ══════════ DESIGN TOKENS ══════════ */
         :root {
-            --color-primary: #1e3a5f;
-            --color-primary-light: #2d4a6f;
-            --color-accent: #c9a227;
-            --color-accent-hover: #b8922a;
-            --color-success: #16a34a;
-            --color-sold: #dc2626;
-            --color-surface: #ffffff;
-            --color-surface-elevated: #f5f0e8;
-            --color-surface-warm: #faf7f2;
-            --color-text: #2c2c2c;
-            --color-text-muted: #5c5c5c;
-            --color-border: #e0d9cf;
-            --font-display: 'Crimson Pro', Georgia, serif;
-            --font-body: 'DM Sans', system-ui, sans-serif;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
-            --radius-sm: 0.5rem;
-            --radius-md: 0.75rem;
-            --radius-lg: 1rem;
-            --transition-fast: 150ms ease;
-            --transition-normal: 300ms ease;
+            --bg: #faf8f5;
+            --bg-elevated: #f0ece6;
+            --bg-card: #ffffff;
+            --bg-nav: #0f1923;
+            --bg-nav-secondary: #162433;
+            --text: #1a1a1a;
+            --text-secondary: #6b6560;
+            --text-muted: #9c968f;
+            --accent: #c9993a;
+            --accent-hover: #b8892e;
+            --accent-soft: rgba(201,153,58,0.12);
+            --success: #2d8a56;
+            --success-soft: rgba(45,138,86,0.1);
+            --sold-bg: rgba(180,30,30,0.92);
+            --border: #e6e0d8;
+            --border-light: #f0ece6;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 32px rgba(0,0,0,0.1);
+            --shadow-xl: 0 24px 48px rgba(0,0,0,0.12);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Outfit', system-ui, sans-serif;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="dark"] {
-            --color-primary: #f0e6d3;
-            --color-primary-light: #e0d6c3;
-            --color-surface: #1a1a1a;
-            --color-surface-elevated: #252525;
-            --color-surface-warm: #1f1f1f;
-            --color-text: #e8e8e8;
-            --color-text-muted: #a0a0a0;
-            --color-border: #3a3a3a;
+            --bg: #0d1117;
+            --bg-elevated: #161b22;
+            --bg-card: #1c2128;
+            --bg-nav: #010409;
+            --bg-nav-secondary: #0d1117;
+            --text: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+            --accent: #d4a853;
+            --accent-hover: #e0b860;
+            --accent-soft: rgba(212,168,83,0.15);
+            --success: #3fb950;
+            --success-soft: rgba(63,185,80,0.15);
+            --sold-bg: rgba(200,40,40,0.88);
+            --border: #30363d;
+            --border-light: #21262d;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+            --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+            --shadow-xl: 0 24px 48px rgba(0,0,0,0.6);
         }
 
-        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        
-        html, body { 
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100%;
-            position: relative;
-        }
-        
-        html { 
-            scroll-behavior: smooth;
-            -webkit-tap-highlight-color: transparent; 
-            font-size: 16px; 
-        }
-
+        /* ══════════ RESET & BASE ══════════ */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; font-size: 16px; }
+        html, body { overflow-x: hidden; width: 100%; }
         body {
             font-family: var(--font-body);
-            background: var(--color-surface-warm);
-            color: var(--color-text);
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
-            transition: background-color var(--transition-normal), color var(--transition-normal);
-            padding-bottom: env(safe-area-inset-bottom);
+            transition: background var(--transition), color var(--transition);
+            -webkit-font-smoothing: antialiased;
+        }
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 3px; }
+        .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0; }
+
+        /* ══════════ ANIMATIONS ══════════ */
+        @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+        @keyframes slideUp { from { transform:translateY(100%); } to { transform:translateY(0); } }
+        @keyframes shimmer { 0% { background-position:-600px 0; } 100% { background-position:600px 0; } }
+        @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+        @keyframes pulse-glow { 0%,100% { box-shadow:0 0 0 0 rgba(201,153,58,0.3); } 50% { box-shadow:0 0 20px 4px rgba(201,153,58,0.15); } }
+        @keyframes stamp { 0% { transform:translate(-50%,-50%) scale(3) rotate(-12deg); opacity:0; } 60% { transform:translate(-50%,-50%) scale(1) rotate(-12deg); opacity:1; } 100% { transform:translate(-50%,-50%) scale(1) rotate(-12deg); opacity:1; } }
+
+        /* ══════════ NAVBAR ══════════ */
+        .navbar {
+            position: sticky; top: 0; z-index: 40;
+            background: var(--bg-nav);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            transition: all var(--transition);
+        }
+        .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+        .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 1.25rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .nav-brand-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--accent), #e0b860); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; }
+        .nav-brand-text { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: #fff; line-height: 1.2; }
+        .nav-brand-sub { font-size: 0.65rem; color: rgba(255,255,255,0.5); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; }
+        .nav-actions { display: flex; align-items: center; gap: 8px; }
+        .nav-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);
+            background: transparent; color: rgba(255,255,255,0.8); font-size: 0.8125rem;
+            font-weight: 500; cursor: pointer; transition: all var(--transition); white-space: nowrap;
+            font-family: var(--font-body); text-decoration: none;
+        }
+        .nav-btn:hover { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.2); }
+        .nav-btn.accent { background: var(--accent); border-color: var(--accent); color: #0f1923; font-weight: 600; }
+        .nav-btn.accent:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .nav-btn.whatsapp { background: #25d366; border-color: #25d366; color: #fff; font-weight: 600; }
+        .nav-btn.whatsapp:hover { background: #22c55e; transform: translateY(-1px); }
+        .nav-btn-icon { display: inline-flex; width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: transparent; color: rgba(255,255,255,0.7); cursor: pointer; align-items: center; justify-content: center; transition: all var(--transition); font-size: 0.875rem; }
+        .nav-btn-icon:hover { background: rgba(255,255,255,0.1); color: #fff; }
+        .desktop-nav { display: flex; align-items: center; gap: 8px; }
+        .mobile-nav-btns { display: none; align-items: center; gap: 6px; }
+
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .mobile-nav-btns { display: flex; }
+            .nav-inner { height: 56px; }
         }
 
-        .font-display { font-family: var(--font-display); }
-
-        :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
-
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: var(--color-surface-elevated); }
-        ::-webkit-scrollbar-thumb { background: var(--color-text-muted); border-radius: 4px; }
-
-        /* ===== ANIMAÇÕES ===== */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* ══════════ MOBILE MENU ══════════ */
+        #mobileMenu { display: none; background: var(--bg-nav-secondary); border-top: 1px solid rgba(255,255,255,0.06); padding: 1rem 1.25rem; }
+        #mobileMenu.open { display: block; animation: fadeIn 0.2s ease; }
+        .mobile-menu-item {
+            display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+            border-radius: 10px; color: rgba(255,255,255,0.8); font-size: 0.9375rem;
+            cursor: pointer; transition: all var(--transition); border: none; background: transparent;
+            width: 100%; text-align: left; font-family: var(--font-body); text-decoration: none;
         }
+        .mobile-menu-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
+        .mobile-menu-item i { width: 20px; text-align: center; color: rgba(255,255,255,0.5); }
 
-        @keyframes shimmer {
-            0% { background-position: -400px 0; }
-            100% { background-position: 400px 0; }
-        }
-
-        @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(100%); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        /* ===== CARDS ===== */
-        .book-card {
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            transition: all var(--transition-normal);
-            opacity: 0;
-            transform: translateY(20px);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            min-height: 100%; 
-        }
-
-        .book-card.visible { opacity: 1; transform: translateY(0); }
-
-        .book-card:hover:not(.sold) {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--color-accent);
-        }
-
-        .book-card.sold { opacity: 0.7; pointer-events: none; }
-
-        /* ===== TARJA VENDIDO ===== */
-        .sold-badge {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 20;
-        }
-
-        .sold-badge span {
-            background: var(--color-sold);
-            color: white;
-            padding: 0.75rem 2rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transform: rotate(-15deg);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* ===== IMAGEM ===== */
-        .book-cover {
-            position: relative;
-            height: 15rem;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--color-border) 0%, var(--color-surface-elevated) 100%);
-            flex-shrink: 0;
-        }
-
-        .book-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 0.5s ease, transform var(--transition-normal);
-        }
-
-        .book-cover img.loaded { opacity: 1; }
-        .book-card:hover .book-cover img { transform: scale(1.05); }
-
-        .skeleton {
-            background: linear-gradient(90deg, var(--color-border) 0%, var(--color-surface-elevated) 50%, var(--color-border) 100%);
-            background-size: 800px 100%;
-            animation: shimmer 1.5s infinite linear;
-        }
-
-        /* ===== PLACEHOLDER ===== */
-        .cover-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(145deg, #e8e0d5 0%, #d4ccc0 100%);
-            padding: 1rem;
+        /* ══════════ HERO ══════════ */
+        .hero {
+            background: linear-gradient(135deg, #0f1923 0%, #1a2a3a 40%, #1e3348 100%);
+            color: #fff; padding: 4rem 1.25rem; position: relative; overflow: hidden;
             text-align: center;
         }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(201,153,58,0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 20%, rgba(255,255,255,0.03) 0%, transparent 50%);
+        }
+        .hero-inner { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 16px; border-radius: 99px; font-size: 0.7rem;
+            font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+            background: var(--accent-soft); color: var(--accent); border: 1px solid rgba(201,153,58,0.2);
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800; line-height: 1.15; margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+        .hero h1 em { font-style: normal; color: var(--accent); }
+        .hero p { font-size: clamp(1rem, 2.5vw, 1.2rem); color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 2rem; line-height: 1.7; }
+        .hero-features { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+        .hero-feature { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: rgba(255,255,255,0.85); }
+        .hero-feature i { color: var(--accent); font-size: 0.75rem; }
+        .hero-deco { position: absolute; font-size: 6rem; opacity: 0.03; pointer-events: none; }
+        .hero-deco.d1 { top: 10%; left: 5%; transform: rotate(-15deg); }
+        .hero-deco.d2 { bottom: 10%; right: 8%; transform: rotate(10deg); }
 
-        .cover-placeholder i { font-size: 2.5rem; color: var(--color-primary); margin-bottom: 0.5rem; }
-        .cover-placeholder span { font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.3; font-weight: 500; }
-
-        /* ===== TAGS DE GÊNERO ===== */
-        .genre-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.375rem;
+        @media (max-width: 768px) {
+            .hero { padding: 2.5rem 1.25rem; }
+            .hero-features { gap: 0.75rem; }
+            .hero-feature { font-size: 0.75rem; }
         }
 
-        .genre-tag {
-            display: inline-flex;
-            align-items: center;
-            font-size: 0.625rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-            background: var(--color-surface-elevated);
-            color: var(--color-text-muted);
-            border: 1px solid var(--color-border);
+        /* ══════════ MAIN CONTENT ══════════ */
+        .main { max-width: 1280px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+        /* ══════════ TOOLBAR ══════════ */
+        .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 1.5rem; }
+        .toolbar-left { flex: 1; min-width: 200px; }
+        .toolbar-left .count { font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; }
+        .toolbar-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+        /* ══════════ SEARCH ══════════ */
+        .search-box { position: relative; margin-bottom: 1.25rem; }
+        .search-box input {
+            width: 100%; padding: 14px 14px 14px 48px;
+            font-size: 0.9375rem; border: 2px solid var(--border);
+            border-radius: var(--radius-lg); background: var(--bg-card);
+            color: var(--text); transition: all var(--transition);
+            font-family: var(--font-body);
         }
-
-        /* ===== FAVORITOS (CARD) ===== */
-        .favorite-btn {
-            position: absolute;
-            top: 0.75rem;
-            right: 0.75rem;
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 50%;
-            background: var(--color-surface);
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all var(--transition-fast);
-            box-shadow: var(--shadow-md);
-            z-index: 10;
+        .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+        .search-box input::placeholder { color: var(--text-muted); }
+        .search-box .s-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.875rem; pointer-events: none; }
+        .search-box input:focus ~ .s-icon { color: var(--accent); }
+        .search-clear {
+            position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+            width: 24px; height: 24px; border-radius: 50%; border: none;
+            background: var(--border); color: var(--text-muted); cursor: pointer;
+            display: none; align-items: center; justify-content: center; font-size: 0.625rem;
+            transition: all var(--transition);
         }
+        .search-clear.show { display: flex; }
+        .search-clear:hover { background: var(--accent); color: #fff; }
 
-        .book-card:hover .favorite-btn, .favorite-btn:focus, .favorite-btn.active { opacity: 1; transform: scale(1); }
-        .favorite-btn i { font-size: 1rem; color: var(--color-text-muted); transition: all var(--transition-fast); }
-        .favorite-btn.active i { color: #ef4444; }
-        .favorite-btn:hover { transform: scale(1.1); background: var(--color-accent); }
-        .favorite-btn:hover i { color: white; transform: scale(1.1); }
-
-        /* ===== FILTROS COM NAVEGAÇÃO (CORRIGIDO) ===== */
-        .filters-wrapper {
-            position: relative;
-            margin: 0;
-            width: 100%;
+        /* ══════════ CHIPS (Filters) ══════════ */
+        .chips-wrapper { position: relative; margin-bottom: 2rem; }
+        .chips-scroll {
+            display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px;
+            scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none;
         }
-
-        .filters-container {
-            overflow: hidden;
-            position: relative;
-            padding: 0 4px; /* Espaço lateral para sombras não cortarem */
+        .chips-scroll::-webkit-scrollbar { display: none; }
+        .chip {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 99px;
+            font-size: 0.8125rem; font-weight: 500; white-space: nowrap;
+            background: var(--bg-card); border: 1.5px solid var(--border);
+            color: var(--text-secondary); cursor: pointer;
+            transition: all var(--transition); flex-shrink: 0;
+            font-family: var(--font-body);
         }
+        .chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+        .chip.active { background: var(--bg-nav); border-color: var(--bg-nav); color: #fff; }
+        [data-theme="dark"] .chip.active { background: var(--accent); border-color: var(--accent); color: #0f1923; }
+        .chip .cnt { font-size: 0.6875rem; padding: 1px 7px; border-radius: 99px; background: rgba(0,0,0,0.08); font-weight: 600; }
+        .chip.active .cnt { background: rgba(255,255,255,0.2); }
+        .chip-fav { color: #ef4444; }
+        .chip-fav.active { background: #ef4444; border-color: #ef4444; color: #fff; }
 
-        .filters-scroll {
-            display: flex;
-            gap: 0.5rem;
-            padding: 0.5rem 0.25rem; /* Padding vertical aumentado para hover */
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+        .chip-nav {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 32px; height: 32px; border-radius: 50%;
+            background: var(--bg-card); border: 1.5px solid var(--border);
+            color: var(--text); cursor: pointer; display: none;
+            align-items: center; justify-content: center; z-index: 5;
+            box-shadow: var(--shadow-md); transition: all var(--transition); font-size: 0.75rem;
         }
-        
-        .filters-scroll::-webkit-scrollbar { display: none; }
+        .chip-nav:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+        .chip-nav.show { display: flex; }
+        .chip-nav.prev { left: -4px; }
+        .chip-nav.next { right: -4px; }
 
-        .filter-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 50%;
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            color: var(--color-text);
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-fast);
+        /* Sort */
+        .sort-wrap {
+            display: flex; align-items: center; gap: 6px;
+            padding: 8px 12px; border-radius: var(--radius-sm);
+            background: var(--bg-card); border: 1.5px solid var(--border);
         }
+        .sort-wrap i { color: var(--text-muted); font-size: 0.75rem; }
+        .sort-wrap select {
+            background: transparent; border: none; color: var(--text);
+            font-size: 0.8125rem; font-weight: 500; cursor: pointer;
+            font-family: var(--font-body); outline: none;
+        }
+        .sort-wrap select option { background: var(--bg-card); color: var(--text); }
 
-        .filter-nav-btn:hover { background: var(--color-accent); color: white; border-color: var(--color-accent); transform: translateY(-50%) scale(1.1); }
-        .filter-nav-btn.visible { display: flex; }
-        .filter-nav-btn.prev { left: 0; }
-        .filter-nav-btn.next { right: 0; }
+        /* ══════════ GRID ══════════ */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+        @media (max-width: 500px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; } }
+        @media (max-width: 340px) { .grid { grid-template-columns: 1fr; } }
 
-        .filter-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.375rem;
-            padding: 0.5rem 1rem;
-            font-size: 0.8125rem;
-            font-weight: 500;
-            border-radius: 9999px;
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            color: var(--color-text-muted);
-            cursor: pointer;
-            transition: all var(--transition-fast);
+        /* ══════════ BOOK CARD ══════════ */
+        .card {
+            background: var(--bg-card); border: 1.5px solid var(--border);
+            border-radius: var(--radius-lg); overflow: hidden;
+            display: flex; flex-direction: column;
+            transition: all var(--transition); position: relative;
+            opacity: 0; transform: translateY(20px); cursor: pointer;
+        }
+        .card.visible { opacity: 1; transform: translateY(0); }
+        .card:hover:not(.is-sold) { transform: translateY(-6px); box-shadow: var(--shadow-xl); border-color: var(--accent); }
+        .card.is-sold { cursor: default; }
+
+        /* Cover */
+        .card-cover {
+            position: relative; height: 240px; overflow: hidden;
+            background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--border-light) 100%);
+        }
+        .card-cover img {
+            width: 100%; height: 100%; object-fit: cover;
+            opacity: 0; transition: opacity 0.5s ease, transform var(--transition);
+        }
+        .card-cover img.loaded { opacity: 1; }
+        .card:hover:not(.is-sold) .card-cover img { transform: scale(1.06); }
+        .skeleton-img {
+            position: absolute; inset: 0;
+            background: linear-gradient(90deg, var(--border) 0%, var(--bg-elevated) 50%, var(--border) 100%);
+            background-size: 1200px 100%; animation: shimmer 1.5s infinite linear;
+        }
+        .cover-ph {
+            width: 100%; height: 100%; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; padding: 1rem;
+            text-align: center; background: linear-gradient(145deg, var(--bg-elevated), var(--border-light));
+        }
+        .cover-ph i { font-size: 2rem; color: var(--text-muted); margin-bottom: 8px; }
+        .cover-ph span { font-size: 0.65rem; color: var(--text-muted); line-height: 1.3; font-weight: 500; }
+
+        /* Sold overlay */
+        .sold-overlay {
+            position: absolute; inset: 0; z-index: 15;
+            background: rgba(0,0,0,0.55); backdrop-filter: blur(2px);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .sold-stamp {
+            position: absolute; top: 50%; left: 50%;
+            animation: stamp 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            background: var(--sold-bg); color: #fff;
+            padding: 8px 28px; border-radius: 4px;
+            font-family: var(--font-display); font-size: 1.1rem;
+            font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em;
+            border: 2px solid rgba(255,255,255,0.4);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
             white-space: nowrap;
-            flex-shrink: 0;
-            touch-action: manipulation;
         }
 
-        .filter-chip:hover { 
-            border-color: var(--color-accent);
-            color: var(--color-accent); 
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+        /* Favorite btn on card */
+        .fav-btn {
+            position: absolute; top: 10px; right: 10px; z-index: 10;
+            width: 36px; height: 36px; border-radius: 50%;
+            background: var(--bg-card); border: none;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; box-shadow: var(--shadow-md);
+            opacity: 0; transform: scale(0.8); transition: all 0.2s ease;
         }
-        .filter-chip.active { 
-            background: var(--color-primary);
-            border-color: var(--color-primary); 
-            color: white;
-            transform: translateY(-2px);
-        }
-        .filter-chip .count { 
-            font-size: 0.6875rem;
-            padding: 0.125rem 0.375rem; 
-            border-radius: 9999px; 
-            background: rgba(0,0,0,0.1); 
-        }
-        .filter-chip.active .count { background: rgba(255,255,255,0.2); }
+        .fav-btn i { font-size: 0.875rem; color: var(--text-muted); transition: color 0.2s; }
+        .card:hover .fav-btn, .fav-btn.active { opacity: 1; transform: scale(1); }
+        .fav-btn.active i { color: #ef4444; }
+        .fav-btn:hover { transform: scale(1.15) !important; background: var(--accent); }
+        .fav-btn:hover i { color: #fff !important; }
 
-        /* ===== SEARCH ===== */
-        .search-container { position: relative; }
+        @media (max-width: 768px) { .fav-btn { opacity: 1; transform: scale(1); width: 34px; height: 34px; } }
 
-        .search-container input {
-            width: 100%;
-            padding: 1rem 1rem 1rem 3rem;
-            font-size: 1rem;
-            border: 2px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            background: var(--color-surface);
-            color: var(--color-text);
-            transition: all var(--transition-fast);
-            appearance: none;
-            -webkit-appearance: none;
+        /* Card body */
+        .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+        .card-genres { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+        .genre-tag {
+            font-size: 0.5625rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.06em; padding: 3px 7px; border-radius: 4px;
+            background: var(--bg-elevated); color: var(--text-muted); border: 1px solid var(--border);
         }
+        .card-title {
+            font-family: var(--font-display); font-weight: 700;
+            font-size: 0.975rem; line-height: 1.3; color: var(--text);
+            margin-bottom: auto; display: -webkit-box; -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .card-footer {
+            margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .price-old { font-size: 0.75rem; color: var(--text-muted); text-decoration: line-through; line-height: 1; }
+        .price-current { font-size: 1.125rem; font-weight: 700; color: var(--success); line-height: 1.2; }
+        .price-simple { font-size: 1.125rem; font-weight: 700; color: var(--accent); }
+        .discount-badge {
+            font-size: 0.6rem; font-weight: 700; padding: 2px 6px;
+            border-radius: 99px; background: var(--success-soft); color: var(--success);
+        }
+        .card-arrow {
+            width: 32px; height: 32px; border-radius: 50%;
+            background: var(--bg-elevated); display: flex; align-items: center;
+            justify-content: center; flex-shrink: 0; transition: all var(--transition);
+        }
+        .card-arrow i { font-size: 0.625rem; color: var(--text-muted); }
+        .card:hover .card-arrow { background: var(--accent); }
+        .card:hover .card-arrow i { color: #fff; }
 
-        .search-container input:focus { 
-            border-color: var(--color-accent);
-            box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.15); 
-        }
-        .search-container input::placeholder { color: var(--color-text-muted); }
-        .search-container .search-icon { 
-            position: absolute;
-            left: 1rem; 
-            top: 50%; 
-            transform: translateY(-50%);
-            color: var(--color-text-muted); 
-        }
-        .search-container input:focus + .search-icon { color: var(--color-accent); }
-
-        .search-container .clear-btn {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 50%;
-            border: none;
-            background: var(--color-border);
-            color: var(--color-text-muted);
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            transition: all var(--transition-fast);
+        @media (max-width: 500px) {
+            .card-cover { height: 180px; }
+            .card-body { padding: 12px; }
+            .card-title { font-size: 0.85rem; }
+            .price-current, .price-simple { font-size: 1rem; }
         }
 
-        .search-container .clear-btn.visible { display: flex; }
-        .search-container .clear-btn:hover { background: var(--color-accent); color: white; transform: translateY(-50%) scale(1.1); }
+        /* ══════════ MODAL ══════════ */
+        .modal-bg {
+            position: fixed; inset: 0; background: rgba(15,25,35,0.75);
+            backdrop-filter: blur(6px); z-index: 50;
+            opacity: 0; visibility: hidden; transition: all var(--transition);
+        }
+        .modal-bg.open { opacity: 1; visibility: visible; }
+        .modal-panel {
+            position: fixed; z-index: 51;
+            background: var(--bg-card); overflow: hidden;
+            opacity: 0; visibility: hidden; transition: all var(--transition);
+        }
+        .modal-panel.open { opacity: 1; visibility: visible; }
 
-        /* ===== MODAIS ===== */
-        .modal-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(30, 58, 95, 0.8);
-            backdrop-filter: blur(4px);
-            z-index: 50;
-            opacity: 0;
-            visibility: hidden;
-            transition: all var(--transition-normal);
+        /* Desktop modal */
+        @media (min-width: 769px) {
+            .modal-panel {
+                top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.96);
+                max-width: 720px; width: calc(100% - 2rem);
+                max-height: calc(100vh - 2rem); border-radius: var(--radius-xl);
+                box-shadow: var(--shadow-xl);
+            }
+            .modal-panel.open { transform: translate(-50%, -50%) scale(1); }
         }
 
-        .modal-backdrop.open { opacity: 1; visibility: visible; }
-
-        .modal-content {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.95);
-            max-width: 42rem;
-            width: calc(100% - 2rem);
-            max-height: calc(100vh - 2rem);
-            background: var(--color-surface);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-xl);
-            overflow: hidden;
-            z-index: 51;
-            opacity: 0;
-            visibility: hidden;
-            transition: all var(--transition-normal);
-        }
-
-        .modal-backdrop.open + .modal-content, .modal-content.open {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        /* CORREÇÃO DO BOTÃO FECHAR E FAVORITAR (Interação Mobile) */
-        .modal-close, #modalFavoriteBtn {
-            cursor: pointer;
-            transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+        /* Mobile modal (sheet) */
+        @media (max-width: 768px) {
+            .modal-panel {
+                bottom: 0; left: 0; right: 0; transform: translateY(100%);
+                max-height: 90vh; border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+            .modal-panel.open { transform: translateY(0); }
         }
 
         .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 50%;
-            border: none;
-            background: var(--color-surface);
-            color: var(--color-text);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-md);
-            z-index: 52;
+            position: absolute; top: 12px; right: 12px; z-index: 55;
+            width: 36px; height: 36px; border-radius: 50%;
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text); cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow-md); transition: all 0.2s;
         }
+        .modal-close:hover { background: #dc2626; color: #fff; border-color: #dc2626; transform: rotate(90deg); }
 
-        .modal-close:hover, .modal-close:active { 
-            background: var(--color-sold) !important;
-            color: white !important;
-            transform: rotate(90deg) scale(1.1); 
+        .modal-inner { display: flex; flex-direction: column; }
+        @media (min-width: 769px) { .modal-inner { flex-direction: row; max-height: calc(100vh - 2rem); } }
+
+        .modal-img-wrap {
+            position: relative; height: 280px; flex-shrink: 0;
+            background: var(--bg-elevated); overflow: hidden;
         }
+        @media (min-width: 769px) { .modal-img-wrap { width: 42%; height: auto; min-height: 400px; } }
+        .modal-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
-        #modalFavoriteBtn:hover, #modalFavoriteBtn:active {
-            background: var(--color-accent) !important;
-            transform: scale(1.1);
+        .modal-fav-btn {
+            position: absolute; top: 12px; left: 12px; z-index: 55;
+            width: 36px; height: 36px; border-radius: 50%;
+            background: var(--bg-card); border: none;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; box-shadow: var(--shadow-md); transition: all 0.2s;
         }
-        #modalFavoriteBtn:hover i, #modalFavoriteBtn:active i {
-            color: white !important;
+        .modal-fav-btn i { font-size: 0.875rem; color: var(--text-muted); transition: color 0.2s; }
+        .modal-fav-btn.active i { color: #ef4444; }
+        .modal-fav-btn:hover { background: var(--accent); transform: scale(1.1); }
+        .modal-fav-btn:hover i { color: #fff !important; }
+
+        .modal-body { padding: 1.5rem; overflow-y: auto; flex: 1; display: flex; flex-direction: column; }
+        @media (min-width: 769px) { .modal-body { width: 58%; padding: 2rem; } }
+
+        .modal-genres { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+        .modal-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 1rem; line-height: 1.25; }
+        @media (min-width: 769px) { .modal-title { font-size: 1.75rem; } }
+
+        .modal-price { margin-bottom: 1.5rem; }
+        .modal-price .price-old { font-size: 0.875rem; }
+        .modal-price .price-current { font-size: 1.75rem; }
+        .modal-price .discount-badge { font-size: 0.75rem; padding: 3px 10px; }
+
+        /* Description styling */
+        .book-desc { font-size: 0.9375rem; line-height: 1.8; color: var(--text); flex: 1; }
+        .book-desc .sec { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px dashed var(--border); }
+        .book-desc .sec:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .book-desc .lbl { display: inline-block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 6px; }
+        .book-desc .hl { background: linear-gradient(180deg, transparent 60%, rgba(201,153,58,0.25) 60%); font-weight: 600; }
+
+        /* WhatsApp CTA */
+        .wa-cta {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            width: 100%; padding: 16px; font-size: 1rem; font-weight: 600;
+            color: #fff; background: linear-gradient(135deg, #25d366, #128c7e);
+            border: none; border-radius: var(--radius-md); cursor: pointer;
+            text-decoration: none; transition: all var(--transition);
+            box-shadow: 0 4px 16px rgba(37,211,102,0.3); margin-top: 1.5rem;
+            font-family: var(--font-body);
         }
+        .wa-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
 
-        /* ===== DESCRIÇÃO ESTILIZADA ===== */
-        .book-description {
-            font-size: 0.9375rem;
-            line-height: 1.8;
-            color: var(--color-text);
+        /* ══════════ INFO MODALS (Payment, How It Works) ══════════ */
+        .info-modal {
+            position: fixed; z-index: 51;
+            background: var(--bg-card); max-width: 440px;
+            overflow-y: auto; overflow-x: hidden;
         }
-
-        .book-description .highlight {
-            background: linear-gradient(180deg, transparent 60%, rgba(201, 162, 39, 0.3) 60%);
-            font-weight: 600;
-        }
-
-        .book-description .section {
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px dashed var(--color-border);
-        }
-
-        .book-description .section:last-child { 
-            border-bottom: none;
-            margin-bottom: 0; 
-            padding-bottom: 0; 
-        }
-
-        .book-description .label {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--color-accent);
-            margin-bottom: 0.5rem;
-        }
-
-        /* ===== TOAST ===== */
-        .toast-container {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            pointer-events: none;
-        }
-
-        .toast {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 1.25rem;
-            background: var(--color-primary);
-            color: white;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-lg);
-            animation: slideInRight 0.3s ease-out;
-            pointer-events: auto;
-        }
-
-        .toast.success { background: var(--color-success); }
-
-        /* ===== SCROLL TO TOP ===== */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 1.5rem;
-            left: 1.5rem;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            background: var(--color-primary);
-            color: white;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(1rem);
-            transition: all var(--transition-normal);
-            box-shadow: var(--shadow-lg);
-            z-index: 40;
-        }
-
-        .scroll-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-        .scroll-to-top:hover { 
-            transform: translateY(-4px) scale(1.1);
-            background: var(--color-accent);
-        }
-
-        /* ===== NAVBAR ===== */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 40;
-            background: var(--color-primary);
-            color: white;
-            transition: all var(--transition-normal);
-            width: 100%;
-        }
-
-        .navbar.scrolled { box-shadow: var(--shadow-lg); }
-
-        /* ===== WHATSAPP BUTTON ===== */
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            width: 100%;
-            padding: 1rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            color: white;
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-            border: none;
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            text-decoration: none;
-            transition: all var(--transition-fast);
-            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-        }
-
-        .whatsapp-btn:hover { 
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); 
-        }
-
-        /* ===== PRICE TAG ===== */
-        .price-tag { font-size: 1.75rem; font-weight: 700; color: var(--color-accent); }
-        .price-tag small { font-size: 1rem; font-weight: 500; color: var(--color-text-muted); }
-        
-        .price-original { 
-            font-size: 0.85rem;
-            color: var(--color-text-muted); 
-            text-decoration: line-through; 
-            display: block; 
-            line-height: 1.2; 
-        }
-        .discount-badge { 
-            background-color: rgba(22, 163, 74, 0.1);
-            color: var(--color-success); 
-            font-size: 0.7rem; 
-            padding: 0.1rem 0.4rem; 
-            border-radius: 9999px; 
-            font-weight: 700; 
-            margin-left: 0.3rem; 
-            vertical-align: middle;
-        }
-        .current-price-green { color: var(--color-success); font-weight: 700; }
-
-        /* ===== THEME TOGGLE ===== */
-        .theme-toggle {
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.3);
-            background: transparent;
-            color: white;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all var(--transition-fast);
-        }
-
-        .theme-toggle:hover { background: rgba(255,255,255,0.1); transform: scale(1.1); }
-
-        /* ===== EMPTY STATE ===== */
-        .empty-state { 
-            text-align: center;
-            padding: 4rem 2rem; 
-            animation: fadeInUp 0.5s ease-out; 
-        }
-        .empty-state i { 
-            font-size: 4rem;
-            color: var(--color-border); 
-            margin-bottom: 1.5rem; 
-        }
-
-        /* ===== PAYMENT INFO ===== */
-        .payment-method {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1rem;
-            background: var(--color-surface-elevated);
-            border-radius: var(--radius-md);
-            margin-bottom: 0.75rem;
-        }
-
-        .payment-method i { font-size: 1.5rem; color: var(--color-accent); margin-top: 0.25rem; }
-        .payment-method h4 { font-weight: 600; color: var(--color-primary); margin-bottom: 0.25rem; }
-        .payment-method p { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.5; }
-
-        /* ===== BOTÕES COM HOVER ===== */
-        button, .btn { transition: all var(--transition-fast); }
-        button:hover:not(:disabled), .btn:hover { transform: translateY(-2px); }
-
-        .modal-content button:not(.modal-close):not(.favorite-btn):hover {
-            font-weight: 600;
-            background: var(--color-accent-hover) !important;
-        }
-
-        /* ===== MOBILE MENU & NAVBAR CORRECTIONS ===== */
-        .mobile-menu-btn {
-            display: flex;
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: var(--radius-sm);
-            border: 1px solid rgba(255,255,255,0.3);
-            background: transparent;
-            color: white;
-            cursor: pointer;
-            align-items: center;
-            justify-content: center;
-            transition: all var(--transition-fast);
-            z-index: 50; 
-        }
-
-        .mobile-menu-btn:active, .mobile-menu-btn:hover { background: rgba(255,255,255,0.1); }
-
-        #mobileMenu {
-            display: none;
-        }
-        
-        #mobileMenu.menu-open {
-            display: block !important;
-        }
-
-        @media (min-width: 1024px) {
-            #mobileMenu {
-                display: none !important;
+        @media (min-width: 769px) {
+            .info-modal {
+                top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.96);
+                width: calc(100% - 2rem); border-radius: var(--radius-xl);
+                max-height: calc(100vh - 2rem); box-shadow: var(--shadow-xl);
+                opacity: 0; visibility: hidden; transition: all var(--transition);
             }
+            .info-modal.open { transform: translate(-50%, -50%) scale(1); opacity: 1; visibility: visible; }
         }
-
         @media (max-width: 768px) {
-            .mobile-menu-btn { display: flex; }
-            .desktop-nav { display: none; }
-            
-            .hero-title { font-size: 1.75rem !important; line-height: 1.2 !important; }
-            .hero-subtitle { font-size: 0.9375rem !important; }
-            .hero-checks { font-size: 0.75rem !important; gap: 0.75rem !important; }
-            .book-cover { height: 13rem; }
-            .book-card { min-height: auto; }
-            .genre-tag { font-size: 0.5625rem; padding: 0.1875rem 0.375rem; }
-            
-            .favorite-btn { 
-                width: 2.5rem;
-                height: 2.5rem; top: 0.5rem; right: 0.5rem; opacity: 1; transform: scale(1);
-            }
-            .favorite-btn i { font-size: 1rem; }
-            
-            .filter-chip { padding: 0.625rem 1rem; font-size: 0.875rem; min-height: 2.5rem; }
-            .filter-chip .count { font-size: 0.75rem; }
-            
-            .search-container input { padding: 1.125rem 1rem 1.125rem 3.25rem; font-size: 1rem; }
-            .search-container .search-icon { font-size: 1.125rem; left: 1.125rem; }
-            .search-container .clear-btn { width: 1.75rem; height: 1.75rem; }
-            
-            .whatsapp-btn { padding: 1.125rem 1.5rem; font-size: 1.0625rem; }
-            
-            /* Modal Fixes */
-            .modal-content {
-                top: auto;
-                bottom: 0; left: 0; right: 0;
-                transform: translateY(100%);
-                max-width: 100%; width: 100%; max-height: 85vh; height: auto;
-                border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-                display: flex; flex-direction: column;
+            .info-modal {
+                bottom: 0; left: 0; right: 0; max-width: 100%;
+                border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+                max-height: 90vh; transform: translateY(100%);
+                opacity: 0; visibility: hidden; transition: all var(--transition);
                 padding-bottom: env(safe-area-inset-bottom);
             }
-            .modal-backdrop.open + .modal-content, .modal-content.open { transform: translateY(0); }
-            
-            .modal-content .md\:w-5\/12 { height: 12rem !important; flex-shrink: 0; }
-            
-            .modal-close {
-                width: 2.5rem;
-                height: 2.5rem; top: 0.75rem; right: 0.75rem; left: auto;
-                background: rgba(255,255,255,0.9); color: #000; z-index: 60;
-            }
-            
-            #modalFavoriteBtn {
-                top: 0.75rem;
-                left: 0.75rem; right: auto; z-index: 60;
-                background: rgba(255,255,255,0.9);
-            }
-            
-            .book-description { font-size: 0.9375rem; line-height: 1.7; }
-            .book-description .label { font-size: 0.6875rem; }
-            
-            .toast-container { left: 1rem; right: 1rem; bottom: 5rem; }
-            .toast { width: 100%; font-size: 0.9375rem; }
-            
-            .scroll-to-top { bottom: 5rem; width: 3rem; height: 3rem; margin-bottom: env(safe-area-inset-bottom); }
-            .scroll-to-top i { font-size: 1.125rem; }
-            
-            .py-12 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
-            .py-16 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
-            #bookGrid { gap: 1rem; }
+            .info-modal.open { transform: translateY(0); opacity: 1; visibility: visible; }
         }
+        .info-modal-body { padding: 2rem; }
+        .info-modal-title {
+            font-family: var(--font-display); font-size: 1.5rem; font-weight: 800;
+            color: var(--text); text-align: center; margin-bottom: 1.75rem;
+        }
+        .info-modal-title i { color: var(--accent); margin-right: 8px; }
 
-        @media (max-width: 375px) {
-            .hero-title { font-size: 1.5rem !important; }
-            .book-cover { height: 11rem; }
-            .filter-chip { padding: 0.5rem 0.875rem; font-size: 0.8125rem; }
-            #bookGrid { grid-template-columns: 1fr; }
+        /* Payment methods */
+        .pay-method {
+            display: flex; gap: 1rem; padding: 1rem;
+            background: var(--bg-elevated); border-radius: var(--radius-md);
+            margin-bottom: 0.75rem; align-items: flex-start;
         }
+        .pay-method-icon { font-size: 1.5rem; color: var(--accent); margin-top: 2px; flex-shrink: 0; }
+        .pay-method h4 { font-weight: 700; color: var(--text); margin-bottom: 4px; font-size: 0.9375rem; }
+        .pay-method p { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6; }
+        .pix-copy-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            margin-top: 8px; font-size: 0.8125rem; font-weight: 600;
+            color: var(--accent); background: none; border: none; cursor: pointer;
+            font-family: var(--font-body); transition: all 0.2s;
+        }
+        .pix-copy-btn:hover { color: var(--accent-hover); text-decoration: underline; }
 
-        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .sr-only { 
-            position: absolute;
-            width: 1px; height: 1px; padding: 0; margin: -1px; 
-            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        .qr-container {
+            margin-top: 12px; text-align: center;
         }
+        .qr-container img {
+            width: 160px; height: 160px; border-radius: 8px;
+            border: 2px solid var(--border); background: #fff; padding: 4px;
+        }
+        .qr-label { font-size: 0.6875rem; color: var(--text-muted); margin-top: 6px; }
 
-        @media print {
-            .navbar, .scroll-to-top, .toast-container, .favorite-btn { display: none !important; }
-            .book-card { break-inside: avoid; }
+        .info-tip {
+            margin-top: 1.25rem; padding: 1rem; border-radius: var(--radius-md);
+            background: var(--accent-soft); text-align: center;
+            font-size: 0.8125rem; color: var(--text);
         }
+        .info-tip i { color: var(--accent); margin-right: 6px; }
+
+        .info-close-btn {
+            width: 100%; margin-top: 1.25rem; padding: 14px;
+            border-radius: var(--radius-md); border: none;
+            background: var(--bg-nav); color: #fff; font-size: 0.9375rem;
+            font-weight: 600; cursor: pointer; font-family: var(--font-body);
+            transition: all var(--transition);
+        }
+        [data-theme="dark"] .info-close-btn { background: var(--accent); color: #0f1923; }
+        .info-close-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        /* How it works steps */
+        .steps { position: relative; padding-left: 40px; }
+        .steps::before {
+            content: ''; position: absolute; left: 15px; top: 20px; bottom: 20px;
+            width: 2px; background: var(--border);
+        }
+        .step { display: flex; gap: 16px; margin-bottom: 2rem; position: relative; }
+        .step:last-child { margin-bottom: 0; }
+        .step-num {
+            position: absolute; left: -40px;
+            width: 32px; height: 32px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem; font-weight: 700; color: #fff; flex-shrink: 0;
+        }
+        .step-num.s1 { background: var(--accent); }
+        .step-num.s2 { background: var(--success); }
+        .step-num.s3 { background: var(--bg-nav); }
+        [data-theme="dark"] .step-num.s3 { background: var(--accent); color: #0f1923; }
+        .step h3 { font-weight: 700; color: var(--text); margin-bottom: 4px; font-size: 0.9375rem; }
+        .step p { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Return policy */
+        .return-policy {
+            margin-top: 1.5rem; padding: 1rem; border-radius: var(--radius-md);
+            background: var(--bg-elevated); border-left: 3px solid var(--accent);
+        }
+        .return-policy h4 { font-size: 0.8125rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+        .return-policy p { font-size: 0.75rem; color: var(--text-secondary); line-height: 1.6; }
+
+        /* ══════════ EMPTY STATE ══════════ */
+        .empty { text-align: center; padding: 4rem 2rem; animation: fadeUp 0.5s ease; }
+        .empty i { font-size: 3.5rem; color: var(--border); margin-bottom: 1rem; display: block; }
+        .empty h2 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+        .empty p { font-size: 0.875rem; color: var(--text-secondary); }
+        .empty button {
+            margin-top: 1rem; padding: 10px 24px; border-radius: var(--radius-md);
+            background: var(--accent); color: #fff; border: none; font-weight: 600;
+            cursor: pointer; font-family: var(--font-body); transition: all var(--transition);
+        }
+        .empty button:hover { transform: translateY(-2px); background: var(--accent-hover); }
+
+        /* ══════════ TOAST ══════════ */
+        .toasts { position: fixed; bottom: 24px; right: 24px; z-index: 100; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+        .toast {
+            display: flex; align-items: center; gap: 10px; padding: 14px 20px;
+            background: var(--bg-nav); color: #fff; border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg); pointer-events: auto;
+            animation: fadeUp 0.3s ease;
+        }
+        .toast.ok { background: var(--success); }
+        @media (max-width: 768px) { .toasts { left: 16px; right: 16px; bottom: 80px; } .toast { width: 100%; } }
+
+        /* ══════════ SCROLL TO TOP ══════════ */
+        .go-top {
+            position: fixed; bottom: 24px; left: 24px; z-index: 40;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--bg-nav); color: #fff; border: none;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transform: translateY(12px);
+            transition: all var(--transition); box-shadow: var(--shadow-lg);
+        }
+        [data-theme="dark"] .go-top { background: var(--accent); color: #0f1923; }
+        .go-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        .go-top:hover { transform: translateY(-4px) scale(1.1); }
+        @media (max-width: 768px) { .go-top { bottom: 80px; } }
+
+        /* ══════════ FOOTER ══════════ */
+        .site-footer {
+            margin-top: 4rem; padding: 2rem 1.25rem; text-align: center;
+            border-top: 1px solid var(--border); background: var(--bg-card);
+        }
+        .site-footer p { font-size: 0.8125rem; color: var(--text-muted); }
+        .site-footer p + p { margin-top: 4px; font-size: 0.75rem; }
+
+        /* ══════════ PRINT ══════════ */
+        @media print { .navbar,.go-top,.toasts,.fav-btn { display:none!important; } .card { break-inside:avoid; } }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="sr-only focus:not-sr-only">Pular para o conteúdo</a>
+    <a href="#main" class="sr-only focus:not-sr-only">Pular para o conteúdo</a>
 
+    <!-- NAVBAR -->
     <nav class="navbar" role="navigation">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16 sm:h-20">
-                <a href="#" class="flex items-center gap-3">
-                    <div class="h-11 w-11 bg-white/10 backdrop-blur text-white flex items-center justify-center rounded-lg text-2xl shrink-0">
-                        📚
-                    </div>
-                    <div>
-                        <p class="font-bold text-lg leading-none text-white">Acervo Literário</p>
-                        <p class="text-xs text-white/70 mt-0.5 hidden lg:block">Coleções de qualidade</p>
-                    </div>
-                </a>
-
-                <div class="desktop-nav hidden lg:flex items-center gap-3">
-                    <button onclick="openHowItWorks()" class="text-sm font-medium px-4 py-2 rounded-lg transition text-white/80 hover:text-white hover:bg-white/10 hover:font-semibold">
-                        <i class="fas fa-info-circle mr-2"></i>Como Comprar
-                    </button>
-                    <button onclick="openPaymentInfo()" class="text-sm font-medium px-4 py-2 rounded-lg transition text-white/80 hover:text-white hover:bg-white/10 hover:font-semibold">
-                        <i class="fas fa-credit-card mr-2"></i>Pagamento
-                    </button>
-                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema">
-                        <i class="fas fa-moon" id="themeIcon"></i>
-                    </button>
-                    <a href="https://wa.me/5547991438831" target="_blank" rel="noopener noreferrer" class="bg-white/20 hover:bg-white/30 text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2 transition backdrop-blur hover:scale-105">
-                        <i class="fab fa-whatsapp"></i> Falar Comigo
-                    </a>
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">
+                <div class="nav-brand-icon">📚</div>
+                <div>
+                    <div class="nav-brand-text">Acervo Literário</div>
+                    <div class="nav-brand-sub">Coleções de qualidade</div>
                 </div>
+            </a>
 
-                <div class="flex items-center gap-2 lg:hidden">
-                    <button onclick="openHowItWorks()" class="bg-white/10 hover:bg-white/20 text-white px-2 py-1 rounded-md transition flex items-center gap-1.5 text-[10px] font-medium leading-none whitespace-nowrap shrink-0">
-                        <i class="fas fa-info-circle text-[10px]"></i>
-                        <span>Como Comprar</span>
-                    </button>
-                    
-                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+            <div class="desktop-nav">
+                <button class="nav-btn" onclick="openHowItWorks()"><i class="fas fa-shopping-bag"></i> Como Comprar</button>
+                <button class="nav-btn" onclick="openPaymentInfo()"><i class="fas fa-qrcode"></i> Pagamento</button>
+                <button class="nav-btn-icon" onclick="toggleTheme()" aria-label="Alternar tema"><i class="fas fa-moon" id="themeIcon"></i></button>
+                <a href="https://wa.me/5547991438831" target="_blank" rel="noopener noreferrer" class="nav-btn whatsapp"><i class="fab fa-whatsapp"></i> Contato</a>
+            </div>
+
+            <div class="mobile-nav-btns">
+                <button class="nav-btn" onclick="openHowItWorks()" style="padding:6px 10px;font-size:0.7rem;"><i class="fas fa-shopping-bag"></i> Como Comprar</button>
+                <button class="nav-btn-icon" onclick="toggleMobileMenu()" aria-label="Menu"><i class="fas fa-bars" id="menuBtnIcon"></i></button>
             </div>
         </div>
-
-        <div id="mobileMenu" class="bg-[#162d4b] border-t border-white/10 lg:hidden">
-            <div class="px-4 py-4 space-y-2">
-                <button onclick="openPaymentInfo(); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 text-white hover:bg-white/10 transition">
-                    <i class="fas fa-credit-card text-white/70"></i> Pagamento
-                </button>
-                
-                <button onclick="toggleTheme(); toggleMobileMenu();" class="w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 text-white hover:bg-white/10 transition">
-                    <i class="fas fa-moon" id="themeIconMobile"></i> Alternar Tema
-                </button>
-                
-                <a href="https://wa.me/5547991438831" target="_blank" rel="noopener noreferrer" class="w-full px-4 py-3 rounded-lg flex items-center justify-center gap-2 bg-green-600 text-white font-medium hover:bg-green-700 transition mt-2">
-                    <i class="fab fa-whatsapp"></i> Falar Comigo
-                </a>
-            </div>
+        <div id="mobileMenu">
+            <button class="mobile-menu-item" onclick="openPaymentInfo();toggleMobileMenu();"><i class="fas fa-qrcode"></i> Pagamento</button>
+            <button class="mobile-menu-item" onclick="toggleTheme();toggleMobileMenu();"><i class="fas fa-moon" id="themeIconMob"></i> Alternar Tema</button>
+            <a href="https://wa.me/5547991438831" target="_blank" rel="noopener noreferrer" class="mobile-menu-item" style="background:#25d366;color:#fff;border-radius:10px;justify-content:center;margin-top:8px;"><i class="fab fa-whatsapp" style="color:#fff;"></i> Falar Comigo</a>
         </div>
     </nav>
 
-    <div class="bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-primary-light)] to-[#2a5080] text-white py-12 sm:py-16 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-10 left-10 text-6xl">📖</div>
-            <div class="absolute top-20 right-20 text-4xl">✨</div>
-            <div class="absolute bottom-10 left-1/4 text-5xl">📚</div>
-            <div class="absolute bottom-20 right-10 text-3xl">🎭</div>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-deco d1">📖</div>
+        <div class="hero-deco d2">📚</div>
+        <div class="hero-inner">
+            <div class="hero-badge"><i class="fas fa-star"></i> Curadoria Pessoal</div>
+            <h1>Sua Próxima Grande<br><em>Aventura</em> Começa Aqui</h1>
+            <p>Livros cuidadosamente selecionados com qualidade de colecionador. Entrega personalizada na empresa com pagamento antecipado.</p>
+            <div class="hero-features">
+                <div class="hero-feature"><i class="fas fa-gem"></i> Estado Impecável</div>
+                <div class="hero-feature"><i class="fas fa-tags"></i> Preços Justos</div>
+                <div class="hero-feature"><i class="fas fa-bolt"></i> Entrega Rápida</div>
+                <div class="hero-feature"><i class="fas fa-shield-alt"></i> Devolução em 5h</div>
+            </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
-            <h1 class="hero-title font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-                Sua Próxima Grande <span class="text-[var(--color-accent)]">Aventura</span><br class="hidden sm:inline"/> Começa Aqui
-            </h1>
-            <p class="hero-subtitle text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-6">
-                Livros cuidadosamente selecionados, com qualidade de colecionador.<br class="hidden sm:inline"/>
-                <strong>Entrega personalizada</strong> na sua mesa em até 24h após confirmação.
-            </p>
-            <div class="hero-checks flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base">
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-check-circle text-[var(--color-accent)]"></i>
-                    <span>Estado Impecável</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-check-circle text-[var(--color-accent)]"></i>
-                    <span>Preços Justos</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-check-circle text-[var(--color-accent)]"></i>
-                    <span>Entrega Rápida</span>
+    </section>
+
+    <!-- MAIN -->
+    <main id="main" class="main">
+        <div class="toolbar">
+            <div class="toolbar-left">
+                <p class="count" id="counter" aria-live="polite">Carregando...</p>
+            </div>
+            <div class="toolbar-right">
+                <button id="favFilter" class="chip chip-fav" onclick="toggleFavFilter()" aria-pressed="false">
+                    <i class="fas fa-heart"></i> Favoritos <span class="cnt" id="favCount">0</span>
+                </button>
+                <div class="sort-wrap">
+                    <i class="fas fa-sort"></i>
+                    <select id="sortSelect" onchange="renderBooks()">
+                        <option value="default">Relevância</option>
+                        <option value="price-asc">Menor Preço</option>
+                        <option value="price-desc">Maior Preço</option>
+                        <option value="alpha">A - Z</option>
+                    </select>
                 </div>
             </div>
         </div>
-    </div>
 
-    <main id="main-content" class="max-w-7xl mx-auto px-4 py-6 sm:py-10">
-        <header class="mb-6">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <div>
-                    <p id="counter" class="text-sm font-medium" style="color: var(--color-text-muted);" aria-live="polite">Carregando...</p>
-                </div>
-                <div class="flex items-center gap-3 w-full sm:w-auto">
-                    <button id="favoritesFilter" onclick="toggleFavoritesFilter()" class="filter-chip flex-1 sm:flex-initial" aria-pressed="false">
-                        <i class="fas fa-heart text-red-500"></i>
-                        <span>Favoritos</span>
-                        <span class="count" id="favoritesCount">0</span>
-                    </button>
-                    <div class="flex items-center gap-2 px-3 py-2 rounded-lg border flex-1 sm:flex-initial" style="background: var(--color-surface); border-color: var(--color-border);">
-                        <i class="fas fa-sort text-xs" style="color: var(--color-text-muted);"></i>
-                        <select id="sortSelect" onchange="renderBooks()" class="bg-transparent text-sm font-medium outline-none cursor-pointer w-full" style="color: var(--color-text);">
-                            <option value="default">Relevância</option>
-                            <option value="price-asc">Menor Preço</option>
-                            <option value="price-desc">Maior Preço</option>
-                            <option value="alpha">A - Z</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="search-container mb-6">
+        <div class="search-box">
             <input type="search" id="searchInput" placeholder="Pesquise por título, gênero ou autor..." autocomplete="off">
-            <i class="fas fa-search search-icon"></i>
-            <button class="clear-btn" id="clearSearch" onclick="clearSearch()" aria-label="Limpar">
-                <i class="fas fa-times text-xs"></i>
-            </button>
+            <i class="fas fa-search s-icon"></i>
+            <button class="search-clear" id="clearSearch" onclick="clearSearch()" aria-label="Limpar"><i class="fas fa-times" style="font-size:0.6rem;"></i></button>
         </div>
 
-        <div class="filters-wrapper mb-8">
-            <button class="filter-nav-btn prev" id="filterPrev" onclick="scrollFilters(-1)" aria-label="Anterior">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="filters-container">
-                <div id="genreFilters" class="filters-scroll"></div>
-            </div>
-            <button class="filter-nav-btn next" id="filterNext" onclick="scrollFilters(1)" aria-label="Próximo">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+        <div class="chips-wrapper">
+            <button class="chip-nav prev" id="chipPrev" onclick="scrollChips(-1)"><i class="fas fa-chevron-left"></i></button>
+            <div class="chips-scroll" id="chipsScroll"></div>
+            <button class="chip-nav next" id="chipNext" onclick="scrollChips(1)"><i class="fas fa-chevron-right"></i></button>
         </div>
 
-        <div id="bookGrid" class="grid grid-cols-1 min-[375px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6" role="list"></div>
+        <div class="grid" id="bookGrid" role="list"></div>
 
-        <div id="emptyState" class="empty-state hidden">
+        <div class="empty" id="emptyState" style="display:none;">
             <i class="fas fa-search"></i>
-            <h2 class="text-xl font-bold mb-2" style="color: var(--color-primary);">Nenhum livro encontrado</h2>
-            <p style="color: var(--color-text-muted);">Tente ajustar os filtros ou buscar por outros termos.</p>
-            <button onclick="clearAllFilters()" class="mt-4 px-6 py-2 rounded-lg font-medium transition text-white hover:scale-105" style="background: var(--color-accent);">
-                Limpar filtros
-            </button>
+            <h2>Nenhum livro encontrado</h2>
+            <p>Tente ajustar os filtros ou buscar por outros termos.</p>
+            <button onclick="clearAll()">Limpar filtros</button>
         </div>
     </main>
 
-    <footer class="py-8 mt-12 border-t" style="border-color: var(--color-border); background: var(--color-surface);">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-sm" style="color: var(--color-text-muted);">
-                <i class="fas fa-book-reader mr-2"></i>
-                Acervo Literário &copy; <span id="currentYear"></span> — Rodrigo Hang — Gaspar, SC
-            </p>
-            <p class="text-xs mt-2" style="color: var(--color-text-muted);">
-                Livros usados com qualidade • Entrega na empresa
-            </p>
-        </div>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p><i class="fas fa-book-reader" style="margin-right:6px;"></i>Acervo Literário &copy; <span id="yr"></span> — Rodrigo Hang — Gaspar, SC</p>
+        <p>Livros usados com qualidade · Entrega na empresa</p>
     </footer>
 
-    <div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()"></div>
-    <div id="modal" class="modal-content" role="dialog" aria-modal="true">
-        <button class="modal-close" onclick="closeModal()" aria-label="Fechar">
-            <i class="fas fa-times"></i>
-        </button>
-    
-        <div class="flex flex-col md:flex-row h-full md:max-h-[85vh] overflow-hidden">
-            <div class="md:w-5/12 h-64 md:h-auto shrink-0 relative" style="background: var(--color-surface-elevated);">
-                <img id="modalImg" class="w-full h-full object-cover" alt="">
-                <button id="modalFavoriteBtn" class="favorite-btn" style="opacity: 1; transform: scale(1);">
-                    <i class="far fa-heart"></i>
-                </button>
+    <!-- BOOK MODAL -->
+    <div id="mBg" class="modal-bg" onclick="closeModal()"></div>
+    <div id="mPanel" class="modal-panel" role="dialog" aria-modal="true">
+        <button class="modal-close" onclick="closeModal()" aria-label="Fechar"><i class="fas fa-times" style="font-size:0.75rem;"></i></button>
+        <div class="modal-inner">
+            <div class="modal-img-wrap">
+                <img id="mImg" alt="">
+                <button id="mFavBtn" class="modal-fav-btn"><i class="far fa-heart"></i></button>
             </div>
-            
-            <div class="md:w-7/12 p-6 sm:p-8 flex flex-col overflow-y-auto">
-                <div id="modalGenreTags" class="genre-tags mb-3"></div>
-                <h2 id="modalTitle" class="font-display text-2xl sm:text-3xl font-bold mb-4" style="color: var(--color-primary);"></h2>
-                
-                <div class="price-tag mb-6" id="modalPriceContainer"></div>
-                
-                <div class="book-description mb-6 flex-grow" id="modalDesc"></div>
-                
-                <a id="modalWhatsapp" href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-btn mt-auto">
-                    <i class="fab fa-whatsapp text-lg"></i>
-                    <span>Quero Comprar</span>
-                </a>
+            <div class="modal-body">
+                <div class="modal-genres" id="mGenres"></div>
+                <h2 class="modal-title" id="mTitle"></h2>
+                <div class="modal-price" id="mPrice"></div>
+                <div class="book-desc" id="mDesc"></div>
+                <a id="mWa" href="#" target="_blank" rel="noopener noreferrer" class="wa-cta"><i class="fab fa-whatsapp" style="font-size:1.125rem;"></i> Quero Comprar</a>
             </div>
         </div>
     </div>
 
-    <div id="paymentBackdrop" class="modal-backdrop" onclick="closePaymentInfo()"></div>
-    <div id="paymentModal" class="modal-content" style="max-width: 28rem; max-height: auto; overflow-y: auto;" role="dialog" aria-modal="true">
-        <div class="p-6 sm:p-8">
-            <h2 class="font-display text-2xl font-bold mb-6 text-center" style="color: var(--color-primary);">
-                <i class="fas fa-wallet mr-2" style="color: var(--color-accent);"></i>
-                Formas de Pagamento
-            </h2>
-            
-            <div class="payment-method">
-                <i class="fas fa-qrcode"></i>
+    <!-- PAYMENT MODAL -->
+    <div id="payBg" class="modal-bg" onclick="closePayment()"></div>
+    <div id="payModal" class="info-modal">
+        <div class="info-modal-body">
+            <h2 class="info-modal-title"><i class="fas fa-wallet"></i>Formas de Pagamento</h2>
+            <div class="pay-method">
+                <i class="fas fa-qrcode pay-method-icon"></i>
                 <div>
                     <h4>Pix</h4>
-                    <p>Transferência instantânea. Após copiar a chave, me envie o comprovante pelo WhatsApp.</p>
-                    <button onclick="copyPix()" class="mt-2 text-sm font-semibold flex items-center gap-2 hover:underline transition" style="color: var(--color-accent);">
-                        <i class="fas fa-copy"></i> Copiar chave: 58242143000190
-                    </button>
+                    <p>Transferência instantânea. Após o pagamento, me envie o comprovante pelo WhatsApp para confirmar.</p>
+                    <button class="pix-copy-btn" onclick="copyPix()"><i class="fas fa-copy"></i> Copiar chave: 58242143000190</button>
+                    <div class="qr-container">
+                        <img id="qrCodeImg" alt="QR Code Pix" src="">
+                        <p class="qr-label">Escaneie com o app do seu banco</p>
+                    </div>
                 </div>
             </div>
-            
-            <div class="payment-method">
-                <i class="fas fa-money-bill-wave"></i>
+            <div class="pay-method">
+                <i class="fas fa-money-bill-wave pay-method-icon"></i>
                 <div>
                     <h4>Dinheiro</h4>
-                    <p>Pagamento em espécie no momento da entrega do livro na sua mesa.</p>
+                    <p>Pagamento em espécie. Combine comigo pelo WhatsApp para acertar antes da entrega.</p>
                 </div>
             </div>
-            
-            <div class="payment-method">
-                <i class="fas fa-credit-card"></i>
-                <div>
-                    <h4>Cartão (Débito/Crédito/Flash)</h4>
-                    <p><strong>Importante:</strong> Preciso levar a maquininha até a empresa. Me avise com antecedência para ter o equipamento disponível no dia da entrega.</p>
-                </div>
-            </div>
-
-            <div class="mt-6 p-4 rounded-lg text-center text-sm" style="background: rgba(201, 162, 39, 0.1); color: var(--color-text);">
-                <i class="fas fa-lightbulb mr-2" style="color: var(--color-accent);"></i>
-                O pagamento confirma sua reserva e garante o livro!
-            </div>
-            
-            <button onclick="closePaymentInfo()" class="w-full mt-6 py-3 rounded-lg font-medium transition hover:font-semibold" style="background: var(--color-primary); color: white;">
-                Entendi
-            </button>
+            <div class="info-tip"><i class="fas fa-lightbulb"></i> O pagamento antecipado confirma sua reserva e garante o livro!</div>
+            <button class="info-close-btn" onclick="closePayment()">Entendi</button>
         </div>
     </div>
 
-    <div id="howItWorksBackdrop" class="modal-backdrop" onclick="closeHowItWorks()"></div>
-    <div id="howItWorksModal" class="modal-content" style="max-width: 28rem; max-height: auto; overflow-y: auto;" role="dialog" aria-modal="true">
-        <div class="p-6 sm:p-8">
-            <h2 class="font-display text-2xl font-bold mb-8 text-center" style="color: var(--color-primary);">
-                <i class="fas fa-shopping-bag mr-2" style="color: var(--color-accent);"></i>
-                Como Comprar
-            </h2>
-            
-            <ol class="space-y-6 relative">
-                <div class="absolute left-4 top-8 bottom-8 w-0.5" style="background: var(--color-border);"></div>
-                
-                <li class="flex gap-4 relative">
-                    <div class="h-8 w-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0 shadow-sm z-10 text-white" style="background: var(--color-accent);">1</div>
+    <!-- HOW IT WORKS MODAL -->
+    <div id="hiwBg" class="modal-bg" onclick="closeHIW()"></div>
+    <div id="hiwModal" class="info-modal">
+        <div class="info-modal-body">
+            <h2 class="info-modal-title"><i class="fas fa-shopping-bag"></i>Como Comprar</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num s1">1</div>
                     <div>
-                        <h3 class="font-bold" style="color: var(--color-primary);">Escolha o livro</h3>
-                        <p class="text-sm mt-1" style="color: var(--color-text-muted);">Navegue pelo catálogo e clique em "Quero Comprar" para me chamar no WhatsApp.</p>
+                        <h3>Escolha o livro</h3>
+                        <p>Navegue pelo catálogo e clique em "Quero Comprar" para me chamar no WhatsApp.</p>
                     </div>
-                </li>
-                
-                <li class="flex gap-4 relative">
-                    <div class="h-8 w-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0 shadow-sm z-10 text-white" style="background: var(--color-success);">2</div>
+                </div>
+                <div class="step">
+                    <div class="step-num s2">2</div>
                     <div>
-                        <h3 class="font-bold" style="color: var(--color-primary);">Combine o pagamento</h3>
-                        <p class="text-sm mt-1" style="color: var(--color-text-muted);">Pix, dinheiro ou cartão. O pagamento garante sua reserva.</p>
+                        <h3>Pague antecipadamente</h3>
+                        <p>Via Pix ou dinheiro. O pagamento confirma a reserva e deve ser realizado antes da entrega.</p>
                     </div>
-                </li>
-                
-                <li class="flex gap-4 relative">
-                    <div class="h-8 w-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0 shadow-sm z-10 text-white" style="background: var(--color-primary);">3</div>
+                </div>
+                <div class="step">
+                    <div class="step-num s3">3</div>
                     <div>
-                        <h3 class="font-bold" style="color: var(--color-primary);">Receba na sua mesa</h3>
-                        <p class="text-sm mt-1" style="color: var(--color-text-muted);">Entrego pessoalmente no dia útil seguinte ao pagamento.</p>
+                        <h3>Receba na empresa</h3>
+                        <p>Combinamos a entrega: o livro pode ficar na <strong>portaria para retirada</strong> ou já estar <strong>na sua mesa</strong> quando você chegar.</p>
                     </div>
-                </li>
-            </ol>
-            
-            <button onclick="closeHowItWorks()" class="w-full mt-8 py-3 rounded-lg font-medium transition hover:font-semibold" style="background: var(--color-primary); color: white;">
-                Vamos lá!
-            </button>
+                </div>
+            </div>
+            <div class="return-policy">
+                <h4><i class="fas fa-shield-alt" style="color:var(--accent);margin-right:6px;"></i>Política de Devolução</h4>
+                <p>Não ficou satisfeito? Devolva em até <strong>5 horas</strong> após receber e o valor será reembolsado integralmente. Após esse prazo, devoluções não são aceitas.</p>
+            </div>
+            <button class="info-close-btn" onclick="closeHIW()">Vamos lá!</button>
         </div>
     </div>
 
-    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+    <!-- TOAST -->
+    <div class="toasts" id="toasts" aria-live="polite"></div>
 
-    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()" aria-label="Voltar ao topo">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
+    <!-- SCROLL TO TOP -->
+    <button class="go-top" id="goTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
     <script>
-        // ===== LISTA DE LIVROS =====
-        // COLE SUA LISTA DE LIVROS AQUI DENTRO DOS COLCHETES
+        const QR_SRC = "data:image/jpeg;base64,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";
+        // ===== BOOKS DATA =====
         const books = [
             { t: "Box Machado de Assis - Coleção Completa", g: ["Clássicos", "Literatura Brasileira"], p: "145,00", v: 145, op: 289.00, q: "box machado de assis obra completa capa dura", d: "Oportunidade para sua biblioteca pessoal!\n\nVendo Box Premium do mestre Machado de Assis, contendo 11 obras clássicas em edições luxuosas com capa dura.\n\nOs livros estão impecáveis, praticamente intocados, sem marcas de uso, dobras ou grifos — ideais para quem busca qualidade de colecionador.\n\n📚 Conteúdo do Box:\n• Dom Casmurro\n• Memórias Póstumas de Brás Cubas\n• Quincas Borba\n• Helena\n• Iaiá Garcia\n• Ressurreição\n• A Mão e a Luva\n• Esaú e Jacó\n• Memorial de Aires\n• Papéis Avulsos\n• Várias Histórias\n\n✨ Bônus: Biografia detalhada do autor.\n\n📸 Posso encaminhar fotos reais e tirar qualquer dúvida por chat.", img: "https://images.tcdn.com.br/img/img_prod/1323385/box_machado_de_assis_11_livros_capa_dura_biografia_do_autor_17958_2_01d68758960ec216bd68b4445a9ed3ff.jpg" },
             { t: "Box Trilogia Tempest - Julie Cross", g: ["Sci-Fi", "Viagem no Tempo"], p: "65,00", v: 65, op: 139.00, q: "tempest julie cross box trilogia", d: "Para fãs de ficção científica, viagem no tempo e aventura!\n\nVendo o box completo da trilogia Tempest, escrita por Julie Cross.\n\n📚 Volumes inclusos:\n• Tempest\n• Vortex\n• Timestorm\n\n📖 Estado de conservação:\nOs livros estão impecáveis, praticamente intocados, sem marcas de uso, orelhas ou grifos.\n\n⚠️ Observação:\nA embalagem externa (box) é de papel cartão e possui pequenos rasgos nos cantos, mas cumpre perfeitamente o papel de proteger e organizar as obras.\n\n📸 Posso encaminhar fotos reais (inclusive dos detalhes no box) e tirar qualquer dúvida por chat.", img: "https://m.media-amazon.com/images/I/71cQQxenhoL._SY342_.jpg" },
@@ -1151,593 +913,268 @@
             { t: "Box Trilogia dos Príncipes", g: ["Romance", "Histórico"], p: "60,00", v: 60, op: 120.00, q: "box trilogia dos principes elizabeth hoyt record", d: "A aclamada Trilogia dos Príncipes completa em um Box exclusivo de luxo.\n\nElizabeth Hoyt entrega romances de época cheios de sensualidade, intrigas e personagens inesquecíveis.\n\n📚 Conteúdo do Box:\n• O Príncipe Corvo\n• O Príncipe Leopardo\n• O Príncipe Serpente\n\n📖 Estado:\nSeminovo / Impecável.\n\n✨ Detalhes:\nO box e os livros estão em perfeito estado, sem marcas de uso ou amarelamento.\n\n🎁 Diferencial:\nAcompanha os 3 marcadores de página originais e temáticos da coleção. Item de colecionador.\n\n📸 Posso encaminhar fotos reais e tirar qualquer dúvida por chat.", img: "https://m.media-amazon.com/images/I/81Lh0wG33lS._AC_UF1000,1000_QL80_.jpg" }
         ];
 
-        // ===== ESTADO =====
-        let favorites = JSON.parse(localStorage.getItem('seboFavorites') || '[]');
+        // ===== STATE =====
+        let favorites = JSON.parse(localStorage.getItem('seboFav2') || '[]');
         let activeGenres = [];
-        let showOnlyFavorites = false;
-        let currentTheme = localStorage.getItem('seboTheme') || 'light';
+        let showFavs = false;
+        let theme = localStorage.getItem('seboTheme2') || 'light';
 
-        // ===== ELEMENTOS =====
+        // ===== REFS =====
         const grid = document.getElementById('bookGrid');
-        const counter = document.getElementById('counter');
-        const searchInput = document.getElementById('searchInput');
-        const clearSearchBtn = document.getElementById('clearSearch');
-        const emptyState = document.getElementById('emptyState');
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        const genreFiltersContainer = document.getElementById('genreFilters');
+        const counterEl = document.getElementById('counter');
+        const searchEl = document.getElementById('searchInput');
+        const clearEl = document.getElementById('clearSearch');
+        const emptyEl = document.getElementById('emptyState');
+        const goTopEl = document.getElementById('goTop');
+        const chipsEl = document.getElementById('chipsScroll');
 
-        // ===== INICIALIZAÇÃO =====
+        // ===== INIT =====
         document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
-            applyTheme(currentTheme);
-            renderGenreFilters();
+            document.getElementById('yr').textContent = new Date().getFullYear();
+            document.getElementById('qrCodeImg').src = QR_SRC;
+            applyTheme(theme);
+            renderChips();
             renderBooks();
-            updateFavoritesCount();
-            setupEventListeners();
+            updateFavCount();
+            setupListeners();
         });
 
-        // ===== EVENT LISTENERS =====
-        function setupEventListeners() {
-            let searchTimeout;
-            searchInput.addEventListener('input', () => {
-                clearTimeout(searchTimeout);
-                clearSearchBtn.classList.toggle('visible', searchInput.value.length > 0);
-                searchTimeout = setTimeout(renderBooks, 150);
-            });
+        function setupListeners() {
+            let t;
+            searchEl.addEventListener('input', () => { clearTimeout(t); clearEl.classList.toggle('show', searchEl.value.length > 0); t = setTimeout(renderBooks, 150); });
             window.addEventListener('scroll', () => {
-                const navbar = document.querySelector('.navbar');
-                navbar.classList.toggle('scrolled', window.scrollY > 10);
-                scrollToTopBtn.classList.toggle('visible', window.scrollY > 400);
+                document.querySelector('.navbar').classList.toggle('scrolled', scrollY > 10);
+                goTopEl.classList.toggle('show', scrollY > 400);
             }, { passive: true });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    closeModal();
-                    closePaymentInfo();
-                    closeHowItWorks();
-                    const menu = document.getElementById('mobileMenu');
-                    if (menu) menu.classList.remove('menu-open');
-                }
-            });
-            window.addEventListener('resize', updateFilterNavigation);
-            
-            // Adiciona listener para scroll manual na lista de filtros
-            const genreFilters = document.getElementById('genreFilters');
-            if(genreFilters){
-                genreFilters.addEventListener('scroll', () => {
-                    window.requestAnimationFrame(updateFilterNavigation);
-                });
-            }
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closePayment(); closeHIW(); closeMobileMenu(); } });
+            window.addEventListener('resize', updateChipNav);
+            chipsEl.addEventListener('scroll', () => requestAnimationFrame(updateChipNav));
         }
 
-        // ===== TEMA =====
-        function toggleTheme() {
-            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-            applyTheme(currentTheme);
-            localStorage.setItem('seboTheme', currentTheme);
+        // ===== THEME =====
+        function toggleTheme() { theme = theme === 'light' ? 'dark' : 'light'; applyTheme(theme); localStorage.setItem('seboTheme2', theme); }
+        function applyTheme(t) {
+            document.documentElement.setAttribute('data-theme', t);
+            const ic = t === 'dark' ? 'fa-sun' : 'fa-moon';
+            document.getElementById('themeIcon').className = 'fas ' + ic;
+            const m = document.getElementById('themeIconMob'); if (m) m.className = 'fas ' + ic;
         }
 
-        function applyTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            const icon = theme === 'dark' ? 'fa-sun' : 'fa-moon';
-            document.getElementById('themeIcon').className = `fas ${icon}`;
-            const mobileIcon = document.getElementById('themeIconMobile');
-            if (mobileIcon) mobileIcon.className = `fas ${icon}`;
-        }
+        // ===== UTILS =====
+        function norm(s) { return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
 
-        // ===== NORMALIZAÇÃO =====
-        function normalizeText(text) {
-            return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-        }
-
-        // ===== GÊNEROS =====
+        // ===== GENRES =====
         function getGenres() {
-            const genreCount = {};
-            books.filter(b => !b.s).forEach(book => {
-                book.g.forEach(genre => {
-                    genreCount[genre] = (genreCount[genre] || 0) + 1;
-                });
-            });
-            return Object.entries(genreCount).sort((a, b) => b[1] - a[1]);
+            const c = {};
+            books.filter(b => !b.s).forEach(b => b.g.forEach(g => c[g] = (c[g]||0)+1));
+            return Object.entries(c).sort((a,b) => b[1]-a[1]);
         }
-
-        function renderGenreFilters() {
+        function renderChips() {
             const genres = getGenres();
-            const availableBooks = books.filter(b => !b.s);
-            
-            genreFiltersContainer.innerHTML = `
-                <button class="filter-chip ${activeGenres.length === 0 ? 'active' : ''}" onclick="setGenreFilter(null)">
-                    <i class="fas fa-layer-group"></i>
-                    <span>Todos</span>
-                    <span class="count">${availableBooks.length}</span>
-                </button>
-                ${genres.map(([genre, count]) => `
-                    <button class="filter-chip ${activeGenres.includes(genre) ? 'active' : ''}" onclick="setGenreFilter('${genre.replace(/'/g, "\\'")}')">
-                        <span>${genre}</span>
-                        <span class="count">${count}</span>
-                    </button>
-                `).join('')}
-            `;
-            setTimeout(updateFilterNavigation, 100);
+            const avail = books.filter(b => !b.s).length;
+            chipsEl.innerHTML = `<button class="chip ${activeGenres.length===0?'active':''}" onclick="setGenre(null)"><i class="fas fa-layer-group" style="font-size:0.75rem;"></i> Todos <span class="cnt">${avail}</span></button>` +
+                genres.map(([g,c]) => `<button class="chip ${activeGenres.includes(g)?'active':''}" onclick="setGenre('${g.replace(/'/g,"\\'")}')">${g} <span class="cnt">${c}</span></button>`).join('');
+            setTimeout(updateChipNav, 100);
         }
+        function setGenre(g) {
+            if (!g) activeGenres = [];
+            else { const i = activeGenres.indexOf(g); i > -1 ? activeGenres.splice(i,1) : activeGenres.push(g); }
+            renderChips(); renderBooks();
+        }
+        function updateChipNav() {
+            const s = chipsEl, p = document.getElementById('chipPrev'), n = document.getElementById('chipNext');
+            if (s.scrollWidth <= s.clientWidth) { p.classList.remove('show'); n.classList.remove('show'); return; }
+            p.classList.toggle('show', s.scrollLeft > 1);
+            n.classList.toggle('show', s.scrollLeft < s.scrollWidth - s.clientWidth - 1);
+        }
+        function scrollChips(d) { chipsEl.scrollBy({left: d*300, behavior:'smooth'}); setTimeout(updateChipNav, 350); }
 
-        function setGenreFilter(genre) {
-            if (genre === null) {
-                activeGenres = [];
-            } else {
-                const idx = activeGenres.indexOf(genre);
-                if (idx > -1) {
-                    activeGenres.splice(idx, 1);
-                } else {
-                    activeGenres.push(genre);
-                }
-            }
-            renderGenreFilters();
+        // ===== FAVORITES =====
+        function toggleFav(idx, e) {
+            if (e) { e.stopPropagation(); e.preventDefault(); }
+            const i = favorites.indexOf(idx);
+            i > -1 ? favorites.splice(i,1) : favorites.push(idx);
+            localStorage.setItem('seboFav2', JSON.stringify(favorites));
+            updateFavCount();
+            toast(i > -1 ? 'Removido dos favoritos' : 'Adicionado aos favoritos', i > -1 ? '' : 'ok');
+            const btn = document.querySelector(`[data-fi="${idx}"]`);
+            if (btn) { btn.classList.toggle('active', favorites.includes(idx)); btn.querySelector('i').className = favorites.includes(idx) ? 'fas fa-heart' : 'far fa-heart'; }
+            if (showFavs) renderBooks();
+        }
+        function updateFavCount() { document.getElementById('favCount').textContent = favorites.length; }
+        function toggleFavFilter() {
+            showFavs = !showFavs;
+            const el = document.getElementById('favFilter');
+            el.classList.toggle('active', showFavs);
+            el.setAttribute('aria-pressed', showFavs);
             renderBooks();
         }
 
-        // ===== NAVEGAÇÃO DOS FILTROS (CORRIGIDO) =====
-        function updateFilterNavigation() {
-            const scrollElement = document.getElementById('genreFilters');
-            const prevBtn = document.getElementById('filterPrev');
-            const nextBtn = document.getElementById('filterNext');
-            
-            if (!scrollElement) return;
-
-            // Margem de erro para densidade de pixels
-            const maxScroll = scrollElement.scrollWidth - scrollElement.clientWidth - 1;
-            
-            // Se cabe tudo na tela, esconde as setas
-            if (scrollElement.scrollWidth <= scrollElement.clientWidth) {
-                prevBtn.classList.remove('visible');
-                nextBtn.classList.remove('visible');
-                return;
-            }
-
-            prevBtn.classList.toggle('visible', scrollElement.scrollLeft > 1);
-            nextBtn.classList.toggle('visible', scrollElement.scrollLeft < maxScroll);
-        }
-
-        function scrollFilters(direction) {
-            const scrollElement = document.getElementById('genreFilters');
-            const scrollAmount = 300;
-            
-            scrollElement.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
-            
-            setTimeout(updateFilterNavigation, 350);
-        }
-
-        // ===== FAVORITOS =====
-        function toggleFavorite(index, event) {
-            if (event) {
-                event.stopPropagation();
-                event.preventDefault();
-            }
-            
-            const idx = favorites.indexOf(index);
-            if (idx > -1) {
-                favorites.splice(idx, 1);
-                showToast('Removido dos favoritos');
-            } else {
-                favorites.push(index);
-                showToast('Adicionado aos favoritos', 'success');
-            }
-            
-            localStorage.setItem('seboFavorites', JSON.stringify(favorites));
-            updateFavoritesCount();
-            
-            const btn = document.querySelector(`[data-favorite-index="${index}"]`);
-            if (btn) {
-                btn.classList.toggle('active', favorites.includes(index));
-                btn.querySelector('i').className = favorites.includes(index) ? 'fas fa-heart' : 'far fa-heart';
-            }
-            
-            if (showOnlyFavorites) renderBooks();
-        }
-
-        function updateFavoritesCount() {
-            document.getElementById('favoritesCount').textContent = favorites.length;
-        }
-
-        function toggleFavoritesFilter() {
-            showOnlyFavorites = !showOnlyFavorites;
-            document.getElementById('favoritesFilter').classList.toggle('active', showOnlyFavorites);
-            document.getElementById('favoritesFilter').setAttribute('aria-pressed', showOnlyFavorites);
-            renderBooks();
-        }
-
-        // ===== BUSCA DE CAPAS =====
-        const coverCache = new Map();
-        async function fetchCover(query, imgElement, bookTitle) {
-            if (imgElement.dataset.customImg) {
-                applyImage(imgElement, imgElement.dataset.customImg);
-                return;
-            }
-
-            if (coverCache.has(query)) {
-                applyImage(imgElement, coverCache.get(query));
-                return;
-            }
-
+        // ===== COVERS =====
+        const cache = new Map();
+        async function fetchCover(q, img, title) {
+            if (img.dataset.ci) { applyImg(img, img.dataset.ci); return; }
+            if (cache.has(q)) { applyImg(img, cache.get(q)); return; }
             try {
-                const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=3&langRestrict=pt`);
-                const data = await res.json();
-                
-                if (data.items && data.items.length > 0) {
-                    let bestMatch = data.items[0];
-                    const normalizedTitle = normalizeText(bookTitle);
-                    
-                    for (const item of data.items) {
-                        const itemTitle = normalizeText(item.volumeInfo.title || '');
-                        if (itemTitle.includes(normalizedTitle.split(' ')[0])) {
-                            bestMatch = item;
-                            break;
-                        }
-                    }
-                    
-                    if (bestMatch.volumeInfo.imageLinks) {
-                        let url = bestMatch.volumeInfo.imageLinks.thumbnail || bestMatch.volumeInfo.imageLinks.smallThumbnail;
-                        url = url.replace('http:', 'https:').replace('&zoom=1', '&zoom=0').replace('&edge=curl', '');
-                        
-                        coverCache.set(query, url);
-                        applyImage(imgElement, url);
-                        return;
+                const r = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(q)}&maxResults=3&langRestrict=pt`);
+                const d = await r.json();
+                if (d.items?.length) {
+                    let best = d.items[0];
+                    const nt = norm(title);
+                    for (const it of d.items) { if (norm(it.volumeInfo.title||'').includes(nt.split(' ')[0])) { best = it; break; } }
+                    if (best.volumeInfo.imageLinks) {
+                        let u = (best.volumeInfo.imageLinks.thumbnail||best.volumeInfo.imageLinks.smallThumbnail).replace('http:','https:').replace('&zoom=1','&zoom=0').replace('&edge=curl','');
+                        cache.set(q, u); applyImg(img, u); return;
                     }
                 }
-                throw new Error('No image');
-            } catch (e) {
-                showPlaceholder(imgElement, bookTitle);
-            }
+                throw 0;
+            } catch { showPh(img, title); }
         }
-
-        function applyImage(imgElement, url) {
-            if (!imgElement) return;
-            imgElement.src = url;
-            imgElement.onload = () => {
-                imgElement.classList.add('loaded');
-                imgElement.parentElement?.classList.remove('skeleton');
-            };
-            imgElement.onerror = () => showPlaceholder(imgElement, imgElement.alt);
+        function applyImg(img, url) {
+            if (!img) return;
+            img.src = url;
+            img.onload = () => { img.classList.add('loaded'); const sk = img.parentElement?.querySelector('.skeleton-img'); if (sk) sk.remove(); };
+            img.onerror = () => showPh(img, img.alt);
         }
-
-        function showPlaceholder(imgElement, bookTitle) {
-            if (!imgElement) return;
-            const container = imgElement.parentElement;
-            if (container) {
-                container.classList.remove('skeleton');
-                const shortTitle = bookTitle.length > 40 ? bookTitle.substring(0, 40) + '...' : bookTitle;
-                container.innerHTML = `
-                    <div class="cover-placeholder">
-                        <i class="fas fa-book"></i>
-                        <span>${shortTitle}</span>
-                    </div>
-                `;
-            }
+        function showPh(img, title) {
+            const p = img.parentElement; if (!p) return;
+            const sk = p.querySelector('.skeleton-img'); if (sk) sk.remove();
+            const short = title.length > 35 ? title.substring(0,35)+'…' : title;
+            img.style.display = 'none';
+            const ph = document.createElement('div'); ph.className = 'cover-ph';
+            ph.innerHTML = `<i class="fas fa-book"></i><span>${short}</span>`;
+            p.appendChild(ph);
         }
+        const imgObs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { const img = e.target; fetchCover(img.dataset.q, img, img.dataset.t); imgObs.unobserve(img); } });
+        }, { rootMargin: '200px' });
 
-        // ===== INTERSECTION OBSERVER =====
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    const query = img.dataset.query;
-                    const title = img.dataset.title;
-                    if (query) {
-                        fetchCover(query, img, title);
-                        imageObserver.unobserve(img);
-                    }
+        // ===== DESCRIPTION FORMAT =====
+        function fmtDesc(text) {
+            return text.split('\n\n').filter(s=>s.trim()).map(section => {
+                let p = section.replace(/📚|✨|📖|⚠️|💰|🎁/g, '').trim();
+                if (p.match(/^(Sobre|Conteúdo|Volumes|Estado|Observação|Para quem|Diferencial|Bônus|Livros|Valor|Títulos|Nota|Detalhes)/i)) {
+                    const parts = p.split(':');
+                    if (parts.length > 1) return `<div class="sec"><span class="lbl">${parts[0].trim()}</span><br>${fmtContent(parts.slice(1).join(':').trim())}</div>`;
                 }
-            });
-        }, { rootMargin: '100px' });
-
-        // ===== FORMATAÇÃO DA DESCRIÇÃO =====
-        function formatDescription(text) {
-            const sections = text.split('\n\n');
-            let html = '';
-            
-            sections.forEach(section => {
-                if (!section.trim()) return;
-                
-                let processed = section
-                    .replace(/📚|✨|📖|⚠️|💰|🎁/g, '')
-                    .trim();
-                
-                if (processed.match(/^(Sobre|Conteúdo|Volumes|Estado|Observação|Para quem|Diferencial|Bônus|Livros|Valor|Títulos)/i)) {
-                    const parts = processed.split(':');
-                    if (parts.length > 1) {
-                        const label = parts[0].trim();
-                        const content = parts.slice(1).join(':').trim();
-                        html += `<div class="section"><span class="label">${label}</span><br>${formatContent(content)}</div>`;
-                    } else {
-                        html += `<div class="section">${formatContent(processed)}</div>`;
-                    }
-                } else {
-                    html += `<div class="section">${formatContent(processed)}</div>`;
-                }
-            });
-            
-            return html;
+                return `<div class="sec">${fmtContent(p)}</div>`;
+            }).join('');
+        }
+        function fmtContent(t) {
+            return t.replace(/•/g,'<br>•').replace(/\n/g,'<br>').replace(/"([^"]+)"/g,'<span class="hl">"$1"</span>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
         }
 
-        function formatContent(text) {
-            return text
-                .replace(/•/g, '<br>•')
-                .replace(/\n/g, '<br>')
-                .replace(/"([^"]+)"/g, '<span class="highlight">"$1"</span>')
-                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-        }
-
-        // ===== RENDERIZAÇÃO =====
+        // ===== RENDER =====
         function renderBooks() {
-            grid.innerHTML = "";
-            const searchTerm = normalizeText(searchInput.value);
-            const sortMode = document.getElementById('sortSelect').value;
-
-            let filtered = books.map((book, index) => ({ ...book, originalIndex: index }));
-
-            const soldBooks = filtered.filter(b => b.s);
-            let availableBooks = filtered.filter(b => !b.s);
-
-            if (showOnlyFavorites) {
-                availableBooks = availableBooks.filter(b => favorites.includes(b.originalIndex));
-            }
-
-            if (activeGenres.length > 0) {
-                availableBooks = availableBooks.filter(b => 
-                    activeGenres.some(genre => b.g.includes(genre))
-                );
-            }
-
-            if (searchTerm) {
-                availableBooks = availableBooks.filter(b => 
-                    normalizeText(b.t).includes(searchTerm) || 
-                    normalizeText(b.d).includes(searchTerm) ||
-                    b.g.some(genre => normalizeText(genre).includes(searchTerm))
-                );
-            }
-
-            if (sortMode === 'price-asc') availableBooks.sort((a, b) => a.v - b.v);
-            if (sortMode === 'price-desc') availableBooks.sort((a, b) => b.v - a.v);
-            if (sortMode === 'alpha') availableBooks.sort((a, b) => a.t.localeCompare(b.t));
-
-            const total = availableBooks.length;
-            counter.textContent = `${total} ${total === 1 ? 'livro disponível' : 'livros disponíveis'}`;
-            emptyState.classList.toggle('hidden', total > 0 || soldBooks.length > 0);
-            grid.classList.toggle('hidden', total === 0 && soldBooks.length === 0);
-
-            availableBooks.forEach((book, idx) => renderCard(book, idx, false));
-            
-            if (!searchTerm && activeGenres.length === 0 && !showOnlyFavorites) {
-                soldBooks.forEach((book, idx) => renderCard(book, availableBooks.length + idx, true));
-            }
+            grid.innerHTML = '';
+            const q = norm(searchEl.value);
+            const sort = document.getElementById('sortSelect').value;
+            let all = books.map((b,i) => ({...b, oi: i}));
+            const sold = all.filter(b => b.s);
+            let avail = all.filter(b => !b.s);
+            if (showFavs) avail = avail.filter(b => favorites.includes(b.oi));
+            if (activeGenres.length) avail = avail.filter(b => activeGenres.some(g => b.g.includes(g)));
+            if (q) avail = avail.filter(b => norm(b.t).includes(q) || norm(b.d).includes(q) || b.g.some(g => norm(g).includes(q)));
+            if (sort === 'price-asc') avail.sort((a,b) => a.v - b.v);
+            if (sort === 'price-desc') avail.sort((a,b) => b.v - a.v);
+            if (sort === 'alpha') avail.sort((a,b) => a.t.localeCompare(b.t));
+            counterEl.textContent = `${avail.length} ${avail.length===1?'livro disponível':'livros disponíveis'}`;
+            emptyEl.style.display = avail.length === 0 && sold.length === 0 ? '' : 'none';
+            grid.style.display = avail.length === 0 && sold.length === 0 ? 'none' : '';
+            avail.forEach((b,i) => mkCard(b, i, false));
+            if (!q && !activeGenres.length && !showFavs) sold.forEach((b,i) => mkCard(b, avail.length+i, true));
         }
 
-        function renderCard(book, idx, isSold) {
-            const isFavorite = favorites.includes(book.originalIndex);
-            let priceHtml = '';
-            if (book.op && !isSold) {
-                const discount = Math.round(((book.op - book.v) / book.op) * 100);
-                priceHtml = `
-                    <div class="flex flex-col items-start w-full">
-                        <span class="price-original text-xs mb-0.5">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
-                        <div class="flex items-center whitespace-nowrap">
-                            <span class="font-bold text-lg current-price-green mr-2 whitespace-nowrap">R$ ${book.p}</span>
-                            <span class="discount-badge text-[10px]">-${discount}%</span>
-                        </div>
-                    </div>
-                `;
-            } else {
-                priceHtml = `<span class="font-bold text-lg" style="color: ${isSold ? 'var(--color-text-muted)' : 'var(--color-accent)'}; ${isSold ? 'text-decoration: line-through;' : ''}">R$ ${book.p}</span>`;
-            }
-
+        function mkCard(book, idx, sold) {
+            const fav = favorites.includes(book.oi);
             const card = document.createElement('article');
-            card.className = `book-card ${isSold ? 'sold' : ''}`;
-            card.style.animationDelay = `${idx * 50}ms`;
+            card.className = 'card' + (sold ? ' is-sold' : '');
+            card.setAttribute('role', 'listitem');
+
+            let priceHtml;
+            if (book.op && !sold) {
+                const disc = Math.round(((book.op - book.v) / book.op) * 100);
+                priceHtml = `<div><div class="price-old">R$ ${book.op.toFixed(2).replace('.',',')}</div><div style="display:flex;align-items:center;gap:6px;"><span class="price-current">R$ ${book.p}</span><span class="discount-badge">-${disc}%</span></div></div>`;
+            } else {
+                priceHtml = `<span class="${sold?'price-old':'price-simple'}"${sold?' style="text-decoration:line-through;"':''}>R$ ${book.p}</span>`;
+            }
 
             card.innerHTML = `
-                ${isSold ? '<div class="sold-badge"><span>Vendido</span></div>' : ''}
-                <div class="book-cover skeleton">
-                    <img data-query="${book.q}" 
-                         data-title="${book.t}" 
-                         ${book.img ? `data-custom-img="${book.img}"` : ''}
-                         alt="Capa: ${book.t}" 
-                         loading="lazy">
-                    ${!isSold ? `
-                        <button class="favorite-btn ${isFavorite ? 'active' : ''}" 
-                                data-favorite-index="${book.originalIndex}"
-                                onclick="toggleFavorite(${book.originalIndex}, event)"
-                                aria-label="${isFavorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}">
-                            <i class="${isFavorite ? 'fas' : 'far'} fa-heart"></i>
-                        </button>
-                    ` : ''}
+                ${sold ? '<div class="sold-overlay"><div class="sold-stamp">Vendido</div></div>' : ''}
+                <div class="card-cover">
+                    <div class="skeleton-img"></div>
+                    <img data-q="${book.q}" data-t="${book.t}" ${book.img?`data-ci="${book.img}"`:''} alt="Capa: ${book.t}" loading="lazy">
+                    ${!sold ? `<button class="fav-btn ${fav?'active':''}" data-fi="${book.oi}" onclick="toggleFav(${book.oi},event)" aria-label="${fav?'Remover dos':'Adicionar aos'} favoritos"><i class="${fav?'fas':'far'} fa-heart"></i></button>` : ''}
                 </div>
-                <div class="p-4 sm:p-5 flex-1 flex flex-col">
-                    <div class="genre-tags mb-2">
-                        ${book.g.map(genre => `<span class="genre-tag">${genre}</span>`).join('')}
-                    </div>
-                    <h2 class="font-display font-bold text-base sm:text-lg leading-tight mt-2 mb-3 line-clamp-2" style="color: var(--color-primary);">${book.t}</h2>
-                    
-                    <div class="mt-auto pt-3 border-t flex justify-between items-center" style="border-color: var(--color-border);">
+                <div class="card-body">
+                    <div class="card-genres">${book.g.map(g=>`<span class="genre-tag">${g}</span>`).join('')}</div>
+                    <h2 class="card-title">${book.t}</h2>
+                    <div class="card-footer">
                         ${priceHtml}
-                        ${!isSold ? `
-                            <div class="h-8 w-8 rounded-full flex items-center justify-center transition" style="background: var(--color-surface-elevated);">
-                                <i class="fas fa-arrow-right text-xs" style="color: var(--color-text-muted);"></i>
-                            </div>
-                        ` : ''}
+                        ${!sold ? '<div class="card-arrow"><i class="fas fa-arrow-right"></i></div>' : ''}
                     </div>
-                </div>
-            `;
-
-            if (!isSold) {
-                card.addEventListener('click', () => openModal(book));
-                card.style.cursor = 'pointer';
-            }
-            
+                </div>`;
+            if (!sold) { card.addEventListener('click', () => openModal(book)); }
             grid.appendChild(card);
-
-            const img = card.querySelector('img');
-            if (img) imageObserver.observe(img);
-
-            requestAnimationFrame(() => {
-                setTimeout(() => card.classList.add('visible'), idx * 50);
-            });
+            const img = card.querySelector('img'); if (img) imgObs.observe(img);
+            requestAnimationFrame(() => setTimeout(() => card.classList.add('visible'), idx * 40));
         }
 
-        // ===== MODAIS =====
+        // ===== MODALS =====
         function openModal(book) {
-            const isFavorite = favorites.includes(book.originalIndex);
             closeModal();
-            
             setTimeout(() => {
-                document.getElementById('modalTitle').textContent = book.t;
-                
-                const priceContainer = document.getElementById('modalPriceContainer');
+                const fav = favorites.includes(book.oi);
+                document.getElementById('mTitle').textContent = book.t;
+                document.getElementById('mGenres').innerHTML = book.g.map(g=>`<span class="genre-tag">${g}</span>`).join('');
+                const pc = document.getElementById('mPrice');
                 if (book.op) {
-                    const discount = Math.round(((book.op - book.v) / book.op) * 100);
-                    priceContainer.innerHTML = `
-                        <div class="flex flex-col items-start w-full">
-                            <span class="price-original text-sm mb-0.5">R$ ${book.op.toFixed(2).replace('.', ',')}</span>
-                            <div class="flex items-center whitespace-nowrap">
-                                <span class="current-price-green text-2xl font-bold mr-2 whitespace-nowrap">R$ ${book.p}</span>
-                                <span class="discount-badge text-sm">-${discount}% OFF</span>
-                            </div>
-                        </div>
-                    `;
-                } else {
-                    priceContainer.innerHTML = `<span class="current-price-green text-2xl font-bold whitespace-nowrap">R$ ${book.p}</span>`;
-                }
-
-                document.getElementById('modalDesc').innerHTML = formatDescription(book.d);
-                document.getElementById('modalGenreTags').innerHTML = book.g.map(genre => 
-                    `<span class="genre-tag">${genre}</span>`
-                ).join('');
-
-                const modalImg = document.getElementById('modalImg');
-                modalImg.alt = `Capa: ${book.t}`;
-                
-                if (book.img) {
-                    modalImg.src = book.img;
-                } else if (coverCache.has(book.q)) {
-                    modalImg.src = coverCache.get(book.q);
-                } else {
-                    modalImg.src = '';
-                    fetchCover(book.q, modalImg, book.t);
-                }
-
-                const modalFavBtn = document.getElementById('modalFavoriteBtn');
-                modalFavBtn.classList.toggle('active', isFavorite);
-                modalFavBtn.querySelector('i').className = isFavorite ? 'fas fa-heart' : 'far fa-heart';
-                modalFavBtn.onclick = (e) => {
-                    toggleFavorite(book.originalIndex, e);
-                    modalFavBtn.classList.toggle('active', favorites.includes(book.originalIndex));
-                    modalFavBtn.querySelector('i').className = favorites.includes(book.originalIndex) ? 'fas fa-heart' : 'far fa-heart';
-                };
-
+                    const d = Math.round(((book.op-book.v)/book.op)*100);
+                    pc.innerHTML = `<div class="price-old">R$ ${book.op.toFixed(2).replace('.',',')}</div><div style="display:flex;align-items:center;gap:8px;margin-top:4px;"><span class="price-current">R$ ${book.p}</span><span class="discount-badge">-${d}% OFF</span></div>`;
+                } else { pc.innerHTML = `<span class="price-current">R$ ${book.p}</span>`; }
+                document.getElementById('mDesc').innerHTML = fmtDesc(book.d);
+                const img = document.getElementById('mImg');
+                img.alt = 'Capa: ' + book.t;
+                img.src = book.img || cache.get(book.q) || '';
+                if (!img.src) fetchCover(book.q, img, book.t);
+                const fb = document.getElementById('mFavBtn');
+                fb.classList.toggle('active', fav);
+                fb.querySelector('i').className = fav ? 'fas fa-heart' : 'far fa-heart';
+                fb.onclick = e => { toggleFav(book.oi, e); fb.classList.toggle('active', favorites.includes(book.oi)); fb.querySelector('i').className = favorites.includes(book.oi) ? 'fas fa-heart' : 'far fa-heart'; };
                 const msg = encodeURIComponent(`Olá Rodrigo! 📚\n\nTenho interesse no livro:\n*${book.t}*\nValor: R$ ${book.p}\n\nAinda está disponível?`);
-                document.getElementById('modalWhatsapp').href = `https://wa.me/5547991438831?text=${msg}`;
-                
-                document.getElementById('modalBackdrop').classList.add('open');
-                document.getElementById('modal').classList.add('open');
+                document.getElementById('mWa').href = `https://wa.me/5547991438831?text=${msg}`;
+                document.getElementById('mBg').classList.add('open');
+                document.getElementById('mPanel').classList.add('open');
                 document.body.style.overflow = 'hidden';
             }, 50);
         }
+        function closeModal() { document.getElementById('mBg').classList.remove('open'); document.getElementById('mPanel').classList.remove('open'); document.body.style.overflow = ''; }
 
-        function closeModal() {
-            document.getElementById('modalBackdrop').classList.remove('open');
-            document.getElementById('modal').classList.remove('open');
-            document.body.style.overflow = '';
-        }
+        function openPaymentInfo() { document.getElementById('payBg').classList.add('open'); document.getElementById('payModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closePayment() { document.getElementById('payBg').classList.remove('open'); document.getElementById('payModal').classList.remove('open'); document.body.style.overflow = ''; }
 
-        function openHowItWorks() {
-            document.getElementById('howItWorksBackdrop').classList.add('open');
-            document.getElementById('howItWorksModal').classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
+        function openHowItWorks() { document.getElementById('hiwBg').classList.add('open'); document.getElementById('hiwModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeHIW() { document.getElementById('hiwBg').classList.remove('open'); document.getElementById('hiwModal').classList.remove('open'); document.body.style.overflow = ''; }
 
-        function closeHowItWorks() {
-            document.getElementById('howItWorksBackdrop').classList.remove('open');
-            document.getElementById('howItWorksModal').classList.remove('open');
-            document.body.style.overflow = '';
-        }
+        function toggleMobileMenu() { const m = document.getElementById('mobileMenu'); m.classList.toggle('open'); const ic = document.getElementById('menuBtnIcon'); ic.className = m.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars'; }
+        function closeMobileMenu() { const m = document.getElementById('mobileMenu'); m.classList.remove('open'); document.getElementById('menuBtnIcon').className = 'fas fa-bars'; }
 
-        function openPaymentInfo() {
-            document.getElementById('paymentBackdrop').classList.add('open');
-            document.getElementById('paymentModal').classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closePaymentInfo() {
-            document.getElementById('paymentBackdrop').classList.remove('open');
-            document.getElementById('paymentModal').classList.remove('open');
-            document.body.style.overflow = '';
-        }
-
-        // ===== UTILITÁRIOS =====
+        // ===== UTILS =====
         function copyPix() {
-            navigator.clipboard.writeText("58242143000190").then(() => {
-                showToast('Chave Pix copiada!', 'success');
-            }).catch(() => {
-                const textarea = document.createElement('textarea');
-                textarea.value = '58242143000190';
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                showToast('Chave Pix copiada!', 'success');
+            navigator.clipboard.writeText('58242143000190').then(() => toast('Chave Pix copiada!','ok')).catch(() => {
+                const ta = document.createElement('textarea'); ta.value = '58242143000190'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('Chave Pix copiada!','ok');
             });
         }
+        function clearSearch() { searchEl.value = ''; clearEl.classList.remove('show'); renderBooks(); searchEl.focus(); }
+        function clearAll() { searchEl.value = ''; clearEl.classList.remove('show'); activeGenres = []; showFavs = false; document.getElementById('favFilter').classList.remove('active'); renderChips(); renderBooks(); }
 
-        function clearSearch() {
-            searchInput.value = '';
-            clearSearchBtn.classList.remove('visible');
-            renderBooks();
-            searchInput.focus();
-        }
-
-        function clearAllFilters() {
-            searchInput.value = '';
-            clearSearchBtn.classList.remove('visible');
-            activeGenres = [];
-            showOnlyFavorites = false;
-            document.getElementById('favoritesFilter').classList.remove('active');
-            document.getElementById('favoritesFilter').setAttribute('aria-pressed', 'false');
-            renderGenreFilters();
-            renderBooks();
-        }
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('menu-open');
-        }
-
-        function showToast(message, type = 'default') {
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            toast.className = `toast ${type}`;
-            toast.innerHTML = `
-                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i>
-                <span>${message}</span>
-            `;
-            container.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateX(100%)';
-                setTimeout(() => toast.remove(), 300);
-            }, 3000);
+        function toast(msg, type='') {
+            const c = document.getElementById('toasts');
+            const t = document.createElement('div'); t.className = 'toast ' + type;
+            t.innerHTML = `<i class="fas ${type==='ok'?'fa-check-circle':'fa-info-circle'}"></i><span>${msg}</span>`;
+            c.appendChild(t);
+            setTimeout(() => { t.style.opacity = '0'; t.style.transform = 'translateX(100%)'; t.style.transition = '0.3s'; setTimeout(() => t.remove(), 300); }, 3000);
         }
     </script>
 </body>
 </html>
-
-
-
-
-
-
