@@ -635,6 +635,31 @@
         .site-footer p { font-size: 0.8125rem; color: var(--text-muted); }
         .site-footer p + p { margin-top: 4px; font-size: 0.75rem; }
 
+        /* ══════════ CAUSE BANNER ══════════ */
+        .cause-banner {
+            background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+            border-bottom: 1px solid #f9a8d4;
+            padding: 1rem 1.25rem;
+        }
+        [data-theme="dark"] .cause-banner {
+            background: linear-gradient(135deg, #1a0a12, #261018);
+            border-bottom-color: #4a1930;
+        }
+        .cause-inner {
+            max-width: 1280px; margin: 0 auto;
+            display: flex; align-items: center; gap: 14px;
+        }
+        .cause-icon {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: linear-gradient(135deg, #ec4899, #f472b6);
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 1rem; flex-shrink: 0;
+        }
+        .cause-text { font-size: 0.8125rem; line-height: 1.5; color: var(--text); }
+        .cause-text strong { display: block; font-size: 0.875rem; color: #be185d; margin-bottom: 2px; }
+        [data-theme="dark"] .cause-text strong { color: #f472b6; }
+        .cause-text span { color: var(--text-secondary); }
+
         /* ══════════ PRINT ══════════ */
         @media print { .navbar,.go-top,.toasts,.fav-btn { display:none!important; } .card { break-inside:avoid; } }
     </style>
@@ -679,15 +704,27 @@
         <div class="hero-inner">
             <div class="hero-badge"><i class="fas fa-star"></i> Curadoria Pessoal</div>
             <h1>Sua Próxima Grande<br><em>Aventura</em> Começa Aqui</h1>
-            <p>Livros cuidadosamente selecionados com qualidade de colecionador. Entrega personalizada na empresa com pagamento antecipado.</p>
+            <p>Livros cuidadosamente selecionados com qualidade de colecionador. Entrega personalizada na empresa. <strong style="color:rgba(255,255,255,0.95);">Toda renda é destinada ao tratamento de fibromialgia da minha mãe.</strong></p>
             <div class="hero-features">
                 <div class="hero-feature"><i class="fas fa-gem"></i> Estado Impecável</div>
                 <div class="hero-feature"><i class="fas fa-tags"></i> Preços Justos</div>
                 <div class="hero-feature"><i class="fas fa-bolt"></i> Entrega Rápida</div>
                 <div class="hero-feature"><i class="fas fa-shield-alt"></i> Devolução em 5h</div>
+                <div class="hero-feature"><i class="fas fa-heart"></i> Causa Solidária</div>
             </div>
         </div>
     </section>
+
+    <!-- CAUSE BANNER -->
+    <div class="cause-banner">
+        <div class="cause-inner">
+            <div class="cause-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="cause-text">
+                <strong>Cada livro vendido ajuda no tratamento de fibromialgia da minha mãe.</strong>
+                <span>Os custos do tratamento são altos e sua compra faz diferença real. Obrigado por apoiar esta causa.</span>
+            </div>
+        </div>
+    </div>
 
     <!-- MAIN -->
     <main id="main" class="main">
@@ -736,7 +773,7 @@
     <!-- FOOTER -->
     <footer class="site-footer">
         <p><i class="fas fa-book-reader" style="margin-right:6px;"></i>Acervo Literário &copy; <span id="yr"></span> — Rodrigo Hang — Gaspar, SC</p>
-        <p>Livros usados com qualidade · Entrega na empresa</p>
+        <p>Livros usados com qualidade · Entrega na empresa · Renda destinada ao tratamento de fibromialgia</p>
     </footer>
 
     <!-- BOOK MODAL -->
@@ -768,7 +805,7 @@
                 <div>
                     <h4>Pix</h4>
                     <p>Transferência instantânea. Após o pagamento, me envie o comprovante pelo WhatsApp para confirmar.</p>
-                    <button class="pix-copy-btn" onclick="copyPix()"><i class="fas fa-copy"></i> Copiar chave: 58242143000190</button>
+                    <button class="pix-copy-btn" onclick="copyPix()"><i class="fas fa-copy"></i> Copiar chave: rodrigocesarhang@gmail.com</button>
                     <div class="qr-container">
                         <img id="qrCodeImg" alt="QR Code Pix" src="">
                         <p class="qr-label">Escaneie com o app do seu banco</p>
@@ -783,7 +820,8 @@
                 </div>
             </div>
             <div class="info-tip"><i class="fas fa-lightbulb"></i> O pagamento antecipado confirma sua reserva e garante o livro!</div>
-            <button class="info-close-btn" onclick="closePayment()">Entendi</button>
+            <a href="#" id="waPayment" onclick="closePayment()" target="_blank" rel="noopener noreferrer" class="wa-cta" style="margin-top:1.25rem;"><i class="fab fa-whatsapp" style="font-size:1.125rem;"></i> Combinar Pagamento</a>
+            <button class="info-close-btn" onclick="closePayment()" style="margin-top:0.5rem;">Fechar</button>
         </div>
     </div>
 
@@ -819,7 +857,8 @@
                 <h4><i class="fas fa-shield-alt" style="color:var(--accent);margin-right:6px;"></i>Política de Devolução</h4>
                 <p>Não ficou satisfeito? Devolva em até <strong>5 horas</strong> após receber e o valor será reembolsado integralmente. Após esse prazo, devoluções não são aceitas.</p>
             </div>
-            <button class="info-close-btn" onclick="closeHIW()">Vamos lá!</button>
+            <a href="#" id="waHIW" onclick="closeHIW()" target="_blank" rel="noopener noreferrer" class="wa-cta" style="margin-top:1.5rem;"><i class="fab fa-whatsapp" style="font-size:1.125rem;"></i> Tirar Dúvidas sobre Compra/Entrega</a>
+            <button class="info-close-btn" onclick="closeHIW()" style="margin-top:0.5rem;">Fechar</button>
         </div>
     </div>
 
@@ -1150,10 +1189,10 @@
         }
         function closeModal() { document.getElementById('mBg').classList.remove('open'); document.getElementById('mPanel').classList.remove('open'); document.body.style.overflow = ''; }
 
-        function openPaymentInfo() { document.getElementById('payBg').classList.add('open'); document.getElementById('payModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function openPaymentInfo() { document.getElementById('waPayment').href = 'https://wa.me/5547991438831?text=' + encodeURIComponent('Olá Rodrigo! 💰\n\nVim pela página do Acervo Literário e gostaria de combinar o método de pagamento para um livro.\n\nPode me ajudar?'); document.getElementById('payBg').classList.add('open'); document.getElementById('payModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
         function closePayment() { document.getElementById('payBg').classList.remove('open'); document.getElementById('payModal').classList.remove('open'); document.body.style.overflow = ''; }
 
-        function openHowItWorks() { document.getElementById('hiwBg').classList.add('open'); document.getElementById('hiwModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function openHowItWorks() { document.getElementById('waHIW').href = 'https://wa.me/5547991438831?text=' + encodeURIComponent('Olá Rodrigo! 📚\n\nVim pela página do Acervo Literário e tenho uma dúvida sobre como funciona a compra e/ou entrega dos livros.\n\nPode me explicar?'); document.getElementById('hiwBg').classList.add('open'); document.getElementById('hiwModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
         function closeHIW() { document.getElementById('hiwBg').classList.remove('open'); document.getElementById('hiwModal').classList.remove('open'); document.body.style.overflow = ''; }
 
         function toggleMobileMenu() { const m = document.getElementById('mobileMenu'); m.classList.toggle('open'); const ic = document.getElementById('menuBtnIcon'); ic.className = m.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars'; }
@@ -1161,8 +1200,8 @@
 
         // ===== UTILS =====
         function copyPix() {
-            navigator.clipboard.writeText('58242143000190').then(() => toast('Chave Pix copiada!','ok')).catch(() => {
-                const ta = document.createElement('textarea'); ta.value = '58242143000190'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('Chave Pix copiada!','ok');
+            navigator.clipboard.writeText('rodrigocesarhang@gmail.com').then(() => toast('Chave Pix copiada!','ok')).catch(() => {
+                const ta = document.createElement('textarea'); ta.value = 'rodrigocesarhang@gmail.com'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('Chave Pix copiada!','ok');
             });
         }
         function clearSearch() { searchEl.value = ''; clearEl.classList.remove('show'); renderBooks(); searchEl.focus(); }
