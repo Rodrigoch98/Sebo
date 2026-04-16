@@ -1031,7 +1031,7 @@
         <button class="modal-close" onclick="closeModal()" aria-label="Fechar"><i class="fas fa-times" style="font-size:0.75rem;"></i></button>
         <div class="modal-inner">
             <div class="modal-img-wrap">
-                <img id="mImg" alt="">
+                <img id="mImg" alt="" referrerpolicy="no-referrer">
                 <button id="mFavBtn" class="modal-fav-btn"><i class="far fa-heart"></i></button>
             </div>
             <div class="modal-body">
@@ -1451,69 +1451,169 @@
         }
 
         const cache = new Map();
+        const coverSearchCache = new Map();
 
-        async function fetchCover(q, img, title) {
-            if (img.dataset.ci) {
-                applyImg(img, img.dataset.ci);
-                return;
-            }
+        function normalizeImgUrl(url) {
+            if (!url) return '';
+            return String(url)
+                .trim()
+                .replace(/^http:\/\//i, 'https://')
+                .replace('&zoom=1', '&zoom=0')
+                .replace('&edge=curl', '');
+        }
 
-            if (cache.has(q)) {
-                applyImg(img, cache.get(q));
-                return;
-            }
+        function buildCoverKey(book = {}) {
+            return [book.q || '', book.t || '', book.img || ''].join('||');
+        }
 
-            try {
-                const r = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(q)}&maxResults=3&langRestrict=pt`);
-                const d = await r.json();
+        function resetImgState(img) {
+            if (!img) return;
+            img.style.display = '';
+            img.classList.remove('loaded');
 
-                if (d.items?.length) {
-                    let best = d.items[0];
-                    const nt = norm(title);
+            const p = img.parentElement;
+            if (!p) return;
 
-                    for (const it of d.items) {
-                        if (norm(it.volumeInfo.title || '').includes(nt.split(' ')[0])) {
-                            best = it;
-                            break;
+            p.querySelectorAll('.cover-ph').forEach(el => el.remove());
+        }
+
+        async function searchGoogleCover(q, title = '') {
+            const query = (q || title || '').trim();
+            if (!query) return '';
+
+            if (!coverSearchCache.has(query)) {
+                coverSearchCache.set(query, (async () => {
+                    try {
+                        const r = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=4&langRestrict=pt`);
+                        const d = await r.json();
+
+                        if (!d.items?.length) return '';
+
+                        let best = d.items[0];
+                        const nt = norm(title || query);
+                        const firstWord = nt.split(' ')[0];
+
+                        for (const it of d.items) {
+                            const candidateTitle = norm(it.volumeInfo?.title || '');
+                            if ((firstWord && candidateTitle.includes(firstWord)) || (nt && candidateTitle.includes(nt.slice(0, 12)))) {
+                                best = it;
+                                break;
+                            }
                         }
-                    }
 
-                    if (best.volumeInfo.imageLinks) {
-                        let u = (best.volumeInfo.imageLinks.thumbnail || best.volumeInfo.imageLinks.smallThumbnail)
-                            .replace('http:', 'https:')
-                            .replace('&zoom=1', '&zoom=0')
-                            .replace('&edge=curl', '');
-                        cache.set(q, u);
-                        applyImg(img, u);
-                        return;
-                    }
-                }
+                        const links = best.volumeInfo?.imageLinks;
+                        if (!links) return '';
 
-                throw 0;
-            } catch {
-                showPh(img, title);
+                        return normalizeImgUrl(
+                            links.extraLarge ||
+                            links.large ||
+                            links.medium ||
+                            links.thumbnail ||
+                            links.smallThumbnail ||
+                            ''
+                        );
+                    } catch {
+                        return '';
+                    }
+                })());
             }
+
+            return await coverSearchCache.get(query);
+        }
+
+        function tryLoadImage(img, url) {
+            return new Promise(resolve => {
+                if (!img || !url) return resolve(false);
+
+                resetImgState(img);
+                img.referrerPolicy = 'no-referrer';
+                img.decoding = 'async';
+                img.crossOrigin = 'anonymous';
+
+                let done = false;
+                const finish = ok => {
+                    if (done) return;
+                    done = true;
+
+                    if (ok) {
+                        img.classList.add('loaded');
+                        const sk = img.parentElement?.querySelector('.skeleton-img');
+                        if (sk) sk.remove();
+                    }
+
+                    resolve(ok);
+                };
+
+                img.onload = () => finish(true);
+                img.onerror = () => finish(false);
+                img.src = url;
+
+                if (img.complete) {
+                    requestAnimationFrame(() => finish(img.naturalWidth > 0));
+                }
+            });
+        }
+
+        async function fetchCover(bookOrQuery, img, title = '') {
+            const book = typeof bookOrQuery === 'object'
+                ? { q: '', t: '', img: '', ...bookOrQuery }
+                : { q: bookOrQuery || '', t: title || '', img: img?.dataset?.ci || '' };
+
+            const key = buildCoverKey(book);
+            const cached = cache.get(key);
+
+            if (cached) {
+                const ok = await tryLoadImage(img, cached);
+                if (ok) return;
+            }
+
+            const candidates = [];
+            const directUrl = normalizeImgUrl(book.img);
+            if (directUrl) candidates.push(directUrl);
+
+            const googleUrl = await searchGoogleCover(book.q || book.t || title, book.t || title);
+            if (googleUrl) candidates.push(googleUrl);
+
+            const uniqueCandidates = [...new Set(candidates.filter(Boolean))];
+
+            for (const candidate of uniqueCandidates) {
+                const ok = await tryLoadImage(img, candidate);
+                if (ok) {
+                    cache.set(key, candidate);
+                    return;
+                }
+            }
+
+            cache.set(key, '');
+            showPh(img, book.t || title || 'Livro');
         }
 
         function applyImg(img, url) {
-            if (!img) return;
-            img.src = url;
+            if (!img || !url) return;
+            resetImgState(img);
+            img.referrerPolicy = 'no-referrer';
+            img.decoding = 'async';
+            img.crossOrigin = 'anonymous';
+            img.src = normalizeImgUrl(url);
             img.onload = () => {
                 img.classList.add('loaded');
                 const sk = img.parentElement?.querySelector('.skeleton-img');
                 if (sk) sk.remove();
             };
-            img.onerror = () => showPh(img, img.alt);
+            img.onerror = () => showPh(img, img.alt || 'Livro');
         }
 
         function showPh(img, title) {
             const p = img.parentElement;
             if (!p) return;
 
+            p.querySelectorAll('.cover-ph').forEach(el => el.remove());
+
             const sk = p.querySelector('.skeleton-img');
             if (sk) sk.remove();
 
-            const short = title.length > 35 ? title.substring(0, 35) + '…' : title;
+            const short = (title || 'Livro').length > 35 ? (title || 'Livro').substring(0, 35) + '…' : (title || 'Livro');
+            img.removeAttribute('src');
             img.style.display = 'none';
 
             const ph = document.createElement('div');
@@ -1526,7 +1626,7 @@
             entries.forEach(e => {
                 if (e.isIntersecting) {
                     const img = e.target;
-                    fetchCover(img.dataset.q, img, img.dataset.t);
+                    fetchCover({ q: img.dataset.q, t: img.dataset.t, img: img.dataset.ci || '' }, img, img.dataset.t);
                     imgObs.unobserve(img);
                 }
             });
@@ -1600,7 +1700,7 @@
                 ${sold ? '<div class="sold-overlay"><div class="sold-stamp">Vendido</div></div>' : ''}
                 <div class="card-cover">
                     <div class="skeleton-img"></div>
-                    <img data-q="${book.q}" data-t="${book.t}" ${book.img ? `data-ci="${book.img}"` : ''} alt="Capa: ${book.t}" loading="lazy">
+                    <img data-q="${book.q}" data-t="${book.t}" ${book.img ? `data-ci="${book.img}"` : ''} alt="Capa: ${book.t}" loading="lazy" referrerpolicy="no-referrer">
                     ${book.badge ? `<span class="badge-tag ${book.badge}">${book.badge === 'kit' ? '📦 Kit / Box' : '🔥 Último!'}</span>` : ''}
                     ${!sold ? `<button class="fav-btn ${fav ? 'active' : ''}" data-fi="${book.oi}" onclick="toggleFav(${book.oi},event)" aria-label="${fav ? 'Remover dos' : 'Adicionar aos'} favoritos"><i class="${fav ? 'fas' : 'far'} fa-heart"></i></button>` : ''}
                 </div>
@@ -1670,8 +1770,9 @@
 
                 const img = document.getElementById('mImg');
                 img.alt = 'Capa: ' + book.t;
-                img.src = book.img || cache.get(book.q) || '';
-                if (!img.src) fetchCover(book.q, img, book.t);
+                resetImgState(img);
+                img.removeAttribute('src');
+                fetchCover(book, img, book.t);
 
                 const fb = document.getElementById('mFavBtn');
                 fb.classList.toggle('active', fav);
