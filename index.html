@@ -1463,7 +1463,8 @@
             "império de tempestades": "https://static.cedet.com.br/produtos_imagem_principal_large/21488-525x791.jpg?v=1750275983",
             "torre do alvorecer": "https://m.media-amazon.com/images/I/91SlusjNaVL._SY342_.jpg",
             "reino de cinzas": "https://www.supermarketbrazil.com/cdn/shop/products/71oLmfNIlGL_1321x1797.jpg?v=1615494859",
-            "crepúsculo": "guia oficial ilustrado da serie: https://m.media-amazon.com/images/I/514iQOavg3L._SY342_.jpg",
+            "crepúsculo": "https://m.media-amazon.com/images/I/618fXbK+OkL._SY342_.jpg",
+            "crepúsculo: guia oficial ilustrado da serie": "https://m.media-amazon.com/images/I/514iQOavg3L._SY342_.jpg",
             "crepúsculo 10 anos": "https://m.media-amazon.com/images/I/41OytGGKWZL._SY342_.jpg",
             "lua nova": "https://m.media-amazon.com/images/I/7153D5oFumL._SY342_.jpg",
             "eclipse": "https://m.media-amazon.com/images/I/61tV9nd1R1L._SY342_.jpg",
@@ -1477,7 +1478,7 @@
             "a vingança dos sete": "https://m.media-amazon.com/images/I/91EppL9trjL._SY342_.jpg",
             "o destino da numero dez": "https://m.media-amazon.com/images/I/71epxJ7XHnL._SY342_.jpg",
             "unidos somos um": "https://m.media-amazon.com/images/I/61M8fSI51JS._SY445_SX342_ML2_.jpg",
-            "crônicas dos senhores de castelo": "o poder verdadeiro: https://m.media-amazon.com/images/I/61cDWdl7LKL._SY342_.jpg",
+            "crônicas dos senhores de castelo: o poder verdadeiro": "https://m.media-amazon.com/images/I/61cDWdl7LKL._SY342_.jpg",
             "efeito manticore": "https://m.media-amazon.com/images/I/61VSSPnJPaL._SY342_.jpg",
             "maré vermelha": "https://m.media-amazon.com/images/I/91Og-+eu-QL._SY342_.jpg",
             "renuncia": "https://m.media-amazon.com/images/I/91lQd-mxq5L._SY342_.jpg",
@@ -1517,26 +1518,110 @@
                 .join(' ');
         }
 
+        const BOOK_COVER_OVERRIDES = {
+            "Rebel — Marie Lu (Legend #4)": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhI3qpGunLhMT1HoxHDClCX-VpHuq98oFJLvXrZLoCV-ftR3_5cze9nUqY84Q9-KLe5kijftMfiF93EfEKwElg5S5MF1wke3q1g0fzkPBrtjcWjFBg_LmlJQGQXgc6Wa4rEumIMztEO6s6N/s640/R.png",
+            "Inferno — Dan Brown": "https://upload.wikimedia.org/wikipedia/pt/7/78/Inferno_livro.jpg",
+            "Origem — Dan Brown": "https://m.media-amazon.com/images/I/41OOVuBACbL._SY445_SX342_ML2_.jpg",
+            "Quatro — Veronica Roth": "https://m.media-amazon.com/images/I/91g-rulrh4L._SY342_.jpg",
+            "Ordem — Hugh Howey": "https://m.media-amazon.com/images/I/71Z-xj3AwjL._SY342_.jpg",
+            "Malorie — Josh Malerman": "https://m.media-amazon.com/images/I/81OxTl7zx1L._SY342_.jpg",
+            "Til — José de Alencar (Capa Dura)": "https://m.media-amazon.com/images/I/51vy4IJiN8L._SY342_.jpg",
+            "Reino de Cinzas — Sarah J. Maas (Trono de Vidro #7)": "https://www.supermarketbrazil.com/cdn/shop/products/71oLmfNIlGL_1321x1797.jpg?v=1615494859",
+            "Crepúsculo — Stephenie Meyer (Capa Original)": "https://m.media-amazon.com/images/I/618fXbK+OkL._SY342_.jpg",
+            "Crepúsculo — Stephenie Meyer (Edição 10 Anos)": "https://m.media-amazon.com/images/I/41OytGGKWZL._SY342_.jpg",
+            "Guia Oficial Ilustrado da Saga Crepúsculo": "https://m.media-amazon.com/images/I/514iQOavg3L._SY342_.jpg",
+            "O Poder de Seis — Pittacus Lore": "https://m.media-amazon.com/images/I/61jDGOBgkxL._SY342_.jpg",
+            "A Ascensão de Nove — Pittacus Lore": "https://m.media-amazon.com/images/I/51dZv60DeQL._SY445_SX342_ML2_.jpg",
+            "A Queda de Cinco — Pittacus Lore": "https://m.media-amazon.com/images/I/71SDI0f+n6L._SY342_.jpg",
+            "A Vingança de Sete — Pittacus Lore": "https://m.media-amazon.com/images/I/91EppL9trjL._SY342_.jpg",
+            "O Destino de Dez — Pittacus Lore": "https://m.media-amazon.com/images/I/71epxJ7XHnL._SY342_.jpg",
+            "O Poder Verdadeiro — G. Brasman e G. Norris": "https://m.media-amazon.com/images/I/61cDWdl7LKL._SY342_.jpg"
+        };
+
+        const COVER_ALIAS_LINKS = {
+            "a ascensão de nove": "https://m.media-amazon.com/images/I/51dZv60DeQL._SY445_SX342_ML2_.jpg",
+            "a ascensão dos nove": "https://m.media-amazon.com/images/I/51dZv60DeQL._SY445_SX342_ML2_.jpg",
+            "a queda de cinco": "https://m.media-amazon.com/images/I/71SDI0f+n6L._SY342_.jpg",
+            "a queda dos cinco": "https://m.media-amazon.com/images/I/71SDI0f+n6L._SY342_.jpg",
+            "a vingança de sete": "https://m.media-amazon.com/images/I/91EppL9trjL._SY342_.jpg",
+            "a vingança dos sete": "https://m.media-amazon.com/images/I/91EppL9trjL._SY342_.jpg",
+            "o poder de seis": "https://m.media-amazon.com/images/I/61jDGOBgkxL._SY342_.jpg",
+            "o poder dos seis": "https://m.media-amazon.com/images/I/61jDGOBgkxL._SY342_.jpg",
+            "o destino de dez": "https://m.media-amazon.com/images/I/71epxJ7XHnL._SY342_.jpg",
+            "o destino da numero dez": "https://m.media-amazon.com/images/I/71epxJ7XHnL._SY342_.jpg",
+            "guia oficial ilustrado da saga crepusculo": "https://m.media-amazon.com/images/I/514iQOavg3L._SY342_.jpg",
+            "crepusculo guia oficial ilustrado da serie": "https://m.media-amazon.com/images/I/514iQOavg3L._SY342_.jpg",
+            "cronicas dos senhores de castelo o poder verdadeiro": "https://m.media-amazon.com/images/I/61cDWdl7LKL._SY342_.jpg",
+            "o poder verdadeiro": "https://m.media-amazon.com/images/I/61cDWdl7LKL._SY342_.jpg",
+            "crepusculo edicao 10 anos": "https://m.media-amazon.com/images/I/41OytGGKWZL._SY342_.jpg"
+        };
+
+        const PROVIDED_COVER_EXACT = new Map(
+            Object.entries(PROVIDED_COVER_LINKS).map(([title, url]) => [toCoverKey(title), url])
+        );
+
+        const BOOK_COVER_OVERRIDES_EXACT = new Map(
+            Object.entries(BOOK_COVER_OVERRIDES).map(([title, url]) => [toCoverKey(title), url])
+        );
+
+        const COVER_ALIAS_EXACT = new Map(
+            Object.entries(COVER_ALIAS_LINKS).map(([title, url]) => [toCoverKey(title), url])
+        );
+
         const PROVIDED_COVER_ENTRIES = Object.entries(PROVIDED_COVER_LINKS)
             .map(([title, url]) => [toCoverKey(title), url])
             .sort((a, b) => b[0].length - a[0].length);
 
+        function buildCoverCandidates(title, q = '') {
+            const raw = new Set([title, q].filter(Boolean));
+            const out = [];
+            const push = (value) => {
+                const key = toCoverKey(value);
+                if (key && !out.includes(key)) out.push(key);
+            };
+
+            for (const value of raw) {
+                const base = String(value || '').trim();
+                if (!base) continue;
+
+                push(base);
+
+                const withoutParens = base.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim();
+                if (withoutParens && withoutParens !== base) push(withoutParens);
+
+                const beforeDash = base.split(/[—–]/)[0].trim();
+                if (beforeDash && beforeDash !== base) push(beforeDash);
+
+                const dashNoParens = beforeDash.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim();
+                if (dashNoParens && dashNoParens !== beforeDash) push(dashNoParens);
+
+                const parenParts = [...base.matchAll(/\(([^)]*)\)/g)].map(m => m[1].trim()).filter(Boolean);
+                for (const part of parenParts) {
+                    push(part);
+                    if (beforeDash) push(`${beforeDash} ${part}`);
+                }
+            }
+
+            return out;
+        }
+
         function resolveProvidedCover(title, q = '') {
-            const candidates = [title, q].filter(Boolean);
+            const candidateKeys = buildCoverCandidates(title, q);
 
-            for (const candidate of candidates) {
-                const key = toCoverKey(candidate);
-                if (!key) continue;
+            for (const key of candidateKeys) {
+                if (BOOK_COVER_OVERRIDES_EXACT.has(key)) return BOOK_COVER_OVERRIDES_EXACT.get(key);
+                if (COVER_ALIAS_EXACT.has(key)) return COVER_ALIAS_EXACT.get(key);
+                if (PROVIDED_COVER_EXACT.has(key)) return PROVIDED_COVER_EXACT.get(key);
+            }
 
+            for (const key of candidateKeys) {
                 const keyWords = new Set(key.split(' ').filter(Boolean));
 
                 for (const [providedKey, url] of PROVIDED_COVER_ENTRIES) {
                     if (!providedKey) continue;
 
-                    if (key === providedKey) return url;
-
                     const providedWords = providedKey.split(' ').filter(Boolean);
-                    if (providedWords.length >= 2 && (key.includes(providedKey) || providedKey.includes(key))) {
+                    if (providedWords.length >= 2 && key.includes(providedKey)) {
                         return url;
                     }
 
