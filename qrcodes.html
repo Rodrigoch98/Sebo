@@ -20,21 +20,21 @@
   --disp:'Fraunces',Georgia,serif; --body:'Outfit',system-ui,sans-serif; --tr:.24s cubic-bezier(.4,0,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
 html,body{max-width:100%;overflow-x:hidden}
 body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;background:radial-gradient(800px 460px at 10% -8%,var(--gold-soft),transparent 60%)}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
 .top{background:var(--nav);color:#fff;padding:1.7rem 1.25rem 1.5rem}
-.top-in{max-width:1180px;margin:0 auto}
+.top-in{max-width:1240px;margin:0 auto}
 .top h1{font-family:var(--disp);font-weight:700;font-size:clamp(1.5rem,4vw,2.1rem);display:flex;align-items:center;gap:.7rem;letter-spacing:-.01em}
 .top h1 .mk{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#e0b860);display:grid;place-items:center;color:#1a1410;font-size:1.15rem}
-.top p{color:#cdbfa6;margin-top:.55rem;font-size:.96rem;max-width:700px}
+.top p{color:#cdbfa6;margin-top:.55rem;font-size:.96rem;max-width:720px}
 
-.wrap{max-width:1180px;margin:0 auto;padding:1.5rem 1.25rem 4rem}
+.wrap{max-width:1240px;margin:0 auto;padding:1.5rem 1.25rem 4rem}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--sh-md);padding:1.5rem 1.6rem;margin-bottom:1.5rem;animation:fadeUp .5s both}
 .panel h2{font-family:var(--disp);font-weight:600;font-size:1.25rem;display:flex;align-items:center;gap:.55rem;margin-bottom:.4rem;letter-spacing:-.01em}
 .panel h2 i{color:var(--gold)}
@@ -42,13 +42,11 @@ a{color:inherit;text-decoration:none}
 .field{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center}
 .field label{font-weight:600;font-size:.88rem;min-width:100%}
 .field input{flex:1;min-width:240px;font-family:var(--body);font-size:1rem;padding:.9rem 1rem;border:1.5px solid var(--line);border-radius:13px;background:#fbf8f2;transition:var(--tr);color:var(--text)}
-.field input:focus{border-color:var(--gold);background:#fff}
+.field input:focus{border-color:var(--gold);background:#fff;outline:none}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;border:none;cursor:pointer;font-family:var(--body);font-weight:600;font-size:.95rem;padding:.9rem 1.3rem;border-radius:13px;transition:var(--tr)}
 .btn-primary{background:var(--gold);color:#1a130a;box-shadow:0 6px 18px rgba(184,132,47,.32)}
 .btn-primary:hover{background:var(--gold-d);transform:translateY(-2px)}
-.btn-dark{background:var(--nav);color:#fff}
-.btn-dark:hover{background:#2c2218;transform:translateY(-2px)}
 .btn-print{background:linear-gradient(135deg,var(--wine),#5e222c);color:#fff;box-shadow:0 6px 18px rgba(122,46,58,.3)}
 .btn-print:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(122,46,58,.4)}
 .btn-sm{padding:.62rem .95rem;font-size:.85rem;border-radius:11px}
@@ -65,24 +63,35 @@ a{color:inherit;text-decoration:none}
 .seg button{border:none;background:none;padding:.5rem .85rem;border-radius:8px;font-family:var(--body);font-weight:600;font-size:.82rem;color:var(--muted);cursor:pointer;transition:var(--tr)}
 .seg button.on{background:var(--gold);color:#1a130a}
 
+.searchbar{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem}
+.searchbar .sb{position:relative;flex:1;min-width:240px}
+.searchbar .sb i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--faint);font-size:.85rem}
+.searchbar input{width:100%;padding:.8rem .9rem .8rem 2.4rem;border:1.5px solid var(--line);border-radius:12px;background:#fbf8f2;font-family:var(--body);font-size:.95rem;color:var(--text)}
+.searchbar input:focus{border-color:var(--gold);background:#fff;outline:none}
+.toggle{display:inline-flex;align-items:center;gap:.5rem;font-size:.86rem;font-weight:600;color:var(--muted);cursor:pointer;user-select:none}
+.toggle input{width:18px;height:18px;accent-color:var(--gold)}
+
 .toolbar{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;justify-content:space-between;margin-bottom:1.2rem}
 .toolbar .left{color:var(--muted);font-size:.92rem;font-weight:500}
 .toolbar .left b{color:var(--text)}
 .toolbar .acts{display:flex;gap:.6rem;flex-wrap:wrap}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:1.2rem}
-.qcard{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh-sm);padding:1.2rem;display:flex;flex-direction:column;transition:var(--tr);animation:fadeUp .5s both}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:1.1rem}
+.qcard{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh-sm);padding:1.1rem;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s,border-color .2s;animation:fadeUp .4s both}
 .qcard:hover{box-shadow:var(--sh-lg);transform:translateY(-3px);border-color:var(--gold)}
-.qhead{display:flex;gap:.85rem;align-items:center;margin-bottom:1rem}
-.qhead img{width:54px;height:76px;object-fit:cover;border-radius:7px;box-shadow:var(--sh-sm);background:#eee;flex:none}
-.qhead .ti{font-family:var(--disp);font-weight:600;font-size:1.04rem;line-height:1.2;letter-spacing:-.01em}
-.qhead .au{font-size:.8rem;color:var(--muted);margin-top:1px}
-.kit-pill{display:inline-block;margin-top:.3rem;font-size:.62rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--wine);background:rgba(122,46,58,.1);padding:.14rem .55rem;border-radius:6px}
-.qbox{background:#fff;border:1px solid #f0ece6;border-radius:14px;padding:14px;display:grid;place-items:center;align-self:center;min-height:206px}
-.qbox canvas{display:block;width:178px!important;height:178px!important}
-.qbox .ld{color:var(--faint);font-size:.82rem;display:flex;align-items:center;gap:.5rem}
-.url{font-size:.72rem;color:var(--faint);word-break:break-all;margin:.85rem 0 .95rem;background:#faf7f1;border:1px dashed var(--line);border-radius:9px;padding:.5rem .65rem;line-height:1.45}
-.qactions{display:flex;gap:.55rem;margin-top:auto}
+.qcard.sold{opacity:.82}
+.qhead{display:flex;gap:.8rem;align-items:center;margin-bottom:.9rem}
+.qhead img{width:48px;height:68px;object-fit:cover;border-radius:6px;box-shadow:var(--sh-sm);background:#eee;flex:none}
+.qhead .ti{font-family:var(--disp);font-weight:600;font-size:.98rem;line-height:1.18;letter-spacing:-.01em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.qhead .au{font-size:.76rem;color:var(--muted);margin-top:1px}
+.pill{display:inline-block;margin-top:.25rem;font-size:.6rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:.12rem .5rem;border-radius:6px}
+.pill.kit{color:var(--wine);background:rgba(122,46,58,.1)}
+.pill.sold{color:#fff;background:var(--wine)}
+.qbox{background:#fff;border:1px solid #f0ece6;border-radius:14px;padding:12px;display:grid;place-items:center;align-self:center;min-height:190px;width:100%}
+.qbox canvas{display:block;width:166px!important;height:166px!important}
+.qbox .ld{color:var(--faint);font-size:.8rem;display:flex;align-items:center;gap:.5rem}
+.url{font-size:.68rem;color:var(--faint);word-break:break-all;margin:.8rem 0 .85rem;background:#faf7f1;border:1px dashed var(--line);border-radius:9px;padding:.45rem .6rem;line-height:1.4}
+.qactions{display:flex;gap:.5rem;margin-top:auto}
 .qactions .btn{flex:1}
 
 .steps{counter-reset:s;list-style:none;display:grid;gap:1rem}
@@ -97,25 +106,26 @@ a{color:inherit;text-decoration:none}
 .note i{color:var(--gold-d);margin-top:.15rem}
 .note.ok{background:#eaf6ef;border-color:#b9e0c9;color:#1d6b44}
 .note.ok i{color:var(--ok)}
+.empty{text-align:center;color:var(--muted);padding:3rem 1rem;font-size:.95rem;display:none}
 
 .print-sheet{display:none}
 @media print{
-  @page{size:A4;margin:11mm}
+  @page{size:A4;margin:10mm}
   body{background:#fff!important}
   body::before{display:none}
   .top,.wrap,.toast{display:none!important}
   .print-sheet{display:block!important}
-  .print-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7mm}
-  .pcell{border:1px solid #e2d7c6;border-radius:10px;padding:5mm 3mm 4mm;text-align:center;break-inside:avoid;page-break-inside:avoid;display:flex;flex-direction:column;align-items:center}
-  .pcell .pn{font-family:'Fraunces',serif;font-weight:700;font-size:10pt;color:#9a6c1f;align-self:flex-start;margin-bottom:1mm}
-  .pcell .pqr{width:44mm;height:44mm}
-  .pcell .pqr img{width:44mm!important;height:44mm!important;display:block}
-  .pcell .pt{font-family:'Fraunces',serif;font-weight:700;font-size:10.5pt;margin-top:3mm;line-height:1.12;color:#1a1410}
-  .pcell .pp{font-size:9pt;color:#9a6c1f;font-weight:600;margin-top:1mm}
-  .pcell .pu{font-size:6pt;color:#aaa;margin-top:1.5mm;word-break:break-all;line-height:1.25}
-  .print-head{text-align:center;margin-bottom:7mm}
-  .print-head h2{font-family:'Fraunces',serif;font-size:15pt;color:#1a1410}
-  .print-head p{font-size:9pt;color:#777;margin-top:1mm}
+  .print-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm}
+  .pcell{border:1px solid #e2d7c6;border-radius:9px;padding:4mm 2.5mm 3.5mm;text-align:center;break-inside:avoid;page-break-inside:avoid;display:flex;flex-direction:column;align-items:center}
+  .pcell .pn{font-family:'Fraunces',serif;font-weight:700;font-size:8.5pt;color:#9a6c1f;align-self:flex-start;margin-bottom:1mm}
+  .pcell .pqr{width:40mm;height:40mm}
+  .pcell .pqr img{width:40mm!important;height:40mm!important;display:block}
+  .pcell .pt{font-family:'Fraunces',serif;font-weight:700;font-size:9pt;margin-top:2mm;line-height:1.1;color:#1a1410}
+  .pcell .pp{font-size:8pt;color:#9a6c1f;font-weight:600;margin-top:.8mm}
+  .pcell .pu{font-size:5pt;color:#aaa;margin-top:1mm;word-break:break-all;line-height:1.2}
+  .print-head{text-align:center;margin-bottom:6mm}
+  .print-head h2{font-family:'Fraunces',serif;font-size:14pt;color:#1a1410}
+  .print-head p{font-size:8.5pt;color:#777;margin-top:1mm}
 }
 </style>
 </head>
@@ -124,7 +134,7 @@ a{color:inherit;text-decoration:none}
 <div class="top">
   <div class="top-in">
     <h1><span class="mk"><i class="fas fa-qrcode"></i></span> QR Codes do Acervo</h1>
-    <p>Os 10 QR Codes sorteados, cada um com um pequeno desenho do tema do livro no centro. Confirme o endereço do seu site e baixe ou imprima todos de uma vez.</p>
+    <p>Um QR Code para cada livro, com um desenho do tema no centro. Cada código abre a página de venda do livro. Use a busca para achar um título, ou imprima/baixe em PDF todos de uma vez.</p>
   </div>
 </div>
 
@@ -132,13 +142,13 @@ a{color:inherit;text-decoration:none}
 
   <div class="panel">
     <h2><i class="fas fa-link"></i> 1. Endereço do seu site</h2>
-    <p class="hint">Já preenchi com o endereço do seu acervo. Se publicar o <b>livro.html</b> em outra pasta, ajuste aqui (sem barra no final) e os QR Codes se recalculam.</p>
+    <p class="hint">Já preenchi com o endereço do acervo. Cada QR aponta para a página <b>bookstore</b> do livro. Se publicar em outra pasta, ajuste aqui (sem barra no final).</p>
     <div class="field">
-      <label for="base">URL base onde o livro.html está publicado</label>
+      <label for="base">URL base do acervo</label>
       <input id="base" type="text" spellcheck="false" placeholder="https://rodrigoch98.github.io/Sebo">
       <button class="btn btn-primary" onclick="applyBase()"><i class="fas fa-rotate"></i> Atualizar</button>
     </div>
-    <div class="note ok"><i class="fas fa-circle-check"></i><div>Pré-configurado para <b>https://rodrigoch98.github.io/Sebo</b>. Cada QR aponta para <b>.../Sebo/livro.html?id=...</b> do livro correspondente.</div></div>
+    <div class="note ok"><i class="fas fa-circle-check"></i><div>Os QR levam para <b>https://rodrigoch98.github.io/Sebo/bookstore?id=...</b> do livro correspondente.</div></div>
     <div class="meta">
       <span class="chip"><i class="fab fa-whatsapp"></i> (47) 99143-8831</span>
       <span class="chip"><i class="fas fa-qrcode"></i> Pix: <span id="pixKeyChip"></span> <button onclick="copyText(CONFIG.pixKey,'Chave Pix copiada!')"><i class="fas fa-copy"></i></button></span>
@@ -159,24 +169,28 @@ a{color:inherit;text-decoration:none}
   </div>
 
   <div class="panel">
+    <div class="searchbar">
+      <div class="sb"><i class="fas fa-search"></i><input id="search" type="search" placeholder="Buscar por título ou autor..." autocomplete="off"></div>
+      <label class="toggle"><input type="checkbox" id="hideSold"> Ocultar vendidos</label>
+    </div>
     <div class="toolbar">
-      <div class="left"><i class="fas fa-qrcode"></i> <b id="count">10</b> QR Codes prontos</div>
+      <div class="left"><i class="fas fa-qrcode"></i> <b id="count">0</b> <span id="countLbl">QR Codes</span></div>
       <div class="acts">
-        <button class="btn btn-print" onclick="printAll()"><i class="fas fa-print"></i> Imprimir todos</button>
-        <button class="btn btn-dark" onclick="downloadAll()"><i class="fas fa-download"></i> Baixar todos (PNG)</button>
+        <button class="btn btn-print" onclick="printAll()"><i class="fas fa-print"></i> Imprimir / PDF</button>
         <a class="btn btn-ghost" href="https://rodrigoch98.github.io/Sebo/"><i class="fas fa-book"></i> Acervo</a>
       </div>
     </div>
     <div class="grid" id="grid"></div>
+    <div class="empty" id="empty">Nenhum livro encontrado para essa busca.</div>
   </div>
 
   <div class="panel">
     <h2><i class="fas fa-list-check"></i> Como usar</h2>
     <ol class="steps">
-      <li>Publique o <b>livro.html</b> (e o <b>index.html</b>) na pasta do seu acervo. O endereço acima já aponta para o seu GitHub Pages.</li>
-      <li>Clique em <b>Imprimir todos</b> para uma folha A4 com os 10 QR Codes, ou <b>Baixar todos (PNG)</b> para ter as imagens.</li>
-      <li>Recorte e cole cada QR no próprio livro, em etiquetas ou cartazes. Dá também para compartilhar a imagem no WhatsApp.</li>
-      <li>Quem escanear cai na página exclusiva do livro, com sinopse, estado de conservação, botão de WhatsApp e Pix.</li>
+      <li>Publique o <b>bookstore.html</b> (e o <b>index.html</b>) na pasta do acervo. No GitHub Pages, o endereço <b>/Sebo/bookstore</b> abre o arquivo automaticamente.</li>
+      <li>Clique em <b>Imprimir / PDF</b> para gerar folhas A4 com os QR Codes (na janela de impressão dá para escolher "Salvar como PDF"). Respeita a busca e o filtro atuais.</li>
+      <li>Para um livro específico, use <b>Baixar</b> no card. Recorte e cole o QR no próprio livro, em etiquetas ou cartazes.</li>
+      <li>Quem escanear cai na página do livro, com sinopse, estado de conservação, botão de WhatsApp e Pix.</li>
     </ol>
   </div>
 
@@ -192,7 +206,6 @@ a{color:inherit;text-decoration:none}
 
 <div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMsg">Copiado!</span></div>
 
-<!-- LIB: qrcode-generator (MIT, Kazuhiko Arase) embutida -->
 <script>
 //---------------------------------------------------------------------
 //
@@ -2493,64 +2506,211 @@ var qrcode = function() {
 }));
 
 </script>
-<!-- Ícones temáticos -->
 <script>
-// Ícones SVG temáticos (monocromáticos, traço limpo) relacionados ao tema de cada livro.
-// Desenhados em viewBox 0 0 24 24, stroke currentColor. Vão ao centro do QR Code.
-// Relacionados ao tema, não cópia da capa.
-const BOOK_ICONS = {
-  // Divergente — distopia, facções, escolha. Símbolo: chamas das facções / fogo da escolha.
-  "divergente-veronica-roth":
-    '<path d="M12 2c0 3-3 4-3 7a3 3 0 0 0 6 0c0-1.2-.6-2-1.2-2.8C14.4 10.5 17 12 17 15.5a5 5 0 0 1-10 0C7 11 12 9 12 2Z"/>',
-  // A Bússola de Ouro — bússola/aletiômetro.
-  "a-bussola-de-ouro-philip-pullman":
-    '<circle cx="12" cy="12" r="9"/><polygon points="12,7 14,12 12,17 10,12" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/>',
-  // O Sobrinho do Mago (Nárnia) — o lampião no bosque.
-  "o-sobrinho-do-mago-c-s-lewis-narnia":
-    '<path d="M9 9a3 3 0 0 1 6 0c0 1.6-1 2.2-1 3.5h-4C10 11.2 9 10.6 9 9Z"/><path d="M10 12.5h4M10.3 15h3.4M11 17.5h2"/><path d="M12 6V4M12 20v1.5"/>',
-  // Correr ou Morrer (Maze Runner) — o labirinto.
-  "correr-ou-morrer-james-dashner-maze-runner-1":
-    '<rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M7 3v8h4V7h6M7 15h4v6M15 11v6h2"/>',
-  // Senhora (clássico brasileiro, romance social) — pena de escrever.
-  "senhora-jose-de-alencar-capa-dura":
-    '<path d="M20 4c-6 1-10 5-13 11l-1 5 5-1C17 16 19 10 20 4Z"/><path d="M6.5 19.5 11 15"/>',
-  // Eu Sou o Número Quatro — sci-fi, alienígena. Símbolo: planeta com anel.
-  "eu-sou-o-numero-quatro-pittacus-lore":
-    '<circle cx="12" cy="12" r="5.5"/><ellipse cx="12" cy="12" rx="10" ry="3.4" transform="rotate(-25 12 12)"/>',
-  // Bird Box — terror, vendados, pássaros. Símbolo: pássaro simples.
-  "bird-box-josh-malerman-edicao-especial-de-luxo":
-    '<path d="M4 14c4 0 6-2 7-5 1 2 3 3 5 2-1 3-4 6-8 6-2 0-3-1-4-3Z"/><circle cx="8.5" cy="10.5" r=".6" fill="currentColor" stroke="none"/><path d="M16 11l4-3"/>',
-  // A Descoberta das Bruxas — fantasia/feitiço. Símbolo: lua e estrela (alquimia).
-  "a-descoberta-das-bruxas-deborah-harkness":
-    '<path d="M16.5 14.5A6 6 0 1 1 9.5 5a5 5 0 0 0 7 9.5Z"/><path d="M18 5l.6 1.6L20 7l-1.4.7L18 9l-.6-1.3L16 7l1.4-.4Z" fill="currentColor" stroke="none"/>',
-  // Crepúsculo — romance/vampiros. Símbolo: lua sobre montanhas (a meia-noite).
-  "crepusculo-stephenie-meyer-capa-original":
-    '<circle cx="14.5" cy="8.5" r="3.5"/><path d="M3 19l4-5 3 3.5 3.5-5L21 19Z"/>',
-  // Box Tetralogia Angélica — anjos/fantasia nacional. Símbolo: asa.
-  "box-tetralogia-angelica-eduardo-spohr-ed-10-anos":
-    '<path d="M21 6c-5 0-9 2-12 6-1.2 1.6-2 3.4-2.5 5.5 3-.5 5.5-2 7.5-4.2M21 6c-1 4-3 7-6 9M21 6c-4 .5-7 2-9 5"/>',
+/* Biblioteca de ícones preenchidos (fill, evenodd) em viewBox 0 0 24 24.
+   Atribuição por palavra-chave (série/tema) e, no resto, por gênero,
+   variando os desenhos para não repetir lado a lado. */
+const ICON_PATHS = {
+  heart:"M12 20.6c-.4 0-.8-.15-1.1-.42C6.3 16.07 3.2 13.2 3.2 9.42 3.2 6.86 5.2 4.9 7.7 4.9c1.7 0 3.2.92 4.3 2.5 1.1-1.58 2.6-2.5 4.3-2.5 2.5 0 4.5 1.96 4.5 4.52 0 3.78-3.1 6.65-7.7 10.76-.3.27-.7.42-1.1.42z",
+  star:"M12 2.4l2.78 5.92 6.42.62c.5.05.7.68.32 1.02l-4.86 4.4 1.42 6.36c.11.5-.42.9-.86.63L12 18.2l-5.62 3.16c-.44.25-.97-.13-.86-.63l1.42-6.36-4.86-4.4c-.38-.34-.18-.97.32-1.02l6.42-.62z",
+  moon:"M21.4 13.7a8.6 8.6 0 1 1-9.9-10.4 7 7 0 0 0 9.9 10.4zM18.6 3.2l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z",
+  sparkle:"M12 2.2c.5 4.3 1.6 5.4 5.9 5.9-4.3.5-5.4 1.6-5.9 5.9-.5-4.3-1.6-5.4-5.9-5.9 4.3-.5 5.4-1.6 5.9-5.9zM18.4 13.4c.3 2.4.9 3 3.3 3.3-2.4.3-3 .9-3.3 3.3-.3-2.4-.9-3-3.3-3.3 2.4-.3 3-.9 3.3-3.3z",
+  rocket:"M12 1.8c2.9 2.7 4.5 6.4 4.6 10.3l-1.7 2.2H9.1L7.4 12.1C7.5 8.2 9.1 4.5 12 1.8zM12 6.1a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.6 15.1l-2.3 1.4c-.5.3-1.1-.1-1-.7l.7-3.2zM16.4 15.1l3.6-2.5.7 3.2c.1.6-.5 1-1 .7l-2.3-1.4zM9.6 16.1h4.8l-1 3.4c-.4 1.5-.6 2.6-1.4 3.5-.8-.9-1-2-1.4-3.5z",
+  eye:"M12 5.2c5 0 9.1 4.3 10.6 6.8-1.5 2.5-5.6 6.8-10.6 6.8S2.9 14.5 1.4 12C2.9 9.5 7 5.2 12 5.2zM12 7.8a4.2 4.2 0 1 0 0 8.4 4.2 4.2 0 0 0 0-8.4zM12 10a2 2 0 1 1 0 4 2 2 0 0 1 0-4z",
+  skull:"M12 2.2c-5 0-8.5 3.4-8.5 8 0 2.7 1.2 4.6 2.9 5.8.5.35.8.6.8 1.5v1.3c0 1 .8 1.8 1.8 1.8h.4v-2.3c0-.4.3-.7.7-.7s.7.3.7.7v2.3h2.2v-2.3c0-.4.3-.7.7-.7s.7.3.7.7v2.3h.4c1 0 1.8-.8 1.8-1.8v-1.3c0-.9.3-1.15.8-1.5 1.7-1.2 2.9-3.1 2.9-5.8 0-4.6-3.5-8-8.3-8zM8.4 9.4a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2zM15.6 9.4a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2zM12 14.2l1 2.1h-2z",
+  magnifier:"M10.4 2.6a7.8 7.8 0 0 1 6.06 12.7l4.8 4.8a1.3 1.3 0 0 1-1.84 1.84l-4.8-4.8A7.8 7.8 0 1 1 10.4 2.6zm0 2.6a5.2 5.2 0 1 0 0 10.4 5.2 5.2 0 0 0 0-10.4zm0 1.8a3.4 3.4 0 0 1 3.4 3.4 1 1 0 0 1-2 0 1.4 1.4 0 0 0-1.4-1.4 1 1 0 0 1 0-2z",
+  bat:"M12 7.2c.7-1.1 1.7-1.9 2.9-1.9.2-.7.7-1.3 1.3-1.6-.1.7 0 1.3.3 1.8.9.3 1.7 1 2.4 1.9.1-.6.5-1.1 1-1.4-.1.5 0 .9.2 1.3 1 .3 1.9 1 2.7 2-1 .2-1.6.6-1.9 1.3 1 .2 1.9.7 2.5 1.6-2.6-.4-4.7.2-6.3 1.7-.7.7-1.2 1.5-1.5 2.4-.3-.9-.6-1.5-1-1.8h-1.8c-.4.3-.7.9-1 1.8-.3-.9-.8-1.7-1.5-2.4-1.6-1.5-3.7-2.1-6.3-1.7.6-.9 1.5-1.4 2.5-1.6-.3-.7-.9-1.1-1.9-1.3.8-1 1.7-1.7 2.7-2 .2-.4.3-.8.2-1.3.5.3.9.8 1 1.4.7-.9 1.5-1.6 2.4-1.9.3-.5.4-1.1.3-1.8.6.3 1.1.9 1.3 1.6 1.2 0 2.2.8 2.9 1.9z",
+  wing:"M21.4 4.8c-6 0-11 2-14.5 6.5 1.5-.5 2.8-.4 3.6.1-1.2.2-2.2.9-3 2 1.8-.4 3.2-.2 4 .4-1.4.4-2.6 1.2-3.4 2.4 1.8-.3 3.3-.1 4.1.5-1.5.5-2.7 1.4-3.5 2.7 4.4-2.2 9.4-7.5 12.7-14.6z",
+  feather:"M19.4 3.6C12.4 5 7.4 9.8 5.4 17l5-5a.9.9 0 0 1 1.3 1.3l-5 5c6.4-1.4 11.2-6.4 12.7-14.7zM16.8 5.6L7.2 15.2l.5.5L17.3 6.1zM5.6 18.2l-2.2 2.2a1.1 1.1 0 0 0 1.6 1.6l2.2-2.2z",
+  column:"M5 3.2h14a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2zM6.6 6.2h2.2v11H6.6zM10.9 6.2h2.2v11h-2.2zM15.2 6.2h2.2v11h-2.2zM4.4 18.2h15.2a1 1 0 0 1 0 2H4.4a1 1 0 0 1 0-2z",
+  helmet:"M11.6 1.2c1.3 0 2 1 2.3 2.3 2.9 1 5 3.8 5 7.2v4.1c0 .6-.5 1-1.1 1-1.7 0-2.9-.8-3.7-2l-.1-.2H10l-.1.2c-.8 1.2-2 2-3.7 2-.6 0-1.1-.4-1.1-1v-4.1c0-3.6 2.4-6.6 5.7-7.4-.3-.3-.4-.7-.4-1.1 0-.9.5-1.3 1.2-1zM8.4 7.4v1.7h7.2V7.4zM11 9.1v3.8h2V9.1z",
+  butterfly:"M12 5.6c.5-.7 1.2-1.2 1.2-1.2-.4 1.4-.5 2.8-.4 4.2.9-2 2.5-3.6 4.7-4.3 2-.6 3.8.3 4.2 2 .4 1.7-.7 3.4-2.6 4-1 .3-2 .3-3 .1 1.4.6 2.5 1.6 3.1 3 .6 1.4.1 2.9-1.2 3.4-1.3.5-2.8-.2-3.6-1.6-.4-.7-.6-1.4-.7-2.1-.1.1-.2.2-.4.2v3.6c0 .4-.3.7-.7.7s-.7-.3-.7-.7v-3.6c-.2 0-.3-.1-.4-.2-.1.7-.3 1.4-.7 2.1-.8 1.4-2.3 2.1-3.6 1.6-1.3-.5-1.8-2-1.2-3.4.6-1.4 1.7-2.4 3.1-3-1 .2-2 .2-3-.1-1.9-.6-3-2.3-2.6-4 .4-1.7 2.2-2.6 4.2-2 2.2.7 3.8 2.3 4.7 4.3.1-1.4 0-2.8-.4-4.2 0 0 .7.5 1.2 1.2z",
+  compass:"M12 2.4a9.6 9.6 0 1 0 0 19.2 9.6 9.6 0 0 0 0-19.2zm0 2.2a7.4 7.4 0 1 1 0 14.8 7.4 7.4 0 0 1 0-14.8zm3.9 3.5l-5.4 2.5L8 16.1l5.4-2.5zM12 10.8a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z",
+  chip:"M9 2.4a1 1 0 0 1 1 1v1.6h4V3.4a1 1 0 0 1 2 0v1.6h1.6a2 2 0 0 1 2 2V9h1.6a1 1 0 0 1 0 2H19v2h1.6a1 1 0 0 1 0 2H19v1.6a2 2 0 0 1-2 2h-1.6a1 1 0 0 1-2 0v-1.6h-4v1.6a1 1 0 0 1-2 0v-1.6H5a2 2 0 0 1-2-2V15H1.4a1 1 0 0 1 0-2H3v-2H1.4a1 1 0 0 1 0-2H3V7a2 2 0 0 1 2-2h1.6V3.4a1 1 0 0 1 .9-1H9zM8 8a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1z",
+  masks:"M5.2 3.4C4 3.4 3 4.4 3 5.6v6.8c0 3.8 3 6.9 6.7 6.9s6.7-3.1 6.7-6.9V5.6c0-1.2-1-2.2-2.2-2.2zM7 8.2a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zm5.4 0a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zM6.9 14c1.7 1.2 4 1.2 5.7 0-.5 1.6-1.6 2.6-2.9 2.6S7.4 15.6 6.9 14zM18 6.8c1 .3 1.8 1.2 2 2.3l.9 5.8c.5 3.2-1.7 6.2-4.9 6.7l-.6.1c1.4-1.3 2.3-3.2 2.6-5.3z",
+  clapper:"M3.2 8.6h17.6c.7 0 1.2.5 1.2 1.2v8.4c0 .9-.7 1.6-1.6 1.6H3.6c-.9 0-1.6-.7-1.6-1.6V9.8c0-.7.5-1.2 1.2-1.2zM3 4.6l3.4.9-1.3 2.2-3.4-.9c-.4-.1-.6-.5-.5-.9l.4-1.4c.1-.4.5-.6.9-.5zm5.2 1.4l3.4.9-1.3 2.2L7 8.2zm5.1 1.3l3.4.9-1.3 2.2-3.4-.9zm5.2 1.4l1.5.4c.4.1.6.5.5.9l-.4 1.4-2.9-.8z",
+  palette:"M12 2.6c-5.3 0-9.6 3.9-9.6 8.8 0 4.6 3.8 6.9 6.4 6.9 1.3 0 2.1-.8 2.1-1.8 0-.5-.2-.9-.5-1.2-.3-.4-.5-.7-.5-1.2 0-.9.8-1.6 1.7-1.6h2c3.2 0 5.9-2.5 5.9-6 0-4.1-3.4-7.9-7.5-7.9zM6.6 11.4a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8zm3-3.8a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8zm4.8 0a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8zm3.2 3.6a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8z",
+  ghost:"M12 2.4c-4 0-7 3-7 7v10.4c0 .8.9 1.2 1.5.7l1.4-1.1 1.6 1.2c.4.3.9.3 1.3 0l1.7-1.2 1.7 1.2c.4.3.9.3 1.3 0l1.6-1.2 1.4 1.1c.6.5 1.5.1 1.5-.7V9.4c0-4-3-7-7-7zM9.3 8.4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5.4 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z",
+  raven:"M12 6.6l1.2-1.8.5 2.1C16 5.4 18.5 4.8 21 4.8c-3 1.9-5.4 4.4-7 7.5-.6 1.2-1 2.4-1.2 3.7L12 17.6l-.8-1.6c-.2-1.3-.6-2.5-1.2-3.7-1.6-3.1-4-5.6-7-7.5 2.5 0 5 .6 7.3 2.1l.5-2.1z",
+  boat:"M3 13.2h18l-2.5 5.3a2 2 0 0 1-1.8 1.1H7.3a2 2 0 0 1-1.8-1.1zM12 2.2l5.4 8.8H12zM10.6 4.2v6.8H5.9z",
+  tree:"M12 2.4c-3 0-5.4 2.4-5.4 5.4 0 .4 0 .8.1 1.1A4.4 4.4 0 0 0 8 17.4h3v-3.2l-2.1-2.1a.9.9 0 0 1 1.3-1.3l.8.8V9.8a.9.9 0 0 1 1.8 0v3.4l1.3-1.3a.9.9 0 0 1 1.3 1.3L13 15.4v2h3a4.4 4.4 0 0 0 1.3-8.5c.1-.3.1-.7.1-1.1 0-3-2.4-5.4-5.4-5.4zM10 18.6h4l.4 2.2c.1.5-.3 1-.8 1h-3.2c-.5 0-.9-.5-.8-1z",
+  book:"M3.2 5.4c2.6-1.5 5.6-1.5 8.1-.2v13.6c-2.5-1.3-5.5-1.3-8.1.2a.7.7 0 0 1-1-.6V6a.7.7 0 0 1 1-.6zM12.7 5.2c2.5-1.3 5.5-1.3 8.1.2a.7.7 0 0 1 1 .6v12.6a.7.7 0 0 1-1 .6c-2.6-1.5-5.6-1.5-8.1-.2z",
+  crown:"M2.8 8.2l4 3.2 5.2-6.2 5.2 6.2 4-3.2-1.8 10.4H4.6zM4.4 19.8h15.2v1.8H4.4zM8 9.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM16 9.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z",
+  sword:"M12 1.6l2.2 4.4v8.2h-4.4V6zM8.2 14.8h7.6v2.2H8.2zM10.8 17.2h2.4v4.4c0 .7-.5 1.2-1.2 1.2s-1.2-.5-1.2-1.2z",
+  key:"M8.5 2.8a5 5 0 1 0 4.4 7.4l.6.9H16v2.2h2.2L20 17.1l1.6-1.6L12.9 6.9A5 5 0 0 0 8.5 2.8zM7.2 6a1.7 1.7 0 1 1 0 3.4A1.7 1.7 0 0 1 7.2 6z",
+  potion:"M9.6 2.4h4.8a.8.8 0 0 1 0 1.6h-.4v3.4l4.7 8.1A2.6 2.6 0 0 1 16.1 19H7.9a2.6 2.6 0 0 1-2.3-3.5l4.7-8.1V4h-.7a.8.8 0 0 1 0-1.6zM9.2 13.6h5.6l-1.6-2.8h-2.4zM10.6 9.4a1 1 0 1 1 0 2 1 1 0 0 1 0-2z",
+  flame:"M12.4 1.8c.3 3.4-1.8 4.6-3.4 6.6-1.2 1.5-2 3.3-2 5.2a5 5 0 0 0 10 0c0-1.5-.5-2.7-1.3-3.8.2 1.3-.3 2.2-1.1 2.7.5-2.8-1.6-4.3-2.6-5.8-.8-1.1-1.1-2.4-.4-3.9zM12 13.4a2.6 2.6 0 0 0 1.4 4.8c-1-.6-1.2-1.6-.8-2.5-1 .5-1.4 1.3-1.3 2.2A2.5 2.5 0 0 1 10 15.6c0-1 .8-1.8 2-2.2z",
+  lantern:"M9.4 2.6h5.2a.8.8 0 0 1 0 1.6h-.3v1.1A4 4 0 0 1 16 8.7v6.6a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V8.7a4 4 0 0 1 1.7-3.4V4.2h-.3a.8.8 0 0 1 0-1.6zM10 8.7v6.6h4V8.7a2 2 0 0 0-4 0zM11 18.9h2v1.3a1 1 0 0 1-2 0z",
+  hourglass:"M5.8 2.8h12.4a1 1 0 0 1 0 2h-.6v1.6c0 2.4-1.8 3.9-3.4 5 1.6 1.1 3.4 2.6 3.4 5v1.6h.6a1 1 0 0 1 0 2H5.8a1 1 0 0 1 0-2h.6v-1.6c0-2.4 1.8-3.9 3.4-5-1.6-1.1-3.4-2.6-3.4-5V4.8h-.6a1 1 0 0 1 0-2zM8.4 4.8c.2 1.6 1.6 2.7 3.6 4.2 2-1.5 3.4-2.6 3.6-4.2z",
+  gear:"M13.4 2.2l.5 2.1c.6.2 1.2.4 1.7.8l2-.8 1.4 1.4-.8 2c.4.5.6 1.1.8 1.7l2.1.5v2l-2.1.5c-.2.6-.4 1.2-.8 1.7l.8 2-1.4 1.4-2-.8c-.5.4-1.1.6-1.7.8l-.5 2.1h-2l-.5-2.1c-.6-.2-1.2-.4-1.7-.8l-2 .8-1.4-1.4.8-2c-.4-.5-.6-1.1-.8-1.7L1.9 13v-2l2.1-.5c.2-.6.4-1.2.8-1.7l-.8-2 1.4-1.4 2 .8c.5-.4 1.1-.6 1.7-.8l.5-2.1zM12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8z",
+  anchor:"M11 2.4a2 2 0 0 1 1 3.8V8h2.2v2H13v7.7c2.1-.4 3.8-2 4.3-4.1h-1.7l2.6-3.4 2.6 3.4h-1.7A7.4 7.4 0 0 1 12 21.2a7.4 7.4 0 0 1-7.6-7.6H2.7l2.6-3.4 2.6 3.4H6.2c.5 2.1 2.2 3.7 4.3 4.1V10H8.5V8H11V6.2a2 2 0 0 1 0-3.8z",
+  bolt:"M13.2 1.8L5 13.4h5l-1.6 8.8 8.6-12.2h-5.6z",
+  rose:"M12 2.8c2.5 0 4.3 1.8 4.3 4.1 0 1-.4 1.9-1.1 2.6.9.4 1.6 1.1 1.6 2.3 0 2.4-2.1 4.1-4.8 4.1S7.2 14.2 7.2 11.8c0-1.2.7-1.9 1.6-2.3-.7-.7-1.1-1.6-1.1-2.6C7.7 4.6 9.5 2.8 12 2.8zM12 5.6a1.8 1.8 0 0 0-1.8 1.8c0 1 .8 1.7 1.8 1.7s1.8-.7 1.8-1.7A1.8 1.8 0 0 0 12 5.6zM8.6 16.2c1 2.2 1.1 3.6 1.1 5h1.6c0-1.8-.4-3.3-1.3-5.4zM15.4 16.2c-1 2.2-1.1 3.6-1.1 5h-1.6c0-1.8.4-3.3 1.3-5.4z",
+  ufo:"M12 4.6c1.8 0 3.3.9 3.3 2 0 .2-.1.3-.1.5 2.5.5 4.8 1.6 4.8 3.1 0 1.8-3.6 2.9-8 2.9S4 12 4 10.2c0-1.5 2.3-2.6 4.8-3.1 0-.2-.1-.3-.1-.5 0-1.1 1.5-2 3.3-2zM7.6 10.6a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6zM12 11a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6zM16.4 10.6a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6zM5.6 15l-1.2 2.4a.7.7 0 0 0 1.3.6l1-2.2zM18.4 15l1.2 2.4a.7.7 0 0 1-1.3.6l-1-2.2z",
+  clock:"M12 2.6a9.4 9.4 0 1 0 0 18.8 9.4 9.4 0 0 0 0-18.8zm0 2.2a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM11 6.6h2v6l3.4 2-1 1.7L11 13.6z",
+  gem:"M7.2 3h9.6l3.4 5-8.2 11L3.8 8zM6.1 8l5.9 8.4L17.9 8l-2-3H8.1zM9.6 8L12 14l2.4-6z",
+  scroll:"M6.4 2.8h11.2c.6 0 1 .5 1 1.1v13a3.3 3.3 0 0 1-3.3 3.3H7a3.3 3.3 0 0 1-3.3-3.3v-1.2c0-.5.4-.9.9-.9h1.4V3.9c0-.6.4-1.1.9-1.1zm.6 1.8v11.2h7.8v1.2c0 .5.1 1 .4 1.5h-.5a1.5 1.5 0 0 1-1.5-1.5v-.8H5.5v.8a1.5 1.5 0 0 0 2.9 0zm1.6 2.2h6.8v1.6H8.6zm0 3.2h6.8v1.6H8.6z",
+  maze:"M3.2 3.2h17.6v17.6H3.2zm2 2v13.6h13.6V5.2zm2 2h9.6v2H9.2v5.6h5.6v-2H11v-1.6h5.6v5.2H7.2z",
 };
 
+// regras por palavra-chave (no título completo `t` ou na query `q`) -> ícone
+const KEYWORD_RULES = [
+  [/maze runner|correr ou morrer|prova de fogo|cura mortal|ordem de exterm|codigo da febre/i,'maze'],
+  [/crepusc|lua nova|eclipse|amanhecer|bree tanner|sol da meia|vampir/i,'bat'],
+  [/dracula/i,'bat'],
+  [/narnia|le[aã]o.*feiticeira|sobrinho do mago|principe caspian|cadeira de prata|peregrino da alvorada|ultima batalha|cavalo e seu menino/i,'lantern'],
+  [/numero quatro|lorien|poder de seis|ascens[aã]o de nove|queda de cinco|vinganca de sete|destino de dez|unidos somos um/i,'ufo'],
+  [/dan brown|da vinci|inferno|anjos e dem[oô]nios|simbolo perdido|origem|ponto de impacto|fortaleza digital/i,'key'],
+  [/drago|dragon|cemiterios de drag|cidades de drag|mundos de drag/i,'flame'],
+  [/bruxa|descoberta das bruxas|sombra da noite|livro da vida|magos|aprendiz|lorde supremo/i,'potion'],
+  [/sherlock/i,'magnifier'],
+  [/alice/i,'clock'],
+  [/frankenstein/i,'bolt'],
+  [/maquina do tempo|viagem no tempo|tempest|dobra no tempo|vento a porta|planeta em seu giro|muitas aguas|tempo aceitavel/i,'hourglass'],
+  [/silo|hugh howey/i,'gear'],
+  [/1984|orwell/i,'eye'],
+  [/bird box|malorie|inspecao/i,'eye'],
+  [/segunda guerra|holocausto|grandes batalhas|grandes lideres/i,'helmet'],
+  [/anne frank/i,'book'],
+  [/jules verne|verne|nautilus|filha das profundezas|vinte mil leguas/i,'anchor'],
+  [/guerra dos mundos|homem invisivel/i,'rocket'],
+  [/trono de vidro|acotar|corte de|coroa da|rainha das sombras|reino de cinzas|imperio de tempestades|torre do alvorecer|herdeira do fogo|lamina da assassina/i,'crown'],
+  [/mitolog|nordica|mitos gregos/i,'helmet'],
+  [/harry potter|magisterium|hp guia|sandman/i,'sparkle'],
+  [/espada|espadachim|lamina/i,'sword'],
+  [/rainha vermelha|espada de vidro|prisao do rei|tempestade de guerra|trono destruido/i,'crown'],
+  [/rosa|encantadas|veneno|feiti/i,'rose'],
+  [/robo|robot/i,'gear'],
+  [/anjo|halo|hades|heaven|angelica/i,'wing'],
+  [/sombra e ossos|grisha|sol e tormenta|ruina e ascensao/i,'gem'],
+  [/sertoes|sermoes|sonetos|poemas|pauliceia|espumas|machado|alencar|aluisio|ateneu|contos|memorias/i,'feather'],
+  [/legend|rebel|marie lu/i,'bolt'],
+  [/5.?a onda|mar infinito|ultima estrela|surgido das sombras|alien/i,'rocket'],
+  [/princesa das cinzas|dama da nevoa|rainha das chamas/i,'flame'],
+  [/saga dos corvos|corvos|garotos|rei corvo/i,'raven'],
+  [/neve e cinzas|gelo e fogo|geada/i,'gem'],
+  [/stranger things/i,'bolt'],
+  [/casa de segredos|batalha das bestas|colisao dos mundos/i,'key'],
+  [/escaravelho|oraculo|arconte|circulo/i,'scroll'],
+  [/krypton|superman/i,'star'],
+];
+
+// pools por gênero (ordem usada para variar entre livros do mesmo gênero)
+const GENRE_POOLS = {
+  "Fantasia":["moon","sparkle","crown","sword","potion","flame","lantern","gem","key","butterfly","tree","star"],
+  "Sci-Fi":["rocket","chip","gear","hourglass","bolt","compass","ufo","star"],
+  "Distopia":["eye","gear","chip","bolt","skull","compass","crown"],
+  "Romance":["heart","rose","sparkle","moon","star"],
+  "Suspense":["magnifier","key","eye","skull","raven","bolt"],
+  "Thriller":["magnifier","key","skull","eye","raven","bolt"],
+  "Mistério":["magnifier","key","eye","scroll","raven"],
+  "Policial":["magnifier","key","eye","bolt"],
+  "Psicológico":["magnifier","eye","skull","masks"],
+  "Terror":["skull","bat","ghost","raven","flame","rose"],
+  "Vampiros":["bat","moon","rose","skull"],
+  "Ação":["sword","bolt","star","flame","compass"],
+  "Nacional":["feather","flame","sword","crown","gem","star"],
+  "Mitologia":["helmet","column","sword","bolt","flame"],
+  "Aventura":["compass","anchor","boat","key","flame"],
+  "Anjos":["wing","sparkle","star","heart"],
+  "Magia":["sparkle","potion","moon","key","gem"],
+  "Sobrenatural":["ghost","moon","raven","skull"],
+  "Gótico":["raven","rose","skull","bat","moon"],
+  "Dark":["raven","rose","skull","bat"],
+  "Fadas":["butterfly","sparkle","moon","flame"],
+  "História":["column","helmet","anchor","feather","scroll"],
+  "Ficção Histórica":["column","helmet","sword","anchor"],
+  "Histórico":["column","rose","feather"],
+  "Tecnologia":["chip","gear","bolt","compass"],
+  "Super-Heróis":["bolt","star","sword"],
+  "Cinema":["clapper","star"],
+  "Arte":["palette","sparkle"],
+  "Drama":["masks","rose","heart"],
+  "Infantojuvenil":["boat","star","butterfly","anchor"],
+  "Jovem":["boat","star","heart","compass"],
+  "Jovem Adulto":["boat","star","heart","compass"],
+  "Pós-Apocalíptico":["tree","skull","gear","flame"],
+  "Clássico":["feather","book","column","masks","rose"],
+  "Clássicos":["feather","book","column","scroll"],
+  "Literatura Brasileira":["feather","book","column","scroll"],
+  "Contos":["book","feather","scroll"],
+  "Biografia":["book","feather","star"],
+  "Ficção":["tree","star","book"],
+};
+// ordem de prioridade do gênero quando um livro tem vários
+const GENRE_PRIORITY = ["Vampiros","Terror","Gótico","Dark","Fadas","Mitologia","Anjos","Magia","Sobrenatural","Distopia","Viagem no Tempo","Pós-Apocalíptico","Tecnologia","Super-Heróis","Fantasia","Psicológico","Policial","Thriller","Suspense","Mistério","Aventura","Ação","Cinema","Arte","Drama","Romance","História","Ficção Histórica","Histórico","Nacional","Literatura Brasileira","Clássicos","Clássico","Contos","Biografia","Infantojuvenil","Jovem Adulto","Jovem","Ficção"];
+
+// para séries com muitos volumes, alterna entre símbolos coerentes
+// para que volumes vizinhos não fiquem idênticos
+const KEYWORD_VARIANTS = {
+  bat:["bat","moon","rose"],
+  crown:["crown","sword","gem","flame"],
+  key:["key","scroll","magnifier"],
+  lantern:["lantern","sword","crown"],
+  ufo:["ufo","rocket","star"],
+  maze:["maze","compass","gear"],
+  hourglass:["hourglass","clock","sparkle"],
+  flame:["flame","gem","sword"],
+  potion:["potion","sparkle","moon"],
+  feather:["feather","book","scroll","column"],
+  raven:["raven","skull","moon"],
+  rocket:["rocket","star","bolt"],
+  rose:["rose","heart","sparkle"],
+  gem:["gem","moon","sparkle"],
+  wing:["wing","star","sparkle"],
+  sparkle:["sparkle","moon","star"],
+};
+
+function keywordIcon(b){
+  const hay = ((b.t||'')+' '+(b.q||'')).normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  for(const [re,key] of KEYWORD_RULES){ if(re.test(hay)) return key; }
+  return null;
+}
+function primaryGenre(b){
+  const gs=b.g||[];
+  for(const g of GENRE_PRIORITY){ if(gs.indexOf(g)!==-1) return g; }
+  return gs[0]||null;
+}
+function iconPathForKey(key){ return ICON_PATHS[key]||ICON_PATHS.book; }
+
+// atribui um ícone a cada livro: palavra-chave tem prioridade; senão,
+// percorre o pool do gênero variando por um contador por-gênero (estável).
+// Em séries (mesma keyword), alterna entre variantes coerentes.
+function assignIcons(books){
+  const counter={}, kwCounter={};
+  books.forEach(b=>{
+    let key=keywordIcon(b);
+    if(key){
+      const variants=KEYWORD_VARIANTS[key];
+      if(variants){ const n=kwCounter[key]||0; kwCounter[key]=n+1; key=variants[n%variants.length]; }
+    }else{
+      const g=primaryGenre(b);
+      const pool=(g&&GENRE_POOLS[g])?GENRE_POOLS[g]:["book","star","feather","heart"];
+      const n=counter[g]||0; counter[g]=n+1;
+      key=pool[n%pool.length];
+    }
+    b._iconKey=key;
+    b._iconPath=iconPathForKey(key);
+  });
+  return books;
+}
+
+// usado quando não há atribuição prévia (fallback por gênero, sem variar)
+function iconPathForGenres(genres){
+  for(const g of GENRE_PRIORITY){
+    if(genres&&genres.indexOf(g)!==-1){ const p=GENRE_POOLS[g]; if(p&&p.length) return iconPathForKey(p[0]); }
+  }
+  return ICON_PATHS.book;
+}
+
 </script>
-<!-- Renderer estilizado -->
 <script>
-/* ============================================================
-   Renderer de QR Code estilizado em canvas — sem dependências externas.
-   Usa a lib qrcode-generator (global `qrcode`) só para a matriz de módulos.
-   Desenha: dots arredondados/quadrados/círculos, finders estilizados,
-   e um ícone SVG temático no centro com "buraco" limpo atrás.
-   ============================================================ */
+/* Renderizador de QR estilizado em canvas, sem dependências externas.
+   Usa qrcode-generator (global `qrcode`) só para a matriz.
+   Ícone PREENCHIDO (Path2D, evenodd) em selo branco com moldura dourada. */
 (function(global){
   'use strict';
-
-  function isFinder(r,c,n){
-    // três quadrados localizadores 7x7 nos cantos (menos o inferior-direito)
-    const inTL = r<7 && c<7;
-    const inTR = r<7 && c>=n-7;
-    const inBL = r>=n-7 && c<7;
-    return inTL||inTR||inBL;
-  }
-
+  function isFinder(r,c,n){ return (r<7&&c<7)||(r<7&&c>=n-7)||(r>=n-7&&c<7); }
   function roundRect(ctx,x,y,w,h,r){
     r=Math.min(r,w/2,h/2);
     ctx.beginPath();
@@ -2561,267 +2721,215 @@ const BOOK_ICONS = {
     ctx.arcTo(x,y,x+w,y,r);
     ctx.closePath();
   }
-
   function drawFinder(ctx,x,y,m,opt){
-    // moldura externa 7x7 com cantos arredondados, miolo 3x3
-    const outer = m*7, inner = m*3;
-    const rO = opt.cornerType==='square'?0:m*2;
-    const rI = opt.cornerType==='square'?0:m*1.2;
-    // anel externo
-    ctx.fillStyle = opt.cornerColor;
-    roundRect(ctx,x,y,outer,outer,rO); ctx.fill();
-    // recorte branco
-    ctx.fillStyle = opt.bg;
-    roundRect(ctx,x+m,y+m,m*5,m*5,Math.max(0,rO-m)); ctx.fill();
-    // miolo
-    ctx.fillStyle = opt.cornerDotColor;
-    roundRect(ctx,x+m*2,y+m*2,inner,inner,rI); ctx.fill();
+    var outer=m*7, inner=m*3;
+    var rO=opt.cornerType==='square'?m*0.8:m*2;
+    var rI=opt.cornerType==='square'?m*0.4:m*1.2;
+    ctx.fillStyle=opt.cornerColor; roundRect(ctx,x,y,outer,outer,rO); ctx.fill();
+    ctx.fillStyle=opt.bg; roundRect(ctx,x+m,y+m,m*5,m*5,Math.max(0,rO-m)); ctx.fill();
+    ctx.fillStyle=opt.cornerDotColor; roundRect(ctx,x+m*2,y+m*2,inner,inner,rI); ctx.fill();
   }
-
   function drawDot(ctx,x,y,m,type,color){
     ctx.fillStyle=color;
-    if(type==='dots'){
-      ctx.beginPath();
-      ctx.arc(x+m/2,y+m/2,m*0.46,0,Math.PI*2);
-      ctx.fill();
-    }else if(type==='square'){
-      ctx.fillRect(x,y,m,m);
-    }else{ // rounded
-      roundRect(ctx,x+m*0.06,y+m*0.06,m*0.88,m*0.88,m*0.38);
-      ctx.fill();
-    }
+    if(type==='dots'){ ctx.beginPath(); ctx.arc(x+m/2,y+m/2,m*0.46,0,Math.PI*2); ctx.fill(); }
+    else if(type==='square'){ ctx.fillRect(x,y,m,m); }
+    else { roundRect(ctx,x+m*0.06,y+m*0.06,m*0.88,m*0.88,m*0.38); ctx.fill(); }
   }
-
-  /**
-   * Renderiza um QR estilizado num canvas.
-   * @param {Object} o {text, size, margin(modules), ecc, dotType, dotColor, bg,
-   *                     cornerColor, cornerDotColor, iconSvgPath, iconColor, iconRatio}
-   * @returns {HTMLCanvasElement}
-   */
   function renderQR(o){
-    const ecc = o.ecc||'H';
-    // Quando há ícone central, forçamos uma versão mínima (mais módulos),
-    // assim o "buraco" do ícone fica proporcionalmente menor e dentro da
-    // tolerância de correção de erro (nível H ~30%). Sem ícone, versão automática.
-    const minType = o.iconSvgPath ? (o.minType||14) : 0;
-    let qr=null;
-    for(let t=minType; t<=40; t++){
-      try{
-        const cand = global.qrcode(t, ecc);
-        cand.addData(o.text);
-        cand.make();
-        qr = cand;
-        break;
-      }catch(e){ /* dados não cabem nessa versão, tenta a próxima */ }
+    var ecc=o.ecc||'H';
+    var minType=o.iconPath?(o.minType||14):0;
+    var qr=null;
+    for(var t=minType;t<=40;t++){
+      try{ var cand=global.qrcode(t,ecc); cand.addData(o.text); cand.make(); qr=cand; break; }catch(e){}
     }
-    if(!qr){ qr = global.qrcode(0, ecc); qr.addData(o.text); qr.make(); }
-    const n = qr.getModuleCount();
-    const margin = (o.margin==null?4:o.margin);
-    const total = n + margin*2;
-    const px = Math.max(1, Math.floor((o.size||360)/total));
-    const dim = px*total;
-
-    const cv = document.createElement('canvas');
-    cv.width = dim; cv.height = dim;
-    const ctx = cv.getContext('2d');
-
-    // fundo
-    ctx.fillStyle = o.bg||'#ffffff';
-    ctx.fillRect(0,0,dim,dim);
-
-    const off = margin*px;
-    const dotType = o.dotType||'rounded';
-    const dotColor = o.dotColor||'#1a1410';
-
-    // zona central reservada para o ícone (em módulos)
-    const iconRatio = o.iconSvgPath ? (o.iconRatio||0.30) : 0;
-    const holeMods = Math.floor(n*iconRatio);
-    const holeStart = Math.floor((n-holeMods)/2);
-    const holeEnd = holeStart+holeMods;
-    function inHole(r,c){ return iconRatio>0 && r>=holeStart && r<holeEnd && c>=holeStart && c<holeEnd; }
-
-    // módulos de dados
-    for(let r=0;r<n;r++){
-      for(let c=0;c<n;c++){
-        if(!qr.isDark(r,c)) continue;
-        if(isFinder(r,c,n)) continue;     // finders desenhados à parte
-        if(inHole(r,c)) continue;          // espaço do ícone
-        drawDot(ctx, off+c*px, off+r*px, px, dotType, dotColor);
-      }
+    if(!qr){ qr=global.qrcode(0,ecc); qr.addData(o.text); qr.make(); }
+    var n=qr.getModuleCount();
+    var margin=(o.margin==null?4:o.margin);
+    var total=n+margin*2;
+    var px=Math.max(1,Math.floor((o.size||360)/total));
+    var dim=px*total;
+    var cv=document.createElement('canvas'); cv.width=dim; cv.height=dim;
+    var ctx=cv.getContext('2d');
+    ctx.fillStyle=o.bg||'#ffffff'; ctx.fillRect(0,0,dim,dim);
+    var off=margin*px;
+    var dotType=o.dotType||'rounded';
+    var dotColor=o.dotColor||'#1a1410';
+    var iconRatio=o.iconPath?(o.iconRatio||0.26):0;
+    var holeMods=Math.floor(n*iconRatio);
+    var holeStart=Math.floor((n-holeMods)/2);
+    var holeEnd=holeStart+holeMods;
+    function inHole(r,c){ return iconRatio>0&&r>=holeStart&&r<holeEnd&&c>=holeStart&&c<holeEnd; }
+    for(var r=0;r<n;r++) for(var c=0;c<n;c++){
+      if(!qr.isDark(r,c)) continue;
+      if(isFinder(r,c,n)) continue;
+      if(inHole(r,c)) continue;
+      drawDot(ctx,off+c*px,off+r*px,px,dotType,dotColor);
     }
-
-    // finders estilizados
-    const fopt = {cornerColor:o.cornerColor||dotColor, cornerDotColor:o.cornerDotColor||dotColor, bg:o.bg||'#fff', cornerType:o.cornerType||'rounded'};
-    drawFinder(ctx, off+0,         off+0,         px, fopt); // TL
-    drawFinder(ctx, off+(n-7)*px,  off+0,         px, fopt); // TR
-    drawFinder(ctx, off+0,         off+(n-7)*px,  px, fopt); // BL
-
-    // ícone central
-    if(o.iconSvgPath){
-      return drawIcon(ctx,cv,o,off,px,holeStart,holeMods);
-    }
-    return Promise.resolve(cv);
+    var fopt={cornerColor:o.cornerColor||dotColor,cornerDotColor:o.cornerDotColor||dotColor,bg:o.bg||'#fff',cornerType:o.cornerType||'rounded'};
+    drawFinder(ctx,off,off,px,fopt);
+    drawFinder(ctx,off+(n-7)*px,off,px,fopt);
+    drawFinder(ctx,off,off+(n-7)*px,px,fopt);
+    if(o.iconPath) drawIcon(ctx,o,off,px,holeStart,holeMods);
+    return cv;
   }
-
-  function drawIcon(ctx,cv,o,off,px,holeStart,holeMods){
-    return new Promise(resolve=>{
-      // O fundo branco do ícone deve cobrir EXATAMENTE os módulos reservados
-      // (sem padding extra), senão apaga módulos de dados vizinhos e quebra a leitura.
-      const hx = off + holeStart*px;
-      const hy = off + holeStart*px;
-      const hs = holeMods*px;
-      // fundo arredondado limpo atrás do ícone (alinhado ao buraco)
-      ctx.fillStyle = o.bg||'#fff';
-      roundRect(ctx,hx,hy,hs,hs,hs*0.22); ctx.fill();
-
-      const col = (o.iconColor||'#b8842f');
-      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${Math.round(hs)}" height="${Math.round(hs)}"><g fill="none" stroke="${col}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${o.iconSvgPath}</g></svg>`;
-      const img = new Image();
-      img.onload = ()=>{
-        const isz = hs*0.72; // ícone ocupa 72% do buraco, com folga branca ao redor
-        ctx.drawImage(img, hx+(hs-isz)/2, hy+(hs-isz)/2, isz, isz);
-        resolve(cv);
-      };
-      img.onerror = ()=>resolve(cv);
-      img.src = 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
-    });
+  function drawIcon(ctx,o,off,px,holeStart,holeMods){
+    var x=off+holeStart*px, y=off+holeStart*px, s=holeMods*px, r=s*0.26;
+    ctx.save();
+    ctx.shadowColor='rgba(40,28,16,.18)'; ctx.shadowBlur=s*0.10; ctx.shadowOffsetY=s*0.03;
+    ctx.fillStyle=o.bg||'#fff'; roundRect(ctx,x,y,s,s,r); ctx.fill();
+    ctx.restore();
+    ctx.lineWidth=Math.max(1,s*0.035);
+    ctx.strokeStyle=o.ringColor||'#e3c178';
+    roundRect(ctx,x+ctx.lineWidth/2,y+ctx.lineWidth/2,s-ctx.lineWidth,s-ctx.lineWidth,r-ctx.lineWidth/2);
+    ctx.stroke();
+    var isz=s*0.62, scale=isz/24, ox=x+(s-isz)/2, oy=y+(s-isz)/2;
+    ctx.save();
+    ctx.translate(ox,oy); ctx.scale(scale,scale);
+    ctx.fillStyle=o.iconFill||'#b8842f';
+    try{ ctx.fill(new Path2D(o.iconPath),'evenodd'); }catch(e){}
+    ctx.restore();
   }
-
-  global.StyledQR = { render: renderQR };
+  global.StyledQR={render:renderQR};
 })(window);
 
 </script>
-<!-- App -->
 <script>
-const CONFIG = {brand:"Acervo Literário", whatsapp:"5547991438831", pixKey:"rodrigocesarhang@gmail.com", baseUrl:"https://rodrigoch98.github.io/Sebo", page:"livro.html"};
-const BOOKS = [{"slug": "divergente-veronica-roth", "t": "Divergente — Veronica Roth", "titleMain": "Divergente", "author": "Veronica Roth", "img": "https://m.media-amazon.com/images/I/61LTfghX0LL._SY342_.jpg", "p": "21,00", "badge": ""}, {"slug": "a-bussola-de-ouro-philip-pullman", "t": "A Bússola de Ouro — Philip Pullman", "titleMain": "A Bússola de Ouro", "author": "Philip Pullman", "img": "https://m.media-amazon.com/images/I/819DY12SBLL._SY342_.jpg", "p": "33,00", "badge": ""}, {"slug": "o-sobrinho-do-mago-c-s-lewis-narnia", "t": "O Sobrinho do Mago — C.S. Lewis (Nárnia)", "titleMain": "O Sobrinho do Mago", "author": "C.S. Lewis", "img": "https://m.media-amazon.com/images/I/711WTt57f7L._SY342_.jpg", "p": "15,00", "badge": ""}, {"slug": "correr-ou-morrer-james-dashner-maze-runner-1", "t": "Correr ou Morrer — James Dashner (Maze Runner #1)", "titleMain": "Correr ou Morrer", "author": "James Dashner", "img": "https://m.media-amazon.com/images/I/81UuGTd7RuL._SY342_.jpg", "p": "25,00", "badge": ""}, {"slug": "senhora-jose-de-alencar-capa-dura", "t": "Senhora — José de Alencar (Capa Dura)", "titleMain": "Senhora", "author": "José de Alencar", "img": "https://m.media-amazon.com/images/I/31WBL4L2AxL.jpg", "p": "15,00", "badge": ""}, {"slug": "eu-sou-o-numero-quatro-pittacus-lore", "t": "Eu Sou o Número Quatro — Pittacus Lore", "titleMain": "Eu Sou o Número Quatro", "author": "Pittacus Lore", "img": "https://m.media-amazon.com/images/I/61BZ0zUkL+L._SY342_.jpg", "p": "24,00", "badge": ""}, {"slug": "bird-box-josh-malerman-edicao-especial-de-luxo", "t": "Bird Box — Josh Malerman (Edição Especial de Luxo)", "titleMain": "Bird Box", "author": "Josh Malerman", "img": "https://m.media-amazon.com/images/I/91x7oEAnSOL._SY342_.jpg", "p": "49,00", "badge": ""}, {"slug": "a-descoberta-das-bruxas-deborah-harkness", "t": "A Descoberta das Bruxas — Deborah Harkness", "titleMain": "A Descoberta das Bruxas", "author": "Deborah Harkness", "img": "https://m.media-amazon.com/images/I/61xZ+Q1-OkL._SY342_.jpg", "p": "34,00", "badge": ""}, {"slug": "crepusculo-stephenie-meyer-capa-original", "t": "Crepúsculo — Stephenie Meyer (Capa Original)", "titleMain": "Crepúsculo", "author": "Stephenie Meyer", "img": "https://m.media-amazon.com/images/I/618fXbK+OkL._SY342_.jpg", "p": "24,00", "badge": ""}, {"slug": "box-tetralogia-angelica-eduardo-spohr-ed-10-anos", "t": "Box Tetralogia Angélica — Eduardo Spohr (Ed. 10 Anos)", "titleMain": "Box Tetralogia Angélica", "author": "Eduardo Spohr", "img": "https://static.skeelo.com/remote/320/480/100/https://skoob.s3.amazonaws.com/livros/790957/BOX_TETRALOGIA_ANGELICA_1530626840790957SK1530626840B.jpg", "p": "100,00", "badge": "kit"}];
+const CONFIG = {brand:"Acervo Literário", whatsapp:"5547991438831", pixKey:"rodrigocesarhang@gmail.com", baseUrl:"https://rodrigoch98.github.io/Sebo", page:"bookstore"};
+const BOOKS = [{"slug":"box-machado-de-assis-colecao-completa","t":"Box Machado de Assis — Coleção Completa","titleMain":"Box Machado de Assis","author":"Coleção Completa","p":"124,00","img":"https://images.tcdn.com.br/img/img_prod/1323385/box_machado_de_assis_11_livros_capa_dura_biografia_do_autor_17958_2_01d68758960ec216bd68b4445a9ed3ff.jpg","badge":"kit","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"box machado de assis obra completa capa dura"},{"slug":"box-trilogia-tempest-julie-cross","t":"Box Trilogia Tempest — Julie Cross","titleMain":"Box Trilogia Tempest","author":"Julie Cross","p":"52,00","img":"https://m.media-amazon.com/images/I/71cQQxenhoL._SY342_.jpg","badge":"kit","sold":false,"g":["Sci-Fi","Viagem no Tempo"],"q":"tempest julie cross box trilogia"},{"slug":"box-trilogia-os-tons-de-magia-v-e-schwab","t":"Box Trilogia Os Tons de Magia — V.E. Schwab","titleMain":"Box Trilogia Os Tons de Magia","author":"V.E. Schwab","p":"94,00","img":"https://m.media-amazon.com/images/I/81MNf2G13JL._SY342_.jpg","badge":"kit","sold":false,"g":["Fantasia"],"q":"tons de magia v.e. schwab box trilogia"},{"slug":"box-princesa-das-cinzas-laura-sebastian","t":"Box Princesa das Cinzas — Laura Sebastian","titleMain":"Box Princesa das Cinzas","author":"Laura Sebastian","p":"73,00","img":"https://m.media-amazon.com/images/I/41oeGyDYhXS._SX342_SY445_PQ99_.jpg","badge":"kit","sold":false,"g":["Fantasia"],"q":"princesa das cinzas laura sebastian box trilogia"},{"slug":"box-sombra-e-ossos-leigh-bardugo-grishaverso","t":"Box Sombra e Ossos — Leigh Bardugo (Grishaverso)","titleMain":"Box Sombra e Ossos","author":"Leigh Bardugo","p":"82,00","img":"https://americanas.vtexassets.com/arquivos/ids/478565-1280-auto/3636586991_3SZ.webp?v=638750827352770000&quality=9","badge":"kit","sold":false,"g":["Fantasia"],"q":"sombra e ossos leigh bardugo grishaverso box"},{"slug":"box-a-saga-dos-corvos-maggie-stiefvater-4-livros","t":"Box A Saga dos Corvos — Maggie Stiefvater (4 Livros)","titleMain":"Box A Saga dos Corvos","author":"Maggie Stiefvater","p":"90,00","img":"https://m.media-amazon.com/images/I/91E+AI-cdOS._SY342_.jpg","badge":"kit","sold":false,"g":["Fantasia","Mistério"],"q":"saga dos corvos maggie stiefvater box completo"},{"slug":"box-cronicas-de-artur-bernard-cornwell","t":"Box Crônicas de Artur — Bernard Cornwell","titleMain":"Box Crônicas de Artur","author":"Bernard Cornwell","p":"106,00","img":"https://m.media-amazon.com/images/I/A1BfXWSusFL._AC_UF1000,1000_QL80_.jpg","badge":"kit","sold":false,"g":["Ficção Histórica"],"q":"cronicas artur bernard cornwell box rei inverno"},{"slug":"box-sherlock-holmes-obra-completa-4-volumes","t":"Box Sherlock Holmes — Obra Completa (4 Volumes)","titleMain":"Box Sherlock Holmes","author":"Obra Completa","p":"75,00","img":"https://m.media-amazon.com/images/I/71kaG9KFfhL._SY342_.jpg","badge":"kit","sold":false,"g":["Mistério","Clássico"],"q":"sherlock holmes box obra completa harpercollins"},{"slug":"box-tetralogia-angelica-eduardo-spohr-ed-10-anos","t":"Box Tetralogia Angélica — Eduardo Spohr (Ed. 10 Anos)","titleMain":"Box Tetralogia Angélica","author":"Eduardo Spohr","p":"100,00","img":"https://static.skeelo.com/remote/320/480/100/https://skoob.s3.amazonaws.com/livros/790957/BOX_TETRALOGIA_ANGELICA_1530626840790957SK1530626840B.jpg","badge":"kit","sold":false,"g":["Fantasia","Nacional"],"q":"tetralogia angelica eduardo spohr box apocalipse"},{"slug":"box-jules-verne-4-viagens-extraordinarias-capa-dura","t":"Box Jules Verne — 4 Viagens Extraordinárias (Capa Dura)","titleMain":"Box Jules Verne","author":"4 Viagens Extraordinárias","p":"66,00","img":"https://m.media-amazon.com/images/I/515c-kwvF1L._SY445_SX342_PQ99_.jpg","badge":"kit","sold":false,"g":["Sci-Fi","Clássico"],"q":"jules verne box viagens extraordinarias zahar"},{"slug":"box-segunda-guerra-mundial-3-livros","t":"Box Segunda Guerra Mundial (3 Livros)","titleMain":"Box Segunda Guerra Mundial (3 Livros)","author":"","p":"39,00","img":"https://m.media-amazon.com/images/I/71v9lgMZOTL._SY342_.jpg","badge":"kit","sold":false,"g":["História"],"q":"box segunda guerra mundial editora hb completo"},{"slug":"box-trilogia-dos-principes-elizabeth-hoyt","t":"Box Trilogia dos Príncipes — Elizabeth Hoyt","titleMain":"Box Trilogia dos Príncipes","author":"Elizabeth Hoyt","p":"52,00","img":"https://m.media-amazon.com/images/I/81Lh0wG33lS._AC_UF1000,1000_QL80_.jpg","badge":"kit","sold":false,"g":["Romance","Histórico"],"q":"box trilogia dos principios elizabeth hoyt record"},{"slug":"box-acotar-corte-de-espinhos-e-rosas-4-livros","t":"Box ACOTAR — Corte de Espinhos e Rosas (4 Livros)","titleMain":"Box ACOTAR","author":"Corte de Espinhos e Rosas","p":"126,00","img":"https://cdn.culturagenial.com/imagens/acotar-a-ordem-certa-de-leitura-da-serie-og.jpg","badge":"kit","sold":false,"g":["Fantasia","Romance"],"q":"acotar sarah j maas corte espinhos rosas box"},{"slug":"corte-de-chamas-prateadas-sarah-j-maas-acotar-5","t":"Corte de Chamas Prateadas — Sarah J. Maas (ACOTAR 5)","titleMain":"Corte de Chamas Prateadas","author":"Sarah J. Maas","p":"34,00","img":"https://m.media-amazon.com/images/I/51Gz8oGY5uL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Romance"],"q":"corte de chamas prateadas sarah j maas acotar"},{"slug":"box-o-povo-do-ar-holly-black-4-livros","t":"Box O Povo do Ar — Holly Black (4 Livros)","titleMain":"Box O Povo do Ar","author":"Holly Black","p":"148,00","img":"https://static.estantevirtual.com.br/book/00/IFW-9588-000/IFW-9588-000_detail1.jpg?ts=1746457625635?ims=fit-in/300x400/filters:fill(ffffff)","badge":"kit","sold":false,"g":["Fantasia","Fadas"],"q":"povo do ar holly black principe cruel box"},{"slug":"como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo","t":"Como o Rei de Elfhame Aprendeu a Odiar Histórias — Holly Black (Luxo)","titleMain":"Como o Rei de Elfhame Aprendeu a Odiar Histórias","author":"Holly Black","p":"36,00","img":"https://m.media-amazon.com/images/I/71FrqiJlbAL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Fadas"],"q":"como rei elfhame holly black capa dura"},{"slug":"box-legend-marie-lu-trilogia-completa","t":"Box Legend — Marie Lu (Trilogia Completa)","titleMain":"Box Legend","author":"Marie Lu","p":"90,00","img":"https://m.media-amazon.com/images/I/51NbL1Rq6aL._SY342_.jpg","badge":"kit","sold":false,"g":["Distopia","Ação"],"q":"legend marie lu box trilogia"},{"slug":"rebel-marie-lu-legend-4","t":"Rebel — Marie Lu (Legend #4)","titleMain":"Rebel","author":"Marie Lu","p":"27,00","img":"https://m.media-amazon.com/images/I/51YdJxQ3BbL._SY342_.jpg","badge":"","sold":false,"g":["Distopia","Ação"],"q":"rebel marie lu legend quarto livro"},{"slug":"a-descoberta-das-bruxas-deborah-harkness","t":"A Descoberta das Bruxas — Deborah Harkness","titleMain":"A Descoberta das Bruxas","author":"Deborah Harkness","p":"34,00","img":"https://m.media-amazon.com/images/I/71SDDJPBZdL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Romance"],"q":"a descoberta das bruxas deborah harkness"},{"slug":"sombra-da-noite-deborah-harkness","t":"Sombra da Noite — Deborah Harkness","titleMain":"Sombra da Noite","author":"Deborah Harkness","p":"34,00","img":"https://m.media-amazon.com/images/I/51n7jnYmMiL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Romance"],"q":"sombra da noite deborah harkness"},{"slug":"o-livro-da-vida-deborah-harkness","t":"O Livro da Vida — Deborah Harkness","titleMain":"O Livro da Vida","author":"Deborah Harkness","p":"34,00","img":"https://m.media-amazon.com/images/I/51hRi8fgq+L._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Romance"],"q":"o livro da vida deborah harkness"},{"slug":"a-rainha-vermelha-victoria-aveyard","t":"A Rainha Vermelha — Victoria Aveyard","titleMain":"A Rainha Vermelha","author":"Victoria Aveyard","p":"32,00","img":"https://m.media-amazon.com/images/I/516uvyklSoL._SY342_.jpg","badge":"","sold":false,"g":["Distopia","Fantasia"],"q":"a rainha vermelha"},{"slug":"espada-de-vidro-victoria-aveyard","t":"Espada de Vidro — Victoria Aveyard","titleMain":"Espada de Vidro","author":"Victoria Aveyard","p":"30,00","img":"https://m.media-amazon.com/images/I/51BuSH6SBQL._SY342_.jpg","badge":"","sold":false,"g":["Distopia","Fantasia"],"q":"espada de vidro"},{"slug":"a-prisao-do-rei-victoria-aveyard","t":"A Prisão do Rei — Victoria Aveyard","titleMain":"A Prisão do Rei","author":"Victoria Aveyard","p":"30,00","img":"https://m.media-amazon.com/images/I/51H2P2EEL5L._SY342_.jpg","badge":"","sold":false,"g":["Distopia","Fantasia"],"q":"a prisão do rei"},{"slug":"tempestade-de-guerra-victoria-aveyard","t":"Tempestade de Guerra — Victoria Aveyard","titleMain":"Tempestade de Guerra","author":"Victoria Aveyard","p":"30,00","img":"https://m.media-amazon.com/images/I/51P9nZ2oJeL._SY342_.jpg","badge":"","sold":false,"g":["Distopia","Fantasia"],"q":"tempestade de guerra"},{"slug":"trono-destruido-victoria-aveyard-contos","t":"Trono Destruído — Victoria Aveyard (Contos)","titleMain":"Trono Destruído","author":"Victoria Aveyard","p":"29,00","img":"https://m.media-amazon.com/images/I/51F5vW0BNGL._SY342_.jpg","badge":"","sold":false,"g":["Distopia","Fantasia"],"q":"trono destruído"},{"slug":"anjos-e-demonios-dan-brown","t":"Anjos e Demônios — Dan Brown","titleMain":"Anjos e Demônios","author":"Dan Brown","p":"25,00","img":"https://m.media-amazon.com/images/I/81Y3yELPGlL._SY342_.jpg","badge":"","sold":false,"g":["Suspense","Mistério"],"q":"anjos e demonios dan brown"},{"slug":"o-codigo-da-vinci-dan-brown","t":"O Código Da Vinci — Dan Brown","titleMain":"O Código Da Vinci","author":"Dan Brown","p":"26,00","img":"https://m.media-amazon.com/images/I/71y4X5150dL._SY342_.jpg","badge":"","sold":false,"g":["Suspense","Mistério"],"q":"o codigo da vinci dan brown"},{"slug":"o-simbolo-perdido-dan-brown","t":"O Símbolo Perdido — Dan Brown","titleMain":"O Símbolo Perdido","author":"Dan Brown","p":"24,00","img":"https://m.media-amazon.com/images/I/71A3BQGP8-L._SY342_.jpg","badge":"","sold":false,"g":["Suspense","Mistério"],"q":"o simbolo perdido dan brown"},{"slug":"inferno-dan-brown","t":"Inferno — Dan Brown","titleMain":"Inferno","author":"Dan Brown","p":"24,00","img":"https://m.media-amazon.com/images/I/51dPeI6OYLL._SY342_.jpg","badge":"","sold":false,"g":["Suspense","Mistério"],"q":"inferno dan brown"},{"slug":"origem-dan-brown","t":"Origem — Dan Brown","titleMain":"Origem","author":"Dan Brown","p":"20,00","img":"https://m.media-amazon.com/images/I/51nkX2PRDPL._SY342_.jpg","badge":"","sold":false,"g":["Suspense","Mistério"],"q":"origem dan brown"},{"slug":"fortaleza-digital-dan-brown","t":"Fortaleza Digital — Dan Brown","titleMain":"Fortaleza Digital","author":"Dan Brown","p":"24,00","img":"https://m.media-amazon.com/images/I/816X46l6aWL._AC_UF1000,1000_QL80_.jpg","badge":"","sold":false,"g":["Suspense","Tecnologia"],"q":"fortaleza digital dan brown"},{"slug":"ponto-de-impacto-dan-brown","t":"Ponto de Impacto — Dan Brown","titleMain":"Ponto de Impacto","author":"Dan Brown","p":"24,00","img":"https://m.media-amazon.com/images/I/51qJC3KQDxL._SY342_.jpg","badge":"","sold":false,"g":["Suspense","Tecnologia"],"q":"ponto de impacto dan brown"},{"slug":"o-escaravelho-catherine-fisher","t":"O Escaravelho — Catherine Fisher","titleMain":"O Escaravelho","author":"Catherine Fisher","p":"20,00","img":"https://img.travessa.com.br/livro/GR/9c/9c65e654-16a8-477e-8a45-48960cbc6b39.jpg","badge":"","sold":false,"g":["Fantasia","Mitologia"],"q":"o escaravelho catherine fisher"},{"slug":"o-oraculo-catherine-fisher","t":"O Oráculo — Catherine Fisher","titleMain":"O Oráculo","author":"Catherine Fisher","p":"20,00","img":"https://m.media-amazon.com/images/I/51D9oSCvFRL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Mitologia"],"q":"o oraculo catherine fisher"},{"slug":"o-arconte-catherine-fisher","t":"O Arconte — Catherine Fisher","titleMain":"O Arconte","author":"Catherine Fisher","p":"20,00","img":"https://m.media-amazon.com/images/I/41wvx-K-VKL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Mitologia"],"q":"o arconte catherine fisher"},{"slug":"irmaos-de-sangue-nora-roberts","t":"Irmãos de Sangue — Nora Roberts","titleMain":"Irmãos de Sangue","author":"Nora Roberts","p":"30,00","img":"https://m.media-amazon.com/images/I/51HyGspvKIL._SY342_.jpg","badge":"","sold":false,"g":["Sobrenatural","Romance"],"q":"irmãos de sangue"},{"slug":"a-maldicao-de-hollow-nora-roberts","t":"A Maldição de Hollow — Nora Roberts","titleMain":"A Maldição de Hollow","author":"Nora Roberts","p":"30,00","img":"https://m.media-amazon.com/images/I/51-ZfKcqKAL._SY342_.jpg","badge":"","sold":false,"g":["Sobrenatural","Romance"],"q":"a maldição de hollow"},{"slug":"a-pedra-paga-nora-roberts","t":"A Pedra Pagã — Nora Roberts","titleMain":"A Pedra Pagã","author":"Nora Roberts","p":"30,00","img":"https://m.media-amazon.com/images/I/51mB3F+PFKL._SY342_.jpg","badge":"","sold":false,"g":["Sobrenatural","Romance"],"q":"a pedra pagã"},{"slug":"correr-ou-morrer-james-dashner-maze-runner-1","t":"Correr ou Morrer — James Dashner (Maze Runner #1)","titleMain":"Correr ou Morrer","author":"James Dashner","p":"25,00","img":"https://m.media-amazon.com/images/I/51bz+YRxkPL._SY342_.jpg","badge":"","sold":false,"g":["Distopia","Sci-Fi"],"q":"correr ou morrer"},{"slug":"prova-de-fogo-james-dashner-maze-runner-2","t":"Prova de Fogo — James Dashner (Maze Runner #2)","titleMain":"Prova de Fogo","author":"James Dashner","p":"25,00","img":"https://m.media-amazon.com/images/I/51TWWKm7bNL._SY342_.jpg","badge":"","sold":false,"g":["Distopia","Sci-Fi"],"q":"prova de fogo"},{"slug":"a-cura-mortal-james-dashner-maze-runner-3","t":"A Cura Mortal — James Dashner (Maze Runner #3)","titleMain":"A Cura Mortal","author":"James Dashner","p":"25,00","img":"https://m.media-amazon.com/images/I/51FBH2XLKBL._SY342_.jpg","badge":"","sold":false,"g":["Distopia","Sci-Fi"],"q":"a cura mortal"},{"slug":"ordem-de-exterminio-james-dashner-maze-runner-prequel","t":"Ordem de Extermínio — James Dashner (Maze Runner Prequel)","titleMain":"Ordem de Extermínio","author":"James Dashner","p":"24,00","img":"https://m.media-amazon.com/images/I/51kYXbf9CuL._SY342_.jpg","badge":"","sold":false,"g":["Distopia","Sci-Fi"],"q":"ordem de extermínio"},{"slug":"o-codigo-da-febre-james-dashner-maze-runner-prequel-2","t":"O Código da Febre — James Dashner (Maze Runner Prequel 2)","titleMain":"O Código da Febre","author":"James Dashner","p":"24,00","img":"https://m.media-amazon.com/images/I/41D3GFSyEqL._SY342_.jpg","badge":"","sold":false,"g":["Distopia","Sci-Fi"],"q":"o código da febre"},{"slug":"arquivos-james-dashner-guia-maze-runner","t":"Arquivos — James Dashner (Guia Maze Runner)","titleMain":"Arquivos","author":"James Dashner","p":"22,00","img":"https://m.media-amazon.com/images/I/51NI0T+ZiIL._SY342_.jpg","badge":"","sold":false,"g":["Distopia","Sci-Fi"],"q":"arquivos"},{"slug":"divergente-veronica-roth","t":"Divergente — Veronica Roth","titleMain":"Divergente","author":"Veronica Roth","p":"21,00","img":"https://m.media-amazon.com/images/I/61idoE9JcNL._AC_UF1000,1000_QL80_.jpg","badge":"","sold":false,"g":["Distopia"],"q":"divergente"},{"slug":"insurgente-veronica-roth","t":"Insurgente — Veronica Roth","titleMain":"Insurgente","author":"Veronica Roth","p":"20,00","img":"https://m.media-amazon.com/images/I/51h+FJIqE7L._SY342_.jpg","badge":"","sold":false,"g":["Distopia"],"q":"insurgente"},{"slug":"convergente-veronica-roth","t":"Convergente — Veronica Roth","titleMain":"Convergente","author":"Veronica Roth","p":"20,00","img":"https://m.media-amazon.com/images/I/51LgXGXc4rL._SY342_.jpg","badge":"","sold":false,"g":["Distopia"],"q":"convergente"},{"slug":"quatro-veronica-roth","t":"Quatro — Veronica Roth","titleMain":"Quatro","author":"Veronica Roth","p":"21,00","img":"https://m.media-amazon.com/images/I/51K8+Ag-0uL._SY342_.jpg","badge":"","sold":false,"g":["Distopia"],"q":"quatro"},{"slug":"os-doze-justin-cronin-a-passagem-2","t":"Os Doze — Justin Cronin (A Passagem #2)","titleMain":"Os Doze","author":"Justin Cronin","p":"33,00","img":"https://m.media-amazon.com/images/I/91Na482X6bL._AC_UF1000,1000_QL80_.jpg","badge":"","sold":false,"g":["Terror","Pós-Apocalíptico"],"q":"os doze justin cronin passagem"},{"slug":"a-cidade-dos-espelhos-justin-cronin-a-passagem-3","t":"A Cidade dos Espelhos — Justin Cronin (A Passagem #3)","titleMain":"A Cidade dos Espelhos","author":"Justin Cronin","p":"33,00","img":"https://m.media-amazon.com/images/I/51Gib9gQI7L._SY342_.jpg","badge":"","sold":false,"g":["Terror","Pós-Apocalíptico"],"q":"cidade dos espelhos justin cronin passagem"},{"slug":"halo-alexandra-adornetto","t":"Halo — Alexandra Adornetto","titleMain":"Halo","author":"Alexandra Adornetto","p":"27,00","img":"https://m.media-amazon.com/images/I/51u7Nt4DJZL._SY342_.jpg","badge":"","sold":false,"g":["Romance","Anjos"],"q":"halo"},{"slug":"hades-alexandra-adornetto","t":"Hades — Alexandra Adornetto","titleMain":"Hades","author":"Alexandra Adornetto","p":"27,00","img":"https://m.media-amazon.com/images/I/51vMgjn5TUL._SY342_.jpg","badge":"","sold":false,"g":["Romance","Anjos"],"q":"hades"},{"slug":"heaven-alexandra-adornetto","t":"Heaven — Alexandra Adornetto","titleMain":"Heaven","author":"Alexandra Adornetto","p":"25,00","img":"https://m.media-amazon.com/images/I/41nWz-L6d9L._SY342_.jpg","badge":"","sold":false,"g":["Romance","Anjos"],"q":"heaven"},{"slug":"surgido-das-sombras-tim-lebbon-alien-1","t":"Surgido das Sombras — Tim Lebbon (Alien #1)","titleMain":"Surgido das Sombras","author":"Tim Lebbon","p":"33,00","img":"https://m.media-amazon.com/images/I/61g34iPFtjL._SX445_.jpg","badge":"","sold":false,"g":["Sci-Fi","Terror"],"q":"surgido das sombras"},{"slug":"mar-de-angustia-james-a-moore-alien-2","t":"Mar de Angústia — James A. Moore (Alien #2)","titleMain":"Mar de Angústia","author":"James A. Moore","p":"33,00","img":"https://m.media-amazon.com/images/I/51Sf9b5lf+L._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Terror"],"q":"mar de angústia"},{"slug":"rio-de-sofrimento-christopher-golden-alien-3","t":"Rio de Sofrimento — Christopher Golden (Alien #3)","titleMain":"Rio de Sofrimento","author":"Christopher Golden","p":"33,00","img":"https://m.media-amazon.com/images/I/61iGkJFWOuL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Terror"],"q":"rio de sofrimento"},{"slug":"a-bussola-de-ouro-philip-pullman","t":"A Bússola de Ouro — Philip Pullman","titleMain":"A Bússola de Ouro","author":"Philip Pullman","p":"33,00","img":"https://m.media-amazon.com/images/I/51BxGwXDJjL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"a bússola de ouro"},{"slug":"a-faca-sutil-philip-pullman","t":"A Faca Sutil — Philip Pullman","titleMain":"A Faca Sutil","author":"Philip Pullman","p":"32,00","img":"https://m.media-amazon.com/images/I/51lfj0oNy2L._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"a faca sutil"},{"slug":"a-luneta-ambar-philip-pullman","t":"A Luneta Âmbar — Philip Pullman","titleMain":"A Luneta Âmbar","author":"Philip Pullman","p":"32,00","img":"https://m.media-amazon.com/images/I/51cF3Q3WgSL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"a luneta âmbar"},{"slug":"silo-hugh-howey","t":"Silo — Hugh Howey","titleMain":"Silo","author":"Hugh Howey","p":"34,00","img":"https://m.media-amazon.com/images/I/91WwJNJXB-L._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Distopia"],"q":"silo"},{"slug":"ordem-hugh-howey","t":"Ordem — Hugh Howey","titleMain":"Ordem","author":"Hugh Howey","p":"33,00","img":"https://m.media-amazon.com/images/I/81IK1g-AmeL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Distopia"],"q":"ordem"},{"slug":"legado-hugh-howey","t":"Legado — Hugh Howey","titleMain":"Legado","author":"Hugh Howey","p":"33,00","img":"https://m.media-amazon.com/images/I/91-c-PKJJUL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Distopia"],"q":"legado"},{"slug":"o-homem-de-giz-c-j-tudor","t":"O Homem de Giz — C.J. Tudor","titleMain":"O Homem de Giz","author":"C.J. Tudor","p":"33,00","img":"https://m.media-amazon.com/images/I/81h+LFy07IL._SY342_.jpg","badge":"","sold":false,"g":["Thriller","Suspense"],"q":"o homem de giz"},{"slug":"o-que-aconteceu-com-annie-c-j-tudor","t":"O Que Aconteceu com Annie — C.J. Tudor","titleMain":"O Que Aconteceu com Annie","author":"C.J. Tudor","p":"32,00","img":"https://m.media-amazon.com/images/I/81tB0Y9r0SL._SY342_.jpg","badge":"","sold":false,"g":["Thriller","Suspense"],"q":"o que aconteceu com annie"},{"slug":"as-outras-pessoas-c-j-tudor","t":"As Outras Pessoas — C.J. Tudor","titleMain":"As Outras Pessoas","author":"C.J. Tudor","p":"32,00","img":"https://m.media-amazon.com/images/I/71OKXnXPiRL._SY342_.jpg","badge":"","sold":false,"g":["Thriller","Suspense"],"q":"as outras pessoas"},{"slug":"garotas-em-chamas-c-j-tudor","t":"Garotas em Chamas — C.J. Tudor","titleMain":"Garotas em Chamas","author":"C.J. Tudor","p":"32,00","img":"https://m.media-amazon.com/images/I/71iq20J5kfL._SY342_.jpg","badge":"","sold":false,"g":["Thriller","Suspense"],"q":"garotas em chamas"},{"slug":"bird-box-josh-malerman-edicao-especial-de-luxo","t":"Bird Box — Josh Malerman (Edição Especial de Luxo)","titleMain":"Bird Box","author":"Josh Malerman","p":"49,00","img":"https://m.media-amazon.com/images/I/91x7oEAnSOL._SY342_.jpg","badge":"","sold":false,"g":["Thriller","Terror"],"q":"bird box josh malerman edicao luxo capa dura"},{"slug":"malorie-josh-malerman","t":"Malorie — Josh Malerman","titleMain":"Malorie","author":"Josh Malerman","p":"30,00","img":"https://m.media-amazon.com/images/I/71x5DPkOcOL._SY342_.jpg","badge":"","sold":false,"g":["Thriller","Terror"],"q":"malorie josh malerman bird box sequencia"},{"slug":"neve-e-cinzas-sara-raasch","t":"Neve e Cinzas — Sara Raasch","titleMain":"Neve e Cinzas","author":"Sara Raasch","p":"26,00","img":"https://m.media-amazon.com/images/I/71Hw206fF-L._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"neve e cinzas"},{"slug":"gelo-e-fogo-sara-raasch","t":"Gelo e Fogo — Sara Raasch","titleMain":"Gelo e Fogo","author":"Sara Raasch","p":"26,00","img":"https://m.media-amazon.com/images/I/51fAhf8V3HL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"gelo e fogo"},{"slug":"geada-e-noite-sara-raasch","t":"Geada e Noite — Sara Raasch","titleMain":"Geada e Noite","author":"Sara Raasch","p":"26,00","img":"https://m.media-amazon.com/images/I/51qmVhVJmIL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"geada e noite"},{"slug":"a-5-onda-rick-yancey","t":"A 5ª Onda — Rick Yancey","titleMain":"A 5ª Onda","author":"Rick Yancey","p":"20,00","img":"https://m.media-amazon.com/images/I/813mSc2QPqL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Ação"],"q":"a 5ª onda"},{"slug":"o-mar-infinito-rick-yancey","t":"O Mar Infinito — Rick Yancey","titleMain":"O Mar Infinito","author":"Rick Yancey","p":"18,00","img":"https://m.media-amazon.com/images/I/51E2HjYkQmL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Ação"],"q":"o mar infinito"},{"slug":"a-ultima-estrela-rick-yancey","t":"A Última Estrela — Rick Yancey","titleMain":"A Última Estrela","author":"Rick Yancey","p":"18,00","img":"https://m.media-amazon.com/images/I/51e+kJf7ZeL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Ação"],"q":"a última estrela"},{"slug":"o-cla-dos-magos-trudi-canavan","t":"O Clã dos Magos — Trudi Canavan","titleMain":"O Clã dos Magos","author":"Trudi Canavan","p":"20,00","img":"https://m.media-amazon.com/images/I/51T1s3z9RcL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Magia"],"q":"o clã dos magos"},{"slug":"a-aprendiz-trudi-canavan","t":"A Aprendiz — Trudi Canavan","titleMain":"A Aprendiz","author":"Trudi Canavan","p":"20,00","img":"https://m.media-amazon.com/images/I/51dJFIVJbmL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Magia"],"q":"a aprendiz"},{"slug":"o-lorde-supremo-trudi-canavan","t":"O Lorde Supremo — Trudi Canavan","titleMain":"O Lorde Supremo","author":"Trudi Canavan","p":"20,00","img":"https://m.media-amazon.com/images/I/51e9rA5OReL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Magia"],"q":"o lorde supremo"},{"slug":"stranger-things-raizes-do-mal","t":"Stranger Things: Raízes do Mal","titleMain":"Stranger Things: Raízes do Mal","author":"","p":"29,00","img":"https://m.media-amazon.com/images/I/81KszOKZwqL._SY342_.jpg","badge":"","sold":false,"g":["Suspense","Ficção"],"q":"stranger things raizes do mal"},{"slug":"stranger-things-cidade-nas-trevas","t":"Stranger Things: Cidade nas Trevas","titleMain":"Stranger Things: Cidade nas Trevas","author":"","p":"25,00","img":"https://m.media-amazon.com/images/I/81iIaCqp+mL._SY342_.jpg","badge":"","sold":false,"g":["Suspense","Ficção"],"q":"stranger things cidade nas trevas"},{"slug":"um-de-nos-esta-mentindo-karen-m-mcmanus","t":"Um de Nós Está Mentindo — Karen M. McManus","titleMain":"Um de Nós Está Mentindo","author":"Karen M. McManus","p":"26,00","img":"https://m.media-amazon.com/images/I/811+cSVUW-S._SY342_.jpg","badge":"","sold":false,"g":["Suspense","Jovem"],"q":"um de nos esta mentindo karen mcmanus"},{"slug":"um-de-nos-e-o-proximo-karen-m-mcmanus","t":"Um de Nós é o Próximo — Karen M. McManus","titleMain":"Um de Nós é o Próximo","author":"Karen M. McManus","p":"26,00","img":"https://m.media-amazon.com/images/I/71BfFASR+QL._SY342_.jpg","badge":"","sold":false,"g":["Suspense","Jovem"],"q":"um de nos e o proximo karen mcmanus"},{"slug":"alice-no-pais-das-maravilhas-lewis-carroll-darkside-luxo","t":"Alice no País das Maravilhas — Lewis Carroll (DarkSide Luxo)","titleMain":"Alice no País das Maravilhas","author":"Lewis Carroll","p":"31,00","img":"https://m.media-amazon.com/images/I/81CL3G5jP4L._SY342_.jpg","badge":"","sold":false,"g":["Clássico","Fantasia"],"q":"alice pais maravilhas darkside capa dura"},{"slug":"alice-atraves-do-espelho-lewis-carroll-darkside-luxo","t":"Alice Através do Espelho — Lewis Carroll (DarkSide Luxo)","titleMain":"Alice Através do Espelho","author":"Lewis Carroll","p":"31,00","img":"https://m.media-amazon.com/images/I/81OMCjMaUhL._SY342_.jpg","badge":"","sold":false,"g":["Clássico","Fantasia"],"q":"alice atraves espelho darkside capa dura"},{"slug":"veneno-sarah-pinborough-encantadas-1","t":"Veneno — Sarah Pinborough (Encantadas #1)","titleMain":"Veneno","author":"Sarah Pinborough","p":"17,00","img":"https://m.media-amazon.com/images/I/51n3vA9mRmL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Dark"],"q":"veneno"},{"slug":"feitico-sarah-pinborough-encantadas-2","t":"Feitiço — Sarah Pinborough (Encantadas #2)","titleMain":"Feitiço","author":"Sarah Pinborough","p":"17,00","img":"https://m.media-amazon.com/images/I/51H7wfqUvFL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Dark"],"q":"feitiço"},{"slug":"poder-sarah-pinborough-encantadas-3","t":"Poder — Sarah Pinborough (Encantadas #3)","titleMain":"Poder","author":"Sarah Pinborough","p":"17,00","img":"https://m.media-amazon.com/images/I/51HPpCUMYXL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Dark"],"q":"poder"},{"slug":"psicose-robert-bloch-ed-luxo-darkside","t":"Psicose — Robert Bloch (Ed. Luxo DarkSide)","titleMain":"Psicose","author":"Robert Bloch","p":"36,00","img":"https://darkside.vtexassets.com/arquivos/ids/174500/8-psicose-limited-edition-1.png?v=637606711394330000","badge":"","sold":false,"g":["Terror","Clássico"],"q":"psicose robert bloch darkside books capa dura"},{"slug":"mitos-gregos-nathaniel-hawthorne","t":"Mitos Gregos — Nathaniel Hawthorne","titleMain":"Mitos Gregos","author":"Nathaniel Hawthorne","p":"11,00","img":"https://m.media-amazon.com/images/I/71bpljCX9+L._SY342_.jpg","badge":"","sold":false,"g":["Mitologia"],"q":"mitos gregos nathaniel hawthorne principis"},{"slug":"a-guerra-dos-mundos-h-g-wells-ed-luxo-capa-dura","t":"A Guerra dos Mundos — H.G. Wells (Ed. Luxo Capa Dura)","titleMain":"A Guerra dos Mundos","author":"H.G. Wells","p":"26,00","img":"https://m.media-amazon.com/images/I/81zsdG62TGL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Clássico"],"q":"guerra dos mundos hg wells capa dura luxo"},{"slug":"a-filha-das-profundezas-rick-riordan","t":"A Filha das Profundezas — Rick Riordan","titleMain":"A Filha das Profundezas","author":"Rick Riordan","p":"30,00","img":"https://m.media-amazon.com/images/I/5156fUHVVAL._SY342_.jpg","badge":"","sold":false,"g":["Aventura"],"q":"filha das profundezas rick riordan nautilus"},{"slug":"o-espadachim-de-carvao-affonso-solano","t":"O Espadachim de Carvão — Affonso Solano","titleMain":"O Espadachim de Carvão","author":"Affonso Solano","p":"14,00","img":"https://m.media-amazon.com/images/I/71e4y62I94L._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Nacional"],"q":"espadachim de carvao affonso solano fantasia"},{"slug":"dark-eden-o-medo-e-a-cura-patrick-carman","t":"Dark Eden: O Medo é a Cura — Patrick Carman","titleMain":"Dark Eden: O Medo é a Cura","author":"Patrick Carman","p":"14,00","img":"https://m.media-amazon.com/images/I/81pc+BFGbhL._SY342_.jpg","badge":"","sold":false,"g":["Thriller","Jovem Adulto"],"q":"dark eden patrick carman thriller suspense"},{"slug":"o-colecionador-john-fowles-darkside-caveirinha","t":"O Colecionador — John Fowles (DarkSide Caveirinha)","titleMain":"O Colecionador","author":"John Fowles","p":"31,00","img":"https://m.media-amazon.com/images/I/51E8A6CA5iL._SY342_.jpg","badge":"","sold":false,"g":["Thriller","Psicológico"],"q":"o colecionador john fowles darkside caveirinha"},{"slug":"mitologia-nordica-neil-gaiman-capa-dura","t":"Mitologia Nórdica — Neil Gaiman (Capa Dura)","titleMain":"Mitologia Nórdica","author":"Neil Gaiman","p":"26,00","img":"https://m.media-amazon.com/images/I/71OEUoDbp-L._SY342_.jpg","badge":"","sold":false,"g":["Mitologia","Fantasia"],"q":"mitologia nordica neil gaiman intrinseca capa dura"},{"slug":"circulo-negro-catherine-fisher","t":"Círculo Negro — Catherine Fisher","titleMain":"Círculo Negro","author":"Catherine Fisher","p":"14,00","img":"https://m.media-amazon.com/images/I/61C04WU+WHL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Mistério"],"q":"circulo negro catherine fisher bertrand"},{"slug":"fios-de-prata-reconstruindo-sandman-raphael-draccon","t":"Fios de Prata: Reconstruindo Sandman — Raphael Draccon","titleMain":"Fios de Prata: Reconstruindo Sandman","author":"Raphael Draccon","p":"8,00","img":"https://super.abril.com.br/wp-content/uploads/2018/07/fios-de-prata.jpg?quality=70&strip=info&w=250&h=420&crop=1","badge":"","sold":false,"g":["Fantasia","Nacional"],"q":"fios de prata raphael draccon sandman fantasia"},{"slug":"o-homem-invisivel-h-g-wells-ed-zahar-comentada","t":"O Homem Invisível — H.G. Wells (Ed. Zahar Comentada)","titleMain":"O Homem Invisível","author":"H.G. Wells","p":"16,00","img":"https://m.media-amazon.com/images/I/81h3bvau71L._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Clássico"],"q":"o homem invisivel hg wells zahar capa dura"},{"slug":"terra-americana-jeanine-cummins","t":"Terra Americana — Jeanine Cummins","titleMain":"Terra Americana","author":"Jeanine Cummins","p":"26,00","img":"https://m.media-amazon.com/images/I/51LZOL4DmXL._SY342_.jpg","badge":"","sold":false,"g":["Drama","Thriller"],"q":"terra americana jeanine cummins intrinseca"},{"slug":"frankenstein-mary-shelley-darkside-medo-classico","t":"Frankenstein — Mary Shelley (DarkSide Medo Clássico)","titleMain":"Frankenstein","author":"Mary Shelley","p":"32,00","img":"https://m.magazineluiza.com.br/a-static/420x420/livro-frankenstein/livrarialeitura/9788594540188/f1b0dd38559b369def3f3d2059611f3e.jpg","badge":"","sold":false,"g":["Terror","Clássico"],"q":"frankenstein mary shelley darkside medo classico"},{"slug":"a-essencia-do-mal-luca-d-andrea-capa-dura","t":"A Essência do Mal — Luca D'Andrea (Capa Dura)","titleMain":"A Essência do Mal","author":"Luca D'Andrea","p":"28,00","img":"https://m.media-amazon.com/images/I/51MZJpfIVZL._SY342_.jpg","badge":"","sold":false,"g":["Thriller","Suspense"],"q":"a essencia do mal luca d'andrea intrinseca"},{"slug":"1984-george-orwell-capa-dura","t":"1984 — George Orwell (Capa Dura)","titleMain":"1984","author":"George Orwell","p":"14,00","img":"https://http2.mlstatic.com/D_Q_NP_991669-MLB49091639930_022022-F.webp","badge":"","sold":false,"g":["Distopia","Clássico"],"q":"1984 george orwell principis capa dura"},{"slug":"a-maquina-do-tempo-h-g-wells-suma-luxo","t":"A Máquina do Tempo — H.G. Wells (Suma Luxo)","titleMain":"A Máquina do Tempo","author":"H.G. Wells","p":"21,00","img":"https://m.media-amazon.com/images/I/61swVeECVYL._SY445_SX342_PQ99_.jpg","badge":"","sold":false,"g":["Sci-Fi","Clássico"],"q":"a maquina do tempo hg wells suma capa dura"},{"slug":"contos-de-fadas-dos-irmaos-grimm-capa-dura","t":"Contos de Fadas dos Irmãos Grimm (Capa Dura)","titleMain":"Contos de Fadas dos Irmãos Grimm (Capa Dura)","author":"","p":"17,00","img":"https://m.magazineluiza.com.br/a-static/420x420/livro-contos-de-fadas-dos-irmaos-grimm-jacob-wilhelm-grimm-capa-dura-principis/jklivrarialtda/l353/88de057bfc1ef7978a70b2f6f8a309e9.jpeg","badge":"","sold":false,"g":["Contos","Clássico"],"q":"contos de fadas irmaos grimm capa dura"},{"slug":"cacador-em-fuga-george-r-r-martin","t":"Caçador em Fuga — George R.R. Martin","titleMain":"Caçador em Fuga","author":"George R.R. Martin","p":"21,00","img":"https://m.media-amazon.com/images/I/91H6JpFRJYL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Ação"],"q":"cacador em fuga george rr martin leya"},{"slug":"os-ultimos-dias-de-krypton-kevin-j-anderson","t":"Os Últimos Dias de Krypton — Kevin J. Anderson","titleMain":"Os Últimos Dias de Krypton","author":"Kevin J. Anderson","p":"21,00","img":"https://m.media-amazon.com/images/I/81m90VAa1XL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Super-Heróis"],"q":"os ultimos dias de krypton kevin j anderson superman"},{"slug":"robo-selvagem-peter-brown","t":"Robô Selvagem — Peter Brown","titleMain":"Robô Selvagem","author":"Peter Brown","p":"21,00","img":"https://m.media-amazon.com/images/I/61ZaVLyHOcL._SY342_.jpg","badge":"","sold":false,"g":["Aventura","Sci-Fi"],"q":"robo selvagem peter brown intrinseca"},{"slug":"inspecao-josh-malerman","t":"Inspeção — Josh Malerman","titleMain":"Inspeção","author":"Josh Malerman","p":"25,00","img":"https://m.media-amazon.com/images/I/81kxeCxcWvL._SY342_.jpg","badge":"","sold":false,"g":["Thriller","Distopia"],"q":"inspecao josh malerman caixa de passaros"},{"slug":"serpentario-felipe-castilho","t":"Serpentário — Felipe Castilho","titleMain":"Serpentário","author":"Felipe Castilho","p":"26,00","img":"https://m.media-amazon.com/images/I/91m5BY0AB8L._SY342_.jpg","badge":"","sold":false,"g":["Terror","Nacional"],"q":"serpentario felipe castilho intrinseca terror nacional"},{"slug":"a-garota-do-lago-charlie-donlea","t":"A Garota do Lago — Charlie Donlea","titleMain":"A Garota do Lago","author":"Charlie Donlea","p":"16,00","img":"https://m.media-amazon.com/images/I/81sl23VcYtL._SY342_.jpg","badge":"","sold":false,"g":["Thriller","Policial"],"q":"a garota do lago charlie donlea suspense"},{"slug":"a-arvore-envenenada-erin-kelly","t":"A Árvore Envenenada — Erin Kelly","titleMain":"A Árvore Envenenada","author":"Erin Kelly","p":"9,00","img":"https://m.media-amazon.com/images/I/91ZTzu8nBbL._SY342_.jpg","badge":"","sold":false,"g":["Thriller","Policial"],"q":"a arvore envenenada erin kelly stephen king"},{"slug":"2012-a-guerra-pelas-almas-whitley-strieber","t":"2012: A Guerra Pelas Almas — Whitley Strieber","titleMain":"2012: A Guerra Pelas Almas","author":"Whitley Strieber","p":"8,00","img":"https://m.media-amazon.com/images/I/51AuRodmCJL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Thriller"],"q":"2012 a guerra pelas almas whitley strieber"},{"slug":"jogo-de-espelhos-cara-delevingne","t":"Jogo de Espelhos — Cara Delevingne","titleMain":"Jogo de Espelhos","author":"Cara Delevingne","p":"21,00","img":"https://m.media-amazon.com/images/I/51yRGK422nL._SY445_SX342_PQ99_.jpg","badge":"","sold":false,"g":["Jovem Adulto","Mistério"],"q":"jogo de espelhos cara delevingne intrinseca"},{"slug":"o-morro-dos-ventos-uivantes-emily-bronte-capa-dura","t":"O Morro dos Ventos Uivantes — Emily Brontë (Capa Dura)","titleMain":"O Morro dos Ventos Uivantes","author":"Emily Brontë","p":"16,00","img":"https://static.estantevirtual.com.br/book/00/1X0-4669-000/1X0-4669-000_detail1.jpg?ts=1710544164327&ims=fit-in/300x400/filters:fill(fff):quality(100)","badge":"","sold":false,"g":["Clássico","Romance"],"q":"o morro dos ventos uivantes emily bronte capa dura"},{"slug":"dracula-bram-stoker-first-edition-darkside","t":"Drácula — Bram Stoker (First Edition DarkSide)","titleMain":"Drácula","author":"Bram Stoker","p":"52,00","img":"https://m.media-amazon.com/images/I/61gfnGu9cTL._SY342_.jpg","badge":"","sold":true,"g":["Terror","Clássico"],"q":"dracula bram stoker darkside first edition"},{"slug":"box-magisterium-holly-black-e-cassandra-clare","t":"Box Magisterium — Holly Black e Cassandra Clare","titleMain":"Box Magisterium","author":"Holly Black e Cassandra Clare","p":"131,00","img":"https://m.media-amazon.com/images/I/51Uzf4EMt5L._SX342_SY445_PQ99_.jpg","badge":"","sold":true,"g":["Fantasia","Infantojuvenil"],"q":"magisterium holly black cassandra clare box"},{"slug":"box-hp-guia-cinema-4-livros-capa-dura","t":"Box HP Guia Cinema (4 Livros Capa Dura)","titleMain":"Box HP Guia Cinema (4 Livros Capa Dura)","author":"","p":"74,00","img":"https://static.estantevirtual.com.br/book/00/NIV-9786-000/NIV-9786-000_detail1.png?ts=1763812855171&ims=fit-in/600x800/filters:fill(fff):quality(100)","badge":"","sold":true,"g":["Cinema","Arte"],"q":"harry potter guia cinematografico box rocco"},{"slug":"o-diario-de-anne-frank","t":"O Diário de Anne Frank","titleMain":"O Diário de Anne Frank","author":"","p":"13,00","img":"https://m.media-amazon.com/images/I/81d7+O+LKtL._SY342_.jpg","badge":"","sold":true,"g":["Biografia","História"],"q":"o diario de anne frank edicao definitiva record"},{"slug":"til-jose-de-alencar-capa-dura","t":"Til — José de Alencar (Capa Dura)","titleMain":"Til","author":"José de Alencar","p":"15,00","img":"https://m.media-amazon.com/images/I/41Ue8D0tE4L._SY342_.jpg","badge":"","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"til"},{"slug":"contos-novos-mario-de-andrade-capa-dura","t":"Contos Novos — Mário de Andrade (Capa Dura)","titleMain":"Contos Novos","author":"Mário de Andrade","p":"15,00","img":"https://m.media-amazon.com/images/I/41rXc3Ir6jL._SY342_.jpg","badge":"","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"contos novos"},{"slug":"senhora-jose-de-alencar-capa-dura","t":"Senhora — José de Alencar (Capa Dura)","titleMain":"Senhora","author":"José de Alencar","p":"15,00","img":"https://m.media-amazon.com/images/I/41MIomAGa1L._SY342_.jpg","badge":"","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"senhora"},{"slug":"sonetos-luis-de-camoes-capa-dura","t":"Sonetos — Luís de Camões (Capa Dura)","titleMain":"Sonetos","author":"Luís de Camões","p":"15,00","img":"https://m.media-amazon.com/images/I/31fA5qlhPML._SY342_.jpg","badge":"","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"sonetos"},{"slug":"casa-de-pensao-aluisio-azevedo-capa-dura","t":"Casa de Pensão — Aluísio Azevedo (Capa Dura)","titleMain":"Casa de Pensão","author":"Aluísio Azevedo","p":"15,00","img":"https://m.media-amazon.com/images/I/41YFKl0F8rL._SY342_.jpg","badge":"","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"casa de pensão"},{"slug":"pauliceia-desvairada-mario-de-andrade-capa-dura","t":"Pauliceia Desvairada — Mário de Andrade (Capa Dura)","titleMain":"Pauliceia Desvairada","author":"Mário de Andrade","p":"15,00","img":"https://m.media-amazon.com/images/I/41S+5nxwXML._SY342_.jpg","badge":"","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"pauliceia desvairada"},{"slug":"os-sertoes-euclides-da-cunha-capa-dura","t":"Os Sertões — Euclides da Cunha (Capa Dura)","titleMain":"Os Sertões","author":"Euclides da Cunha","p":"15,00","img":"https://m.media-amazon.com/images/I/51FgJ2VfW3L._SY342_.jpg","badge":"","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"os sertões"},{"slug":"espumas-flutuantes-castro-alves-capa-dura","t":"Espumas Flutuantes — Castro Alves (Capa Dura)","titleMain":"Espumas Flutuantes","author":"Castro Alves","p":"15,00","img":"https://m.media-amazon.com/images/I/41SN6LL8qWL._SY342_.jpg","badge":"","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"espumas flutuantes"},{"slug":"sermoes-padre-antonio-vieira-capa-dura","t":"Sermões — Padre Antônio Vieira (Capa Dura)","titleMain":"Sermões","author":"Padre Antônio Vieira","p":"15,00","img":"https://m.media-amazon.com/images/I/41mCR8zfP0L._SY342_.jpg","badge":"","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"sermões"},{"slug":"o-espelho-e-outros-contos-machado-de-assis-capa-dura","t":"O Espelho e Outros Contos — Machado de Assis (Capa Dura)","titleMain":"O Espelho e Outros Contos","author":"Machado de Assis","p":"15,00","img":"https://m.media-amazon.com/images/I/41G+XNpRBZL._SY342_.jpg","badge":"","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"o espelho e outros contos"},{"slug":"poemas-escolhidos-varios-autores-capa-dura","t":"Poemas Escolhidos — Vários Autores (Capa Dura)","titleMain":"Poemas Escolhidos","author":"Vários Autores","p":"15,00","img":"https://m.media-amazon.com/images/I/31dAjR0BLGL._SY342_.jpg","badge":"","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"poemas escolhidos"},{"slug":"o-ateneu-raul-pompeia-capa-dura","t":"O Ateneu — Raul Pompeia (Capa Dura)","titleMain":"O Ateneu","author":"Raul Pompeia","p":"15,00","img":"https://m.media-amazon.com/images/I/41KDl2PaQHL._SY342_.jpg","badge":"","sold":false,"g":["Clássicos","Literatura Brasileira"],"q":"o ateneu"},{"slug":"a-lamina-da-assassina-sarah-j-maas-trono-de-vidro-0-5","t":"A Lâmina da Assassina — Sarah J. Maas (Trono de Vidro #0.5)","titleMain":"A Lâmina da Assassina","author":"Sarah J. Maas","p":"25,00","img":"https://m.media-amazon.com/images/I/51mO0EJG5UL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"a lâmina da assassina"},{"slug":"trono-de-vidro-sarah-j-maas","t":"Trono de Vidro — Sarah J. Maas","titleMain":"Trono de Vidro","author":"Sarah J. Maas","p":"29,00","img":"https://m.media-amazon.com/images/I/51oSyZFeTiL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"trono de vidro"},{"slug":"coroa-da-meia-noite-sarah-j-maas-trono-de-vidro-2","t":"Coroa da Meia-Noite — Sarah J. Maas (Trono de Vidro #2)","titleMain":"Coroa da Meia-Noite","author":"Sarah J. Maas","p":"29,00","img":"https://m.media-amazon.com/images/I/51CjCmhMDaL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"coroa da meia-noite"},{"slug":"herdeira-do-fogo-sarah-j-maas-trono-de-vidro-3","t":"Herdeira do Fogo — Sarah J. Maas (Trono de Vidro #3)","titleMain":"Herdeira do Fogo","author":"Sarah J. Maas","p":"29,00","img":"https://m.media-amazon.com/images/I/51VX9uo7yML._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"herdeira do fogo"},{"slug":"rainha-das-sombras-sarah-j-maas-trono-de-vidro-4","t":"Rainha das Sombras — Sarah J. Maas (Trono de Vidro #4)","titleMain":"Rainha das Sombras","author":"Sarah J. Maas","p":"29,00","img":"https://m.media-amazon.com/images/I/513xZXwG0sL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"rainha das sombras"},{"slug":"imperio-de-tempestades-sarah-j-maas-trono-de-vidro-5","t":"Império de Tempestades — Sarah J. Maas (Trono de Vidro #5)","titleMain":"Império de Tempestades","author":"Sarah J. Maas","p":"29,00","img":"https://m.media-amazon.com/images/I/51YuFxS9p+L._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"império de tempestades"},{"slug":"torre-do-alvorecer-sarah-j-maas-trono-de-vidro-6","t":"Torre do Alvorecer — Sarah J. Maas (Trono de Vidro #6)","titleMain":"Torre do Alvorecer","author":"Sarah J. Maas","p":"29,00","img":"https://m.media-amazon.com/images/I/518LwJFNhdL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"torre do alvorecer"},{"slug":"reino-de-cinzas-sarah-j-maas-trono-de-vidro-7","t":"Reino de Cinzas — Sarah J. Maas (Trono de Vidro #7)","titleMain":"Reino de Cinzas","author":"Sarah J. Maas","p":"29,00","img":"https://m.media-amazon.com/images/I/51l-kylnLcL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia"],"q":"reino de cinzas"},{"slug":"crepusculo-stephenie-meyer-capa-original","t":"Crepúsculo — Stephenie Meyer (Capa Original)","titleMain":"Crepúsculo","author":"Stephenie Meyer","p":"24,00","img":"https://m.media-amazon.com/images/I/61CSYLhEICS._SL1500_.jpg","badge":"","sold":false,"g":["Romance","Vampiros"],"q":"crepúsculo"},{"slug":"crepusculo-stephenie-meyer-edicao-10-anos","t":"Crepúsculo — Stephenie Meyer (Edição 10 Anos)","titleMain":"Crepúsculo","author":"Stephenie Meyer","p":"26,00","img":"https://m.media-amazon.com/images/I/51f2NNz55uL._SY342_.jpg","badge":"","sold":false,"g":["Romance","Vampiros"],"q":"crepúsculo"},{"slug":"lua-nova-stephenie-meyer","t":"Lua Nova — Stephenie Meyer","titleMain":"Lua Nova","author":"Stephenie Meyer","p":"24,00","img":"https://m.media-amazon.com/images/I/51RP1N6GHYL._SY342_.jpg","badge":"","sold":false,"g":["Romance","Vampiros"],"q":"lua nova"},{"slug":"eclipse-stephenie-meyer","t":"Eclipse — Stephenie Meyer","titleMain":"Eclipse","author":"Stephenie Meyer","p":"24,00","img":"https://m.media-amazon.com/images/I/517O-J5gShL._SY342_.jpg","badge":"","sold":false,"g":["Romance","Vampiros"],"q":"eclipse"},{"slug":"amanhecer-stephenie-meyer","t":"Amanhecer — Stephenie Meyer","titleMain":"Amanhecer","author":"Stephenie Meyer","p":"24,00","img":"https://m.media-amazon.com/images/I/41RuZZq5cTL._SY342_.jpg","badge":"","sold":false,"g":["Romance","Vampiros"],"q":"amanhecer"},{"slug":"sol-da-meia-noite-stephenie-meyer","t":"Sol da Meia-Noite — Stephenie Meyer","titleMain":"Sol da Meia-Noite","author":"Stephenie Meyer","p":"25,00","img":"https://m.media-amazon.com/images/I/51LjjDKKCQL._SY342_.jpg","badge":"","sold":false,"g":["Romance","Vampiros"],"q":"sol da meia-noite"},{"slug":"a-breve-segunda-vida-de-bree-tanner-stephenie-meyer","t":"A Breve Segunda Vida de Bree Tanner — Stephenie Meyer","titleMain":"A Breve Segunda Vida de Bree Tanner","author":"Stephenie Meyer","p":"20,00","img":"https://m.media-amazon.com/images/I/51y9VRZQNHL._SY342_.jpg","badge":"","sold":false,"g":["Romance","Vampiros"],"q":"a breve segunda vida de bree tanner"},{"slug":"guia-oficial-ilustrado-da-saga-crepusculo","t":"Guia Oficial Ilustrado da Saga Crepúsculo","titleMain":"Guia Oficial Ilustrado da Saga Crepúsculo","author":"","p":"22,00","img":"https://m.media-amazon.com/images/I/51z7F36NxdL._SY342_.jpg","badge":"","sold":false,"g":["Romance","Vampiros"],"q":"guia oficial ilustrado da saga crepúsculo"},{"slug":"eu-sou-o-numero-quatro-pittacus-lore","t":"Eu Sou o Número Quatro — Pittacus Lore","titleMain":"Eu Sou o Número Quatro","author":"Pittacus Lore","p":"24,00","img":"https://m.media-amazon.com/images/I/51u2O6dXnpL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Ação"],"q":"eu sou o número quatro"},{"slug":"o-poder-de-seis-pittacus-lore","t":"O Poder de Seis — Pittacus Lore","titleMain":"O Poder de Seis","author":"Pittacus Lore","p":"24,00","img":"https://m.media-amazon.com/images/I/517lPBXNuQL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Ação"],"q":"o poder de seis"},{"slug":"a-ascensao-de-nove-pittacus-lore","t":"A Ascensão de Nove — Pittacus Lore","titleMain":"A Ascensão de Nove","author":"Pittacus Lore","p":"24,00","img":"https://m.media-amazon.com/images/I/51cpJEGmLQL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Ação"],"q":"a ascensão de nove"},{"slug":"a-queda-de-cinco-pittacus-lore","t":"A Queda de Cinco — Pittacus Lore","titleMain":"A Queda de Cinco","author":"Pittacus Lore","p":"24,00","img":"https://m.media-amazon.com/images/I/51-YUHjHpYL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Ação"],"q":"a queda de cinco"},{"slug":"a-vinganca-de-sete-pittacus-lore","t":"A Vingança de Sete — Pittacus Lore","titleMain":"A Vingança de Sete","author":"Pittacus Lore","p":"24,00","img":"https://m.media-amazon.com/images/I/51wTYZh1HaL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Ação"],"q":"a vingança de sete"},{"slug":"o-destino-de-dez-pittacus-lore","t":"O Destino de Dez — Pittacus Lore","titleMain":"O Destino de Dez","author":"Pittacus Lore","p":"24,00","img":"https://m.media-amazon.com/images/I/51j5gJBmBHL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Ação"],"q":"o destino de dez"},{"slug":"unidos-somos-um-pittacus-lore","t":"Unidos Somos Um — Pittacus Lore","titleMain":"Unidos Somos Um","author":"Pittacus Lore","p":"24,00","img":"https://m.media-amazon.com/images/I/51h24K8sSaL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Ação"],"q":"unidos somos um"},{"slug":"o-poder-verdadeiro-g-brasman-e-g-norris","t":"O Poder Verdadeiro — G. Brasman e G. Norris","titleMain":"O Poder Verdadeiro","author":"G. Brasman e G. Norris","p":"17,00","img":"https://m.media-amazon.com/images/I/81SC-iX2YCL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Nacional"],"q":"o poder verdadeiro"},{"slug":"efeito-manticore-g-brasman-e-g-norris","t":"Efeito Manticore — G. Brasman e G. Norris","titleMain":"Efeito Manticore","author":"G. Brasman e G. Norris","p":"17,00","img":"https://m.media-amazon.com/images/I/91DXnV7U6HL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Nacional"],"q":"efeito manticore"},{"slug":"mare-vermelha-g-brasman-e-g-norris","t":"Maré Vermelha — G. Brasman e G. Norris","titleMain":"Maré Vermelha","author":"G. Brasman e G. Norris","p":"17,00","img":"https://m.media-amazon.com/images/I/91Nxa5pUK-L._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Nacional"],"q":"maré vermelha"},{"slug":"renuncia-g-brasman-e-g-norris","t":"Renúncia — G. Brasman e G. Norris","titleMain":"Renúncia","author":"G. Brasman e G. Norris","p":"17,00","img":"https://m.media-amazon.com/images/I/81T6TN+NCPL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Nacional"],"q":"renúncia"},{"slug":"o-lado-mais-sombrio-a-g-howard","t":"O Lado Mais Sombrio — A.G. Howard","titleMain":"O Lado Mais Sombrio","author":"A.G. Howard","p":"22,00","img":"https://m.media-amazon.com/images/I/51-0zVIg-sL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Gótico"],"q":"o lado mais sombrio"},{"slug":"atras-do-espelho-a-g-howard","t":"Atrás do Espelho — A.G. Howard","titleMain":"Atrás do Espelho","author":"A.G. Howard","p":"15,00","img":"https://m.media-amazon.com/images/I/51zLf7h0hbL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Gótico"],"q":"atrás do espelho"},{"slug":"qualquer-outro-lugar-a-g-howard","t":"Qualquer Outro Lugar — A.G. Howard","titleMain":"Qualquer Outro Lugar","author":"A.G. Howard","p":"15,00","img":"https://m.media-amazon.com/images/I/51GCVRa+BkL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Gótico"],"q":"qualquer outro lugar"},{"slug":"sussurros-do-pais-das-maravilhas-a-g-howard","t":"Sussurros do País das Maravilhas — A.G. Howard","titleMain":"Sussurros do País das Maravilhas","author":"A.G. Howard","p":"22,00","img":"https://m.media-amazon.com/images/I/51FJrp7LkuL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Gótico"],"q":"sussurros do país das maravilhas"},{"slug":"cemiterios-de-dragoes-raphael-draccon","t":"Cemitérios de Dragões — Raphael Draccon","titleMain":"Cemitérios de Dragões","author":"Raphael Draccon","p":"26,00","img":"https://m.media-amazon.com/images/I/51yxPTb4J0L._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Nacional"],"q":"cemitérios de dragões"},{"slug":"cidades-de-dragoes-raphael-draccon","t":"Cidades de Dragões — Raphael Draccon","titleMain":"Cidades de Dragões","author":"Raphael Draccon","p":"26,00","img":"https://m.media-amazon.com/images/I/51SrjX4wh2L._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Nacional"],"q":"cidades de dragões"},{"slug":"mundos-de-dragoes-raphael-draccon","t":"Mundos de Dragões — Raphael Draccon","titleMain":"Mundos de Dragões","author":"Raphael Draccon","p":"26,00","img":"https://m.media-amazon.com/images/I/51Qb6h+djQL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Nacional"],"q":"mundos de dragões"},{"slug":"box-dragoes-de-eter-raphael-draccon-4-livros-poster","t":"Box Dragões de Éter — Raphael Draccon (4 Livros + Pôster)","titleMain":"Box Dragões de Éter","author":"Raphael Draccon","p":"83,00","img":"https://http2.mlstatic.com/D_NQ_NP_2X_660400-MLU53788897434_022023-F.webp","badge":"kit","sold":false,"g":["Fantasia","Nacional"],"q":"dragoes de eter raphael draccon box completo"},{"slug":"casa-de-segredos-chris-columbus-e-ned-vizzini","t":"Casa de Segredos — Chris Columbus e Ned Vizzini","titleMain":"Casa de Segredos","author":"Chris Columbus e Ned Vizzini","p":"16,00","img":"https://m.media-amazon.com/images/I/51dCLW3nh4L._SY342_.jpg","badge":"","sold":false,"g":["Aventura","Fantasia"],"q":"casa de segredos"},{"slug":"a-batalha-das-bestas-chris-columbus-e-ned-vizzini","t":"A Batalha das Bestas — Chris Columbus e Ned Vizzini","titleMain":"A Batalha das Bestas","author":"Chris Columbus e Ned Vizzini","p":"15,00","img":"https://m.media-amazon.com/images/I/51vqxB20uvL._SY342_.jpg","badge":"","sold":false,"g":["Aventura","Fantasia"],"q":"a batalha das bestas"},{"slug":"a-colisao-dos-mundos-chris-columbus-e-ned-vizzini","t":"A Colisão dos Mundos — Chris Columbus e Ned Vizzini","titleMain":"A Colisão dos Mundos","author":"Chris Columbus e Ned Vizzini","p":"15,00","img":"https://m.media-amazon.com/images/I/51Kq4B7XVpL._SY342_.jpg","badge":"","sold":false,"g":["Aventura","Fantasia"],"q":"a colisão dos mundos"},{"slug":"uma-dobra-no-tempo-madeleine-l-engle-capa-dura","t":"Uma Dobra no Tempo — Madeleine L'Engle (Capa Dura)","titleMain":"Uma Dobra no Tempo","author":"Madeleine L'Engle","p":"25,00","img":"https://m.media-amazon.com/images/I/81fxkCYMPEL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Clássico"],"q":"uma dobra no tempo"},{"slug":"um-vento-a-porta-madeleine-l-engle-capa-dura","t":"Um Vento à Porta — Madeleine L'Engle (Capa Dura)","titleMain":"Um Vento à Porta","author":"Madeleine L'Engle","p":"25,00","img":"https://m.media-amazon.com/images/I/81KFnHnKURL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Clássico"],"q":"um vento à porta"},{"slug":"um-planeta-em-seu-giro-veloz-madeleine-l-engle-capa-dura","t":"Um Planeta em seu Giro Veloz — Madeleine L'Engle (Capa Dura)","titleMain":"Um Planeta em seu Giro Veloz","author":"Madeleine L'Engle","p":"25,00","img":"https://m.media-amazon.com/images/I/81uR4JhVDuL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Clássico"],"q":"um planeta em seu giro veloz"},{"slug":"muitas-aguas-madeleine-l-engle-capa-dura","t":"Muitas Águas — Madeleine L'Engle (Capa Dura)","titleMain":"Muitas Águas","author":"Madeleine L'Engle","p":"25,00","img":"https://m.media-amazon.com/images/I/81lB3r-6fEL._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Clássico"],"q":"muitas águas"},{"slug":"um-tempo-aceitavel-madeleine-l-engle-capa-dura","t":"Um Tempo Aceitável — Madeleine L'Engle (Capa Dura)","titleMain":"Um Tempo Aceitável","author":"Madeleine L'Engle","p":"25,00","img":"https://m.media-amazon.com/images/I/81E5yOSmb-L._SY342_.jpg","badge":"","sold":false,"g":["Sci-Fi","Clássico"],"q":"um tempo aceitável"},{"slug":"o-sobrinho-do-mago-c-s-lewis-narnia","t":"O Sobrinho do Mago — C.S. Lewis (Nárnia)","titleMain":"O Sobrinho do Mago","author":"C.S. Lewis","p":"15,00","img":"https://m.media-amazon.com/images/I/51aBPCd8jBL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Clássico"],"q":"o sobrinho do mago"},{"slug":"o-leao-a-feiticeira-e-o-guarda-roupa-c-s-lewis-narnia","t":"O Leão, a Feiticeira e o Guarda-Roupa — C.S. Lewis (Nárnia)","titleMain":"O Leão, a Feiticeira e o Guarda-Roupa","author":"C.S. Lewis","p":"15,00","img":"https://m.media-amazon.com/images/I/51bNoBs6YcL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Clássico"],"q":"o leão, a feiticeira e o guarda-roupa"},{"slug":"o-cavalo-e-seu-menino-c-s-lewis-narnia","t":"O Cavalo e seu Menino — C.S. Lewis (Nárnia)","titleMain":"O Cavalo e seu Menino","author":"C.S. Lewis","p":"14,00","img":"https://m.media-amazon.com/images/I/514kaTxg+wL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Clássico"],"q":"o cavalo e seu menino"},{"slug":"principe-caspian-c-s-lewis-narnia","t":"Príncipe Caspian — C.S. Lewis (Nárnia)","titleMain":"Príncipe Caspian","author":"C.S. Lewis","p":"14,00","img":"https://m.media-amazon.com/images/I/51N9Hm3MFOL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Clássico"],"q":"príncipe caspian"},{"slug":"a-viagem-do-peregrino-da-alvorada-c-s-lewis-narnia","t":"A Viagem do Peregrino da Alvorada — C.S. Lewis (Nárnia)","titleMain":"A Viagem do Peregrino da Alvorada","author":"C.S. Lewis","p":"14,00","img":"https://m.media-amazon.com/images/I/51HKuiRoqEL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Clássico"],"q":"a viagem do peregrino da alvorada"},{"slug":"a-cadeira-de-prata-c-s-lewis-narnia","t":"A Cadeira de Prata — C.S. Lewis (Nárnia)","titleMain":"A Cadeira de Prata","author":"C.S. Lewis","p":"14,00","img":"https://m.media-amazon.com/images/I/51n+Y1zVvHL._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Clássico"],"q":"a cadeira de prata"},{"slug":"a-ultima-batalha-c-s-lewis-narnia","t":"A Última Batalha — C.S. Lewis (Nárnia)","titleMain":"A Última Batalha","author":"C.S. Lewis","p":"14,00","img":"https://m.media-amazon.com/images/I/51xB8P2yS6L._SY342_.jpg","badge":"","sold":false,"g":["Fantasia","Clássico"],"q":"a última batalha"}];
+try{ assignIcons(BOOKS); }catch(e){}
 
 let curStyle='rounded', useLogo=true;
-const canvases = {}; // i -> canvas atual
+const canvases = {};
+let filtered = BOOKS.map((b,i)=>i);
 
 function cleanBase(v){ return (v||'').trim().replace(/\/+$/,''); }
 function targetUrl(slug){ return cleanBase(document.getElementById('base').value || CONFIG.baseUrl) + '/' + CONFIG.page + '?id=' + slug; }
 function esc(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 
-function qrOpts(slug,size){
-  const o = {
-    text: targetUrl(slug), size:size||760, margin:4, ecc:'H',
-    dotType: curStyle, dotColor:'#1a1410', bg:'#ffffff',
-    cornerColor:'#9a6c1f', cornerDotColor:'#b8842f', cornerType: curStyle==='square'?'square':'rounded'
-  };
-  if(useLogo){
-    o.iconSvgPath = (BOOK_ICONS[slug]||'');
-    o.iconColor = '#b8842f';
-    o.iconRatio = 0.24;
-  }
+function qrOpts(b,size){
+  const o={ text:targetUrl(b.slug), size:size||760, margin:4, ecc:'H',
+    dotType:curStyle, dotColor:'#1a1410', bg:'#ffffff',
+    cornerColor:'#9a6c1f', cornerDotColor:'#b8842f', cornerType:curStyle==='square'?'square':'rounded' };
+  if(useLogo){ o.iconPath=b._iconPath||iconPathForGenres(b.g); o.iconFill='#b8842f'; o.iconRatio=0.26; }
   return o;
 }
 
 function buildCards(){
   const grid=document.getElementById('grid'); grid.innerHTML='';
-  BOOKS.forEach((b,i)=>{
+  filtered.forEach((idx)=>{
+    const b=BOOKS[idx];
     const card=document.createElement('div');
-    card.className='qcard'; card.style.animationDelay=(i*0.04)+'s';
+    card.className='qcard'+(b.sold?' sold':'');
+    card.dataset.i=idx;
+    const pill = b.sold?'<span class="pill sold">Vendido</span>':(b.badge==='kit'?'<span class="pill kit">Coleção</span>':'');
     card.innerHTML=`
       <div class="qhead">
-        <img src="${esc(b.img)}" alt="" onerror="this.style.opacity=.3">
+        <img src="${esc(b.img)}" alt="" loading="lazy" onerror="this.style.opacity=.3">
         <div>
           <div class="ti">${esc(b.titleMain)}</div>
           <div class="au">${b.author?('de '+esc(b.author)):''} · R$ ${esc(b.p)}</div>
-          ${b.badge==='kit'?'<span class="kit-pill">Coleção</span>':''}
+          ${pill}
         </div>
       </div>
-      <div class="qbox" id="qr-${i}"><span class="ld"><i class="fas fa-spinner fa-spin"></i> gerando...</span></div>
-      <div class="url" id="url-${i}"></div>
+      <div class="qbox" id="qr-${idx}"><span class="ld"><i class="fas fa-spinner fa-spin"></i> gerando...</span></div>
+      <div class="url" id="url-${idx}"></div>
       <div class="qactions">
-        <button class="btn btn-primary btn-sm" onclick="downloadOne(${i})"><i class="fas fa-download"></i> Baixar</button>
-        <a class="btn btn-ghost btn-sm" id="open-${i}" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Abrir</a>
+        <button class="btn btn-primary btn-sm" onclick="downloadOne(${idx})"><i class="fas fa-download"></i> Baixar</button>
+        <a class="btn btn-ghost btn-sm" id="open-${idx}" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Abrir</a>
       </div>`;
     grid.appendChild(card);
+    observer.observe(card);
   });
+  document.getElementById('count').textContent=filtered.length;
+  document.getElementById('countLbl').textContent = filtered.length===1?'QR Code':'QR Codes';
+  document.getElementById('empty').style.display = filtered.length? 'none':'block';
 }
 
-async function renderQRs(){
-  for(let i=0;i<BOOKS.length;i++){
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ const idx=+e.target.dataset.i; renderCard(idx); observer.unobserve(e.target); }
+  });
+},{rootMargin:'300px'});
+
+function renderCard(idx){
+  const b=BOOKS[idx];
+  const box=document.getElementById('qr-'+idx);
+  if(!box || canvases[idx]) return;
+  try{
+    const cv=StyledQR.render(qrOpts(b));
+    box.innerHTML=''; box.appendChild(cv); canvases[idx]=cv;
+  }catch(e){ box.innerHTML='<span class="ld">erro</span>'; }
+  const u=targetUrl(b.slug);
+  const ue=document.getElementById('url-'+idx); if(ue) ue.textContent=u;
+  const oe=document.getElementById('open-'+idx); if(oe) oe.href=u;
+}
+
+function rerenderVisible(){
+  for(const k in canvases){ delete canvases[k]; }
+  document.querySelectorAll('.qbox').forEach(box=>{ box.innerHTML='<span class="ld"><i class="fas fa-spinner fa-spin"></i> gerando...</span>'; });
+  document.querySelectorAll('.qcard').forEach(c=>observer.observe(c));
+}
+
+function applyFilters(){
+  const q=(document.getElementById('search').value||'').trim().toLowerCase();
+  const hideSold=document.getElementById('hideSold').checked;
+  filtered = BOOKS.map((b,i)=>i).filter(i=>{
     const b=BOOKS[i];
-    const box=document.getElementById('qr-'+i);
-    if(!box) continue;
-    try{
-      const cv = await StyledQR.render(qrOpts(b.slug));
-      box.innerHTML=''; box.appendChild(cv);
-      canvases[i]=cv;
-    }catch(e){ box.innerHTML='<span class="ld">erro ao gerar</span>'; }
-    const u=targetUrl(b.slug);
-    const ue=document.getElementById('url-'+i); if(ue) ue.textContent=u;
-    const oe=document.getElementById('open-'+i); if(oe) oe.href=u;
-  }
+    if(hideSold && b.sold) return false;
+    if(!q) return true;
+    return (b.titleMain+' '+b.author+' '+b.t).toLowerCase().includes(q);
+  });
+  buildCards();
 }
 
-function applyBase(){ renderQRs(); toast('QR Codes atualizados!'); }
+function applyBase(){ rerenderVisible(); toast('QR Codes atualizados!'); }
 
 function downloadOne(i){
+  if(!canvases[i]) renderCard(i);
   const cv=canvases[i];
   if(!cv){ toast('Aguarde o QR carregar'); return; }
   const a=document.createElement('a');
-  a.href=cv.toDataURL('image/png');
-  a.download='qr-'+String(i+1).padStart(2,'0')+'-'+BOOKS[i].slug+'.png';
+  a.href=cv.toDataURL('image/png'); a.download='qr-'+BOOKS[i].slug+'.png';
   document.body.appendChild(a); a.click(); a.remove();
 }
-async function downloadAll(){
-  toast('Baixando os '+BOOKS.length+' QR Codes...');
-  for(let i=0;i<BOOKS.length;i++){ downloadOne(i); await new Promise(r=>setTimeout(r,350)); }
-}
 
-/* ===== IMPRIMIR TODOS ===== */
 async function printAll(){
-  toast('Preparando a folha de impressão...');
+  if(!filtered.length){ toast('Nada para imprimir'); return; }
+  toast('Preparando '+filtered.length+' QR Codes...');
   const pg=document.getElementById('printGrid'); pg.innerHTML='';
-  for(let i=0;i<BOOKS.length;i++){
-    const b=BOOKS[i];
-    let dataUrl='';
-    const cv = canvases[i] || await StyledQR.render(qrOpts(b.slug));
-    try{ dataUrl=cv.toDataURL('image/png'); }catch(e){}
+  let n=0;
+  for(const idx of filtered){
+    const b=BOOKS[idx];
+    let cv=canvases[idx];
+    if(!cv){ try{ cv=StyledQR.render(qrOpts(b,460)); }catch(e){ continue; } }
+    const data=cv.toDataURL('image/png');
     const cell=document.createElement('div'); cell.className='pcell';
-    cell.innerHTML=`<div class="pn">${String(i+1).padStart(2,'0')}</div>
-      <div class="pqr"><img src="${dataUrl}" alt=""></div>
+    cell.innerHTML=`<div class="pn">${String(++n).padStart(3,'0')}</div>
+      <div class="pqr"><img src="${data}" alt=""></div>
       <div class="pt">${esc(b.titleMain)}</div>
-      <div class="pp">R$ ${esc(b.p)}</div>
+      <div class="pp">R$ ${esc(b.p)}${b.sold?' · VENDIDO':''}</div>
       <div class="pu">${esc(targetUrl(b.slug))}</div>`;
     pg.appendChild(cell);
+    if(n%12===0) await new Promise(r=>setTimeout(r,0));
   }
-  setTimeout(()=>window.print(),300);
+  setTimeout(()=>window.print(),250);
 }
 
-function toast(msg){
-  const t=document.getElementById('toast');
-  document.getElementById('toastMsg').textContent=msg;
-  t.classList.add('show'); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('show'),2400);
-}
-function copyText(txt,msg){
-  const done=()=>toast(msg||'Copiado!');
-  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(fb); } else fb();
-  function fb(){ const ta=document.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity=0; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');done();}catch(e){toast('Copie: '+txt);} document.body.removeChild(ta); }
-}
+function copyText(t,msg){ navigator.clipboard.writeText(t).then(()=>toast(msg||'Copiado!')).catch(()=>toast(t)); }
+let toastT;
+function toast(msg){ const el=document.getElementById('toast'); document.getElementById('toastMsg').textContent=msg; el.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(()=>el.classList.remove('show'),2200); }
 
-document.getElementById('styleSeg').addEventListener('click',e=>{
-  const b=e.target.closest('button'); if(!b)return;
-  curStyle=b.dataset.style;
-  document.querySelectorAll('#styleSeg button').forEach(x=>x.classList.toggle('on',x===b));
-  renderQRs();
-});
-document.getElementById('logoSeg').addEventListener('click',e=>{
-  const b=e.target.closest('button'); if(!b)return;
-  useLogo=b.dataset.logo==='1';
-  document.querySelectorAll('#logoSeg button').forEach(x=>x.classList.toggle('on',x===b));
-  renderQRs();
-});
+// listeners
+document.getElementById('search').addEventListener('input', applyFilters);
+document.getElementById('hideSold').addEventListener('change', applyFilters);
+document.getElementById('base').addEventListener('keydown', e=>{ if(e.key==='Enter') applyBase(); });
+document.getElementById('styleSeg').addEventListener('click', e=>{ const b=e.target.closest('button'); if(!b)return; document.querySelectorAll('#styleSeg button').forEach(x=>x.classList.remove('on')); b.classList.add('on'); curStyle=b.dataset.style; rerenderVisible(); });
+document.getElementById('logoSeg').addEventListener('click', e=>{ const b=e.target.closest('button'); if(!b)return; document.querySelectorAll('#logoSeg button').forEach(x=>x.classList.remove('on')); b.classList.add('on'); useLogo=b.dataset.logo==='1'; rerenderVisible(); });
 
-document.getElementById('base').value=CONFIG.baseUrl;
-document.getElementById('pixKeyChip').textContent=CONFIG.pixKey;
-document.getElementById('count').textContent=BOOKS.length;
-buildCards();
-renderQRs();
-document.getElementById('base').addEventListener('keydown',e=>{ if(e.key==='Enter') applyBase(); });
+// init
+document.getElementById('base').value = CONFIG.baseUrl;
+document.getElementById('pixKeyChip').textContent = CONFIG.pixKey;
+applyFilters();
 </script>
 </body>
 </html>
