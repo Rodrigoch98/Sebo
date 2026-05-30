@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0f1923">
+<title>QR Codes · Acervo Literário</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230f1923' rx='16' width='100' height='100'/><text x='50' y='70' font-size='52' text-anchor='middle' fill='%23d4a853'>⛶</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{
+  --bg:#f4f1ec; --card:#fff; --nav:#0f1923; --text:#1a1a1a; --muted:#6b6560; --faint:#9c968f;
+  --accent:#c9993a; --accent-d:#b8892e; --accent-soft:rgba(201,153,58,.12);
+  --wa:#25d366; --ok:#2d8a56; --border:#e6e0d8;
+  --sh-sm:0 1px 3px rgba(0,0,0,.06); --sh-md:0 8px 22px rgba(0,0,0,.09); --sh-lg:0 18px 44px rgba(0,0,0,.13);
+  --disp:'Playfair Display',Georgia,serif; --body:'Outfit',system-ui,sans-serif; --tr:.25s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+html,body{max-width:100%;overflow-x:hidden}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+.top{background:var(--nav);color:#fff;padding:1.6rem 1.25rem 1.4rem}
+.top-in{max-width:1180px;margin:0 auto}
+.top h1{font-family:var(--disp);font-weight:800;font-size:clamp(1.5rem,4vw,2.1rem);display:flex;align-items:center;gap:.7rem}
+.top h1 .mk{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--accent),#e0b860);display:grid;place-items:center;color:#0f1923;font-size:1.2rem}
+.top p{color:#aeb8c2;margin-top:.5rem;font-size:.96rem;max-width:680px}
+
+.wrap{max-width:1180px;margin:0 auto;padding:1.5rem 1.25rem 4rem}
+
+.panel{background:var(--card);border:1px solid var(--border);border-radius:18px;box-shadow:var(--sh-md);padding:1.4rem 1.5rem;margin-bottom:1.5rem;animation:fadeUp .5s both}
+.panel h2{font-family:var(--disp);font-weight:700;font-size:1.2rem;display:flex;align-items:center;gap:.55rem;margin-bottom:.4rem}
+.panel h2 i{color:var(--accent)}
+.panel .hint{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+.field{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center}
+.field label{font-weight:600;font-size:.9rem;min-width:100%;}
+.field input{flex:1;min-width:240px;font-family:var(--body);font-size:1rem;padding:.85rem 1rem;border:1.5px solid var(--border);border-radius:12px;background:#fbf9f5;transition:var(--tr)}
+.field input:focus{border-color:var(--accent);background:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;border:none;cursor:pointer;font-family:var(--body);font-weight:600;font-size:.95rem;padding:.85rem 1.25rem;border-radius:12px;transition:var(--tr)}
+.btn-primary{background:var(--accent);color:#1a130a;box-shadow:0 6px 18px rgba(201,153,58,.3)}
+.btn-primary:hover{background:var(--accent-d);transform:translateY(-2px)}
+.btn-dark{background:var(--nav);color:#fff}
+.btn-dark:hover{background:#1d2c3d;transform:translateY(-2px)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-sm{padding:.6rem .9rem;font-size:.85rem}
+.btn-ghost{background:#fff;border:1.5px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent-d)}
+
+.meta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem}
+.chip{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent-soft);border:1px solid rgba(201,153,58,.25);color:var(--accent-d);padding:.5rem .9rem;border-radius:999px;font-size:.85rem;font-weight:600}
+.chip button{background:none;border:none;color:var(--accent-d);cursor:pointer;font-weight:700;font-size:.85rem;display:inline-flex;gap:.3rem;align-items:center}
+.toolbar{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.toolbar .left{color:var(--muted);font-size:.92rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.1rem}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh-sm);padding:1.1rem;display:flex;flex-direction:column;transition:var(--tr);animation:fadeUp .5s both}
+.qcard:hover{box-shadow:var(--sh-lg);transform:translateY(-3px);border-color:var(--accent)}
+.qhead{display:flex;gap:.8rem;align-items:center;margin-bottom:.9rem}
+.qhead img{width:52px;height:72px;object-fit:cover;border-radius:6px;box-shadow:var(--sh-sm);background:#eee;flex:none}
+.qhead .ti{font-family:var(--disp);font-weight:700;font-size:1.02rem;line-height:1.2}
+.qhead .au{font-size:.8rem;color:var(--muted)}
+.kit-pill{display:inline-block;margin-top:.2rem;font-size:.62rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent-d);background:var(--accent-soft);padding:.12rem .5rem;border-radius:6px}
+.qbox{background:#fff;border:1px solid var(--border-l,#f0ece6);border-radius:12px;padding:14px;display:grid;place-items:center;align-self:center;box-shadow:inset 0 0 0 1px #fafafa}
+.qbox canvas,.qbox img{display:block;width:170px!important;height:170px!important}
+.url{font-size:.74rem;color:var(--faint);word-break:break-all;margin:.8rem 0 .9rem;background:#faf8f4;border:1px dashed var(--border);border-radius:8px;padding:.5rem .6rem;line-height:1.4}
+.qactions{display:flex;gap:.55rem;margin-top:auto}
+.qactions .btn{flex:1}
+
+.steps{counter-reset:s;list-style:none;display:grid;gap:.9rem}
+.steps li{position:relative;padding-left:3rem;color:var(--muted);font-size:.96rem}
+.steps li b{color:var(--text)}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-2px;width:2rem;height:2rem;border-radius:50%;background:var(--accent);color:#1a130a;font-weight:700;display:grid;place-items:center;font-size:.9rem}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:#0f1923;color:#fff;padding:.8rem 1.3rem;border-radius:999px;font-size:.9rem;box-shadow:var(--sh-lg);opacity:0;pointer-events:none;transition:var(--tr);z-index:80;display:flex;align-items:center;gap:.5rem}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast i{color:#7ee2a0}
+.warn{background:#fff7e6;border:1px solid #f0d9a0;color:#7a5a12;border-radius:10px;padding:.7rem .9rem;font-size:.86rem;margin-top:.9rem;display:flex;gap:.6rem;align-items:flex-start}
+.warn i{color:var(--accent-d);margin-top:.15rem}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-in">
+    <h1><span class="mk">⛶</span> QR Codes do Acervo</h1>
+    <p>Os 10 QR Codes sorteados. Cada código abre a página de venda exclusiva do livro. Defina abaixo o endereço onde você publicou o arquivo <b>livro.html</b> e baixe os QR Codes prontos para imprimir ou divulgar.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="panel">
+    <h2><i class="fas fa-link"></i> 1. Endereço do seu site</h2>
+    <p class="hint">Cole o endereço (URL) da pasta onde o arquivo <b>livro.html</b> vai ficar publicado, sem barra no final. Os QR Codes são recalculados automaticamente.</p>
+    <div class="field">
+      <label for="base">URL base do site</label>
+      <input id="base" type="text" spellcheck="false" placeholder="https://seusite.com.br">
+      <button class="btn btn-primary" onclick="applyBase()"><i class="fas fa-rotate"></i> Atualizar QR Codes</button>
+    </div>
+    <div class="warn"><i class="fas fa-circle-info"></i><div>Exemplos de URL base: <b>https://meusite.com.br</b>, <b>https://usuario.github.io/acervo</b> ou a pasta onde estiver o <b>livro.html</b>. Enquanto não definir, os QR usam um endereço de exemplo.</div></div>
+    <div class="meta">
+      <span class="chip"><i class="fab fa-whatsapp"></i> (47) 99143-8831</span>
+      <span class="chip"><i class="fas fa-qrcode"></i> Pix: <span id="pixKeyChip"></span> <button onclick="copyText(CONFIG.pixKey,'Chave Pix copiada!')"><i class="fas fa-copy"></i></button></span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="toolbar">
+      <div class="left"><i class="fas fa-qrcode"></i> <b id="count">10</b> QR Codes gerados</div>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+        <button class="btn btn-dark" onclick="downloadAll()"><i class="fas fa-download"></i> Baixar todos (PNG)</button>
+        <a class="btn btn-ghost" id="catalogLink" href="index.html"><i class="fas fa-book"></i> Acervo completo</a>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <div class="panel">
+    <h2><i class="fas fa-list-check"></i> Como usar</h2>
+    <ol class="steps">
+      <li>Publique os arquivos <b>livro.html</b> e <b>index.html</b> no seu site/hospedagem (ex.: GitHub Pages, Hostinger, etc.).</li>
+      <li>Volte aqui, cole a <b>URL base</b> no campo acima e clique em <b>Atualizar QR Codes</b>.</li>
+      <li>Use <b>Baixar todos (PNG)</b> ou baixe um a um. Cada QR já aponta para a página exclusiva do livro.</li>
+      <li>Imprima e cole o QR no próprio livro, em etiquetas, cartazes ou compartilhe a imagem direto no WhatsApp/grupos.</li>
+      <li>Quem escanear cai direto na página do livro, com sinopse, estado de conservação, botão de WhatsApp e Pix.</li>
+    </ol>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMsg">Copiado!</span></div>
+
+<script>
+const CONFIG = {"brand": "Acervo Literário", "whatsapp": "5547991438831", "pixKey": "rodrigocesarhang@gmail.com", "email": "rodrigocesarhang@gmail.com", "baseUrl": "https://SEU-DOMINIO-AQUI", "page": "livro.html"};
+const BOOKS = [{"slug": "divergente-veronica-roth", "t": "Divergente — Veronica Roth", "titleMain": "Divergente", "author": "Veronica Roth", "img": "https://m.media-amazon.com/images/I/61LTfghX0LL._SY342_.jpg", "p": "21,00", "badge": ""}, {"slug": "a-bussola-de-ouro-philip-pullman", "t": "A Bússola de Ouro — Philip Pullman", "titleMain": "A Bússola de Ouro", "author": "Philip Pullman", "img": "https://m.media-amazon.com/images/I/819DY12SBLL._SY342_.jpg", "p": "33,00", "badge": ""}, {"slug": "o-sobrinho-do-mago-c-s-lewis-narnia", "t": "O Sobrinho do Mago — C.S. Lewis (Nárnia)", "titleMain": "O Sobrinho do Mago", "author": "C.S. Lewis", "img": "https://m.media-amazon.com/images/I/711WTt57f7L._SY342_.jpg", "p": "15,00", "badge": ""}, {"slug": "correr-ou-morrer-james-dashner-maze-runner-1", "t": "Correr ou Morrer — James Dashner (Maze Runner #1)", "titleMain": "Correr ou Morrer", "author": "James Dashner", "img": "https://m.media-amazon.com/images/I/81UuGTd7RuL._SY342_.jpg", "p": "25,00", "badge": ""}, {"slug": "senhora-jose-de-alencar-capa-dura", "t": "Senhora — José de Alencar (Capa Dura)", "titleMain": "Senhora", "author": "José de Alencar", "img": "https://m.media-amazon.com/images/I/31WBL4L2AxL.jpg", "p": "15,00", "badge": ""}, {"slug": "eu-sou-o-numero-quatro-pittacus-lore", "t": "Eu Sou o Número Quatro — Pittacus Lore", "titleMain": "Eu Sou o Número Quatro", "author": "Pittacus Lore", "img": "https://m.media-amazon.com/images/I/61BZ0zUkL+L._SY342_.jpg", "p": "24,00", "badge": ""}, {"slug": "bird-box-josh-malerman-edicao-especial-de-luxo", "t": "Bird Box — Josh Malerman (Edição Especial de Luxo)", "titleMain": "Bird Box", "author": "Josh Malerman", "img": "https://m.media-amazon.com/images/I/91x7oEAnSOL._SY342_.jpg", "p": "49,00", "badge": ""}, {"slug": "a-descoberta-das-bruxas-deborah-harkness", "t": "A Descoberta das Bruxas — Deborah Harkness", "titleMain": "A Descoberta das Bruxas", "author": "Deborah Harkness", "img": "https://m.media-amazon.com/images/I/61xZ+Q1-OkL._SY342_.jpg", "p": "34,00", "badge": ""}, {"slug": "crepusculo-stephenie-meyer-capa-original", "t": "Crepúsculo — Stephenie Meyer (Capa Original)", "titleMain": "Crepúsculo", "author": "Stephenie Meyer", "img": "https://m.media-amazon.com/images/I/618fXbK+OkL._SY342_.jpg", "p": "24,00", "badge": ""}, {"slug": "box-tetralogia-angelica-eduardo-spohr-ed-10-anos", "t": "Box Tetralogia Angélica — Eduardo Spohr (Ed. 10 Anos)", "titleMain": "Box Tetralogia Angélica", "author": "Eduardo Spohr", "img": "https://static.skeelo.com/remote/320/480/100/https://skoob.s3.amazonaws.com/livros/790957/BOX_TETRALOGIA_ANGELICA_1530626840790957SK1530626840B.jpg", "p": "100,00", "badge": "kit"}];
+
+function cleanBase(v){ return (v||'').trim().replace(/\/+$/,''); }
+function targetUrl(slug){ return cleanBase(document.getElementById('base').value || CONFIG.baseUrl) + '/' + CONFIG.page + '?id=' + slug; }
+function esc(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+const qrObjs = {};
+
+function buildCards(){
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  BOOKS.forEach((b,i)=>{
+    const card = document.createElement('div');
+    card.className = 'qcard';
+    card.style.animationDelay = (i*0.04)+'s';
+    card.innerHTML = `
+      <div class="qhead">
+        <img src="${esc(b.img)}" alt="" onerror="this.style.opacity=.3">
+        <div>
+          <div class="ti">${esc(b.titleMain)}</div>
+          <div class="au">${b.author?('de '+esc(b.author)):''} · R$ ${esc(b.p)}</div>
+          ${b.badge==='kit'?'<span class="kit-pill">Coleção</span>':''}
+        </div>
+      </div>
+      <div class="qbox" id="qr-${i}"></div>
+      <div class="url" id="url-${i}"></div>
+      <div class="qactions">
+        <button class="btn btn-primary btn-sm" onclick="downloadOne(${i})"><i class="fas fa-download"></i> Baixar PNG</button>
+        <a class="btn btn-ghost btn-sm" id="open-${i}" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Abrir</a>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function renderQRs(){
+  BOOKS.forEach((b,i)=>{
+    const url = targetUrl(b.slug);
+    const box = document.getElementById('qr-'+i);
+    box.innerHTML = '';
+    qrObjs[i] = new QRCode(box, { text:url, width:340, height:340, correctLevel:QRCode.CorrectLevel.M, colorDark:'#0f1923', colorLight:'#ffffff' });
+    document.getElementById('url-'+i).textContent = url;
+    document.getElementById('open-'+i).href = url;
+  });
+}
+
+function applyBase(){
+  renderQRs();
+  toast('QR Codes atualizados!');
+}
+
+function getCanvas(i){
+  const box = document.getElementById('qr-'+i);
+  let cv = box.querySelector('canvas');
+  if(cv) return cv;
+  // fallback: img -> canvas
+  const img = box.querySelector('img');
+  if(img){
+    const c = document.createElement('canvas');
+    c.width = img.naturalWidth||340; c.height = img.naturalHeight||340;
+    c.getContext('2d').drawImage(img,0,0);
+    return c;
+  }
+  return null;
+}
+
+function downloadOne(i){
+  const cv = getCanvas(i);
+  if(!cv){ toast('Aguarde o QR carregar e tente de novo'); return; }
+  const a = document.createElement('a');
+  a.href = cv.toDataURL('image/png');
+  a.download = 'qr-' + BOOKS[i].slug + '.png';
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
+function downloadAll(){
+  let n=0;
+  BOOKS.forEach((b,i)=>{
+    setTimeout(()=>{ downloadOne(i); n++; if(n===BOOKS.length) toast('Baixando os '+BOOKS.length+' QR Codes...'); }, i*350);
+  });
+}
+
+function toast(msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toastMsg').textContent=msg;
+  t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2200);
+}
+function copyText(txt,msg){
+  const done=()=>toast(msg||'Copiado!');
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(()=>fb()); } else fb();
+  function fb(){ const ta=document.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity=0; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');done();}catch(e){toast('Copie: '+txt);} document.body.removeChild(ta); }
+}
+
+// init
+document.getElementById('base').value = CONFIG.baseUrl;
+document.getElementById('pixKeyChip').textContent = CONFIG.pixKey;
+document.getElementById('count').textContent = BOOKS.length;
+buildCards();
+window.addEventListener('load', ()=>{ renderQRs(); });
+document.getElementById('base').addEventListener('keydown', e=>{ if(e.key==='Enter') applyBase(); });
+</script>
+</body>
+</html>
