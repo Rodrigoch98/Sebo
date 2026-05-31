@@ -2871,7 +2871,32 @@ a{color:inherit;text-decoration:none}
                         "q": "a última batalha",
                         "d": "Sobre: Editora WMF Martins Fontes | Ilustrações de Pauline Baynes\n\nDestaque: O épico final! O destino de Nárnia é decidido em uma batalha que transcende o próprio mundo.\n\nPara quem: Ótima escolha para quem quer mergulhar em universos ricos, conflitos grandiosos e personagens com evolução marcante.\n\nEstado de conservação: Exemplar em excelente estado, com capa preservada e estrutura física firme para leitura confortável.\n\nPara fechar a compra: Chamar pelo WhatsApp para confirmar disponibilidade, combinar pagamento e receber fotos reais do exemplar antes de finalizar.",
                         "img": "https://m.media-amazon.com/images/I/51xB8P2yS6L._SY342_.jpg"
-            }
+            },
+            {
+            "t": "As Crônicas de Nárnia — C.S. Lewis (Volume Único)",
+            "g": [
+                        "Fantasia",
+                        "Clássico"
+            ],
+            "p": "30,00",
+            "v": 30,
+            "op": 59.9,
+            "q": "as cronicas de narnia volume unico cs lewis wmf martins fontes brochura",
+            "d": "Sobre: As sete crônicas completas reunidas em um único volume!\n\nDestaque: Toda a saga de Nárnia em um só livro, na ordem de leitura preferida de C.S. Lewis, com uma ilustração de Pauline Baynes a cada capítulo. Guarda-roupas mágicos, cavalos falantes e o leão Aslam do começo ao fim.\n\nConteúdo: • O Sobrinho do Mago\n• O Leão, a Feiticeira e o Guarda-Roupa\n• O Cavalo e seu Menino\n• Príncipe Caspian\n• A Viagem do Peregrino da Alvorada\n• A Cadeira de Prata\n• A Última Batalha\n\nDiferencial: Edição em volume único cada vez mais escassa, ideal para quem quer ler a série inteira sem precisar caçar os sete livros separados.\n\nPara quem: Ótima escolha para quem quer mergulhar em universos ricos, conflitos grandiosos e personagens com evolução marcante.\n\nEstado de conservação: Exemplar estruturalmente firme, completo e com leitura perfeitamente preservada, sem furos, grifos ou rasuras.\n\nObservação honesta: Por ser de folhas brancas, todas as laterais apresentam amarelamento de oxidação, incluindo as primeiras, as últimas e algumas páginas internas. A lombada e a capa têm leves arranhões, pouco perceptíveis à primeira vista e visíveis apenas contra a luz.\n\nPara fechar a compra: Chamar pelo WhatsApp para confirmar disponibilidade, combinar pagamento e receber fotos reais do exemplar antes de finalizar.",
+            "img": "https://m.media-amazon.com/images/I/71yJLhQekBL._SY466_.jpg"
+},
+            {
+            "t": "O Pequeno Príncipe — Antoine de Saint-Exupéry (Edição de Luxo, Capa Dura)",
+            "g": [
+                        "Clássico"
+            ],
+            "p": "27,00",
+            "v": 27,
+            "op": 49.9,
+            "q": "o pequeno principe edicao de luxo capa dura antoine de saint-exupery geracao editorial",
+            "d": "Sobre: O clássico mais amado do mundo em uma edição de luxo!\n\nDestaque: A obra atemporal de Antoine de Saint-Exupéry sobre amor, amizade e o olhar de criança, em edição de luxo com capa dura e o texto integral. \"O essencial é invisível aos olhos.\"\n\nDiferencial: A edição em capa dura agrega presença visual, resistência e ótimo acabamento para coleção, ótima também para presentear.\n\nPara quem: Vale a leitura tanto pelo prazer da história quanto pelo peso afetivo e pela beleza de ter uma boa edição na estante.\n\nEstado de conservação: Exemplar em estado de novo, impecável, com capa dura íntegra e páginas perfeitas, sem marcas de uso, dobras ou amarelamento.\n\nPara fechar a compra: Chamar pelo WhatsApp para confirmar disponibilidade, combinar pagamento e receber fotos reais do exemplar antes de finalizar.",
+            "img": "https://m.media-amazon.com/images/I/71CGJI0uNyL._SY466_.jpg"
+}
 ];
 
         function safeGetStorage(key, fallback = null) {
@@ -3161,7 +3186,9 @@ a{color:inherit;text-decoration:none}
             "A Queda de Cinco — Pittacus Lore": "https://m.media-amazon.com/images/I/71SDI0f+n6L._SY342_.jpg",
             "A Vingança de Sete — Pittacus Lore": "https://m.media-amazon.com/images/I/91EppL9trjL._SY342_.jpg",
             "O Destino de Dez — Pittacus Lore": "https://m.media-amazon.com/images/I/71epxJ7XHnL._SY342_.jpg",
-            "O Poder Verdadeiro — G. Brasman e G. Norris": "https://m.media-amazon.com/images/I/61cDWdl7LKL._SY342_.jpg"
+            "O Poder Verdadeiro — G. Brasman e G. Norris": "https://m.media-amazon.com/images/I/61cDWdl7LKL._SY342_.jpg",
+            "As Crônicas de Nárnia — C.S. Lewis (Volume Único)": "https://m.media-amazon.com/images/I/71yJLhQekBL._SY466_.jpg",
+            "O Pequeno Príncipe — Antoine de Saint-Exupéry (Edição de Luxo, Capa Dura)": "https://m.media-amazon.com/images/I/71CGJI0uNyL._SY466_.jpg"
         };
 
         const COVER_ALIAS_LINKS = {
@@ -3478,6 +3505,8 @@ a{color:inherit;text-decoration:none}
 
         function isKitOrCollection(book) {
             const s = norm(`${book.t} ${book.q || ''}`);
+            if (book.badge === 'kit') return true;
+            if (/volume\s*unico/.test(s)) return false;
             return /(box|kit|combo|colecao|coleção|saga|trilogia|tetralogia|quinteto|cronicas|crônicas|volumes|livros)/.test(s);
         }
 
