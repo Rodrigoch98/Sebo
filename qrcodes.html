@@ -2549,241 +2549,174 @@ var qrcode = function() {
 
 </script>
 <script>
-/* Biblioteca de ícones preenchidos (fill, evenodd) em viewBox 0 0 24 24.
-   Atribuição por palavra-chave (série/tema) e, no resto, por gênero,
-   variando os desenhos para não repetir lado a lado. */
-const ICON_PATHS = {
-  heart:"M12 20.6c-.4 0-.8-.15-1.1-.42C6.3 16.07 3.2 13.2 3.2 9.42 3.2 6.86 5.2 4.9 7.7 4.9c1.7 0 3.2.92 4.3 2.5 1.1-1.58 2.6-2.5 4.3-2.5 2.5 0 4.5 1.96 4.5 4.52 0 3.78-3.1 6.65-7.7 10.76-.3.27-.7.42-1.1.42z",
-  star:"M12 2.4l2.78 5.92 6.42.62c.5.05.7.68.32 1.02l-4.86 4.4 1.42 6.36c.11.5-.42.9-.86.63L12 18.2l-5.62 3.16c-.44.25-.97-.13-.86-.63l1.42-6.36-4.86-4.4c-.38-.34-.18-.97.32-1.02l6.42-.62z",
-  moon:"M21.4 13.7a8.6 8.6 0 1 1-9.9-10.4 7 7 0 0 0 9.9 10.4zM18.6 3.2l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z",
-  sparkle:"M12 2.2c.5 4.3 1.6 5.4 5.9 5.9-4.3.5-5.4 1.6-5.9 5.9-.5-4.3-1.6-5.4-5.9-5.9 4.3-.5 5.4-1.6 5.9-5.9zM18.4 13.4c.3 2.4.9 3 3.3 3.3-2.4.3-3 .9-3.3 3.3-.3-2.4-.9-3-3.3-3.3 2.4-.3 3-.9 3.3-3.3z",
-  rocket:"M12 1.8c2.9 2.7 4.5 6.4 4.6 10.3l-1.7 2.2H9.1L7.4 12.1C7.5 8.2 9.1 4.5 12 1.8zM12 6.1a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.6 15.1l-2.3 1.4c-.5.3-1.1-.1-1-.7l.7-3.2zM16.4 15.1l3.6-2.5.7 3.2c.1.6-.5 1-1 .7l-2.3-1.4zM9.6 16.1h4.8l-1 3.4c-.4 1.5-.6 2.6-1.4 3.5-.8-.9-1-2-1.4-3.5z",
-  eye:"M12 5.2c5 0 9.1 4.3 10.6 6.8-1.5 2.5-5.6 6.8-10.6 6.8S2.9 14.5 1.4 12C2.9 9.5 7 5.2 12 5.2zM12 7.8a4.2 4.2 0 1 0 0 8.4 4.2 4.2 0 0 0 0-8.4zM12 10a2 2 0 1 1 0 4 2 2 0 0 1 0-4z",
-  skull:"M12 2.2c-5 0-8.5 3.4-8.5 8 0 2.7 1.2 4.6 2.9 5.8.5.35.8.6.8 1.5v1.3c0 1 .8 1.8 1.8 1.8h.4v-2.3c0-.4.3-.7.7-.7s.7.3.7.7v2.3h2.2v-2.3c0-.4.3-.7.7-.7s.7.3.7.7v2.3h.4c1 0 1.8-.8 1.8-1.8v-1.3c0-.9.3-1.15.8-1.5 1.7-1.2 2.9-3.1 2.9-5.8 0-4.6-3.5-8-8.3-8zM8.4 9.4a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2zM15.6 9.4a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2zM12 14.2l1 2.1h-2z",
-  magnifier:"M10.4 2.6a7.8 7.8 0 0 1 6.06 12.7l4.8 4.8a1.3 1.3 0 0 1-1.84 1.84l-4.8-4.8A7.8 7.8 0 1 1 10.4 2.6zm0 2.6a5.2 5.2 0 1 0 0 10.4 5.2 5.2 0 0 0 0-10.4zm0 1.8a3.4 3.4 0 0 1 3.4 3.4 1 1 0 0 1-2 0 1.4 1.4 0 0 0-1.4-1.4 1 1 0 0 1 0-2z",
-  bat:"M12 7.2c.7-1.1 1.7-1.9 2.9-1.9.2-.7.7-1.3 1.3-1.6-.1.7 0 1.3.3 1.8.9.3 1.7 1 2.4 1.9.1-.6.5-1.1 1-1.4-.1.5 0 .9.2 1.3 1 .3 1.9 1 2.7 2-1 .2-1.6.6-1.9 1.3 1 .2 1.9.7 2.5 1.6-2.6-.4-4.7.2-6.3 1.7-.7.7-1.2 1.5-1.5 2.4-.3-.9-.6-1.5-1-1.8h-1.8c-.4.3-.7.9-1 1.8-.3-.9-.8-1.7-1.5-2.4-1.6-1.5-3.7-2.1-6.3-1.7.6-.9 1.5-1.4 2.5-1.6-.3-.7-.9-1.1-1.9-1.3.8-1 1.7-1.7 2.7-2 .2-.4.3-.8.2-1.3.5.3.9.8 1 1.4.7-.9 1.5-1.6 2.4-1.9.3-.5.4-1.1.3-1.8.6.3 1.1.9 1.3 1.6 1.2 0 2.2.8 2.9 1.9z",
-  wing:"M21.4 4.8c-6 0-11 2-14.5 6.5 1.5-.5 2.8-.4 3.6.1-1.2.2-2.2.9-3 2 1.8-.4 3.2-.2 4 .4-1.4.4-2.6 1.2-3.4 2.4 1.8-.3 3.3-.1 4.1.5-1.5.5-2.7 1.4-3.5 2.7 4.4-2.2 9.4-7.5 12.7-14.6z",
-  feather:"M19.4 3.6C12.4 5 7.4 9.8 5.4 17l5-5a.9.9 0 0 1 1.3 1.3l-5 5c6.4-1.4 11.2-6.4 12.7-14.7zM16.8 5.6L7.2 15.2l.5.5L17.3 6.1zM5.6 18.2l-2.2 2.2a1.1 1.1 0 0 0 1.6 1.6l2.2-2.2z",
-  column:"M5 3.2h14a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2zM6.6 6.2h2.2v11H6.6zM10.9 6.2h2.2v11h-2.2zM15.2 6.2h2.2v11h-2.2zM4.4 18.2h15.2a1 1 0 0 1 0 2H4.4a1 1 0 0 1 0-2z",
-  helmet:"M11.6 1.2c1.3 0 2 1 2.3 2.3 2.9 1 5 3.8 5 7.2v4.1c0 .6-.5 1-1.1 1-1.7 0-2.9-.8-3.7-2l-.1-.2H10l-.1.2c-.8 1.2-2 2-3.7 2-.6 0-1.1-.4-1.1-1v-4.1c0-3.6 2.4-6.6 5.7-7.4-.3-.3-.4-.7-.4-1.1 0-.9.5-1.3 1.2-1zM8.4 7.4v1.7h7.2V7.4zM11 9.1v3.8h2V9.1z",
-  butterfly:"M12 5.6c.5-.7 1.2-1.2 1.2-1.2-.4 1.4-.5 2.8-.4 4.2.9-2 2.5-3.6 4.7-4.3 2-.6 3.8.3 4.2 2 .4 1.7-.7 3.4-2.6 4-1 .3-2 .3-3 .1 1.4.6 2.5 1.6 3.1 3 .6 1.4.1 2.9-1.2 3.4-1.3.5-2.8-.2-3.6-1.6-.4-.7-.6-1.4-.7-2.1-.1.1-.2.2-.4.2v3.6c0 .4-.3.7-.7.7s-.7-.3-.7-.7v-3.6c-.2 0-.3-.1-.4-.2-.1.7-.3 1.4-.7 2.1-.8 1.4-2.3 2.1-3.6 1.6-1.3-.5-1.8-2-1.2-3.4.6-1.4 1.7-2.4 3.1-3-1 .2-2 .2-3-.1-1.9-.6-3-2.3-2.6-4 .4-1.7 2.2-2.6 4.2-2 2.2.7 3.8 2.3 4.7 4.3.1-1.4 0-2.8-.4-4.2 0 0 .7.5 1.2 1.2z",
-  compass:"M12 2.4a9.6 9.6 0 1 0 0 19.2 9.6 9.6 0 0 0 0-19.2zm0 2.2a7.4 7.4 0 1 1 0 14.8 7.4 7.4 0 0 1 0-14.8zm3.9 3.5l-5.4 2.5L8 16.1l5.4-2.5zM12 10.8a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z",
-  chip:"M9 2.4a1 1 0 0 1 1 1v1.6h4V3.4a1 1 0 0 1 2 0v1.6h1.6a2 2 0 0 1 2 2V9h1.6a1 1 0 0 1 0 2H19v2h1.6a1 1 0 0 1 0 2H19v1.6a2 2 0 0 1-2 2h-1.6a1 1 0 0 1-2 0v-1.6h-4v1.6a1 1 0 0 1-2 0v-1.6H5a2 2 0 0 1-2-2V15H1.4a1 1 0 0 1 0-2H3v-2H1.4a1 1 0 0 1 0-2H3V7a2 2 0 0 1 2-2h1.6V3.4a1 1 0 0 1 .9-1H9zM8 8a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1z",
-  masks:"M5.2 3.4C4 3.4 3 4.4 3 5.6v6.8c0 3.8 3 6.9 6.7 6.9s6.7-3.1 6.7-6.9V5.6c0-1.2-1-2.2-2.2-2.2zM7 8.2a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zm5.4 0a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zM6.9 14c1.7 1.2 4 1.2 5.7 0-.5 1.6-1.6 2.6-2.9 2.6S7.4 15.6 6.9 14zM18 6.8c1 .3 1.8 1.2 2 2.3l.9 5.8c.5 3.2-1.7 6.2-4.9 6.7l-.6.1c1.4-1.3 2.3-3.2 2.6-5.3z",
-  clapper:"M3.2 8.6h17.6c.7 0 1.2.5 1.2 1.2v8.4c0 .9-.7 1.6-1.6 1.6H3.6c-.9 0-1.6-.7-1.6-1.6V9.8c0-.7.5-1.2 1.2-1.2zM3 4.6l3.4.9-1.3 2.2-3.4-.9c-.4-.1-.6-.5-.5-.9l.4-1.4c.1-.4.5-.6.9-.5zm5.2 1.4l3.4.9-1.3 2.2L7 8.2zm5.1 1.3l3.4.9-1.3 2.2-3.4-.9zm5.2 1.4l1.5.4c.4.1.6.5.5.9l-.4 1.4-2.9-.8z",
-  palette:"M12 2.6c-5.3 0-9.6 3.9-9.6 8.8 0 4.6 3.8 6.9 6.4 6.9 1.3 0 2.1-.8 2.1-1.8 0-.5-.2-.9-.5-1.2-.3-.4-.5-.7-.5-1.2 0-.9.8-1.6 1.7-1.6h2c3.2 0 5.9-2.5 5.9-6 0-4.1-3.4-7.9-7.5-7.9zM6.6 11.4a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8zm3-3.8a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8zm4.8 0a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8zm3.2 3.6a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8z",
-  ghost:"M12 2.4c-4 0-7 3-7 7v10.4c0 .8.9 1.2 1.5.7l1.4-1.1 1.6 1.2c.4.3.9.3 1.3 0l1.7-1.2 1.7 1.2c.4.3.9.3 1.3 0l1.6-1.2 1.4 1.1c.6.5 1.5.1 1.5-.7V9.4c0-4-3-7-7-7zM9.3 8.4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5.4 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z",
-  raven:"M12 6.6l1.2-1.8.5 2.1C16 5.4 18.5 4.8 21 4.8c-3 1.9-5.4 4.4-7 7.5-.6 1.2-1 2.4-1.2 3.7L12 17.6l-.8-1.6c-.2-1.3-.6-2.5-1.2-3.7-1.6-3.1-4-5.6-7-7.5 2.5 0 5 .6 7.3 2.1l.5-2.1z",
-  boat:"M3 13.2h18l-2.5 5.3a2 2 0 0 1-1.8 1.1H7.3a2 2 0 0 1-1.8-1.1zM12 2.2l5.4 8.8H12zM10.6 4.2v6.8H5.9z",
-  tree:"M12 2.4c-3 0-5.4 2.4-5.4 5.4 0 .4 0 .8.1 1.1A4.4 4.4 0 0 0 8 17.4h3v-3.2l-2.1-2.1a.9.9 0 0 1 1.3-1.3l.8.8V9.8a.9.9 0 0 1 1.8 0v3.4l1.3-1.3a.9.9 0 0 1 1.3 1.3L13 15.4v2h3a4.4 4.4 0 0 0 1.3-8.5c.1-.3.1-.7.1-1.1 0-3-2.4-5.4-5.4-5.4zM10 18.6h4l.4 2.2c.1.5-.3 1-.8 1h-3.2c-.5 0-.9-.5-.8-1z",
-  book:"M3.2 5.4c2.6-1.5 5.6-1.5 8.1-.2v13.6c-2.5-1.3-5.5-1.3-8.1.2a.7.7 0 0 1-1-.6V6a.7.7 0 0 1 1-.6zM12.7 5.2c2.5-1.3 5.5-1.3 8.1.2a.7.7 0 0 1 1 .6v12.6a.7.7 0 0 1-1 .6c-2.6-1.5-5.6-1.5-8.1-.2z",
-  crown:"M2.8 8.2l4 3.2 5.2-6.2 5.2 6.2 4-3.2-1.8 10.4H4.6zM4.4 19.8h15.2v1.8H4.4zM8 9.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM16 9.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z",
-  sword:"M12 1.6l2.2 4.4v8.2h-4.4V6zM8.2 14.8h7.6v2.2H8.2zM10.8 17.2h2.4v4.4c0 .7-.5 1.2-1.2 1.2s-1.2-.5-1.2-1.2z",
-  key:"M8.5 2.8a5 5 0 1 0 4.4 7.4l.6.9H16v2.2h2.2L20 17.1l1.6-1.6L12.9 6.9A5 5 0 0 0 8.5 2.8zM7.2 6a1.7 1.7 0 1 1 0 3.4A1.7 1.7 0 0 1 7.2 6z",
-  potion:"M9.6 2.4h4.8a.8.8 0 0 1 0 1.6h-.4v3.4l4.7 8.1A2.6 2.6 0 0 1 16.1 19H7.9a2.6 2.6 0 0 1-2.3-3.5l4.7-8.1V4h-.7a.8.8 0 0 1 0-1.6zM9.2 13.6h5.6l-1.6-2.8h-2.4zM10.6 9.4a1 1 0 1 1 0 2 1 1 0 0 1 0-2z",
-  flame:"M12.4 1.8c.3 3.4-1.8 4.6-3.4 6.6-1.2 1.5-2 3.3-2 5.2a5 5 0 0 0 10 0c0-1.5-.5-2.7-1.3-3.8.2 1.3-.3 2.2-1.1 2.7.5-2.8-1.6-4.3-2.6-5.8-.8-1.1-1.1-2.4-.4-3.9zM12 13.4a2.6 2.6 0 0 0 1.4 4.8c-1-.6-1.2-1.6-.8-2.5-1 .5-1.4 1.3-1.3 2.2A2.5 2.5 0 0 1 10 15.6c0-1 .8-1.8 2-2.2z",
-  lantern:"M9.4 2.6h5.2a.8.8 0 0 1 0 1.6h-.3v1.1A4 4 0 0 1 16 8.7v6.6a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V8.7a4 4 0 0 1 1.7-3.4V4.2h-.3a.8.8 0 0 1 0-1.6zM10 8.7v6.6h4V8.7a2 2 0 0 0-4 0zM11 18.9h2v1.3a1 1 0 0 1-2 0z",
-  hourglass:"M5.8 2.8h12.4a1 1 0 0 1 0 2h-.6v1.6c0 2.4-1.8 3.9-3.4 5 1.6 1.1 3.4 2.6 3.4 5v1.6h.6a1 1 0 0 1 0 2H5.8a1 1 0 0 1 0-2h.6v-1.6c0-2.4 1.8-3.9 3.4-5-1.6-1.1-3.4-2.6-3.4-5V4.8h-.6a1 1 0 0 1 0-2zM8.4 4.8c.2 1.6 1.6 2.7 3.6 4.2 2-1.5 3.4-2.6 3.6-4.2z",
-  gear:"M13.4 2.2l.5 2.1c.6.2 1.2.4 1.7.8l2-.8 1.4 1.4-.8 2c.4.5.6 1.1.8 1.7l2.1.5v2l-2.1.5c-.2.6-.4 1.2-.8 1.7l.8 2-1.4 1.4-2-.8c-.5.4-1.1.6-1.7.8l-.5 2.1h-2l-.5-2.1c-.6-.2-1.2-.4-1.7-.8l-2 .8-1.4-1.4.8-2c-.4-.5-.6-1.1-.8-1.7L1.9 13v-2l2.1-.5c.2-.6.4-1.2.8-1.7l-.8-2 1.4-1.4 2 .8c.5-.4 1.1-.6 1.7-.8l.5-2.1zM12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8z",
-  anchor:"M11 2.4a2 2 0 0 1 1 3.8V8h2.2v2H13v7.7c2.1-.4 3.8-2 4.3-4.1h-1.7l2.6-3.4 2.6 3.4h-1.7A7.4 7.4 0 0 1 12 21.2a7.4 7.4 0 0 1-7.6-7.6H2.7l2.6-3.4 2.6 3.4H6.2c.5 2.1 2.2 3.7 4.3 4.1V10H8.5V8H11V6.2a2 2 0 0 1 0-3.8z",
-  bolt:"M13.2 1.8L5 13.4h5l-1.6 8.8 8.6-12.2h-5.6z",
-  rose:"M12 2.8c2.5 0 4.3 1.8 4.3 4.1 0 1-.4 1.9-1.1 2.6.9.4 1.6 1.1 1.6 2.3 0 2.4-2.1 4.1-4.8 4.1S7.2 14.2 7.2 11.8c0-1.2.7-1.9 1.6-2.3-.7-.7-1.1-1.6-1.1-2.6C7.7 4.6 9.5 2.8 12 2.8zM12 5.6a1.8 1.8 0 0 0-1.8 1.8c0 1 .8 1.7 1.8 1.7s1.8-.7 1.8-1.7A1.8 1.8 0 0 0 12 5.6zM8.6 16.2c1 2.2 1.1 3.6 1.1 5h1.6c0-1.8-.4-3.3-1.3-5.4zM15.4 16.2c-1 2.2-1.1 3.6-1.1 5h-1.6c0-1.8.4-3.3 1.3-5.4z",
-  ufo:"M12 4.6c1.8 0 3.3.9 3.3 2 0 .2-.1.3-.1.5 2.5.5 4.8 1.6 4.8 3.1 0 1.8-3.6 2.9-8 2.9S4 12 4 10.2c0-1.5 2.3-2.6 4.8-3.1 0-.2-.1-.3-.1-.5 0-1.1 1.5-2 3.3-2zM7.6 10.6a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6zM12 11a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6zM16.4 10.6a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6zM5.6 15l-1.2 2.4a.7.7 0 0 0 1.3.6l1-2.2zM18.4 15l1.2 2.4a.7.7 0 0 1-1.3.6l-1-2.2z",
-  clock:"M12 2.6a9.4 9.4 0 1 0 0 18.8 9.4 9.4 0 0 0 0-18.8zm0 2.2a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4zM11 6.6h2v6l3.4 2-1 1.7L11 13.6z",
-  gem:"M7.2 3h9.6l3.4 5-8.2 11L3.8 8zM6.1 8l5.9 8.4L17.9 8l-2-3H8.1zM9.6 8L12 14l2.4-6z",
-  scroll:"M6.4 2.8h11.2c.6 0 1 .5 1 1.1v13a3.3 3.3 0 0 1-3.3 3.3H7a3.3 3.3 0 0 1-3.3-3.3v-1.2c0-.5.4-.9.9-.9h1.4V3.9c0-.6.4-1.1.9-1.1zm.6 1.8v11.2h7.8v1.2c0 .5.1 1 .4 1.5h-.5a1.5 1.5 0 0 1-1.5-1.5v-.8H5.5v.8a1.5 1.5 0 0 0 2.9 0zm1.6 2.2h6.8v1.6H8.6zm0 3.2h6.8v1.6H8.6z",
-  maze:"M3.2 3.2h17.6v17.6H3.2zm2 2v13.6h13.6V5.2zm2 2h9.6v2H9.2v5.6h5.6v-2H11v-1.6h5.6v5.2H7.2z",
+/* Ícones centrais dos QR Codes — Iconify + Tabler Icons.
+   Remove totalmente os ícones/monogramas antigos. O centro agora usa ícones SVG
+   reais da biblioteca Tabler Icons via Iconify API, com um ícone único por livro. */
+const TABLER_ICON_PALETTES = {
+  "Fantasia":['#8b5b1f','#5e2a70','#f5ead7','#1a1410'],
+  "Fadas":['#7d4c9e','#b8842f','#f1e8f6','#1a1410'],
+  "Magia":['#6e4b8b','#b8842f','#f0e8f6','#1a1410'],
+  "Distopia":['#26384f','#b8842f','#e7edf2','#1a1410'],
+  "Sci-Fi":['#245f73','#b8842f','#e6f1f4','#1a1410'],
+  "Suspense":['#1a1410','#9a6c1f','#efe7d9','#7a2e3a'],
+  "Mistério":['#1a1410','#9a6c1f','#efe7d9','#7a2e3a'],
+  "Terror":['#7a2e3a','#1a1410','#f4e8e8','#1a1410'],
+  "Vampiros":['#7a2e3a','#1a1410','#f4e8e8','#1a1410'],
+  "Romance":['#9a4d5d','#b8842f','#f8e9ee','#1a1410'],
+  "História":['#8a4c2a','#2f5f54','#f5eadf','#1a1410'],
+  "Clássico":['#9a6c1f','#1a1410','#f2e4cb','#1a1410'],
+  "Clássicos":['#9a6c1f','#1a1410','#f2e4cb','#1a1410'],
+  "Literatura Brasileira":['#2f5f54','#9a6c1f','#e8f0ec','#1a1410'],
+  "Nacional":['#2f5f54','#9a6c1f','#e8f0ec','#1a1410'],
+  "Aventura":['#2f5f7d','#b8842f','#e9f1f4','#1a1410'],
+  "Arte":['#6e4b8b','#b8842f','#f0e8f6','#1a1410'],
+  "Cinema":['#1a1410','#b8842f','#efe7d9','#7a2e3a'],
+  "DEFAULT":['#b8842f','#7a2e3a','#f2e4cb','#1a1410']
 };
-
-// regras por palavra-chave (no título completo `t` ou na query `q`) -> ícone
-const KEYWORD_RULES = [
-  [/pequeno principe|saint.?exupery/i,'rose'],
-  [/maze runner|correr ou morrer|prova de fogo|cura mortal|ordem de exterm|codigo da febre/i,'maze'],
-  [/crepusc|lua nova|eclipse|amanhecer|bree tanner|sol da meia|vampir/i,'bat'],
-  [/dracula/i,'bat'],
-  [/narnia|le[aã]o.*feiticeira|sobrinho do mago|principe caspian|cadeira de prata|peregrino da alvorada|ultima batalha|cavalo e seu menino/i,'lantern'],
-  [/numero quatro|lorien|poder de seis|ascens[aã]o de nove|queda de cinco|vinganca de sete|destino de dez|unidos somos um/i,'ufo'],
-  [/dan brown|da vinci|inferno|anjos e dem[oô]nios|simbolo perdido|origem|ponto de impacto|fortaleza digital/i,'key'],
-  [/drago|dragon|cemiterios de drag|cidades de drag|mundos de drag/i,'flame'],
-  [/bruxa|descoberta das bruxas|sombra da noite|livro da vida|magos|aprendiz|lorde supremo/i,'potion'],
-  [/sherlock/i,'magnifier'],
-  [/alice/i,'clock'],
-  [/frankenstein/i,'bolt'],
-  [/maquina do tempo|viagem no tempo|tempest|dobra no tempo|vento a porta|planeta em seu giro|muitas aguas|tempo aceitavel/i,'hourglass'],
-  [/silo|hugh howey/i,'gear'],
-  [/1984|orwell/i,'eye'],
-  [/bird box|malorie|inspecao/i,'eye'],
-  [/segunda guerra|holocausto|grandes batalhas|grandes lideres/i,'helmet'],
-  [/anne frank/i,'book'],
-  [/jules verne|verne|nautilus|filha das profundezas|vinte mil leguas/i,'anchor'],
-  [/guerra dos mundos|homem invisivel/i,'rocket'],
-  [/trono de vidro|acotar|corte de|coroa da|rainha das sombras|reino de cinzas|imperio de tempestades|torre do alvorecer|herdeira do fogo|lamina da assassina/i,'crown'],
-  [/mitolog|nordica|mitos gregos/i,'helmet'],
-  [/harry potter|magisterium|hp guia|sandman/i,'sparkle'],
-  [/espada|espadachim|lamina/i,'sword'],
-  [/rainha vermelha|espada de vidro|prisao do rei|tempestade de guerra|trono destruido/i,'crown'],
-  [/rosa|encantadas|veneno|feiti/i,'rose'],
-  [/robo|robot/i,'gear'],
-  [/anjo|halo|hades|heaven|angelica/i,'wing'],
-  [/sombra e ossos|grisha|sol e tormenta|ruina e ascensao/i,'gem'],
-  [/sertoes|sermoes|sonetos|poemas|pauliceia|espumas|machado|alencar|aluisio|ateneu|contos|memorias/i,'feather'],
-  [/legend|rebel|marie lu/i,'bolt'],
-  [/5.?a onda|mar infinito|ultima estrela|surgido das sombras|alien/i,'rocket'],
-  [/princesa das cinzas|dama da nevoa|rainha das chamas/i,'flame'],
-  [/saga dos corvos|corvos|garotos|rei corvo/i,'raven'],
-  [/neve e cinzas|gelo e fogo|geada/i,'gem'],
-  [/stranger things/i,'bolt'],
-  [/casa de segredos|batalha das bestas|colisao dos mundos/i,'key'],
-  [/escaravelho|oraculo|arconte|circulo/i,'scroll'],
-  [/krypton|superman/i,'star'],
+const TABLER_GENRE_PRIORITY = ["Vampiros","Terror","Gótico","Dark","Fadas","Mitologia","Anjos","Magia","Sobrenatural","Distopia","Viagem no Tempo","Pós-Apocalíptico","Tecnologia","Super-Heróis","Sci-Fi","Fantasia","Psicológico","Policial","Thriller","Suspense","Mistério","Aventura","Ação","Cinema","Arte","Drama","Romance","História","Ficção Histórica","Histórico","Nacional","Literatura Brasileira","Clássicos","Clássico","Contos","Biografia","Infantojuvenil","Jovem Adulto","Jovem","Ficção"];
+const TABLER_KEYWORD_ICONS = [
+  [/machado|assis|classico|cl[aá]ssico|literatura|brasileira/i,['feather','writing','book-2','script','quote']],
+  [/tempest|tempo|dobra|vento|planeta|giro|aceitavel|aceitável/i,['hourglass','clock-hour-3','planet','comet','rocket']],
+  [/magia|mago|bruxa|bruxas|feitico|feiti[cç]o|oraculo|oráculo|arc?onte/i,['wand','sparkles','moon-stars','flask','crystal-ball']],
+  [/princesa|principe|pr[ií]ncipe|rainha|rei|trono|coroa|corte/i,['crown','building-castle','shield','diamond','sword']],
+  [/sombra|ossos|corvos|sombrio|escuro|noite|dark/i,['moon','moon-stars','eye','skull','feather']],
+  [/artur|guerra|mundial|soldado|batalha|reino|imp[eé]rio/i,['shield','swords','flag','helmet','building-fortress']],
+  [/sherlock|mist[eé]rio|codigo|c[oó]digo|simbolo|s[ií]mbolo|inferno|origem|segredo|mentindo/i,['zoom-question','fingerprint','search','key','lock']],
+  [/jules|verne|viagem|extraordin/i,['compass','ship','map','telescope','anchor']],
+  [/acotar|espinhos|rosas|chamas|prateadas/i,['flower','heart','flame','diamond','crown']],
+  [/elfhame|fadas|povo do ar|pr[ií]ncipe cruel/i,['butterfly','leaf','trees','sparkles','crown']],
+  [/legend|rebel|distopia|divergente|insurgente|convergente|quatro/i,['bolt','target-arrow','brand-abstract','shield-half','number-4']],
+  [/descoberta das bruxas|livro da vida|sombra da noite/i,['flask','wand','book','moon-stars','dna']],
+  [/rainha vermelha|espada de vidro|pris[aã]o do rei|tempestade|trono destru/i,['bolt','shield','cloud-storm','crown','sword']],
+  [/anjos|dem[oô]nios|halo|hades|heaven/i,['angel','flame','moon','shield','heart']],
+  [/oracle|oraculo|oráculo|escaravelho/i,['eye','crystal-ball','bug','key','pyramid']],
+  [/nora roberts|hollow|pedra paga|irm[aã]os de sangue/i,['heart','home-heart','flower','droplet','hand-heart']],
+  [/maze|labirinto|correr ou morrer|prova de fogo|cura mortal|exterminio|febre/i,['route','direction-sign','run','flame','first-aid-kit']],
+  [/alien|ang[uú]stia|sofrimento|sombras/i,['alien','rocket','planet','radar','satellite']],
+  [/b[uú]ssola|faca sutil|luneta|universo/i,['compass','knife','telescope','planet','world']],
+  [/silo|ordem|legado/i,['building-warehouse','layers-intersect','archive','box','stack-2']],
+  [/bird box|malorie/i,['eye-off','bird','alert-triangle','moon','brain']],
+  [/quinta onda|5 onda|mar infinito|estrela/i,['waves-electricity','wave-sine','star','antenna','satellite']],
+  [/stranger/i,['device-tv','video','radar','flashlight','antenna-bars-5']],
+  [/alice|maravilhas|espelho/i,['rabbit','door','mirror','cards','hat']],
+  [/veneno|poder/i,['skull','flask','bolt','flower','alert-triangle']],
+  [/crep[uú]sculo|lua nova|eclipse|amanhecer|sol da meia noite|bree tanner/i,['moon','moon-stars','eclipse','droplet','sun']],
+  [/n[uú]mero quatro|poder de seis|ascens[aã]o de nove|queda de cinco|vingan[cç]a de sete|destino de dez|unidos somos um/i,['number-4','number-6','number-9','number-5','number-7','number-1']],
+  [/drag[oõ]es|drag[aã]o/i,['dragon','flame','sword','mountain','shield']],
+  [/casa de segredos|batalha das bestas|colis[aã]o dos mundos/i,['home','paw','world','key','book']],
+  [/n[aá]rnia|le[aã]o|feiticeira|guarda-roupa|caspian|alvorada|cadeira de prata|ultima batalha|última batalha/i,['trees','paw','building-castle','door','sailboat','chair-director','flag']],
+  [/pequeno pr[ií]ncipe/i,['rocket','stars','planet','heart','child']]
 ];
-
-// pools por gênero (ordem usada para variar entre livros do mesmo gênero)
-const GENRE_POOLS = {
-  "Fantasia":["moon","sparkle","crown","sword","potion","flame","lantern","gem","key","butterfly","tree","star"],
-  "Sci-Fi":["rocket","chip","gear","hourglass","bolt","compass","ufo","star"],
-  "Distopia":["eye","gear","chip","bolt","skull","compass","crown"],
-  "Romance":["heart","rose","sparkle","moon","star"],
-  "Suspense":["magnifier","key","eye","skull","raven","bolt"],
-  "Thriller":["magnifier","key","skull","eye","raven","bolt"],
-  "Mistério":["magnifier","key","eye","scroll","raven"],
-  "Policial":["magnifier","key","eye","bolt"],
-  "Psicológico":["magnifier","eye","skull","masks"],
-  "Terror":["skull","bat","ghost","raven","flame","rose"],
-  "Vampiros":["bat","moon","rose","skull"],
-  "Ação":["sword","bolt","star","flame","compass"],
-  "Nacional":["feather","flame","sword","crown","gem","star"],
-  "Mitologia":["helmet","column","sword","bolt","flame"],
-  "Aventura":["compass","anchor","boat","key","flame"],
-  "Anjos":["wing","sparkle","star","heart"],
-  "Magia":["sparkle","potion","moon","key","gem"],
-  "Sobrenatural":["ghost","moon","raven","skull"],
-  "Gótico":["raven","rose","skull","bat","moon"],
-  "Dark":["raven","rose","skull","bat"],
-  "Fadas":["butterfly","sparkle","moon","flame"],
-  "História":["column","helmet","anchor","feather","scroll"],
-  "Ficção Histórica":["column","helmet","sword","anchor"],
-  "Histórico":["column","rose","feather"],
-  "Tecnologia":["chip","gear","bolt","compass"],
-  "Super-Heróis":["bolt","star","sword"],
-  "Cinema":["clapper","star"],
-  "Arte":["palette","sparkle"],
-  "Drama":["masks","rose","heart"],
-  "Infantojuvenil":["boat","star","butterfly","anchor"],
-  "Jovem":["boat","star","heart","compass"],
-  "Jovem Adulto":["boat","star","heart","compass"],
-  "Pós-Apocalíptico":["tree","skull","gear","flame"],
-  "Clássico":["feather","book","column","masks","rose"],
-  "Clássicos":["feather","book","column","scroll"],
-  "Literatura Brasileira":["feather","book","column","scroll"],
-  "Contos":["book","feather","scroll"],
-  "Biografia":["book","feather","star"],
-  "Ficção":["tree","star","book"],
+const TABLER_GENRE_POOLS = {
+  "Fantasia":['wand','sparkles','moon-stars','star','building-castle','shield','sword','flame','diamond','key','lock','trees','leaf','butterfly','crystal-ball','pyramid'],
+  "Sci-Fi":['rocket','satellite','planet','telescope','radar','cpu','chip','robot','atom','flask','microscope','antenna','comet','ufo','device-gamepad-2','binary-tree'],
+  "Distopia":['bolt','target-arrow','alert-triangle','shield-half','eye','brand-abstract','lock','antenna','radiation','biohazard','chart-dots','network'],
+  "Romance":['heart','hearts','flower','gift','hand-heart','home-heart','message-heart','mood-heart','friends','rings','mail-heart','heart-handshake'],
+  "Suspense":['search','zoom-question','fingerprint','eye','key','lock','spy','file-search','question-mark','alert-triangle','mask','map-search'],
+  "Thriller":['search','fingerprint','eye','alert-triangle','skull','lock','key','spy','target-arrow','shield-lock','run','urgent'],
+  "Mistério":['zoom-question','eye','search','key','lock','spy','file-search','question-mark','map-search','fingerprint','mask','bulb'],
+  "Policial":['fingerprint','badge','gavel','shield','spy','search','file-search','scale','handcuffs','police-car'],
+  "Psicológico":['brain','mood-empty','eye','mask','spiral','headphones','yin-yang','puzzle','messages'],
+  "Terror":['skull','ghost','bat','moon','alert-triangle','blood','grave','candle','storm','eye-off','coffin','pumpkin-scary'],
+  "Vampiros":['bat','moon','droplet','rose','skull','moon-stars','candle','grave','heart','eclipse'],
+  "Ação":['bolt','sword','flame','shield','run','target-arrow','flag','karate','rocket','explosion'],
+  "Nacional":['flag','feather','writing','book-2','library','leaf','map','world','pencil','script'],
+  "Mitologia":['building-bank','pyramid','sword','bolt','flame','shield','column-insert-left','helmet','laurel-wreath','temple'],
+  "Aventura":['compass','map','route','direction-sign','hiking','ship','sailboat','mountain','anchor','tent','backpack','binoculars'],
+  "Anjos":['angel','sparkles','stars','heart','shield','sun','halo','cloud','feather','wings'],
+  "Magia":['wand','sparkles','moon-stars','crystal-ball','star','flask','potion','hat','candle','book-2'],
+  "Sobrenatural":['ghost','moon-stars','eye','sparkles','skull','bat','candle','crystal-ball','grave','flame'],
+  "Gótico":['moon','building-castle','rose','skull','bat','candle','grave','eye','feather','window'],
+  "Dark":['moon','skull','eye-off','alert-triangle','bat','storm','candle','eclipse','grave'],
+  "Fadas":['butterfly','sparkles','leaf','trees','flower','plant','wind','moon-stars','star','wand'],
+  "História":['building-bank','museum','history','flag','shield','helmet','scroll','map','archive','hourglass','gavel','crown'],
+  "Ficção Histórica":['building-bank','history','museum','flag','shield','helmet','scroll','map','sword','archive'],
+  "Histórico":['history','calendar','building-bank','museum','flower','scroll','writing','map'],
+  "Tecnologia":['cpu','chip','robot','terminal','code','database','api','binary-tree','antenna','device-laptop'],
+  "Super-Heróis":['bolt','shield','star','rocket','karate','mask','flame','target-arrow'],
+  "Cinema":['movie','clapperboard','video','device-tv','photo','camera','ticket','brand-youtube','projector','microphone'],
+  "Arte":['palette','brush','paint','color-swatch','photo','pencil','writing','gradienter','sparkles','frame'],
+  "Drama":['masks-theater','mood-sad','mood-smile','heart','friends','users','messages','hand-heart'],
+  "Infantojuvenil":['toy-brick','child','school','puzzle','device-gamepad-2','rocket','paw','tree','book','stars'],
+  "Jovem":['school','users','mood-smile','device-gamepad-2','heart','compass','star','bolt','book','confetti'],
+  "Jovem Adulto":['school','users','heart','compass','bolt','star','sparkles','brain','book','mood-smile'],
+  "Pós-Apocalíptico":['alert-triangle','biohazard','radiation','storm','world-off','mountain','trees','tools','skull','radar'],
+  "Clássico":['book','book-2','books','library','feather','writing','script','quote','file-text','bookmark'],
+  "Clássicos":['book','book-2','books','library','feather','writing','script','quote','file-text','bookmark'],
+  "Literatura Brasileira":['feather','writing','book-2','library','flag','script','pencil','map','leaf','world'],
+  "Contos":['book','notes','article','quote','file-text','bookmark','writing','script'],
+  "Biografia":['user','id','badge','timeline','article','notes','writing','book'],
+  "Ficção":['book','star','category','trees','world','compass','library','sparkles'],
+  "DEFAULT":['book','book-2','books','library','bookmark','bookmarks','file-text','notes','article','pencil']
 };
-// ordem de prioridade do gênero quando um livro tem vários
-const GENRE_PRIORITY = ["Vampiros","Terror","Gótico","Dark","Fadas","Mitologia","Anjos","Magia","Sobrenatural","Distopia","Viagem no Tempo","Pós-Apocalíptico","Tecnologia","Super-Heróis","Fantasia","Psicológico","Policial","Thriller","Suspense","Mistério","Aventura","Ação","Cinema","Arte","Drama","Romance","História","Ficção Histórica","Histórico","Nacional","Literatura Brasileira","Clássicos","Clássico","Contos","Biografia","Infantojuvenil","Jovem Adulto","Jovem","Ficção"];
-
-// para séries com muitos volumes, alterna entre símbolos coerentes
-// para que volumes vizinhos não fiquem idênticos
-const KEYWORD_VARIANTS = {
-  bat:["bat","moon","rose"],
-  crown:["crown","sword","gem","flame"],
-  key:["key","scroll","magnifier"],
-  lantern:["lantern","sword","crown"],
-  ufo:["ufo","rocket","star"],
-  maze:["maze","compass","gear"],
-  hourglass:["hourglass","clock","sparkle"],
-  flame:["flame","gem","sword"],
-  potion:["potion","sparkle","moon"],
-  feather:["feather","book","scroll","column"],
-  raven:["raven","skull","moon"],
-  rocket:["rocket","star","bolt"],
-  rose:["rose","heart","sparkle"],
-  gem:["gem","moon","sparkle"],
-  wing:["wing","star","sparkle"],
-  sparkle:["sparkle","moon","star"],
-};
-
-function keywordIcon(b){
-  const hay = ((b.t||'')+' '+(b.q||'')).normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-  for(const [re,key] of KEYWORD_RULES){ if(re.test(hay)) return key; }
-  return null;
-}
-function primaryGenre(b){
-  const gs=b.g||[];
-  for(const g of GENRE_PRIORITY){ if(gs.indexOf(g)!==-1) return g; }
-  return gs[0]||null;
-}
-function iconPathForKey(key){ return ICON_PATHS[key]||ICON_PATHS.book; }
-
-// atribui um ícone a cada livro: palavra-chave tem prioridade; senão,
-// percorre o pool do gênero variando por um contador por-gênero (estável).
-// O selo central é exclusivo por exemplar: mistura símbolo temático, segunda marca,
-// paleta, ornamentos e código visual derivados do slug, sem usar capas.
-const ICON_ART_PALETTES = [
-  ['#b8842f','#7a2e3a','#f2e4cb','#1a1410'],
-  ['#9a6c1f','#2f7d57','#f5ead7','#1a1410'],
-  ['#7a2e3a','#b8842f','#f6ecee','#1a1410'],
-  ['#1a1410','#b8842f','#efe7d9','#7a2e3a'],
-  ['#2f5f7d','#b8842f','#e9f1f4','#1a1410'],
-  ['#6e4b8b','#b8842f','#f0e8f6','#1a1410'],
-  ['#8a4c2a','#2f7d57','#f5eadf','#1a1410'],
-  ['#3e5f54','#b8842f','#e8f0ec','#1a1410']
+const TABLER_ICON_FALLBACK = [
+'book','book-2','books','library','bookmark','bookmarks','file-text','file-description','article','news','notes','notebook','script','quote','typography','writing','feather','pencil','edit','signature','file-pencil','file-check','clipboard-text','school','certificate','award','medal','star','stars','sparkles','wand','moon','moon-stars','sun','eclipse','comet','planet','rocket','satellite','telescope','radar','antenna','ufo','cpu','chip','robot','atom','flask','microscope','dna','binary-tree','database','terminal','code','api','device-laptop','device-gamepad-2','brand-abstract','network','hub','bolt','target-arrow','shield','shield-half','shield-lock','sword','swords','flame','explosion','run','karate','flag','helmet','building-fortress','building-castle','building-bank','museum','archive','scroll','hourglass','gavel','scale','crown','diamond','gem','key','lock','lock-open','door','door-enter','door-exit','eye','eye-off','search','zoom-question','file-search','map-search','fingerprint','spy','mask','question-mark','alert-triangle','urgent','biohazard','radiation','skull','ghost','bat','grave','candle','coffin','pumpkin-scary','storm','cloud-storm','droplet','blood','heart','hearts','flower','rose','gift','hand-heart','home-heart','message-heart','mood-heart','heart-handshake','friends','users','mail-heart','rings','butterfly','leaf','plant','trees','tree','forest','wind','paw','bug','bird','rabbit','fish','horse','cat','dog','dragon','crystal-ball','potion','hat','pyramid','temple','laurel-wreath','column-insert-left','compass','map','route','direction-sign','hiking','ship','sailboat','anchor','mountain','tent','backpack','binoculars','world','world-off','globe','plane','train','car','bike','movie','clapperboard','video','device-tv','photo','camera','ticket','projector','microphone','palette','brush','paint','color-swatch','gradienter','frame','masks-theater','mood-sad','mood-smile','mood-empty','brain','spiral','yin-yang','puzzle','messages','toy-brick','child','confetti','balloon','tools','hammer','wrench','box','archive-filled','stack-2','layers-intersect','building-warehouse','home','number-1','number-2','number-3','number-4','number-5','number-6','number-7','number-8','number-9','number-0','cloud','snowflake','firetruck','lifebuoy','first-aid-kit','medical-cross','thermometer','map-pin','navigation','current-location','location','target','crosshair','bulb','bulb-filled','lamp','flashlight','chair-director','window','mirror','cards','brand-youtube','brand-discord','brand-github','brand-telegram','brand-whatsapp','brand-x','brand-instagram','brand-tiktok','brand-netflix','building','building-skyscraper','aperture','activity','adjustments','alarm','album','alien','angle','analyze','aperture','app-window','apps','armchair','arrow-guide','arrows-random','aspect-ratio','atom-2','baby-carriage','badges','barbell','beach','bell','binary','blockquote','blur','bomb','bone','bottle','bow','box-seam','briefcase','brightness','broadcast','bucket','camera-bolt','campfire','carousel-horizontal','category','chart-dots','chess','circle-key','circles','cloud-fog','coffee','coin','coins','command','contract','copy','cross','cube','curling','dashboard','details','device-imac','dice','disc','droplet-half','egg','engine','eraser','exchange','eyeglass','face-id','feather-off','filter','fish-bone','flag-2','folders','forbid','function','gauge','geometry','git-branch','glass','grid-dots','hand-finger','hash','headphones','hexagon','history','home-2','hourglass-empty','ice-cream','id','infinity','input-search','jewish-star','jigsaw','keyboard','language','lasso','layout','lego','lifebuoy-filled','line','link','list-search','loader','magnet','mail','manual-gearbox','map-2','message','messages','meteor','microphone-2','moon-2','mouse','navigation-up','needle','needle-thread','network-off','north-star','nurse','orbit','packages','paint-filled','paperclip','parachute','pennant','piano','pilcrow','pin','pinned','play-card','plug','polaroid','presentation','prism','prompt','puzzle-2','qrcode','radio','rainbow','receipt','repeat','ripple','road','rosette','sailboat-2','scan','scissors','section','seedling','settings','shape','share','signature-off','sitemap','snowman','sort-ascending','speakerphone','sphere','square-key','stack','stairs','stethoscope','submarine','sunrise','sunset','sword-off','table','tag','tags','temperature','ticket-off','timeline','timeline-event','traffic-cone','transform','tree-pine','triangle','trophy','umbrella','user','user-star','users-group','vaccine','versions','vocabulary','wand-off','wave-saw-tool','waves-electricity','wheelchair','world-bolt','world-star','yin-yang-filled','zodiac-aquarius'
 ];
-const ICON_KEYS = Object.keys(ICON_PATHS);
-function hashIconSeed(s){
-  let h=2166136261;
-  s=String(s||'');
-  for(let i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619); }
-  return h>>>0;
+function tablerNorm(s){ return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(); }
+function tablerHash(s){ let h=2166136261; s=String(s||''); for(let i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619); } return h>>>0; }
+function tablerPrimaryGenre(b){ const gs=(b&&b.g)||[]; for(const g of TABLER_GENRE_PRIORITY){ if(gs.indexOf(g)!==-1) return g; } return gs[0]||'DEFAULT'; }
+function tablerIconCandidates(b){
+  const txt=tablerNorm(((b&&b.t)||'')+' '+((b&&b.titleMain)||'')+' '+((b&&b.q)||'')+' '+(((b&&b.g)||[]).join(' ')));
+  let out=[];
+  TABLER_KEYWORD_ICONS.forEach(([re,icons])=>{ if(re.test(txt)) out=out.concat(icons); });
+  ((b&&b.g)||[]).forEach(g=>{ if(TABLER_GENRE_POOLS[g]) out=out.concat(TABLER_GENRE_POOLS[g]); });
+  out=out.concat(TABLER_GENRE_POOLS[tablerPrimaryGenre(b)]||[]).concat(TABLER_ICON_FALLBACK);
+  return out.filter(Boolean);
 }
-function buildIconArt(b,index,key){
-  const seed=hashIconSeed((b.slug||b.t||'')+'|'+(b.q||'')+'|'+index);
-  const palette=ICON_ART_PALETTES[seed%ICON_ART_PALETTES.length];
-  const ornamentPool=['spark','dot','leaf','star','diamond','sun'];
-  return {
-    uid:index+1,
-    seed:seed,
-    frame:seed%5,
-    accentMode:(seed>>>3)%4,
-    rot:((seed>>>9)%13)-6,
-    ornament:ornamentPool[(seed>>>6)%ornamentPool.length],
-    primary:key,
-    primaryPath:iconPathForKey(key),
-    main:palette[0],
-    accent:palette[1],
-    bg:palette[2],
-    ink:palette[3]
-  };
+function buildIconArt(b,index,symbol,alternates){
+  const seed=tablerHash(((b&&b.slug)||'')+'|'+((b&&b.t)||'')+'|'+index);
+  const genre=tablerPrimaryGenre(b);
+  const palette=TABLER_ICON_PALETTES[genre]||TABLER_ICON_PALETTES.DEFAULT;
+  return { uid:index+1, seed:seed, icon:symbol||'book', alternates:alternates||[], genre:genre, ring:seed%4, main:palette[0], accent:palette[1], bg:palette[2], ink:palette[3] };
 }
 function assignIcons(books){
-  const counter={}, kwCounter={};
-  books.forEach((b,i)=>{
-    let key=keywordIcon(b);
-    if(key){
-      const variants=KEYWORD_VARIANTS[key];
-      if(variants){ const n=kwCounter[key]||0; kwCounter[key]=n+1; key=variants[n%variants.length]; }
-    }else{
-      const g=primaryGenre(b);
-      const pool=(g&&GENRE_POOLS[g])?GENRE_POOLS[g]:['book','star','feather','heart'];
-      const n=counter[g]||0; counter[g]=n+1;
-      key=pool[n%pool.length];
-    }
-    b._iconKey=key;
-    b._iconPath=iconPathForKey(key);
-    b._iconArt=buildIconArt(b,i,key);
+  const used=new Set();
+  (books||[]).forEach((b,i)=>{
+    const candidates=[];
+    tablerIconCandidates(b).forEach(name=>{ if(candidates.indexOf(name)===-1) candidates.push(name); });
+    let symbol=candidates.find(name=>!used.has(name));
+    if(!symbol){ symbol=TABLER_ICON_FALLBACK.find(name=>!used.has(name))||('book-'+((i%6)+1)); }
+    used.add(symbol);
+    const alternates=candidates.filter(name=>name!==symbol).slice(0,8);
+    b._iconArt=buildIconArt(b,i,symbol,alternates);
+    delete b._iconPath;
+    delete b._iconKey;
   });
   return books;
 }
-
-// usado quando não há atribuição prévia (fallback por gênero, sem variar)
-function iconPathForGenres(genres){
-  for(const g of GENRE_PRIORITY){
-    if(genres&&genres.indexOf(g)!==-1){ const p=GENRE_POOLS[g]; if(p&&p.length) return iconPathForKey(p[0]); }
-  }
-  return ICON_PATHS.book;
+function iconPathForGenres(){ return null; }
+const QR_ICONIFY_CACHE = new Map();
+function qrIconifyUrl(icon,color){ return 'https://api.iconify.design/tabler/'+encodeURIComponent(icon)+'.svg?color='+encodeURIComponent(color||'#1a1410')+'&width=96&height=96'; }
+function qrIconifyLoadOne(icon,color){
+  const key=icon+'|'+color;
+  if(QR_ICONIFY_CACHE.has(key)) return QR_ICONIFY_CACHE.get(key);
+  const p=fetch(qrIconifyUrl(icon,color),{mode:'cors'})
+    .then(r=>{ if(!r.ok) throw new Error('icon '+icon+' '+r.status); return r.text(); })
+    .then(svg=>{
+      if(!/<svg[\s>]/i.test(svg)) throw new Error('invalid svg '+icon);
+      svg=svg.replace(/stroke-width="[^"]*"/g,'stroke-width="2.45"')
+             .replace(/width="[^"]*"/,'width="96"')
+             .replace(/height="[^"]*"/,'height="96"');
+      return new Promise((resolve,reject)=>{
+        const img=new Image();
+        img.onload=()=>resolve(img);
+        img.onerror=reject;
+        img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+      });
+    });
+  QR_ICONIFY_CACHE.set(key,p);
+  return p;
 }
-
+function qrIconifyLoad(icons,color){
+  icons=(Array.isArray(icons)?icons:[icons]).filter(Boolean);
+  let i=0;
+  function next(){
+    if(i>=icons.length) return Promise.reject(new Error('all icons failed'));
+    return qrIconifyLoadOne(icons[i++],color).catch(next);
+  }
+  return next();
+}
+window.QRIconify={load:qrIconifyLoad};
 </script>
 <script>
 /* Renderizador de QR estilizado em canvas, sem dependências externas.
@@ -2850,7 +2783,12 @@ function iconPathForGenres(genres){
     drawFinder(ctx,off,off,px,fopt);
     drawFinder(ctx,off+(n-7)*px,off,px,fopt);
     drawFinder(ctx,off,off+(n-7)*px,px,fopt);
-    if(o.iconArt||o.iconPath) drawIcon(ctx,o,off,px,holeStart,holeMods);
+    var iconReady=Promise.resolve();
+    if(o.iconArt||o.iconPath){
+      var maybe=drawIcon(ctx,o,off,px,holeStart,holeMods);
+      if(maybe && typeof maybe.then==='function') iconReady=maybe;
+    }
+    cv._iconReady=iconReady;
     return cv;
   }
   function drawIcon(ctx,o,off,px,holeStart,holeMods){
@@ -2874,132 +2812,57 @@ function iconPathForGenres(genres){
   function drawGeneratedIcon(ctx,o,off,px,holeStart,holeMods){
     var art=o.iconArt||{};
     var x=off+holeStart*px, y=off+holeStart*px, s=holeMods*px;
-    var main=art.main||o.iconFill||'#b8842f', accent=art.accent||'#7a2e3a', bg=art.bg||'#f2e4cb', ink=art.ink||'#1a1410';
     var cx=x+s/2, cy=y+s/2;
-    var outer=s*.47, inner=s*.38;
-    function drawFrame(){
-      var frame=art.frame||0;
-      ctx.beginPath();
-      if(frame===0){ ctx.arc(cx,cy,outer,0,Math.PI*2); }
-      else if(frame===1){ roundRect(ctx,cx-outer,cy-outer,outer*2,outer*2,s*.16); }
-      else if(frame===2){
-        for(var p=0;p<8;p++){
-          var a=-Math.PI/2+p*Math.PI/4;
-          var rr=outer*(p%2?0.94:1.03);
-          var px2=cx+Math.cos(a)*rr, py2=cy+Math.sin(a)*rr;
-          if(p) ctx.lineTo(px2,py2); else ctx.moveTo(px2,py2);
-        }
-        ctx.closePath();
-      } else if(frame===3){
-        ctx.moveTo(cx,cy-outer);
-        ctx.lineTo(cx+outer*.88,cy);
-        ctx.lineTo(cx,cy+outer);
-        ctx.lineTo(cx-outer*.88,cy);
-        ctx.closePath();
-      } else {
-        roundRect(ctx,cx-outer,cy-outer*.92,outer*2,outer*1.84,s*.28);
-      }
-    }
+    var main=art.main||'#b8842f', accent=art.accent||'#7a2e3a', bg=art.bg||'#f2e4cb';
+    var outer=s*.486, inner=s*.405;
+
     ctx.save();
-    ctx.shadowColor='rgba(40,28,16,.16)';
-    ctx.shadowBlur=s*0.08;
-    ctx.shadowOffsetY=s*0.025;
-    var shell=ctx.createLinearGradient(x,y,x+s,y+s);
-    shell.addColorStop(0,'#fffdfa');
-    shell.addColorStop(.5,bg);
-    shell.addColorStop(1,'#fffaf2');
-    ctx.fillStyle=shell;
-    drawFrame();
-    ctx.fill();
+    ctx.shadowColor='rgba(40,28,16,.18)'; ctx.shadowBlur=s*.075; ctx.shadowOffsetY=s*.024;
+    var grad=ctx.createLinearGradient(x,y,x+s,y+s);
+    grad.addColorStop(0,'#fffdf9'); grad.addColorStop(.50,bg); grad.addColorStop(1,'#ffffff');
+    ctx.fillStyle=grad;
+    ctx.beginPath(); ctx.arc(cx,cy,outer,0,Math.PI*2); ctx.fill();
     ctx.restore();
 
     ctx.save();
-    drawFrame();
-    ctx.clip();
-    var core=ctx.createRadialGradient(cx,cy-s*.08,s*.06,cx,cy,inner*1.1);
-    core.addColorStop(0,'rgba(255,255,255,.98)');
-    core.addColorStop(.55,bg);
-    core.addColorStop(1,'rgba(255,255,255,.92)');
-    ctx.fillStyle=core;
+    ctx.beginPath(); ctx.arc(cx,cy,outer,0,Math.PI*2); ctx.clip();
+    ctx.strokeStyle=accent; ctx.globalAlpha=.11; ctx.lineWidth=Math.max(1,s*.018);
+    var ring=art.ring||0;
+    if(ring===0){
+      for(var r=inner*.62;r<outer;r+=s*.06){ ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.stroke(); }
+    }else if(ring===1){
+      for(var a=-s;a<s*2;a+=s*.16){ ctx.beginPath(); ctx.moveTo(x+a,y); ctx.lineTo(x+a+s*.82,y+s); ctx.stroke(); }
+    }else if(ring===2){
+      for(var k=0;k<14;k++){ var aa=k*Math.PI/7; ctx.beginPath(); ctx.moveTo(cx+Math.cos(aa)*inner*.46,cy+Math.sin(aa)*inner*.46); ctx.lineTo(cx+Math.cos(aa)*outer,cy+Math.sin(aa)*outer); ctx.stroke(); }
+    }else{
+      for(var d=0;d<12;d++){ var dx=((art.seed>>>(d*2))&7)/7, dy=((art.seed>>>(d*2+10))&7)/7; ctx.beginPath(); ctx.arc(x+s*(.16+dx*.68),y+s*(.16+dy*.68),Math.max(1,s*.013),0,Math.PI*2); ctx.stroke(); }
+    }
+    ctx.restore();
+
+    ctx.save();
+    ctx.fillStyle='rgba(255,255,255,.96)';
     ctx.beginPath(); ctx.arc(cx,cy,inner,0,Math.PI*2); ctx.fill();
-    ctx.globalAlpha=.10;
-    ctx.strokeStyle=accent;
-    ctx.lineWidth=Math.max(1,s*.018);
-    for(var i=0;i<3;i++){
-      ctx.beginPath();
-      ctx.arc(cx,cy,inner*(.68+i*.11),(-Math.PI/2)+i*.45,Math.PI*1.35+i*.28);
-      ctx.stroke();
-    }
+    ctx.lineWidth=Math.max(1.6,s*.039); ctx.strokeStyle=main;
+    ctx.beginPath(); ctx.arc(cx,cy,outer-s*.013,0,Math.PI*2); ctx.stroke();
+    ctx.lineWidth=Math.max(1,s*.014); ctx.strokeStyle='rgba(255,255,255,.88)';
+    ctx.beginPath(); ctx.arc(cx,cy,inner+s*.024,0,Math.PI*2); ctx.stroke();
     ctx.restore();
 
-    ctx.save();
-    ctx.lineWidth=Math.max(1.2,s*.034);
-    ctx.strokeStyle=main;
-    drawFrame();
-    ctx.stroke();
-    ctx.lineWidth=Math.max(1,s*.014);
-    ctx.strokeStyle='rgba(255,255,255,.78)';
-    ctx.beginPath(); ctx.arc(cx,cy,inner*1.02,0,Math.PI*2); ctx.stroke();
-    ctx.restore();
-
-    var markCount=2+((art.seed||0)%3);
-    ctx.save();
-    ctx.fillStyle=accent;
-    ctx.globalAlpha=.85;
-    for(var m=0;m<markCount;m++){
-      var ang=-Math.PI/2 + (((art.seed>>>(m*3))&31)/31)*Math.PI*2;
-      var rr=inner*1.06;
-      var mx=cx+Math.cos(ang)*rr, my=cy+Math.sin(ang)*rr;
-      ctx.beginPath();
-      ctx.arc(mx,my,Math.max(1.4,s*.026),0,Math.PI*2);
-      ctx.fill();
-    }
-    ctx.restore();
-
-    ctx.save();
-    ctx.fillStyle=main;
-    var isz=s*.44, scale=isz/24;
-    ctx.translate(cx,cy);
-    ctx.rotate(((art.rot||0)*Math.PI)/180);
-    ctx.scale(scale,scale);
-    ctx.translate(-12,-12);
-    try{ ctx.fill(new Path2D(art.primaryPath||o.iconPath),'evenodd'); }catch(e){}
-    ctx.restore();
-
-    ctx.save();
-    ctx.strokeStyle=accent;
-    ctx.lineWidth=Math.max(1,s*.012);
-    ctx.globalAlpha=.9;
-    var orn=art.ornament||'dot';
-    function tinyStar(tx,ty,r){
-      ctx.beginPath();
-      for(var i=0;i<8;i++){
-        var a=-Math.PI/2+i*Math.PI/4;
-        var rr=i%2?r*.45:r;
-        var px2=tx+Math.cos(a)*rr, py2=ty+Math.sin(a)*rr;
-        if(i) ctx.lineTo(px2,py2); else ctx.moveTo(px2,py2);
+    var icons=[art.icon].concat(art.alternates||[]).concat(['book','book-2','books','bookmark']);
+    var iconSize=s*.70;
+    return global.QRIconify.load(icons, main).then(function(img){
+      ctx.save();
+      ctx.drawImage(img,cx-iconSize/2,cy-iconSize/2,iconSize,iconSize);
+      ctx.restore();
+      ctx.save();
+      ctx.fillStyle=accent; ctx.globalAlpha=.95;
+      for(var m=0;m<3;m++){
+        var ang=-Math.PI/2+((art.seed>>>(m*5))&31)/31*Math.PI*2;
+        var rr=outer*.88;
+        ctx.beginPath(); ctx.arc(cx+Math.cos(ang)*rr,cy+Math.sin(ang)*rr,Math.max(1.6,s*(.015+m*.003)),0,Math.PI*2); ctx.fill();
       }
-      ctx.closePath();
-      ctx.fillStyle=accent; ctx.fill();
-    }
-    var ox1=cx-inner*.56, oy1=cy-inner*.56, ox2=cx+inner*.56, oy2=cy+inner*.56;
-    if(orn==='spark' || orn==='star'){ tinyStar(ox1,oy1,s*.06); tinyStar(ox2,oy2,s*.045); }
-    else if(orn==='leaf'){
-      ctx.beginPath(); ctx.ellipse(ox1,oy1,s*.05,s*.028,-Math.PI/4,0,Math.PI*2); ctx.stroke();
-      ctx.beginPath(); ctx.ellipse(ox2,oy2,s*.04,s*.024,Math.PI/4,0,Math.PI*2); ctx.stroke();
-    } else if(orn==='diamond'){
-      ctx.beginPath(); ctx.moveTo(ox1,oy1-s*.042); ctx.lineTo(ox1+s*.042,oy1); ctx.lineTo(ox1,oy1+s*.042); ctx.lineTo(ox1-s*.042,oy1); ctx.closePath(); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(ox2,oy2-s*.032); ctx.lineTo(ox2+s*.032,oy2); ctx.lineTo(ox2,oy2+s*.032); ctx.lineTo(ox2-s*.032,oy2); ctx.closePath(); ctx.stroke();
-    } else if(orn==='sun'){
-      ctx.beginPath(); ctx.arc(ox1,oy1,s*.03,0,Math.PI*2); ctx.stroke();
-      for(var r1=0;r1<8;r1++){ var a1=r1*Math.PI/4; ctx.beginPath(); ctx.moveTo(ox1+Math.cos(a1)*s*.045,oy1+Math.sin(a1)*s*.045); ctx.lineTo(ox1+Math.cos(a1)*s*.065,oy1+Math.sin(a1)*s*.065); ctx.stroke(); }
-      ctx.beginPath(); ctx.arc(ox2,oy2,s*.024,0,Math.PI*2); ctx.stroke();
-    } else {
-      ctx.fillStyle=accent;
-      ctx.beginPath(); ctx.arc(ox1,oy1,s*.026,0,Math.PI*2); ctx.fill();
-      ctx.beginPath(); ctx.arc(ox2,oy2,s*.02,0,Math.PI*2); ctx.fill();
-    }
-    ctx.restore();
+      ctx.restore();
+    }).catch(function(){ return Promise.resolve(); });
   }
   global.StyledQR={render:renderQR};
 })(window);
@@ -3144,7 +3007,7 @@ function qrOpts(b,size){
   const o={ text:targetUrl(b.slug), size:size||760, margin:4, ecc:'H',
     dotType:curStyle, dotColor:'#1a1410', bg:'#ffffff',
     cornerColor:'#9a6c1f', cornerDotColor:'#b8842f', cornerType:curStyle==='square'?'square':'rounded' };
-  if(useLogo){ o.iconArt=b._iconArt||buildIconArt(b,BOOKS.indexOf(b),b._iconKey||'book'); o.iconPath=b._iconPath||iconPathForGenres(b.g); o.iconFill='#b8842f'; o.iconRatio=0.28; }
+  if(useLogo){ o.iconArt=b._iconArt||buildIconArt(b,BOOKS.indexOf(b)); o.iconRatio=0.32; }
   return o;
 }
 
@@ -3219,10 +3082,11 @@ function applyFilters(){
 
 function applyBase(){ rerenderVisible(); toast('QR Codes atualizados!'); }
 
-function downloadOne(i){
+async function downloadOne(i){
   if(!canvases[i]) renderCard(i);
   const cv=canvases[i];
   if(!cv){ toast('Aguarde o QR carregar'); return; }
+  if(cv._iconReady) await cv._iconReady;
   const a=document.createElement('a');
   a.href=cv.toDataURL('image/png'); a.download='qr-'+BOOKS[i].slug+'.png';
   document.body.appendChild(a); a.click(); a.remove();
@@ -3237,6 +3101,7 @@ async function printIndexes(indexes,label){
     const b=BOOKS[idx];
     let cv=canvases[idx];
     if(!cv){ try{ cv=StyledQR.render(qrOpts(b,460)); }catch(e){ continue; } }
+    if(cv._iconReady) await cv._iconReady;
     const data=cv.toDataURL('image/png');
     const cell=document.createElement('div'); cell.className='pcell';
     cell.innerHTML=`<div class="pn">${String(++n).padStart(3,'0')}</div>
