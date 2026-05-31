@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..800&family=Outfit:wght@300..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=faIcJT9ELYYZdoCXNj1DEqgMh2H5PHTATIt5ZmIIjG6Jhs_-NcfRMiZAS7RnTqj6kzb74DpIMxZKlJnAcHlpjDmOakiXWFNFSuOIYQIltfhw3ITbLDW9R6DznQH_8sN0W_ET70JpRTOEHTgy2tG610rp1H-Csvtj5sG5GGKsNfDAGRLu1s95YLkEzsslMSj7KlnqVl-hiOaPtmgMQ1Q2sxxqb71Ztivhr9q7_FUzN8nKnQIZnPDBwVo7sHLXQPkDFJd3-TQNT_BFK7rDj_1lxrM4sN3_PaLv5RpfE-QR_pfSzQ8xsBT-GzrQ8fgohwhOc2JCjl8J5rqU8kW5pPt8c474PUj2ruzwQRsF21jB9Lk" charset="UTF-8"></script><style>
 :root{
   --bg:#f4efe7; --card:#fffdf9; --nav:#1a1410; --text:#1a1410; --muted:#8a7d6e; --faint:#a99b89;
   --gold:#b8842f; --gold-d:#9a6c1f; --gold-soft:#f2e4cb; --wine:#7a2e3a;
@@ -2575,7 +2575,7 @@ const TABLER_ICON_PALETTES = {
 };
 const TABLER_GENRE_PRIORITY = ["Vampiros","Terror","Gótico","Dark","Fadas","Mitologia","Anjos","Magia","Sobrenatural","Distopia","Viagem no Tempo","Pós-Apocalíptico","Tecnologia","Super-Heróis","Sci-Fi","Fantasia","Psicológico","Policial","Thriller","Suspense","Mistério","Aventura","Ação","Cinema","Arte","Drama","Romance","História","Ficção Histórica","Histórico","Nacional","Literatura Brasileira","Clássicos","Clássico","Contos","Biografia","Infantojuvenil","Jovem Adulto","Jovem","Ficção"];
 const TABLER_KEYWORD_ICONS = [
-  [/machado|assis|classico|cl[aá]ssico|literatura|brasileira/i,['feather','writing','book-2','script','quote']],
+  [/machado|assis|literatura|brasileira/i,['feather','writing','book-2','script','quote']],
   [/tempest|tempo|dobra|vento|planeta|giro|aceitavel|aceitável/i,['hourglass','clock-hour-3','planet','comet','rocket']],
   [/magia|mago|bruxa|bruxas|feitico|feiti[cç]o|oraculo|oráculo|arc?onte/i,['wand','sparkles','moon-stars','flask','crystal-ball']],
   [/princesa|principe|pr[ií]ncipe|rainha|rei|trono|coroa|corte/i,['crown','building-castle','shield','diamond','sword']],
@@ -2652,12 +2652,238 @@ const TABLER_GENRE_POOLS = {
 const TABLER_ICON_FALLBACK = [
 'book','book-2','books','library','bookmark','bookmarks','file-text','file-description','article','news','notes','notebook','script','quote','typography','writing','feather','pencil','edit','signature','file-pencil','file-check','clipboard-text','school','certificate','award','medal','star','stars','sparkles','wand','moon','moon-stars','sun','eclipse','comet','planet','rocket','satellite','telescope','radar','antenna','ufo','cpu','chip','robot','atom','flask','microscope','dna','binary-tree','database','terminal','code','api','device-laptop','device-gamepad-2','brand-abstract','network','hub','bolt','target-arrow','shield','shield-half','shield-lock','sword','swords','flame','explosion','run','karate','flag','helmet','building-fortress','building-castle','building-bank','museum','archive','scroll','hourglass','gavel','scale','crown','diamond','gem','key','lock','lock-open','door','door-enter','door-exit','eye','eye-off','search','zoom-question','file-search','map-search','fingerprint','spy','mask','question-mark','alert-triangle','urgent','biohazard','radiation','skull','ghost','bat','grave','candle','coffin','pumpkin-scary','storm','cloud-storm','droplet','blood','heart','hearts','flower','rose','gift','hand-heart','home-heart','message-heart','mood-heart','heart-handshake','friends','users','mail-heart','rings','butterfly','leaf','plant','trees','tree','forest','wind','paw','bug','bird','rabbit','fish','horse','cat','dog','dragon','crystal-ball','potion','hat','pyramid','temple','laurel-wreath','column-insert-left','compass','map','route','direction-sign','hiking','ship','sailboat','anchor','mountain','tent','backpack','binoculars','world','world-off','globe','plane','train','car','bike','movie','clapperboard','video','device-tv','photo','camera','ticket','projector','microphone','palette','brush','paint','color-swatch','gradienter','frame','masks-theater','mood-sad','mood-smile','mood-empty','brain','spiral','yin-yang','puzzle','messages','toy-brick','child','confetti','balloon','tools','hammer','wrench','box','archive-filled','stack-2','layers-intersect','building-warehouse','home','number-1','number-2','number-3','number-4','number-5','number-6','number-7','number-8','number-9','number-0','cloud','snowflake','firetruck','lifebuoy','first-aid-kit','medical-cross','thermometer','map-pin','navigation','current-location','location','target','crosshair','bulb','bulb-filled','lamp','flashlight','chair-director','window','mirror','cards','brand-youtube','brand-discord','brand-github','brand-telegram','brand-whatsapp','brand-x','brand-instagram','brand-tiktok','brand-netflix','building','building-skyscraper','aperture','activity','adjustments','alarm','album','alien','angle','analyze','aperture','app-window','apps','armchair','arrow-guide','arrows-random','aspect-ratio','atom-2','baby-carriage','badges','barbell','beach','bell','binary','blockquote','blur','bomb','bone','bottle','bow','box-seam','briefcase','brightness','broadcast','bucket','camera-bolt','campfire','carousel-horizontal','category','chart-dots','chess','circle-key','circles','cloud-fog','coffee','coin','coins','command','contract','copy','cross','cube','curling','dashboard','details','device-imac','dice','disc','droplet-half','egg','engine','eraser','exchange','eyeglass','face-id','feather-off','filter','fish-bone','flag-2','folders','forbid','function','gauge','geometry','git-branch','glass','grid-dots','hand-finger','hash','headphones','hexagon','history','home-2','hourglass-empty','ice-cream','id','infinity','input-search','jewish-star','jigsaw','keyboard','language','lasso','layout','lego','lifebuoy-filled','line','link','list-search','loader','magnet','mail','manual-gearbox','map-2','message','messages','meteor','microphone-2','moon-2','mouse','navigation-up','needle','needle-thread','network-off','north-star','nurse','orbit','packages','paint-filled','paperclip','parachute','pennant','piano','pilcrow','pin','pinned','play-card','plug','polaroid','presentation','prism','prompt','puzzle-2','qrcode','radio','rainbow','receipt','repeat','ripple','road','rosette','sailboat-2','scan','scissors','section','seedling','settings','shape','share','signature-off','sitemap','snowman','sort-ascending','speakerphone','sphere','square-key','stack','stairs','stethoscope','submarine','sunrise','sunset','sword-off','table','tag','tags','temperature','ticket-off','timeline','timeline-event','traffic-cone','transform','tree-pine','triangle','trophy','umbrella','user','user-star','users-group','vaccine','versions','vocabulary','wand-off','wave-saw-tool','waves-electricity','wheelchair','world-bolt','world-star','yin-yang-filled','zodiac-aquarius'
 ];
+
+const TABLER_SLUG_ICON_OVERRIDES = {
+  "box-sherlock-holmes-obra-completa-4-volumes":['zoom-question','search','fingerprint'],
+  "box-jules-verne-4-viagens-extraordinarias-capa-dura":['compass','ship','map'],
+  "box-a-saga-dos-corvos-maggie-stiefvater-4-livros":['bird','feather','moon'],
+  "box-cronicas-de-artur-bernard-cornwell":['sword','shield','building-fortress'],
+  "box-tetralogia-angelica-eduardo-spohr-ed-10-anos":['angel','wings','sparkles'],
+  "box-acotar-corte-de-espinhos-e-rosas-4-livros":['flower','rose','crown'],
+  "corte-de-chamas-prateadas-sarah-j-maas-acotar-5":['flame','flower','diamond'],
+  "a-rainha-vermelha-victoria-aveyard":['crown','droplet','bolt'],
+  "espada-de-vidro-victoria-aveyard":['sword','shield','diamond'],
+  "a-prisao-do-rei-victoria-aveyard":['lock','building-castle','crown'],
+  "tempestade-de-guerra-victoria-aveyard":['cloud-storm','bolt','flag'],
+  "trono-destruido-victoria-aveyard-contos":['building-castle','crown','archive'],
+  "anjos-e-demonios-dan-brown":['yin-yang','flame','angel'],
+  "o-codigo-da-vinci-dan-brown":['fingerprint','key','search'],
+  "o-simbolo-perdido-dan-brown":['key','pyramid','eye'],
+  "inferno-dan-brown":['flame','alert-triangle','skull'],
+  "origem-dan-brown":['dna','atom','cpu'],
+  "fortaleza-digital-dan-brown":['shield-lock','binary-tree','lock'],
+  "ponto-de-impacto-dan-brown":['target-arrow','radar','satellite'],
+  "o-escaravelho-catherine-fisher":['bug','pyramid','sun'],
+  "o-oraculo-catherine-fisher":['crystal-ball','eye','sparkles'],
+  "o-arconte-catherine-fisher":['pyramid','building-bank','crown'],
+  "irmaos-de-sangue-nora-roberts":['users','droplet','heart'],
+  "a-maldicao-de-hollow-nora-roberts":['ghost','home-heart','candle'],
+  "a-pedra-paga-nora-roberts":['gem','crystal-ball','moon-stars'],
+  "correr-ou-morrer-james-dashner-maze-runner-1":['run','route','direction-sign'],
+  "prova-de-fogo-james-dashner-maze-runner-2":['flame','route','alert-triangle'],
+  "a-cura-mortal-james-dashner-maze-runner-3":['first-aid-kit','skull','biohazard'],
+  "ordem-de-exterminio-james-dashner-maze-runner-prequel":['skull','radiation','alert-triangle'],
+  "o-codigo-da-febre-james-dashner-maze-runner-prequel-2":['temperature','file-search','biohazard'],
+  "arquivos-james-dashner-guia-maze-runner":['archive','file-search','folder'],
+  "os-doze-justin-cronin-a-passagem-2":['skull','biohazard','moon'],
+  "a-cidade-dos-espelhos-justin-cronin-a-passagem-3":['mirror','building','eye'],
+  "halo-alexandra-adornetto":['angel','sparkles','sun'],
+  "hades-alexandra-adornetto":['flame','skull','moon'],
+  "heaven-alexandra-adornetto":['cloud','sun','sparkles'],
+  "surgido-das-sombras-tim-lebbon-alien-1":['alien','moon','rocket'],
+  "mar-de-angustia-james-a-moore-alien-2":['waves-electricity','alien','ship'],
+  "rio-de-sofrimento-christopher-golden-alien-3":['droplet','alien','skull'],
+  "a-bussola-de-ouro-philip-pullman":['compass','diamond','map'],
+  "a-faca-sutil-philip-pullman":['knife','sparkles','scissors'],
+  "a-luneta-ambar-philip-pullman":['telescope','planet','star'],
+  "silo-hugh-howey":['building-warehouse','archive','layers-intersect'],
+  "ordem-hugh-howey":['layers-intersect','stack','archive'],
+  "legado-hugh-howey":['archive','box','timeline'],
+  "o-homem-de-giz-c-j-tudor":['chalkboard','writing','alert-triangle'],
+  "o-que-aconteceu-com-annie-c-j-tudor":['question-mark','search','file-search'],
+  "as-outras-pessoas-c-j-tudor":['users','eye','mask'],
+  "garotas-em-chamas-c-j-tudor":['flame','urgent','alert-triangle'],
+  "bird-box-josh-malerman-edicao-especial-de-luxo":['eye-off','bird','alert-triangle'],
+  "malorie-josh-malerman":['blind','eye-off','walk'],
+  "neve-e-cinzas-sara-raasch":['snowflake','mountain','flame'],
+  "gelo-e-fogo-sara-raasch":['flame','snowflake','droplet'],
+  "geada-e-noite-sara-raasch":['moon-stars','snowflake','night'],
+  "a-5-onda-rick-yancey":['waves-electricity','satellite','antenna'],
+  "o-mar-infinito-rick-yancey":['wave-sine','ship','waves-electricity'],
+  "a-ultima-estrela-rick-yancey":['star','satellite','planet'],
+  "stranger-things-raizes-do-mal":['device-tv','tree','radar'],
+  "stranger-things-cidade-nas-trevas":['building','moon','device-tv'],
+  "alice-no-pais-das-maravilhas-lewis-carroll-darkside-luxo":['cards','rabbit','hat'],
+  "alice-atraves-do-espelho-lewis-carroll-darkside-luxo":['door','mirror','cards'],
+  "veneno-sarah-pinborough-encantadas-1":['skull','flask','flower'],
+  "feitico-sarah-pinborough-encantadas-2":['wand','sparkles','moon-stars'],
+  "poder-sarah-pinborough-encantadas-3":['bolt','crown','flame'],
+  "psicose-robert-bloch-ed-luxo-darkside":['brain','knife','mask'],
+  "mitos-gregos-nathaniel-hawthorne":['building-bank','pyramid','laurel-wreath'],
+  "a-guerra-dos-mundos-h-g-wells-ed-luxo-capa-dura":['ufo','planet','rocket'],
+  "a-filha-das-profundezas-rick-riordan":['anchor','waves-electricity','ship'],
+  "o-espadachim-de-carvao-affonso-solano":['sword','flame','shield'],
+  "dark-eden-o-medo-e-a-cura-patrick-carman":['skull','first-aid-kit','moon'],
+  "o-colecionador-john-fowles-darkside-caveirinha":['box','hand-grab','brain'],
+  "mitologia-nordica-neil-gaiman-capa-dura":['hammer','snowflake','mountain'],
+  "circulo-negro-catherine-fisher":['circle','moon','eye'],
+  "fios-de-prata-reconstruindo-sandman-raphael-draccon":['moon-stars','thread','sparkles'],
+  "o-homem-invisivel-h-g-wells-ed-zahar-comentada":['eye-off','ghost','user-off'],
+  "terra-americana-jeanine-cummins":['map','road','world'],
+  "frankenstein-mary-shelley-darkside-medo-classico":['bolt','brain','skull'],
+  "a-essencia-do-mal-luca-d-andrea-capa-dura":['alert-triangle','mountain','skull'],
+  "1984-george-orwell-capa-dura":['eye','lock','antenna'],
+  "a-maquina-do-tempo-h-g-wells-suma-luxo":['clock-hour-3','hourglass','settings'],
+  "contos-de-fadas-dos-irmaos-grimm-capa-dura":['book-2','sparkles','trees'],
+  "cacador-em-fuga-george-r-r-martin":['run','target-arrow','mountain'],
+  "os-ultimos-dias-de-krypton-kevin-j-anderson":['shield-star','planet','rocket'],
+  "robo-selvagem-peter-brown":['robot','tree','paw'],
+  "inspecao-josh-malerman":['file-search','eye','clipboard-check'],
+  "serpentario-felipe-castilho":['snake','skull','leaf'],
+  "a-garota-do-lago-charlie-donlea":['droplet','search','police-car'],
+  "a-arvore-envenenada-erin-kelly":['tree','skull','flask'],
+  "2012-a-guerra-pelas-almas-whitley-strieber":['meteor','world-bolt','skull'],
+  "jogo-de-espelhos-cara-delevingne":['mirror','cards','users'],
+  "o-morro-dos-ventos-uivantes-emily-bronte-capa-dura":['wind','heart','home'],
+  "dracula-bram-stoker-first-edition-darkside":['coffin','bat','droplet'],
+  "box-magisterium-holly-black-e-cassandra-clare":['school','wand','book-2'],
+  "box-hp-guia-cinema-4-livros-capa-dura":['movie','clapperboard','camera'],
+  "o-diario-de-anne-frank":['notebook','user','history'],
+  "til-jose-de-alencar-capa-dura":['leaf','book','feather'],
+  "contos-novos-mario-de-andrade-capa-dura":['notes','quote','book'],
+  "senhora-jose-de-alencar-capa-dura":['heart','user-star','book'],
+  "sonetos-luis-de-camoes-capa-dura":['signature','quote','feather'],
+  "casa-de-pensao-aluisio-azevedo-capa-dura":['home','building','book'],
+  "pauliceia-desvairada-mario-de-andrade-capa-dura":['building-community','pencil','book'],
+  "os-sertoes-euclides-da-cunha-capa-dura":['mountain','map','book'],
+  "espumas-flutuantes-castro-alves-capa-dura":['waves-electricity','feather','quote'],
+  "sermoes-padre-antonio-vieira-capa-dura":['podium','book','quote'],
+  "o-espelho-e-outros-contos-machado-de-assis-capa-dura":['mirror','book','quote'],
+  "poemas-escolhidos-varios-autores-capa-dura":['file-pencil','feather','quote'],
+  "o-ateneu-raul-pompeia-capa-dura":['school','book','building-bank'],
+  "a-lamina-da-assassina-sarah-j-maas-trono-de-vidro-0-5":['knife','sword','moon'],
+  "trono-de-vidro-sarah-j-maas":['diamond','crown','sword'],
+  "coroa-da-meia-noite-sarah-j-maas-trono-de-vidro-2":['crown','moon-stars','diamond'],
+  "herdeira-do-fogo-sarah-j-maas-trono-de-vidro-3":['flame','crown','shield'],
+  "rainha-das-sombras-sarah-j-maas-trono-de-vidro-4":['skull','moon','crown'],
+  "imperio-de-tempestades-sarah-j-maas-trono-de-vidro-5":['cloud-storm','crown','building-castle'],
+  "torre-do-alvorecer-sarah-j-maas-trono-de-vidro-6":['building-fortress','sunrise','sun'],
+  "reino-de-cinzas-sarah-j-maas-trono-de-vidro-7":['flame','building-castle','crown'],
+  "crepusculo-stephenie-meyer-capa-original":['moon','bat','heart'],
+  "crepusculo-stephenie-meyer-edicao-10-anos":['moon-stars','bat','book-2'],
+  "lua-nova-stephenie-meyer":['moon','eclipse','stars'],
+  "eclipse-stephenie-meyer":['eclipse','moon','sun'],
+  "amanhecer-stephenie-meyer":['sunrise','sun','heart'],
+  "sol-da-meia-noite-stephenie-meyer":['sun','moon-stars','eclipse'],
+  "a-breve-segunda-vida-de-bree-tanner-stephenie-meyer":['droplet','bat','heart'],
+  "guia-oficial-ilustrado-da-saga-crepusculo":['notebook','book-2','moon'],
+  "eu-sou-o-numero-quatro-pittacus-lore":['number-4','bolt','alien'],
+  "o-poder-de-seis-pittacus-lore":['number-6','bolt','alien'],
+  "a-ascensao-de-nove-pittacus-lore":['number-9','rocket','alien'],
+  "a-queda-de-cinco-pittacus-lore":['number-5','alert-triangle','alien'],
+  "a-vinganca-de-sete-pittacus-lore":['number-7','target-arrow','alien'],
+  "o-destino-de-dez-pittacus-lore":['number-0','stars','alien'],
+  "unidos-somos-um-pittacus-lore":['number-1','users-group','alien'],
+  "o-poder-verdadeiro-g-brasman-e-g-norris":['bolt','star','cpu'],
+  "efeito-manticore-g-brasman-e-g-norris":['biohazard','dna','flask'],
+  "mare-vermelha-g-brasman-e-g-norris":['waves-electricity','droplet','ship'],
+  "renuncia-g-brasman-e-g-norris":['flag-off','hand-stop','book'],
+  "o-lado-mais-sombrio-a-g-howard":['moon','skull','butterfly'],
+  "atras-do-espelho-a-g-howard":['mirror','door','moon'],
+  "qualquer-outro-lugar-a-g-howard":['map-pin','compass','moon'],
+  "sussurros-do-pais-das-maravilhas-a-g-howard":['message','cards','moon-stars'],
+  "cemiterios-de-dragoes-raphael-draccon":['grave','dragon','flame'],
+  "cidades-de-dragoes-raphael-draccon":['building-skyscraper','dragon','flame'],
+  "mundos-de-dragoes-raphael-draccon":['world','dragon','planet'],
+  "box-dragoes-de-eter-raphael-draccon-4-livros-poster":['dragon','flame','shield'],
+  "casa-de-segredos-chris-columbus-e-ned-vizzini":['home-question','key','book'],
+  "a-batalha-das-bestas-chris-columbus-e-ned-vizzini":['paw','sword','shield'],
+  "a-colisao-dos-mundos-chris-columbus-e-ned-vizzini":['world','planet','bolt'],
+  "uma-dobra-no-tempo-madeleine-l-engle-capa-dura":['hourglass','clock-hour-3','sparkles'],
+  "um-vento-a-porta-madeleine-l-engle-capa-dura":['wind','door','clock'],
+  "um-planeta-em-seu-giro-veloz-madeleine-l-engle-capa-dura":['planet','rotate-clockwise','orbit'],
+  "muitas-aguas-madeleine-l-engle-capa-dura":['droplet','waves-electricity','ship'],
+  "um-tempo-aceitavel-madeleine-l-engle-capa-dura":['clock-check','hourglass','calendar'],
+  "o-sobrinho-do-mago-c-s-lewis-narnia":['wand','tree','door'],
+  "o-leao-a-feiticeira-e-o-guarda-roupa-c-s-lewis-narnia":['paw','snowflake','door'],
+  "o-cavalo-e-seu-menino-c-s-lewis-narnia":['horse','route','paw'],
+  "principe-caspian-c-s-lewis-narnia":['crown','sword','ship'],
+  "a-viagem-do-peregrino-da-alvorada-c-s-lewis-narnia":['sailboat','sunrise','map'],
+  "a-cadeira-de-prata-c-s-lewis-narnia":['chair-director','moon','snowflake'],
+  "a-ultima-batalha-c-s-lewis-narnia":['flag','sword','shield'],
+  "as-cronicas-de-narnia-c-s-lewis-volume-unico":['trees','book-2','door'],
+  "o-pequeno-principe-antoine-de-saint-exupery-edicao-de-luxo-capa-dura":['rocket','planet','heart'],
+
+  /* Ajuste final de pertinência visual: estas chaves ficam no fim do objeto para
+     preservar ícones mais coerentes nos livros/séries que estavam herdando opções genéricas. */
+  "box-machado-de-assis-colecao-completa":['feather','writing','book-2'],
+  "box-trilogia-tempest-julie-cross":['hourglass','clock-hour-3','comet'],
+  "box-trilogia-os-tons-de-magia-v-e-schwab":['wand','sparkles','moon-stars'],
+  "box-princesa-das-cinzas-laura-sebastian":['crown','rosette','building-castle'],
+  "box-sombra-e-ossos-leigh-bardugo-grishaverso":['bone','skull','moon'],
+  "box-segunda-guerra-mundial-3-livros":['helmet','flag','shield'],
+  "box-o-povo-do-ar-holly-black-4-livros":['butterfly','leaf','sparkles'],
+  "como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo":['leaf','crown','trees'],
+  "a-descoberta-das-bruxas-deborah-harkness":['flask','crystal-ball','wand'],
+  "sombra-da-noite-deborah-harkness":['candle','moon-stars','flask'],
+  "o-livro-da-vida-deborah-harkness":['book','dna','heart'],
+  "hades-alexandra-adornetto":['skull','flame','moon'],
+  "heaven-alexandra-adornetto":['sun','cloud','sparkles'],
+  "rio-de-sofrimento-christopher-golden-alien-3":['ripple','alien','skull'],
+  "ordem-de-exterminio-james-dashner-maze-runner-prequel":['radiation','biohazard','skull'],
+  "geada-e-noite-sara-raasch":['snowman','snowflake','moon-stars'],
+  "frankenstein-mary-shelley-darkside-medo-classico":['activity-heartbeat','bolt','brain'],
+  "a-lamina-da-assassina-sarah-j-maas-trono-de-vidro-0-5":['sword-off','knife','sword'],
+  "trono-de-vidro-sarah-j-maas":['rosette','diamond','crown'],
+  "coroa-da-meia-noite-sarah-j-maas-trono-de-vidro-2":['award','moon-stars','crown'],
+  "herdeira-do-fogo-sarah-j-maas-trono-de-vidro-3":['campfire','flame','crown'],
+  "rainha-das-sombras-sarah-j-maas-trono-de-vidro-4":['moon-off','skull','crown'],
+  "imperio-de-tempestades-sarah-j-maas-trono-de-vidro-5":['cloud-bolt','cloud-storm','crown'],
+  "torre-do-alvorecer-sarah-j-maas-trono-de-vidro-6":['sunrise','building-fortress','sun'],
+  "reino-de-cinzas-sarah-j-maas-trono-de-vidro-7":['campfire-filled','flame','building-castle'],
+  "crepusculo-stephenie-meyer-capa-original":['moon','bat','heart'],
+  "crepusculo-stephenie-meyer-edicao-10-anos":['bat','moon-stars','book-2'],
+  "lua-nova-stephenie-meyer":['moon-stars','moon','eclipse'],
+  "eclipse-stephenie-meyer":['eclipse','sun','moon'],
+  "amanhecer-stephenie-meyer":['sunrise','sun','heart'],
+  "sol-da-meia-noite-stephenie-meyer":['sunset','sun','moon-stars'],
+  "a-breve-segunda-vida-de-bree-tanner-stephenie-meyer":['droplet','candle','heart'],
+  "guia-oficial-ilustrado-da-saga-crepusculo":['notebook','book-2','moon'],
+  "o-sobrinho-do-mago-c-s-lewis-narnia":['door-enter','wand','tree-pine'],
+  "o-leao-a-feiticeira-e-o-guarda-roupa-c-s-lewis-narnia":['tree-pine','snowflake','paw'],
+  "principe-caspian-c-s-lewis-narnia":['shield-chevron','flag','sword'],
+  "a-viagem-do-peregrino-da-alvorada-c-s-lewis-narnia":['sailboat','sunrise','map'],
+  "a-cadeira-de-prata-c-s-lewis-narnia":['chair-director','moon','snowflake'],
+  "a-ultima-batalha-c-s-lewis-narnia":['swords','flag','shield'],
+  "as-cronicas-de-narnia-c-s-lewis-volume-unico":['trees','book-2','door'],
+
+  /* Ajuste fino final para evitar que séries longas herdem símbolos genéricos. */
+  "corte-de-chamas-prateadas-sarah-j-maas-acotar-5":['diamond','flame','flower'],
+  "a-rainha-vermelha-victoria-aveyard":['droplet-half','crown','bolt'],
+  "hades-alexandra-adornetto":['grave','flame','skull'],
+  "heaven-alexandra-adornetto":['cloud','sun','sparkles'],
+  "gelo-e-fogo-sara-raasch":['flame','snowflake','moon-stars'],
+  "geada-e-noite-sara-raasch":['snowflake','snowman','moon-stars'],
+  "poder-sarah-pinborough-encantadas-3":['bolt','crown','bat'],
+  "torre-do-alvorecer-sarah-j-maas-trono-de-vidro-6":['building-fortress','sunrise','sun'],
+  "o-diario-de-anne-frank":['id','notebook','history'],
+  "crepusculo-stephenie-meyer-capa-original":['moon','bat','heart'],
+  "crepusculo-stephenie-meyer-edicao-10-anos":['bat','moon-stars','book-2'],
+  "lua-nova-stephenie-meyer":['moon-stars','moon','eclipse'],
+  "eclipse-stephenie-meyer":['eclipse','sun','moon'],
+  "amanhecer-stephenie-meyer":['sunrise','sun','heart'],
+  "sol-da-meia-noite-stephenie-meyer":['sunset','sun','moon-stars'],
+  "a-breve-segunda-vida-de-bree-tanner-stephenie-meyer":['droplet','candle','heart'],
+  "guia-oficial-ilustrado-da-saga-crepusculo":['notebook','book-2','moon'],
+};
+
 function tablerNorm(s){ return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(); }
 function tablerHash(s){ let h=2166136261; s=String(s||''); for(let i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619); } return h>>>0; }
 function tablerPrimaryGenre(b){ const gs=(b&&b.g)||[]; for(const g of TABLER_GENRE_PRIORITY){ if(gs.indexOf(g)!==-1) return g; } return gs[0]||'DEFAULT'; }
 function tablerIconCandidates(b){
   const txt=tablerNorm(((b&&b.t)||'')+' '+((b&&b.titleMain)||'')+' '+((b&&b.q)||'')+' '+(((b&&b.g)||[]).join(' ')));
   let out=[];
+  if(b&&TABLER_SLUG_ICON_OVERRIDES[b.slug]) out=out.concat(TABLER_SLUG_ICON_OVERRIDES[b.slug]);
   TABLER_KEYWORD_ICONS.forEach(([re,icons])=>{ if(re.test(txt)) out=out.concat(icons); });
   ((b&&b.g)||[]).forEach(g=>{ if(TABLER_GENRE_POOLS[g]) out=out.concat(TABLER_GENRE_POOLS[g]); });
   out=out.concat(TABLER_GENRE_POOLS[tablerPrimaryGenre(b)]||[]).concat(TABLER_ICON_FALLBACK);
@@ -2671,16 +2897,32 @@ function buildIconArt(b,index,symbol,alternates){
 }
 function assignIcons(books){
   const used=new Set();
-  (books||[]).forEach((b,i)=>{
+  const assigned=new Set();
+  function candidatesFor(b){
     const candidates=[];
-    tablerIconCandidates(b).forEach(name=>{ if(candidates.indexOf(name)===-1) candidates.push(name); });
+    tablerIconCandidates(b).forEach(name=>{ if(name && candidates.indexOf(name)===-1) candidates.push(name); });
+    return candidates;
+  }
+  function applyOne(b,i){
+    const candidates=candidatesFor(b);
     let symbol=candidates.find(name=>!used.has(name));
-    if(!symbol){ symbol=TABLER_ICON_FALLBACK.find(name=>!used.has(name))||('book-'+((i%6)+1)); }
+    if(!symbol){ symbol=TABLER_ICON_FALLBACK.find(name=>!used.has(name))||('book-'+(i+1)); }
     used.add(symbol);
-    const alternates=candidates.filter(name=>name!==symbol).slice(0,8);
-    b._iconArt=buildIconArt(b,i,symbol,alternates);
+    b._iconArt=buildIconArt(b,i,symbol,[]);
+    b._iconCandidates=candidates;
     delete b._iconPath;
     delete b._iconKey;
+    assigned.add(i);
+  }
+  (books||[]).forEach((b,i)=>{ if(b&&TABLER_SLUG_ICON_OVERRIDES[b.slug]) applyOne(b,i); });
+  (books||[]).forEach((b,i)=>{ if(!assigned.has(i)) applyOne(b,i); });
+  const backupUsed=new Set();
+  (books||[]).forEach((b,i)=>{
+    const primary=b&&b._iconArt&&b._iconArt.icon;
+    const pool=(b._iconCandidates||[]).concat(TABLER_ICON_FALLBACK);
+    const backup=pool.find(name=>name && name!==primary && !used.has(name) && !backupUsed.has(name));
+    if(backup){ backupUsed.add(backup); b._iconArt.alternates=[backup]; }
+    delete b._iconCandidates;
   });
   return books;
 }
@@ -2694,7 +2936,7 @@ function qrIconifyLoadOne(icon,color){
     .then(r=>{ if(!r.ok) throw new Error('icon '+icon+' '+r.status); return r.text(); })
     .then(svg=>{
       if(!/<svg[\s>]/i.test(svg)) throw new Error('invalid svg '+icon);
-      svg=svg.replace(/stroke-width="[^"]*"/g,'stroke-width="2.45"')
+      svg=svg.replace(/stroke-width="[^"]*"/g,'stroke-width="2.7"')
              .replace(/width="[^"]*"/,'width="96"')
              .replace(/height="[^"]*"/,'height="96"');
       return new Promise((resolve,reject)=>{
@@ -2812,55 +3054,54 @@ window.QRIconify={load:qrIconifyLoad};
   function drawGeneratedIcon(ctx,o,off,px,holeStart,holeMods){
     var art=o.iconArt||{};
     var x=off+holeStart*px, y=off+holeStart*px, s=holeMods*px;
-    var cx=x+s/2, cy=y+s/2;
     var main=art.main||'#b8842f', accent=art.accent||'#7a2e3a', bg=art.bg||'#f2e4cb';
-    var outer=s*.486, inner=s*.405;
+    var pad=s*.035;
+    var box=s-(pad*2);
+    var bx=x+pad, by=y+pad;
+    var r=Math.max(4,s*.105);
+    var innerPad=s*.105;
+    var ix=bx+innerPad, iy=by+innerPad, ib=box-(innerPad*2);
 
     ctx.save();
-    ctx.shadowColor='rgba(40,28,16,.18)'; ctx.shadowBlur=s*.075; ctx.shadowOffsetY=s*.024;
-    var grad=ctx.createLinearGradient(x,y,x+s,y+s);
-    grad.addColorStop(0,'#fffdf9'); grad.addColorStop(.50,bg); grad.addColorStop(1,'#ffffff');
+    ctx.shadowColor='rgba(40,28,16,.20)'; ctx.shadowBlur=s*.070; ctx.shadowOffsetY=s*.024;
+    var grad=ctx.createLinearGradient(bx,by,bx+box,by+box);
+    grad.addColorStop(0,'#fffdf9'); grad.addColorStop(.48,bg); grad.addColorStop(1,'#ffffff');
     ctx.fillStyle=grad;
-    ctx.beginPath(); ctx.arc(cx,cy,outer,0,Math.PI*2); ctx.fill();
+    roundRect(ctx,bx,by,box,box,r); ctx.fill();
     ctx.restore();
 
     ctx.save();
-    ctx.beginPath(); ctx.arc(cx,cy,outer,0,Math.PI*2); ctx.clip();
-    ctx.strokeStyle=accent; ctx.globalAlpha=.11; ctx.lineWidth=Math.max(1,s*.018);
+    roundRect(ctx,bx,by,box,box,r); ctx.clip();
+    ctx.strokeStyle=accent; ctx.globalAlpha=.085; ctx.lineWidth=Math.max(1,s*.014);
     var ring=art.ring||0;
     if(ring===0){
-      for(var r=inner*.62;r<outer;r+=s*.06){ ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.stroke(); }
+      for(var ln=-box;ln<box*2;ln+=s*.105){ ctx.beginPath(); ctx.moveTo(bx+ln,by); ctx.lineTo(bx+ln+box*.72,by+box); ctx.stroke(); }
     }else if(ring===1){
-      for(var a=-s;a<s*2;a+=s*.16){ ctx.beginPath(); ctx.moveTo(x+a,y); ctx.lineTo(x+a+s*.82,y+s); ctx.stroke(); }
+      for(var ln2=-box;ln2<box*2;ln2+=s*.105){ ctx.beginPath(); ctx.moveTo(bx+ln2,by+box); ctx.lineTo(bx+ln2+box*.72,by); ctx.stroke(); }
     }else if(ring===2){
-      for(var k=0;k<14;k++){ var aa=k*Math.PI/7; ctx.beginPath(); ctx.moveTo(cx+Math.cos(aa)*inner*.46,cy+Math.sin(aa)*inner*.46); ctx.lineTo(cx+Math.cos(aa)*outer,cy+Math.sin(aa)*outer); ctx.stroke(); }
+      for(var a=-box;a<box*2;a+=s*.12){ ctx.strokeRect(bx+a,by+a,box*.42,box*.42); }
     }else{
-      for(var d=0;d<12;d++){ var dx=((art.seed>>>(d*2))&7)/7, dy=((art.seed>>>(d*2+10))&7)/7; ctx.beginPath(); ctx.arc(x+s*(.16+dx*.68),y+s*(.16+dy*.68),Math.max(1,s*.013),0,Math.PI*2); ctx.stroke(); }
+      for(var d=0;d<11;d++){
+        var dx=((art.seed>>>(d*2))&7)/7, dy=((art.seed>>>(d*2+10))&7)/7;
+        ctx.beginPath(); ctx.arc(bx+box*(.12+dx*.76),by+box*(.12+dy*.76),Math.max(1,s*.012),0,Math.PI*2); ctx.stroke();
+      }
     }
     ctx.restore();
 
     ctx.save();
-    ctx.fillStyle='rgba(255,255,255,.96)';
-    ctx.beginPath(); ctx.arc(cx,cy,inner,0,Math.PI*2); ctx.fill();
-    ctx.lineWidth=Math.max(1.6,s*.039); ctx.strokeStyle=main;
-    ctx.beginPath(); ctx.arc(cx,cy,outer-s*.013,0,Math.PI*2); ctx.stroke();
-    ctx.lineWidth=Math.max(1,s*.014); ctx.strokeStyle='rgba(255,255,255,.88)';
-    ctx.beginPath(); ctx.arc(cx,cy,inner+s*.024,0,Math.PI*2); ctx.stroke();
+    ctx.fillStyle='rgba(255,255,255,.97)';
+    roundRect(ctx,ix,iy,ib,ib,Math.max(3,s*.060)); ctx.fill();
+    ctx.lineWidth=Math.max(1.6,s*.040); ctx.strokeStyle=main;
+    roundRect(ctx,bx+ctx.lineWidth/2,by+ctx.lineWidth/2,box-ctx.lineWidth,box-ctx.lineWidth,Math.max(3,r-ctx.lineWidth/2)); ctx.stroke();
+    ctx.lineWidth=Math.max(1,s*.014); ctx.strokeStyle='rgba(255,255,255,.90)';
+    roundRect(ctx,ix-ctx.lineWidth,iy-ctx.lineWidth,ib+(ctx.lineWidth*2),ib+(ctx.lineWidth*2),Math.max(3,s*.062)); ctx.stroke();
     ctx.restore();
 
-    var icons=[art.icon].concat(art.alternates||[]).concat(['book','book-2','books','bookmark']);
-    var iconSize=s*.70;
+    var icons=[art.icon].concat(art.alternates||[]);
+    var iconSize=box*.78;
     return global.QRIconify.load(icons, main).then(function(img){
       ctx.save();
-      ctx.drawImage(img,cx-iconSize/2,cy-iconSize/2,iconSize,iconSize);
-      ctx.restore();
-      ctx.save();
-      ctx.fillStyle=accent; ctx.globalAlpha=.95;
-      for(var m=0;m<3;m++){
-        var ang=-Math.PI/2+((art.seed>>>(m*5))&31)/31*Math.PI*2;
-        var rr=outer*.88;
-        ctx.beginPath(); ctx.arc(cx+Math.cos(ang)*rr,cy+Math.sin(ang)*rr,Math.max(1.6,s*(.015+m*.003)),0,Math.PI*2); ctx.fill();
-      }
+      ctx.drawImage(img,bx+(box-iconSize)/2,by+(box-iconSize)/2,iconSize,iconSize);
       ctx.restore();
     }).catch(function(){ return Promise.resolve(); });
   }
