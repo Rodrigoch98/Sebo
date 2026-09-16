@@ -161,6 +161,7 @@ const A = {
   </div>
 
   <div class="tabs">
+    <a class="tab" href="capas.html" style="text-decoration:none">Capas</a>
     ${[['pedidos', 'Pedidos'], ['acervo', 'Acervo'], ['ajuda', 'Como funciona']].map(([k, l]) =>
       `<button class="tab ${this.aba === k ? 'on' : ''}" onclick="A.ir('${k}')">${l}${k === 'pedidos' && this.aguardando().length ? ' · ' + this.aguardando().length : ''}</button>`).join('')}
   </div>
@@ -275,7 +276,7 @@ ${lista.length ? lista.map(b => `<div class="lin">
   ab_ajuda() {
     return `<div class="ajuda">
   <h3>O que acontece quando alguém reserva</h3>
-  <p>O colega escolhe os livros no site, escreve o nome e confirma. Na mesma hora os exemplares saem da vitrine
+  <p>A pessoa escolhe os livros no site, escreve o nome e confirma. Na mesma hora os exemplares saem da vitrine
   e o pedido aparece aqui como <b>aguardando você</b>. A reserva segura por ${CFG.horasReserva || 24} horas; depois
   disso os livros voltam sozinhos.</p>
 
