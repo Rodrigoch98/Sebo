@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Capas do acervo</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2314100c' rx='22' width='100' height='100'/><path d='M50 22l24 9v18c0 14.4-9.9 25.5-24 29.4C35.9 74.5 26 63.4 26 49V31z' fill='%23d9a441'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..800&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf7f2;--card:#fff;--paper-2:#f0e9dd;--ink:#231c14;--muted:#6d6055;--faint:#9b8e83;--line:#e6ddd0;
+  --gold:#d9a441;--wine:#8a2f3f;--green:#2e9e5b;--amber:#b9761f;
+  --disp:'Fraunces',Georgia,serif;--ui:'Outfit',system-ui,-apple-system,sans-serif;
+  --r:14px;--sh:0 2px 10px rgba(35,28,20,.06);
+}
+:root[data-theme="dark"]{
+  --bg:#12100d;--card:#1b1814;--paper-2:#241f19;--ink:#f2ece3;--muted:#a99c8e;--faint:#7d7266;--line:#2e2922;
+  --sh:0 2px 14px rgba(0,0,0,.4);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12100d;--card:#1b1814;--paper-2:#241f19;--ink:#f2ece3;--muted:#a99c8e;--faint:#7d7266;--line:#2e2922;
+  --sh:0 2px 14px rgba(0,0,0,.4);
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:var(--disp);font-weight:700;margin:0;line-height:1.15}
+button,input,select{font:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:1.2rem 16px 6rem}
+
+.top{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;padding:1rem 0 1.1rem;border-bottom:1px solid var(--line);margin-bottom:1.3rem}
+.top h1{font-size:1.5rem;flex:1;min-width:190px}
+.lead{color:var(--muted);font-size:.88rem;margin:-.4rem 0 1.4rem;max-width:76ch}
+
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:.7rem;margin-bottom:1.3rem}
+.num{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:.8rem .95rem;box-shadow:var(--sh)}
+.num b{display:block;font-family:var(--disp);font-size:1.45rem;line-height:1.1}
+.num span{font-size:.73rem;color:var(--muted)}
+.num.g b{color:var(--green)} .num.a b{color:var(--amber)} .num.w b{color:var(--wine)}
+
+.bar{display:flex;gap:.45rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem}
+.tab{padding:.45rem .9rem;border-radius:99px;border:1px solid var(--line);background:var(--card);
+  color:var(--muted);cursor:pointer;font-size:.83rem;font-weight:600}
+.tab.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.b{padding:.5rem .95rem;border-radius:11px;border:1px solid var(--line);background:var(--card);
+  color:var(--ink);cursor:pointer;font-size:.83rem;font-weight:600}
+.b:hover{border-color:var(--faint)}
+.b.go{background:var(--green);border-color:var(--green);color:#fff}
+.b.gold{background:var(--gold);border-color:var(--gold);color:#241a08}
+.b[disabled]{opacity:.5;cursor:not-allowed}
+.busca{flex:1;min-width:190px;padding:.6rem .9rem;border-radius:11px;border:1.5px solid var(--line);
+  background:var(--card);color:var(--ink)}
+.busca:focus{outline:none;border-color:var(--gold)}
+select.busca{min-width:auto;max-width:230px}
+
+.prog{height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin:.2rem 0 1.2rem;display:none}
+.prog.on{display:block}
+.prog i{display:block;height:100%;background:var(--gold);width:0;transition:width .2s}
+
+.lin{display:grid;grid-template-columns:54px 1fr;gap:.85rem;padding:.7rem .8rem;background:var(--card);
+  border:1px solid var(--line);border-left:4px solid var(--line);border-radius:12px;margin-bottom:.55rem}
+.lin.ok{border-left-color:var(--green)}
+.lin.erro{border-left-color:var(--wine)}
+.lin.rev{border-left-color:var(--amber)}
+.lin.mont{border-left-color:#6b7fa8}
+.lin.vazio{border-left-color:var(--faint)}
+.mini{width:54px;aspect-ratio:2/3;border-radius:5px;overflow:hidden;background:var(--paper-2);box-shadow:var(--sh);position:relative}
+.mini img{width:100%;height:100%;object-fit:cover;display:block}
+.info{min-width:0}
+.info b{display:block;font-size:.9rem;font-weight:700;line-height:1.3}
+.info .sub{font-size:.74rem;color:var(--muted);margin-bottom:.4rem}
+.st{display:inline-block;font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+  padding:.15rem .48rem;border-radius:99px;margin-right:.35rem;vertical-align:1px}
+.st.ok{background:rgba(46,158,91,.16);color:var(--green)}
+.st.erro{background:rgba(138,47,63,.16);color:var(--wine)}
+.st.rev{background:rgba(185,118,31,.16);color:var(--amber)}
+.st.mont{background:rgba(107,127,168,.18);color:#5c72a0}
+.st.vazio{background:var(--line);color:var(--muted)}
+.linha2{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
+.url{flex:1;min-width:180px;padding:.45rem .65rem;border-radius:9px;border:1.5px solid var(--line);
+  background:var(--bg);color:var(--ink);font-size:.78rem;font-family:ui-monospace,Menlo,monospace}
+.url:focus{outline:none;border-color:var(--gold)}
+.url.bom{border-color:var(--green)}
+.url.ruim{border-color:var(--wine)}
+.mini-b{padding:.42rem .6rem;border-radius:9px;border:1px solid var(--line);background:var(--card);
+  color:var(--muted);cursor:pointer;font-size:.72rem;font-weight:700;text-decoration:none;white-space:nowrap}
+.mini-b:hover{border-color:var(--gold);color:var(--ink)}
+.vazioMsg{text-align:center;color:var(--muted);padding:2.6rem 1rem;font-size:.9rem}
+
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem 1.2rem;
+  box-shadow:var(--sh);margin-bottom:1.1rem}
+.box h2{font-size:1.05rem;margin-bottom:.45rem}
+.box p,.box li{font-size:.86rem;color:var(--muted);margin:.3rem 0}
+.box ol,.box ul{padding-left:1.15rem;margin:.4rem 0}
+.box code{font-family:ui-monospace,Menlo,monospace;font-size:.82em;background:var(--paper-2);padding:.1rem .34rem;border-radius:5px}
+.toasts{position:fixed;left:50%;bottom:1.3rem;transform:translateX(-50%);z-index:99;display:flex;flex-direction:column;gap:.4rem}
+.toast{background:var(--ink);color:var(--bg);padding:.55rem 1rem;border-radius:99px;font-size:.82rem;box-shadow:var(--sh)}
+.rodape{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);
+  padding:.7rem 16px;display:flex;gap:.6rem;align-items:center;justify-content:center;flex-wrap:wrap;z-index:20}
+.rodape span{font-size:.8rem;color:var(--muted)}
+@media(max-width:560px){.lin{grid-template-columns:44px 1fr}.mini{width:44px}}
+</style>
+</head>
+<body>
+
+<div id="tela"></div>
+<div class="toasts" id="toasts"></div>
+
+<script src="acervo.js"></script>
+<script src="base.js"></script>
+<script>
+"use strict";
+/* ==========================================================================
+   capas.html — onde as capas são conferidas e preenchidas.
+
+   Por que esta página existe: só um navegador de verdade, na sua rede, sabe
+   dizer se uma URL de capa carrega ou não. Nenhuma ferramenta consegue
+   garantir isso de fora. Então a página faz três coisas:
+
+     1. carrega TODAS as capas do cadastro e diz exatamente quais falharam;
+     2. deixa você colar uma URL e ver a capa na hora, antes de salvar, que é
+        o que garante que a edição é a brasileira certa;
+     3. baixa o acervo.js já atualizado, sem você editar código na mão.
+   ========================================================================== */
+const C = {
+  aba: 'sem',
+  busca: '',
+  saga: '',
+  edits: {},          // slug -> url nova (ainda não exportada)
+  teste: {},          // slug -> 'ok' | 'ruim' | 'testando'
+  estado: {},         // slug -> 'ok' | 'erro' | 'vazio' | 'mont' | 'rev'
+  conferindo: false,
+  feitos: 0,
+
+  init() {
+    document.documentElement.setAttribute('data-theme',
+      St.get('acv_theme', matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'));
+    this.edits = St.get('acv_capas_edits', {});
+    this.calcula();
+    this.render();
+  },
+
+  /* ------- situação de cada anúncio, sem depender de rede ------- */
+  calcula() {
+    const rel = Cover.relatorio();
+    BOOKS.forEach(b => {
+      const url = this.url(b);
+      if (!url) {
+        this.estado[b.slug] = (b.parts && b.parts.length) ? 'mont' : 'vazio';
+      } else if (rel.erroUrl[b.slug] === url) {
+        this.estado[b.slug] = 'erro';
+      } else if (b.revisar && !this.edits[b.slug]) {
+        this.estado[b.slug] = 'rev';
+      } else {
+        this.estado[b.slug] = 'ok';
+      }
+    });
+  },
+
+  url(b) { return this.edits[b.slug] !== undefined ? this.edits[b.slug] : (b.img || ''); },
+
+  lista() {
+    let L = BOOKS.slice();
+    if (this.aba === 'sem')   L = L.filter(b => this.estado[b.slug] === 'vazio');
+    if (this.aba === 'mont')  L = L.filter(b => this.estado[b.slug] === 'mont');
+    if (this.aba === 'erro')  L = L.filter(b => this.estado[b.slug] === 'erro');
+    if (this.aba === 'rev')   L = L.filter(b => this.estado[b.slug] === 'rev');
+    if (this.aba === 'ok')    L = L.filter(b => this.estado[b.slug] === 'ok');
+    if (this.saga) L = L.filter(b => (b.sg || '(sem saga)') === this.saga);
+    const q = norm(this.busca).trim();
+    if (q) {
+      const t = q.split(/\s+/);
+      L = L.filter(b => t.every(x => norm(b.t + ' ' + b.author + ' ' + b.sg + ' ' + b.slug).includes(x)));
+    }
+    return L.sort((a, b) => b.v - a.v);
+  },
+
+  conta(e) { return BOOKS.filter(b => this.estado[b.slug] === e).length },
+
+  render() {
+    const pend = Object.keys(this.edits).length;
+    const sagas = Array.from(new Set(BOOKS.map(b => b.sg || '(sem saga)'))).sort();
+    const L = this.lista();
+    $('#tela').innerHTML = `
+<div class="wrap">
+  <div class="top">
+    <h1>Capas do acervo</h1>
+    <button class="b" onclick="C.tema()">Tema</button>
+    <a class="b" href="index.html">Ver a vitrine</a>
+  </div>
+
+  <p class="lead">Aqui você confere e preenche as capas. Cole o endereço de uma imagem no campo do livro:
+  a miniatura muda na hora, e é essa conferência com o olho que garante que a capa é da edição brasileira
+  certa. Quando terminar, use <b>Baixar acervo.js</b> no rodapé e substitua o arquivo no repositório.</p>
+
+  <div class="nums">
+    <div class="num g"><b>${this.conta('ok')}</b><span>capa certa</span></div>
+    <div class="num a"><b>${this.conta('rev')}</b><span>conferir a edição</span></div>
+    <div class="num w"><b>${this.conta('erro')}</b><span>URL não carregou</span></div>
+    <div class="num"><b>${this.conta('mont')}</b><span>montagem dos volumes</span></div>
+    <div class="num"><b>${this.conta('vazio')}</b><span>sem capa</span></div>
+  </div>
+
+  <div class="box">
+    <h2>Conferir o que carrega de verdade</h2>
+    <p>Este teste abre cada URL do cadastro no seu navegador e marca as que falharam. É a única forma
+    honesta de saber: um site pode bloquear a imagem para quem vem de fora, e isso só aparece na prática.
+    Deixe rodar até o fim, leva menos de um minuto.</p>
+    <div class="bar" style="margin:.7rem 0 0">
+      <button class="b gold" id="btConf" onclick="C.conferir()">Conferir as ${BOOKS.filter(b => this.url(b)).length} URLs</button>
+      <button class="b" onclick="C.zerar()">Limpar o resultado</button>
+    </div>
+    <div class="prog" id="prog"><i id="progI"></i></div>
+  </div>
+
+  <div class="bar">
+    ${[['sem', 'Sem capa'], ['erro', 'Não carregou'], ['rev', 'Conferir edição'], ['mont', 'Montagem'], ['ok', 'Prontas'], ['todos', 'Todos']]
+      .map(([k, l]) => `<button class="tab ${this.aba === k ? 'on' : ''}" onclick="C.ir('${k}')">${l}</button>`).join('')}
+  </div>
+  <div class="bar">
+    <input class="busca" id="bs" placeholder="Buscar por título, autor ou saga" value="${esc(this.busca)}">
+    <select class="busca" id="sg" onchange="C.filtraSaga(this.value)">
+      <option value="">Todas as sagas</option>
+      ${sagas.map(s => `<option value="${esc(s)}" ${this.saga === s ? 'selected' : ''}>${esc(s)}</option>`).join('')}
+    </select>
+  </div>
+
+  <div id="corpo">
+    ${L.length ? L.slice(0, 150).map(b => this.linha(b)).join('')
+              : '<div class="vazioMsg">Nada nesta aba com esse filtro.</div>'}
+    ${L.length > 150 ? `<div class="vazioMsg">Mostrando 150 de ${L.length}. Use a busca ou a saga para afinar.</div>` : ''}
+  </div>
+</div>
+
+<div class="rodape">
+  <span>${pend ? pend + ' capa(s) preenchida(s) e ainda não salva(s)' : 'Nenhuma alteração pendente'}</span>
+  <button class="b go" onclick="C.baixar()" ${pend ? '' : 'disabled'}>Baixar acervo.js</button>
+  <button class="b" onclick="C.copiar()" ${pend ? '' : 'disabled'}>Copiar só as capas</button>
+  <button class="b" onclick="C.descartar()" ${pend ? '' : 'disabled'}>Descartar</button>
+</div>`;
+
+    L.slice(0, 150).forEach(b => this.pintaMini(b));
+  },
+
+  linha(b) {
+    const e = this.estado[b.slug];
+    const rot = { ok: 'pronta', erro: 'não carregou', rev: 'conferir edição', mont: 'montagem', vazio: 'sem capa' }[e];
+    const url = this.url(b);
+    const t = this.teste[b.slug] || '';
+    const q = encodeURIComponent((b.q || (b.titleMain || b.t) + ' ' + b.author).trim());
+    return `<div class="lin ${e}">
+  <div class="mini" id="mini-${esc(b.slug)}"></div>
+  <div class="info">
+    <b>${esc(b.titleMain || b.t)}</b>
+    <div class="sub"><span class="st ${e}">${rot}</span>${esc(b.author || 'sem autor')}${b.sg ? ' · ' + esc(b.sg) : ''} · ${money(b.v)}${b.badge === 'kit' ? ' · coleção de ' + b.setOf : ''}</div>
+    <div class="linha2">
+      <input class="url ${t === 'ok' ? 'bom' : t === 'ruim' ? 'ruim' : ''}" data-slug="${esc(b.slug)}"
+             placeholder="cole aqui o endereço da imagem da capa" value="${esc(url)}">
+      <a class="mini-b" target="_blank" rel="noopener" href="https://www.amazon.com.br/s?k=${q}&i=stripbooks">Amazon</a>
+      <a class="mini-b" target="_blank" rel="noopener" href="https://www.estantevirtual.com.br/busca?q=${q}">Estante</a>
+      <a class="mini-b" target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&q=${q}%20capa%20livro">Imagens</a>
+      ${url ? `<a class="mini-b" target="_blank" rel="noopener" href="${esc(url)}">Abrir</a>` : ''}
+      ${this.edits[b.slug] !== undefined ? `<button class="mini-b" onclick="C.desfaz('${esc(b.slug)}')">Desfazer</button>` : ''}
+    </div>
+  </div>
+</div>`;
+  },
+
+  /* miniatura: mostra exatamente o que a vitrine vai mostrar */
+  pintaMini(b) {
+    const el = document.getElementById('mini-' + b.slug);
+    if (!el) return;
+    el.innerHTML = '';
+    delete el.dataset.done;
+    Cover.paint(el, Object.assign({}, b, { img: this.url(b) }), false);
+  },
+
+  ir(k) { this.aba = k; this.render(); },
+  filtraSaga(v) { this.saga = v; this.render(); },
+  tema() {
+    const n = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', n); St.set('acv_theme', n);
+  },
+
+  /* ---------------- conferência em lote ---------------- */
+  async conferir() {
+    if (this.conferindo) return;
+    this.conferindo = true;
+    const alvos = BOOKS.filter(b => this.url(b));
+    const bt = $('#btConf'); if (bt) { bt.disabled = true; bt.textContent = 'Conferindo…'; }
+    $('#prog').classList.add('on');
+    let feitos = 0, ruins = 0;
+
+    const testa = b => new Promise(ok => {
+      const url = this.url(b);
+      const im = new Image();
+      const fim = bom => {
+        clearTimeout(pz);
+        Cover.anota(b.slug, url, bom);
+        if (!bom) ruins++;
+        feitos++;
+        const pc = Math.round(feitos / alvos.length * 100);
+        const el = $('#progI'); if (el) el.style.width = pc + '%';
+        ok();
+      };
+      const pz = setTimeout(() => fim(false), 12000);
+      im.onload = () => fim(im.naturalWidth >= 40);
+      im.onerror = () => fim(false);
+      im.src = url;
+    });
+
+    /* de 6 em 6 para não abrir 228 conexões de uma vez */
+    for (let i = 0; i < alvos.length; i += 6) {
+      await Promise.all(alvos.slice(i, i + 6).map(testa));
+    }
+    this.conferindo = false;
+    this.calcula();
+    this.aba = ruins ? 'erro' : this.aba;
+    this.render();
+    this.toast(ruins ? ruins + ' capa(s) não carregaram' : 'Todas as capas carregaram');
+  },
+
+  zerar() { Cover.limpaLog(); this.calcula(); this.render(); this.toast('Resultado limpo'); },
+
+  /* ---------------- edição ---------------- */
+  poe(slug, valor) {
+    const b = BY[slug]; if (!b) return;
+    const v = String(valor || '').trim();
+    if (v === (b.img || '')) delete this.edits[slug];
+    else this.edits[slug] = v;
+    St.set('acv_capas_edits', this.edits);
+
+    if (!v) { this.teste[slug] = ''; this.calcula(); this.pintaMini(b); this.rodape(); return; }
+    this.teste[slug] = 'testando';
+    const im = new Image();
+    const pz = setTimeout(() => { this.teste[slug] = 'ruim'; this.marca(slug); }, 12000);
+    im.onload = () => { clearTimeout(pz); this.teste[slug] = im.naturalWidth >= 40 ? 'ok' : 'ruim'; this.marca(slug); this.pintaMini(b); };
+    im.onerror = () => { clearTimeout(pz); this.teste[slug] = 'ruim'; this.marca(slug); };
+    im.src = v;
+    this.rodape();
+  },
+  marca(slug) {
+    const i = document.querySelector('.url[data-slug="' + CSS.escape(slug) + '"]');
+    if (!i) return;
+    i.classList.toggle('bom', this.teste[slug] === 'ok');
+    i.classList.toggle('ruim', this.teste[slug] === 'ruim');
+  },
+  desfaz(slug) { delete this.edits[slug]; delete this.teste[slug]; St.set('acv_capas_edits', this.edits); this.calcula(); this.render(); },
+  descartar() { if (!confirm('Descartar todas as capas preenchidas e ainda não salvas?')) return; this.edits = {}; this.teste = {}; St.set('acv_capas_edits', {}); this.calcula(); this.render(); },
+
+  /* atualiza só o rodapé e a faixa lateral da linha: redesenhar a página
+     inteira aqui roubaria o cursor de quem ainda está digitando a URL */
+  rodape() {
+    const pend = Object.keys(this.edits).length;
+    const r = document.querySelector('.rodape');
+    if (r) {
+      r.querySelector('span').textContent = pend
+        ? pend + ' capa(s) preenchida(s) e ainda não salva(s)'
+        : 'Nenhuma alteração pendente';
+      r.querySelectorAll('button').forEach(bt => { bt.disabled = !pend; });
+    }
+    const campo = document.querySelector('.url[data-slug]:focus');
+    if (campo) {
+      const b = BY[campo.dataset.slug];
+      const lin = campo.closest('.lin');
+      if (b && lin) lin.className = 'lin ' + this.estado[b.slug];
+    }
+  },
+
+  /* ---------------- exportação ---------------- */
+  copiar() {
+    const txt = Object.keys(this.edits).sort()
+      .map(s => '  "' + s + '": ' + JSON.stringify(this.edits[s]) + ',').join('\n');
+    navigator.clipboard.writeText('{\n' + txt + '\n}')
+      .then(() => this.toast('Copiado'))
+      .catch(() => this.toast('Não consegui copiar; use Baixar acervo.js'));
+  },
+
+  /* baixa o acervo.js inteiro, já com as capas novas dentro:
+     lê o arquivo publicado, troca só o campo img e devolve o resto igual */
+  async baixar() {
+    try {
+      const r = await fetch('acervo.js', { cache: 'no-store' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const src = await r.text();
+
+      const i = src.indexOf('window.ACERVO_RAW');
+      const ini = src.indexOf('[', i);
+      const fim = this.fechaColchete(src, ini);
+      if (i < 0 || ini < 0 || fim < 0) throw new Error('não achei o catálogo no arquivo');
+
+      const dados = JSON.parse(src.slice(ini, fim + 1));
+      let n = 0;
+      dados.forEach(b => {
+        if (this.edits[b.slug] === undefined) return;
+        const v = this.edits[b.slug];
+        if (v) { b.img = v; delete b.revisar; } else { delete b.img; }
+        n++;
+      });
+
+      const corpo = '[' + dados.map(b => JSON.stringify(b)).join(',') + ']';
+      const saida = src.slice(0, ini) + corpo + src.slice(fim + 1);
+
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([saida], { type: 'text/javascript;charset=utf-8' }));
+      a.download = 'acervo.js';
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+      this.toast(n + ' capa(s) gravada(s) no arquivo baixado');
+    } catch (e) {
+      this.toast('Não deu para gerar: ' + e.message);
+    }
+  },
+
+  fechaColchete(s, ini) {
+    let d = 0, instr = false, esc = false;
+    for (let k = ini; k < s.length; k++) {
+      const c = s[k];
+      if (instr) {
+        if (esc) esc = false;
+        else if (c === '\\') esc = true;
+        else if (c === '"') instr = false;
+      } else if (c === '"') instr = true;
+      else if (c === '[') d++;
+      else if (c === ']') { d--; if (!d) return k; }
+    }
+    return -1;
+  },
+
+  toast(m) {
+    const t = document.createElement('div'); t.className = 'toast'; t.textContent = m;
+    $('#toasts').appendChild(t);
+    setTimeout(() => { t.style.opacity = '0'; t.style.transition = '.3s'; setTimeout(() => t.remove(), 320); }, 2800);
+  }
+};
+
+document.addEventListener('input', e => {
+  if (e.target.id === 'bs') {
+    C.busca = e.target.value;
+    clearTimeout(C._b);
+    C._b = setTimeout(() => {
+      C.render();
+      const i = document.getElementById('bs');
+      if (i) { i.focus(); i.setSelectionRange(i.value.length, i.value.length); }
+    }, 280);
+    return;
+  }
+  if (e.target.classList && e.target.classList.contains('url')) {
+    const slug = e.target.dataset.slug;
+    clearTimeout(C._u);
+    C._u = setTimeout(() => C.poe(slug, e.target.value), 500);
+  }
+});
+
+document.readyState === 'loading'
+  ? addEventListener('DOMContentLoaded', () => C.init(), { once: true })
+  : C.init();
+</script>
+</body>
+</html>
