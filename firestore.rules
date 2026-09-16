@@ -1,0 +1,88 @@
+rules_version = '2';
+
+/* ==========================================================================
+   Regras do Acervo Literário
+
+   Ideia: a vitrine é pública (qualquer um precisa ver o que já saiu), mas
+   escrever é restrito. Um visitante só consegue SEGURAR um exemplar que
+   esteja livre; marcar como vendido, liberar reserva e ler os dados dos
+   compradores é só do dono.
+
+   Para trocar o dono, altere o e-mail em DONO logo abaixo.
+   ========================================================================== */
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function logado() { return request.auth != null; }
+
+    function dono() {
+      return logado()
+        && request.auth.token.email != null
+        && request.auth.token.email.lower() == 'rodrigocesarhang@gmail.com';   // DONO
+    }
+
+    /* uma reserva válida: campos exatos, prazo no futuro e no máximo 8 dias */
+    function reservaOk(exemplar) {
+      let d = request.resource.data;
+      return logado()
+        && d.keys().hasOnly(['anuncio', 'pedido', 'uid', 'criado', 'ate'])
+        && d.anuncio is string && d.anuncio.size() <= 140
+        && d.pedido  is string && d.pedido.size()  <= 40
+        && d.uid == request.auth.uid
+        && d.criado == request.time
+        && d.ate is timestamp
+        && d.ate > request.time
+        && d.ate < request.time + duration.value(8, 'd')
+        && !exists(/databases/$(database)/documents/vendidos/$(exemplar));   // já vendido não se reserva
+    }
+
+    /* ---------- exemplares já vendidos: todos leem, só o dono escreve ------ */
+    match /vendidos/{exemplar} {
+      allow read:  if true;
+      allow write: if dono();
+    }
+
+    /* ---------- reservas -------------------------------------------------- */
+    /* create só é avaliado quando o documento NÃO existe: é isso que impede
+       duas pessoas de segurarem o mesmo exemplar. update só passa se a
+       reserva anterior já venceu.                                            */
+    match /reservas/{exemplar} {
+      allow read:   if true;
+      allow create: if reservaOk(exemplar);
+      allow update: if dono() || (reservaOk(exemplar) && resource.data.ate < request.time);
+      allow delete: if dono() || (logado() && resource.data.uid == request.auth.uid);
+    }
+
+    /* ---------- pedidos: nome e contato do comprador ---------------------- */
+    /* Só o dono e o próprio comprador enxergam.                              */
+    match /pedidos/{pedido} {
+      allow read: if dono() || (logado() && resource.data.uid == request.auth.uid);
+
+      allow create: if dono() || (
+           logado()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.status == 'reservado'
+        && request.resource.data.nome is string
+        && request.resource.data.nome.size() <= 60
+        && request.resource.data.contato is string
+        && request.resource.data.contato.size() <= 60
+        && request.resource.data.total is number
+        && request.resource.data.itens.size() <= 80
+      );
+
+      /* o comprador só pode desistir; o resto é do dono */
+      allow update: if dono() || (
+           logado()
+        && resource.data.uid == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])
+        && request.resource.data.status == 'cancelado'
+      );
+
+      allow delete: if dono();
+    }
+
+    /* ---------- nada mais ------------------------------------------------- */
+    match /{document=**} { allow read, write: if false; }
+  }
+}
