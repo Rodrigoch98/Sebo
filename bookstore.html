@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#14100c">
 <title>Acervo Literário · Rodrigo Hang</title>
-<meta name="description" content="Livro do acervo pessoal do Rodrigo, com preço de colega e entrega combinada na empresa.">
+<meta name="description" content="Livro do acervo pessoal do Rodrigo, com preço de desapego e entrega combinada no trabalho.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2314100c' rx='22' width='100' height='100'/><path d='M28 26h20c6 0 10 3 10 8v40c0-5-4-8-10-8H28z' fill='%23d9a441'/><path d='M72 26H52c-6 0-10 3-10 8v40c0-5 4-8 10-8h20z' fill='%23f0cd85'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -809,7 +809,7 @@ const P = {
           ? 'Este exemplar já foi vendido. Me chame que eu vejo o que tenho parecido.'
           : resv ? 'Alguém reservou este exemplar agora há pouco. Se a reserva cair, ele volta para a vitrine.'
           : b.meu ? 'Este exemplar está separado no seu nome. É só me chamar para combinar a entrega.'
-          : 'Preço de colega · pagamento por Pix ou dinheiro · entrega combinada aqui na empresa.'}</p>
+          : 'Preço de desapego · pagamento por Pix ou dinheiro · entrega combinada aqui no trabalho.'}</p>
         <div class="cta-col">
           <button class="btn-lg btn-wa" onclick="P.buy()">${icon(livre ? 'i-wa' : 'i-search', 18)} ${livre ? 'Quero este livro' : 'Ver o que tenho parecido'}</button>
           <div id="rbox"></div>
@@ -846,10 +846,10 @@ const P = {
   </section>
 </div>
 
-<footer class="foot"><div class="foot-bot">Acervo Literário &copy; ${new Date().getFullYear()} · Rodrigo Hang · Gaspar, SC · Venda entre colegas</div></footer>
+<footer class="foot"><div class="foot-bot">Acervo Literário &copy; ${new Date().getFullYear()} · Rodrigo Hang · Gaspar, SC · Venda pessoal</div></footer>
 
 ${!livre ? '' : `<div class="mbar2">
-  <div class="p"><b>${money(b.v)}</b><span>preço de colega</span></div>
+  <div class="p"><b>${money(b.v)}</b><span>preço de desapego</span></div>
   <button class="ibtn" onclick="P.openPay()" aria-label="Pix">${icon('i-qr', 17)}</button>
   <button class="btn btn-gold" onclick="P.buy()">${icon('i-wa', 16)} Comprar</button>
 </div>`}`;
@@ -900,9 +900,9 @@ ${!livre ? '' : `<div class="mbar2">
     const c = $('#rbox'); if (!c) return;
     c.innerHTML = `<div class="rbox">
       <label for="rNome">Seu nome, para eu separar o livro</label>
-      <input id="rNome" type="text" maxlength="60" autocomplete="name" placeholder="Como os colegas te chamam" value="${esc(St.get('acv_nome',''))}">
+      <input id="rNome" type="text" maxlength="60" autocomplete="name" placeholder="Como você quer ser chamado" value="${esc(St.get('acv_nome',''))}">
       <button class="btn-lg btn-wa" style="margin-top:.7rem" onclick="P.reservar()">${icon('i-check',18)} Reservar no meu nome</button>
-      <p class="sm">Fica guardado por ${CFG.horasReserva || 24} horas e sai da vitrine para os outros colegas.</p>
+      <p class="sm">Fica guardado por ${CFG.horasReserva || 24} horas e sai da vitrine para as outras pessoas.</p>
     </div>`;
     const i = $('#rNome'); i.focus();
     i.addEventListener('keydown', e => { if (e.key === 'Enter') this.reservar(); });
