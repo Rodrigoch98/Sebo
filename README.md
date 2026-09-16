@@ -1,6 +1,6 @@
 # Acervo Literário — venda de livros (Lince)
 
-Catálogo do acervo pessoal do Rodrigo Hang, para venda entre colegas.
+Catálogo do acervo pessoal do Rodrigo Hang, para desapego no trabalho.
 Site estático publicado no GitHub Pages, com **controle de estoque ao vivo** no
 Firebase: quem reserva tira o livro da vitrine na hora, e a baixa da venda é
 feita num painel, sem editar código.
@@ -17,13 +17,14 @@ Publica em `https://rodrigoch98.github.io/Sebo/`.
 | `bookstore.html` | Página individual do livro — destino dos QR Codes (`?id=slug`) |
 | `qrcodes.html` | Gerador de QR Code por livro, impressão A4 e sorteio semanal |
 | `admin.html` | **Painel do dono**: pedidos, confirmar venda, liberar reserva, baixa manual |
+| `capas.html` | **Conferência e preenchimento das capas**, com exportação do `acervo.js` |
 | `acervo.js` | **O catálogo e as configurações. É o único arquivo que você edita** |
-| `base.js` | Peças comuns às quatro páginas (formatação, capas, catálogo em memória) |
+| `base.js` | Peças comuns às páginas (formatação, capas, catálogo em memória) |
 | `loja.js` | A loja ao vivo: reservas, vendas e o que some quando um exemplar sai |
 | `firestore.rules` | Regras de segurança para colar no console do Firebase |
 | `firebase.json` | Só para quem quiser publicar as regras pelo terminal |
 
-> Antes os três HTMLs carregavam uma cópia do catálogo cada um — 1,6 MB somados e
+> Antes cada HTML carregava uma cópia do catálogo — 1,6 MB somados e
 > três lugares para errar. Agora o catálogo vive só em `acervo.js`: o total caiu
 > para menos da metade e uma correção vale para o site inteiro.
 
@@ -72,8 +73,8 @@ Pronto. Abra `admin.html` no site publicado e entre com o e-mail e a senha do pa
 
 ## Como a venda funciona
 
-1. O colega escolhe os livros e toca em **Reservar e falar no WhatsApp**.
-2. Ele escreve o nome (e o setor, se quiser) e confirma.
+1. A pessoa escolhe os livros e toca em **Reservar e falar no WhatsApp**.
+2. Escreve o nome (e o setor, se quiser) e confirma.
 3. Na mesma hora os exemplares somem da vitrine de todo mundo e o WhatsApp abre
    com a lista e o código do pedido.
 4. O pedido aparece no painel como **aguardando você**.
@@ -126,7 +127,8 @@ Tudo em `acervo.js`, no array `ACERVO_RAW`.
 | `parts` | Anúncios que a coleção cobre — **é o que faz os sobrepostos sumirem** |
 | `conf` | `1` = estado conferido a olho nu, não é chute do cadastro |
 | `s` | `1` = vendido direto no cadastro (fica fixo, o painel não mexe) |
-| `img` | URL da capa (opcional) |
+| `img` | URL fixa da capa. É a única fonte de capa real do site |
+| `revisar` | `1` = capa achada automaticamente, edição ainda por conferir |
 | `d` | Descrição em blocos `Rótulo: texto`, separados por linha em branco |
 
 Um anúncio **sem** `parts` é um item físico único: um livro avulso ou um box que
@@ -137,7 +139,7 @@ outros anúncios do site.
 
 ## Números do acervo
 
-- **431 anúncios**: 353 avulsos e 78 kits/coleções, em 60 sagas
+- **435 anúncios**: 355 avulsos e 80 kits/coleções, em 61 sagas
 - Avulsos de **R$ 9 a R$ 49** (somam R$ 8.020); coleções de **R$ 36 a R$ 588**
 - Vitrine cheia: **R$ 17.476**
 - **100 volumes já conferidos um a um** (campo `conf`), com o estado real e a
@@ -158,27 +160,54 @@ volumes sempre que um deles muda de estado.
 
 ## Capas
 
-Cada anúncio mostra, nesta ordem: a **URL fixa** do campo `img`, e, se não houver,
-uma **capa desenhada** na hora a partir do título, autor e saga.
+**A busca automática foi removida do código.** Antes o site perguntava a cada card
+ao Google Books e à Open Library que capa usar, e era daí que vinham os dois
+defeitos: a cota diária do Google estourava e o card ficava sem foto; e, quando
+respondia, a busca casava só pelo título, sem saber de que edição era, e trazia a
+capa americana no lugar da brasileira. Pior: quando uma URL do cadastro falhava, o
+código saía procurando outra imagem, e era exatamente aí que a edição estrangeira
+entrava sozinha no lugar da certa.
 
-Hoje: **198 anúncios com capa real** (as 182 originais mais 20 colhidas nos sites
-das editoras) e **233 com capa desenhada**.
+Agora a capa vem **só do que está escrito no cadastro**. A ordem é:
 
-**A busca automática de capas foi desligada na prática.** A API do Google Books
-tem cota diária e ela vive estourada — quando isso acontece nenhuma capa resolve,
-e era isso que travava a página em carregamento infinito. O código ainda tenta,
-mas agora: desiste depois de 4 recusas seguidas, tem prazo em cada busca, no
-máximo 3 ao mesmo tempo, e **a capa desenhada entra sempre primeiro**. Nenhum card
-fica girando, nem com a internet inteira fora do ar.
+1. **URL fixa** do campo `img`, escolhida e conferida por você;
+2. **montagem dos volumes**, quando o anúncio é uma coleção montada (campo `parts`);
+3. **capa desenhada** na hora a partir do título, autor e saga.
 
-A Open Library, a outra fonte, praticamente não tem edição brasileira — testei
-14 títulos e ela não achou nenhum.
+Nenhuma dessas etapas depende de serviço de terceiros, e nenhuma pode trazer a capa
+de outro livro. Com a internet inteira fora do ar, todo card continua com capa.
 
-**Para colocar uma capa real:** preencha o campo `img` do livro em `acervo.js` com
-o endereço de uma imagem. Clicar com o botão direito numa capa no site da editora
-e escolher "copiar endereço da imagem" resolve. Para as edições antigas, que saíram
-de catálogo, a foto do seu próprio exemplar costuma ser a melhor opção — e vende
-melhor do que a capa oficial, porque o comprador vê o livro que vai receber.
+Hoje: **228 com URL fixa**, **62 com montagem dos volumes** e **145 com capa
+desenhada**.
+
+### Por que as coleções não têm foto de caixa
+
+Os 18 boxes que existem como produto de verdade já têm capa. As outras 62 coleções
+são conjuntos que **você montou** a partir de anúncios do site: não existe caixa,
+não existe foto de produto para procurar em lugar nenhum. A capa delas é a montagem
+das capas dos próprios volumes, que mostra exatamente o que vai junto e melhora
+sozinha a cada capa de volume que você preencher.
+
+### A página `capas.html`
+
+É por ela que as capas que faltam entram, sem editar código:
+
+- **Conferir as URLs** abre cada capa do cadastro no seu navegador e lista as que
+  não carregaram. Só um navegador de verdade, na sua rede, sabe isso: um site pode
+  bloquear a imagem para quem vem de fora, e isso só aparece na prática.
+- **Colar o endereço** de uma imagem troca a miniatura na hora. É essa conferência
+  com o olho que garante que a capa é da edição brasileira certa, e não a americana.
+- **Amazon / Estante / Imagens** abrem a busca daquele título já preenchida.
+- **Baixar acervo.js** devolve o arquivo inteiro já com as capas dentro. Você só
+  substitui o arquivo no repositório e dá `git push`.
+
+Sete capas de Harry Potter estão marcadas com `revisar: 1`: são da edição Rocco de
+2024, e como seus exemplares são mais antigos a arte pode não bater. Elas aparecem
+na aba *Conferir edição* da página.
+
+**Para as edições antigas, que saíram de catálogo**, a foto do seu próprio exemplar
+costuma ser a melhor opção, e vende melhor do que a capa oficial, porque o comprador
+vê o livro que vai receber.
 
 ## Perguntas rápidas
 
@@ -191,6 +220,10 @@ e o botão de compra volta a mandar a lista direto pelo WhatsApp. Nada quebra.
 **Abrindo o arquivo no meu computador funciona?** As capas e o catálogo sim; a
 loja ao vivo não (o Firebase só autoriza o domínio publicado). Aparece o modo
 vitrine, que é o esperado.
+
+**Uma capa sumiu do site. O que houve?** A URL daquele anúncio parou de responder,
+e o card voltou para a capa desenhada em vez de inventar outra. Abra `capas.html`,
+rode *Conferir as URLs* e a aba *Não carregou* mostra exatamente quais trocar.
 
 **Alguém pode bagunçar meu acervo?** As regras só deixam um visitante *segurar* um
 exemplar que esteja livre — ele não apaga reserva dos outros, não marca nada como
