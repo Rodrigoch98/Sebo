@@ -1,0 +1,3145 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#14100c">
+<title>QR Codes · Acervo Literário</title>
+<meta name="description" content="Gerador de QR Codes do Acervo Literário.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2314100c' rx='22' width='100' height='100'/><path d='M28 26h20c6 0 10 3 10 8v40c0-5-4-8-10-8H28z' fill='%23d9a441'/><path d='M72 26H52c-6 0-10 3-10 8v40c0-5 4-8 10-8h20z' fill='%23f0cd85'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..800&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+<style>
+/* ============================ TOKENS ============================ */
+:root{
+  --paper:#f6f1e8; --paper-2:#efe7d9; --card:#fffdfa; --card-2:#faf5ec;
+  --ink:#14100c; --ink-2:#4a4137; --muted:#8a7c6a; --faint:#b4a692;
+  --line:#e6dccb; --line-2:#f0e8da;
+  --gold:#b07d24; --gold-2:#d9a441; --gold-soft:#f7ecd6; --gold-ring:#e7c988;
+  --wine:#8a2f3f; --wine-soft:#fbeef0;
+  --green:#2b7a55; --green-soft:#e6f3ec;
+  --wa:#1faa55; --wa-2:#158f45;
+  --blue:#2c5f8a; --blue-soft:#e8f0f7;
+  --sh-1:0 1px 2px rgba(32,22,12,.05),0 4px 12px rgba(32,22,12,.05);
+  --sh-2:0 4px 14px rgba(32,22,12,.09),0 12px 32px rgba(32,22,12,.07);
+  --sh-3:0 18px 50px rgba(32,22,12,.18);
+  --sh-book:0 14px 28px -10px rgba(20,16,12,.45),0 4px 10px -4px rgba(20,16,12,.3);
+  --r-s:10px; --r-m:14px; --r-l:20px; --r-xl:28px;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  --tr:.22s cubic-bezier(.4,0,.2,1);
+  --maxw:1320px;
+}
+[data-theme="dark"]{
+  --paper:#12100d; --paper-2:#1a1713; --card:#1e1a15; --card-2:#241f19;
+  --ink:#f4eee4; --ink-2:#c9bda9; --muted:#9b8e7b; --faint:#776c5c;
+  --line:#2e281f; --line-2:#251f18;
+  --gold:#d9a441; --gold-2:#eec46f; --gold-soft:#33281644; --gold-ring:#5c4a2a;
+  --wine:#d4808d; --wine-soft:#2c1a1e;
+  --green:#4fbb85; --green-soft:#14301f;
+  --blue:#7fb2dd; --blue-soft:#152532;
+  --sh-1:0 1px 2px rgba(0,0,0,.4),0 4px 12px rgba(0,0,0,.35);
+  --sh-2:0 4px 14px rgba(0,0,0,.5),0 12px 32px rgba(0,0,0,.4);
+  --sh-3:0 18px 50px rgba(0,0,0,.65);
+  --sh-book:0 14px 28px -10px rgba(0,0,0,.75),0 4px 10px -4px rgba(0,0,0,.5);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+html,body{max-width:100%;overflow-x:clip}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;
+  -webkit-font-smoothing:antialiased;min-height:100vh;
+  transition:background var(--tr),color var(--tr)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.6;
+  background:radial-gradient(900px 500px at 6% -8%,var(--gold-soft),transparent 62%),
+             radial-gradient(700px 420px at 102% 2%,rgba(138,47,63,.055),transparent 58%)}
+[data-theme="dark"] body::before{opacity:.85}
+body.locked{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:none;cursor:pointer}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--faint);border-radius:6px;border:2px solid transparent;background-clip:content-box}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{0%{transform:scale(.85);opacity:0}60%{transform:scale(1.06)}100%{transform:scale(1);opacity:1}}
+@keyframes shine{0%{background-position:-420px 0}100%{background-position:420px 0}}
+@keyframes slideL{from{transform:translateX(100%)}to{transform:none}}
+@keyframes slideU{from{transform:translateY(100%)}to{transform:none}}
+@keyframes bump{0%,100%{transform:scale(1)}40%{transform:scale(1.22)}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* ============================ NAV ============================ */
+.nav{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid transparent;transition:border-color var(--tr),box-shadow var(--tr)}
+.nav.stuck{border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(32,22,12,.07)}
+[data-theme="dark"] .nav.stuck{box-shadow:0 6px 24px rgba(0,0,0,.45)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:.6rem clamp(.9rem,3vw,1.6rem);
+  display:flex;align-items:center;gap:.75rem;min-height:62px}
+.brand{display:flex;align-items:center;gap:11px;min-width:0;flex-shrink:0}
+.brand-mk{width:40px;height:40px;border-radius:12px;flex-shrink:0;display:grid;place-items:center;
+  background:linear-gradient(140deg,var(--gold-2),var(--gold));color:#1a1208;
+  box-shadow:0 4px 14px rgba(176,125,36,.35)}
+.brand-mk svg{width:21px;height:21px}
+.brand-tx{min-width:0}
+.brand-tx b{display:block;font-family:var(--disp);font-weight:700;font-size:1.06rem;
+  letter-spacing:-.015em;line-height:1.15;white-space:nowrap}
+.brand-tx span{display:block;font-size:.62rem;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--muted);font-weight:600}
+.nav-sp{flex:1}
+.nav-search{flex:1;max-width:440px;position:relative;display:none}
+.nav-search input{width:100%;height:42px;border-radius:99px;border:1px solid var(--line);
+  background:var(--card);padding:0 2.4rem 0 2.5rem;font-size:.9rem;transition:var(--tr)}
+.nav-search input:focus{outline:none;border-color:var(--gold-ring);box-shadow:0 0 0 4px var(--gold-soft)}
+.nav-search .ic{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.nav-search .x{position:absolute;right:.55rem;top:50%;transform:translateY(-50%);width:26px;height:26px;
+  border-radius:50%;display:none;place-items:center;color:var(--muted)}
+.nav-search .x.on{display:grid}
+.nav-search .x:hover{background:var(--paper-2);color:var(--ink)}
+@media(min-width:940px){.nav-search{display:block}}
+.ibtn{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex-shrink:0;
+  border:1px solid var(--line);background:var(--card);color:var(--ink-2);transition:var(--tr)}
+.ibtn:hover{background:var(--paper-2);color:var(--ink);border-color:var(--faint)}
+.cart-btn{position:relative;width:auto;padding:0 .85rem;gap:.5rem;display:flex;align-items:center;
+  font-weight:700;font-size:.86rem}
+.cart-btn .n{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 5px;
+  border-radius:99px;background:var(--wine);color:#fff;font-size:.68rem;font-weight:800;
+  display:grid;place-items:center;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.cart-btn .n:empty,.cart-btn .n[data-n="0"]{display:none}
+.cart-btn.bump .n{animation:bump .4s}
+.wa-btn{display:inline-flex;align-items:center;gap:.5rem;height:40px;padding:0 1rem;border-radius:12px;
+  background:var(--wa);color:#fff;font-weight:700;font-size:.86rem;transition:var(--tr);flex-shrink:0}
+.wa-btn:hover{background:var(--wa-2);transform:translateY(-1px)}
+.lbl-lg{display:none}
+@media(min-width:620px){.lbl-lg{display:inline}}
+@media(max-width:560px){
+  .nav-in{gap:.4rem;padding-inline:.75rem;min-height:58px}
+  .ibtn{width:38px;height:38px;border-radius:11px}
+  .brand-mk{width:36px;height:36px}
+  .brand-tx b{font-size:.98rem}
+  .nav-hide-xs{display:none}
+}
+@media(max-width:360px){.brand-tx span{display:none}}
+
+/* ============================ HERO ============================ */
+.hero{max-width:var(--maxw);margin:0 auto;padding:clamp(1.6rem,4vw,3rem) clamp(.9rem,3vw,1.6rem) 0}
+.hero-card{position:relative;overflow:hidden;border-radius:var(--r-xl);
+  background:linear-gradient(135deg,#16120d 0%,#241c13 52%,#2e2418 100%);color:#fff;
+  padding:clamp(1.6rem,4.5vw,3.2rem) clamp(1.2rem,4vw,3rem);box-shadow:var(--sh-3)}
+.hero-card::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(60% 90% at 18% 12%,rgba(217,164,65,.20),transparent 62%),
+             radial-gradient(50% 80% at 92% 96%,rgba(138,47,63,.24),transparent 60%)}
+.hero-card::after{content:'';position:absolute;right:-40px;bottom:-60px;width:300px;height:300px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d9a441' stroke-width='.5'%3E%3Cpath d='M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z'/%3E%3C/svg%3E") no-repeat center/contain;
+  opacity:.07;pointer-events:none}
+.hero-in{position:relative;z-index:2;max-width:660px}
+.pill{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border-radius:99px;
+  font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  background:rgba(217,164,65,.14);color:var(--gold-2);border:1px solid rgba(217,164,65,.3)}
+.hero h1{font-family:var(--disp);font-size:clamp(1.85rem,5.2vw,3.25rem);font-weight:700;
+  line-height:1.1;letter-spacing:-.022em;margin:1rem 0 .85rem;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--gold-2)}
+.hero p{font-size:clamp(.96rem,2.2vw,1.1rem);color:rgba(255,255,255,.76);line-height:1.65;
+  max-width:52ch;text-wrap:pretty}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.8rem 1.4rem;
+  border-radius:13px;font-weight:700;font-size:.92rem;transition:var(--tr);white-space:nowrap;
+  border:1px solid transparent}
+.btn-gold{background:var(--gold-2);color:#1a1208}
+.btn-gold:hover{background:#e8b856;transform:translateY(-2px);box-shadow:0 8px 22px rgba(217,164,65,.34)}
+.btn-ghost-l{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.18)}
+.btn-ghost-l:hover{background:rgba(255,255,255,.14)}
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:.9rem;
+  margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);position:relative;z-index:2}
+.hs b{display:block;font-family:var(--disp);font-size:clamp(1.3rem,3.4vw,1.75rem);font-weight:700;color:var(--gold-2);line-height:1.1}
+.hs span{font-size:.74rem;color:rgba(255,255,255,.6);letter-spacing:.04em}
+
+/* ============================ TRUST ============================ */
+.trust{max-width:var(--maxw);margin:0 auto;padding:1rem clamp(.9rem,3vw,1.6rem) 0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.7rem}
+.tr-i{display:flex;align-items:flex-start;gap:.7rem;padding:.85rem 1rem;border-radius:var(--r-m);
+  background:var(--card);border:1px solid var(--line);box-shadow:var(--sh-1)}
+.tr-i svg{width:19px;height:19px;flex-shrink:0;color:var(--gold);margin-top:1px}
+.tr-i b{display:block;font-size:.84rem;font-weight:700;line-height:1.3}
+.tr-i span{font-size:.75rem;color:var(--muted);line-height:1.4}
+
+/* ============================ CONTROLS ============================ */
+.main{max-width:var(--maxw);margin:0 auto;padding:1.6rem clamp(.9rem,3vw,1.6rem) 5rem}
+.searchwrap{position:relative;margin-bottom:1rem}
+.searchwrap input{width:100%;height:54px;border-radius:16px;border:1px solid var(--line);
+  background:var(--card);padding:0 3rem 0 3.1rem;font-size:1rem;box-shadow:var(--sh-1);transition:var(--tr)}
+.searchwrap input:focus{outline:none;border-color:var(--gold-ring);box-shadow:0 0 0 4px var(--gold-soft)}
+.searchwrap .ic{position:absolute;left:1.1rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.searchwrap .x{position:absolute;right:.8rem;top:50%;transform:translateY(-50%);width:30px;height:30px;
+  border-radius:50%;display:none;place-items:center;color:var(--muted)}
+.searchwrap .x.on{display:grid}
+.searchwrap .x:hover{background:var(--paper-2);color:var(--ink)}
+@media(min-width:940px){.searchwrap{display:none}}
+
+.filters{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.1rem}
+.frow{position:relative}
+.frow-lbl{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:.45rem;display:flex;align-items:center;gap:.4rem}
+.chips{display:flex;gap:.45rem;overflow-x:auto;scrollbar-width:none;padding:2px 0 6px;scroll-behavior:smooth}
+.chips::-webkit-scrollbar{display:none}
+.chip{display:inline-flex;align-items:center;gap:.4rem;padding:.48rem .85rem;border-radius:99px;
+  border:1px solid var(--line);background:var(--card);font-size:.83rem;font-weight:600;
+  white-space:nowrap;transition:var(--tr);flex-shrink:0;color:var(--ink-2)}
+.chip:hover{border-color:var(--faint);background:var(--card-2);color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.chip .n{font-size:.7rem;font-weight:700;padding:.05rem .38rem;border-radius:99px;
+  background:var(--paper-2);color:var(--muted)}
+.chip.on .n{background:rgba(255,255,255,.2);color:inherit}
+[data-theme="dark"] .chip.on .n{background:rgba(0,0,0,.28)}
+.chip.gold.on{background:var(--gold);border-color:var(--gold);color:#1a1208}
+.chip.wine.on{background:var(--wine);border-color:var(--wine);color:#fff}
+.chip.green.on{background:var(--green);border-color:var(--green);color:#fff}
+.arrow{position:absolute;top:50%;transform:translateY(-10%);width:32px;height:32px;border-radius:50%;
+  background:var(--card);border:1px solid var(--line);box-shadow:var(--sh-2);display:none;
+  place-items:center;z-index:3;color:var(--ink-2)}
+.arrow.show{display:grid}
+.arrow.l{left:-8px}.arrow.r{right:-8px}
+@media(max-width:760px){.arrow{display:none!important}}
+
+.toolbar{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-bottom:1.1rem;
+  padding-bottom:1rem;border-bottom:1px solid var(--line)}
+.count{font-size:.88rem;color:var(--muted)}
+.count b{color:var(--ink);font-weight:700}
+.tb-sp{flex:1}
+.sel{position:relative;display:flex;align-items:center}
+.sel svg{position:absolute;left:.7rem;width:15px;height:15px;color:var(--muted);pointer-events:none}
+.sel select{appearance:none;height:38px;border-radius:11px;border:1px solid var(--line);
+  background:var(--card);padding:0 2rem 0 2.1rem;font-size:.84rem;font-weight:600;cursor:pointer}
+.sel::after{content:'';position:absolute;right:.75rem;width:7px;height:7px;pointer-events:none;
+  border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-2px) rotate(45deg)}
+.seg{display:flex;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--card)}
+.seg button{padding:.5rem .7rem;font-size:.8rem;font-weight:600;color:var(--muted);transition:var(--tr);display:grid;place-items:center}
+.seg button.on{background:var(--ink);color:var(--paper)}
+.active-tags{display:flex;flex-wrap:wrap;gap:.4rem;width:100%}
+.atag{display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .5rem .3rem .7rem;border-radius:99px;
+  background:var(--gold-soft);border:1px solid var(--gold-ring);font-size:.76rem;font-weight:600;color:var(--gold)}
+[data-theme="dark"] .atag{color:var(--gold-2)}
+.atag button{display:grid;place-items:center;width:16px;height:16px;border-radius:50%;opacity:.7}
+.atag button:hover{opacity:1;background:rgba(0,0,0,.08)}
+/* ============================ CARRINHO ============================ */
+#cartM{top:0;right:0;height:100dvh;width:min(430px,100vw);display:flex;flex-direction:column;
+  transform:translateX(100%);border-left:1px solid var(--line)}
+#cartM.on{transform:none}
+@media(max-width:560px){
+  #cartM{top:auto;bottom:0;height:88dvh;width:100%;border-radius:var(--r-xl) var(--r-xl) 0 0;
+    transform:translateY(100%);border-left:none}
+  #cartM.on{transform:none}
+}
+.ch{display:flex;align-items:center;gap:.7rem;padding:1.1rem 1.2rem;border-bottom:1px solid var(--line);flex-shrink:0}
+.ch h3{font-family:var(--disp);font-size:1.15rem;font-weight:700;flex:1}
+.ch .n{font-size:.75rem;font-weight:700;padding:.15rem .5rem;border-radius:99px;
+  background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold-ring)}
+[data-theme="dark"] .ch .n{color:var(--gold-2)}
+.cl{flex:1;overflow-y:auto;padding:.8rem;display:flex;flex-direction:column;gap:.5rem;-webkit-overflow-scrolling:touch}
+.ci{display:flex;gap:.7rem;padding:.6rem;border-radius:var(--r-m);border:1px solid var(--line);
+  background:var(--card-2);animation:up .25s}
+.ci-cv{width:46px;aspect-ratio:2/3;border-radius:6px;overflow:hidden;flex-shrink:0;background:var(--paper-2);box-shadow:var(--sh-1)}
+.ci-cv img,.ci-cv .gen{width:100%;height:100%;object-fit:cover}
+.ci-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:.15rem}
+.ci-b b{font-size:.83rem;font-weight:700;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;
+  -webkit-box-orient:vertical;overflow:hidden}
+.ci-b span{font-size:.72rem;color:var(--muted)}
+.ci-b .p{font-family:var(--disp);font-size:1rem;font-weight:700;margin-top:auto}
+.ci-x{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:var(--muted);
+  flex-shrink:0;align-self:flex-start;transition:var(--tr)}
+.ci-x:hover{background:var(--wine-soft);color:var(--wine)}
+.cempty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.6rem;padding:2rem;text-align:center}
+.cempty svg{width:42px;height:42px;color:var(--faint)}
+.cempty p{font-size:.88rem;color:var(--muted);max-width:26ch}
+.cfoot{border-top:1px solid var(--line);padding:1rem 1.2rem calc(1rem + env(safe-area-inset-bottom));
+  flex-shrink:0;background:var(--card)}
+.ctot{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:.3rem}
+.ctot span{font-size:.85rem;color:var(--muted)}
+.ctot b{font-family:var(--disp);font-size:1.65rem;font-weight:700;letter-spacing:-.03em}
+.csave{font-size:.78rem;color:var(--green);font-weight:700;margin-bottom:.85rem}
+.cbulk{display:flex;align-items:center;gap:.5rem;padding:.6rem .75rem;border-radius:11px;
+  background:var(--gold-soft);border:1px solid var(--gold-ring);font-size:.78rem;
+  color:var(--ink-2);margin-bottom:.8rem;line-height:1.4}
+.cbulk svg{width:16px;height:16px;flex-shrink:0;color:var(--gold)}
+
+/* ============================ MODAIS INFO ============================ */
+.info{left:50%;top:50%;transform:translate(-50%,-46%) scale(.97);width:min(560px,94vw);
+  max-height:90vh;overflow-y:auto;border-radius:var(--r-xl);padding:1.6rem;-webkit-overflow-scrolling:touch}
+.info.on{transform:translate(-50%,-50%) scale(1)}
+@media(max-width:560px){
+  .info{left:0;top:auto;bottom:0;transform:translateY(100%);width:100%;max-height:90dvh;
+    border-radius:var(--r-xl) var(--r-xl) 0 0}
+  .info.on{transform:none}
+}
+.info h2{font-family:var(--disp);font-size:1.35rem;font-weight:700;display:flex;align-items:center;
+  gap:.6rem;margin-bottom:1.1rem}
+.info h2 svg{width:21px;height:21px;color:var(--gold)}
+.steps{display:flex;flex-direction:column;gap:1rem;margin-bottom:1.2rem}
+.step{display:flex;gap:.85rem}
+.step .n{width:30px;height:30px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;
+  font-weight:800;font-size:.85rem;background:var(--gold);color:#1a1208}
+.step h4{font-size:.94rem;font-weight:700;margin-bottom:.15rem}
+.step p{font-size:.86rem;color:var(--ink-2);line-height:1.55}
+.pay{display:flex;gap:.85rem;padding:1rem;border-radius:var(--r-m);border:1px solid var(--line);
+  background:var(--card-2);margin-bottom:.8rem}
+.pay svg{width:22px;height:22px;color:var(--gold);flex-shrink:0}
+.pay h4{font-size:.94rem;font-weight:700;margin-bottom:.2rem}
+.pay p{font-size:.84rem;color:var(--ink-2);line-height:1.55}
+.pixkey{display:flex;align-items:center;gap:.5rem;width:100%;margin-top:.7rem;padding:.6rem .8rem;
+  border-radius:10px;border:1px dashed var(--gold-ring);background:var(--gold-soft);
+  font-size:.82rem;font-weight:700;color:var(--ink);transition:var(--tr);word-break:break-all;text-align:left}
+.pixkey:hover{background:color-mix(in srgb,var(--gold-soft) 70%,var(--gold) 12%)}
+.pixkey svg{width:15px;height:15px;flex-shrink:0}
+.qr{margin-top:.9rem;padding:.9rem;background:#fff;border-radius:var(--r-m);border:1px solid var(--line);text-align:center}
+.qr img{width:min(190px,60%);margin:0 auto;border-radius:6px}
+.qr p{font-size:.75rem;color:#6b6357;margin-top:.5rem}
+.note{display:flex;gap:.6rem;padding:.8rem .9rem;border-radius:11px;background:var(--blue-soft);
+  border:1px solid color-mix(in srgb,var(--blue) 22%,transparent);font-size:.84rem;
+  color:var(--ink-2);line-height:1.5;margin-top:.9rem}
+.note svg{width:17px;height:17px;flex-shrink:0;color:var(--blue);margin-top:1px}
+
+/* ============================ TOAST / MISC ============================ */
+.toasts{position:fixed;bottom:calc(1rem + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);
+  z-index:120;display:flex;flex-direction:column;gap:.45rem;align-items:center;pointer-events:none;width:max-content;max-width:92vw}
+.toast{display:flex;align-items:center;gap:.55rem;padding:.7rem 1.1rem;border-radius:99px;
+  background:var(--ink);color:var(--paper);font-size:.85rem;font-weight:600;box-shadow:var(--sh-3);
+  animation:pop .3s;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.toast svg{width:16px;height:16px;flex-shrink:0}
+.toast.ok svg{color:#5fd398}
+.top{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom));z-index:50;width:44px;height:44px;
+  border-radius:50%;background:var(--card);border:1px solid var(--line);box-shadow:var(--sh-2);
+  display:grid;place-items:center;opacity:0;visibility:hidden;transition:var(--tr);color:var(--ink-2)}
+.top.on{opacity:1;visibility:visible}
+.top:hover{background:var(--gold);color:#1a1208;border-color:var(--gold)}
+@media(max-width:560px){.top{bottom:calc(4.7rem + env(safe-area-inset-bottom))}}
+
+/* barra inferior mobile */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;align-items:center;gap:.6rem;
+  padding:.6rem .9rem calc(.6rem + env(safe-area-inset-bottom));background:var(--card);
+  border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(32,22,12,.1)}
+[data-theme="dark"] .mbar{box-shadow:0 -6px 24px rgba(0,0,0,.5)}
+.mbar.on{display:flex}
+body.has-bar .foot-in{padding-bottom:6rem}
+body.has-bar .main{padding-bottom:6.5rem}
+.mbar .info-t{flex:1;min-width:0}
+.mbar .info-t b{display:block;font-family:var(--disp);font-size:1.1rem;font-weight:700;line-height:1.1}
+.mbar .info-t span{font-size:.72rem;color:var(--muted)}
+@media(min-width:561px){.mbar{display:none!important}}
+
+/* ============================ FOOTER ============================ */
+.foot{border-top:1px solid var(--line);background:var(--card);margin-top:2rem}
+.foot-in{max-width:var(--maxw);margin:0 auto;padding:2.4rem clamp(.9rem,3vw,1.6rem) 3rem;
+  display:grid;gap:1.6rem;grid-template-columns:1fr}
+@media(min-width:760px){.foot-in{grid-template-columns:1.3fr 1fr 1fr}}
+.foot h4{font-family:var(--disp);font-size:1rem;font-weight:700;margin-bottom:.6rem}
+.foot p,.foot li{font-size:.84rem;color:var(--muted);line-height:1.65}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.foot a:hover{color:var(--gold)}
+.foot-bot{border-top:1px solid var(--line);padding:1rem clamp(.9rem,3vw,1.6rem);text-align:center;
+  font-size:.76rem;color:var(--faint)}
+@media(max-width:560px){.foot-in{padding-bottom:5.5rem}}
+/* ===================== GERADOR DE QR ===================== */
+.qr-top{background:linear-gradient(135deg,#16120d,#2a2117);color:#fff;padding:clamp(1.6rem,4vw,2.4rem) clamp(.9rem,3vw,1.4rem) clamp(1.4rem,3vw,2rem);position:relative;overflow:hidden}
+.qr-top::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 100% at 12% 0,rgba(217,164,65,.18),transparent 62%)}
+.qr-top-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.qr-top h1{font-family:var(--disp);font-size:clamp(1.4rem,3.6vw,2rem);font-weight:700;display:flex;align-items:center;gap:.7rem;letter-spacing:-.02em}
+.qr-top h1 .mk{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;flex-shrink:0;
+  background:linear-gradient(140deg,var(--gold-2),var(--gold));color:#1a1208}
+.qr-top p{color:rgba(255,255,255,.68);margin-top:.5rem;font-size:.92rem;max-width:66ch;line-height:1.6}
+.qr-top .sp{flex:1;min-width:0}
+.qr-wrap{max-width:1280px;margin:0 auto;padding:1.4rem clamp(.9rem,3vw,1.4rem) 4rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);
+  box-shadow:var(--sh-1);padding:clamp(1.1rem,3vw,1.5rem);margin-bottom:1.2rem}
+.panel h2{font-family:var(--disp);font-size:1.12rem;font-weight:700;display:flex;align-items:center;gap:.55rem;margin-bottom:.35rem}
+.panel h2 svg{width:18px;height:18px;color:var(--gold)}
+.hint{font-size:.85rem;color:var(--muted);line-height:1.6;margin-bottom:.9rem}
+.field{display:flex;gap:.6rem;flex-wrap:wrap}
+.field input{flex:1;min-width:220px;height:44px;border-radius:12px;border:1px solid var(--line);
+  background:var(--paper);padding:0 .9rem;font-size:.9rem}
+.field input:focus{outline:none;border-color:var(--gold-ring);box-shadow:0 0 0 4px var(--gold-soft)}
+.opts{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;margin-top:1rem}
+.optg{display:flex;align-items:center;gap:.55rem}
+.optg > span{font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.seg2{display:flex;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--paper)}
+.seg2 button{padding:.45rem .8rem;font-size:.8rem;font-weight:600;color:var(--muted);transition:var(--tr)}
+.seg2 button.on{background:var(--ink);color:var(--paper)}
+.qr-bar{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem}
+.qr-search{flex:1;min-width:200px;position:relative}
+.qr-search input{width:100%;height:44px;border-radius:12px;border:1px solid var(--line);
+  background:var(--card);padding:0 1rem 0 2.6rem;font-size:.9rem}
+.qr-search input:focus{outline:none;border-color:var(--gold-ring);box-shadow:0 0 0 4px var(--gold-soft)}
+.qr-search svg{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.chkbx{display:inline-flex;align-items:center;gap:.45rem;font-size:.84rem;font-weight:600;color:var(--ink-2);cursor:pointer}
+.chkbx input{width:17px;height:17px;accent-color:var(--gold)}
+.btn2{display:inline-flex;align-items:center;gap:.5rem;padding:.62rem 1.05rem;border-radius:12px;
+  border:1px solid var(--line);background:var(--card);font-size:.85rem;font-weight:700;transition:var(--tr)}
+.btn2:hover{border-color:var(--gold-ring);background:var(--gold-soft)}
+.btn2.pri{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn2.pri:hover{background:var(--gold);border-color:var(--gold);color:#1a1208}
+.btn2 svg{width:15px;height:15px}
+.draw{border:1px dashed var(--gold-ring);background:var(--gold-soft);border-radius:var(--r-l);
+  padding:1.1rem 1.2rem;margin-bottom:1.2rem}
+.draw-h{display:flex;gap:.8rem;align-items:flex-start;flex-wrap:wrap;margin-bottom:.9rem}
+.draw-h .ic{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;flex-shrink:0;
+  background:var(--gold);color:#1a1208}
+.draw-h h3{font-family:var(--disp);font-size:1.05rem;font-weight:700}
+.draw-h p{font-size:.83rem;color:var(--ink-2);line-height:1.55;max-width:70ch}
+.draw-acts{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem}
+.draw-list{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
+.dl-i{display:inline-flex;align-items:center;gap:.4rem;padding:.32rem .7rem;border-radius:99px;
+  background:var(--card);border:1px solid var(--line);font-size:.78rem;font-weight:600}
+.dl-i b{color:var(--gold)}
+.qgrid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.qc{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:.9rem;
+  display:flex;flex-direction:column;gap:.6rem;box-shadow:var(--sh-1);transition:var(--tr)}
+.qc:hover{border-color:var(--gold-ring);box-shadow:var(--sh-2)}
+.qc.drawn{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft)}
+.qc canvas{width:100%;height:auto;border-radius:8px;background:#fff;display:block}
+.qc-t{font-family:var(--disp);font-size:.85rem;font-weight:600;line-height:1.3;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.2em}
+.qc-m{display:flex;align-items:center;justify-content:space-between;gap:.4rem;font-size:.78rem;color:var(--muted)}
+.qc-m b{font-family:var(--disp);font-size:1rem;color:var(--ink)}
+.qc-a{display:flex;gap:.4rem}
+.qc-a button{flex:1;padding:.42rem;border-radius:9px;border:1px solid var(--line);background:var(--paper);
+  font-size:.74rem;font-weight:700;color:var(--ink-2);display:inline-flex;align-items:center;justify-content:center;gap:.3rem;transition:var(--tr)}
+.qc-a button:hover{background:var(--gold-soft);border-color:var(--gold-ring);color:var(--ink)}
+.qc-a svg{width:13px;height:13px}
+.qc.sold{opacity:.5}
+.qsold{position:absolute;font-size:.6rem}
+.qempty{text-align:center;padding:3rem 1rem;color:var(--muted)}
+.steps-ol{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:.8rem}
+.steps-ol li{counter-increment:s;display:flex;gap:.8rem;font-size:.9rem;color:var(--ink-2);line-height:1.6}
+.steps-ol li::before{content:counter(s);width:26px;height:26px;border-radius:50%;flex-shrink:0;
+  display:grid;place-items:center;background:var(--gold);color:#1a1208;font-weight:800;font-size:.8rem}
+
+/* folha de impressão */
+.sheet{display:none}
+@media print{
+  @page{size:A4;margin:11mm}
+  body{background:#fff!important}
+  body>*:not(.sheet){display:none!important}
+  .sheet{display:block}
+  .sheet-h{text-align:center;margin-bottom:7mm}
+  .sheet-h h2{font-family:Georgia,serif;font-size:15pt;margin-bottom:1.5mm}
+  .sheet-h p{font-size:8.5pt;color:#555}
+  .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm}
+  .si{border:.4mm dashed #bbb;border-radius:2.5mm;padding:3.5mm;text-align:center;break-inside:avoid;page-break-inside:avoid}
+  .si canvas,.si img{width:100%;max-width:36mm;margin:0 auto;display:block}
+  .si .t{font-family:Georgia,serif;font-size:8pt;font-weight:700;line-height:1.25;margin-top:2mm;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:9mm}
+  .si .p{font-size:11pt;font-weight:800;margin-top:1mm}
+  .si .s{font-size:6.5pt;color:#666;margin-top:.6mm}
+}
+</style>
+</head>
+<body>
+<svg class="sr" aria-hidden="true"><defs>
+<symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+<symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a2 2 0 002 1.6h7.7a2 2 0 002-1.55L21 8H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M20.8 5.6a5.2 5.2 0 00-7.4 0L12 7l-1.4-1.4a5.2 5.2 0 10-7.4 7.4l8.8 8.8 8.8-8.8a5.2 5.2 0 000-7.4z"/></symbol>
+<symbol id="i-heart-f" viewBox="0 0 24 24" fill="currentColor"><path d="M20.8 5.6a5.2 5.2 0 00-7.4 0L12 7l-1.4-1.4a5.2 5.2 0 10-7.4 7.4l8.8 8.8 8.8-8.8a5.2 5.2 0 000-7.4z"/></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.15l-.3-.18-3.1.81.83-3.02-.2-.31A8.2 8.2 0 1112 20.2z"/></symbol>
+<symbol id="i-qr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 14v3M14 20h3M20 20h1"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 016 0v2"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M21 12.8A8.5 8.5 0 1111.2 3a6.8 6.8 0 009.8 9.8z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></symbol>
+<symbol id="i-sort" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M6 12h12M9 17h6"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.4"/><rect x="14" y="3" width="7" height="7" rx="1.4"/><rect x="3" y="14" width="7" height="7" rx="1.4"/><rect x="14" y="14" width="7" height="7" rx="1.4"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></symbol>
+<symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0l-7.2-7.2a2 2 0 01-.6-1.4V4a1 1 0 011-1h8a2 2 0 011.4.6l7.4 7.4a2 2 0 010 2.4z"/><circle cx="7.5" cy="7.5" r="1.3" fill="currentColor"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.8-3.3 8.5-8 9.8C7.3 20.5 4 16.8 4 12V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 8h3.5l1.5-2h8l1.5 2H21v11H3z"/><circle cx="12" cy="13" r="3.4"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.2-5.4-2.9-5.4 2.9 1-6.2L3.2 9.5l6.1-.9z"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5M3 17l9 5 9-5"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+<symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.3M8.3 13.2l7.4 4.3"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h8"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+<symbol id="i-money" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 10v4M18 10v4"/></symbol>
+<symbol id="i-chev-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></symbol>
+<symbol id="i-chev-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></symbol>
+<symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></symbol>
+</defs></svg>
+
+<header class="qr-top">
+  <div class="qr-top-in">
+    <div>
+      <h1><span class="mk"><svg width="21" height="21"><use href="#i-qr"/></svg></span> QR Codes do Acervo</h1>
+      <p>Um QR Code para cada livro. Quem escanear cai direto na página do exemplar, com sinopse, estado de conservação, preço e botão de WhatsApp. Imprima, recorte e cole nos livros ou num cartaz na copa.</p>
+    </div>
+    <span class="sp"></span>
+    <a class="wa-btn" href="index.html"><svg width="16" height="16"><use href="#i-book"/></svg> Ver acervo</a>
+  </div>
+</header>
+
+<div class="qr-wrap">
+
+  <section class="panel">
+    <h2><svg><use href="#i-share"/></svg> 1. Endereço do site</h2>
+    <p class="hint">Já vem preenchido com o endereço do seu GitHub Pages. Cada QR aponta para <b>/bookstore.html?id=…</b> do livro. Se publicar em outra pasta, ajuste aqui (sem barra no final).</p>
+    <div class="field">
+      <input id="base" type="url" spellcheck="false" placeholder="https://rodrigoch98.github.io/Sebo">
+      <button class="btn2 pri" onclick="Q.applyBase()"><svg><use href="#i-check"/></svg> Atualizar QRs</button>
+    </div>
+    <div class="opts">
+      <div class="optg"><span>Estilo</span>
+        <div class="seg2" id="styleSeg">
+          <button data-v="round" class="on">Arredondado</button>
+          <button data-v="dot">Pontos</button>
+          <button data-v="square">Quadrado</button>
+        </div>
+      </div>
+      <div class="optg"><span>Miolo</span>
+        <div class="seg2" id="logoSeg">
+          <button data-v="1" class="on">Com livro</button>
+          <button data-v="0">Limpo</button>
+        </div>
+      </div>
+      <div class="optg"><span>Cor</span>
+        <div class="seg2" id="colorSeg">
+          <button data-v="ink" class="on">Preto</button>
+          <button data-v="gold">Dourado</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="draw">
+    <div class="draw-h">
+      <span class="ic"><svg width="18" height="18"><use href="#i-sparkle"/></svg></span>
+      <div style="flex:1;min-width:200px">
+        <h3>Sorteio semanal de 10 livros</h3>
+        <p>Monta uma vitrine equilibrada da semana: mistura gêneros diferentes, evita repetir a mesma saga no mesmo sorteio e respeita a ordem das coleções — só oferece o volume 2 se o volume 1 já tiver sido vendido.</p>
+        <div class="draw-acts">
+          <button class="btn2 pri" onclick="Q.draw()"><svg><use href="#i-sparkle"/></svg> Sortear 10 livros</button>
+          <button class="btn2" onclick="Q.onlyDrawn()"><svg><use href="#i-tag"/></svg> Ver só os sorteados</button>
+          <button class="btn2" onclick="Q.printDrawn()"><svg><use href="#i-layers"/></svg> PDF dos sorteados</button>
+          <button class="btn2" onclick="Q.clearDraw()"><svg><use href="#i-x"/></svg> Limpar</button>
+        </div>
+      </div>
+    </div>
+    <div class="draw-list" id="drawList"></div>
+  </section>
+
+  <section class="panel">
+    <div class="qr-bar">
+      <div class="qr-search">
+        <svg width="16" height="16"><use href="#i-search"/></svg>
+        <input id="q" type="search" placeholder="Buscar título, autor ou saga…" autocomplete="off">
+      </div>
+      <label class="chkbx"><input type="checkbox" id="hideSold" checked> Só o que está à venda</label>
+      <label class="chkbx"><input type="checkbox" id="onlyKits"> Só coleções</label>
+      <button class="btn2 pri" onclick="Q.printAll()"><svg><use href="#i-layers"/></svg> Imprimir / PDF</button>
+    </div>
+    <p class="hint" id="qcount">Gerando QR Codes…</p>
+    <div class="qgrid" id="grid"></div>
+    <div class="qempty" id="qempty" hidden>Nenhum livro encontrado para essa busca.</div>
+  </section>
+
+  <section class="panel">
+    <h2><svg><use href="#i-info"/></svg> Como usar</h2>
+    <ol class="steps-ol">
+      <li>Publique <b>index.html</b>, <b>bookstore.html</b> e <b>qrcodes.html</b> na mesma pasta do repositório. No GitHub Pages o endereço já funciona sozinho.</li>
+      <li>Use <b>Imprimir / PDF</b> para gerar folhas A4 com os QR Codes — na janela de impressão escolha "Salvar como PDF". Respeita a busca e os filtros atuais.</li>
+      <li>Para um livro específico, clique em <b>Baixar</b> no card. Recorte e cole no próprio livro, numa etiqueta ou num cartaz.</li>
+      <li>Quem escanear abre a página do exemplar e fala com você pelo WhatsApp em dois toques.</li>
+    </ol>
+  </section>
+</div>
+
+<div class="sheet" id="sheet">
+  <div class="sheet-h"><h2>Acervo Literário · Rodrigo Hang</h2><p>Aponte a câmera do celular para o QR Code do livro</p></div>
+  <div class="sgrid" id="sgrid"></div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script>var qrcode = function() {
+
+  //---------------------------------------------------------------------
+  // qrcode
+  //---------------------------------------------------------------------
+
+  /**
+   * qrcode
+   * @param typeNumber 1 to 40
+   * @param errorCorrectionLevel 'L','M','Q','H'
+   */
+  var qrcode = function(typeNumber, errorCorrectionLevel) {
+
+    var PAD0 = 0xEC;
+    var PAD1 = 0x11;
+
+    var _typeNumber = typeNumber;
+    var _errorCorrectionLevel = QRErrorCorrectionLevel[errorCorrectionLevel];
+    var _modules = null;
+    var _moduleCount = 0;
+    var _dataCache = null;
+    var _dataList = [];
+
+    var _this = {};
+
+    var makeImpl = function(test, maskPattern) {
+
+      _moduleCount = _typeNumber * 4 + 17;
+      _modules = function(moduleCount) {
+        var modules = new Array(moduleCount);
+        for (var row = 0; row < moduleCount; row += 1) {
+          modules[row] = new Array(moduleCount);
+          for (var col = 0; col < moduleCount; col += 1) {
+            modules[row][col] = null;
+          }
+        }
+        return modules;
+      }(_moduleCount);
+
+      setupPositionProbePattern(0, 0);
+      setupPositionProbePattern(_moduleCount - 7, 0);
+      setupPositionProbePattern(0, _moduleCount - 7);
+      setupPositionAdjustPattern();
+      setupTimingPattern();
+      setupTypeInfo(test, maskPattern);
+
+      if (_typeNumber >= 7) {
+        setupTypeNumber(test);
+      }
+
+      if (_dataCache == null) {
+        _dataCache = createData(_typeNumber, _errorCorrectionLevel, _dataList);
+      }
+
+      mapData(_dataCache, maskPattern);
+    };
+
+    var setupPositionProbePattern = function(row, col) {
+
+      for (var r = -1; r <= 7; r += 1) {
+
+        if (row + r <= -1 || _moduleCount <= row + r) continue;
+
+        for (var c = -1; c <= 7; c += 1) {
+
+          if (col + c <= -1 || _moduleCount <= col + c) continue;
+
+          if ( (0 <= r && r <= 6 && (c == 0 || c == 6) )
+              || (0 <= c && c <= 6 && (r == 0 || r == 6) )
+              || (2 <= r && r <= 4 && 2 <= c && c <= 4) ) {
+            _modules[row + r][col + c] = true;
+          } else {
+            _modules[row + r][col + c] = false;
+          }
+        }
+      }
+    };
+
+    var getBestMaskPattern = function() {
+
+      var minLostPoint = 0;
+      var pattern = 0;
+
+      for (var i = 0; i < 8; i += 1) {
+
+        makeImpl(true, i);
+
+        var lostPoint = QRUtil.getLostPoint(_this);
+
+        if (i == 0 || minLostPoint > lostPoint) {
+          minLostPoint = lostPoint;
+          pattern = i;
+        }
+      }
+
+      return pattern;
+    };
+
+    var setupTimingPattern = function() {
+
+      for (var r = 8; r < _moduleCount - 8; r += 1) {
+        if (_modules[r][6] != null) {
+          continue;
+        }
+        _modules[r][6] = (r % 2 == 0);
+      }
+
+      for (var c = 8; c < _moduleCount - 8; c += 1) {
+        if (_modules[6][c] != null) {
+          continue;
+        }
+        _modules[6][c] = (c % 2 == 0);
+      }
+    };
+
+    var setupPositionAdjustPattern = function() {
+
+      var pos = QRUtil.getPatternPosition(_typeNumber);
+
+      for (var i = 0; i < pos.length; i += 1) {
+
+        for (var j = 0; j < pos.length; j += 1) {
+
+          var row = pos[i];
+          var col = pos[j];
+
+          if (_modules[row][col] != null) {
+            continue;
+          }
+
+          for (var r = -2; r <= 2; r += 1) {
+
+            for (var c = -2; c <= 2; c += 1) {
+
+              if (r == -2 || r == 2 || c == -2 || c == 2
+                  || (r == 0 && c == 0) ) {
+                _modules[row + r][col + c] = true;
+              } else {
+                _modules[row + r][col + c] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+
+    var setupTypeNumber = function(test) {
+
+      var bits = QRUtil.getBCHTypeNumber(_typeNumber);
+
+      for (var i = 0; i < 18; i += 1) {
+        var mod = (!test && ( (bits >> i) & 1) == 1);
+        _modules[Math.floor(i / 3)][i % 3 + _moduleCount - 8 - 3] = mod;
+      }
+
+      for (var i = 0; i < 18; i += 1) {
+        var mod = (!test && ( (bits >> i) & 1) == 1);
+        _modules[i % 3 + _moduleCount - 8 - 3][Math.floor(i / 3)] = mod;
+      }
+    };
+
+    var setupTypeInfo = function(test, maskPattern) {
+
+      var data = (_errorCorrectionLevel << 3) | maskPattern;
+      var bits = QRUtil.getBCHTypeInfo(data);
+
+      // vertical
+      for (var i = 0; i < 15; i += 1) {
+
+        var mod = (!test && ( (bits >> i) & 1) == 1);
+
+        if (i < 6) {
+          _modules[i][8] = mod;
+        } else if (i < 8) {
+          _modules[i + 1][8] = mod;
+        } else {
+          _modules[_moduleCount - 15 + i][8] = mod;
+        }
+      }
+
+      // horizontal
+      for (var i = 0; i < 15; i += 1) {
+
+        var mod = (!test && ( (bits >> i) & 1) == 1);
+
+        if (i < 8) {
+          _modules[8][_moduleCount - i - 1] = mod;
+        } else if (i < 9) {
+          _modules[8][15 - i - 1 + 1] = mod;
+        } else {
+          _modules[8][15 - i - 1] = mod;
+        }
+      }
+
+      // fixed module
+      _modules[_moduleCount - 8][8] = (!test);
+    };
+
+    var mapData = function(data, maskPattern) {
+
+      var inc = -1;
+      var row = _moduleCount - 1;
+      var bitIndex = 7;
+      var byteIndex = 0;
+      var maskFunc = QRUtil.getMaskFunction(maskPattern);
+
+      for (var col = _moduleCount - 1; col > 0; col -= 2) {
+
+        if (col == 6) col -= 1;
+
+        while (true) {
+
+          for (var c = 0; c < 2; c += 1) {
+
+            if (_modules[row][col - c] == null) {
+
+              var dark = false;
+
+              if (byteIndex < data.length) {
+                dark = ( ( (data[byteIndex] >>> bitIndex) & 1) == 1);
+              }
+
+              var mask = maskFunc(row, col - c);
+
+              if (mask) {
+                dark = !dark;
+              }
+
+              _modules[row][col - c] = dark;
+              bitIndex -= 1;
+
+              if (bitIndex == -1) {
+                byteIndex += 1;
+                bitIndex = 7;
+              }
+            }
+          }
+
+          row += inc;
+
+          if (row < 0 || _moduleCount <= row) {
+            row -= inc;
+            inc = -inc;
+            break;
+          }
+        }
+      }
+    };
+
+    var createBytes = function(buffer, rsBlocks) {
+
+      var offset = 0;
+
+      var maxDcCount = 0;
+      var maxEcCount = 0;
+
+      var dcdata = new Array(rsBlocks.length);
+      var ecdata = new Array(rsBlocks.length);
+
+      for (var r = 0; r < rsBlocks.length; r += 1) {
+
+        var dcCount = rsBlocks[r].dataCount;
+        var ecCount = rsBlocks[r].totalCount - dcCount;
+
+        maxDcCount = Math.max(maxDcCount, dcCount);
+        maxEcCount = Math.max(maxEcCount, ecCount);
+
+        dcdata[r] = new Array(dcCount);
+
+        for (var i = 0; i < dcdata[r].length; i += 1) {
+          dcdata[r][i] = 0xff & buffer.getBuffer()[i + offset];
+        }
+        offset += dcCount;
+
+        var rsPoly = QRUtil.getErrorCorrectPolynomial(ecCount);
+        var rawPoly = qrPolynomial(dcdata[r], rsPoly.getLength() - 1);
+
+        var modPoly = rawPoly.mod(rsPoly);
+        ecdata[r] = new Array(rsPoly.getLength() - 1);
+        for (var i = 0; i < ecdata[r].length; i += 1) {
+          var modIndex = i + modPoly.getLength() - ecdata[r].length;
+          ecdata[r][i] = (modIndex >= 0)? modPoly.getAt(modIndex) : 0;
+        }
+      }
+
+      var totalCodeCount = 0;
+      for (var i = 0; i < rsBlocks.length; i += 1) {
+        totalCodeCount += rsBlocks[i].totalCount;
+      }
+
+      var data = new Array(totalCodeCount);
+      var index = 0;
+
+      for (var i = 0; i < maxDcCount; i += 1) {
+        for (var r = 0; r < rsBlocks.length; r += 1) {
+          if (i < dcdata[r].length) {
+            data[index] = dcdata[r][i];
+            index += 1;
+          }
+        }
+      }
+
+      for (var i = 0; i < maxEcCount; i += 1) {
+        for (var r = 0; r < rsBlocks.length; r += 1) {
+          if (i < ecdata[r].length) {
+            data[index] = ecdata[r][i];
+            index += 1;
+          }
+        }
+      }
+
+      return data;
+    };
+
+    var createData = function(typeNumber, errorCorrectionLevel, dataList) {
+
+      var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, errorCorrectionLevel);
+
+      var buffer = qrBitBuffer();
+
+      for (var i = 0; i < dataList.length; i += 1) {
+        var data = dataList[i];
+        buffer.put(data.getMode(), 4);
+        buffer.put(data.getLength(), QRUtil.getLengthInBits(data.getMode(), typeNumber) );
+        data.write(buffer);
+      }
+
+      // calc num max data.
+      var totalDataCount = 0;
+      for (var i = 0; i < rsBlocks.length; i += 1) {
+        totalDataCount += rsBlocks[i].dataCount;
+      }
+
+      if (buffer.getLengthInBits() > totalDataCount * 8) {
+        throw 'code length overflow. ('
+          + buffer.getLengthInBits()
+          + '>'
+          + totalDataCount * 8
+          + ')';
+      }
+
+      // end code
+      if (buffer.getLengthInBits() + 4 <= totalDataCount * 8) {
+        buffer.put(0, 4);
+      }
+
+      // padding
+      while (buffer.getLengthInBits() % 8 != 0) {
+        buffer.putBit(false);
+      }
+
+      // padding
+      while (true) {
+
+        if (buffer.getLengthInBits() >= totalDataCount * 8) {
+          break;
+        }
+        buffer.put(PAD0, 8);
+
+        if (buffer.getLengthInBits() >= totalDataCount * 8) {
+          break;
+        }
+        buffer.put(PAD1, 8);
+      }
+
+      return createBytes(buffer, rsBlocks);
+    };
+
+    _this.addData = function(data, mode) {
+
+      mode = mode || 'Byte';
+
+      var newData = null;
+
+      switch(mode) {
+      case 'Numeric' :
+        newData = qrNumber(data);
+        break;
+      case 'Alphanumeric' :
+        newData = qrAlphaNum(data);
+        break;
+      case 'Byte' :
+        newData = qr8BitByte(data);
+        break;
+      case 'Kanji' :
+        newData = qrKanji(data);
+        break;
+      default :
+        throw 'mode:' + mode;
+      }
+
+      _dataList.push(newData);
+      _dataCache = null;
+    };
+
+    _this.isDark = function(row, col) {
+      if (row < 0 || _moduleCount <= row || col < 0 || _moduleCount <= col) {
+        throw row + ',' + col;
+      }
+      return _modules[row][col];
+    };
+
+    _this.getModuleCount = function() {
+      return _moduleCount;
+    };
+
+    _this.make = function() {
+      if (_typeNumber < 1) {
+        var typeNumber = 1;
+
+        for (; typeNumber < 40; typeNumber++) {
+          var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, _errorCorrectionLevel);
+          var buffer = qrBitBuffer();
+
+          for (var i = 0; i < _dataList.length; i++) {
+            var data = _dataList[i];
+            buffer.put(data.getMode(), 4);
+            buffer.put(data.getLength(), QRUtil.getLengthInBits(data.getMode(), typeNumber) );
+            data.write(buffer);
+          }
+
+          var totalDataCount = 0;
+          for (var i = 0; i < rsBlocks.length; i++) {
+            totalDataCount += rsBlocks[i].dataCount;
+          }
+
+          if (buffer.getLengthInBits() <= totalDataCount * 8) {
+            break;
+          }
+        }
+
+        _typeNumber = typeNumber;
+      }
+
+      makeImpl(false, getBestMaskPattern() );
+    };
+
+    _this.createTableTag = function(cellSize, margin) {
+
+      cellSize = cellSize || 2;
+      margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
+
+      var qrHtml = '';
+
+      qrHtml += '<table style="';
+      qrHtml += ' border-width: 0px; border-style: none;';
+      qrHtml += ' border-collapse: collapse;';
+      qrHtml += ' padding: 0px; margin: ' + margin + 'px;';
+      qrHtml += '">';
+      qrHtml += '<tbody>';
+
+      for (var r = 0; r < _this.getModuleCount(); r += 1) {
+
+        qrHtml += '<tr>';
+
+        for (var c = 0; c < _this.getModuleCount(); c += 1) {
+          qrHtml += '<td style="';
+          qrHtml += ' border-width: 0px; border-style: none;';
+          qrHtml += ' border-collapse: collapse;';
+          qrHtml += ' padding: 0px; margin: 0px;';
+          qrHtml += ' width: ' + cellSize + 'px;';
+          qrHtml += ' height: ' + cellSize + 'px;';
+          qrHtml += ' background-color: ';
+          qrHtml += _this.isDark(r, c)? '#000000' : '#ffffff';
+          qrHtml += ';';
+          qrHtml += '"/>';
+        }
+
+        qrHtml += '</tr>';
+      }
+
+      qrHtml += '</tbody>';
+      qrHtml += '</table>';
+
+      return qrHtml;
+    };
+
+    _this.createSvgTag = function(cellSize, margin, alt, title) {
+
+      var opts = {};
+      if (typeof arguments[0] == 'object') {
+        // Called by options.
+        opts = arguments[0];
+        // overwrite cellSize and margin.
+        cellSize = opts.cellSize;
+        margin = opts.margin;
+        alt = opts.alt;
+        title = opts.title;
+      }
+
+      cellSize = cellSize || 2;
+      margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
+
+      // Compose alt property surrogate
+      alt = (typeof alt === 'string') ? {text: alt} : alt || {};
+      alt.text = alt.text || null;
+      alt.id = (alt.text) ? alt.id || 'qrcode-description' : null;
+
+      // Compose title property surrogate
+      title = (typeof title === 'string') ? {text: title} : title || {};
+      title.text = title.text || null;
+      title.id = (title.text) ? title.id || 'qrcode-title' : null;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+      var c, mc, r, mr, qrSvg='', rect;
+
+      rect = 'l' + cellSize + ',0 0,' + cellSize +
+        ' -' + cellSize + ',0 0,-' + cellSize + 'z ';
+
+      qrSvg += '<svg version="1.1" xmlns="http://www.w3.org/2000/svg"';
+      qrSvg += !opts.scalable ? ' width="' + size + 'px" height="' + size + 'px"' : '';
+      qrSvg += ' viewBox="0 0 ' + size + ' ' + size + '" ';
+      qrSvg += ' preserveAspectRatio="xMinYMin meet"';
+      qrSvg += (title.text || alt.text) ? ' role="img" aria-labelledby="' +
+          escapeXml([title.id, alt.id].join(' ').trim() ) + '"' : '';
+      qrSvg += '>';
+      qrSvg += (title.text) ? '<title id="' + escapeXml(title.id) + '">' +
+          escapeXml(title.text) + '</title>' : '';
+      qrSvg += (alt.text) ? '<description id="' + escapeXml(alt.id) + '">' +
+          escapeXml(alt.text) + '</description>' : '';
+      qrSvg += '<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>';
+      qrSvg += '<path d="';
+
+      for (r = 0; r < _this.getModuleCount(); r += 1) {
+        mr = r * cellSize + margin;
+        for (c = 0; c < _this.getModuleCount(); c += 1) {
+          if (_this.isDark(r, c) ) {
+            mc = c*cellSize+margin;
+            qrSvg += 'M' + mc + ',' + mr + rect;
+          }
+        }
+      }
+
+      qrSvg += '" stroke="transparent" fill="black"/>';
+      qrSvg += '</svg>';
+
+      return qrSvg;
+    };
+
+    _this.createDataURL = function(cellSize, margin) {
+
+      cellSize = cellSize || 2;
+      margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+      var min = margin;
+      var max = size - margin;
+
+      return createDataURL(size, size, function(x, y) {
+        if (min <= x && x < max && min <= y && y < max) {
+          var c = Math.floor( (x - min) / cellSize);
+          var r = Math.floor( (y - min) / cellSize);
+          return _this.isDark(r, c)? 0 : 1;
+        } else {
+          return 1;
+        }
+      } );
+    };
+
+    _this.createImgTag = function(cellSize, margin, alt) {
+
+      cellSize = cellSize || 2;
+      margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+
+      var img = '';
+      img += '<img';
+      img += '\u0020src="';
+      img += _this.createDataURL(cellSize, margin);
+      img += '"';
+      img += '\u0020width="';
+      img += size;
+      img += '"';
+      img += '\u0020height="';
+      img += size;
+      img += '"';
+      if (alt) {
+        img += '\u0020alt="';
+        img += escapeXml(alt);
+        img += '"';
+      }
+      img += '/>';
+
+      return img;
+    };
+
+    var escapeXml = function(s) {
+      var escaped = '';
+      for (var i = 0; i < s.length; i += 1) {
+        var c = s.charAt(i);
+        switch(c) {
+        case '<': escaped += '&lt;'; break;
+        case '>': escaped += '&gt;'; break;
+        case '&': escaped += '&amp;'; break;
+        case '"': escaped += '&quot;'; break;
+        default : escaped += c; break;
+        }
+      }
+      return escaped;
+    };
+
+    var _createHalfASCII = function(margin) {
+      var cellSize = 1;
+      margin = (typeof margin == 'undefined')? cellSize * 2 : margin;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+      var min = margin;
+      var max = size - margin;
+
+      var y, x, r1, r2, p;
+
+      var blocks = {
+        '██': '█',
+        '█ ': '▀',
+        ' █': '▄',
+        '  ': ' '
+      };
+
+      var blocksLastLineNoMargin = {
+        '██': '▀',
+        '█ ': '▀',
+        ' █': ' ',
+        '  ': ' '
+      };
+
+      var ascii = '';
+      for (y = 0; y < size; y += 2) {
+        r1 = Math.floor((y - min) / cellSize);
+        r2 = Math.floor((y + 1 - min) / cellSize);
+        for (x = 0; x < size; x += 1) {
+          p = '█';
+
+          if (min <= x && x < max && min <= y && y < max && _this.isDark(r1, Math.floor((x - min) / cellSize))) {
+            p = ' ';
+          }
+
+          if (min <= x && x < max && min <= y+1 && y+1 < max && _this.isDark(r2, Math.floor((x - min) / cellSize))) {
+            p += ' ';
+          }
+          else {
+            p += '█';
+          }
+
+          // Output 2 characters per pixel, to create full square. 1 character per pixels gives only half width of square.
+          ascii += (margin < 1 && y+1 >= max) ? blocksLastLineNoMargin[p] : blocks[p];
+        }
+
+        ascii += '\n';
+      }
+
+      if (size % 2 && margin > 0) {
+        return ascii.substring(0, ascii.length - size - 1) + Array(size+1).join('▀');
+      }
+
+      return ascii.substring(0, ascii.length-1);
+    };
+
+    _this.createASCII = function(cellSize, margin) {
+      cellSize = cellSize || 1;
+
+      if (cellSize < 2) {
+        return _createHalfASCII(margin);
+      }
+
+      cellSize -= 1;
+      margin = (typeof margin == 'undefined')? cellSize * 2 : margin;
+
+      var size = _this.getModuleCount() * cellSize + margin * 2;
+      var min = margin;
+      var max = size - margin;
+
+      var y, x, r, p;
+
+      var white = Array(cellSize+1).join('██');
+      var black = Array(cellSize+1).join('  ');
+
+      var ascii = '';
+      var line = '';
+      for (y = 0; y < size; y += 1) {
+        r = Math.floor( (y - min) / cellSize);
+        line = '';
+        for (x = 0; x < size; x += 1) {
+          p = 1;
+
+          if (min <= x && x < max && min <= y && y < max && _this.isDark(r, Math.floor((x - min) / cellSize))) {
+            p = 0;
+          }
+
+          // Output 2 characters per pixel, to create full square. 1 character per pixels gives only half width of square.
+          line += p ? white : black;
+        }
+
+        for (r = 0; r < cellSize; r += 1) {
+          ascii += line + '\n';
+        }
+      }
+
+      return ascii.substring(0, ascii.length-1);
+    };
+
+    _this.renderTo2dContext = function(context, cellSize) {
+      cellSize = cellSize || 2;
+      var length = _this.getModuleCount();
+      for (var row = 0; row < length; row++) {
+        for (var col = 0; col < length; col++) {
+          context.fillStyle = _this.isDark(row, col) ? 'black' : 'white';
+          context.fillRect(col * cellSize, row * cellSize, cellSize, cellSize);
+        }
+      }
+    }
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qrcode.stringToBytes
+  //---------------------------------------------------------------------
+
+  qrcode.stringToBytesFuncs = {
+    'default' : function(s) {
+      var bytes = [];
+      for (var i = 0; i < s.length; i += 1) {
+        var c = s.charCodeAt(i);
+        bytes.push(c & 0xff);
+      }
+      return bytes;
+    }
+  };
+
+  qrcode.stringToBytes = qrcode.stringToBytesFuncs['default'];
+
+  //---------------------------------------------------------------------
+  // qrcode.createStringToBytes
+  //---------------------------------------------------------------------
+
+  /**
+   * @param unicodeData base64 string of byte array.
+   * [16bit Unicode],[16bit Bytes], ...
+   * @param numChars
+   */
+  qrcode.createStringToBytes = function(unicodeData, numChars) {
+
+    // create conversion map.
+
+    var unicodeMap = function() {
+
+      var bin = base64DecodeInputStream(unicodeData);
+      var read = function() {
+        var b = bin.read();
+        if (b == -1) throw 'eof';
+        return b;
+      };
+
+      var count = 0;
+      var unicodeMap = {};
+      while (true) {
+        var b0 = bin.read();
+        if (b0 == -1) break;
+        var b1 = read();
+        var b2 = read();
+        var b3 = read();
+        var k = String.fromCharCode( (b0 << 8) | b1);
+        var v = (b2 << 8) | b3;
+        unicodeMap[k] = v;
+        count += 1;
+      }
+      if (count != numChars) {
+        throw count + ' != ' + numChars;
+      }
+
+      return unicodeMap;
+    }();
+
+    var unknownChar = '?'.charCodeAt(0);
+
+    return function(s) {
+      var bytes = [];
+      for (var i = 0; i < s.length; i += 1) {
+        var c = s.charCodeAt(i);
+        if (c < 128) {
+          bytes.push(c);
+        } else {
+          var b = unicodeMap[s.charAt(i)];
+          if (typeof b == 'number') {
+            if ( (b & 0xff) == b) {
+              // 1byte
+              bytes.push(b);
+            } else {
+              // 2bytes
+              bytes.push(b >>> 8);
+              bytes.push(b & 0xff);
+            }
+          } else {
+            bytes.push(unknownChar);
+          }
+        }
+      }
+      return bytes;
+    };
+  };
+
+  //---------------------------------------------------------------------
+  // QRMode
+  //---------------------------------------------------------------------
+
+  var QRMode = {
+    MODE_NUMBER :    1 << 0,
+    MODE_ALPHA_NUM : 1 << 1,
+    MODE_8BIT_BYTE : 1 << 2,
+    MODE_KANJI :     1 << 3
+  };
+
+  //---------------------------------------------------------------------
+  // QRErrorCorrectionLevel
+  //---------------------------------------------------------------------
+
+  var QRErrorCorrectionLevel = {
+    L : 1,
+    M : 0,
+    Q : 3,
+    H : 2
+  };
+
+  //---------------------------------------------------------------------
+  // QRMaskPattern
+  //---------------------------------------------------------------------
+
+  var QRMaskPattern = {
+    PATTERN000 : 0,
+    PATTERN001 : 1,
+    PATTERN010 : 2,
+    PATTERN011 : 3,
+    PATTERN100 : 4,
+    PATTERN101 : 5,
+    PATTERN110 : 6,
+    PATTERN111 : 7
+  };
+
+  //---------------------------------------------------------------------
+  // QRUtil
+  //---------------------------------------------------------------------
+
+  var QRUtil = function() {
+
+    var PATTERN_POSITION_TABLE = [
+      [],
+      [6, 18],
+      [6, 22],
+      [6, 26],
+      [6, 30],
+      [6, 34],
+      [6, 22, 38],
+      [6, 24, 42],
+      [6, 26, 46],
+      [6, 28, 50],
+      [6, 30, 54],
+      [6, 32, 58],
+      [6, 34, 62],
+      [6, 26, 46, 66],
+      [6, 26, 48, 70],
+      [6, 26, 50, 74],
+      [6, 30, 54, 78],
+      [6, 30, 56, 82],
+      [6, 30, 58, 86],
+      [6, 34, 62, 90],
+      [6, 28, 50, 72, 94],
+      [6, 26, 50, 74, 98],
+      [6, 30, 54, 78, 102],
+      [6, 28, 54, 80, 106],
+      [6, 32, 58, 84, 110],
+      [6, 30, 58, 86, 114],
+      [6, 34, 62, 90, 118],
+      [6, 26, 50, 74, 98, 122],
+      [6, 30, 54, 78, 102, 126],
+      [6, 26, 52, 78, 104, 130],
+      [6, 30, 56, 82, 108, 134],
+      [6, 34, 60, 86, 112, 138],
+      [6, 30, 58, 86, 114, 142],
+      [6, 34, 62, 90, 118, 146],
+      [6, 30, 54, 78, 102, 126, 150],
+      [6, 24, 50, 76, 102, 128, 154],
+      [6, 28, 54, 80, 106, 132, 158],
+      [6, 32, 58, 84, 110, 136, 162],
+      [6, 26, 54, 82, 110, 138, 166],
+      [6, 30, 58, 86, 114, 142, 170]
+    ];
+    var G15 = (1 << 10) | (1 << 8) | (1 << 5) | (1 << 4) | (1 << 2) | (1 << 1) | (1 << 0);
+    var G18 = (1 << 12) | (1 << 11) | (1 << 10) | (1 << 9) | (1 << 8) | (1 << 5) | (1 << 2) | (1 << 0);
+    var G15_MASK = (1 << 14) | (1 << 12) | (1 << 10) | (1 << 4) | (1 << 1);
+
+    var _this = {};
+
+    var getBCHDigit = function(data) {
+      var digit = 0;
+      while (data != 0) {
+        digit += 1;
+        data >>>= 1;
+      }
+      return digit;
+    };
+
+    _this.getBCHTypeInfo = function(data) {
+      var d = data << 10;
+      while (getBCHDigit(d) - getBCHDigit(G15) >= 0) {
+        d ^= (G15 << (getBCHDigit(d) - getBCHDigit(G15) ) );
+      }
+      return ( (data << 10) | d) ^ G15_MASK;
+    };
+
+    _this.getBCHTypeNumber = function(data) {
+      var d = data << 12;
+      while (getBCHDigit(d) - getBCHDigit(G18) >= 0) {
+        d ^= (G18 << (getBCHDigit(d) - getBCHDigit(G18) ) );
+      }
+      return (data << 12) | d;
+    };
+
+    _this.getPatternPosition = function(typeNumber) {
+      return PATTERN_POSITION_TABLE[typeNumber - 1];
+    };
+
+    _this.getMaskFunction = function(maskPattern) {
+
+      switch (maskPattern) {
+
+      case QRMaskPattern.PATTERN000 :
+        return function(i, j) { return (i + j) % 2 == 0; };
+      case QRMaskPattern.PATTERN001 :
+        return function(i, j) { return i % 2 == 0; };
+      case QRMaskPattern.PATTERN010 :
+        return function(i, j) { return j % 3 == 0; };
+      case QRMaskPattern.PATTERN011 :
+        return function(i, j) { return (i + j) % 3 == 0; };
+      case QRMaskPattern.PATTERN100 :
+        return function(i, j) { return (Math.floor(i / 2) + Math.floor(j / 3) ) % 2 == 0; };
+      case QRMaskPattern.PATTERN101 :
+        return function(i, j) { return (i * j) % 2 + (i * j) % 3 == 0; };
+      case QRMaskPattern.PATTERN110 :
+        return function(i, j) { return ( (i * j) % 2 + (i * j) % 3) % 2 == 0; };
+      case QRMaskPattern.PATTERN111 :
+        return function(i, j) { return ( (i * j) % 3 + (i + j) % 2) % 2 == 0; };
+
+      default :
+        throw 'bad maskPattern:' + maskPattern;
+      }
+    };
+
+    _this.getErrorCorrectPolynomial = function(errorCorrectLength) {
+      var a = qrPolynomial([1], 0);
+      for (var i = 0; i < errorCorrectLength; i += 1) {
+        a = a.multiply(qrPolynomial([1, QRMath.gexp(i)], 0) );
+      }
+      return a;
+    };
+
+    _this.getLengthInBits = function(mode, type) {
+
+      if (1 <= type && type < 10) {
+
+        // 1 - 9
+
+        switch(mode) {
+        case QRMode.MODE_NUMBER    : return 10;
+        case QRMode.MODE_ALPHA_NUM : return 9;
+        case QRMode.MODE_8BIT_BYTE : return 8;
+        case QRMode.MODE_KANJI     : return 8;
+        default :
+          throw 'mode:' + mode;
+        }
+
+      } else if (type < 27) {
+
+        // 10 - 26
+
+        switch(mode) {
+        case QRMode.MODE_NUMBER    : return 12;
+        case QRMode.MODE_ALPHA_NUM : return 11;
+        case QRMode.MODE_8BIT_BYTE : return 16;
+        case QRMode.MODE_KANJI     : return 10;
+        default :
+          throw 'mode:' + mode;
+        }
+
+      } else if (type < 41) {
+
+        // 27 - 40
+
+        switch(mode) {
+        case QRMode.MODE_NUMBER    : return 14;
+        case QRMode.MODE_ALPHA_NUM : return 13;
+        case QRMode.MODE_8BIT_BYTE : return 16;
+        case QRMode.MODE_KANJI     : return 12;
+        default :
+          throw 'mode:' + mode;
+        }
+
+      } else {
+        throw 'type:' + type;
+      }
+    };
+
+    _this.getLostPoint = function(qrcode) {
+
+      var moduleCount = qrcode.getModuleCount();
+
+      var lostPoint = 0;
+
+      // LEVEL1
+
+      for (var row = 0; row < moduleCount; row += 1) {
+        for (var col = 0; col < moduleCount; col += 1) {
+
+          var sameCount = 0;
+          var dark = qrcode.isDark(row, col);
+
+          for (var r = -1; r <= 1; r += 1) {
+
+            if (row + r < 0 || moduleCount <= row + r) {
+              continue;
+            }
+
+            for (var c = -1; c <= 1; c += 1) {
+
+              if (col + c < 0 || moduleCount <= col + c) {
+                continue;
+              }
+
+              if (r == 0 && c == 0) {
+                continue;
+              }
+
+              if (dark == qrcode.isDark(row + r, col + c) ) {
+                sameCount += 1;
+              }
+            }
+          }
+
+          if (sameCount > 5) {
+            lostPoint += (3 + sameCount - 5);
+          }
+        }
+      };
+
+      // LEVEL2
+
+      for (var row = 0; row < moduleCount - 1; row += 1) {
+        for (var col = 0; col < moduleCount - 1; col += 1) {
+          var count = 0;
+          if (qrcode.isDark(row, col) ) count += 1;
+          if (qrcode.isDark(row + 1, col) ) count += 1;
+          if (qrcode.isDark(row, col + 1) ) count += 1;
+          if (qrcode.isDark(row + 1, col + 1) ) count += 1;
+          if (count == 0 || count == 4) {
+            lostPoint += 3;
+          }
+        }
+      }
+
+      // LEVEL3
+
+      for (var row = 0; row < moduleCount; row += 1) {
+        for (var col = 0; col < moduleCount - 6; col += 1) {
+          if (qrcode.isDark(row, col)
+              && !qrcode.isDark(row, col + 1)
+              &&  qrcode.isDark(row, col + 2)
+              &&  qrcode.isDark(row, col + 3)
+              &&  qrcode.isDark(row, col + 4)
+              && !qrcode.isDark(row, col + 5)
+              &&  qrcode.isDark(row, col + 6) ) {
+            lostPoint += 40;
+          }
+        }
+      }
+
+      for (var col = 0; col < moduleCount; col += 1) {
+        for (var row = 0; row < moduleCount - 6; row += 1) {
+          if (qrcode.isDark(row, col)
+              && !qrcode.isDark(row + 1, col)
+              &&  qrcode.isDark(row + 2, col)
+              &&  qrcode.isDark(row + 3, col)
+              &&  qrcode.isDark(row + 4, col)
+              && !qrcode.isDark(row + 5, col)
+              &&  qrcode.isDark(row + 6, col) ) {
+            lostPoint += 40;
+          }
+        }
+      }
+
+      // LEVEL4
+
+      var darkCount = 0;
+
+      for (var col = 0; col < moduleCount; col += 1) {
+        for (var row = 0; row < moduleCount; row += 1) {
+          if (qrcode.isDark(row, col) ) {
+            darkCount += 1;
+          }
+        }
+      }
+
+      var ratio = Math.abs(100 * darkCount / moduleCount / moduleCount - 50) / 5;
+      lostPoint += ratio * 10;
+
+      return lostPoint;
+    };
+
+    return _this;
+  }();
+
+  //---------------------------------------------------------------------
+  // QRMath
+  //---------------------------------------------------------------------
+
+  var QRMath = function() {
+
+    var EXP_TABLE = new Array(256);
+    var LOG_TABLE = new Array(256);
+
+    // initialize tables
+    for (var i = 0; i < 8; i += 1) {
+      EXP_TABLE[i] = 1 << i;
+    }
+    for (var i = 8; i < 256; i += 1) {
+      EXP_TABLE[i] = EXP_TABLE[i - 4]
+        ^ EXP_TABLE[i - 5]
+        ^ EXP_TABLE[i - 6]
+        ^ EXP_TABLE[i - 8];
+    }
+    for (var i = 0; i < 255; i += 1) {
+      LOG_TABLE[EXP_TABLE[i] ] = i;
+    }
+
+    var _this = {};
+
+    _this.glog = function(n) {
+
+      if (n < 1) {
+        throw 'glog(' + n + ')';
+      }
+
+      return LOG_TABLE[n];
+    };
+
+    _this.gexp = function(n) {
+
+      while (n < 0) {
+        n += 255;
+      }
+
+      while (n >= 256) {
+        n -= 255;
+      }
+
+      return EXP_TABLE[n];
+    };
+
+    return _this;
+  }();
+
+  //---------------------------------------------------------------------
+  // qrPolynomial
+  //---------------------------------------------------------------------
+
+  function qrPolynomial(num, shift) {
+
+    if (typeof num.length == 'undefined') {
+      throw num.length + '/' + shift;
+    }
+
+    var _num = function() {
+      var offset = 0;
+      while (offset < num.length && num[offset] == 0) {
+        offset += 1;
+      }
+      var _num = new Array(num.length - offset + shift);
+      for (var i = 0; i < num.length - offset; i += 1) {
+        _num[i] = num[i + offset];
+      }
+      return _num;
+    }();
+
+    var _this = {};
+
+    _this.getAt = function(index) {
+      return _num[index];
+    };
+
+    _this.getLength = function() {
+      return _num.length;
+    };
+
+    _this.multiply = function(e) {
+
+      var num = new Array(_this.getLength() + e.getLength() - 1);
+
+      for (var i = 0; i < _this.getLength(); i += 1) {
+        for (var j = 0; j < e.getLength(); j += 1) {
+          num[i + j] ^= QRMath.gexp(QRMath.glog(_this.getAt(i) ) + QRMath.glog(e.getAt(j) ) );
+        }
+      }
+
+      return qrPolynomial(num, 0);
+    };
+
+    _this.mod = function(e) {
+
+      if (_this.getLength() - e.getLength() < 0) {
+        return _this;
+      }
+
+      var ratio = QRMath.glog(_this.getAt(0) ) - QRMath.glog(e.getAt(0) );
+
+      var num = new Array(_this.getLength() );
+      for (var i = 0; i < _this.getLength(); i += 1) {
+        num[i] = _this.getAt(i);
+      }
+
+      for (var i = 0; i < e.getLength(); i += 1) {
+        num[i] ^= QRMath.gexp(QRMath.glog(e.getAt(i) ) + ratio);
+      }
+
+      // recursive call
+      return qrPolynomial(num, 0).mod(e);
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // QRRSBlock
+  //---------------------------------------------------------------------
+
+  var QRRSBlock = function() {
+
+    var RS_BLOCK_TABLE = [
+
+      // L
+      // M
+      // Q
+      // H
+
+      // 1
+      [1, 26, 19],
+      [1, 26, 16],
+      [1, 26, 13],
+      [1, 26, 9],
+
+      // 2
+      [1, 44, 34],
+      [1, 44, 28],
+      [1, 44, 22],
+      [1, 44, 16],
+
+      // 3
+      [1, 70, 55],
+      [1, 70, 44],
+      [2, 35, 17],
+      [2, 35, 13],
+
+      // 4
+      [1, 100, 80],
+      [2, 50, 32],
+      [2, 50, 24],
+      [4, 25, 9],
+
+      // 5
+      [1, 134, 108],
+      [2, 67, 43],
+      [2, 33, 15, 2, 34, 16],
+      [2, 33, 11, 2, 34, 12],
+
+      // 6
+      [2, 86, 68],
+      [4, 43, 27],
+      [4, 43, 19],
+      [4, 43, 15],
+
+      // 7
+      [2, 98, 78],
+      [4, 49, 31],
+      [2, 32, 14, 4, 33, 15],
+      [4, 39, 13, 1, 40, 14],
+
+      // 8
+      [2, 121, 97],
+      [2, 60, 38, 2, 61, 39],
+      [4, 40, 18, 2, 41, 19],
+      [4, 40, 14, 2, 41, 15],
+
+      // 9
+      [2, 146, 116],
+      [3, 58, 36, 2, 59, 37],
+      [4, 36, 16, 4, 37, 17],
+      [4, 36, 12, 4, 37, 13],
+
+      // 10
+      [2, 86, 68, 2, 87, 69],
+      [4, 69, 43, 1, 70, 44],
+      [6, 43, 19, 2, 44, 20],
+      [6, 43, 15, 2, 44, 16],
+
+      // 11
+      [4, 101, 81],
+      [1, 80, 50, 4, 81, 51],
+      [4, 50, 22, 4, 51, 23],
+      [3, 36, 12, 8, 37, 13],
+
+      // 12
+      [2, 116, 92, 2, 117, 93],
+      [6, 58, 36, 2, 59, 37],
+      [4, 46, 20, 6, 47, 21],
+      [7, 42, 14, 4, 43, 15],
+
+      // 13
+      [4, 133, 107],
+      [8, 59, 37, 1, 60, 38],
+      [8, 44, 20, 4, 45, 21],
+      [12, 33, 11, 4, 34, 12],
+
+      // 14
+      [3, 145, 115, 1, 146, 116],
+      [4, 64, 40, 5, 65, 41],
+      [11, 36, 16, 5, 37, 17],
+      [11, 36, 12, 5, 37, 13],
+
+      // 15
+      [5, 109, 87, 1, 110, 88],
+      [5, 65, 41, 5, 66, 42],
+      [5, 54, 24, 7, 55, 25],
+      [11, 36, 12, 7, 37, 13],
+
+      // 16
+      [5, 122, 98, 1, 123, 99],
+      [7, 73, 45, 3, 74, 46],
+      [15, 43, 19, 2, 44, 20],
+      [3, 45, 15, 13, 46, 16],
+
+      // 17
+      [1, 135, 107, 5, 136, 108],
+      [10, 74, 46, 1, 75, 47],
+      [1, 50, 22, 15, 51, 23],
+      [2, 42, 14, 17, 43, 15],
+
+      // 18
+      [5, 150, 120, 1, 151, 121],
+      [9, 69, 43, 4, 70, 44],
+      [17, 50, 22, 1, 51, 23],
+      [2, 42, 14, 19, 43, 15],
+
+      // 19
+      [3, 141, 113, 4, 142, 114],
+      [3, 70, 44, 11, 71, 45],
+      [17, 47, 21, 4, 48, 22],
+      [9, 39, 13, 16, 40, 14],
+
+      // 20
+      [3, 135, 107, 5, 136, 108],
+      [3, 67, 41, 13, 68, 42],
+      [15, 54, 24, 5, 55, 25],
+      [15, 43, 15, 10, 44, 16],
+
+      // 21
+      [4, 144, 116, 4, 145, 117],
+      [17, 68, 42],
+      [17, 50, 22, 6, 51, 23],
+      [19, 46, 16, 6, 47, 17],
+
+      // 22
+      [2, 139, 111, 7, 140, 112],
+      [17, 74, 46],
+      [7, 54, 24, 16, 55, 25],
+      [34, 37, 13],
+
+      // 23
+      [4, 151, 121, 5, 152, 122],
+      [4, 75, 47, 14, 76, 48],
+      [11, 54, 24, 14, 55, 25],
+      [16, 45, 15, 14, 46, 16],
+
+      // 24
+      [6, 147, 117, 4, 148, 118],
+      [6, 73, 45, 14, 74, 46],
+      [11, 54, 24, 16, 55, 25],
+      [30, 46, 16, 2, 47, 17],
+
+      // 25
+      [8, 132, 106, 4, 133, 107],
+      [8, 75, 47, 13, 76, 48],
+      [7, 54, 24, 22, 55, 25],
+      [22, 45, 15, 13, 46, 16],
+
+      // 26
+      [10, 142, 114, 2, 143, 115],
+      [19, 74, 46, 4, 75, 47],
+      [28, 50, 22, 6, 51, 23],
+      [33, 46, 16, 4, 47, 17],
+
+      // 27
+      [8, 152, 122, 4, 153, 123],
+      [22, 73, 45, 3, 74, 46],
+      [8, 53, 23, 26, 54, 24],
+      [12, 45, 15, 28, 46, 16],
+
+      // 28
+      [3, 147, 117, 10, 148, 118],
+      [3, 73, 45, 23, 74, 46],
+      [4, 54, 24, 31, 55, 25],
+      [11, 45, 15, 31, 46, 16],
+
+      // 29
+      [7, 146, 116, 7, 147, 117],
+      [21, 73, 45, 7, 74, 46],
+      [1, 53, 23, 37, 54, 24],
+      [19, 45, 15, 26, 46, 16],
+
+      // 30
+      [5, 145, 115, 10, 146, 116],
+      [19, 75, 47, 10, 76, 48],
+      [15, 54, 24, 25, 55, 25],
+      [23, 45, 15, 25, 46, 16],
+
+      // 31
+      [13, 145, 115, 3, 146, 116],
+      [2, 74, 46, 29, 75, 47],
+      [42, 54, 24, 1, 55, 25],
+      [23, 45, 15, 28, 46, 16],
+
+      // 32
+      [17, 145, 115],
+      [10, 74, 46, 23, 75, 47],
+      [10, 54, 24, 35, 55, 25],
+      [19, 45, 15, 35, 46, 16],
+
+      // 33
+      [17, 145, 115, 1, 146, 116],
+      [14, 74, 46, 21, 75, 47],
+      [29, 54, 24, 19, 55, 25],
+      [11, 45, 15, 46, 46, 16],
+
+      // 34
+      [13, 145, 115, 6, 146, 116],
+      [14, 74, 46, 23, 75, 47],
+      [44, 54, 24, 7, 55, 25],
+      [59, 46, 16, 1, 47, 17],
+
+      // 35
+      [12, 151, 121, 7, 152, 122],
+      [12, 75, 47, 26, 76, 48],
+      [39, 54, 24, 14, 55, 25],
+      [22, 45, 15, 41, 46, 16],
+
+      // 36
+      [6, 151, 121, 14, 152, 122],
+      [6, 75, 47, 34, 76, 48],
+      [46, 54, 24, 10, 55, 25],
+      [2, 45, 15, 64, 46, 16],
+
+      // 37
+      [17, 152, 122, 4, 153, 123],
+      [29, 74, 46, 14, 75, 47],
+      [49, 54, 24, 10, 55, 25],
+      [24, 45, 15, 46, 46, 16],
+
+      // 38
+      [4, 152, 122, 18, 153, 123],
+      [13, 74, 46, 32, 75, 47],
+      [48, 54, 24, 14, 55, 25],
+      [42, 45, 15, 32, 46, 16],
+
+      // 39
+      [20, 147, 117, 4, 148, 118],
+      [40, 75, 47, 7, 76, 48],
+      [43, 54, 24, 22, 55, 25],
+      [10, 45, 15, 67, 46, 16],
+
+      // 40
+      [19, 148, 118, 6, 149, 119],
+      [18, 75, 47, 31, 76, 48],
+      [34, 54, 24, 34, 55, 25],
+      [20, 45, 15, 61, 46, 16]
+    ];
+
+    var qrRSBlock = function(totalCount, dataCount) {
+      var _this = {};
+      _this.totalCount = totalCount;
+      _this.dataCount = dataCount;
+      return _this;
+    };
+
+    var _this = {};
+
+    var getRsBlockTable = function(typeNumber, errorCorrectionLevel) {
+
+      switch(errorCorrectionLevel) {
+      case QRErrorCorrectionLevel.L :
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 0];
+      case QRErrorCorrectionLevel.M :
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 1];
+      case QRErrorCorrectionLevel.Q :
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 2];
+      case QRErrorCorrectionLevel.H :
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 3];
+      default :
+        return undefined;
+      }
+    };
+
+    _this.getRSBlocks = function(typeNumber, errorCorrectionLevel) {
+
+      var rsBlock = getRsBlockTable(typeNumber, errorCorrectionLevel);
+
+      if (typeof rsBlock == 'undefined') {
+        throw 'bad rs block @ typeNumber:' + typeNumber +
+            '/errorCorrectionLevel:' + errorCorrectionLevel;
+      }
+
+      var length = rsBlock.length / 3;
+
+      var list = [];
+
+      for (var i = 0; i < length; i += 1) {
+
+        var count = rsBlock[i * 3 + 0];
+        var totalCount = rsBlock[i * 3 + 1];
+        var dataCount = rsBlock[i * 3 + 2];
+
+        for (var j = 0; j < count; j += 1) {
+          list.push(qrRSBlock(totalCount, dataCount) );
+        }
+      }
+
+      return list;
+    };
+
+    return _this;
+  }();
+
+  //---------------------------------------------------------------------
+  // qrBitBuffer
+  //---------------------------------------------------------------------
+
+  var qrBitBuffer = function() {
+
+    var _buffer = [];
+    var _length = 0;
+
+    var _this = {};
+
+    _this.getBuffer = function() {
+      return _buffer;
+    };
+
+    _this.getAt = function(index) {
+      var bufIndex = Math.floor(index / 8);
+      return ( (_buffer[bufIndex] >>> (7 - index % 8) ) & 1) == 1;
+    };
+
+    _this.put = function(num, length) {
+      for (var i = 0; i < length; i += 1) {
+        _this.putBit( ( (num >>> (length - i - 1) ) & 1) == 1);
+      }
+    };
+
+    _this.getLengthInBits = function() {
+      return _length;
+    };
+
+    _this.putBit = function(bit) {
+
+      var bufIndex = Math.floor(_length / 8);
+      if (_buffer.length <= bufIndex) {
+        _buffer.push(0);
+      }
+
+      if (bit) {
+        _buffer[bufIndex] |= (0x80 >>> (_length % 8) );
+      }
+
+      _length += 1;
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qrNumber
+  //---------------------------------------------------------------------
+
+  var qrNumber = function(data) {
+
+    var _mode = QRMode.MODE_NUMBER;
+    var _data = data;
+
+    var _this = {};
+
+    _this.getMode = function() {
+      return _mode;
+    };
+
+    _this.getLength = function(buffer) {
+      return _data.length;
+    };
+
+    _this.write = function(buffer) {
+
+      var data = _data;
+
+      var i = 0;
+
+      while (i + 2 < data.length) {
+        buffer.put(strToNum(data.substring(i, i + 3) ), 10);
+        i += 3;
+      }
+
+      if (i < data.length) {
+        if (data.length - i == 1) {
+          buffer.put(strToNum(data.substring(i, i + 1) ), 4);
+        } else if (data.length - i == 2) {
+          buffer.put(strToNum(data.substring(i, i + 2) ), 7);
+        }
+      }
+    };
+
+    var strToNum = function(s) {
+      var num = 0;
+      for (var i = 0; i < s.length; i += 1) {
+        num = num * 10 + chatToNum(s.charAt(i) );
+      }
+      return num;
+    };
+
+    var chatToNum = function(c) {
+      if ('0' <= c && c <= '9') {
+        return c.charCodeAt(0) - '0'.charCodeAt(0);
+      }
+      throw 'illegal char :' + c;
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qrAlphaNum
+  //---------------------------------------------------------------------
+
+  var qrAlphaNum = function(data) {
+
+    var _mode = QRMode.MODE_ALPHA_NUM;
+    var _data = data;
+
+    var _this = {};
+
+    _this.getMode = function() {
+      return _mode;
+    };
+
+    _this.getLength = function(buffer) {
+      return _data.length;
+    };
+
+    _this.write = function(buffer) {
+
+      var s = _data;
+
+      var i = 0;
+
+      while (i + 1 < s.length) {
+        buffer.put(
+          getCode(s.charAt(i) ) * 45 +
+          getCode(s.charAt(i + 1) ), 11);
+        i += 2;
+      }
+
+      if (i < s.length) {
+        buffer.put(getCode(s.charAt(i) ), 6);
+      }
+    };
+
+    var getCode = function(c) {
+
+      if ('0' <= c && c <= '9') {
+        return c.charCodeAt(0) - '0'.charCodeAt(0);
+      } else if ('A' <= c && c <= 'Z') {
+        return c.charCodeAt(0) - 'A'.charCodeAt(0) + 10;
+      } else {
+        switch (c) {
+        case ' ' : return 36;
+        case '$' : return 37;
+        case '%' : return 38;
+        case '*' : return 39;
+        case '+' : return 40;
+        case '-' : return 41;
+        case '.' : return 42;
+        case '/' : return 43;
+        case ':' : return 44;
+        default :
+          throw 'illegal char :' + c;
+        }
+      }
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qr8BitByte
+  //---------------------------------------------------------------------
+
+  var qr8BitByte = function(data) {
+
+    var _mode = QRMode.MODE_8BIT_BYTE;
+    var _data = data;
+    var _bytes = qrcode.stringToBytes(data);
+
+    var _this = {};
+
+    _this.getMode = function() {
+      return _mode;
+    };
+
+    _this.getLength = function(buffer) {
+      return _bytes.length;
+    };
+
+    _this.write = function(buffer) {
+      for (var i = 0; i < _bytes.length; i += 1) {
+        buffer.put(_bytes[i], 8);
+      }
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // qrKanji
+  //---------------------------------------------------------------------
+
+  var qrKanji = function(data) {
+
+    var _mode = QRMode.MODE_KANJI;
+    var _data = data;
+
+    var stringToBytes = qrcode.stringToBytesFuncs['SJIS'];
+    if (!stringToBytes) {
+      throw 'sjis not supported.';
+    }
+    !function(c, code) {
+      // self test for sjis support.
+      var test = stringToBytes(c);
+      if (test.length != 2 || ( (test[0] << 8) | test[1]) != code) {
+        throw 'sjis not supported.';
+      }
+    }('\u53cb', 0x9746);
+
+    var _bytes = stringToBytes(data);
+
+    var _this = {};
+
+    _this.getMode = function() {
+      return _mode;
+    };
+
+    _this.getLength = function(buffer) {
+      return ~~(_bytes.length / 2);
+    };
+
+    _this.write = function(buffer) {
+
+      var data = _bytes;
+
+      var i = 0;
+
+      while (i + 1 < data.length) {
+
+        var c = ( (0xff & data[i]) << 8) | (0xff & data[i + 1]);
+
+        if (0x8140 <= c && c <= 0x9FFC) {
+          c -= 0x8140;
+        } else if (0xE040 <= c && c <= 0xEBBF) {
+          c -= 0xC140;
+        } else {
+          throw 'illegal char at ' + (i + 1) + '/' + c;
+        }
+
+        c = ( (c >>> 8) & 0xff) * 0xC0 + (c & 0xff);
+
+        buffer.put(c, 13);
+
+        i += 2;
+      }
+
+      if (i < data.length) {
+        throw 'illegal char at ' + (i + 1);
+      }
+    };
+
+    return _this;
+  };
+
+  //=====================================================================
+  // GIF Support etc.
+  //
+
+  //---------------------------------------------------------------------
+  // byteArrayOutputStream
+  //---------------------------------------------------------------------
+
+  var byteArrayOutputStream = function() {
+
+    var _bytes = [];
+
+    var _this = {};
+
+    _this.writeByte = function(b) {
+      _bytes.push(b & 0xff);
+    };
+
+    _this.writeShort = function(i) {
+      _this.writeByte(i);
+      _this.writeByte(i >>> 8);
+    };
+
+    _this.writeBytes = function(b, off, len) {
+      off = off || 0;
+      len = len || b.length;
+      for (var i = 0; i < len; i += 1) {
+        _this.writeByte(b[i + off]);
+      }
+    };
+
+    _this.writeString = function(s) {
+      for (var i = 0; i < s.length; i += 1) {
+        _this.writeByte(s.charCodeAt(i) );
+      }
+    };
+
+    _this.toByteArray = function() {
+      return _bytes;
+    };
+
+    _this.toString = function() {
+      var s = '';
+      s += '[';
+      for (var i = 0; i < _bytes.length; i += 1) {
+        if (i > 0) {
+          s += ',';
+        }
+        s += _bytes[i];
+      }
+      s += ']';
+      return s;
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // base64EncodeOutputStream
+  //---------------------------------------------------------------------
+
+  var base64EncodeOutputStream = function() {
+
+    var _buffer = 0;
+    var _buflen = 0;
+    var _length = 0;
+    var _base64 = '';
+
+    var _this = {};
+
+    var writeEncoded = function(b) {
+      _base64 += String.fromCharCode(encode(b & 0x3f) );
+    };
+
+    var encode = function(n) {
+      if (n < 0) {
+        // error.
+      } else if (n < 26) {
+        return 0x41 + n;
+      } else if (n < 52) {
+        return 0x61 + (n - 26);
+      } else if (n < 62) {
+        return 0x30 + (n - 52);
+      } else if (n == 62) {
+        return 0x2b;
+      } else if (n == 63) {
+        return 0x2f;
+      }
+      throw 'n:' + n;
+    };
+
+    _this.writeByte = function(n) {
+
+      _buffer = (_buffer << 8) | (n & 0xff);
+      _buflen += 8;
+      _length += 1;
+
+      while (_buflen >= 6) {
+        writeEncoded(_buffer >>> (_buflen - 6) );
+        _buflen -= 6;
+      }
+    };
+
+    _this.flush = function() {
+
+      if (_buflen > 0) {
+        writeEncoded(_buffer << (6 - _buflen) );
+        _buffer = 0;
+        _buflen = 0;
+      }
+
+      if (_length % 3 != 0) {
+        // padding
+        var padlen = 3 - _length % 3;
+        for (var i = 0; i < padlen; i += 1) {
+          _base64 += '=';
+        }
+      }
+    };
+
+    _this.toString = function() {
+      return _base64;
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // base64DecodeInputStream
+  //---------------------------------------------------------------------
+
+  var base64DecodeInputStream = function(str) {
+
+    var _str = str;
+    var _pos = 0;
+    var _buffer = 0;
+    var _buflen = 0;
+
+    var _this = {};
+
+    _this.read = function() {
+
+      while (_buflen < 8) {
+
+        if (_pos >= _str.length) {
+          if (_buflen == 0) {
+            return -1;
+          }
+          throw 'unexpected end of file./' + _buflen;
+        }
+
+        var c = _str.charAt(_pos);
+        _pos += 1;
+
+        if (c == '=') {
+          _buflen = 0;
+          return -1;
+        } else if (c.match(/^\s$/) ) {
+          // ignore if whitespace.
+          continue;
+        }
+
+        _buffer = (_buffer << 6) | decode(c.charCodeAt(0) );
+        _buflen += 6;
+      }
+
+      var n = (_buffer >>> (_buflen - 8) ) & 0xff;
+      _buflen -= 8;
+      return n;
+    };
+
+    var decode = function(c) {
+      if (0x41 <= c && c <= 0x5a) {
+        return c - 0x41;
+      } else if (0x61 <= c && c <= 0x7a) {
+        return c - 0x61 + 26;
+      } else if (0x30 <= c && c <= 0x39) {
+        return c - 0x30 + 52;
+      } else if (c == 0x2b) {
+        return 62;
+      } else if (c == 0x2f) {
+        return 63;
+      } else {
+        throw 'c:' + c;
+      }
+    };
+
+    return _this;
+  };
+
+  //---------------------------------------------------------------------
+  // gifImage (B/W)
+  //---------------------------------------------------------------------
+
+  var gifImage = function(width, height) {
+
+    var _width = width;
+    var _height = height;
+    var _data = new Array(width * height);
+
+    var _this = {};
+
+    _this.setPixel = function(x, y, pixel) {
+      _data[y * _width + x] = pixel;
+    };
+
+    _this.write = function(out) {
+
+      //---------------------------------
+      // GIF Signature
+
+      out.writeString('GIF87a');
+
+      //---------------------------------
+      // Screen Descriptor
+
+      out.writeShort(_width);
+      out.writeShort(_height);
+
+      out.writeByte(0x80); // 2bit
+      out.writeByte(0);
+      out.writeByte(0);
+
+      //---------------------------------
+      // Global Color Map
+
+      // black
+      out.writeByte(0x00);
+      out.writeByte(0x00);
+      out.writeByte(0x00);
+
+      // white
+      out.writeByte(0xff);
+      out.writeByte(0xff);
+      out.writeByte(0xff);
+
+      //---------------------------------
+      // Image Descriptor
+
+      out.writeString(',');
+      out.writeShort(0);
+      out.writeShort(0);
+      out.writeShort(_width);
+      out.writeShort(_height);
+      out.writeByte(0);
+
+      //---------------------------------
+      // Local Color Map
+
+      //---------------------------------
+      // Raster Data
+
+      var lzwMinCodeSize = 2;
+      var raster = getLZWRaster(lzwMinCodeSize);
+
+      out.writeByte(lzwMinCodeSize);
+
+      var offset = 0;
+
+      while (raster.length - offset > 255) {
+        out.writeByte(255);
+        out.writeBytes(raster, offset, 255);
+        offset += 255;
+      }
+
+      out.writeByte(raster.length - offset);
+      out.writeBytes(raster, offset, raster.length - offset);
+      out.writeByte(0x00);
+
+      //---------------------------------
+      // GIF Terminator
+      out.writeString(';');
+    };
+
+    var bitOutputStream = function(out) {
+
+      var _out = out;
+      var _bitLength = 0;
+      var _bitBuffer = 0;
+
+      var _this = {};
+
+      _this.write = function(data, length) {
+
+        if ( (data >>> length) != 0) {
+          throw 'length over';
+        }
+
+        while (_bitLength + length >= 8) {
+          _out.writeByte(0xff & ( (data << _bitLength) | _bitBuffer) );
+          length -= (8 - _bitLength);
+          data >>>= (8 - _bitLength);
+          _bitBuffer = 0;
+          _bitLength = 0;
+        }
+
+        _bitBuffer = (data << _bitLength) | _bitBuffer;
+        _bitLength = _bitLength + length;
+      };
+
+      _this.flush = function() {
+        if (_bitLength > 0) {
+          _out.writeByte(_bitBuffer);
+        }
+      };
+
+      return _this;
+    };
+
+    var getLZWRaster = function(lzwMinCodeSize) {
+
+      var clearCode = 1 << lzwMinCodeSize;
+      var endCode = (1 << lzwMinCodeSize) + 1;
+      var bitLength = lzwMinCodeSize + 1;
+
+      // Setup LZWTable
+      var table = lzwTable();
+
+      for (var i = 0; i < clearCode; i += 1) {
+        table.add(String.fromCharCode(i) );
+      }
+      table.add(String.fromCharCode(clearCode) );
+      table.add(String.fromCharCode(endCode) );
+
+      var byteOut = byteArrayOutputStream();
+      var bitOut = bitOutputStream(byteOut);
+
+      // clear code
+      bitOut.write(clearCode, bitLength);
+
+      var dataIndex = 0;
+
+      var s = String.fromCharCode(_data[dataIndex]);
+      dataIndex += 1;
+
+      while (dataIndex < _data.length) {
+
+        var c = String.fromCharCode(_data[dataIndex]);
+        dataIndex += 1;
+
+        if (table.contains(s + c) ) {
+
+          s = s + c;
+
+        } else {
+
+          bitOut.write(table.indexOf(s), bitLength);
+
+          if (table.size() < 0xfff) {
+
+            if (table.size() == (1 << bitLength) ) {
+              bitLength += 1;
+            }
+
+            table.add(s + c);
+          }
+
+          s = c;
+        }
+      }
+
+      bitOut.write(table.indexOf(s), bitLength);
+
+      // end code
+      bitOut.write(endCode, bitLength);
+
+      bitOut.flush();
+
+      return byteOut.toByteArray();
+    };
+
+    var lzwTable = function() {
+
+      var _map = {};
+      var _size = 0;
+
+      var _this = {};
+
+      _this.add = function(key) {
+        if (_this.contains(key) ) {
+          throw 'dup key:' + key;
+        }
+        _map[key] = _size;
+        _size += 1;
+      };
+
+      _this.size = function() {
+        return _size;
+      };
+
+      _this.indexOf = function(key) {
+        return _map[key];
+      };
+
+      _this.contains = function(key) {
+        return typeof _map[key] != 'undefined';
+      };
+
+      return _this;
+    };
+
+    return _this;
+  };
+
+  var createDataURL = function(width, height, getPixel) {
+    var gif = gifImage(width, height);
+    for (var y = 0; y < height; y += 1) {
+      for (var x = 0; x < width; x += 1) {
+        gif.setPixel(x, y, getPixel(x, y) );
+      }
+    }
+
+    var b = byteArrayOutputStream();
+    gif.write(b);
+
+    var base64 = base64EncodeOutputStream();
+    var bytes = b.toByteArray();
+    for (var i = 0; i < bytes.length; i += 1) {
+      base64.writeByte(bytes[i]);
+    }
+    base64.flush();
+
+    return 'data:image/gif;base64,' + base64;
+  };
+
+  //---------------------------------------------------------------------
+  // returns qrcode function.
+
+  return qrcode;
+}();
+
+// multibyte support
+!function() {
+
+  qrcode.stringToBytesFuncs['UTF-8'] = function(s) {
+    // http://stackoverflow.com/questions/18729405/how-to-convert-utf8-string-to-byte-array
+    function toUTF8Array(str) {
+      var utf8 = [];
+      for (var i=0; i < str.length; i++) {
+        var charcode = str.charCodeAt(i);
+        if (charcode < 0x80) utf8.push(charcode);
+        else if (charcode < 0x800) {
+          utf8.push(0xc0 | (charcode >> 6),
+              0x80 | (charcode & 0x3f));
+        }
+        else if (charcode < 0xd800 || charcode >= 0xe000) {
+          utf8.push(0xe0 | (charcode >> 12),
+              0x80 | ((charcode>>6) & 0x3f),
+              0x80 | (charcode & 0x3f));
+        }
+        // surrogate pair
+        else {
+          i++;
+          // UTF-16 encodes 0x10000-0x10FFFF by
+          // subtracting 0x10000 and splitting the
+          // 20 bits of 0x0-0xFFFFF into two halves
+          charcode = 0x10000 + (((charcode & 0x3ff)<<10)
+            | (str.charCodeAt(i) & 0x3ff));
+          utf8.push(0xf0 | (charcode >>18),
+              0x80 | ((charcode>>12) & 0x3f),
+              0x80 | ((charcode>>6) & 0x3f),
+              0x80 | (charcode & 0x3f));
+        }
+      }
+      return utf8;
+    }
+    return toUTF8Array(s);
+  };
+
+}();
+
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
+      define([], factory);
+  } else if (typeof exports === 'object') {
+      module.exports = factory();
+  }
+}(function () {
+    return qrcode;
+}));
+
+</script>
+<script src="acervo.js"></script>
+<script src="base.js"></script>
+<script src="loja.js"></script>
+<script>
+"use strict";
+/* ==================================================================
+   ACERVO LITERÁRIO — catálogo
+   Dados em BOOKS (gerado). Sem dependências externas além das fontes.
+   ================================================================== */
+
+</script>
+<script>
+"use strict";
+const Q = {
+  base: St.get('acv_base', 'https://rodrigoch98.github.io/Sebo'),
+  style: St.get('acv_qrstyle', 'round'),
+  logo: St.get('acv_qrlogo', '1'),
+  color: St.get('acv_qrcolor', 'ink'),
+  drawn: St.get('acv_drawn', []),
+  onlyDrawnMode: false,
+  view: [],
+
+  init() {
+    document.documentElement.setAttribute('data-theme', St.get('acv_theme', 'light'));
+    $('#base').value = this.base;
+    this.seg('styleSeg', this.style, v => { this.style = v; St.set('acv_qrstyle', v); this.render(); });
+    this.seg('logoSeg', this.logo, v => { this.logo = v; St.set('acv_qrlogo', v); this.render(); });
+    this.seg('colorSeg', this.color, v => { this.color = v; St.set('acv_qrcolor', v); this.render(); });
+    let t;
+    $('#q').addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => this.render(), 200); });
+    $('#hideSold').addEventListener('change', () => this.render());
+    $('#onlyKits').addEventListener('change', () => this.render());
+    this.paintDrawList();
+    this.render();
+    Loja.init({ onChange: () => { if (!this._t) this._t = setTimeout(() => { this._t = 0; this.render(); }, 250); } });
+  },
+
+  seg(id, val, cb) {
+    const box = $('#' + id);
+    $$('button', box).forEach(b => {
+      b.classList.toggle('on', b.dataset.v === val);
+      b.onclick = () => { $$('button', box).forEach(x => x.classList.remove('on')); b.classList.add('on'); cb(b.dataset.v); };
+    });
+  },
+
+  urlFor(b) { return this.base.replace(/\/+$/, '') + '/bookstore.html?id=' + encodeURIComponent(b.slug); },
+
+  applyBase() {
+    const v = $('#base').value.trim();
+    if (!v) return this.toast('Informe o endereço do site');
+    this.base = v.replace(/\/+$/, '');
+    St.set('acv_base', this.base);
+    this.render();
+    this.toast('QR Codes atualizados!', 1);
+  },
+
+  /* ---------- desenho do QR ---------- */
+  makeCanvas(b, px) {
+    const size = px || 320;
+    const cv = document.createElement('canvas');
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    cv.width = cv.height = size * dpr;
+    cv.style.width = cv.style.height = '100%';
+    const g = cv.getContext('2d');
+    g.scale(dpr, dpr);
+
+    const qr = qrcode(0, 'H');
+    qr.addData(this.urlFor(b));
+    qr.make();
+    const n = qr.getModuleCount();
+    const pad = 4;
+    const cell = size / (n + pad * 2);
+    const fg = this.color === 'gold' ? '#9a6c1f' : '#14100c';
+
+    g.fillStyle = '#fff'; g.fillRect(0, 0, size, size);
+    g.fillStyle = fg;
+
+    const hole = this.logo === '1';
+    const mid = n / 2, holeR = n * 0.115;
+    const isDark = (r, c) => r >= 0 && c >= 0 && r < n && c < n && qr.isDark(r, c);
+
+    for (let r = 0; r < n; r++) {
+      for (let c = 0; c < n; c++) {
+        if (!qr.isDark(r, c)) continue;
+        if (hole && Math.abs(r + .5 - mid) < holeR && Math.abs(c + .5 - mid) < holeR) continue;
+        const x = (c + pad) * cell, y = (r + pad) * cell;
+        // olhos de posicionamento: desenhados inteiros depois
+        const inEye = (r < 7 && c < 7) || (r < 7 && c >= n - 7) || (r >= n - 7 && c < 7);
+        if (inEye) continue;
+        if (this.style === 'square') { g.fillRect(x, y, cell + .5, cell + .5); continue; }
+        if (this.style === 'dot') {
+          // raio generoso: pontos pequenos demais derrubam a leitura da câmera
+          g.beginPath(); g.arc(x + cell / 2, y + cell / 2, cell * .56, 0, 7); g.fill(); continue;
+        }
+        // arredondado: cantos suaves só onde não há vizinho
+        const rr = cell * .38;
+        const tl = !isDark(r - 1, c) && !isDark(r, c - 1) ? rr : 0;
+        const tr = !isDark(r - 1, c) && !isDark(r, c + 1) ? rr : 0;
+        const br = !isDark(r + 1, c) && !isDark(r, c + 1) ? rr : 0;
+        const bl = !isDark(r + 1, c) && !isDark(r, c - 1) ? rr : 0;
+        g.beginPath();
+        g.moveTo(x + tl, y);
+        g.lineTo(x + cell - tr, y); g.quadraticCurveTo(x + cell, y, x + cell, y + tr);
+        g.lineTo(x + cell, y + cell - br); g.quadraticCurveTo(x + cell, y + cell, x + cell - br, y + cell);
+        g.lineTo(x + bl, y + cell); g.quadraticCurveTo(x, y + cell, x, y + cell - bl);
+        g.lineTo(x, y + tl); g.quadraticCurveTo(x, y, x + tl, y);
+        g.fill();
+      }
+    }
+
+    // olhos
+    const eye = (er, ec) => {
+      const x = (ec + pad) * cell, y = (er + pad) * cell, s = cell * 7;
+      const rad = this.style === 'square' ? 0 : cell * 1.7;
+      const rect = (X, Y, S, R) => {
+        g.beginPath();
+        g.moveTo(X + R, Y);
+        g.arcTo(X + S, Y, X + S, Y + S, R); g.arcTo(X + S, Y + S, X, Y + S, R);
+        g.arcTo(X, Y + S, X, Y, R); g.arcTo(X, Y, X + S, Y, R);
+        g.closePath();
+      };
+      g.fillStyle = fg; rect(x, y, s, rad); g.fill();
+      g.fillStyle = '#fff'; rect(x + cell, y + cell, s - cell * 2, Math.max(0, rad - cell)); g.fill();
+      g.fillStyle = fg; rect(x + cell * 2, y + cell * 2, s - cell * 4, Math.max(0, rad - cell * 2)); g.fill();
+    };
+    eye(0, 0); eye(0, n - 7); eye(n - 7, 0);
+
+    // miolo com o livrinho
+    if (hole) {
+      const cx = size / 2, hs = holeR * 2 * cell;
+      g.fillStyle = '#fff';
+      g.beginPath();
+      const R = hs * .22, X = cx - hs / 2, Y = cx - hs / 2;
+      g.moveTo(X + R, Y);
+      g.arcTo(X + hs, Y, X + hs, Y + hs, R); g.arcTo(X + hs, Y + hs, X, Y + hs, R);
+      g.arcTo(X, Y + hs, X, Y, R); g.arcTo(X, Y, X + hs, Y, R);
+      g.closePath(); g.fill();
+      g.strokeStyle = fg; g.lineWidth = Math.max(1, hs * .045);
+      g.lineJoin = g.lineCap = 'round';
+      const w = hs * .30, h = hs * .26;
+      g.beginPath();
+      g.moveTo(cx - w, cx - h); g.lineTo(cx - w * .25, cx - h); 
+      g.quadraticCurveTo(cx, cx - h * .78, cx, cx - h * .5);
+      g.lineTo(cx, cx + h); g.quadraticCurveTo(cx, cx + h * .55, cx - w * .25, cx + h * .55);
+      g.lineTo(cx - w, cx + h * .55); g.closePath(); g.stroke();
+      g.beginPath();
+      g.moveTo(cx + w, cx - h); g.lineTo(cx + w * .25, cx - h);
+      g.quadraticCurveTo(cx, cx - h * .78, cx, cx - h * .5);
+      g.lineTo(cx, cx + h); g.quadraticCurveTo(cx, cx + h * .55, cx + w * .25, cx + h * .55);
+      g.lineTo(cx + w, cx + h * .55); g.closePath(); g.stroke();
+    }
+    return cv;
+  },
+
+  /* ---------- listagem ---------- */
+  pool() {
+    const q = norm($('#q').value).trim();
+    let list = BOOKS.slice();
+    if ($('#hideSold').checked) list = list.filter(aVenda);
+    if ($('#onlyKits').checked) list = list.filter(b => b.badge === 'kit');
+    if (this.onlyDrawnMode && this.drawn.length) list = list.filter(b => this.drawn.includes(b.slug));
+    if (q) {
+      const terms = q.split(/\s+/);
+      list = list.filter(b => { const h = norm(b.t + ' ' + b.author + ' ' + b.sg); return terms.every(t => h.includes(t)); });
+    }
+    return list.sort((a, b) => (a.sg || 'zzz').localeCompare(b.sg || 'zzz', 'pt-BR') || a.t.localeCompare(b.t, 'pt-BR'));
+  },
+
+  render() {
+    const list = this.pool();
+    this.view = list;
+    $('#qcount').innerHTML = `<b>${list.length}</b> QR ${list.length === 1 ? 'Code' : 'Codes'} · apontando para <b>${esc(this.base.replace(/^https?:\/\//, ''))}/bookstore.html</b>`;
+    $('#qempty').hidden = list.length > 0;
+    const grid = $('#grid');
+    grid.innerHTML = '';
+    const frag = document.createDocumentFragment();
+    list.forEach(b => {
+      const el = document.createElement('div');
+      el.className = 'qc' + (b.s || b.fora ? ' sold' : '') + (this.drawn.includes(b.slug) ? ' drawn' : '');
+      el.innerHTML = `<div class="cvbox"></div>
+        <div class="qc-t">${esc(b.titleMain || b.t)}</div>
+        <div class="qc-m"><span>${esc(b.sg || COND[b.cond].t)}</span><b>${b.s ? 'Vendido' : b.fora ? 'Saiu num kit' : b.st === 'reservado' ? 'Reservado' : money(b.v)}</b></div>
+        <div class="qc-a">
+          <button data-dl="${b.slug}">${icon('i-up', 13)} Baixar</button>
+          <button data-open="${b.slug}">${icon('i-share', 13)} Abrir</button>
+        </div>`;
+      el.querySelector('.cvbox').replaceWith(this.makeCanvas(b, 300));
+      el.querySelector('[data-dl]').onclick = () => this.download(b);
+      el.querySelector('[data-open]').onclick = () => open(this.urlFor(b), '_blank');
+      frag.appendChild(el);
+    });
+    grid.appendChild(frag);
+  },
+
+  download(b) {
+    const cv = this.makeCanvas(b, 900);
+    const a = document.createElement('a');
+    a.download = 'qr-' + b.slug + '.png';
+    a.href = cv.toDataURL('image/png');
+    a.click();
+    this.toast('QR baixado!', 1);
+  },
+
+  /* ---------- sorteio ---------- */
+  draw() {
+    const avail = BOOKS.filter(b => b.st === 'livre');
+    // ordem de coleção: só oferece o volume N se os anteriores já saíram
+    const bySaga = {};
+    avail.forEach(b => { if (b.sg) (bySaga[b.sg] = bySaga[b.sg] || []).push(b); });
+    const ok = avail.filter(b => {
+      if (!b.sg || b.badge === 'kit') return true;
+      const all = BOOKS.filter(x => x.sg === b.sg && x.badge !== 'kit');
+      const idx = all.indexOf(b);
+      return all.slice(0, idx).every(x => x.s);
+    });
+    const base = ok.length >= 10 ? ok : avail;
+    // equilibra por gênero, sem repetir saga
+    const byG = {};
+    base.forEach(b => { const g = b.g[0] || 'Outros'; (byG[g] = byG[g] || []).push(b); });
+    const genres = Object.keys(byG).sort(() => .5 - Math.random());
+    const pick = [], usedSaga = new Set();
+    let guard = 0;
+    while (pick.length < 10 && guard++ < 400) {
+      for (const g of genres) {
+        if (pick.length >= 10) break;
+        const bag = byG[g].filter(b => !pick.includes(b) && (!b.sg || !usedSaga.has(b.sg)));
+        if (!bag.length) continue;
+        const b = bag[Math.floor(Math.random() * bag.length)];
+        pick.push(b); if (b.sg) usedSaga.add(b.sg);
+      }
+      if (guard > 40) usedSaga.clear();
+    }
+    this.drawn = pick.slice(0, 10).map(b => b.slug);
+    St.set('acv_drawn', this.drawn);
+    this.paintDrawList();
+    this.render();
+    this.toast(`${this.drawn.length} livros sorteados!`, 1);
+  },
+
+  paintDrawList() {
+    const box = $('#drawList');
+    if (!this.drawn.length) { box.innerHTML = '<span class="hint" style="margin:0">Clique em <b>Sortear 10 livros</b> para montar a vitrine da semana.</span>'; return; }
+    box.innerHTML = this.drawn.map((s, i) => {
+      const b = BY[s]; if (!b) return '';
+      return `<span class="dl-i"><b>${i + 1}</b> ${esc(b.titleMain || b.t)} · ${money(b.v)}</span>`;
+    }).join('');
+  },
+
+  onlyDrawn() {
+    if (!this.drawn.length) return this.toast('Sorteie os 10 livros primeiro');
+    this.onlyDrawnMode = !this.onlyDrawnMode;
+    this.render();
+    this.toast(this.onlyDrawnMode ? 'Mostrando só os sorteados' : 'Mostrando o acervo todo', 1);
+  },
+  clearDraw() { this.drawn = []; this.onlyDrawnMode = false; St.set('acv_drawn', []); this.paintDrawList(); this.render(); },
+
+  /* ---------- impressão ---------- */
+  buildSheet(list) {
+    const g = $('#sgrid');
+    g.innerHTML = '';
+    list.forEach(b => {
+      const d = document.createElement('div');
+      d.className = 'si';
+      const img = document.createElement('img');
+      img.src = this.makeCanvas(b, 420).toDataURL('image/png');
+      d.appendChild(img);
+      const t = document.createElement('div'); t.className = 't'; t.textContent = b.titleMain || b.t; d.appendChild(t);
+      const p = document.createElement('div'); p.className = 'p'; p.textContent = b.s ? 'Vendido' : b.fora ? '—' : money(b.v); d.appendChild(p);
+      const s = document.createElement('div'); s.className = 's'; s.textContent = b.sg || COND[b.cond].t; d.appendChild(s);
+      g.appendChild(d);
+    });
+  },
+  printAll() {
+    if (!this.view.length) return this.toast('Nada para imprimir');
+    this.buildSheet(this.view); setTimeout(() => print(), 120);
+  },
+  printDrawn() {
+    if (!this.drawn.length) return this.toast('Sorteie os 10 livros primeiro');
+    this.buildSheet(this.drawn.map(s => BY[s]).filter(Boolean)); setTimeout(() => print(), 120);
+  },
+
+  toast(msg, ok) {
+    const t = document.createElement('div');
+    t.className = 'toast' + (ok ? ' ok' : '');
+    t.innerHTML = icon(ok ? 'i-check' : 'i-info', 16) + '<span>' + esc(msg) + '</span>';
+    $('#toasts').appendChild(t);
+    setTimeout(() => { t.style.opacity = '0'; t.style.transition = '.28s'; setTimeout(() => t.remove(), 300); }, 2400);
+  }
+};
+
+document.readyState === 'loading'
+  ? addEventListener('DOMContentLoaded', () => Q.init(), { once: true })
+  : Q.init();
+</script>
+</body>
+</html>
