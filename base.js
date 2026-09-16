@@ -1,6 +1,25 @@
 /* ==========================================================================
-   base.js — o que as quatro páginas têm em comum: configuração, atalhos,
-   formatação, o catálogo em memória e o sistema de capas em cascata.
+   base.js — o que as páginas têm em comum: configuração, atalhos,
+   formatação, o catálogo em memória e o sistema de capas.
+
+   MUDANÇA IMPORTANTE (set/2026)
+   O site NÃO consulta mais nenhuma API de capas em tempo real. Antes ele
+   perguntava ao Google Books e à Open Library a cada card, e isso causava os
+   dois defeitos que apareciam na tela:
+
+     1. capa que não carregava — a cota diária do Google estourava, a resposta
+        vinha 429 e o card ficava sem foto;
+     2. capa de edição estrangeira — a busca casava pelo título, sem saber que
+        edição era, e trazia a capa americana no lugar da brasileira.
+
+   Agora a capa vem SÓ do que está escrito no cadastro. A cascata é:
+
+     1. campo `img` do anúncio (URL fixa, escolhida e conferida por você)
+     2. montagem das capas dos volumes, quando o anúncio é uma coleção `parts`
+     3. capa desenhada na hora a partir de título, autor e saga
+
+   Nenhuma dessas etapas depende de serviço de terceiros respondendo bem, e
+   nenhuma pode trazer a capa de outro livro.
    ========================================================================== */
 "use strict";
 
@@ -15,6 +34,7 @@ const BOOKS = RAW.map(b => ({
   v: b.v, op: b.op || 0, cond: b.cond, q: b.q, d: b.d, sg: b.sg || "",
   badge: b.badge || "", img: b.img || "", setOf: b.setOf || 0,
   parts: b.parts || [],        // anúncios que esta coleção cobre
+  revisar: !!b.revisar,        // capa achada automaticamente, edição a conferir
   estatico: !!b.s,             // vendido direto no cadastro
   s: !!b.s,                    // vendido (ao vivo)
   fora: false,                 // sumiu porque um anúncio sobreposto saiu
@@ -32,7 +52,8 @@ const aVenda = b => !b.s && !b.fora;
 /* ---------- storage seguro ---------- */
 const St = {
   get(k, fb) { try { const v = localStorage.getItem(k); return v == null ? fb : JSON.parse(v); } catch (e) { return fb; } },
-  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
+  del(k) { try { localStorage.removeItem(k); } catch (e) {} }
 };
 
 /* ---------- helpers ---------- */
@@ -52,16 +73,46 @@ const COND = {
 };
 
 /* ==================================================================
-   CAPAS — resolução em cascata, nunca quebra
-   1) URL curada no cadastro   2) cache local   3) Google Books
-   4) Open Library             5) capa desenhada em SVG
+   CAPAS
    ================================================================== */
 const Cover = {
-  cache: St.get('acv_covers3', {}),
-  bad: St.get('acv_bad3', {}),
-  inflight: new Map(),
 
-  save() { St.set('acv_covers3', this.cache); St.set('acv_bad3', this.bad); },
+  /* Diário de carregamento. Guarda quais URLs do cadastro carregaram e
+     quais falharam NESTE navegador, que é o único lugar onde dá para
+     saber isso de verdade. A página capas.html lê daqui para montar o
+     relatório do que precisa ser trocado. */
+  log: { ok: {}, erro: {} },
+
+  iniciado: false,
+  inicia() {
+    if (this.iniciado) return;
+    this.iniciado = true;
+    /* limpa o cache da busca antiga: ele guardava URLs do Google Books,
+       inclusive de edição estrangeira, e voltaria a aparecer sem isso */
+    St.del('acv_covers3'); St.del('acv_bad3');
+    St.del('acv_covers2'); St.del('acv_bad2');
+    St.del('acv_covers'); St.del('acv_bad');
+    this.log = St.get('acv_capas_log', { ok: {}, erro: {} });
+    if (!this.log || typeof this.log !== 'object') this.log = { ok: {}, erro: {} };
+    this.log.ok = this.log.ok || {}; this.log.erro = this.log.erro || {};
+  },
+  anota(slug, url, deu) {
+    this.inicia();
+    if (deu) { this.log.ok[slug] = url; delete this.log.erro[slug]; }
+    else { this.log.erro[slug] = url; delete this.log.ok[slug]; }
+    clearTimeout(this._gv);
+    this._gv = setTimeout(() => St.set('acv_capas_log', this.log), 400);
+  },
+  /* usado por capas.html */
+  relatorio() {
+    this.inicia();
+    return {
+      ok: Object.keys(this.log.ok).length,
+      erro: Object.keys(this.log.erro),
+      erroUrl: Object.assign({}, this.log.erro)
+    };
+  },
+  limpaLog() { this.log = { ok: {}, erro: {} }; St.set('acv_capas_log', this.log); },
 
   /* paleta determinística a partir do texto */
   hash(s) { let h = 0; for (let i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) | 0; } return Math.abs(h); },
@@ -120,140 +171,153 @@ ${saga ? `<text x="150" y="404" font-family="Helvetica,Arial,sans-serif" font-si
   },
 
   /* ---------------------------------------------------------------
-     Busca online. Regras aprendidas na marra:
-     - no máximo 3 buscas ao mesmo tempo (o Google corta em 429
-       quando a página abre 60 cards de uma vez);
-     - toda busca tem prazo; nada pode ficar pendurado;
-     - depois de 4 recusas seguidas do Google, para de insistir
-       nele pelo resto da visita e vai direto para a Open Library.
+     Coleção montada por você não existe como produto em lugar nenhum,
+     então não há foto de caixa para procurar. A capa dela é a montagem
+     das capas dos próprios volumes: mostra exatamente o que vai junto
+     e acompanha sozinha qualquer capa que você preencher depois.
      --------------------------------------------------------------- */
-  fila: [], ativos: 0, MAX: 3, falhasGoogle: 0, googleFora: false,
-
-  naFila(fn) {
-    return new Promise(resolve => {
-      this.fila.push({ fn, resolve });
-      this.roda();
-    });
+  membros(b, limite) {
+    const vistos = new Set();
+    const saida = [];
+    const anda = slug => {
+      if (saida.length >= (limite || 3) || vistos.has(slug)) return;
+      vistos.add(slug);
+      const x = BY[slug];
+      if (!x) return;
+      if (x.parts && x.parts.length) { x.parts.forEach(anda); return; }
+      saida.push(x);
+    };
+    (b.parts || []).forEach(anda);
+    return saida;
   },
-  roda() {
-    while (this.ativos < this.MAX && this.fila.length) {
-      const t = this.fila.shift();
-      this.ativos++;
-      Promise.resolve().then(t.fn).catch(() => null).then(v => {
-        this.ativos--; t.resolve(v); this.roda();
+
+  montagem(slot, b, eager) {
+    const vols = this.membros(b, 3);
+    if (vols.length < 2) return false;
+
+    /* estilo aplicado em linha e com !important: assim a montagem se encaixa
+       em qualquer slot das quatro páginas sem depender do CSS de cada uma */
+    const st = (el, css) => { for (const k in css) el.style.setProperty(k, css[k], 'important'); };
+    const [dark, mid, light] = this.palette(b);
+
+    const caixa = document.createElement('div');
+    caixa.className = 'gen';
+    st(caixa, {
+      position: 'absolute', inset: '0', width: '100%', height: '100%',
+      display: 'block', overflow: 'hidden', opacity: '0', transition: 'opacity .35s',
+      /* fundo escurecido de propósito: é o que faz as capas dos volumes
+         saltarem, já que elas costumam repetir a cor da própria saga */
+      background: 'linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.3)),'
+                + 'linear-gradient(140deg,' + dark + ',' + mid + ')'
+    });
+
+    /* leque centralizado: o volume 1 fica na frente, os outros abrem para os lados */
+    const poses = vols.length === 2
+      ? [{ l: 3, w: 62, r: -7, dy: 0, z: 2 }, { l: 35, w: 62, r: 7, dy: 0, z: 1 }]
+      : [{ l: 0, w: 58, r: -11, dy: 3, z: 1 }, { l: 19, w: 64, r: 0, dy: -2, z: 3 }, { l: 42, w: 58, r: 11, dy: 3, z: 2 }];
+    const ordem = vols.length === 3 ? [vols[1], vols[0], vols[2]] : vols;
+    const pose = vols.length === 3 ? [poses[1], poses[0], poses[2]] : poses;
+
+    ordem.forEach((v, i) => {
+      const p = pose[i];
+      const im = document.createElement('img');
+      im.alt = '';
+      im.decoding = 'async';
+      im.loading = eager ? 'eager' : 'lazy';
+      st(im, {
+        position: 'absolute', left: p.l + '%', top: '50%', width: p.w + '%',
+        height: 'auto', 'aspect-ratio': '2 / 3', 'object-fit': 'cover',
+        'z-index': String(p.z),
+        transform: 'translateY(calc(-50% + ' + p.dy + '%)) rotate(' + p.r + 'deg)',
+        'border-radius': '3px', 'box-shadow': '0 8px 20px rgba(0,0,0,.42)', opacity: '1'
       });
-    }
-  },
-
-  /* fetch que desiste sozinho */
-  async pega(url, ms) {
-    const ac = ('AbortController' in window) ? new AbortController() : null;
-    const t = setTimeout(() => ac && ac.abort(), ms || 7000);
-    try {
-      const r = await fetch(url, ac ? { signal: ac.signal } : undefined);
-      clearTimeout(t);
-      return r;
-    } catch (e) { clearTimeout(t); return null; }
-  },
-
-  async lookup(b) {
-    const key = b.slug;
-    if (this.cache[key]) return this.cache[key];
-    if (this.bad[key]) return null;
-    if (this.inflight.has(key)) return this.inflight.get(key);
-
-    const job = this.naFila(async () => {
-      const q = encodeURIComponent(b.q || b.t);
-
-      if (!this.googleFora) {
-        const r = await this.pega(`https://www.googleapis.com/books/v1/volumes?q=${q}&maxResults=5&langRestrict=pt&country=BR`);
-        if (r && r.status === 429) {
-          if (++this.falhasGoogle >= 4) this.googleFora = true;
-        } else if (r && r.ok) {
-          this.falhasGoogle = 0;
-          const d = await r.json().catch(() => null);
-          if (d) {
-            const want = norm(b.titleMain || b.t).split(/\s+/).filter(w => w.length > 3);
-            let best = null;
-            for (const it of (d.items || [])) {
-              const li = it.volumeInfo && it.volumeInfo.imageLinks;
-              if (!li) continue;
-              const tt = norm(it.volumeInfo.title || '');
-              const score = want.filter(w => tt.includes(w)).length;
-              if (!best || score > best.s) best = { s: score, li };
-              if (score >= Math.min(2, want.length)) break;
-            }
-            /* casamento fraco vira capa desenhada: melhor nenhuma capa
-               do que a capa de outro livro */
-            if (best && best.s >= Math.min(2, want.length)) {
-              const u = (best.li.thumbnail || best.li.smallThumbnail)
-                .replace(/^http:/, 'https:').replace('&edge=curl', '').replace('&zoom=1', '&zoom=2');
-              this.cache[key] = u; this.save(); return u;
-            }
-          }
-        } else if (++this.falhasGoogle >= 4) this.googleFora = true;
+      /* a capa desenhada do volume é o ponto de partida; a real entra por cima */
+      im.src = this.generated(v);
+      if (v.img) {
+        const real = new Image();
+        real.onload = () => { if (real.naturalWidth >= 40) im.src = v.img; };
+        real.src = v.img;
       }
-
-      const r2 = await this.pega(`https://openlibrary.org/search.json?q=${q}&limit=3&fields=cover_i,title`);
-      if (r2 && r2.ok) {
-        const d = await r2.json().catch(() => null);
-        const hit = d && (d.docs || []).find(x => x.cover_i);
-        if (hit) {
-          const u = `https://covers.openlibrary.org/b/id/${hit.cover_i}-L.jpg`;
-          this.cache[key] = u; this.save(); return u;
-        }
-      }
-      this.bad[key] = 1; this.save(); return null;
+      caixa.appendChild(im);
     });
 
-    this.inflight.set(key, job);
-    const out = await job;
-    this.inflight.delete(key);
-    return out;
+    const n = b.setOf || this.membros(b, 99).length;
+    if (n > 1) {
+      const tag = document.createElement('span');
+      tag.textContent = n + ' volumes';
+      st(tag, {
+        position: 'absolute', left: '50%', bottom: '5%', 'z-index': '5',
+        transform: 'translateX(-50%)', 'white-space': 'nowrap',
+        background: 'rgba(12,9,6,.72)', color: light, 'border-radius': '999px',
+        padding: '3px 11px', font: '700 11px/1.5 system-ui,-apple-system,sans-serif',
+        'letter-spacing': '.04em', 'backdrop-filter': 'blur(4px)'
+      });
+      caixa.appendChild(tag);
+    }
+
+    slot.appendChild(caixa);
+    requestAnimationFrame(() => caixa.style.setProperty('opacity', '1', 'important'));
+    return true;
   },
 
-  /* Pinta o slot. A capa desenhada entra SEMPRE, na hora — é ela que
-     garante que nenhum card fique girando para sempre. A capa real,
-     quando chega e carrega, entra por cima. */
+  /* ---------------------------------------------------------------
+     Pinta o slot. A capa desenhada entra SEMPRE, na hora, e é ela que
+     garante que nenhum card fique girando. Quando existe URL fixa, a
+     foto real entra por cima assim que carrega.
+
+     Se a URL falhar, o card FICA na capa desenhada e o slug vai para o
+     relatório. O que ele nunca faz é sair procurando outra imagem: era
+     exatamente aí que entrava a capa da edição estrangeira.
+     --------------------------------------------------------------- */
   paint(slot, b, eager) {
+    if (!slot || !b) return;
     if (slot.dataset.done) return;
     slot.dataset.done = '1';
+    this.inicia();
 
     const sk = slot.querySelector('.sk');
     if (sk) sk.remove();
+
+    /* 2) coleção montada por você, sem URL própria: montagem dos volumes */
+    if (!b.img && b.parts && b.parts.length && this.montagem(slot, b, eager)) return;
+
+    /* 3) piso: capa desenhada, imediata */
     const base = document.createElement('img');
-    base.className = 'gen'; base.alt = 'Capa ilustrativa: ' + b.t;
-    base.src = this.generated(b); base.decoding = 'async';
+    base.className = 'gen';
+    base.alt = 'Capa ilustrativa: ' + b.t;
+    base.src = this.generated(b);
+    base.decoding = 'async';
     slot.appendChild(base);
     requestAnimationFrame(() => base.classList.add('in'));
 
-    const show = url => {
-      if (!url) return;
-      const im = new Image();
-      let morreu = false;
-      const desiste = () => { morreu = true; };
-      const prazo = setTimeout(desiste, 9000);   // imagem que não chega em 9s fica para trás
-      im.decoding = 'async';
-      im.loading = eager ? 'eager' : 'lazy';
-      im.alt = 'Capa: ' + b.t;
-      im.onload = () => {
-        clearTimeout(prazo);
-        if (morreu || im.naturalWidth < 40) return;
-        slot.querySelectorAll('img').forEach(x => x.remove());
-        slot.appendChild(im);
-        requestAnimationFrame(() => im.classList.add('in'));
-      };
-      im.onerror = () => {
-        clearTimeout(prazo);
-        if (this.cache[b.slug] === url) { delete this.cache[b.slug]; this.save(); }
-        if (!b.img || b.img !== url) return;
-        this.lookup(b).then(u2 => { if (u2 && u2 !== url) show(u2); });
-      };
-      im.src = url;
-    };
+    /* 1) URL fixa do cadastro, quando existe */
+    if (!b.img) return;
 
-    const curada = b.img || this.cache[b.slug];
-    if (curada) show(curada);
-    else this.lookup(b).then(show);
+    const url = b.img;
+    const im = new Image();
+    let desistiu = false;
+    const prazo = setTimeout(() => { desistiu = true; this.anota(b.slug, url, false); }, 12000);
+
+    im.decoding = 'async';
+    im.loading = eager ? 'eager' : 'lazy';
+    im.alt = 'Capa: ' + b.t;
+    im.onload = () => {
+      clearTimeout(prazo);
+      if (desistiu) return;
+      if (im.naturalWidth < 40) { this.anota(b.slug, url, false); return; }
+      this.anota(b.slug, url, true);
+      if (!slot.isConnected) return;
+      slot.querySelectorAll('img,.gen').forEach(x => x.remove());
+      slot.appendChild(im);
+      requestAnimationFrame(() => im.classList.add('in'));
+    };
+    im.onerror = () => {
+      clearTimeout(prazo);
+      this.anota(b.slug, url, false);   // fica a capa desenhada, e nada mais
+    };
+    im.src = url;
   }
 };
+
+window.Cover = Cover;
+window.CFG = CFG;
