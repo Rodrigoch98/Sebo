@@ -1,93 +1,93 @@
-Folhas geradas em 2026-11-11 10:25
+Folhas geradas em 2026-11-11 12:14
 
 == capas ==
-001  capa              box-machado-de-assis-colecao-completa  capa
+001  fundo removido    box-machado-de-assis-colecao-completa  fundo removido
 002  fundo removido    box-trilogia-tempest-julie-cross  fundo removido
-003  capa              box-trilogia-os-tons-de-magia-v-e-schwab  capa
+003  fundo removido    box-trilogia-os-tons-de-magia-v-e-schwab  fundo removido
 004  fundo removido    box-princesa-das-cinzas-laura-sebastian  fundo removido
 005  fundo removido    box-sombra-e-ossos-leigh-bardugo-grishaverso  fundo removido
 006  foto com cenário  box-a-saga-dos-corvos-maggie-stiefvater-4-livros  o fundo se confunde com a imagem: mantida como veio
 007  fundo removido    box-cronicas-de-artur-bernard-cornwell  fundo removido
-008  capa              box-sherlock-holmes-obra-completa-4-volumes  capa
+008  fundo removido    box-sherlock-holmes-obra-completa-4-volumes  fundo removido
 009  capa              box-tetralogia-angelica-eduardo-spohr-ed-10-anos  capa
-010  capa              box-jules-verne-4-viagens-extraordinarias-capa-dura  capa
-011  capa              box-segunda-guerra-mundial-3-livros  capa
+010  fundo removido    box-jules-verne-4-viagens-extraordinarias-capa-dura  fundo removido
+011  fundo removido    box-segunda-guerra-mundial-3-livros  fundo removido
 012  capa              box-trilogia-dos-principes-elizabeth-hoyt  capa
-013  não baixou        box-acotar-corte-de-espinhos-e-rosas-4-livros  HTTP Error 404: Not Found
-014  não baixou        corte-de-chamas-prateadas-sarah-j-maas-acotar-5  HTTP Error 404: Not Found
+013  não baixou        box-acotar-corte-de-espinhos-e-rosas-4-livros  imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / HTTP Error 404: Not Found
+014  capa              corte-de-chamas-prateadas-sarah-j-maas-acotar-5  capa
 015  capa              box-o-povo-do-ar-holly-black-4-livros  capa
-016  não baixou        como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo  HTTP Error 404: Not Found
+016  foto com cenário  como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo  o fundo se confunde com a imagem: mantida como veio
 017  fundo removido    box-legend-marie-lu-trilogia-completa  fundo removido
-018  não baixou        rebel-marie-lu-legend-4  HTTP Error 404: Not Found
+018  capa              rebel-marie-lu-legend-4  capa
 019  fundo removido    a-descoberta-das-bruxas-deborah-harkness  fundo removido
-020  não baixou        sombra-da-noite-deborah-harkness  HTTP Error 404: Not Found
-021  não baixou        o-livro-da-vida-deborah-harkness  HTTP Error 404: Not Found
-022  fundo removido    a-rainha-vermelha-victoria-aveyard  fundo removido
-023  não baixou        espada-de-vidro-victoria-aveyard  HTTP Error 404: Not Found
-024  não baixou        a-prisao-do-rei-victoria-aveyard  HTTP Error 404: Not Found
-025  não baixou        tempestade-de-guerra-victoria-aveyard  HTTP Error 404: Not Found
-026  não baixou        trono-destruido-victoria-aveyard-contos  HTTP Error 404: Not Found
-027  não baixou        anjos-e-demonios-dan-brown  HTTP Error 404: Not Found
+020  fundo removido    sombra-da-noite-deborah-harkness  fundo removido
+021  fundo removido    o-livro-da-vida-deborah-harkness  fundo removido
+022  capa              a-rainha-vermelha-victoria-aveyard  capa
+023  capa              espada-de-vidro-victoria-aveyard  capa
+024  capa              a-prisao-do-rei-victoria-aveyard  capa
+025  capa              tempestade-de-guerra-victoria-aveyard  capa
+026  capa              trono-destruido-victoria-aveyard-contos  capa
+027  capa              anjos-e-demonios-dan-brown  capa
 028  capa              o-codigo-da-vinci-dan-brown  capa
-029  não baixou        o-simbolo-perdido-dan-brown  HTTP Error 404: Not Found
-030  não baixou        inferno-dan-brown  HTTP Error 404: Not Found
-031  não baixou        origem-dan-brown  HTTP Error 404: Not Found
+029  capa              o-simbolo-perdido-dan-brown  capa
+030  capa              inferno-dan-brown  capa
+031  capa              origem-dan-brown  capa
 032  capa              fortaleza-digital-dan-brown  capa
-033  não baixou        ponto-de-impacto-dan-brown  HTTP Error 404: Not Found
+033  capa              ponto-de-impacto-dan-brown  capa
 034  capa              o-escaravelho-catherine-fisher  capa
-035  não baixou        o-oraculo-catherine-fisher  HTTP Error 404: Not Found
-036  não baixou        o-arconte-catherine-fisher  HTTP Error 404: Not Found
-037  fundo removido    irmaos-de-sangue-nora-roberts  fundo removido
-038  não baixou        a-maldicao-de-hollow-nora-roberts  HTTP Error 404: Not Found
-039  não baixou        a-pedra-paga-nora-roberts  HTTP Error 404: Not Found
-040  não baixou        correr-ou-morrer-james-dashner-maze-runner-1  HTTP Error 404: Not Found
-041  não baixou        prova-de-fogo-james-dashner-maze-runner-2  HTTP Error 404: Not Found
-042  não baixou        a-cura-mortal-james-dashner-maze-runner-3  HTTP Error 404: Not Found
-043  não baixou        ordem-de-exterminio-james-dashner-maze-runner-prequel  HTTP Error 404: Not Found
-044  não baixou        o-codigo-da-febre-james-dashner-maze-runner-prequel-2  HTTP Error 404: Not Found
-045  não baixou        arquivos-james-dashner-guia-maze-runner  HTTP Error 404: Not Found
-046  fundo removido    divergente-veronica-roth  fundo removido
-047  não baixou        insurgente-veronica-roth  HTTP Error 404: Not Found
-048  não baixou        convergente-veronica-roth  HTTP Error 404: Not Found
-049  não baixou        quatro-veronica-roth  HTTP Error 404: Not Found
+035  capa              o-oraculo-catherine-fisher  capa
+036  capa              o-arconte-catherine-fisher  capa
+037  capa              irmaos-de-sangue-nora-roberts  capa
+038  capa              a-maldicao-de-hollow-nora-roberts  capa
+039  capa              a-pedra-paga-nora-roberts  capa
+040  capa              correr-ou-morrer-james-dashner-maze-runner-1  capa
+041  capa              prova-de-fogo-james-dashner-maze-runner-2  capa
+042  capa              a-cura-mortal-james-dashner-maze-runner-3  capa
+043  capa              ordem-de-exterminio-james-dashner-maze-runner-prequel  capa
+044  capa              o-codigo-da-febre-james-dashner-maze-runner-prequel-2  capa
+045  capa              arquivos-james-dashner-guia-maze-runner  capa
+046  capa              divergente-veronica-roth  capa
+047  capa              insurgente-veronica-roth  capa
+048  capa              convergente-veronica-roth  capa
+049  capa              quatro-veronica-roth  capa
 050  capa              os-doze-justin-cronin-a-passagem-2  capa
-051  não baixou        a-cidade-dos-espelhos-justin-cronin-a-passagem-3  HTTP Error 404: Not Found
-052  não baixou        halo-alexandra-adornetto  HTTP Error 404: Not Found
+051  capa              a-cidade-dos-espelhos-justin-cronin-a-passagem-3  capa
+052  não baixou        halo-alexandra-adornetto  imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / HTTP Error 404: Not Found / HT
 053  não baixou        hades-alexandra-adornetto  HTTP Error 404: Not Found
-054  não baixou        heaven-alexandra-adornetto  HTTP Error 404: Not Found
-055  fundo removido    surgido-das-sombras-tim-lebbon-alien-1  fundo removido
-056  não baixou        mar-de-angustia-james-a-moore-alien-2  HTTP Error 404: Not Found
-057  não baixou        rio-de-sofrimento-christopher-golden-alien-3  HTTP Error 404: Not Found
-058  não baixou        a-bussola-de-ouro-philip-pullman  HTTP Error 404: Not Found
-059  não baixou        a-faca-sutil-philip-pullman  HTTP Error 404: Not Found
-060  não baixou        a-luneta-ambar-philip-pullman  HTTP Error 404: Not Found
-061  não baixou        silo-hugh-howey  HTTP Error 404: Not Found
-062  não baixou        ordem-hugh-howey  HTTP Error 404: Not Found
-063  não baixou        legado-hugh-howey  HTTP Error 404: Not Found
-064  não baixou        o-homem-de-giz-c-j-tudor  HTTP Error 404: Not Found
-065  não baixou        o-que-aconteceu-com-annie-c-j-tudor  HTTP Error 404: Not Found
-066  não baixou        as-outras-pessoas-c-j-tudor  HTTP Error 404: Not Found
-067  não baixou        garotas-em-chamas-c-j-tudor  HTTP Error 404: Not Found
+054  capa              heaven-alexandra-adornetto  capa
+055  capa              surgido-das-sombras-tim-lebbon-alien-1  capa
+056  capa              mar-de-angustia-james-a-moore-alien-2  capa
+057  capa              rio-de-sofrimento-christopher-golden-alien-3  capa
+058  capa              a-bussola-de-ouro-philip-pullman  capa
+059  capa              a-faca-sutil-philip-pullman  capa
+060  capa              a-luneta-ambar-philip-pullman  capa
+061  capa              silo-hugh-howey  capa
+062  capa              ordem-hugh-howey  capa
+063  capa              legado-hugh-howey  capa
+064  capa              o-homem-de-giz-c-j-tudor  capa
+065  capa              o-que-aconteceu-com-annie-c-j-tudor  capa
+066  capa              as-outras-pessoas-c-j-tudor  capa
+067  fundo removido    garotas-em-chamas-c-j-tudor  fundo removido
 068  capa              bird-box-josh-malerman-edicao-especial-de-luxo  capa
-069  não baixou        malorie-josh-malerman  HTTP Error 404: Not Found
-070  foto com cenário  neve-e-cinzas-sara-raasch  o fundo se confunde com a imagem: mantida como veio
-071  não baixou        gelo-e-fogo-sara-raasch  HTTP Error 404: Not Found
-072  não baixou        geada-e-noite-sara-raasch  HTTP Error 404: Not Found
+069  capa              malorie-josh-malerman  capa
+070  capa              neve-e-cinzas-sara-raasch  capa
+071  capa              gelo-e-fogo-sara-raasch  capa
+072  capa              geada-e-noite-sara-raasch  capa
 073  capa              a-5-onda-rick-yancey  capa
-074  não baixou        o-mar-infinito-rick-yancey  HTTP Error 404: Not Found
-075  não baixou        a-ultima-estrela-rick-yancey  HTTP Error 404: Not Found
-076  não baixou        o-cla-dos-magos-trudi-canavan  HTTP Error 404: Not Found
-077  não baixou        a-aprendiz-trudi-canavan  HTTP Error 404: Not Found
-078  não baixou        o-lorde-supremo-trudi-canavan  HTTP Error 404: Not Found
-079  fundo removido    stranger-things-raizes-do-mal  fundo removido
-080  não baixou        stranger-things-cidade-nas-trevas  HTTP Error 404: Not Found
-081  fundo removido    um-de-nos-esta-mentindo-karen-m-mcmanus  fundo removido
-082  não baixou        um-de-nos-e-o-proximo-karen-m-mcmanus  HTTP Error 404: Not Found
-083  não baixou        alice-no-pais-das-maravilhas-lewis-carroll-darkside-luxo  HTTP Error 404: Not Found
-084  não baixou        alice-atraves-do-espelho-lewis-carroll-darkside-luxo  HTTP Error 404: Not Found
-085  não baixou        veneno-sarah-pinborough-encantadas-1  HTTP Error 404: Not Found
-086  não baixou        feitico-sarah-pinborough-encantadas-2  HTTP Error 404: Not Found
-087  não baixou        poder-sarah-pinborough-encantadas-3  HTTP Error 404: Not Found
+074  capa              o-mar-infinito-rick-yancey  capa
+075  capa              a-ultima-estrela-rick-yancey  capa
+076  capa              o-cla-dos-magos-trudi-canavan  capa
+077  capa              a-aprendiz-trudi-canavan  capa
+078  capa              o-lorde-supremo-trudi-canavan  capa
+079  capa              stranger-things-raizes-do-mal  capa
+080  fundo removido    stranger-things-cidade-nas-trevas  fundo removido
+081  capa              um-de-nos-esta-mentindo-karen-m-mcmanus  capa
+082  capa              um-de-nos-e-o-proximo-karen-m-mcmanus  capa
+083  fundo removido    alice-no-pais-das-maravilhas-lewis-carroll-darkside-luxo  fundo removido
+084  fundo removido    alice-atraves-do-espelho-lewis-carroll-darkside-luxo  fundo removido
+085  capa              veneno-sarah-pinborough-encantadas-1  capa
+086  capa              feitico-sarah-pinborough-encantadas-2  capa
+087  capa              poder-sarah-pinborough-encantadas-3  capa
 088  foto com cenário  psicose-robert-bloch-ed-luxo-darkside  foto com cenário: o fundo não é liso
 089  capa              mitos-gregos-nathaniel-hawthorne  capa
 090  fundo removido    a-guerra-dos-mundos-h-g-wells-ed-luxo-capa-dura  fundo removido
@@ -97,14 +97,14 @@ Folhas geradas em 2026-11-11 10:25
 094  fundo removido    o-colecionador-john-fowles-darkside-caveirinha  fundo removido
 095  capa              mitologia-nordica-neil-gaiman-capa-dura  capa
 096  capa              circulo-negro-catherine-fisher  capa
-097  capa              fios-de-prata-reconstruindo-sandman-raphael-draccon  capa
+097  fundo removido    fios-de-prata-reconstruindo-sandman-raphael-draccon  fundo removido
 098  capa              o-homem-invisivel-h-g-wells-ed-zahar-comentada  capa
 099  fundo removido    terra-americana-jeanine-cummins  fundo removido
-100  não baixou        frankenstein-mary-shelley-darkside-medo-classico  HTTP Error 403: Forbidden
+100  fundo removido    frankenstein-mary-shelley-darkside-medo-classico  fundo removido
 101  fundo removido    a-essencia-do-mal-luca-d-andrea-capa-dura  fundo removido
 102  fundo removido    1984-george-orwell-capa-dura  fundo removido
 103  capa              a-maquina-do-tempo-h-g-wells-suma-luxo  capa
-104  não baixou        contos-de-fadas-dos-irmaos-grimm-capa-dura  HTTP Error 403: Forbidden
+104  capa              contos-de-fadas-dos-irmaos-grimm-capa-dura  capa
 105  capa              cacador-em-fuga-george-r-r-martin  capa
 106  capa              os-ultimos-dias-de-krypton-kevin-j-anderson  capa
 107  capa              robo-selvagem-peter-brown  capa
@@ -114,73 +114,73 @@ Folhas geradas em 2026-11-11 10:25
 111  capa              a-arvore-envenenada-erin-kelly  capa
 112  fundo removido    2012-a-guerra-pelas-almas-whitley-strieber  fundo removido
 113  capa              jogo-de-espelhos-cara-delevingne  capa
-114  capa              o-morro-dos-ventos-uivantes-emily-bronte-capa-dura  capa
+114  fundo removido    o-morro-dos-ventos-uivantes-emily-bronte-capa-dura  fundo removido
 115  fundo removido    dracula-bram-stoker-first-edition-darkside  fundo removido
 116  fundo removido    box-magisterium-holly-black-e-cassandra-clare  fundo removido
-117  capa              box-hp-guia-cinema-4-livros-capa-dura  capa
-118  capa              o-diario-de-anne-frank  capa
-119  não baixou        til-jose-de-alencar-capa-dura  HTTP Error 404: Not Found
-120  não baixou        contos-novos-mario-de-andrade-capa-dura  HTTP Error 404: Not Found
-121  não baixou        senhora-jose-de-alencar-capa-dura  HTTP Error 404: Not Found
-122  não baixou        sonetos-luis-de-camoes-capa-dura  HTTP Error 404: Not Found
-123  não baixou        casa-de-pensao-aluisio-azevedo-capa-dura  HTTP Error 404: Not Found
-124  não baixou        pauliceia-desvairada-mario-de-andrade-capa-dura  HTTP Error 404: Not Found
-125  não baixou        os-sertoes-euclides-da-cunha-capa-dura  HTTP Error 404: Not Found
-126  não baixou        espumas-flutuantes-castro-alves-capa-dura  HTTP Error 404: Not Found
-127  não baixou        sermoes-padre-antonio-vieira-capa-dura  HTTP Error 404: Not Found
-128  não baixou        o-espelho-e-outros-contos-machado-de-assis-capa-dura  HTTP Error 404: Not Found
-129  não baixou        poemas-escolhidos-varios-autores-capa-dura  HTTP Error 404: Not Found
-130  não baixou        o-ateneu-raul-pompeia-capa-dura  HTTP Error 404: Not Found
-131  não baixou        a-lamina-da-assassina-sarah-j-maas-trono-de-vidro-0-5  HTTP Error 404: Not Found
-132  não baixou        trono-de-vidro-sarah-j-maas  HTTP Error 404: Not Found
-133  não baixou        coroa-da-meia-noite-sarah-j-maas-trono-de-vidro-2  HTTP Error 404: Not Found
-134  não baixou        herdeira-do-fogo-sarah-j-maas-trono-de-vidro-3  HTTP Error 404: Not Found
-135  não baixou        rainha-das-sombras-sarah-j-maas-trono-de-vidro-4  HTTP Error 404: Not Found
-136  não baixou        imperio-de-tempestades-sarah-j-maas-trono-de-vidro-5  HTTP Error 404: Not Found
-137  não baixou        torre-do-alvorecer-sarah-j-maas-trono-de-vidro-6  HTTP Error 404: Not Found
-138  não baixou        reino-de-cinzas-sarah-j-maas-trono-de-vidro-7  HTTP Error 404: Not Found
-139  foto com cenário  crepusculo-stephenie-meyer-capa-original  foto com cenário: o fundo não é liso
-140  não baixou        crepusculo-stephenie-meyer-edicao-10-anos  HTTP Error 404: Not Found
-141  não baixou        lua-nova-stephenie-meyer  HTTP Error 404: Not Found
-142  não baixou        eclipse-stephenie-meyer  HTTP Error 404: Not Found
-143  não baixou        amanhecer-stephenie-meyer  HTTP Error 404: Not Found
-144  não baixou        sol-da-meia-noite-stephenie-meyer  HTTP Error 404: Not Found
-145  não baixou        a-breve-segunda-vida-de-bree-tanner-stephenie-meyer  HTTP Error 404: Not Found
-146  não baixou        guia-oficial-ilustrado-da-saga-crepusculo  HTTP Error 404: Not Found
-147  não baixou        eu-sou-o-numero-quatro-pittacus-lore  HTTP Error 404: Not Found
-148  não baixou        o-poder-de-seis-pittacus-lore  HTTP Error 404: Not Found
-149  não baixou        a-ascensao-de-nove-pittacus-lore  HTTP Error 404: Not Found
-150  não baixou        a-queda-de-cinco-pittacus-lore  HTTP Error 404: Not Found
-151  não baixou        a-vinganca-de-sete-pittacus-lore  HTTP Error 404: Not Found
-152  não baixou        o-destino-de-dez-pittacus-lore  HTTP Error 404: Not Found
-153  não baixou        unidos-somos-um-pittacus-lore  HTTP Error 404: Not Found
-154  fundo removido    o-poder-verdadeiro-g-brasman-e-g-norris  fundo removido
-155  não baixou        efeito-manticore-g-brasman-e-g-norris  HTTP Error 404: Not Found
-156  não baixou        mare-vermelha-g-brasman-e-g-norris  HTTP Error 404: Not Found
-157  não baixou        renuncia-g-brasman-e-g-norris  HTTP Error 404: Not Found
-158  não baixou        o-lado-mais-sombrio-a-g-howard  HTTP Error 404: Not Found
-159  não baixou        atras-do-espelho-a-g-howard  HTTP Error 404: Not Found
-160  não baixou        qualquer-outro-lugar-a-g-howard  HTTP Error 404: Not Found
-161  não baixou        sussurros-do-pais-das-maravilhas-a-g-howard  HTTP Error 404: Not Found
-162  não baixou        cemiterios-de-dragoes-raphael-draccon  HTTP Error 404: Not Found
-163  não baixou        cidades-de-dragoes-raphael-draccon  HTTP Error 404: Not Found
-164  não baixou        mundos-de-dragoes-raphael-draccon  HTTP Error 404: Not Found
-165  capa              box-dragoes-de-eter-raphael-draccon-4-livros-poster  capa
-166  não baixou        casa-de-segredos-chris-columbus-e-ned-vizzini  HTTP Error 404: Not Found
-167  não baixou        a-batalha-das-bestas-chris-columbus-e-ned-vizzini  HTTP Error 404: Not Found
-168  não baixou        a-colisao-dos-mundos-chris-columbus-e-ned-vizzini  HTTP Error 404: Not Found
+117  fundo removido    box-hp-guia-cinema-4-livros-capa-dura  fundo removido
+118  fundo removido    o-diario-de-anne-frank  fundo removido
+119  capa              til-jose-de-alencar-capa-dura  capa
+120  capa              contos-novos-mario-de-andrade-capa-dura  capa
+121  capa              senhora-jose-de-alencar-capa-dura  capa
+122  capa              sonetos-luis-de-camoes-capa-dura  capa
+123  capa              casa-de-pensao-aluisio-azevedo-capa-dura  capa
+124  capa              pauliceia-desvairada-mario-de-andrade-capa-dura  capa
+125  capa              os-sertoes-euclides-da-cunha-capa-dura  capa
+126  capa              espumas-flutuantes-castro-alves-capa-dura  capa
+127  capa              sermoes-padre-antonio-vieira-capa-dura  capa
+128  capa              o-espelho-e-outros-contos-machado-de-assis-capa-dura  capa
+129  capa              poemas-escolhidos-varios-autores-capa-dura  capa
+130  capa              o-ateneu-raul-pompeia-capa-dura  capa
+131  capa              a-lamina-da-assassina-sarah-j-maas-trono-de-vidro-0-5  capa
+132  capa              trono-de-vidro-sarah-j-maas  capa
+133  fundo removido    coroa-da-meia-noite-sarah-j-maas-trono-de-vidro-2  fundo removido
+134  capa              herdeira-do-fogo-sarah-j-maas-trono-de-vidro-3  capa
+135  capa              rainha-das-sombras-sarah-j-maas-trono-de-vidro-4  capa
+136  capa              imperio-de-tempestades-sarah-j-maas-trono-de-vidro-5  capa
+137  capa              torre-do-alvorecer-sarah-j-maas-trono-de-vidro-6  capa
+138  capa              reino-de-cinzas-sarah-j-maas-trono-de-vidro-7  capa
+139  capa              crepusculo-stephenie-meyer-capa-original  capa
+140  foto com cenário  crepusculo-stephenie-meyer-edicao-10-anos  foto com cenário: o fundo não é liso
+141  capa              lua-nova-stephenie-meyer  capa
+142  fundo removido    eclipse-stephenie-meyer  fundo removido
+143  capa              amanhecer-stephenie-meyer  capa
+144  capa              sol-da-meia-noite-stephenie-meyer  capa
+145  capa              a-breve-segunda-vida-de-bree-tanner-stephenie-meyer  capa
+146  capa              guia-oficial-ilustrado-da-saga-crepusculo  capa
+147  capa              eu-sou-o-numero-quatro-pittacus-lore  capa
+148  capa              o-poder-de-seis-pittacus-lore  capa
+149  capa              a-ascensao-de-nove-pittacus-lore  capa
+150  capa              a-queda-de-cinco-pittacus-lore  capa
+151  capa              a-vinganca-de-sete-pittacus-lore  capa
+152  capa              o-destino-de-dez-pittacus-lore  capa
+153  capa              unidos-somos-um-pittacus-lore  capa
+154  capa              o-poder-verdadeiro-g-brasman-e-g-norris  capa
+155  capa              efeito-manticore-g-brasman-e-g-norris  capa
+156  capa              mare-vermelha-g-brasman-e-g-norris  capa
+157  capa              renuncia-g-brasman-e-g-norris  capa
+158  capa              o-lado-mais-sombrio-a-g-howard  capa
+159  capa              atras-do-espelho-a-g-howard  capa
+160  capa              qualquer-outro-lugar-a-g-howard  capa
+161  capa              sussurros-do-pais-das-maravilhas-a-g-howard  capa
+162  capa              cemiterios-de-dragoes-raphael-draccon  capa
+163  capa              cidades-de-dragoes-raphael-draccon  capa
+164  capa              mundos-de-dragoes-raphael-draccon  capa
+165  fundo removido    box-dragoes-de-eter-raphael-draccon-4-livros-poster  fundo removido
+166  capa              casa-de-segredos-chris-columbus-e-ned-vizzini  capa
+167  capa              a-batalha-das-bestas-chris-columbus-e-ned-vizzini  capa
+168  capa              a-colisao-dos-mundos-chris-columbus-e-ned-vizzini  capa
 169  capa              uma-dobra-no-tempo-madeleine-l-engle-capa-dura  capa
-170  não baixou        um-vento-a-porta-madeleine-l-engle-capa-dura  HTTP Error 404: Not Found
-171  não baixou        um-planeta-em-seu-giro-veloz-madeleine-l-engle-capa-dura  HTTP Error 404: Not Found
-172  não baixou        muitas-aguas-madeleine-l-engle-capa-dura  HTTP Error 404: Not Found
-173  não baixou        um-tempo-aceitavel-madeleine-l-engle-capa-dura  HTTP Error 404: Not Found
-174  não baixou        o-sobrinho-do-mago-c-s-lewis-narnia  HTTP Error 404: Not Found
-175  não baixou        o-leao-a-feiticeira-e-o-guarda-roupa-c-s-lewis-narnia  HTTP Error 404: Not Found
-176  não baixou        o-cavalo-e-seu-menino-c-s-lewis-narnia  HTTP Error 404: Not Found
-177  não baixou        principe-caspian-c-s-lewis-narnia  HTTP Error 404: Not Found
-178  não baixou        a-viagem-do-peregrino-da-alvorada-c-s-lewis-narnia  HTTP Error 404: Not Found
-179  não baixou        a-cadeira-de-prata-c-s-lewis-narnia  HTTP Error 404: Not Found
-180  não baixou        a-ultima-batalha-c-s-lewis-narnia  HTTP Error 404: Not Found
+170  fundo removido    um-vento-a-porta-madeleine-l-engle-capa-dura  fundo removido
+171  fundo removido    um-planeta-em-seu-giro-veloz-madeleine-l-engle-capa-dura  fundo removido
+172  capa              muitas-aguas-madeleine-l-engle-capa-dura  capa
+173  capa              um-tempo-aceitavel-madeleine-l-engle-capa-dura  capa
+174  capa              o-sobrinho-do-mago-c-s-lewis-narnia  capa
+175  capa              o-leao-a-feiticeira-e-o-guarda-roupa-c-s-lewis-narnia  capa
+176  capa              o-cavalo-e-seu-menino-c-s-lewis-narnia  capa
+177  capa              principe-caspian-c-s-lewis-narnia  capa
+178  capa              a-viagem-do-peregrino-da-alvorada-c-s-lewis-narnia  capa
+179  capa              a-cadeira-de-prata-c-s-lewis-narnia  capa
+180  capa              a-ultima-batalha-c-s-lewis-narnia  capa
 181  capa              as-cronicas-de-narnia-c-s-lewis-volume-unico  capa
 182  capa              o-pequeno-principe-antoine-de-saint-exupery-edicao-de-luxo-capa-dura  capa
 183  capa              o-ladrao-de-raios-rick-riordan  capa
@@ -259,7 +259,7 @@ Folhas geradas em 2026-11-11 10:25
 256  capa              regras-do-jogo-a-doutrina-da-morte  capa
 257  capa              a-ultima-fase-a-doutrina-da-morte  capa
 258  capa              star-wars-a-trilogia  capa
-259  não baixou        star-wars-academia-jedi  HTTP Error 403: Forbidden
+259  foto com cenário  star-wars-academia-jedi  o fundo se confunde com a imagem: mantida como veio
 260  capa              star-wars-academia-jedi-o-retorno-de-padawan  capa
 261  capa              star-wars-academia-jedi-o-valentao-fantasma  capa
 262  capa              star-wars-darth-plagueis  capa
@@ -372,160 +372,49 @@ Folhas geradas em 2026-11-11 10:25
 369  não baixou        o-essencial-da-mitologia-deusas-deuses-e-herois  HTTP Error 403: Forbidden
 370  não baixou        o-essencial-da-mitologia-historia-da-mitologia  HTTP Error 403: Forbidden
 371  capa              a-saga-dos-corvos-opala  capa
-372  não baixou        o-povo-do-ar-o-canto-mais-escuro-da-floresta  HTTP Error 404: Not Found
+372  capa              o-povo-do-ar-o-canto-mais-escuro-da-floresta  capa
 373  capa              corte-de-gelo-e-estrelas-acotar-novela  capa
-374  não baixou        colecao-c-j-tudor-suspense  HTTP Error 403: Forbidden
-375  não baixou        colecao-fronteiras-do-universo  HTTP Error 403: Forbidden
-376  não baixou        colecao-maze-runner-james-dashner  HTTP Error 403: Forbidden
-377  não baixou        colecao-o-cla-dos-magos-trudi-canavan  <urlopen error timed out>
-378  foto com cenário  colecao-os-legados-de-lorien  foto com cenário: o fundo não é liso
-379  foto com cenário  colecao-silo-hugh-howey  foto com cenário: o fundo não é liso
-380  fundo removido    colecao-trilogia-halo-alexandra-adornetto  já veio sem fundo
-381  não baixou        colecao-trono-de-vidro-sarah-j-maas  HTTP Error 403: Forbidden
+374  fundo removido    colecao-a-rainha-vermelha  fundo removido
+375  fundo removido    colecao-a-sina-do-sete-nora-roberts  fundo removido
+376  fundo removido    colecao-alien  fundo removido
+377  fundo removido    colecao-as-cronicas-de-narnia  fundo removido
+378  não baixou        colecao-c-j-tudor-suspense  HTTP Error 403: Forbidden
+379  fundo removido    colecao-classicos-brasileiros-em-capa-dura  fundo removido
+380  foto com cenário  colecao-crepusculo  foto com cenário: o fundo não é liso
+381  fundo removido    colecao-cronicas-dos-senhores-de-castelo  fundo removido
+382  fundo removido    colecao-divergente  fundo removido
+383  fundo removido    colecao-encantadas-sarah-pinborough  fundo removido
+384  não baixou        colecao-fronteiras-do-universo  HTTP Error 403: Forbidden
+385  foto com cenário  colecao-neve-e-cinzas-sara-raasch  o fundo se confunde com a imagem: mantida como veio
+386  não baixou        colecao-o-cla-dos-magos-trudi-canavan  <urlopen error timed out>
+387  foto com cenário  colecao-os-legados-de-lorien  foto com cenário: o fundo não é liso
+388  foto com cenário  colecao-silo-hugh-howey  foto com cenário: o fundo não é liso
+389  fundo removido    colecao-splintered-a-g-howard  fundo removido
+390  fundo removido    dupla-stranger-things  fundo removido
+391  fundo removido    colecao-trilogia-all-souls-deborah-harkness  fundo removido
+392  fundo removido    colecao-trilogia-halo-alexandra-adornetto  já veio sem fundo
+393  não baixou        colecao-trono-de-vidro-sarah-j-maas  HTTP Error 403: Forbidden
+394  fundo removido    dupla-um-de-nos-karen-m-mcmanus  fundo removido
 
 == atencao ==
 001  foto com cenário  box-a-saga-dos-corvos-maggie-stiefvater-4-livros  o fundo se confunde com a imagem: mantida como veio  https://m.media-amazon.com/images/I/91E+AI-cdOS._SY522_.jpg
-002  não baixou        box-acotar-corte-de-espinhos-e-rosas-4-livros  HTTP Error 404: Not Found  https://cdn.shopify.com/s/files/1/0722/9197/5420/files/03033cc39fbdef8d5e6b1f56844d2e8e.jpg
-003  não baixou        corte-de-chamas-prateadas-sarah-j-maas-acotar-5  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51Gz8oGY5uL._SY522_.jpg
-004  não baixou        como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/71FrqiJlbAL._SY522_.jpg
-005  não baixou        rebel-marie-lu-legend-4  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51YdJxQ3BbL._SY522_.jpg
-006  não baixou        sombra-da-noite-deborah-harkness  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51n7jnYmMiL._SY522_.jpg
-007  não baixou        o-livro-da-vida-deborah-harkness  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51hRi8fgq+L._SY522_.jpg
-008  não baixou        espada-de-vidro-victoria-aveyard  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51BuSH6SBQL._SY522_.jpg
-009  não baixou        a-prisao-do-rei-victoria-aveyard  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51H2P2EEL5L._SY522_.jpg
-010  não baixou        tempestade-de-guerra-victoria-aveyard  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51P9nZ2oJeL._SY522_.jpg
-011  não baixou        trono-destruido-victoria-aveyard-contos  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51F5vW0BNGL._SY522_.jpg
-012  não baixou        anjos-e-demonios-dan-brown  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/81Y3yELPGlL._SY522_.jpg
-013  não baixou        o-simbolo-perdido-dan-brown  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/71A3BQGP8-L._SY522_.jpg
-014  não baixou        inferno-dan-brown  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51dPeI6OYLL._SY522_.jpg
-015  não baixou        origem-dan-brown  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51nkX2PRDPL._SY522_.jpg
-016  não baixou        ponto-de-impacto-dan-brown  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51qJC3KQDxL._SY522_.jpg
-017  não baixou        o-oraculo-catherine-fisher  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51D9oSCvFRL._SY522_.jpg
-018  não baixou        o-arconte-catherine-fisher  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41wvx-K-VKL._SY522_.jpg
-019  não baixou        a-maldicao-de-hollow-nora-roberts  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51-ZfKcqKAL._SY522_.jpg
-020  não baixou        a-pedra-paga-nora-roberts  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51mB3F+PFKL._SY522_.jpg
-021  não baixou        correr-ou-morrer-james-dashner-maze-runner-1  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51bz+YRxkPL._SY522_.jpg
-022  não baixou        prova-de-fogo-james-dashner-maze-runner-2  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51TWWKm7bNL._SY522_.jpg
-023  não baixou        a-cura-mortal-james-dashner-maze-runner-3  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51FBH2XLKBL._SY522_.jpg
-024  não baixou        ordem-de-exterminio-james-dashner-maze-runner-prequel  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51kYXbf9CuL._SY522_.jpg
-025  não baixou        o-codigo-da-febre-james-dashner-maze-runner-prequel-2  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41D3GFSyEqL._SY522_.jpg
-026  não baixou        arquivos-james-dashner-guia-maze-runner  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51NI0T+ZiIL._SY522_.jpg
-027  não baixou        insurgente-veronica-roth  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51h+FJIqE7L._SY522_.jpg
-028  não baixou        convergente-veronica-roth  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51LgXGXc4rL._SY522_.jpg
-029  não baixou        quatro-veronica-roth  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51K8+Ag-0uL._SY522_.jpg
-030  não baixou        a-cidade-dos-espelhos-justin-cronin-a-passagem-3  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51Gib9gQI7L._SY522_.jpg
-031  não baixou        halo-alexandra-adornetto  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51u7Nt4DJZL._SY522_.jpg
-032  não baixou        hades-alexandra-adornetto  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51vMgjn5TUL._SY522_.jpg
-033  não baixou        heaven-alexandra-adornetto  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41nWz-L6d9L._SY522_.jpg
-034  não baixou        mar-de-angustia-james-a-moore-alien-2  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51Sf9b5lf+L._SY522_.jpg
-035  não baixou        rio-de-sofrimento-christopher-golden-alien-3  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/61iGkJFWOuL._SY522_.jpg
-036  não baixou        a-bussola-de-ouro-philip-pullman  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51BxGwXDJjL._SY522_.jpg
-037  não baixou        a-faca-sutil-philip-pullman  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51lfj0oNy2L._SY522_.jpg
-038  não baixou        a-luneta-ambar-philip-pullman  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51cF3Q3WgSL._SY522_.jpg
-039  não baixou        silo-hugh-howey  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/91WwJNJXB-L._SY522_.jpg
-040  não baixou        ordem-hugh-howey  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/81IK1g-AmeL._SY522_.jpg
-041  não baixou        legado-hugh-howey  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/91-c-PKJJUL._SY522_.jpg
-042  não baixou        o-homem-de-giz-c-j-tudor  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/81h+LFy07IL._SY522_.jpg
-043  não baixou        o-que-aconteceu-com-annie-c-j-tudor  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/81tB0Y9r0SL._SY522_.jpg
-044  não baixou        as-outras-pessoas-c-j-tudor  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/71OKXnXPiRL._SY522_.jpg
-045  não baixou        garotas-em-chamas-c-j-tudor  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/71iq20J5kfL._SY522_.jpg
-046  não baixou        malorie-josh-malerman  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/71x5DPkOcOL._SY522_.jpg
-047  foto com cenário  neve-e-cinzas-sara-raasch  o fundo se confunde com a imagem: mantida como veio  https://m.media-amazon.com/images/I/71Hw206fF-L._SY522_.jpg
-048  não baixou        gelo-e-fogo-sara-raasch  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51fAhf8V3HL._SY522_.jpg
-049  não baixou        geada-e-noite-sara-raasch  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51qmVhVJmIL._SY522_.jpg
-050  não baixou        o-mar-infinito-rick-yancey  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51E2HjYkQmL._SY522_.jpg
-051  não baixou        a-ultima-estrela-rick-yancey  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51e+kJf7ZeL._SY522_.jpg
-052  não baixou        o-cla-dos-magos-trudi-canavan  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51T1s3z9RcL._SY522_.jpg
-053  não baixou        a-aprendiz-trudi-canavan  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51dJFIVJbmL._SY522_.jpg
-054  não baixou        o-lorde-supremo-trudi-canavan  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51e9rA5OReL._SY522_.jpg
-055  não baixou        stranger-things-cidade-nas-trevas  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/81iIaCqp+mL._SY522_.jpg
-056  não baixou        um-de-nos-e-o-proximo-karen-m-mcmanus  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/71BfFASR+QL._SY522_.jpg
-057  não baixou        alice-no-pais-das-maravilhas-lewis-carroll-darkside-luxo  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/81CL3G5jP4L._SY522_.jpg
-058  não baixou        alice-atraves-do-espelho-lewis-carroll-darkside-luxo  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/81OMCjMaUhL._SY522_.jpg
-059  não baixou        veneno-sarah-pinborough-encantadas-1  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51n3vA9mRmL._SY522_.jpg
-060  não baixou        feitico-sarah-pinborough-encantadas-2  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51H7wfqUvFL._SY522_.jpg
-061  não baixou        poder-sarah-pinborough-encantadas-3  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51HPpCUMYXL._SY522_.jpg
-062  foto com cenário  psicose-robert-bloch-ed-luxo-darkside  foto com cenário: o fundo não é liso  https://darkside.vtexassets.com/arquivos/ids/174500/8-psicose-limited-edition-1.png?v=637606711394330000
-063  não baixou        frankenstein-mary-shelley-darkside-medo-classico  HTTP Error 403: Forbidden  https://m.magazineluiza.com.br/a-static/420x420/livro-frankenstein/livrarialeitura/9788594540188/f1b0dd38559b369def3f3d2059611f3e.jpg
-064  não baixou        contos-de-fadas-dos-irmaos-grimm-capa-dura  HTTP Error 403: Forbidden  https://m.magazineluiza.com.br/a-static/420x420/livro-contos-de-fadas-dos-irmaos-grimm-jacob-wilhelm-grimm-capa-dura-principis/jklivrarialtda/l353/88de057bfc1ef7978a70b2f6f8a309e9.jpeg
-065  não baixou        til-jose-de-alencar-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41Ue8D0tE4L._SY522_.jpg
-066  não baixou        contos-novos-mario-de-andrade-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41rXc3Ir6jL._SY522_.jpg
-067  não baixou        senhora-jose-de-alencar-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41MIomAGa1L._SY522_.jpg
-068  não baixou        sonetos-luis-de-camoes-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/31fA5qlhPML._SY522_.jpg
-069  não baixou        casa-de-pensao-aluisio-azevedo-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41YFKl0F8rL._SY522_.jpg
-070  não baixou        pauliceia-desvairada-mario-de-andrade-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41S+5nxwXML._SY522_.jpg
-071  não baixou        os-sertoes-euclides-da-cunha-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51FgJ2VfW3L._SY522_.jpg
-072  não baixou        espumas-flutuantes-castro-alves-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41SN6LL8qWL._SY522_.jpg
-073  não baixou        sermoes-padre-antonio-vieira-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41mCR8zfP0L._SY522_.jpg
-074  não baixou        o-espelho-e-outros-contos-machado-de-assis-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41G+XNpRBZL._SY522_.jpg
-075  não baixou        poemas-escolhidos-varios-autores-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/31dAjR0BLGL._SY522_.jpg
-076  não baixou        o-ateneu-raul-pompeia-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41KDl2PaQHL._SY522_.jpg
-077  não baixou        a-lamina-da-assassina-sarah-j-maas-trono-de-vidro-0-5  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51mO0EJG5UL._SY522_.jpg
-078  não baixou        trono-de-vidro-sarah-j-maas  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51oSyZFeTiL._SY522_.jpg
-079  não baixou        coroa-da-meia-noite-sarah-j-maas-trono-de-vidro-2  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51CjCmhMDaL._SY522_.jpg
-080  não baixou        herdeira-do-fogo-sarah-j-maas-trono-de-vidro-3  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51VX9uo7yML._SY522_.jpg
-081  não baixou        rainha-das-sombras-sarah-j-maas-trono-de-vidro-4  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/513xZXwG0sL._SY522_.jpg
-082  não baixou        imperio-de-tempestades-sarah-j-maas-trono-de-vidro-5  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51YuFxS9p+L._SY522_.jpg
-083  não baixou        torre-do-alvorecer-sarah-j-maas-trono-de-vidro-6  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/518LwJFNhdL._SY522_.jpg
-084  não baixou        reino-de-cinzas-sarah-j-maas-trono-de-vidro-7  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51l-kylnLcL._SY522_.jpg
-085  foto com cenário  crepusculo-stephenie-meyer-capa-original  foto com cenário: o fundo não é liso  https://m.media-amazon.com/images/I/61CSYLhEICS._SY522_.jpg
-086  não baixou        crepusculo-stephenie-meyer-edicao-10-anos  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51f2NNz55uL._SY522_.jpg
-087  não baixou        lua-nova-stephenie-meyer  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51RP1N6GHYL._SY522_.jpg
-088  não baixou        eclipse-stephenie-meyer  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/517O-J5gShL._SY522_.jpg
-089  não baixou        amanhecer-stephenie-meyer  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/41RuZZq5cTL._SY522_.jpg
-090  não baixou        sol-da-meia-noite-stephenie-meyer  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51LjjDKKCQL._SY522_.jpg
-091  não baixou        a-breve-segunda-vida-de-bree-tanner-stephenie-meyer  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51y9VRZQNHL._SY522_.jpg
-092  não baixou        guia-oficial-ilustrado-da-saga-crepusculo  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51z7F36NxdL._SY522_.jpg
-093  não baixou        eu-sou-o-numero-quatro-pittacus-lore  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51u2O6dXnpL._SY522_.jpg
-094  não baixou        o-poder-de-seis-pittacus-lore  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/517lPBXNuQL._SY522_.jpg
-095  não baixou        a-ascensao-de-nove-pittacus-lore  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51cpJEGmLQL._SY522_.jpg
-096  não baixou        a-queda-de-cinco-pittacus-lore  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51-YUHjHpYL._SY522_.jpg
-097  não baixou        a-vinganca-de-sete-pittacus-lore  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51wTYZh1HaL._SY522_.jpg
-098  não baixou        o-destino-de-dez-pittacus-lore  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51j5gJBmBHL._SY522_.jpg
-099  não baixou        unidos-somos-um-pittacus-lore  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51h24K8sSaL._SY522_.jpg
-100  não baixou        efeito-manticore-g-brasman-e-g-norris  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/91DXnV7U6HL._SY522_.jpg
-101  não baixou        mare-vermelha-g-brasman-e-g-norris  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/91Nxa5pUK-L._SY522_.jpg
-102  não baixou        renuncia-g-brasman-e-g-norris  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/81T6TN+NCPL._SY522_.jpg
-103  não baixou        o-lado-mais-sombrio-a-g-howard  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51-0zVIg-sL._SY522_.jpg
-104  não baixou        atras-do-espelho-a-g-howard  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51zLf7h0hbL._SY522_.jpg
-105  não baixou        qualquer-outro-lugar-a-g-howard  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51GCVRa+BkL._SY522_.jpg
-106  não baixou        sussurros-do-pais-das-maravilhas-a-g-howard  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51FJrp7LkuL._SY522_.jpg
-107  não baixou        cemiterios-de-dragoes-raphael-draccon  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51yxPTb4J0L._SY522_.jpg
-108  não baixou        cidades-de-dragoes-raphael-draccon  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51SrjX4wh2L._SY522_.jpg
-109  não baixou        mundos-de-dragoes-raphael-draccon  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51Qb6h+djQL._SY522_.jpg
-110  não baixou        casa-de-segredos-chris-columbus-e-ned-vizzini  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51dCLW3nh4L._SY522_.jpg
-111  não baixou        a-batalha-das-bestas-chris-columbus-e-ned-vizzini  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51vqxB20uvL._SY522_.jpg
-112  não baixou        a-colisao-dos-mundos-chris-columbus-e-ned-vizzini  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51Kq4B7XVpL._SY522_.jpg
-113  não baixou        um-vento-a-porta-madeleine-l-engle-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/81KFnHnKURL._SY522_.jpg
-114  não baixou        um-planeta-em-seu-giro-veloz-madeleine-l-engle-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/81uR4JhVDuL._SY522_.jpg
-115  não baixou        muitas-aguas-madeleine-l-engle-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/81lB3r-6fEL._SY522_.jpg
-116  não baixou        um-tempo-aceitavel-madeleine-l-engle-capa-dura  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/81E5yOSmb-L._SY522_.jpg
-117  não baixou        o-sobrinho-do-mago-c-s-lewis-narnia  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51aBPCd8jBL._SY522_.jpg
-118  não baixou        o-leao-a-feiticeira-e-o-guarda-roupa-c-s-lewis-narnia  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51bNoBs6YcL._SY522_.jpg
-119  não baixou        o-cavalo-e-seu-menino-c-s-lewis-narnia  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/514kaTxg+wL._SY522_.jpg
-120  não baixou        principe-caspian-c-s-lewis-narnia  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51N9Hm3MFOL._SY522_.jpg
-121  não baixou        a-viagem-do-peregrino-da-alvorada-c-s-lewis-narnia  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51HKuiRoqEL._SY522_.jpg
-122  não baixou        a-cadeira-de-prata-c-s-lewis-narnia  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51n+Y1zVvHL._SY522_.jpg
-123  não baixou        a-ultima-batalha-c-s-lewis-narnia  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51xB8P2yS6L._SY522_.jpg
-124  não baixou        star-wars-academia-jedi  HTTP Error 403: Forbidden  https://m.magazineluiza.com.br/a-static/420x420/star-wars-academia-jedi-livro-jeffrey-brown-aleph/studiochihiro/5682962781/4a8dcb6f70743e6a4a44d344f9b89fe7.jpeg
-125  não baixou        larousse-das-civilizacoes-antigas-da-babilonia-ao-exercito-chines  HTTP Error 403: Forbidden  https://lojasebocultural.com.br/wp-content/uploads/2023/09/64263a15-9637-45eb-91d7-b66c8d8a4a88.jpg
-126  não baixou        o-essencial-da-mitologia-deusas-deuses-e-herois  HTTP Error 403: Forbidden  https://estacaocultural.com.br/controle/arquivo/31079693.jpg
-127  não baixou        o-essencial-da-mitologia-historia-da-mitologia  HTTP Error 403: Forbidden  https://estacaocultural.com.br/controle/arquivo/31079693.jpg
-128  não baixou        o-povo-do-ar-o-canto-mais-escuro-da-floresta  HTTP Error 404: Not Found  https://cdn.shopify.com/s/files/1/0722/9197/5420/files/aa23373b378b366fb1fa4fb649b18787_69370793-14c4-4b63-8f1b-9b1f38693ac8.jpg
-129  não baixou        colecao-c-j-tudor-suspense  HTTP Error 403: Forbidden  https://m.magazineluiza.com.br/a-static/420x420/kit-4-livros-c-j-tudor-as-outras-pessoas-garotas-em-intrinseca/olistsp/osp8xr9cg9n05zlx/b4feee7692ece513ce5a77ce25090020.jpeg
-130  não baixou        colecao-fronteiras-do-universo  HTTP Error 403: Forbidden  https://m.magazineluiza.com.br/a-static/420x420/trilogia-fronteiras-do-universo/megalivros-oficial/9000000255579/f635e1860e70f36397f652171f685fa0.jpeg
-131  não baixou        colecao-maze-runner-james-dashner  HTTP Error 403: Forbidden  https://m.magazineluiza.com.br/a-static/420x420/colecao-da-serie-maze-runner-6-livros/studiochihiro/6171177510/d9e300096c47b610dd74556b771e3629.jpeg
-132  não baixou        colecao-o-cla-dos-magos-trudi-canavan  <urlopen error timed out>  https://efutura.futurasistemas.com.br/temas/vistagenerico3/image/cache/data/livros/colecao/112926537SZ-580x580.jpg?version=20180131113520
-133  foto com cenário  colecao-os-legados-de-lorien  foto com cenário: o fundo não é liso  https://universosdepapellivros.wordpress.com/wp-content/uploads/2017/06/legados-de-lorien-livros.jpg
-134  foto com cenário  colecao-silo-hugh-howey  foto com cenário: o fundo não é liso  https://m.media-amazon.com/images/I/A1L+4AZ7uyL._CLa%7C3263,2560%7CA1oj4G3MGSL.jpg,A1IC8Xt2E4L.jpg%7C0,0,1483,2560+1780,0,1483,2560+741,0,1780,2560_._SY300_.jpg
-135  não baixou        colecao-trono-de-vidro-sarah-j-maas  HTTP Error 403: Forbidden  https://images-americanas.b2w.io/produtos/5413039229/imagens/colecao-da-serie-trono-de-vidro-8-livros-sarah-j-maas/5413039237_1_large.jpg
+002  não baixou        box-acotar-corte-de-espinhos-e-rosas-4-livros  imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / HTTP Error 404: Not Found  https://m.media-amazon.com/images/P/8501301531.01._SCLZZZZZZZ_.jpg
+003  foto com cenário  como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo  o fundo se confunde com a imagem: mantida como veio  https://m.media-amazon.com/images/P/8501304344.01._SCLZZZZZZZ_.jpg
+004  não baixou        halo-alexandra-adornetto  imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / HTTP Error 404: Not Found / HT  https://m.media-amazon.com/images/P/8579550637.01._SCLZZZZZZZ_.jpg
+005  não baixou        hades-alexandra-adornetto  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51vMgjn5TUL._SY522_.jpg
+006  foto com cenário  psicose-robert-bloch-ed-luxo-darkside  foto com cenário: o fundo não é liso  https://darkside.vtexassets.com/arquivos/ids/174500/8-psicose-limited-edition-1.png?v=637606711394330000
+007  foto com cenário  crepusculo-stephenie-meyer-edicao-10-anos  foto com cenário: o fundo não é liso  https://m.media-amazon.com/images/P/8580578558.01._SCLZZZZZZZ_.jpg
+008  foto com cenário  star-wars-academia-jedi  o fundo se confunde com a imagem: mantida como veio  https://m.media-amazon.com/images/P/8576572672.01._SCLZZZZZZZ_.jpg
+009  não baixou        larousse-das-civilizacoes-antigas-da-babilonia-ao-exercito-chines  HTTP Error 403: Forbidden  https://lojasebocultural.com.br/wp-content/uploads/2023/09/64263a15-9637-45eb-91d7-b66c8d8a4a88.jpg
+010  não baixou        o-essencial-da-mitologia-deusas-deuses-e-herois  HTTP Error 403: Forbidden  https://estacaocultural.com.br/controle/arquivo/31079693.jpg
+011  não baixou        o-essencial-da-mitologia-historia-da-mitologia  HTTP Error 403: Forbidden  https://estacaocultural.com.br/controle/arquivo/31079693.jpg
+012  não baixou        colecao-c-j-tudor-suspense  HTTP Error 403: Forbidden  https://m.magazineluiza.com.br/a-static/420x420/kit-4-livros-c-j-tudor-as-outras-pessoas-garotas-em-intrinseca/olistsp/osp8xr9cg9n05zlx/b4feee7692ece513ce5a77ce25090020.jpeg
+013  foto com cenário  colecao-crepusculo  foto com cenário: o fundo não é liso  https://m.media-amazon.com/images/I/61CSYLhEICS._SY522_.jpg
+014  não baixou        colecao-fronteiras-do-universo  HTTP Error 403: Forbidden  https://m.magazineluiza.com.br/a-static/420x420/trilogia-fronteiras-do-universo/megalivros-oficial/9000000255579/f635e1860e70f36397f652171f685fa0.jpeg
+015  foto com cenário  colecao-neve-e-cinzas-sara-raasch  o fundo se confunde com a imagem: mantida como veio  https://m.media-amazon.com/images/I/71Hw206fF-L._SY522_.jpg
+016  não baixou        colecao-o-cla-dos-magos-trudi-canavan  <urlopen error timed out>  https://efutura.futurasistemas.com.br/temas/vistagenerico3/image/cache/data/livros/colecao/112926537SZ-580x580.jpg?version=20180131113520
+017  foto com cenário  colecao-os-legados-de-lorien  foto com cenário: o fundo não é liso  https://universosdepapellivros.wordpress.com/wp-content/uploads/2017/06/legados-de-lorien-livros.jpg
+018  foto com cenário  colecao-silo-hugh-howey  foto com cenário: o fundo não é liso  https://m.media-amazon.com/images/I/A1L+4AZ7uyL._CLa%7C3263,2560%7CA1oj4G3MGSL.jpg,A1IC8Xt2E4L.jpg%7C0,0,1483,2560+1780,0,1483,2560+741,0,1780,2560_._SY300_.jpg
+019  não baixou        colecao-trono-de-vidro-sarah-j-maas  HTTP Error 403: Forbidden  https://images-americanas.b2w.io/produtos/5413039229/imagens/colecao-da-serie-trono-de-vidro-8-livros-sarah-j-maas/5413039237_1_large.jpg
 
 == sugestoes ==
-001  não baixou        8f804f35 -> casa-de-segredos-chris-columbus-e-ned-vizzini, colecao-casa-de-segredos-chris-columbus  https://cdn.record.com.br/wp-content/uploads/2019/07/25225256/1939-768x1115.png
-002  fundo removido    352f7fc3 -> as-cronicas-de-narnia-c-s-lewis-volume-unico, colecao-as-cronicas-de-narnia  https://acdn-us.mitiendanube.com/stores/001/291/785/products/as-cronicas-de-narnia1-6eabf8b7ebe34efea216294046023545-1024-1024.webp
-003  fundo removido    c3cf2c29 -> colecao-classicos-brasileiros-em-capa-dura  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-GnN_PI-dO0EkXtt49V42Eb-kfzMxq1lgmw&s
-004  foto com cenário  3046fc04 -> colecao-corte-de-espinhos-e-rosas-acotar  https://cdn.culturagenial.com/imagens/acotar-a-ordem-certa-de-leitura-da-serie-og.jpg
-005  fundo removido    3716fcbd -> colecao-cronicas-dos-senhores-de-castelo, colecao-splintered-a-g-howard  https://m.media-amazon.com/images/I/31ARYMDKRLL._PQ99_.jpg
-006  foto com cenário  441b347a -> colecao-cronicas-dos-senhores-de-castelo, colecao-splintered-a-g-howard  https://m.media-amazon.com/images/I/91BJWnVew7L._CLa%7C3246,2560%7C81i5AjCBISL.jpg,91iGzvw52sL.jpg%7C0,0,1475,2560+1771,0,1475,2560+737,0,1771,2560_._SY300_.jpg
-007  foto com cenário  a7c7de8b -> colecao-dan-brown  https://m.media-amazon.com/images/I/712tt8bTDFL._SY342_.jpg
-008  fundo removido    dcbeb4e7 -> colecao-encantadas-sarah-pinborough  https://http2.mlstatic.com/D_Q_NP_693176-MLB88809334482_082025-F.webp
