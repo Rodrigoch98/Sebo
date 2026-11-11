@@ -1,27 +1,27 @@
-Folhas geradas em 2026-11-11 12:14
+Folhas geradas em 2026-11-11 15:53
 
 == capas ==
-001  fundo removido    box-machado-de-assis-colecao-completa  fundo removido
-002  fundo removido    box-trilogia-tempest-julie-cross  fundo removido
-003  fundo removido    box-trilogia-os-tons-de-magia-v-e-schwab  fundo removido
-004  fundo removido    box-princesa-das-cinzas-laura-sebastian  fundo removido
-005  fundo removido    box-sombra-e-ossos-leigh-bardugo-grishaverso  fundo removido
+001  fundo removido    box-machado-de-assis-colecao-completa  fundo e sombra removidos
+002  fundo removido    box-trilogia-tempest-julie-cross  fundo e sombra removidos (por cor)
+003  fundo removido    box-trilogia-os-tons-de-magia-v-e-schwab  fundo e sombra removidos
+004  fundo removido    box-princesa-das-cinzas-laura-sebastian  fundo e sombra removidos
+005  fundo removido    box-sombra-e-ossos-leigh-bardugo-grishaverso  fundo e sombra removidos
 006  foto com cenário  box-a-saga-dos-corvos-maggie-stiefvater-4-livros  o fundo se confunde com a imagem: mantida como veio
-007  fundo removido    box-cronicas-de-artur-bernard-cornwell  fundo removido
-008  fundo removido    box-sherlock-holmes-obra-completa-4-volumes  fundo removido
+007  fundo removido    box-cronicas-de-artur-bernard-cornwell  fundo e sombra removidos (por cor)
+008  fundo removido    box-sherlock-holmes-obra-completa-4-volumes  fundo e sombra removidos
 009  capa              box-tetralogia-angelica-eduardo-spohr-ed-10-anos  capa
-010  fundo removido    box-jules-verne-4-viagens-extraordinarias-capa-dura  fundo removido
-011  fundo removido    box-segunda-guerra-mundial-3-livros  fundo removido
+010  fundo removido    box-jules-verne-4-viagens-extraordinarias-capa-dura  fundo e sombra removidos
+011  fundo removido    box-segunda-guerra-mundial-3-livros  fundo e sombra removidos
 012  capa              box-trilogia-dos-principes-elizabeth-hoyt  capa
-013  não baixou        box-acotar-corte-de-espinhos-e-rosas-4-livros  imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / HTTP Error 404: Not Found
+013  fundo removido    box-acotar-corte-de-espinhos-e-rosas-4-livros  fundo e sombra removidos (por cor)
 014  capa              corte-de-chamas-prateadas-sarah-j-maas-acotar-5  capa
-015  capa              box-o-povo-do-ar-holly-black-4-livros  capa
-016  foto com cenário  como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo  o fundo se confunde com a imagem: mantida como veio
-017  fundo removido    box-legend-marie-lu-trilogia-completa  fundo removido
+015  fundo removido    box-o-povo-do-ar-holly-black-4-livros  fundo removido (IA)
+016  não baixou        como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo  HTTP Error 404: Not Found / HTTP Error 404: Not Found
+017  fundo removido    box-legend-marie-lu-trilogia-completa  fundo e sombra removidos
 018  capa              rebel-marie-lu-legend-4  capa
-019  fundo removido    a-descoberta-das-bruxas-deborah-harkness  fundo removido
-020  fundo removido    sombra-da-noite-deborah-harkness  fundo removido
-021  fundo removido    o-livro-da-vida-deborah-harkness  fundo removido
+019  fundo removido    a-descoberta-das-bruxas-deborah-harkness  fundo e sombra removidos
+020  fundo removido    sombra-da-noite-deborah-harkness  fundo e sombra removidos
+021  fundo removido    o-livro-da-vida-deborah-harkness  fundo e sombra removidos
 022  capa              a-rainha-vermelha-victoria-aveyard  capa
 023  capa              espada-de-vidro-victoria-aveyard  capa
 024  capa              a-prisao-do-rei-victoria-aveyard  capa
@@ -52,7 +52,7 @@ Folhas geradas em 2026-11-11 12:14
 049  capa              quatro-veronica-roth  capa
 050  capa              os-doze-justin-cronin-a-passagem-2  capa
 051  capa              a-cidade-dos-espelhos-justin-cronin-a-passagem-3  capa
-052  não baixou        halo-alexandra-adornetto  imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / HTTP Error 404: Not Found / HT
+052  capa              halo-alexandra-adornetto  capa
 053  não baixou        hades-alexandra-adornetto  HTTP Error 404: Not Found
 054  capa              heaven-alexandra-adornetto  capa
 055  capa              surgido-das-sombras-tim-lebbon-alien-1  capa
@@ -67,7 +67,7 @@ Folhas geradas em 2026-11-11 12:14
 064  capa              o-homem-de-giz-c-j-tudor  capa
 065  capa              o-que-aconteceu-com-annie-c-j-tudor  capa
 066  capa              as-outras-pessoas-c-j-tudor  capa
-067  fundo removido    garotas-em-chamas-c-j-tudor  fundo removido
+067  fundo removido    garotas-em-chamas-c-j-tudor  fundo e sombra removidos
 068  capa              bird-box-josh-malerman-edicao-especial-de-luxo  capa
 069  capa              malorie-josh-malerman  capa
 070  capa              neve-e-cinzas-sara-raasch  capa
@@ -80,29 +80,29 @@ Folhas geradas em 2026-11-11 12:14
 077  capa              a-aprendiz-trudi-canavan  capa
 078  capa              o-lorde-supremo-trudi-canavan  capa
 079  capa              stranger-things-raizes-do-mal  capa
-080  fundo removido    stranger-things-cidade-nas-trevas  fundo removido
+080  fundo removido    stranger-things-cidade-nas-trevas  fundo e sombra removidos
 081  capa              um-de-nos-esta-mentindo-karen-m-mcmanus  capa
 082  capa              um-de-nos-e-o-proximo-karen-m-mcmanus  capa
-083  fundo removido    alice-no-pais-das-maravilhas-lewis-carroll-darkside-luxo  fundo removido
-084  fundo removido    alice-atraves-do-espelho-lewis-carroll-darkside-luxo  fundo removido
+083  fundo removido    alice-no-pais-das-maravilhas-lewis-carroll-darkside-luxo  fundo e sombra removidos
+084  fundo removido    alice-atraves-do-espelho-lewis-carroll-darkside-luxo  fundo e sombra removidos
 085  capa              veneno-sarah-pinborough-encantadas-1  capa
 086  capa              feitico-sarah-pinborough-encantadas-2  capa
 087  capa              poder-sarah-pinborough-encantadas-3  capa
 088  foto com cenário  psicose-robert-bloch-ed-luxo-darkside  foto com cenário: o fundo não é liso
 089  capa              mitos-gregos-nathaniel-hawthorne  capa
-090  fundo removido    a-guerra-dos-mundos-h-g-wells-ed-luxo-capa-dura  fundo removido
-091  fundo removido    a-filha-das-profundezas-rick-riordan  fundo removido
+090  fundo removido    a-guerra-dos-mundos-h-g-wells-ed-luxo-capa-dura  fundo e sombra removidos
+091  fundo removido    a-filha-das-profundezas-rick-riordan  fundo e sombra removidos
 092  capa              o-espadachim-de-carvao-affonso-solano  capa
 093  capa              dark-eden-o-medo-e-a-cura-patrick-carman  capa
-094  fundo removido    o-colecionador-john-fowles-darkside-caveirinha  fundo removido
+094  fundo removido    o-colecionador-john-fowles-darkside-caveirinha  fundo e sombra removidos (por cor)
 095  capa              mitologia-nordica-neil-gaiman-capa-dura  capa
 096  capa              circulo-negro-catherine-fisher  capa
-097  fundo removido    fios-de-prata-reconstruindo-sandman-raphael-draccon  fundo removido
+097  fundo removido    fios-de-prata-reconstruindo-sandman-raphael-draccon  fundo e sombra removidos
 098  capa              o-homem-invisivel-h-g-wells-ed-zahar-comentada  capa
-099  fundo removido    terra-americana-jeanine-cummins  fundo removido
-100  fundo removido    frankenstein-mary-shelley-darkside-medo-classico  fundo removido
-101  fundo removido    a-essencia-do-mal-luca-d-andrea-capa-dura  fundo removido
-102  fundo removido    1984-george-orwell-capa-dura  fundo removido
+099  fundo removido    terra-americana-jeanine-cummins  fundo e sombra removidos
+100  fundo removido    frankenstein-mary-shelley-darkside-medo-classico  fundo e sombra removidos
+101  fundo removido    a-essencia-do-mal-luca-d-andrea-capa-dura  fundo e sombra removidos
+102  fundo removido    1984-george-orwell-capa-dura  fundo e sombra removidos
 103  capa              a-maquina-do-tempo-h-g-wells-suma-luxo  capa
 104  capa              contos-de-fadas-dos-irmaos-grimm-capa-dura  capa
 105  capa              cacador-em-fuga-george-r-r-martin  capa
@@ -110,15 +110,15 @@ Folhas geradas em 2026-11-11 12:14
 107  capa              robo-selvagem-peter-brown  capa
 108  capa              inspecao-josh-malerman  capa
 109  capa              serpentario-felipe-castilho  capa
-110  fundo removido    a-garota-do-lago-charlie-donlea  fundo removido
+110  fundo removido    a-garota-do-lago-charlie-donlea  fundo e sombra removidos
 111  capa              a-arvore-envenenada-erin-kelly  capa
-112  fundo removido    2012-a-guerra-pelas-almas-whitley-strieber  fundo removido
+112  fundo removido    2012-a-guerra-pelas-almas-whitley-strieber  fundo e sombra removidos
 113  capa              jogo-de-espelhos-cara-delevingne  capa
-114  fundo removido    o-morro-dos-ventos-uivantes-emily-bronte-capa-dura  fundo removido
-115  fundo removido    dracula-bram-stoker-first-edition-darkside  fundo removido
-116  fundo removido    box-magisterium-holly-black-e-cassandra-clare  fundo removido
-117  fundo removido    box-hp-guia-cinema-4-livros-capa-dura  fundo removido
-118  fundo removido    o-diario-de-anne-frank  fundo removido
+114  fundo removido    o-morro-dos-ventos-uivantes-emily-bronte-capa-dura  fundo e sombra removidos
+115  fundo removido    dracula-bram-stoker-first-edition-darkside  fundo e sombra removidos
+116  fundo removido    box-magisterium-holly-black-e-cassandra-clare  fundo e sombra removidos
+117  fundo removido    box-hp-guia-cinema-4-livros-capa-dura  fundo e sombra removidos
+118  fundo removido    o-diario-de-anne-frank  fundo e sombra removidos (por cor)
 119  capa              til-jose-de-alencar-capa-dura  capa
 120  capa              contos-novos-mario-de-andrade-capa-dura  capa
 121  capa              senhora-jose-de-alencar-capa-dura  capa
@@ -133,7 +133,7 @@ Folhas geradas em 2026-11-11 12:14
 130  capa              o-ateneu-raul-pompeia-capa-dura  capa
 131  capa              a-lamina-da-assassina-sarah-j-maas-trono-de-vidro-0-5  capa
 132  capa              trono-de-vidro-sarah-j-maas  capa
-133  fundo removido    coroa-da-meia-noite-sarah-j-maas-trono-de-vidro-2  fundo removido
+133  capa              coroa-da-meia-noite-sarah-j-maas-trono-de-vidro-2  capa
 134  capa              herdeira-do-fogo-sarah-j-maas-trono-de-vidro-3  capa
 135  capa              rainha-das-sombras-sarah-j-maas-trono-de-vidro-4  capa
 136  capa              imperio-de-tempestades-sarah-j-maas-trono-de-vidro-5  capa
@@ -142,7 +142,7 @@ Folhas geradas em 2026-11-11 12:14
 139  capa              crepusculo-stephenie-meyer-capa-original  capa
 140  foto com cenário  crepusculo-stephenie-meyer-edicao-10-anos  foto com cenário: o fundo não é liso
 141  capa              lua-nova-stephenie-meyer  capa
-142  fundo removido    eclipse-stephenie-meyer  fundo removido
+142  fundo removido    eclipse-stephenie-meyer  fundo e sombra removidos
 143  capa              amanhecer-stephenie-meyer  capa
 144  capa              sol-da-meia-noite-stephenie-meyer  capa
 145  capa              a-breve-segunda-vida-de-bree-tanner-stephenie-meyer  capa
@@ -165,13 +165,13 @@ Folhas geradas em 2026-11-11 12:14
 162  capa              cemiterios-de-dragoes-raphael-draccon  capa
 163  capa              cidades-de-dragoes-raphael-draccon  capa
 164  capa              mundos-de-dragoes-raphael-draccon  capa
-165  fundo removido    box-dragoes-de-eter-raphael-draccon-4-livros-poster  fundo removido
+165  fundo removido    box-dragoes-de-eter-raphael-draccon-4-livros-poster  fundo e sombra removidos
 166  capa              casa-de-segredos-chris-columbus-e-ned-vizzini  capa
 167  capa              a-batalha-das-bestas-chris-columbus-e-ned-vizzini  capa
 168  capa              a-colisao-dos-mundos-chris-columbus-e-ned-vizzini  capa
 169  capa              uma-dobra-no-tempo-madeleine-l-engle-capa-dura  capa
-170  fundo removido    um-vento-a-porta-madeleine-l-engle-capa-dura  fundo removido
-171  fundo removido    um-planeta-em-seu-giro-veloz-madeleine-l-engle-capa-dura  fundo removido
+170  fundo removido    um-vento-a-porta-madeleine-l-engle-capa-dura  fundo e sombra removidos
+171  fundo removido    um-planeta-em-seu-giro-veloz-madeleine-l-engle-capa-dura  fundo e sombra removidos
 172  capa              muitas-aguas-madeleine-l-engle-capa-dura  capa
 173  capa              um-tempo-aceitavel-madeleine-l-engle-capa-dura  capa
 174  capa              o-sobrinho-do-mago-c-s-lewis-narnia  capa
@@ -192,229 +192,213 @@ Folhas geradas em 2026-11-11 12:14
 189  capa              percy-jackson-e-os-deuses-gregos-rick-riordan  capa
 190  capa              guia-definitivo-rick-riordan  capa
 191  capa              os-arquivos-do-semideus-rick-riordan  capa
-192  capa              o-heroi-perdido-rick-riordan  capa
-193  capa              o-filho-de-netuno-rick-riordan  capa
-194  capa              a-marca-de-atena-rick-riordan  capa
-195  capa              a-casa-de-hades-rick-riordan  capa
-196  capa              o-sangue-do-olimpo-rick-riordan  capa
-197  capa              os-diarios-do-semideus-rick-riordan  capa
-198  capa              a-piramide-vermelha-rick-riordan  capa
-199  capa              o-trono-de-fogo-rick-riordan  capa
-200  capa              a-sombra-da-serpente-rick-riordan  capa
-201  capa              guia-de-sobrevivencia-rick-riordan  capa
-202  capa              a-espada-do-verao-rick-riordan  capa
-203  capa              o-martelo-de-thor-rick-riordan  capa
-204  capa              o-navio-dos-mortos-rick-riordan  capa
-205  capa              hotel-valhala-guia-dos-mundos-nordicos-rick-riordan  capa
-206  capa              9-contos-dos-nove-mundos-rick-riordan  capa
-207  capa              o-oraculo-oculto-rick-riordan  capa
-208  capa              a-profecia-das-sombras-rick-riordan  capa
-209  capa              o-labirinto-de-fogo-rick-riordan  capa
-210  capa              a-tumba-do-tirano-rick-riordan  capa
-211  capa              a-torre-de-nero-rick-riordan  capa
-212  capa              semideuses-e-monstros-rick-riordan  capa
-213  capa              segredos-do-acampamento-meio-sangue-rick-riordan  capa
-214  capa              como-treinar-o-seu-dragao  capa
-215  capa              como-ser-um-pirata  capa
-216  capa              como-falar-dragones  capa
-217  capa              como-quebrar-a-maldicao-de-um-dragao  capa
-218  capa              como-mudar-uma-historia-de-dragao  capa
-219  capa              guia-do-heroi-para-vencer-dragoes-mortais  capa
-220  capa              como-navegar-em-uma-tempestade-de-dragao  capa
-221  capa              como-treinar-o-seu-viking  capa
-222  capa              como-partir-o-coracao-de-um-dragao  capa
-223  capa              como-roubar-a-espada-de-um-dragao  capa
-224  capa              como-pegar-a-joia-do-dragao  capa
-225  capa              como-trair-o-heroi-de-um-dragao  capa
-226  capa              como-combater-a-furia-de-um-dragao  capa
-227  capa              harry-potter-e-a-pedra-filosofal  capa
-228  fundo removido    harry-potter-e-a-camara-secreta  fundo removido
-229  fundo removido    harry-potter-e-o-prisioneiro-de-azkaban  fundo removido
-230  fundo removido    harry-potter-e-o-calice-de-fogo  fundo removido
-231  fundo removido    harry-potter-e-a-ordem-da-fenix  fundo removido
-232  fundo removido    harry-potter-e-o-enigma-do-principe  fundo removido
-233  fundo removido    harry-potter-e-as-reliquias-da-morte  fundo removido
-234  capa              harry-potter-e-a-crianca-amaldicoada  capa
-235  fundo removido    animais-fantasticos-e-onde-habitam  fundo removido
-236  fundo removido    quadribol-atraves-dos-seculos  fundo removido
-237  fundo removido    os-contos-de-beedle-o-bardo  fundo removido
-238  fundo removido    animais-fantasticos-e-onde-habitam-o-roteiro-original  fundo removido
-239  capa              animais-fantasticos-os-crimes-de-grindelwald  capa
-240  fundo removido    animais-fantasticos-os-segredos-de-dumbledore  já veio sem fundo
-241  capa              o-hobbit  capa
-242  capa              o-senhor-dos-aneis-a-sociedade-do-anel  capa
-243  capa              o-senhor-dos-aneis-as-duas-torres  capa
-244  capa              o-senhor-dos-aneis-o-retorno-do-rei  capa
-245  capa              o-silmarillion  capa
-246  capa              a-queda-de-gondolin  capa
-247  capa              beren-e-luthien  capa
-248  capa              os-filhos-de-hurin  capa
-249  capa              contos-inacabados-de-numenor-e-da-terra-media  capa
-250  capa              a-natureza-da-terra-media  capa
-251  fundo removido    jogos-vorazes-suzanne-collins  fundo removido
-252  capa              em-chamas-suzanne-collins  capa
-253  capa              a-esperanca-suzanne-collins  capa
-254  capa              a-cantiga-dos-passaros-e-das-serpentes-suzanne-collins  capa
-255  capa              o-jogo-do-infinito-a-doutrina-da-morte  capa
-256  capa              regras-do-jogo-a-doutrina-da-morte  capa
-257  capa              a-ultima-fase-a-doutrina-da-morte  capa
-258  capa              star-wars-a-trilogia  capa
-259  foto com cenário  star-wars-academia-jedi  o fundo se confunde com a imagem: mantida como veio
-260  capa              star-wars-academia-jedi-o-retorno-de-padawan  capa
-261  capa              star-wars-academia-jedi-o-valentao-fantasma  capa
-262  capa              star-wars-darth-plagueis  capa
-263  fundo removido    star-wars-kenobi  fundo removido
-264  capa              star-wars-lordes-dos-sith  capa
-265  capa              star-wars-tarkin  capa
-266  capa              star-wars-thrawn  capa
-267  capa              star-wars-um-novo-amanhecer  capa
-268  capa              star-wars-a-armadilha-do-paraiso  capa
-269  capa              star-wars-battlefront-companhia-do-crepusculo  capa
-270  capa              star-wars-troopers-da-morte  capa
-271  capa              star-wars-herdeiro-do-jedi  capa
-272  capa              star-wars-canalhas  capa
-273  capa              star-wars-sombras-do-imperio  capa
-274  capa              star-wars-marcas-da-guerra  capa
-275  capa              star-wars-divida-de-honra  capa
-276  capa              star-wars-fim-do-imperio  capa
-277  capa              star-wars-esquadrao-rogue  capa
-278  capa              star-wars-herdeiro-do-imperio  capa
-279  capa              star-wars-ascensao-da-forca-sombria  capa
-280  capa              star-wars-o-ultimo-comando  capa
-281  capa              star-wars-legado-de-sangue  capa
-282  capa              star-wars-provacao  capa
-283  capa              a-guerra-dos-tronos-george-r-r-martin  capa
-284  capa              a-furia-dos-reis-george-r-r-martin  capa
-285  capa              a-tormenta-de-espadas-george-r-r-martin  capa
-286  capa              o-festim-dos-corvos-george-r-r-martin  capa
-287  capa              a-danca-dos-dragoes-george-r-r-martin  capa
-288  fundo removido    por-dentro-da-serie-da-hbo-game-of-thrones-george-r-r-martin  fundo removido
-289  capa              fogo-sangue-george-r-r-martin  capa
-290  capa              um-corpo-na-biblioteca-agatha-christie  capa
-291  capa              assassinato-no-expresso-do-oriente-agatha-christie  capa
-292  capa              morte-no-nilo-agatha-christie  capa
-293  capa              morte-na-mesopotamia-agatha-christie  capa
-294  capa              a-mansao-hollow-agatha-christie  capa
-295  capa              os-elefantes-nao-esquecem-agatha-christie  capa
-296  capa              o-misterio-dos-sete-relogios-agatha-christie  capa
-297  capa              os-crimes-abc-agatha-christie  capa
-298  capa              os-trabalhos-de-hercules-agatha-christie  capa
-299  capa              a-maldicao-do-espelho-agatha-christie  capa
-300  capa              cem-gramas-de-centeio-agatha-christie  capa
-301  capa              nemesis-agatha-christie  capa
-302  fundo removido    convite-para-um-homicidio-agatha-christie  fundo removido
-303  capa              m-ou-n-agatha-christie  capa
-304  capa              a-casa-do-penhasco-agatha-christie  capa
-305  capa              hora-zero-agatha-christie  capa
-306  capa              o-natal-de-poirot-agatha-christie  capa
-307  capa              treze-a-mesa-agatha-christie  capa
-308  capa              a-casa-torta-agatha-christie  capa
-309  capa              assassinato-na-casa-do-pastor-agatha-christie  capa
-310  capa              um-pressentimento-funesto-agatha-christie  capa
-311  capa              poirot-perde-uma-cliente-agatha-christie  capa
-312  capa              a-extravagancia-do-morto-agatha-christie  capa
-313  capa              caiu-o-pano-o-ultimo-caso-de-poirot-agatha-christie  capa
-314  capa              assassinato-no-beco-agatha-christie  capa
-315  capa              aventura-em-bagda-agatha-christie  capa
-316  capa              detetive-parker-pyne-agatha-christie  capa
-317  capa              mau-comeco-desventuras-em-serie  capa
-318  capa              a-sala-dos-repteis-desventuras-em-serie  capa
-319  capa              o-lago-das-sanguessugas-desventuras-em-serie  capa
-320  capa              serraria-baixo-astral-desventuras-em-serie  capa
-321  capa              inferno-no-colegio-interno-desventuras-em-serie  capa
-322  capa              o-elevador-ersatz-desventuras-em-serie  capa
-323  capa              a-cidade-sinistra-dos-corvos-desventuras-em-serie  capa
-324  capa              o-hospital-hostil-desventuras-em-serie  capa
-325  capa              o-espetaculo-carnivoro-desventuras-em-serie  capa
-326  capa              o-escorregador-de-gelo-desventuras-em-serie  capa
-327  capa              a-gruta-gorgonea-desventuras-em-serie  capa
-328  capa              o-penultimo-perigo-desventuras-em-serie  capa
-329  capa              o-fim-desventuras-em-serie  capa
-330  capa              o-ultimo-desejo-the-witcher  capa
-331  capa              a-espada-do-destino-the-witcher  capa
-332  capa              o-sangue-dos-elfos-the-witcher  capa
-333  capa              tempo-do-desprezo-the-witcher  capa
-334  capa              batismo-de-fogo-the-witcher  capa
-335  capa              a-torre-da-andorinha-the-witcher  capa
-336  capa              a-senhora-do-lago-the-witcher  capa
-337  fundo removido    tempo-de-tempestade-the-witcher  fundo removido
-338  capa              cidade-dos-ossos-cassandra-clare-os-instrumentos-mortais  capa
-339  capa              cidade-das-cinzas-cassandra-clare-os-instrumentos-mortais  capa
-340  capa              cidade-de-vidro-cassandra-clare-os-instrumentos-mortais  capa
-341  capa              cidade-dos-anjos-caidos-cassandra-clare-os-instrumentos-mortais  capa
-342  capa              cidade-das-almas-perdidas-cassandra-clare-os-instrumentos-mortais  capa
-343  capa              cidade-do-fogo-celestial-cassandra-clare-os-instrumentos-mortais  capa
-344  capa              anjo-mecanico-cassandra-clare-as-pecas-infernais  capa
-345  capa              principe-mecanico-cassandra-clare-as-pecas-infernais  capa
-346  capa              princesa-mecanica-cassandra-clare-as-pecas-infernais  capa
-347  capa              dama-da-meia-noite-cassandra-clare-os-artificios-das-trevas  capa
-348  capa              senhor-das-sombras-cassandra-clare-os-artificios-das-trevas  capa
-349  capa              rainha-do-ar-e-da-escuridao-cassandra-clare-os-artificios-das-trevas  capa
-350  capa              duna-frank-herbert  capa
-351  fundo removido    messias-de-duna-frank-herbert  fundo removido
-352  fundo removido    filhos-de-duna-frank-herbert  fundo removido
-353  fundo removido    imperador-deus-de-duna-frank-herbert  fundo removido
-354  fundo removido    hereges-de-duna-frank-herbert  fundo removido
-355  fundo removido    as-herdeiras-de-duna-frank-herbert  fundo removido
-356  capa              eragon-christopher-paolini  capa
-357  capa              eldest-christopher-paolini  capa
-358  fundo removido    brisingr-christopher-paolini  fundo removido
-359  capa              heranca-christopher-paolini  capa
-360  capa              o-garfo-a-bruxa-e-o-dragao-christopher-paolini  capa
-361  não baixou        larousse-das-civilizacoes-antigas-da-babilonia-ao-exercito-chines  HTTP Error 403: Forbidden
-362  capa              it-a-coisa  capa
-363  capa              o-oitavo-selo  capa
-364  capa              vida-e-morte-crepusculo-reimaginado  capa
-365  capa              o-poder-do-habito  capa
-366  capa              mindset-a-nova-psicologia-do-sucesso  capa
-367  capa              muito-mais-que-5inco-minutos  capa
-368  capa              ta-gravando-e-agora  capa
-369  não baixou        o-essencial-da-mitologia-deusas-deuses-e-herois  HTTP Error 403: Forbidden
-370  não baixou        o-essencial-da-mitologia-historia-da-mitologia  HTTP Error 403: Forbidden
-371  capa              a-saga-dos-corvos-opala  capa
-372  capa              o-povo-do-ar-o-canto-mais-escuro-da-floresta  capa
-373  capa              corte-de-gelo-e-estrelas-acotar-novela  capa
-374  fundo removido    colecao-a-rainha-vermelha  fundo removido
-375  fundo removido    colecao-a-sina-do-sete-nora-roberts  fundo removido
-376  fundo removido    colecao-alien  fundo removido
-377  fundo removido    colecao-as-cronicas-de-narnia  fundo removido
-378  não baixou        colecao-c-j-tudor-suspense  HTTP Error 403: Forbidden
-379  fundo removido    colecao-classicos-brasileiros-em-capa-dura  fundo removido
-380  foto com cenário  colecao-crepusculo  foto com cenário: o fundo não é liso
-381  fundo removido    colecao-cronicas-dos-senhores-de-castelo  fundo removido
-382  fundo removido    colecao-divergente  fundo removido
-383  fundo removido    colecao-encantadas-sarah-pinborough  fundo removido
-384  não baixou        colecao-fronteiras-do-universo  HTTP Error 403: Forbidden
-385  foto com cenário  colecao-neve-e-cinzas-sara-raasch  o fundo se confunde com a imagem: mantida como veio
-386  não baixou        colecao-o-cla-dos-magos-trudi-canavan  <urlopen error timed out>
-387  foto com cenário  colecao-os-legados-de-lorien  foto com cenário: o fundo não é liso
-388  foto com cenário  colecao-silo-hugh-howey  foto com cenário: o fundo não é liso
-389  fundo removido    colecao-splintered-a-g-howard  fundo removido
-390  fundo removido    dupla-stranger-things  fundo removido
-391  fundo removido    colecao-trilogia-all-souls-deborah-harkness  fundo removido
-392  fundo removido    colecao-trilogia-halo-alexandra-adornetto  já veio sem fundo
-393  não baixou        colecao-trono-de-vidro-sarah-j-maas  HTTP Error 403: Forbidden
-394  fundo removido    dupla-um-de-nos-karen-m-mcmanus  fundo removido
+192  capa              box-percy-jackson-e-os-olimpianos-nova-edicao-rick-riordan  capa
+193  capa              o-heroi-perdido-rick-riordan  capa
+194  capa              o-filho-de-netuno-rick-riordan  capa
+195  capa              a-marca-de-atena-rick-riordan  capa
+196  capa              a-casa-de-hades-rick-riordan  capa
+197  capa              o-sangue-do-olimpo-rick-riordan  capa
+198  capa              os-diarios-do-semideus-rick-riordan  capa
+199  capa              a-piramide-vermelha-rick-riordan  capa
+200  capa              o-trono-de-fogo-rick-riordan  capa
+201  capa              a-sombra-da-serpente-rick-riordan  capa
+202  capa              guia-de-sobrevivencia-rick-riordan  capa
+203  capa              a-espada-do-verao-rick-riordan  capa
+204  capa              o-martelo-de-thor-rick-riordan  capa
+205  capa              o-navio-dos-mortos-rick-riordan  capa
+206  capa              hotel-valhala-guia-dos-mundos-nordicos-rick-riordan  capa
+207  capa              9-contos-dos-nove-mundos-rick-riordan  capa
+208  capa              o-oraculo-oculto-rick-riordan  capa
+209  capa              a-profecia-das-sombras-rick-riordan  capa
+210  capa              o-labirinto-de-fogo-rick-riordan  capa
+211  capa              a-tumba-do-tirano-rick-riordan  capa
+212  capa              a-torre-de-nero-rick-riordan  capa
+213  capa              semideuses-e-monstros-rick-riordan  capa
+214  capa              segredos-do-acampamento-meio-sangue-rick-riordan  capa
+215  capa              como-treinar-o-seu-dragao  capa
+216  capa              como-ser-um-pirata  capa
+217  capa              como-falar-dragones  capa
+218  capa              como-quebrar-a-maldicao-de-um-dragao  capa
+219  capa              como-mudar-uma-historia-de-dragao  capa
+220  capa              guia-do-heroi-para-vencer-dragoes-mortais  capa
+221  capa              como-navegar-em-uma-tempestade-de-dragao  capa
+222  capa              como-treinar-o-seu-viking  capa
+223  capa              como-partir-o-coracao-de-um-dragao  capa
+224  capa              como-roubar-a-espada-de-um-dragao  capa
+225  capa              como-pegar-a-joia-do-dragao  capa
+226  capa              como-trair-o-heroi-de-um-dragao  capa
+227  capa              como-combater-a-furia-de-um-dragao  capa
+228  capa              harry-potter-e-a-pedra-filosofal  capa
+229  fundo removido    harry-potter-e-a-camara-secreta  fundo e sombra removidos (por cor)
+230  fundo removido    harry-potter-e-o-prisioneiro-de-azkaban  fundo e sombra removidos (por cor)
+231  fundo removido    harry-potter-e-o-calice-de-fogo  fundo e sombra removidos (por cor)
+232  fundo removido    harry-potter-e-a-ordem-da-fenix  fundo e sombra removidos (por cor)
+233  fundo removido    harry-potter-e-o-enigma-do-principe  fundo e sombra removidos (por cor)
+234  fundo removido    harry-potter-e-as-reliquias-da-morte  fundo e sombra removidos (por cor)
+235  capa              harry-potter-e-a-crianca-amaldicoada  capa
+236  fundo removido    animais-fantasticos-e-onde-habitam  fundo e sombra removidos (por cor)
+237  fundo removido    quadribol-atraves-dos-seculos  fundo e sombra removidos (por cor)
+238  fundo removido    os-contos-de-beedle-o-bardo  fundo e sombra removidos (por cor)
+239  fundo removido    animais-fantasticos-e-onde-habitam-o-roteiro-original  fundo e sombra removidos
+240  capa              animais-fantasticos-os-crimes-de-grindelwald  capa
+241  fundo removido    animais-fantasticos-os-segredos-de-dumbledore  já veio sem fundo (sombra tirada)
+242  capa              o-hobbit  capa
+243  capa              o-senhor-dos-aneis-a-sociedade-do-anel  capa
+244  capa              o-senhor-dos-aneis-as-duas-torres  capa
+245  capa              o-senhor-dos-aneis-o-retorno-do-rei  capa
+246  capa              o-silmarillion  capa
+247  capa              a-queda-de-gondolin  capa
+248  capa              beren-e-luthien  capa
+249  capa              os-filhos-de-hurin  capa
+250  capa              contos-inacabados-de-numenor-e-da-terra-media  capa
+251  capa              a-natureza-da-terra-media  capa
+252  fundo removido    jogos-vorazes-suzanne-collins  fundo e sombra removidos (por cor)
+253  capa              em-chamas-suzanne-collins  capa
+254  capa              a-esperanca-suzanne-collins  capa
+255  fundo removido    a-cantiga-dos-passaros-e-das-serpentes-suzanne-collins  fundo e sombra removidos
+256  fundo removido    box-jogos-vorazes-trilogia-caixa-preta-suzanne-collins  fundo e sombra removidos
+257  não baixou        box-colecao-jogos-vorazes-suzanne-collins  imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / HTTP Error 404: Not Found
+258  capa              o-jogo-do-infinito-a-doutrina-da-morte  capa
+259  capa              regras-do-jogo-a-doutrina-da-morte  capa
+260  capa              a-ultima-fase-a-doutrina-da-morte  capa
+261  capa              star-wars-a-trilogia  capa
+262  foto com cenário  star-wars-academia-jedi  o fundo se confunde com a imagem: mantida como veio
+263  capa              star-wars-academia-jedi-o-retorno-de-padawan  capa
+264  capa              star-wars-academia-jedi-o-valentao-fantasma  capa
+265  capa              star-wars-darth-plagueis  capa
+266  fundo removido    star-wars-kenobi  fundo e sombra removidos (por cor)
+267  capa              star-wars-lordes-dos-sith  capa
+268  capa              star-wars-tarkin  capa
+269  capa              star-wars-thrawn  capa
+270  capa              star-wars-um-novo-amanhecer  capa
+271  capa              star-wars-a-armadilha-do-paraiso  capa
+272  capa              star-wars-battlefront-companhia-do-crepusculo  capa
+273  capa              star-wars-troopers-da-morte  capa
+274  capa              star-wars-herdeiro-do-jedi  capa
+275  capa              star-wars-canalhas  capa
+276  capa              star-wars-sombras-do-imperio  capa
+277  capa              star-wars-marcas-da-guerra  capa
+278  capa              star-wars-divida-de-honra  capa
+279  capa              star-wars-fim-do-imperio  capa
+280  capa              star-wars-esquadrao-rogue  capa
+281  capa              star-wars-herdeiro-do-imperio  capa
+282  capa              star-wars-ascensao-da-forca-sombria  capa
+283  capa              star-wars-o-ultimo-comando  capa
+284  capa              star-wars-legado-de-sangue  capa
+285  capa              star-wars-provacao  capa
+286  capa              a-guerra-dos-tronos-george-r-r-martin  capa
+287  capa              a-furia-dos-reis-george-r-r-martin  capa
+288  capa              a-tormenta-de-espadas-george-r-r-martin  capa
+289  capa              o-festim-dos-corvos-george-r-r-martin  capa
+290  capa              a-danca-dos-dragoes-george-r-r-martin  capa
+291  fundo removido    por-dentro-da-serie-da-hbo-game-of-thrones-george-r-r-martin  fundo e sombra removidos (por cor)
+292  capa              fogo-sangue-george-r-r-martin  capa
+293  capa              um-corpo-na-biblioteca-agatha-christie  capa
+294  capa              assassinato-no-expresso-do-oriente-agatha-christie  capa
+295  capa              morte-no-nilo-agatha-christie  capa
+296  capa              morte-na-mesopotamia-agatha-christie  capa
+297  capa              a-mansao-hollow-agatha-christie  capa
+298  capa              os-elefantes-nao-esquecem-agatha-christie  capa
+299  capa              o-misterio-dos-sete-relogios-agatha-christie  capa
+300  capa              os-crimes-abc-agatha-christie  capa
+301  capa              os-trabalhos-de-hercules-agatha-christie  capa
+302  capa              a-maldicao-do-espelho-agatha-christie  capa
+303  capa              cem-gramas-de-centeio-agatha-christie  capa
+304  capa              nemesis-agatha-christie  capa
+305  fundo removido    convite-para-um-homicidio-agatha-christie  fundo e sombra removidos (por cor)
+306  capa              m-ou-n-agatha-christie  capa
+307  capa              a-casa-do-penhasco-agatha-christie  capa (pelo endereço alternativo 1)
+308  capa              hora-zero-agatha-christie  capa
+309  não baixou        o-natal-de-poirot-agatha-christie  imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / HTTP Error 404: Not Found
+310  capa              treze-a-mesa-agatha-christie  capa (pelo endereço alternativo 1)
+311  capa              a-casa-torta-agatha-christie  capa
+312  capa              assassinato-na-casa-do-pastor-agatha-christie  capa
+313  capa              um-pressentimento-funesto-agatha-christie  capa
+314  capa              poirot-perde-uma-cliente-agatha-christie  capa (moldura branca cortada) (pelo endereço alternativo 1)
+315  capa              a-extravagancia-do-morto-agatha-christie  capa
+316  capa              caiu-o-pano-o-ultimo-caso-de-poirot-agatha-christie  capa
+317  capa              assassinato-no-beco-agatha-christie  capa
+318  capa              aventura-em-bagda-agatha-christie  capa
+319  capa              detetive-parker-pyne-agatha-christie  capa
+320  fundo removido    box-agatha-christie-1-harpercollins  fundo e sombra removidos
+321  fundo removido    box-agatha-christie-2-harpercollins  fundo removido (IA)
+322  capa              box-agatha-christie-3-harpercollins  capa
+323  fundo removido    box-agatha-christie-4-harpercollins  fundo e sombra removidos
+324  fundo removido    box-agatha-christie-5-harpercollins  fundo e sombra removidos
+325  fundo removido    box-agatha-christie-6-harpercollins  fundo e sombra removidos
+326  fundo removido    box-agatha-christie-7-harpercollins  fundo e sombra removidos
+327  fundo removido    box-agatha-christie-8-harpercollins  fundo e sombra removidos (por cor)
+328  fundo removido    box-agatha-christie-9-harpercollins  fundo e sombra removidos (por cor)
+329  capa              mau-comeco-desventuras-em-serie  capa
+330  capa              a-sala-dos-repteis-desventuras-em-serie  capa
+331  capa              o-lago-das-sanguessugas-desventuras-em-serie  capa
+332  capa              serraria-baixo-astral-desventuras-em-serie  capa
+333  capa              inferno-no-colegio-interno-desventuras-em-serie  capa
+334  capa              o-elevador-ersatz-desventuras-em-serie  capa
+335  capa              a-cidade-sinistra-dos-corvos-desventuras-em-serie  capa
+336  capa              o-hospital-hostil-desventuras-em-serie  capa
+337  capa              o-espetaculo-carnivoro-desventuras-em-serie  capa
+338  capa              o-escorregador-de-gelo-desventuras-em-serie  capa
+339  capa              a-gruta-gorgonea-desventuras-em-serie  capa
+340  capa              o-penultimo-perigo-desventuras-em-serie  capa
+341  capa              o-fim-desventuras-em-serie  capa
+342  capa              o-ultimo-desejo-the-witcher  capa
+343  capa              a-espada-do-destino-the-witcher  capa
+344  capa              o-sangue-dos-elfos-the-witcher  capa
+345  capa              tempo-do-desprezo-the-witcher  capa
+346  capa              batismo-de-fogo-the-witcher  capa
+347  capa              a-torre-da-andorinha-the-witcher  capa
+348  capa              a-senhora-do-lago-the-witcher  capa
+349  fundo removido    tempo-de-tempestade-the-witcher  fundo e sombra removidos (por cor)
+350  capa              cidade-dos-ossos-cassandra-clare-os-instrumentos-mortais  capa
+351  capa              cidade-das-cinzas-cassandra-clare-os-instrumentos-mortais  capa
+352  capa              cidade-de-vidro-cassandra-clare-os-instrumentos-mortais  capa
+353  capa              cidade-dos-anjos-caidos-cassandra-clare-os-instrumentos-mortais  capa
+354  capa              cidade-das-almas-perdidas-cassandra-clare-os-instrumentos-mortais  capa
+355  capa              cidade-do-fogo-celestial-cassandra-clare-os-instrumentos-mortais  capa
+356  capa              anjo-mecanico-cassandra-clare-as-pecas-infernais  capa
+357  capa              principe-mecanico-cassandra-clare-as-pecas-infernais  capa
+358  capa              princesa-mecanica-cassandra-clare-as-pecas-infernais  capa
+359  capa              dama-da-meia-noite-cassandra-clare-os-artificios-das-trevas  capa
+360  capa              senhor-das-sombras-cassandra-clare-os-artificios-das-trevas  capa
+361  capa              rainha-do-ar-e-da-escuridao-cassandra-clare-os-artificios-das-trevas  capa
+362  capa              duna-frank-herbert  capa
+363  capa              messias-de-duna-frank-herbert  capa
+364  capa              filhos-de-duna-frank-herbert  capa
+365  capa              imperador-deus-de-duna-frank-herbert  capa
+366  capa              hereges-de-duna-frank-herbert  capa
+367  capa              as-herdeiras-de-duna-frank-herbert  capa
+368  fundo removido    box-duna-primeira-trilogia-aleph  fundo e sombra removidos
+369  capa              eragon-christopher-paolini  capa
+370  capa              eldest-christopher-paolini  capa
+371  fundo removido    brisingr-christopher-paolini  fundo e sombra removidos (por cor)
+372  capa              heranca-christopher-paolini  capa
+373  capa              o-garfo-a-bruxa-e-o-dragao-christopher-paolini  capa
+374  não baixou        larousse-das-civilizacoes-antigas-da-babilonia-ao-exercito-chines  HTTP Error 403: Forbidden
+375  capa              it-a-coisa  capa
+376  capa              o-oitavo-selo  capa
+377  capa              vida-e-morte-crepusculo-reimaginado  capa
+378  capa              o-poder-do-habito  capa
+379  capa              mindset-a-nova-psicologia-do-sucesso  capa
+380  capa              muito-mais-que-5inco-minutos  capa
+381  capa              ta-gravando-e-agora  capa
+382  não baixou        o-essencial-da-mitologia-deusas-deuses-e-herois  HTTP Error 403: Forbidden
+383  não baixou        o-essencial-da-mitologia-historia-da-mitologia  HTTP Error 403: Forbidden
+384  capa              a-saga-dos-corvos-opala  capa
+385  capa              o-povo-do-ar-o-canto-mais-escuro-da-floresta  capa
+386  capa              corte-de-gelo-e-estrelas-acotar-novela  capa
 
 == atencao ==
 001  foto com cenário  box-a-saga-dos-corvos-maggie-stiefvater-4-livros  o fundo se confunde com a imagem: mantida como veio  https://m.media-amazon.com/images/I/91E+AI-cdOS._SY522_.jpg
-002  não baixou        box-acotar-corte-de-espinhos-e-rosas-4-livros  imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / HTTP Error 404: Not Found  https://m.media-amazon.com/images/P/8501301531.01._SCLZZZZZZZ_.jpg
-003  foto com cenário  como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo  o fundo se confunde com a imagem: mantida como veio  https://m.media-amazon.com/images/P/8501304344.01._SCLZZZZZZZ_.jpg
-004  não baixou        halo-alexandra-adornetto  imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / HTTP Error 404: Not Found / HT  https://m.media-amazon.com/images/P/8579550637.01._SCLZZZZZZZ_.jpg
-005  não baixou        hades-alexandra-adornetto  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51vMgjn5TUL._SY522_.jpg
-006  foto com cenário  psicose-robert-bloch-ed-luxo-darkside  foto com cenário: o fundo não é liso  https://darkside.vtexassets.com/arquivos/ids/174500/8-psicose-limited-edition-1.png?v=637606711394330000
-007  foto com cenário  crepusculo-stephenie-meyer-edicao-10-anos  foto com cenário: o fundo não é liso  https://m.media-amazon.com/images/P/8580578558.01._SCLZZZZZZZ_.jpg
-008  foto com cenário  star-wars-academia-jedi  o fundo se confunde com a imagem: mantida como veio  https://m.media-amazon.com/images/P/8576572672.01._SCLZZZZZZZ_.jpg
+002  não baixou        como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo  HTTP Error 404: Not Found / HTTP Error 404: Not Found  https://cdn.shopify.com/s/files/1/0722/9197/5420/files/92d1c12b1f2dcac10378c2b69cfe4881.jpg
+003  não baixou        hades-alexandra-adornetto  HTTP Error 404: Not Found  https://m.media-amazon.com/images/I/51vMgjn5TUL._SY522_.jpg
+004  foto com cenário  psicose-robert-bloch-ed-luxo-darkside  foto com cenário: o fundo não é liso  https://darkside.vtexassets.com/arquivos/ids/174500/8-psicose-limited-edition-1.png?v=637606711394330000
+005  foto com cenário  crepusculo-stephenie-meyer-edicao-10-anos  foto com cenário: o fundo não é liso  https://m.media-amazon.com/images/P/8580578558.01._SCLZZZZZZZ_.jpg
+006  não baixou        box-colecao-jogos-vorazes-suzanne-collins  imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / HTTP Error 404: Not Found  https://m.media-amazon.com/images/P/6556670146.01._SCLZZZZZZZ_.jpg
+007  foto com cenário  star-wars-academia-jedi  o fundo se confunde com a imagem: mantida como veio  https://m.media-amazon.com/images/P/8576572672.01._SCLZZZZZZZ_.jpg
+008  não baixou        o-natal-de-poirot-agatha-christie  imagem pequena demais (1x1): costuma ser o aviso de 'sem imagem' da loja / HTTP Error 404: Not Found  https://m.media-amazon.com/images/P/8569809492.01._SCLZZZZZZZ_.jpg
 009  não baixou        larousse-das-civilizacoes-antigas-da-babilonia-ao-exercito-chines  HTTP Error 403: Forbidden  https://lojasebocultural.com.br/wp-content/uploads/2023/09/64263a15-9637-45eb-91d7-b66c8d8a4a88.jpg
 010  não baixou        o-essencial-da-mitologia-deusas-deuses-e-herois  HTTP Error 403: Forbidden  https://estacaocultural.com.br/controle/arquivo/31079693.jpg
 011  não baixou        o-essencial-da-mitologia-historia-da-mitologia  HTTP Error 403: Forbidden  https://estacaocultural.com.br/controle/arquivo/31079693.jpg
-012  não baixou        colecao-c-j-tudor-suspense  HTTP Error 403: Forbidden  https://m.magazineluiza.com.br/a-static/420x420/kit-4-livros-c-j-tudor-as-outras-pessoas-garotas-em-intrinseca/olistsp/osp8xr9cg9n05zlx/b4feee7692ece513ce5a77ce25090020.jpeg
-013  foto com cenário  colecao-crepusculo  foto com cenário: o fundo não é liso  https://m.media-amazon.com/images/I/61CSYLhEICS._SY522_.jpg
-014  não baixou        colecao-fronteiras-do-universo  HTTP Error 403: Forbidden  https://m.magazineluiza.com.br/a-static/420x420/trilogia-fronteiras-do-universo/megalivros-oficial/9000000255579/f635e1860e70f36397f652171f685fa0.jpeg
-015  foto com cenário  colecao-neve-e-cinzas-sara-raasch  o fundo se confunde com a imagem: mantida como veio  https://m.media-amazon.com/images/I/71Hw206fF-L._SY522_.jpg
-016  não baixou        colecao-o-cla-dos-magos-trudi-canavan  <urlopen error timed out>  https://efutura.futurasistemas.com.br/temas/vistagenerico3/image/cache/data/livros/colecao/112926537SZ-580x580.jpg?version=20180131113520
-017  foto com cenário  colecao-os-legados-de-lorien  foto com cenário: o fundo não é liso  https://universosdepapellivros.wordpress.com/wp-content/uploads/2017/06/legados-de-lorien-livros.jpg
-018  foto com cenário  colecao-silo-hugh-howey  foto com cenário: o fundo não é liso  https://m.media-amazon.com/images/I/A1L+4AZ7uyL._CLa%7C3263,2560%7CA1oj4G3MGSL.jpg,A1IC8Xt2E4L.jpg%7C0,0,1483,2560+1780,0,1483,2560+741,0,1780,2560_._SY300_.jpg
-019  não baixou        colecao-trono-de-vidro-sarah-j-maas  HTTP Error 403: Forbidden  https://images-americanas.b2w.io/produtos/5413039229/imagens/colecao-da-serie-trono-de-vidro-8-livros-sarah-j-maas/5413039237_1_large.jpg
 
 == sugestoes ==
