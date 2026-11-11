@@ -1,0 +1,38 @@
+Pesquisa de edições brasileiras (ISBN 978-85 / 978-65), da mais antiga para a mais nova.
+Cada linha L### corresponde a uma linha das folhas folha-NN.jpg.
+
+L001  rebel-marie-lu-legend-4  []
+      ATUAL  https://m.media-amazon.com/images/I/51YdJxQ3BbL._SY522_.jpg
+      1  ?    ISBN 9788579804717  https://m.media-amazon.com/images/P/857980471X.01._SCLZZZZZZZ_.jpg
+L002  inferno-dan-brown  []
+      ATUAL  https://m.media-amazon.com/images/I/51dPeI6OYLL._SY522_.jpg
+      1  ?    ISBN 9788580411522  https://m.media-amazon.com/images/P/8580411521.01._SCLZZZZZZZ_.jpg
+
+== sem edição brasileira com capa encontrada (27) ==
+      corte-de-chamas-prateadas-sarah-j-maas-acotar-5
+      como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo
+      a-descoberta-das-bruxas-deborah-harkness
+      sombra-da-noite-deborah-harkness
+      o-livro-da-vida-deborah-harkness
+      a-rainha-vermelha-victoria-aveyard
+      espada-de-vidro-victoria-aveyard
+      a-prisao-do-rei-victoria-aveyard
+      tempestade-de-guerra-victoria-aveyard
+      trono-destruido-victoria-aveyard-contos
+      anjos-e-demonios-dan-brown
+      o-codigo-da-vinci-dan-brown
+      o-simbolo-perdido-dan-brown
+      origem-dan-brown
+      fortaleza-digital-dan-brown
+      ponto-de-impacto-dan-brown
+      o-escaravelho-catherine-fisher
+      o-oraculo-catherine-fisher
+      o-arconte-catherine-fisher
+      irmaos-de-sangue-nora-roberts
+      a-maldicao-de-hollow-nora-roberts
+      a-pedra-paga-nora-roberts
+      correr-ou-morrer-james-dashner-maze-runner-1
+      prova-de-fogo-james-dashner-maze-runner-2
+      a-cura-mortal-james-dashner-maze-runner-3
+      ordem-de-exterminio-james-dashner-maze-runner-prequel
+      o-codigo-da-febre-james-dashner-maze-runner-prequel-2

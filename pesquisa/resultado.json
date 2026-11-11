@@ -1,0 +1,210 @@
+{
+ "versao": 1,
+ "livros": {
+  "corte-de-chamas-prateadas-sarah-j-maas-acotar-5": {
+   "consulta": "Corte de Chamas Prateadas | Sarah J. Maas",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo": {
+   "consulta": "Como o Rei de Elfhame Aprendeu a Odiar Histórias | Holly Black",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "rebel-marie-lu-legend-4": {
+   "consulta": "Rebel | Marie Lu",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788579804717",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/857980471X.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788579804717",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "a-descoberta-das-bruxas-deborah-harkness": {
+   "consulta": "A Descoberta das Bruxas | Deborah Harkness",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "sombra-da-noite-deborah-harkness": {
+   "consulta": "Sombra da Noite | Deborah Harkness",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-livro-da-vida-deborah-harkness": {
+   "consulta": "O Livro da Vida | Deborah Harkness",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-rainha-vermelha-victoria-aveyard": {
+   "consulta": "A Rainha Vermelha | Victoria Aveyard",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "espada-de-vidro-victoria-aveyard": {
+   "consulta": "Espada de Vidro | Victoria Aveyard",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-prisao-do-rei-victoria-aveyard": {
+   "consulta": "A Prisão do Rei | Victoria Aveyard",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "tempestade-de-guerra-victoria-aveyard": {
+   "consulta": "Tempestade de Guerra | Victoria Aveyard",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "trono-destruido-victoria-aveyard-contos": {
+   "consulta": "Trono Destruído | Victoria Aveyard",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "anjos-e-demonios-dan-brown": {
+   "consulta": "Anjos e Demônios | Dan Brown",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-codigo-da-vinci-dan-brown": {
+   "consulta": "O Código Da Vinci | Dan Brown",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-simbolo-perdido-dan-brown": {
+   "consulta": "O Símbolo Perdido | Dan Brown",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "inferno-dan-brown": {
+   "consulta": "Inferno | Dan Brown",
+   "edicoes": 2,
+   "candidatas": [
+    {
+     "isbn": "9788580411522",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8580411521.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788580411522",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788580411539",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "origem-dan-brown": {
+   "consulta": "Origem | Dan Brown",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "fortaleza-digital-dan-brown": {
+   "consulta": "Fortaleza Digital | Dan Brown",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "ponto-de-impacto-dan-brown": {
+   "consulta": "Ponto de Impacto | Dan Brown",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-escaravelho-catherine-fisher": {
+   "consulta": "O Escaravelho | Catherine Fisher",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-oraculo-catherine-fisher": {
+   "consulta": "O Oráculo | Catherine Fisher",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-arconte-catherine-fisher": {
+   "consulta": "O Arconte | Catherine Fisher",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "irmaos-de-sangue-nora-roberts": {
+   "consulta": "Irmãos de Sangue | Nora Roberts",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-maldicao-de-hollow-nora-roberts": {
+   "consulta": "A Maldição de Hollow | Nora Roberts",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-pedra-paga-nora-roberts": {
+   "consulta": "A Pedra Pagã | Nora Roberts",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "correr-ou-morrer-james-dashner-maze-runner-1": {
+   "consulta": "Correr ou Morrer | James Dashner",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "prova-de-fogo-james-dashner-maze-runner-2": {
+   "consulta": "Prova de Fogo | James Dashner",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-cura-mortal-james-dashner-maze-runner-3": {
+   "consulta": "A Cura Mortal | James Dashner",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "ordem-de-exterminio-james-dashner-maze-runner-prequel": {
+   "consulta": "Ordem de Extermínio | James Dashner",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-codigo-da-febre-james-dashner-maze-runner-prequel-2": {
+   "consulta": "O Código da Febre | James Dashner",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  }
+ }
+}
