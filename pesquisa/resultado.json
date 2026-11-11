@@ -205,6 +205,2000 @@
    "edicoes": 0,
    "candidatas": [],
    "todas": []
+  },
+  "os-doze-justin-cronin-a-passagem-2": {
+   "consulta": "Os Doze | Justin Cronin",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "hades-alexandra-adornetto": {
+   "consulta": "Hades | Alexandra Adornetto",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788522012596",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8522012598.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788522012596",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "bird-box-josh-malerman-edicao-especial-de-luxo": {
+   "consulta": "Bird Box | Josh Malerman",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788580576535",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8580576539.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788580576535",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "a-5-onda-rick-yancey": {
+   "consulta": "A 5ª Onda | Rick Yancey",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "psicose-robert-bloch-ed-luxo-darkside": {
+   "consulta": "Psicose | Robert Bloch",
+   "edicoes": 2,
+   "candidatas": [
+    {
+     "isbn": "9788566636109",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8566636104.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788566636154",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8566636155.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788566636109",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788566636154",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "mitos-gregos-nathaniel-hawthorne": {
+   "consulta": "Mitos Gregos | Nathaniel Hawthorne",
+   "edicoes": 2,
+   "candidatas": [
+    {
+     "isbn": "9786555520620",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/6555520620.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788537815878",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/853781587X.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9786555520620",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788537815878",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "a-guerra-dos-mundos-h-g-wells-ed-luxo-capa-dura": {
+   "consulta": "A Guerra dos Mundos | H.G. Wells",
+   "edicoes": 2,
+   "candidatas": [
+    {
+     "isbn": "9786555522877",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/6555522879.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9786558701118",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/6558701111.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9786555522877",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9786558701118",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "a-filha-das-profundezas-rick-riordan": {
+   "consulta": "A Filha das Profundezas | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-espadachim-de-carvao-affonso-solano": {
+   "consulta": "O Espadachim de Carvão | Affonso Solano",
+   "edicoes": 2,
+   "candidatas": [
+    {
+     "isbn": "9786556431369",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/6556431362.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788577345687",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8577345688.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9786556431369",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788577345687",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "dark-eden-o-medo-e-a-cura-patrick-carman": {
+   "consulta": "Dark Eden: O Medo é a Cura | Patrick Carman",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-colecionador-john-fowles-darkside-caveirinha": {
+   "consulta": "O Colecionador | John Fowles",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788594541086",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8594541082.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788594541086",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "mitologia-nordica-neil-gaiman-capa-dura": {
+   "consulta": "Mitologia Nórdica | Neil Gaiman",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "circulo-negro-catherine-fisher": {
+   "consulta": "Círculo Negro | Catherine Fisher",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "fios-de-prata-reconstruindo-sandman-raphael-draccon": {
+   "consulta": "Fios de Prata: Reconstruindo Sandman | Raphael Draccon",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-homem-invisivel-h-g-wells-ed-zahar-comentada": {
+   "consulta": "O Homem Invisível | H.G. Wells",
+   "edicoes": 2,
+   "candidatas": [
+    {
+     "isbn": "9788537815861",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8537815861.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788537818428",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8537818429.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788537815861",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788537818428",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "terra-americana-jeanine-cummins": {
+   "consulta": "Terra Americana | Jeanine Cummins",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-essencia-do-mal-luca-d-andrea-capa-dura": {
+   "consulta": "A Essência do Mal | Luca D'Andrea",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "1984-george-orwell-capa-dura": {
+   "consulta": "1984 | George Orwell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-maquina-do-tempo-h-g-wells-suma-luxo": {
+   "consulta": "A Máquina do Tempo | H.G. Wells",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "cacador-em-fuga-george-r-r-martin": {
+   "consulta": "Caçador em Fuga | George R.R. Martin",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "os-ultimos-dias-de-krypton-kevin-j-anderson": {
+   "consulta": "Os Últimos Dias de Krypton | Kevin J. Anderson",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "robo-selvagem-peter-brown": {
+   "consulta": "Robô Selvagem | Peter Brown",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "inspecao-josh-malerman": {
+   "consulta": "Inspeção | Josh Malerman",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "serpentario-felipe-castilho": {
+   "consulta": "Serpentário | Felipe Castilho",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-garota-do-lago-charlie-donlea": {
+   "consulta": "A Garota do Lago | Charlie Donlea",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788562409882",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/856240988X.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788562409882",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "a-arvore-envenenada-erin-kelly": {
+   "consulta": "A Árvore Envenenada | Erin Kelly",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "2012-a-guerra-pelas-almas-whitley-strieber": {
+   "consulta": "2012: A Guerra Pelas Almas | Whitley Strieber",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "jogo-de-espelhos-cara-delevingne": {
+   "consulta": "Jogo de Espelhos | Cara Delevingne",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-morro-dos-ventos-uivantes-emily-bronte-capa-dura": {
+   "consulta": "O Morro dos Ventos Uivantes | Emily Brontë",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "dracula-bram-stoker-first-edition-darkside": {
+   "consulta": "Drácula | Bram Stoker",
+   "edicoes": 14,
+   "candidatas": [
+    {
+     "isbn": "9786555520002",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/6555520000.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9786555791464",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/6555791462.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9786559100767",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/6559100766.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9786586490107",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/6586490103.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788502132535",
+     "ano": null,
+     "editora": "",
+     "url": "https://covers.openlibrary.org/b/isbn/9788502132535-L.jpg?default=false"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9786555520002",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9786555791464",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9786559100767",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9786586490107",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788502132535",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788504016147",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788537814772",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788537816196",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788544001455",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788566636222",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788566636239",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788582850053",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788584424573",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788599795873",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "o-diario-de-anne-frank": {
+   "consulta": "O Diário de Anne Frank | ",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "uma-dobra-no-tempo-madeleine-l-engle-capa-dura": {
+   "consulta": "Uma Dobra no Tempo | Madeleine L'Engle",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "as-cronicas-de-narnia-c-s-lewis-volume-unico": {
+   "consulta": "As Crônicas de Nárnia | C.S. Lewis",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788533622104",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8533622104.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788533622104",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "o-pequeno-principe-antoine-de-saint-exupery-edicao-de-luxo-capa-dura": {
+   "consulta": "O Pequeno Príncipe | Antoine de Saint-Exupéry",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9786559570737",
+     "ano": null,
+     "editora": "",
+     "url": "https://covers.openlibrary.org/b/isbn/9786559570737-L.jpg?default=false"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9786559570737",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "o-ladrao-de-raios-rick-riordan": {
+   "consulta": "O Ladrão de Raios | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-mar-de-monstros-rick-riordan": {
+   "consulta": "O Mar de Monstros | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-maldicao-do-tita-rick-riordan": {
+   "consulta": "A Maldição do Titã | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-batalha-do-labirinto-rick-riordan": {
+   "consulta": "A Batalha do Labirinto | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-ultimo-olimpiano-rick-riordan": {
+   "consulta": "O Último Olimpiano | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-calice-dos-deuses-rick-riordan": {
+   "consulta": "O Cálice dos Deuses | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "percy-jackson-e-os-deuses-gregos-rick-riordan": {
+   "consulta": "Percy Jackson e os Deuses Gregos | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "guia-definitivo-rick-riordan": {
+   "consulta": "Guia Definitivo | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "os-arquivos-do-semideus-rick-riordan": {
+   "consulta": "Os Arquivos do Semideus | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-heroi-perdido-rick-riordan": {
+   "consulta": "O Herói Perdido | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-filho-de-netuno-rick-riordan": {
+   "consulta": "O Filho de Netuno | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-marca-de-atena-rick-riordan": {
+   "consulta": "A Marca de Atena | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-casa-de-hades-rick-riordan": {
+   "consulta": "A Casa de Hades | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-sangue-do-olimpo-rick-riordan": {
+   "consulta": "O Sangue do Olimpo | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "os-diarios-do-semideus-rick-riordan": {
+   "consulta": "Os Diários do Semideus | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-piramide-vermelha-rick-riordan": {
+   "consulta": "A Pirâmide Vermelha | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-trono-de-fogo-rick-riordan": {
+   "consulta": "O Trono de Fogo | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-sombra-da-serpente-rick-riordan": {
+   "consulta": "A Sombra da Serpente | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "guia-de-sobrevivencia-rick-riordan": {
+   "consulta": "Guia de Sobrevivência | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-espada-do-verao-rick-riordan": {
+   "consulta": "A Espada do Verão | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-martelo-de-thor-rick-riordan": {
+   "consulta": "O Martelo de Thor | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-navio-dos-mortos-rick-riordan": {
+   "consulta": "O Navio dos Mortos | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "hotel-valhala-guia-dos-mundos-nordicos-rick-riordan": {
+   "consulta": "Hotel Valhala | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "9-contos-dos-nove-mundos-rick-riordan": {
+   "consulta": "9 Contos dos Nove Mundos | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-oraculo-oculto-rick-riordan": {
+   "consulta": "O Oráculo Oculto | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-profecia-das-sombras-rick-riordan": {
+   "consulta": "A Profecia das Sombras | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-labirinto-de-fogo-rick-riordan": {
+   "consulta": "O Labirinto de Fogo | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-tumba-do-tirano-rick-riordan": {
+   "consulta": "A Tumba do Tirano | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-torre-de-nero-rick-riordan": {
+   "consulta": "A Torre de Nero | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "semideuses-e-monstros-rick-riordan": {
+   "consulta": "Semideuses e Monstros | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "segredos-do-acampamento-meio-sangue-rick-riordan": {
+   "consulta": "Segredos do Acampamento Meio-Sangue | Rick Riordan",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-treinar-o-seu-dragao": {
+   "consulta": "Como Treinar o Seu Dragão | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-ser-um-pirata": {
+   "consulta": "Como Ser um Pirata | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-falar-dragones": {
+   "consulta": "Como Falar Dragonês | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-quebrar-a-maldicao-de-um-dragao": {
+   "consulta": "Como Quebrar a Maldição de um Dragão | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-mudar-uma-historia-de-dragao": {
+   "consulta": "Como Mudar uma História de Dragão | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "guia-do-heroi-para-vencer-dragoes-mortais": {
+   "consulta": "Guia do Herói Para Vencer Dragões Mortais | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-navegar-em-uma-tempestade-de-dragao": {
+   "consulta": "Como Navegar em Uma Tempestade de Dragão | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-treinar-o-seu-viking": {
+   "consulta": "Como Treinar o Seu Viking | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-partir-o-coracao-de-um-dragao": {
+   "consulta": "Como Partir o Coração de um Dragão | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-roubar-a-espada-de-um-dragao": {
+   "consulta": "Como Roubar a Espada de um Dragão | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-pegar-a-joia-do-dragao": {
+   "consulta": "Como Pegar a Joia do Dragão | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-trair-o-heroi-de-um-dragao": {
+   "consulta": "Como Trair o Herói de um Dragão | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "como-combater-a-furia-de-um-dragao": {
+   "consulta": "Como Combater a Fúria de Um Dragão | Cressida Cowell",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "harry-potter-e-a-pedra-filosofal": {
+   "consulta": "Harry Potter e a Pedra Filosofal | J.K. Rowling",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "harry-potter-e-a-camara-secreta": {
+   "consulta": "Harry Potter e a Câmara Secreta | J.K. Rowling",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "harry-potter-e-o-prisioneiro-de-azkaban": {
+   "consulta": "Harry Potter e o Prisioneiro de Azkaban | J.K. Rowling",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "harry-potter-e-o-calice-de-fogo": {
+   "consulta": "Harry Potter e o Cálice de Fogo | J.K. Rowling",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788532531797",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8532531792.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788532531797",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "harry-potter-e-a-ordem-da-fenix": {
+   "consulta": "Harry Potter e a Ordem da Fênix | J.K. Rowling",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788532531803",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8532531806.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788532531803",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "harry-potter-e-o-enigma-do-principe": {
+   "consulta": "Harry Potter e o Enigma do Príncipe | J.K. Rowling",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788532531810",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8532531814.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788532531810",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "harry-potter-e-as-reliquias-da-morte": {
+   "consulta": "Harry Potter e as Relíquias da Morte | J.K. Rowling",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "harry-potter-e-a-crianca-amaldicoada": {
+   "consulta": "Harry Potter e a Criança Amaldiçoada | J.K. Rowling",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "animais-fantasticos-e-onde-habitam": {
+   "consulta": "Animais Fantásticos e Onde Habitam | J.K. Rowling",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "quadribol-atraves-dos-seculos": {
+   "consulta": "Quadribol Através dos Séculos | J.K. Rowling",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "os-contos-de-beedle-o-bardo": {
+   "consulta": "Os Contos de Beedle, o Bardo | J.K. Rowling",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "animais-fantasticos-e-onde-habitam-o-roteiro-original": {
+   "consulta": "O Roteiro Original | J.K. Rowling",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "animais-fantasticos-os-crimes-de-grindelwald": {
+   "consulta": "Os Crimes de Grindelwald | J.K. Rowling",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "animais-fantasticos-os-segredos-de-dumbledore": {
+   "consulta": "Os Segredos de Dumbledore | J.K. Rowling",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-hobbit": {
+   "consulta": "O Hobbit | J.R.R. Tolkien",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788533615540",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/853361554X.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788533615540",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "o-senhor-dos-aneis-a-sociedade-do-anel": {
+   "consulta": "A Sociedade do Anel | J.R.R. Tolkien",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-senhor-dos-aneis-as-duas-torres": {
+   "consulta": "As Duas Torres | J.R.R. Tolkien",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-senhor-dos-aneis-o-retorno-do-rei": {
+   "consulta": "O Retorno do Rei | J.R.R. Tolkien",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-silmarillion": {
+   "consulta": "O Silmarillion | J.R.R. Tolkien",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-queda-de-gondolin": {
+   "consulta": "A Queda de Gondolin | J.R.R. Tolkien",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "beren-e-luthien": {
+   "consulta": "Beren e Lúthien | J.R.R. Tolkien",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "os-filhos-de-hurin": {
+   "consulta": "Os Filhos de Húrin | J.R.R. Tolkien",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "contos-inacabados-de-numenor-e-da-terra-media": {
+   "consulta": "Contos Inacabados de Númenor e da Terra-Média | J.R.R. Tolkien",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-natureza-da-terra-media": {
+   "consulta": "A Natureza da Terra-Média | J.R.R. Tolkien",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "jogos-vorazes-suzanne-collins": {
+   "consulta": "Jogos Vorazes | Suzanne Collins",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "em-chamas-suzanne-collins": {
+   "consulta": "Em Chamas | Suzanne Collins",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-esperanca-suzanne-collins": {
+   "consulta": "A Esperança | Suzanne Collins",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-cantiga-dos-passaros-e-das-serpentes-suzanne-collins": {
+   "consulta": "A Cantiga dos Pássaros e das Serpentes | Suzanne Collins",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-jogo-do-infinito-a-doutrina-da-morte": {
+   "consulta": "O Jogo do Infinito | James Dashner",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "regras-do-jogo-a-doutrina-da-morte": {
+   "consulta": "Regras do Jogo | James Dashner",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-ultima-fase-a-doutrina-da-morte": {
+   "consulta": "A Última Fase | James Dashner",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-a-trilogia": {
+   "consulta": "A Trilogia | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-academia-jedi-o-retorno-de-padawan": {
+   "consulta": "Academia Jedi: O Retorno de Padawan | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-academia-jedi-o-valentao-fantasma": {
+   "consulta": "Academia Jedi: O Valentão Fantasma | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-darth-plagueis": {
+   "consulta": "Darth Plagueis | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-kenobi": {
+   "consulta": "Kenobi | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-lordes-dos-sith": {
+   "consulta": "Lordes dos Sith | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-tarkin": {
+   "consulta": "Tarkin | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-thrawn": {
+   "consulta": "Thrawn | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-um-novo-amanhecer": {
+   "consulta": "Um Novo Amanhecer | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-a-armadilha-do-paraiso": {
+   "consulta": "A Armadilha do Paraíso | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-battlefront-companhia-do-crepusculo": {
+   "consulta": "Battlefront: Companhia do Crepúsculo | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-troopers-da-morte": {
+   "consulta": "Troopers da Morte | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-herdeiro-do-jedi": {
+   "consulta": "Herdeiro do Jedi | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-canalhas": {
+   "consulta": "Canalhas | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-sombras-do-imperio": {
+   "consulta": "Sombras do Império | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-divida-de-honra": {
+   "consulta": "Dívida de Honra | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-fim-do-imperio": {
+   "consulta": "Fim do Império | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-esquadrao-rogue": {
+   "consulta": "Esquadrão Rogue | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-herdeiro-do-imperio": {
+   "consulta": "Herdeiro do Império | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-ascensao-da-forca-sombria": {
+   "consulta": "Ascensão da Força Sombria | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-o-ultimo-comando": {
+   "consulta": "O Último Comando | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-legado-de-sangue": {
+   "consulta": "Legado de Sangue | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-provacao": {
+   "consulta": "Provação | Vários autores",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-guerra-dos-tronos-george-r-r-martin": {
+   "consulta": "A Guerra dos Tronos | George R.R. Martin",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-furia-dos-reis-george-r-r-martin": {
+   "consulta": "A Fúria dos Reis | George R.R. Martin",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-tormenta-de-espadas-george-r-r-martin": {
+   "consulta": "A Tormenta de Espadas | George R.R. Martin",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-festim-dos-corvos-george-r-r-martin": {
+   "consulta": "O Festim dos Corvos | George R.R. Martin",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-danca-dos-dragoes-george-r-r-martin": {
+   "consulta": "A Dança dos Dragões | George R.R. Martin",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "por-dentro-da-serie-da-hbo-game-of-thrones-george-r-r-martin": {
+   "consulta": "Por Dentro da Série da HBO | George R.R. Martin",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "fogo-sangue-george-r-r-martin": {
+   "consulta": "Fogo & Sangue | George R.R. Martin",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "um-corpo-na-biblioteca-agatha-christie": {
+   "consulta": "Um Corpo na Biblioteca | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "assassinato-no-expresso-do-oriente-agatha-christie": {
+   "consulta": "Assassinato no Expresso do Oriente | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "morte-no-nilo-agatha-christie": {
+   "consulta": "Morte no Nilo | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "morte-na-mesopotamia-agatha-christie": {
+   "consulta": "Morte na Mesopotâmia | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-mansao-hollow-agatha-christie": {
+   "consulta": "A Mansão Hollow | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "os-elefantes-nao-esquecem-agatha-christie": {
+   "consulta": "Os Elefantes Não Esquecem | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-misterio-dos-sete-relogios-agatha-christie": {
+   "consulta": "O Mistério dos Sete Relógios | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "os-crimes-abc-agatha-christie": {
+   "consulta": "Os Crimes ABC | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "os-trabalhos-de-hercules-agatha-christie": {
+   "consulta": "Os Trabalhos de Hércules | Agatha Christie",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788520939901",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8520939902.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788520939901",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "a-maldicao-do-espelho-agatha-christie": {
+   "consulta": "A Maldição do Espelho | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "cem-gramas-de-centeio-agatha-christie": {
+   "consulta": "Cem Gramas de Centeio | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "nemesis-agatha-christie": {
+   "consulta": "Nêmesis | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "convite-para-um-homicidio-agatha-christie": {
+   "consulta": "Convite Para um Homicídio | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "m-ou-n-agatha-christie": {
+   "consulta": "M ou N? | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-casa-do-penhasco-agatha-christie": {
+   "consulta": "A Casa do Penhasco | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "hora-zero-agatha-christie": {
+   "consulta": "Hora Zero | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-natal-de-poirot-agatha-christie": {
+   "consulta": "O Natal de Poirot | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "treze-a-mesa-agatha-christie": {
+   "consulta": "Treze à Mesa | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-casa-torta-agatha-christie": {
+   "consulta": "A Casa Torta | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "assassinato-na-casa-do-pastor-agatha-christie": {
+   "consulta": "Assassinato na Casa do Pastor | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "um-pressentimento-funesto-agatha-christie": {
+   "consulta": "Um Pressentimento Funesto | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "poirot-perde-uma-cliente-agatha-christie": {
+   "consulta": "Poirot Perde uma Cliente | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-extravagancia-do-morto-agatha-christie": {
+   "consulta": "A Extravagância do Morto | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "caiu-o-pano-o-ultimo-caso-de-poirot-agatha-christie": {
+   "consulta": "Caiu o Pano | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "assassinato-no-beco-agatha-christie": {
+   "consulta": "Assassinato no Beco | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "aventura-em-bagda-agatha-christie": {
+   "consulta": "Aventura em Bagdá | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "detetive-parker-pyne-agatha-christie": {
+   "consulta": "Detetive Parker Pyne | Agatha Christie",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "mau-comeco-desventuras-em-serie": {
+   "consulta": "Mau Começo | Lemony Snicket",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788535900941",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8535900942.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788535900941",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "a-sala-dos-repteis-desventuras-em-serie": {
+   "consulta": "A Sala dos Répteis | Lemony Snicket",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788535901436",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8535901434.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788535901436",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "o-lago-das-sanguessugas-desventuras-em-serie": {
+   "consulta": "O Lago das Sanguessugas | Lemony Snicket",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788535901719",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/853590171X.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788535901719",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "serraria-baixo-astral-desventuras-em-serie": {
+   "consulta": "Serraria Baixo-Astral | Lemony Snicket",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "inferno-no-colegio-interno-desventuras-em-serie": {
+   "consulta": "Inferno no Colégio Interno | Lemony Snicket",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788535902747",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8535902740.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788535902747",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "o-elevador-ersatz-desventuras-em-serie": {
+   "consulta": "O Elevador Ersatz | Lemony Snicket",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-cidade-sinistra-dos-corvos-desventuras-em-serie": {
+   "consulta": "A Cidade Sinistra dos Corvos | Lemony Snicket",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788535903928",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8535903925.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788535903928",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "o-hospital-hostil-desventuras-em-serie": {
+   "consulta": "O Hospital Hostil | Lemony Snicket",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788535904512",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8535904514.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788535904512",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "o-espetaculo-carnivoro-desventuras-em-serie": {
+   "consulta": "O Espetáculo Carnívoro | Lemony Snicket",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-escorregador-de-gelo-desventuras-em-serie": {
+   "consulta": "O Escorregador de Gelo | Lemony Snicket",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-gruta-gorgonea-desventuras-em-serie": {
+   "consulta": "A Gruta Gorgônea | Lemony Snicket",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788535907025",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8535907025.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788535907025",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "o-penultimo-perigo-desventuras-em-serie": {
+   "consulta": "O Penúltimo Perigo | Lemony Snicket",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-fim-desventuras-em-serie": {
+   "consulta": "O Fim | Lemony Snicket",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-ultimo-desejo-the-witcher": {
+   "consulta": "O Último Desejo | Andrzej Sapkowski",
+   "edicoes": 2,
+   "candidatas": [
+    {
+     "isbn": "9788578273743",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8578273745.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788578279585",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8578279581.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788578273743",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788578279585",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "a-espada-do-destino-the-witcher": {
+   "consulta": "A Espada do Destino | Andrzej Sapkowski",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788578275563",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/857827556X.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788578275563",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "o-sangue-dos-elfos-the-witcher": {
+   "consulta": "O Sangue dos Elfos | Andrzej Sapkowski",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "tempo-do-desprezo-the-witcher": {
+   "consulta": "Tempo do Desprezo | Andrzej Sapkowski",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788578279561",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8578279565.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788578279561",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "batismo-de-fogo-the-witcher": {
+   "consulta": "Batismo de Fogo | Andrzej Sapkowski",
+   "edicoes": 2,
+   "candidatas": [
+    {
+     "isbn": "9788578279820",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8578279824.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788578279851",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8578279859.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788578279820",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788578279851",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "a-torre-da-andorinha-the-witcher": {
+   "consulta": "A Torre da Andorinha | Andrzej Sapkowski",
+   "edicoes": 2,
+   "candidatas": [
+    {
+     "isbn": "9788546900886",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8546900884.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788546900978",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8546900973.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788546900886",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788546900978",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "a-senhora-do-lago-the-witcher": {
+   "consulta": "A Senhora do Lago | Andrzej Sapkowski",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788546901654",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8546901651.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788546901654",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "tempo-de-tempestade-the-witcher": {
+   "consulta": "Tempo de Tempestade | Andrzej Sapkowski",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "cidade-dos-ossos-cassandra-clare-os-instrumentos-mortais": {
+   "consulta": "Cidade dos Ossos | Cassandra Clare",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788501092144",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8501092142.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788501092144",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "cidade-das-cinzas-cassandra-clare-os-instrumentos-mortais": {
+   "consulta": "Cidade das Cinzas | Cassandra Clare",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "cidade-de-vidro-cassandra-clare-os-instrumentos-mortais": {
+   "consulta": "Cidade de Vidro | Cassandra Clare",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "cidade-dos-anjos-caidos-cassandra-clare-os-instrumentos-mortais": {
+   "consulta": "Cidade dos Anjos Caídos | Cassandra Clare",
+   "edicoes": 2,
+   "candidatas": [
+    {
+     "isbn": "9788501092274",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8501092274.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788501092717",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8501092711.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788501092274",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788501092717",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "cidade-das-almas-perdidas-cassandra-clare-os-instrumentos-mortais": {
+   "consulta": "Cidade das Almas Perdidas | Cassandra Clare",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788501092908",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8501092908.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788501092908",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "cidade-do-fogo-celestial-cassandra-clare-os-instrumentos-mortais": {
+   "consulta": "Cidade do Fogo Celestial | Cassandra Clare",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788501093240",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8501093246.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788501093240",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "anjo-mecanico-cassandra-clare-as-pecas-infernais": {
+   "consulta": "Anjo Mecânico | Cassandra Clare",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "principe-mecanico-cassandra-clare-as-pecas-infernais": {
+   "consulta": "Príncipe Mecânico | Cassandra Clare",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "princesa-mecanica-cassandra-clare-as-pecas-infernais": {
+   "consulta": "Princesa Mecânica | Cassandra Clare",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "dama-da-meia-noite-cassandra-clare-os-artificios-das-trevas": {
+   "consulta": "Dama da Meia-Noite | Cassandra Clare",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "senhor-das-sombras-cassandra-clare-os-artificios-das-trevas": {
+   "consulta": "Senhor das Sombras | Cassandra Clare",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "rainha-do-ar-e-da-escuridao-cassandra-clare-os-artificios-das-trevas": {
+   "consulta": "Rainha do Ar e da Escuridão | Cassandra Clare",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "duna-frank-herbert": {
+   "consulta": "Duna | Frank Herbert",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "messias-de-duna-frank-herbert": {
+   "consulta": "Messias de Duna | Frank Herbert",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "filhos-de-duna-frank-herbert": {
+   "consulta": "Filhos de Duna | Frank Herbert",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "imperador-deus-de-duna-frank-herbert": {
+   "consulta": "Imperador Deus de Duna | Frank Herbert",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "hereges-de-duna-frank-herbert": {
+   "consulta": "Hereges de Duna | Frank Herbert",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "as-herdeiras-de-duna-frank-herbert": {
+   "consulta": "As Herdeiras de Duna | Frank Herbert",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "eragon-christopher-paolini": {
+   "consulta": "Eragon | Christopher Paolini",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788532518484",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8532518486.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788532518484",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "eldest-christopher-paolini": {
+   "consulta": "Eldest | Christopher Paolini",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788532520753",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8532520758.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788532520753",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "brisingr-christopher-paolini": {
+   "consulta": "Brisingr | Christopher Paolini",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "heranca-christopher-paolini": {
+   "consulta": "Herança | Christopher Paolini",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-garfo-a-bruxa-e-o-dragao-christopher-paolini": {
+   "consulta": "O Garfo, a Bruxa e o Dragão | Christopher Paolini",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "larousse-das-civilizacoes-antigas-da-babilonia-ao-exercito-chines": {
+   "consulta": "Larousse das Civilizações Antigas | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "it-a-coisa": {
+   "consulta": "It | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-oitavo-selo": {
+   "consulta": "O Oitavo Selo | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "vida-e-morte-crepusculo-reimaginado": {
+   "consulta": "Vida e Morte | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-poder-do-habito": {
+   "consulta": "O Poder do Hábito | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "mindset-a-nova-psicologia-do-sucesso": {
+   "consulta": "Mindset | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "muito-mais-que-5inco-minutos": {
+   "consulta": "Muito Mais que 5inco Minutos | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "ta-gravando-e-agora": {
+   "consulta": "Tá Gravando? E Agora? | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-essencial-da-mitologia-deusas-deuses-e-herois": {
+   "consulta": "Deusas, Deuses e Heróis | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-essencial-da-mitologia-historia-da-mitologia": {
+   "consulta": "História da Mitologia | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "a-saga-dos-corvos-opala": {
+   "consulta": "A Saga dos Corvos | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-povo-do-ar-o-canto-mais-escuro-da-floresta": {
+   "consulta": "O Povo do Ar | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "corte-de-gelo-e-estrelas-acotar-novela": {
+   "consulta": "Corte de Gelo e Estrelas | Vários",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
   }
  }
 }

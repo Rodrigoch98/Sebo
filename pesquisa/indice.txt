@@ -1,38 +1,314 @@
 Pesquisa de edições brasileiras (ISBN 978-85 / 978-65), da mais antiga para a mais nova.
 Cada linha L### corresponde a uma linha das folhas folha-NN.jpg.
 
-L001  rebel-marie-lu-legend-4  []
-      ATUAL  https://m.media-amazon.com/images/I/51YdJxQ3BbL._SY522_.jpg
-      1  ?    ISBN 9788579804717  https://m.media-amazon.com/images/P/857980471X.01._SCLZZZZZZZ_.jpg
-L002  inferno-dan-brown  []
-      ATUAL  https://m.media-amazon.com/images/I/51dPeI6OYLL._SY522_.jpg
-      1  ?    ISBN 9788580411522  https://m.media-amazon.com/images/P/8580411521.01._SCLZZZZZZZ_.jpg
+L001  hades-alexandra-adornetto  []
+      ATUAL  https://m.media-amazon.com/images/I/51vMgjn5TUL._SY522_.jpg
+      1  ?    ISBN 9788522012596  https://m.media-amazon.com/images/P/8522012598.01._SCLZZZZZZZ_.jpg
+L002  bird-box-josh-malerman-edicao-especial-de-luxo  [luxo, edicao especial, box]
+      ATUAL  https://m.media-amazon.com/images/I/91x7oEAnSOL._SY522_.jpg
+      1  ?    ISBN 9788580576535  https://m.media-amazon.com/images/P/8580576539.01._SCLZZZZZZZ_.jpg
+L003  psicose-robert-bloch-ed-luxo-darkside  [capa dura, luxo, darkside, colecionador]
+      ATUAL  https://darkside.vtexassets.com/arquivos/ids/174500/8-psicose-limited-edition-1.png?v=637606711394330000
+      1  ?    ISBN 9788566636109  https://m.media-amazon.com/images/P/8566636104.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9788566636154  https://m.media-amazon.com/images/P/8566636155.01._SCLZZZZZZZ_.jpg
+L004  mitos-gregos-nathaniel-hawthorne  []
+      ATUAL  https://m.media-amazon.com/images/I/71bpljCX9+L._SY522_.jpg
+      1  ?    ISBN 9786555520620  https://m.media-amazon.com/images/P/6555520620.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9788537815878  https://m.media-amazon.com/images/P/853781587X.01._SCLZZZZZZZ_.jpg
+L005  a-guerra-dos-mundos-h-g-wells-ed-luxo-capa-dura  [capa dura, luxo]
+      ATUAL  https://m.media-amazon.com/images/I/81zsdG62TGL._SY522_.jpg
+      1  ?    ISBN 9786555522877  https://m.media-amazon.com/images/P/6555522879.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9786558701118  https://m.media-amazon.com/images/P/6558701111.01._SCLZZZZZZZ_.jpg
+L006  o-espadachim-de-carvao-affonso-solano  []
+      ATUAL  https://m.media-amazon.com/images/I/71e4y62I94L._SY522_.jpg
+      1  ?    ISBN 9786556431369  https://m.media-amazon.com/images/P/6556431362.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9788577345687  https://m.media-amazon.com/images/P/8577345688.01._SCLZZZZZZZ_.jpg
+L007  o-colecionador-john-fowles-darkside-caveirinha  [capa dura, luxo, darkside, colecionador]
+      ATUAL  https://m.media-amazon.com/images/I/51E8A6CA5iL._SY522_.jpg
+      1  ?    ISBN 9788594541086  https://m.media-amazon.com/images/P/8594541082.01._SCLZZZZZZZ_.jpg
+L008  o-homem-invisivel-h-g-wells-ed-zahar-comentada  [capa dura, luxo, zahar]
+      ATUAL  https://m.media-amazon.com/images/I/81h3bvau71L._SY522_.jpg
+      1  ?    ISBN 9788537815861  https://m.media-amazon.com/images/P/8537815861.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9788537818428  https://m.media-amazon.com/images/P/8537818429.01._SCLZZZZZZZ_.jpg
+L009  a-garota-do-lago-charlie-donlea  []
+      ATUAL  https://m.media-amazon.com/images/I/81sl23VcYtL._SY522_.jpg
+      1  ?    ISBN 9788562409882  https://m.media-amazon.com/images/P/856240988X.01._SCLZZZZZZZ_.jpg
+L010  dracula-bram-stoker-first-edition-darkside  [darkside]
+      ATUAL  https://m.media-amazon.com/images/I/61gfnGu9cTL._SY522_.jpg
+      1  ?    ISBN 9786555520002  https://m.media-amazon.com/images/P/6555520000.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9786555791464  https://m.media-amazon.com/images/P/6555791462.01._SCLZZZZZZZ_.jpg
+      3  ?    ISBN 9786559100767  https://m.media-amazon.com/images/P/6559100766.01._SCLZZZZZZZ_.jpg
+      4  ?    ISBN 9786586490107  https://m.media-amazon.com/images/P/6586490103.01._SCLZZZZZZZ_.jpg
+      5  ?    ISBN 9788502132535  https://covers.openlibrary.org/b/isbn/9788502132535-L.jpg?default=false
+L011  as-cronicas-de-narnia-c-s-lewis-volume-unico  []
+      ATUAL  https://m.media-amazon.com/images/I/71yJLhQekBL._SY522_.jpg
+      1  ?    ISBN 9788533622104  https://m.media-amazon.com/images/P/8533622104.01._SCLZZZZZZZ_.jpg
+L012  o-pequeno-principe-antoine-de-saint-exupery-edicao-de-luxo-capa-dura  [capa dura, luxo]
+      ATUAL  https://m.media-amazon.com/images/I/71CGJI0uNyL._SY522_.jpg
+      1  ?    ISBN 9786559570737  https://covers.openlibrary.org/b/isbn/9786559570737-L.jpg?default=false
+L013  harry-potter-e-o-calice-de-fogo  []
+      ATUAL  https://rocco.com.br/wp-content/uploads/2022/12/9788532530813.jpg
+      1  ?    ISBN 9788532531797  https://m.media-amazon.com/images/P/8532531792.01._SCLZZZZZZZ_.jpg
+L014  harry-potter-e-a-ordem-da-fenix  []
+      ATUAL  https://rocco.com.br/wp-content/uploads/2022/12/9788532530820.jpg
+      1  ?    ISBN 9788532531803  https://m.media-amazon.com/images/P/8532531806.01._SCLZZZZZZZ_.jpg
+L015  harry-potter-e-o-enigma-do-principe  []
+      ATUAL  https://rocco.com.br/wp-content/uploads/2022/12/9788532530837.jpg
+      1  ?    ISBN 9788532531810  https://m.media-amazon.com/images/P/8532531814.01._SCLZZZZZZZ_.jpg
+L016  o-hobbit  [conferido]
+      ATUAL  https://cdn.shopify.com/s/files/1/0529/5125/3158/files/9788595085800.jpg
+      1  ?    ISBN 9788533615540  https://m.media-amazon.com/images/P/853361554X.01._SCLZZZZZZZ_.jpg
+L017  os-trabalhos-de-hercules-agatha-christie  [conferido]
+      ATUAL  https://www.deliciousdeath.com/46/46PT9.jpg
+      1  ?    ISBN 9788520939901  https://m.media-amazon.com/images/P/8520939902.01._SCLZZZZZZZ_.jpg
+L018  mau-comeco-desventuras-em-serie  []
+      ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535900941/mau-comeco.jpg
+      1  ?    ISBN 9788535900941  https://m.media-amazon.com/images/P/8535900942.01._SCLZZZZZZZ_.jpg
+L019  a-sala-dos-repteis-desventuras-em-serie  []
+      ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535901436/a-sala-dos-repteis.jpg
+      1  ?    ISBN 9788535901436  https://m.media-amazon.com/images/P/8535901434.01._SCLZZZZZZZ_.jpg
+L020  o-lago-das-sanguessugas-desventuras-em-serie  []
+      ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535901719/o-lago-das-sanguessugas.jpg
+      1  ?    ISBN 9788535901719  https://m.media-amazon.com/images/P/853590171X.01._SCLZZZZZZZ_.jpg
+L021  inferno-no-colegio-interno-desventuras-em-serie  []
+      ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535902747/inferno-no-colegio-interno.jpg
+      1  ?    ISBN 9788535902747  https://m.media-amazon.com/images/P/8535902740.01._SCLZZZZZZZ_.jpg
+L022  a-cidade-sinistra-dos-corvos-desventuras-em-serie  []
+      ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535903928/a-cidade-sinistra-dos-corvos.jpg
+      1  ?    ISBN 9788535903928  https://m.media-amazon.com/images/P/8535903925.01._SCLZZZZZZZ_.jpg
+L023  o-hospital-hostil-desventuras-em-serie  []
+      ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535904512/o-hospital-hostil.jpg
+      1  ?    ISBN 9788535904512  https://m.media-amazon.com/images/P/8535904514.01._SCLZZZZZZZ_.jpg
+L024  a-gruta-gorgonea-desventuras-em-serie  []
+      ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535907025/a-gruta-gorgonea.jpg
+      1  ?    ISBN 9788535907025  https://m.media-amazon.com/images/P/8535907025.01._SCLZZZZZZZ_.jpg
+L025  o-ultimo-desejo-the-witcher  []
+      ATUAL  https://m.media-amazon.com/images/I/41Yy6AbJXAL._SY522_.jpg
+      1  ?    ISBN 9788578273743  https://m.media-amazon.com/images/P/8578273745.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9788578279585  https://m.media-amazon.com/images/P/8578279581.01._SCLZZZZZZZ_.jpg
+L026  a-espada-do-destino-the-witcher  []
+      ATUAL  https://m.media-amazon.com/images/I/41si2hJ-zDL._SY522_.jpg
+      1  ?    ISBN 9788578275563  https://m.media-amazon.com/images/P/857827556X.01._SCLZZZZZZZ_.jpg
+L027  tempo-do-desprezo-the-witcher  []
+      ATUAL  https://m.media-amazon.com/images/I/41fTkkAY7LL._SY522_.jpg
+      1  ?    ISBN 9788578279561  https://m.media-amazon.com/images/P/8578279565.01._SCLZZZZZZZ_.jpg
+L028  batismo-de-fogo-the-witcher  [companhia]
+      ATUAL  https://m.media-amazon.com/images/I/413BTDGaOGL._SY522_.jpg
+      1  ?    ISBN 9788578279820  https://m.media-amazon.com/images/P/8578279824.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9788578279851  https://m.media-amazon.com/images/P/8578279859.01._SCLZZZZZZZ_.jpg
+L029  a-torre-da-andorinha-the-witcher  []
+      ATUAL  https://m.media-amazon.com/images/I/41EilSZ-YnL._SY522_.jpg
+      1  ?    ISBN 9788546900886  https://m.media-amazon.com/images/P/8546900884.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9788546900978  https://m.media-amazon.com/images/P/8546900973.01._SCLZZZZZZZ_.jpg
+L030  a-senhora-do-lago-the-witcher  []
+      ATUAL  https://m.media-amazon.com/images/I/414dxsTXMdL._SY522_.jpg
+      1  ?    ISBN 9788546901654  https://m.media-amazon.com/images/P/8546901651.01._SCLZZZZZZZ_.jpg
+L031  cidade-dos-ossos-cassandra-clare-os-instrumentos-mortais  [box, conferido]
+      ATUAL  https://cdn.shopify.com/s/files/1/0722/9197/5420/files/40359516b31c6d4bb7889d53e839546b_931c204f-bb49-4ba0-992e-ba21ef692bfd.jpg
+      1  ?    ISBN 9788501092144  https://m.media-amazon.com/images/P/8501092142.01._SCLZZZZZZZ_.jpg
+L032  cidade-dos-anjos-caidos-cassandra-clare-os-instrumentos-mortais  [box, conferido]
+      ATUAL  https://cdn.shopify.com/s/files/1/0722/9197/5420/files/39e77d67dc057907ac38108f789d980b_cd530ba0-f72b-4a1f-90af-35ea76466026.jpg
+      1  ?    ISBN 9788501092274  https://m.media-amazon.com/images/P/8501092274.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9788501092717  https://m.media-amazon.com/images/P/8501092711.01._SCLZZZZZZZ_.jpg
+L033  cidade-das-almas-perdidas-cassandra-clare-os-instrumentos-mortais  [box, conferido]
+      ATUAL  https://cdn.shopify.com/s/files/1/0722/9197/5420/files/37ebb77fd044715fc2cfaab13f2212df_2e8927e1-d830-464e-b41b-6d344fc82634.jpg
+      1  ?    ISBN 9788501092908  https://m.media-amazon.com/images/P/8501092908.01._SCLZZZZZZZ_.jpg
+L034  cidade-do-fogo-celestial-cassandra-clare-os-instrumentos-mortais  [box, conferido]
+      ATUAL  https://cdn.shopify.com/s/files/1/0722/9197/5420/files/36bb8861ecafcc25d0e3c97ac25142e6_fa499783-6fc2-454b-877f-b0d325473bf4.jpg
+      1  ?    ISBN 9788501093240  https://m.media-amazon.com/images/P/8501093246.01._SCLZZZZZZZ_.jpg
+L035  eragon-christopher-paolini  [conferido]
+      ATUAL  https://rocco.com.br/wp-content/uploads/2023/05/9786555322910.jpg
+      1  ?    ISBN 9788532518484  https://m.media-amazon.com/images/P/8532518486.01._SCLZZZZZZZ_.jpg
+L036  eldest-christopher-paolini  [conferido]
+      ATUAL  https://rocco.com.br/wp-content/uploads/2026/03/9786555322927.jpg
+      1  ?    ISBN 9788532520753  https://m.media-amazon.com/images/P/8532520758.01._SCLZZZZZZZ_.jpg
 
-== sem edição brasileira com capa encontrada (27) ==
-      corte-de-chamas-prateadas-sarah-j-maas-acotar-5
-      como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo
-      a-descoberta-das-bruxas-deborah-harkness
-      sombra-da-noite-deborah-harkness
-      o-livro-da-vida-deborah-harkness
-      a-rainha-vermelha-victoria-aveyard
-      espada-de-vidro-victoria-aveyard
-      a-prisao-do-rei-victoria-aveyard
-      tempestade-de-guerra-victoria-aveyard
-      trono-destruido-victoria-aveyard-contos
-      anjos-e-demonios-dan-brown
-      o-codigo-da-vinci-dan-brown
-      o-simbolo-perdido-dan-brown
-      origem-dan-brown
+== sem edição brasileira com capa encontrada (188) ==
       fortaleza-digital-dan-brown
-      ponto-de-impacto-dan-brown
-      o-escaravelho-catherine-fisher
-      o-oraculo-catherine-fisher
-      o-arconte-catherine-fisher
-      irmaos-de-sangue-nora-roberts
-      a-maldicao-de-hollow-nora-roberts
-      a-pedra-paga-nora-roberts
-      correr-ou-morrer-james-dashner-maze-runner-1
-      prova-de-fogo-james-dashner-maze-runner-2
-      a-cura-mortal-james-dashner-maze-runner-3
-      ordem-de-exterminio-james-dashner-maze-runner-prequel
-      o-codigo-da-febre-james-dashner-maze-runner-prequel-2
+      os-doze-justin-cronin-a-passagem-2
+      a-5-onda-rick-yancey
+      a-filha-das-profundezas-rick-riordan
+      dark-eden-o-medo-e-a-cura-patrick-carman
+      mitologia-nordica-neil-gaiman-capa-dura
+      circulo-negro-catherine-fisher
+      fios-de-prata-reconstruindo-sandman-raphael-draccon
+      terra-americana-jeanine-cummins
+      a-essencia-do-mal-luca-d-andrea-capa-dura
+      1984-george-orwell-capa-dura
+      a-maquina-do-tempo-h-g-wells-suma-luxo
+      cacador-em-fuga-george-r-r-martin
+      os-ultimos-dias-de-krypton-kevin-j-anderson
+      robo-selvagem-peter-brown
+      inspecao-josh-malerman
+      serpentario-felipe-castilho
+      a-arvore-envenenada-erin-kelly
+      2012-a-guerra-pelas-almas-whitley-strieber
+      jogo-de-espelhos-cara-delevingne
+      o-morro-dos-ventos-uivantes-emily-bronte-capa-dura
+      o-diario-de-anne-frank
+      uma-dobra-no-tempo-madeleine-l-engle-capa-dura
+      o-ladrao-de-raios-rick-riordan
+      o-mar-de-monstros-rick-riordan
+      a-maldicao-do-tita-rick-riordan
+      a-batalha-do-labirinto-rick-riordan
+      o-ultimo-olimpiano-rick-riordan
+      o-calice-dos-deuses-rick-riordan
+      percy-jackson-e-os-deuses-gregos-rick-riordan
+      guia-definitivo-rick-riordan
+      os-arquivos-do-semideus-rick-riordan
+      o-heroi-perdido-rick-riordan
+      o-filho-de-netuno-rick-riordan
+      a-marca-de-atena-rick-riordan
+      a-casa-de-hades-rick-riordan
+      o-sangue-do-olimpo-rick-riordan
+      os-diarios-do-semideus-rick-riordan
+      a-piramide-vermelha-rick-riordan
+      o-trono-de-fogo-rick-riordan
+      a-sombra-da-serpente-rick-riordan
+      guia-de-sobrevivencia-rick-riordan
+      a-espada-do-verao-rick-riordan
+      o-martelo-de-thor-rick-riordan
+      o-navio-dos-mortos-rick-riordan
+      hotel-valhala-guia-dos-mundos-nordicos-rick-riordan
+      9-contos-dos-nove-mundos-rick-riordan
+      o-oraculo-oculto-rick-riordan
+      a-profecia-das-sombras-rick-riordan
+      o-labirinto-de-fogo-rick-riordan
+      a-tumba-do-tirano-rick-riordan
+      a-torre-de-nero-rick-riordan
+      semideuses-e-monstros-rick-riordan
+      segredos-do-acampamento-meio-sangue-rick-riordan
+      como-treinar-o-seu-dragao
+      como-ser-um-pirata
+      como-falar-dragones
+      como-quebrar-a-maldicao-de-um-dragao
+      como-mudar-uma-historia-de-dragao
+      guia-do-heroi-para-vencer-dragoes-mortais
+      como-navegar-em-uma-tempestade-de-dragao
+      como-treinar-o-seu-viking
+      como-partir-o-coracao-de-um-dragao
+      como-roubar-a-espada-de-um-dragao
+      como-pegar-a-joia-do-dragao
+      como-trair-o-heroi-de-um-dragao
+      como-combater-a-furia-de-um-dragao
+      harry-potter-e-a-pedra-filosofal
+      harry-potter-e-a-camara-secreta
+      harry-potter-e-o-prisioneiro-de-azkaban
+      harry-potter-e-as-reliquias-da-morte
+      harry-potter-e-a-crianca-amaldicoada
+      animais-fantasticos-e-onde-habitam
+      quadribol-atraves-dos-seculos
+      os-contos-de-beedle-o-bardo
+      animais-fantasticos-e-onde-habitam-o-roteiro-original
+      animais-fantasticos-os-crimes-de-grindelwald
+      animais-fantasticos-os-segredos-de-dumbledore
+      o-senhor-dos-aneis-a-sociedade-do-anel
+      o-senhor-dos-aneis-as-duas-torres
+      o-senhor-dos-aneis-o-retorno-do-rei
+      o-silmarillion
+      a-queda-de-gondolin
+      beren-e-luthien
+      os-filhos-de-hurin
+      contos-inacabados-de-numenor-e-da-terra-media
+      a-natureza-da-terra-media
+      jogos-vorazes-suzanne-collins
+      em-chamas-suzanne-collins
+      a-esperanca-suzanne-collins
+      a-cantiga-dos-passaros-e-das-serpentes-suzanne-collins
+      o-jogo-do-infinito-a-doutrina-da-morte
+      regras-do-jogo-a-doutrina-da-morte
+      a-ultima-fase-a-doutrina-da-morte
+      star-wars-a-trilogia
+      star-wars-academia-jedi-o-retorno-de-padawan
+      star-wars-academia-jedi-o-valentao-fantasma
+      star-wars-darth-plagueis
+      star-wars-kenobi
+      star-wars-lordes-dos-sith
+      star-wars-tarkin
+      star-wars-thrawn
+      star-wars-um-novo-amanhecer
+      star-wars-a-armadilha-do-paraiso
+      star-wars-battlefront-companhia-do-crepusculo
+      star-wars-troopers-da-morte
+      star-wars-herdeiro-do-jedi
+      star-wars-canalhas
+      star-wars-sombras-do-imperio
+      star-wars-divida-de-honra
+      star-wars-fim-do-imperio
+      star-wars-esquadrao-rogue
+      star-wars-herdeiro-do-imperio
+      star-wars-ascensao-da-forca-sombria
+      star-wars-o-ultimo-comando
+      star-wars-legado-de-sangue
+      star-wars-provacao
+      a-guerra-dos-tronos-george-r-r-martin
+      a-furia-dos-reis-george-r-r-martin
+      a-tormenta-de-espadas-george-r-r-martin
+      o-festim-dos-corvos-george-r-r-martin
+      a-danca-dos-dragoes-george-r-r-martin
+      por-dentro-da-serie-da-hbo-game-of-thrones-george-r-r-martin
+      fogo-sangue-george-r-r-martin
+      um-corpo-na-biblioteca-agatha-christie
+      assassinato-no-expresso-do-oriente-agatha-christie
+      morte-no-nilo-agatha-christie
+      morte-na-mesopotamia-agatha-christie
+      a-mansao-hollow-agatha-christie
+      os-elefantes-nao-esquecem-agatha-christie
+      o-misterio-dos-sete-relogios-agatha-christie
+      os-crimes-abc-agatha-christie
+      a-maldicao-do-espelho-agatha-christie
+      cem-gramas-de-centeio-agatha-christie
+      nemesis-agatha-christie
+      convite-para-um-homicidio-agatha-christie
+      m-ou-n-agatha-christie
+      a-casa-do-penhasco-agatha-christie
+      hora-zero-agatha-christie
+      o-natal-de-poirot-agatha-christie
+      treze-a-mesa-agatha-christie
+      a-casa-torta-agatha-christie
+      assassinato-na-casa-do-pastor-agatha-christie
+      um-pressentimento-funesto-agatha-christie
+      poirot-perde-uma-cliente-agatha-christie
+      a-extravagancia-do-morto-agatha-christie
+      caiu-o-pano-o-ultimo-caso-de-poirot-agatha-christie
+      assassinato-no-beco-agatha-christie
+      aventura-em-bagda-agatha-christie
+      detetive-parker-pyne-agatha-christie
+      serraria-baixo-astral-desventuras-em-serie
+      o-elevador-ersatz-desventuras-em-serie
+      o-espetaculo-carnivoro-desventuras-em-serie
+      o-escorregador-de-gelo-desventuras-em-serie
+      o-penultimo-perigo-desventuras-em-serie
+      o-fim-desventuras-em-serie
+      o-sangue-dos-elfos-the-witcher
+      tempo-de-tempestade-the-witcher
+      cidade-das-cinzas-cassandra-clare-os-instrumentos-mortais
+      cidade-de-vidro-cassandra-clare-os-instrumentos-mortais
+      anjo-mecanico-cassandra-clare-as-pecas-infernais
+      principe-mecanico-cassandra-clare-as-pecas-infernais
+      princesa-mecanica-cassandra-clare-as-pecas-infernais
+      dama-da-meia-noite-cassandra-clare-os-artificios-das-trevas
+      senhor-das-sombras-cassandra-clare-os-artificios-das-trevas
+      rainha-do-ar-e-da-escuridao-cassandra-clare-os-artificios-das-trevas
+      duna-frank-herbert
+      messias-de-duna-frank-herbert
+      filhos-de-duna-frank-herbert
+      imperador-deus-de-duna-frank-herbert
+      hereges-de-duna-frank-herbert
+      as-herdeiras-de-duna-frank-herbert
+      brisingr-christopher-paolini
+      heranca-christopher-paolini
+      o-garfo-a-bruxa-e-o-dragao-christopher-paolini
+      larousse-das-civilizacoes-antigas-da-babilonia-ao-exercito-chines
+      it-a-coisa
+      o-oitavo-selo
+      vida-e-morte-crepusculo-reimaginado
+      o-poder-do-habito
+      mindset-a-nova-psicologia-do-sucesso
+      muito-mais-que-5inco-minutos
+      ta-gravando-e-agora
+      o-essencial-da-mitologia-deusas-deuses-e-herois
+      o-essencial-da-mitologia-historia-da-mitologia
+      a-saga-dos-corvos-opala
+      o-povo-do-ar-o-canto-mais-escuro-da-floresta
+      corte-de-gelo-e-estrelas-acotar-novela
