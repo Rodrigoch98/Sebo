@@ -5,13 +5,13 @@ L001  inferno-dan-brown  []
       ATUAL  https://skoob.s3.amazonaws.com/livros/298210/INFERNO_1415642261B.jpg
       1  ?    ISBN 9788580411522  https://m.media-amazon.com/images/P/8580411521.01._SCLZZZZZZZ_.jpg
 L002  hades-alexandra-adornetto  []
-      ATUAL  https://m.media-amazon.com/images/I/51vMgjn5TUL._SY522_.jpg
+      ATUAL  https://skoob.s3.amazonaws.com/livros/172363/HADES_1337258758B.jpg
       1  ?    ISBN 9788522012596  https://m.media-amazon.com/images/P/8522012598.01._SCLZZZZZZZ_.jpg
 L003  bird-box-josh-malerman-edicao-especial-de-luxo  [luxo, edicao especial, box]
       ATUAL  https://m.media-amazon.com/images/I/91x7oEAnSOL._SY522_.jpg
       1  ?    ISBN 9788580576535  https://m.media-amazon.com/images/P/8580576539.01._SCLZZZZZZZ_.jpg
 L004  psicose-robert-bloch-ed-luxo-darkside  [capa dura, luxo, darkside, colecionador]
-      ATUAL  https://darkside.vtexassets.com/arquivos/ids/174500/8-psicose-limited-edition-1.png?v=637606711394330000
+      ATUAL  https://skoob.s3.amazonaws.com/livros/4496/PSICOSE_1373943676B.jpg
       1  ?    ISBN 9788566636109  https://m.media-amazon.com/images/P/8566636104.01._SCLZZZZZZZ_.jpg
       2  ?    ISBN 9788566636154  https://m.media-amazon.com/images/P/8566636155.01._SCLZZZZZZZ_.jpg
 L005  mitos-gregos-nathaniel-hawthorne  []
@@ -43,87 +43,127 @@ L011  dracula-bram-stoker-first-edition-darkside  [darkside]
       3  ?    ISBN 9786559100767  https://m.media-amazon.com/images/P/6559100766.01._SCLZZZZZZZ_.jpg
       4  ?    ISBN 9786586490107  https://m.media-amazon.com/images/P/6586490103.01._SCLZZZZZZZ_.jpg
       5  ?    ISBN 9788502132535  https://covers.openlibrary.org/b/isbn/9788502132535-L.jpg?default=false
-L012  as-cronicas-de-narnia-c-s-lewis-volume-unico  []
+L012  til-jose-de-alencar-capa-dura  [capa dura]
+      ATUAL  https://cdn.shopify.com/s/files/1/0920/2532/3799/files/til_capa_dura_jose_de_alencar_18217_1_208824c3720ff2c8fbb17497add66621_4606c918-1f93-4e6c-bacd-a00005832b96.jpg?v=1743628088
+      1  ?    ISBN 9788599829578  https://m.media-amazon.com/images/P/8599829572.01._SCLZZZZZZZ_.jpg
+L013  contos-novos-mario-de-andrade-capa-dura  [capa dura]
+      ATUAL  https://cdn.shopify.com/s/files/1/0920/2532/3799/files/contos_novos_capa_dura_mario_de_andrade_18216_1_8bd97253103a04f56c1f17d4882c022a_9c55926e-0bb9-4cbb-8ede-6d32f13b5757.jpg?v=1743628104
+      1  ?    ISBN 9788573440638  https://m.media-amazon.com/images/P/8573440635.01._SCLZZZZZZZ_.jpg
+L014  senhora-jose-de-alencar-capa-dura  [capa dura]
+      ATUAL  https://cdn.shopify.com/s/files/1/0920/2532/3799/files/senhora_capa_dura_jose_de_alencar_18214_1_4222e8480f00ac453a8790cf4b8267e7_3e294937-0c6b-4861-873c-8f42b049c1fc.jpg?v=1743627171
+      1  ?    ISBN 9788526248212  https://m.media-amazon.com/images/P/8526248219.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9788538003649  https://m.media-amazon.com/images/P/853800364X.01._SCLZZZZZZZ_.jpg
+      3  ?    ISBN 9788563560599  https://m.media-amazon.com/images/P/856356059X.01._SCLZZZZZZZ_.jpg
+      4  ?    ISBN 9788572324823  https://m.media-amazon.com/images/P/8572324828.01._SCLZZZZZZZ_.jpg
+      5  ?    ISBN 9788576665069  https://covers.openlibrary.org/b/isbn/9788576665069-L.jpg?default=false
+L015  sonetos-luis-de-camoes-capa-dura  [capa dura]
+      ATUAL  https://cdn.shopify.com/s/files/1/0920/2532/3799/files/sonetos_capa_dura_luis_de_camoes_18215_1_546be1f87a6e80ddd36d62594277c87a_3f54a486-5227-406d-95d4-5299006517fe.jpg?v=1743627256
+      1  ?    ISBN 9788525407412  https://m.media-amazon.com/images/P/8525407410.01._SCLZZZZZZZ_.jpg
+L016  os-sertoes-euclides-da-cunha-capa-dura  [capa dura]
+      ATUAL  https://cdn.shopify.com/s/files/1/0920/2532/3799/files/os_sertoes_capa_dura_euclides_da_cunha_18197_1_5fc0384fa35d4c375e854fd17278b792_f37af27c-5bb1-4ca0-b0d9-5e9d0625e001.jpg?v=1743628077
+      1  ?    ISBN 9788500009839  https://m.media-amazon.com/images/P/8500009837.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9788513010907  https://covers.openlibrary.org/b/isbn/9788513010907-L.jpg?default=false
+      3  ?    ISBN 9788569298960  https://m.media-amazon.com/images/P/856929896X.01._SCLZZZZZZZ_.jpg
+      4  ?    ISBN 9788574800134  https://m.media-amazon.com/images/P/8574800139.01._SCLZZZZZZZ_.jpg
+      5  ?    ISBN 9788592886035  https://m.media-amazon.com/images/P/8592886031.01._SCLZZZZZZZ_.jpg
+L017  espumas-flutuantes-castro-alves-capa-dura  [capa dura]
+      ATUAL  https://cdn.shopify.com/s/files/1/0920/2532/3799/files/espumas_flutuantes_capa_dura_castro_alves_18196_1_e433bfb12c8b6fb1888494897852fa04_9cbeef94-c8f1-4fcb-9e69-05838da1e671.jpg?v=1743627168
+      1  ?    ISBN 9788572323673  https://m.media-amazon.com/images/P/8572323678.01._SCLZZZZZZZ_.jpg
+L018  poemas-escolhidos-varios-autores-capa-dura  [capa dura]
+      ATUAL  https://cdn.shopify.com/s/files/1/0920/2532/3799/files/poemas_escolhidos_capa_dura_gregorio_de_matos_18219_1_46171b105cbe972d269f88c22b609853_091c5ae1-2b4e-4b34-852c-bc1b6d5a20f3.jpg?v=1743628084
+      1  ?    ISBN 9788535918588  https://m.media-amazon.com/images/P/8535918582.01._SCLZZZZZZZ_.jpg
+L019  o-ateneu-raul-pompeia-capa-dura  [capa dura]
+      ATUAL  https://cdn.shopify.com/s/files/1/0786/1655/9867/files/o_ateneu_capa_dura_raul_pompeia_18218_1_ef8b68b4dc1b0d6da7e524acdae6ad7e.jpg?v=1782160532
+      1  ?    ISBN 9788500104398  https://m.media-amazon.com/images/P/8500104392.01._SCLZZZZZZZ_.jpg
+      2  ?    ISBN 9788504007800  https://m.media-amazon.com/images/P/8504007804.01._SCLZZZZZZZ_.jpg
+      3  ?    ISBN 9788508048663  https://covers.openlibrary.org/b/isbn/9788508048663-L.jpg?default=false
+      4  ?    ISBN 9788525408358  https://m.media-amazon.com/images/P/8525408352.01._SCLZZZZZZZ_.jpg
+      5  ?    ISBN 9788526226951  https://m.media-amazon.com/images/P/8526226959.01._SCLZZZZZZZ_.jpg
+L020  as-cronicas-de-narnia-c-s-lewis-volume-unico  []
       ATUAL  https://m.media-amazon.com/images/I/71yJLhQekBL._SY522_.jpg
       1  ?    ISBN 9788533622104  https://m.media-amazon.com/images/P/8533622104.01._SCLZZZZZZZ_.jpg
-L013  o-pequeno-principe-antoine-de-saint-exupery-edicao-de-luxo-capa-dura  [capa dura, luxo]
+L021  o-pequeno-principe-antoine-de-saint-exupery-edicao-de-luxo-capa-dura  [capa dura, luxo]
       ATUAL  https://m.media-amazon.com/images/I/71CGJI0uNyL._SY522_.jpg
       1  ?    ISBN 9786559570737  https://covers.openlibrary.org/b/isbn/9786559570737-L.jpg?default=false
-L014  harry-potter-e-o-calice-de-fogo  []
+L022  harry-potter-e-o-calice-de-fogo  []
       ATUAL  https://rocco.com.br/wp-content/uploads/2022/12/9788532530813.jpg
       1  ?    ISBN 9788532531797  https://m.media-amazon.com/images/P/8532531792.01._SCLZZZZZZZ_.jpg
-L015  harry-potter-e-a-ordem-da-fenix  []
+L023  harry-potter-e-a-ordem-da-fenix  []
       ATUAL  https://rocco.com.br/wp-content/uploads/2022/12/9788532530820.jpg
       1  ?    ISBN 9788532531803  https://m.media-amazon.com/images/P/8532531806.01._SCLZZZZZZZ_.jpg
-L016  harry-potter-e-o-enigma-do-principe  []
+L024  harry-potter-e-o-enigma-do-principe  []
       ATUAL  https://rocco.com.br/wp-content/uploads/2022/12/9788532530837.jpg
       1  ?    ISBN 9788532531810  https://m.media-amazon.com/images/P/8532531814.01._SCLZZZZZZZ_.jpg
-L017  o-hobbit  [conferido]
+L025  o-hobbit  [conferido]
       ATUAL  https://cdn.shopify.com/s/files/1/0529/5125/3158/files/9788595085800.jpg
       1  ?    ISBN 9788533615540  https://m.media-amazon.com/images/P/853361554X.01._SCLZZZZZZZ_.jpg
-L018  mau-comeco-desventuras-em-serie  []
+L026  mau-comeco-desventuras-em-serie  [box]
       ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535900941/mau-comeco.jpg
       1  ?    ISBN 9788535900941  https://m.media-amazon.com/images/P/8535900942.01._SCLZZZZZZZ_.jpg
-L019  a-sala-dos-repteis-desventuras-em-serie  []
+L027  a-sala-dos-repteis-desventuras-em-serie  [box]
       ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535901436/a-sala-dos-repteis.jpg
       1  ?    ISBN 9788535901436  https://m.media-amazon.com/images/P/8535901434.01._SCLZZZZZZZ_.jpg
-L020  o-lago-das-sanguessugas-desventuras-em-serie  []
+L028  o-lago-das-sanguessugas-desventuras-em-serie  [box]
       ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535901719/o-lago-das-sanguessugas.jpg
       1  ?    ISBN 9788535901719  https://m.media-amazon.com/images/P/853590171X.01._SCLZZZZZZZ_.jpg
-L021  inferno-no-colegio-interno-desventuras-em-serie  []
+L029  inferno-no-colegio-interno-desventuras-em-serie  [box]
       ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535902747/inferno-no-colegio-interno.jpg
       1  ?    ISBN 9788535902747  https://m.media-amazon.com/images/P/8535902740.01._SCLZZZZZZZ_.jpg
-L022  a-cidade-sinistra-dos-corvos-desventuras-em-serie  []
+L030  a-cidade-sinistra-dos-corvos-desventuras-em-serie  [box]
       ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535903928/a-cidade-sinistra-dos-corvos.jpg
       1  ?    ISBN 9788535903928  https://m.media-amazon.com/images/P/8535903925.01._SCLZZZZZZZ_.jpg
-L023  o-hospital-hostil-desventuras-em-serie  []
+L031  o-hospital-hostil-desventuras-em-serie  [box]
       ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535904512/o-hospital-hostil.jpg
       1  ?    ISBN 9788535904512  https://m.media-amazon.com/images/P/8535904514.01._SCLZZZZZZZ_.jpg
-L024  a-gruta-gorgonea-desventuras-em-serie  []
+L032  a-gruta-gorgonea-desventuras-em-serie  [box]
       ATUAL  https://cdl-static.s3-sa-east-1.amazonaws.com/covers/gg/9788535907025/a-gruta-gorgonea.jpg
       1  ?    ISBN 9788535907025  https://m.media-amazon.com/images/P/8535907025.01._SCLZZZZZZZ_.jpg
-L025  o-ultimo-desejo-the-witcher  []
+L033  o-ultimo-desejo-the-witcher  [box]
       ATUAL  https://m.media-amazon.com/images/I/41Yy6AbJXAL._SY522_.jpg
       1  ?    ISBN 9788578273743  https://m.media-amazon.com/images/P/8578273745.01._SCLZZZZZZZ_.jpg
       2  ?    ISBN 9788578279585  https://m.media-amazon.com/images/P/8578279581.01._SCLZZZZZZZ_.jpg
-L026  a-espada-do-destino-the-witcher  []
+L034  a-espada-do-destino-the-witcher  [box]
       ATUAL  https://m.media-amazon.com/images/I/41si2hJ-zDL._SY522_.jpg
       1  ?    ISBN 9788578275563  https://m.media-amazon.com/images/P/857827556X.01._SCLZZZZZZZ_.jpg
-L027  tempo-do-desprezo-the-witcher  []
+L035  tempo-do-desprezo-the-witcher  [box]
       ATUAL  https://m.media-amazon.com/images/I/41fTkkAY7LL._SY522_.jpg
       1  ?    ISBN 9788578279561  https://m.media-amazon.com/images/P/8578279565.01._SCLZZZZZZZ_.jpg
-L028  batismo-de-fogo-the-witcher  [companhia]
+L036  batismo-de-fogo-the-witcher  [box, companhia]
       ATUAL  https://m.media-amazon.com/images/I/413BTDGaOGL._SY522_.jpg
       1  ?    ISBN 9788578279820  https://m.media-amazon.com/images/P/8578279824.01._SCLZZZZZZZ_.jpg
       2  ?    ISBN 9788578279851  https://m.media-amazon.com/images/P/8578279859.01._SCLZZZZZZZ_.jpg
-L029  a-torre-da-andorinha-the-witcher  []
+L037  a-torre-da-andorinha-the-witcher  [box]
       ATUAL  https://m.media-amazon.com/images/I/41EilSZ-YnL._SY522_.jpg
       1  ?    ISBN 9788546900886  https://m.media-amazon.com/images/P/8546900884.01._SCLZZZZZZZ_.jpg
       2  ?    ISBN 9788546900978  https://m.media-amazon.com/images/P/8546900973.01._SCLZZZZZZZ_.jpg
-L030  a-senhora-do-lago-the-witcher  []
+L038  a-senhora-do-lago-the-witcher  [box]
       ATUAL  https://m.media-amazon.com/images/I/414dxsTXMdL._SY522_.jpg
       1  ?    ISBN 9788546901654  https://m.media-amazon.com/images/P/8546901651.01._SCLZZZZZZZ_.jpg
-L031  cidade-dos-ossos-cassandra-clare-os-instrumentos-mortais  [box, conferido]
+L039  cidade-dos-ossos-cassandra-clare-os-instrumentos-mortais  [box, conferido]
       ATUAL  https://cdn.shopify.com/s/files/1/0722/9197/5420/files/40359516b31c6d4bb7889d53e839546b_931c204f-bb49-4ba0-992e-ba21ef692bfd.jpg
       1  ?    ISBN 9788501092144  https://m.media-amazon.com/images/P/8501092142.01._SCLZZZZZZZ_.jpg
-L032  cidade-dos-anjos-caidos-cassandra-clare-os-instrumentos-mortais  [box, conferido]
+L040  cidade-dos-anjos-caidos-cassandra-clare-os-instrumentos-mortais  [box, conferido]
       ATUAL  https://cdn.shopify.com/s/files/1/0722/9197/5420/files/39e77d67dc057907ac38108f789d980b_cd530ba0-f72b-4a1f-90af-35ea76466026.jpg
       1  ?    ISBN 9788501092274  https://m.media-amazon.com/images/P/8501092274.01._SCLZZZZZZZ_.jpg
       2  ?    ISBN 9788501092717  https://m.media-amazon.com/images/P/8501092711.01._SCLZZZZZZZ_.jpg
-L033  cidade-das-almas-perdidas-cassandra-clare-os-instrumentos-mortais  [box, conferido]
+L041  cidade-das-almas-perdidas-cassandra-clare-os-instrumentos-mortais  [box, conferido]
       ATUAL  https://cdn.shopify.com/s/files/1/0722/9197/5420/files/37ebb77fd044715fc2cfaab13f2212df_2e8927e1-d830-464e-b41b-6d344fc82634.jpg
       1  ?    ISBN 9788501092908  https://m.media-amazon.com/images/P/8501092908.01._SCLZZZZZZZ_.jpg
-L034  cidade-do-fogo-celestial-cassandra-clare-os-instrumentos-mortais  [box, conferido]
+L042  cidade-do-fogo-celestial-cassandra-clare-os-instrumentos-mortais  [box, conferido]
       ATUAL  https://cdn.shopify.com/s/files/1/0722/9197/5420/files/36bb8861ecafcc25d0e3c97ac25142e6_fa499783-6fc2-454b-877f-b0d325473bf4.jpg
       1  ?    ISBN 9788501093240  https://m.media-amazon.com/images/P/8501093246.01._SCLZZZZZZZ_.jpg
-L035  eragon-christopher-paolini  [conferido]
+L043  eragon-christopher-paolini  [conferido]
       ATUAL  https://rocco.com.br/wp-content/uploads/2023/05/9786555322910.jpg
       1  ?    ISBN 9788532518484  https://m.media-amazon.com/images/P/8532518486.01._SCLZZZZZZZ_.jpg
-L036  eldest-christopher-paolini  [conferido]
+L044  eldest-christopher-paolini  [conferido]
       ATUAL  https://rocco.com.br/wp-content/uploads/2026/03/9786555322927.jpg
       1  ?    ISBN 9788532520753  https://m.media-amazon.com/images/P/8532520758.01._SCLZZZZZZZ_.jpg
+L045  o-oitavo-selo  []
+      ATUAL  https://skoob.s3.amazonaws.com/livros/413365/O_OITAVO_SELO_1411412938B.jpg
+      1  ?    ISBN 9788540507692  https://m.media-amazon.com/images/P/8540507692.01._SCLZZZZZZZ_.jpg
 
-== sem edição brasileira com capa encontrada (180) ==
+== sem edição brasileira com capa encontrada (185) ==
+      corte-de-chamas-prateadas-sarah-j-maas-acotar-5
       como-o-rei-de-elfhame-aprendeu-a-odiar-historias-holly-black-luxo
       fortaleza-digital-dan-brown
       os-doze-justin-cronin-a-passagem-2
@@ -138,6 +178,7 @@ L036  eldest-christopher-paolini  [conferido]
       a-essencia-do-mal-luca-d-andrea-capa-dura
       1984-george-orwell-capa-dura
       a-maquina-do-tempo-h-g-wells-suma-luxo
+      contos-de-fadas-dos-irmaos-grimm-capa-dura
       cacador-em-fuga-george-r-r-martin
       os-ultimos-dias-de-krypton-kevin-j-anderson
       robo-selvagem-peter-brown
@@ -148,6 +189,10 @@ L036  eldest-christopher-paolini  [conferido]
       jogo-de-espelhos-cara-delevingne
       o-morro-dos-ventos-uivantes-emily-bronte-capa-dura
       o-diario-de-anne-frank
+      casa-de-pensao-aluisio-azevedo-capa-dura
+      pauliceia-desvairada-mario-de-andrade-capa-dura
+      sermoes-padre-antonio-vieira-capa-dura
+      o-espelho-e-outros-contos-machado-de-assis-capa-dura
       a-lamina-da-assassina-sarah-j-maas-trono-de-vidro-0-5
       trono-de-vidro-sarah-j-maas
       coroa-da-meia-noite-sarah-j-maas-trono-de-vidro-2
@@ -156,6 +201,7 @@ L036  eldest-christopher-paolini  [conferido]
       imperio-de-tempestades-sarah-j-maas-trono-de-vidro-5
       torre-do-alvorecer-sarah-j-maas-trono-de-vidro-6
       reino-de-cinzas-sarah-j-maas-trono-de-vidro-7
+      crepusculo-stephenie-meyer-edicao-10-anos
       uma-dobra-no-tempo-madeleine-l-engle-capa-dura
       o-calice-dos-deuses-rick-riordan
       percy-jackson-e-os-deuses-gregos-rick-riordan
@@ -219,10 +265,12 @@ L036  eldest-christopher-paolini  [conferido]
       jogos-vorazes-suzanne-collins
       em-chamas-suzanne-collins
       a-esperanca-suzanne-collins
+      a-cantiga-dos-passaros-e-das-serpentes-suzanne-collins
       o-jogo-do-infinito-a-doutrina-da-morte
       regras-do-jogo-a-doutrina-da-morte
       a-ultima-fase-a-doutrina-da-morte
       star-wars-a-trilogia
+      star-wars-academia-jedi
       star-wars-academia-jedi-o-retorno-de-padawan
       star-wars-academia-jedi-o-valentao-fantasma
       star-wars-darth-plagueis
@@ -293,14 +341,10 @@ L036  eldest-christopher-paolini  [conferido]
       o-garfo-a-bruxa-e-o-dragao-christopher-paolini
       larousse-das-civilizacoes-antigas-da-babilonia-ao-exercito-chines
       it-a-coisa
-      o-oitavo-selo
       vida-e-morte-crepusculo-reimaginado
-      o-poder-do-habito
-      mindset-a-nova-psicologia-do-sucesso
       muito-mais-que-5inco-minutos
       ta-gravando-e-agora
       o-essencial-da-mitologia-deusas-deuses-e-herois
       o-essencial-da-mitologia-historia-da-mitologia
       a-saga-dos-corvos-opala
-      o-povo-do-ar-o-canto-mais-escuro-da-floresta
       corte-de-gelo-e-estrelas-acotar-novela

@@ -1080,7 +1080,7 @@
    "todas": []
   },
   "animais-fantasticos-e-onde-habitam-o-roteiro-original": {
-   "consulta": "O Roteiro Original | J.K. Rowling",
+   "consulta": "Animais Fantásticos e Onde Habitam: O Roteiro Original | J.K. Rowling",
    "edicoes": 0,
    "candidatas": [],
    "todas": []
@@ -2123,7 +2123,7 @@
    "todas": []
   },
   "larousse-das-civilizacoes-antigas-da-babilonia-ao-exercito-chines": {
-   "consulta": "Larousse das Civilizações Antigas | Vários",
+   "consulta": "Larousse das Civilizações Antigas | Catherine Salles (dir.)",
    "edicoes": 0,
    "candidatas": [],
    "todas": []
@@ -2135,10 +2135,23 @@
    "todas": []
   },
   "o-oitavo-selo": {
-   "consulta": "O Oitavo Selo | Vários",
-   "edicoes": 0,
-   "candidatas": [],
-   "todas": []
+   "consulta": "O Oitavo Selo | Heloisa Seixas",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788540507692",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8540507692.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788540507692",
+     "ano": null,
+     "editora": ""
+    }
+   ]
   },
   "vida-e-morte-crepusculo-reimaginado": {
    "consulta": "Vida e Morte | Vários",
@@ -2171,13 +2184,13 @@
    "todas": []
   },
   "o-essencial-da-mitologia-deusas-deuses-e-herois": {
-   "consulta": "Deusas, Deuses e Heróis | Vários",
+   "consulta": "Deusas, Deuses e Heróis | Baby Siqueira Abrão",
    "edicoes": 0,
    "candidatas": [],
    "todas": []
   },
   "o-essencial-da-mitologia-historia-da-mitologia": {
-   "consulta": "História da Mitologia | Vários",
+   "consulta": "História da Mitologia | Baby Siqueira Abrão",
    "edicoes": 0,
    "candidatas": [],
    "todas": []
@@ -2250,6 +2263,402 @@
   },
   "reino-de-cinzas-sarah-j-maas-trono-de-vidro-7": {
    "consulta": "Reino de Cinzas | Sarah J. Maas",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "contos-de-fadas-dos-irmaos-grimm-capa-dura": {
+   "consulta": "Contos de Fadas dos Irmãos Grimm | Jacob",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "til-jose-de-alencar-capa-dura": {
+   "consulta": "Til | José de Alencar",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788599829578",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8599829572.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788599829578",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "contos-novos-mario-de-andrade-capa-dura": {
+   "consulta": "Contos Novos | Mário de Andrade",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788573440638",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8573440635.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788573440638",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "senhora-jose-de-alencar-capa-dura": {
+   "consulta": "Senhora | José de Alencar",
+   "edicoes": 8,
+   "candidatas": [
+    {
+     "isbn": "9788526248212",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8526248219.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788538003649",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/853800364X.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788563560599",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/856356059X.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788572324823",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8572324828.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788576665069",
+     "ano": null,
+     "editora": "",
+     "url": "https://covers.openlibrary.org/b/isbn/9788576665069-L.jpg?default=false"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788526223585",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788526248212",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788526248229",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788538003649",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788563560599",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788572324823",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788576665069",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788580865912",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "sonetos-luis-de-camoes-capa-dura": {
+   "consulta": "Sonetos | Luís de Camões",
+   "edicoes": 2,
+   "candidatas": [
+    {
+     "isbn": "9788525407412",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8525407410.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788525407412",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788589365123",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "casa-de-pensao-aluisio-azevedo-capa-dura": {
+   "consulta": "Casa de Pensão | Aluísio Azevedo",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "pauliceia-desvairada-mario-de-andrade-capa-dura": {
+   "consulta": "Pauliceia Desvairada | Mário de Andrade",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "os-sertoes-euclides-da-cunha-capa-dura": {
+   "consulta": "Os Sertões | Euclides da Cunha",
+   "edicoes": 7,
+   "candidatas": [
+    {
+     "isbn": "9788500009839",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8500009837.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788513010907",
+     "ano": null,
+     "editora": "",
+     "url": "https://covers.openlibrary.org/b/isbn/9788513010907-L.jpg?default=false"
+    },
+    {
+     "isbn": "9788569298960",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/856929896X.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788574800134",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8574800139.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788592886035",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8592886031.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788500009839",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788508069712",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788513010907",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788569298960",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788574800134",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788592886035",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788592886042",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "espumas-flutuantes-castro-alves-capa-dura": {
+   "consulta": "Espumas Flutuantes | Castro Alves",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788572323673",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8572323678.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788572323673",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "sermoes-padre-antonio-vieira-capa-dura": {
+   "consulta": "Sermões | Padre Antônio Vieira",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "o-espelho-e-outros-contos-machado-de-assis-capa-dura": {
+   "consulta": "O Espelho e Outros Contos | Machado de Assis",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "poemas-escolhidos-varios-autores-capa-dura": {
+   "consulta": "Poemas Escolhidos | Gregório de Matos",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9788535918588",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8535918582.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788535918588",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "o-ateneu-raul-pompeia-capa-dura": {
+   "consulta": "O Ateneu | Raul Pompeia",
+   "edicoes": 13,
+   "candidatas": [
+    {
+     "isbn": "9788500104398",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8500104392.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788504007800",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8504007804.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788508048663",
+     "ano": null,
+     "editora": "",
+     "url": "https://covers.openlibrary.org/b/isbn/9788508048663-L.jpg?default=false"
+    },
+    {
+     "isbn": "9788525408358",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8525408352.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788526226951",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8526226959.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788500104398",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788504007800",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788508048663",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788525408358",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788526226951",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788526250246",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788533903708",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788534921664",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788563171603",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788563560629",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788572323581",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788585851590",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788588916227",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "crepusculo-stephenie-meyer-edicao-10-anos": {
+   "consulta": "Crepúsculo | Stephenie Meyer",
+   "edicoes": 0,
+   "candidatas": [],
+   "todas": []
+  },
+  "star-wars-academia-jedi": {
+   "consulta": "Academia Jedi | Vários autores",
    "edicoes": 0,
    "candidatas": [],
    "todas": []
