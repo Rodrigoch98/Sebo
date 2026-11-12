@@ -2662,6 +2662,55 @@
    "edicoes": 0,
    "candidatas": [],
    "todas": []
+  },
+  "alice-no-pais-das-maravilhas-lewis-carroll-darkside-luxo": {
+   "consulta": "Alice no País das Maravilhas | Lewis Carroll",
+   "edicoes": 2,
+   "candidatas": [
+    {
+     "isbn": "9788501070364",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/850107036X.01._SCLZZZZZZZ_.jpg"
+    },
+    {
+     "isbn": "9788538083726",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/8538083724.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9788501070364",
+     "ano": null,
+     "editora": ""
+    },
+    {
+     "isbn": "9788538083726",
+     "ano": null,
+     "editora": ""
+    }
+   ]
+  },
+  "alice-atraves-do-espelho-lewis-carroll-darkside-luxo": {
+   "consulta": "Alice Através do Espelho | Lewis Carroll",
+   "edicoes": 1,
+   "candidatas": [
+    {
+     "isbn": "9786587817682",
+     "ano": null,
+     "editora": "",
+     "url": "https://m.media-amazon.com/images/P/6587817688.01._SCLZZZZZZZ_.jpg"
+    }
+   ],
+   "todas": [
+    {
+     "isbn": "9786587817682",
+     "ano": null,
+     "editora": ""
+    }
+   ]
   }
  }
 }
